@@ -372,7 +372,6 @@ function flushPendingCharts(){
 const DISTRICT_LABEL = {gijduvon:"Ғиждувон тумани", shofirkon:"Шофиркон тумани"};
 
 async function init(){
-  setDate();
   const [g,s] = await Promise.all([
     fetch("assets/data/gijduvon.json").then(r=>r.json()),
     fetch("assets/data/shofirkon.json").then(r=>r.json()),
@@ -400,16 +399,7 @@ function buildSlidePages(){
       '<div class="sh-eye">СЛАЙД '+s.n+' • '+s.section+'-БЎЛИМ</div>'+
       '<h1 class="sh-title"><i class="bi '+s.icon+'"></i> '+escapeHTML(s.title)+'</h1>'+
       '<div class="sh-meta">'+escapeHTML(s.desc)+' • <strong id="sh-district-'+s.n+'">Ғиждувон тумани</strong></div>'+
-      '</div><div class="sh-right">'+
-      '<div class="sh-stat"><div class="v" id="sh-total-'+s.n+'">0</div><div class="l">Жами</div></div>'+
-      '<div class="sh-stat"><div class="v" id="sh-found-'+s.n+'">0</div><div class="l">Топилган</div></div>'+
-      '<div class="sh-stat"><div class="v" id="sh-pct-'+s.n+'">0%</div><div class="l">Тўлиқлик</div></div>'+
       '</div></div>'+
-      '<div class="filter-bar">'+
-      '<div class="chip filter-chip active" data-f="all">Барча <span class="badge-n" id="ch-all-'+s.n+'">0</span></div>'+
-      '<div class="chip filter-chip" data-f="found"><i class="bi bi-check-circle-fill" style="color:var(--success)"></i> Топилган <span class="badge-n" id="ch-ok-'+s.n+'">0</span></div>'+
-      '<div class="chip filter-chip" data-f="missing"><i class="bi bi-x-circle-fill" style="color:var(--warn)"></i> Топилмаган <span class="badge-n" id="ch-no-'+s.n+'">0</span></div>'+
-      '</div>'+
       '<div class="cards-grid" id="cards-'+s.n+'"></div>'+
       '</section>';
   }).join("");
@@ -482,16 +472,8 @@ function render(){
   renderOverview(data);
 
   SLIDES.forEach(function(s){
-    const inds = data.indicators.filter(function(i){return i.slide===s.n;});
-    const f = inds.filter(function(i){return i.found;}).length;
-    const p = Math.round(f/inds.length*100);
-    document.getElementById("sh-district-"+s.n).textContent = label;
-    document.getElementById("sh-total-"+s.n).textContent = inds.length;
-    document.getElementById("sh-found-"+s.n).textContent = f;
-    document.getElementById("sh-pct-"+s.n).textContent = p+"%";
-    document.getElementById("ch-all-"+s.n).textContent = inds.length;
-    document.getElementById("ch-ok-"+s.n).textContent = f;
-    document.getElementById("ch-no-"+s.n).textContent = inds.length-f;
+    const el = document.getElementById("sh-district-"+s.n);
+    if(el) el.textContent = label;
   });
 
   renderAllCards();
