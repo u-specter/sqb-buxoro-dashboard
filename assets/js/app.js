@@ -26,7 +26,8 @@ const STATE = {
 // VALUE PARSER — classifies indicator.value into a typed object
 // Types: timeseries | breakdown | single_metric | list | text | empty
 // ============================================================
-function parseValue(raw){
+function parseValue(raw, ctx){
+  ctx = ctx || {};
   if(raw==null || raw==="") return {type:"empty"};
   const str = String(raw).trim();
 
@@ -35,6 +36,38 @@ function parseValue(raw){
   const tagM = str.match(/^\[([^\]]+)\]\s*/);
   const body = tagM ? str.slice(tagM[0].length) : str;
   if(tagM) label = tagM[1];
+
+  // ---- Labeled breakdown detection (e.g. "Юридик шахслар: 1 854 та | Кичик бизнес: 194 та") ----
+  // Split on |, ;, or ". " — each segment must look like "Label: number unit"
+  const segs = body.split(/\s*[\|;]\s*|\.\s+(?=[А-ЯЎҒҲҚЁA-Z])/).map(function(s){return s.trim();}).filter(Boolean);
+  if(segs.length>=2 && segs.length<=6){
+    const labeled = segs.filter(function(s){
+      // No leading year, has a colon, and contains a digit after the colon
+      if(/^(?:19|20)\d{2}\b/.test(s)) return false;
+      const m = s.match(/^([^:]{2,40}):\s*(.+)$/);
+      if(!m) return false;
+      return /\d/.test(m[2]);
+    });
+    if(labeled.length===segs.length){
+      return {type:"breakdown", label:label, items:segs.slice(0,6)};
+    }
+  }
+
+  // ---- Explicit year-value pair detection ----
+  // Examples: "2021: 123,4", "2021й - 123", "2021 — 45.2", "2021/123", "(2021) 123"
+  const yearPairs = [];
+  const seenYears = {};
+  const yp = /(?:^|[\s\(\|;,])((?:19|20)\d{2})\s*(?:й(?:ил)?)?\s*[\-\u2014:\/=]\s*(-?\d{1,7}(?:[\.,]\d+)?)/g;
+  let mp;
+  while((mp = yp.exec(body))!==null){
+    const y = parseInt(mp[1]);
+    const v = parseFloat(mp[2].replace(",","."));
+    if(y>=2010 && y<=2035 && !isNaN(v) && !seenYears[y]){ seenYears[y]=1; yearPairs.push({year:y, value:v}); }
+  }
+  if(yearPairs.length>=2){
+    yearPairs.sort(function(a,b){return a.year-b.year;});
+    return finalizeTimeseries(label, yearPairs, detectUnit(label, body), "");
+  }
 
   // Bullet list detection
   if(/^[\u2022\-\*]\s/m.test(body) || body.split(/\n|;/).filter(function(x){return x.trim().length;}).length>=4 && /:/.test(body)){
@@ -73,7 +106,28 @@ function parseValue(raw){
   const unit = detectUnit(label, body);
 
   if(cleaned.length>=3){
-    return {type:"timeseries", label:label, values:cleaned.slice(0,8), unit:unit, context:textTokens.slice(-1)[0]||""};
+    // Try to infer year labels from ctx.name + ctx.desc + body — find a YYYY-YYYY range
+    const hayAll = (ctx.name||"")+" "+(ctx.desc||"")+" "+body;
+    const rangeM = hayAll.match(/(20\d{2})\s*[\-\u2013\u2014]\s*(20\d{2})/);
+    let series;
+    const vals = cleaned.slice(0,8);
+    if(rangeM){
+      const y1 = parseInt(rangeM[1]); const y2 = parseInt(rangeM[2]);
+      if(y2>=y1 && (y2-y1+1)===vals.length){
+        series = vals.map(function(v,i){return {year:y1+i, value:v};});
+      } else if(y2>=y1){
+        // Align to the end so latest value = y2
+        const start = y2 - vals.length + 1;
+        series = vals.map(function(v,i){return {year:start+i, value:v};});
+      }
+    }
+    if(!series){
+      // Fall back: assume series ends at current data year (2025)
+      const endY = 2025;
+      const start = endY - vals.length + 1;
+      series = vals.map(function(v,i){return {year:start+i, value:v};});
+    }
+    return finalizeTimeseries(label, series, unit, textTokens.slice(-1)[0]||"");
   }
   if(cleaned.length===2){
     const [a,b] = cleaned;
@@ -93,6 +147,67 @@ function parseValue(raw){
 }
 
 function looksNumeric(s){return /\d/.test(s);}
+
+// Build a fully-described timeseries with stats + AI insight
+function finalizeTimeseries(label, series, unit, context){
+  const values = series.map(function(p){return p.value;});
+  const years = series.map(function(p){return p.year;});
+  const last = values[values.length-1];
+  const first = values[0];
+  const prev = values.length>=2 ? values[values.length-2] : null;
+  const yoy = (prev!=null && prev!==0) ? ((last-prev)/Math.abs(prev))*100 : null;
+  const yoyAbs = (prev!=null) ? (last-prev) : null;
+  let cagr = null;
+  if(values.length>=3 && first>0 && last>0){
+    cagr = (Math.pow(last/first, 1/(values.length-1)) - 1) * 100;
+  }
+  const min = Math.min.apply(null, values);
+  const max = Math.max.apply(null, values);
+  const insight = buildInsight(values, cagr);
+  return {
+    type:"timeseries", label:label, series:series, values:values, years:years,
+    unit:unit, context:context,
+    last:last, first:first, prev:prev, yoy:yoy, yoyAbs:yoyAbs,
+    cagr:cagr, min:min, max:max, insight:insight,
+  };
+}
+
+function buildInsight(vals, cagr){
+  const n = vals.length;
+  if(n<2) return null;
+  let incCount=0, decCount=0;
+  for(let i=1;i<n;i++){
+    if(vals[i]>vals[i-1]) incCount++;
+    else if(vals[i]<vals[i-1]) decCount++;
+  }
+  const last = vals[n-1], first = vals[0], prev = vals[n-2];
+  const allInc = incCount===n-1;
+  const allDec = decCount===n-1;
+  // Recovery: declined first half, then growth
+  const half = Math.floor(n/2);
+  const declinedEarly = vals[half] < vals[0];
+  const grewLate = vals[n-1] > vals[half];
+
+  function fmt(x){return fmtNum(x);}
+  if(allInc && cagr!=null && cagr>5){
+    const forecast = last * Math.pow(1+cagr/100, 2);
+    return "✨ Барқарор ўсиш — "+n+" йилда "+cagr.toFixed(1)+"% йиллик ўртача суръат, тренд сақланса 2027 йилда ~"+fmt(forecast)+" га етади.";
+  }
+  if(allDec || (cagr!=null && cagr<-2)){
+    const pct = (prev!==0) ? Math.abs((last-prev)/prev*100) : 0;
+    return "🔻 Пасайиш тренди — охирги 2 йилда "+pct.toFixed(1)+"% га камайди, дарҳол чора кўриш зарур.";
+  }
+  if(declinedEarly && grewLate && last>=first*0.9){
+    return "🔄 Тикланиш — пасайишдан сўнг ўсиш бошланган, мониторинг кучайтирилсин.";
+  }
+  if(incCount>0 && decCount>0 && Math.abs(incCount-decCount)<=1){
+    return "↕ Нотурғун динамика — йиллар оралиғи кескин ўзгариб турибди, барқарорлаштириш керак.";
+  }
+  if(cagr!=null && cagr>=0 && cagr<=5){
+    return "⚠ Секин ўсиш — динамика заиф, қўшимча инвестиция талаб этилади.";
+  }
+  return "ℹ Кўрсаткич барқарор, қўшимча таҳлил зарур.";
+}
 
 function detectUnit(label, body){
   const hay = (label+" "+body).toLowerCase();
@@ -124,21 +239,22 @@ function renderValue(ind, canvasId){
       '<div class="ic-value-label">Ҳолат</div>'+
       '<div class="ic-value-text">Маълумот мавжуд эмас</div></div>';
   }
-  const p = parseValue(ind.value);
+  const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
 
   if(p.type==="timeseries"){
-    STATE.pending.push({id:canvasId, kind:"line", data:p.values});
-    const last = p.values[p.values.length-1];
-    const first = p.values[0];
-    const delta = first!==0 ? ((last-first)/Math.abs(first))*100 : null;
+    STATE.pending.push({id:canvasId, kind:"line", series:p.series});
+    const yoyPill = (p.yoy!=null) ?
+      ('<span class="metric-delta '+(p.yoy>=0?'up':'down')+'">'+(p.yoy>=0?'▲ +':'▼ ')+fmtNum(p.yoyAbs)+' ('+(p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%)</span>')
+      : '';
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">Динамика</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">Йиллик динамика</div>'+
       (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
-      '<div class="metric-row">'+
-        '<div class="metric-value-sm">'+fmtNum(last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+'</div>'+
-        (delta!=null?deltaHTML(delta):'')+
+      '<div class="trend-top">'+
+        '<div class="trend-num">'+fmtNum(p.last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+'</div>'+
+        yoyPill+
       '</div>'+
-      '<div class="value-chart-wrap"><canvas id="'+canvasId+'"></canvas></div>'+
+      '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
+      (p.insight?'<div class="trend-insight"><i class="bi bi-robot"></i><em>'+escapeHTML(p.insight)+'</em></div>':'')+
       '</div>';
   }
 
@@ -200,34 +316,53 @@ function flushPendingCharts(){
     if(STATE.charts[job.id]){try{STATE.charts[job.id].destroy();}catch(e){}}
     const ctx = el.getContext("2d");
     if(job.kind==="line"){
-      const grad = ctx.createLinearGradient(0,0,0,80);
-      grad.addColorStop(0,"rgba(6,160,171,.35)");
-      grad.addColorStop(1,"rgba(6,160,171,0)");
+      const grad = ctx.createLinearGradient(0,0,0,140);
+      grad.addColorStop(0,"rgba(0,126,136,.35)");
+      grad.addColorStop(1,"rgba(0,126,136,0)");
+      const series = job.series || [];
+      const labels = series.map(function(p){return p.year;});
+      const data = series.map(function(p){return p.value;});
+      const lastIdx = data.length-1;
+      const radii = data.map(function(_,i){return i===lastIdx?5:0;});
+      const pointBg = data.map(function(_,i){return i===lastIdx?"#C25E3C":"#005F68";});
+      const pointBd = data.map(function(_,i){return i===lastIdx?"#fff":"#005F68";});
       STATE.charts[job.id] = new Chart(ctx,{
         type:"line",
         data:{
-          labels:job.data.map(function(_,i){return i;}),
+          labels:labels,
           datasets:[{
-            data:job.data,
-            borderColor:"#06A0AB",
+            data:data,
+            borderColor:"#005F68",
             backgroundColor:grad,
-            borderWidth:2.2,
+            borderWidth:2.4,
             tension:.4,
             fill:true,
-            pointRadius:0,
-            pointHoverRadius:4,
-            pointHoverBackgroundColor:"#005F68",
+            pointRadius:radii,
+            pointHoverRadius:6,
+            pointBackgroundColor:pointBg,
+            pointBorderColor:pointBd,
+            pointBorderWidth:2,
           }],
         },
         options:{
           responsive:true,maintainAspectRatio:false,
+          layout:{padding:{top:6,right:6,left:6,bottom:0}},
           plugins:{legend:{display:false},tooltip:{
-            backgroundColor:"#102836",padding:8,
+            backgroundColor:"#102836",padding:10,
+            titleFont:{family:"Inter",size:11,weight:"700"},
+            bodyFont:{family:"Inter",size:13,weight:"700"},
             displayColors:false,
-            callbacks:{title:function(){return"";},label:function(c){return fmtNum(c.parsed.y);}},
+            callbacks:{
+              title:function(items){return items[0].label+" йил";},
+              label:function(c){return "  "+fmtNum(c.parsed.y);},
+            },
           }},
-          scales:{x:{display:false},y:{display:false}},
-          animation:{duration:600},
+          scales:{
+            x:{display:true,grid:{display:false},border:{display:false},
+               ticks:{font:{family:"Inter",size:10,weight:"600"},color:"#7a8a93",padding:4}},
+            y:{display:false,grid:{color:"rgba(0,126,136,.06)"},border:{display:false}},
+          },
+          animation:{duration:700},
         },
       });
     }
@@ -423,7 +558,6 @@ function renderCardsForSlide(n){
 
 function cardHTML(i,idx){
   const found = i.found;
-  const fileLine = i.file ? '<div style="margin-top:3px;opacity:.8"><strong>Файл:</strong> '+escapeHTML(i.file)+'</div>' : '';
   const cid = "vchart-"+STATE.district+"-"+i.slide+"-"+i.no;
   return '<div class="ind-card '+(found?'':'missing')+'" style="animation-delay:'+Math.min(idx*30,400)+'ms">'+
     '<div class="ic-head"><div class="ic-no">#'+i.no+'</div>'+
@@ -434,9 +568,6 @@ function cardHTML(i,idx){
     '<h3 class="ic-title">'+escapeHTML(i.name)+'</h3>'+
     '<p class="ic-desc">'+escapeHTML(i.desc||'')+'</p>'+
     renderValue(i,cid)+
-    '<div class="ic-src"><i class="bi bi-folder2-open"></i><div>'+
-    '<div><strong>Манба:</strong> '+escapeHTML(i.src||'—')+'</div>'+fileLine+
-    '</div></div>'+
     '</div>';
 }
 
