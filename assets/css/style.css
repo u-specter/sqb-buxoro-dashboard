@@ -53,6 +53,8 @@ body{
   color:#fff;box-shadow:0 8px 22px rgba(0,126,136,.5);
 }
 
+.year-pill{display:flex;align-items:center;gap:8px;color:#fff;background:linear-gradient(135deg,rgba(6,160,171,.18),rgba(0,126,136,.12));padding:10px 20px;border-radius:14px;font-size:15px;font-weight:800;letter-spacing:.06em;border:1px solid rgba(255,255,255,.18);white-space:nowrap;box-shadow:0 4px 14px rgba(0,126,136,.2)}
+.year-pill i{font-size:16px;color:var(--accent)}
 .search-wrap{position:relative}
 .search-wrap i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--navy);opacity:.7}
 .search-wrap input{
