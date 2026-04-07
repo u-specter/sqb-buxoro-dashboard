@@ -368,6 +368,27 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
+  // === Category breakdown — Neo-Brutalist Cards (Variant 1) ===
+  if(p.type==="category_breakdown"){
+    const total = p.categories.reduce(function(s,c){return s+(c.count||0);},0);
+    const cards = p.categories.map(function(c){
+      const pct = total>0 ? Math.round((c.count/total)*100) : 0;
+      return '<div class="nb-card" style="--c:'+c.color+'">'+
+        '<div class="nb-tag">'+c.count+' МФЙ · '+pct+'%</div>'+
+        '<div class="nb-ic"><i class="bi '+(c.icon||'bi-circle-fill')+'"></i></div>'+
+        '<div class="nb-num">'+c.count+'</div>'+
+        '<div class="nb-name">'+escapeHTML(c.name)+'</div>'+
+        '<div class="nb-desc">'+escapeHTML(c.desc||'')+'</div>'+
+      '</div>';
+    }).join('');
+    return '<div class="ic-value rich nb-wrap">'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'Типология')+'</div>'+
+      (p.subtitle?'<span class="val-tag">'+escapeHTML(p.subtitle)+'</span>':'')+'</div>'+
+      '<div class="nb-grid">'+cards+'</div>'+
+      '<div class="nb-total">ЖАМИ <b>'+total+'</b> МФЙ</div>'+
+      '</div>';
+  }
+
   // === ML прогноз — 5 секторли мульти-чизиқли (факт+прогноз) ===
   if(p.type==="multi_series_forecast"){
     STATE.pending.push({id:canvasId, kind:"forecast", years:p.years, sectors:p.sectors, factUntil:p.fact_until});
@@ -461,35 +482,113 @@ function flushPendingCharts(){
     if(!el) return;
     if(STATE.charts[job.id]){try{STATE.charts[job.id].destroy();}catch(e){}}
     const ctx = el.getContext("2d");
+    if(job.kind==="category_donut"){
+      STATE.charts[job.id] = new Chart(ctx, {
+        type:"doughnut",
+        data:{
+          labels: job.categories.map(function(c){return c.name;}),
+          datasets:[{
+            data: job.categories.map(function(c){return c.count;}),
+            backgroundColor: job.categories.map(function(c){return c.color;}),
+            borderColor: "rgba(11,22,40,0.8)",
+            borderWidth: 3,
+            hoverOffset: 18,
+            hoverBorderWidth: 0,
+          }]
+        },
+        options:{
+          responsive:true, maintainAspectRatio:false,
+          cutout:"68%",
+          plugins:{
+            legend:{display:false},
+            tooltip:{
+              backgroundColor:"rgba(11,22,40,0.95)",
+              borderColor:"rgba(255,255,255,0.1)",
+              borderWidth:1,
+              padding:12,
+              titleFont:{family:"Inter",size:13,weight:"700"},
+              bodyFont:{family:"Inter",size:12},
+              callbacks:{
+                label:function(c){
+                  const t = job.total||1;
+                  return c.parsed+" МФЙ ("+Math.round(c.parsed/t*100)+"%)";
+                }
+              }
+            }
+          },
+          animation:{animateRotate:true, duration:1100, easing:"easeOutQuart"}
+        }
+      });
+      return;
+    }
     if(job.kind==="line"){
       const grad = ctx.createLinearGradient(0,0,0,140);
       grad.addColorStop(0,"rgba(0,126,136,.35)");
       grad.addColorStop(1,"rgba(0,126,136,0)");
       const series = job.series || [];
-      const labels = series.map(function(p){return p.year;});
+      const labels = series.map(function(p){return String(p.year);});
       const data = series.map(function(p){return p.value;});
-      const lastIdx = data.length-1;
-      const radii = data.map(function(_,i){return i===lastIdx?5:0;});
-      const pointBg = data.map(function(_,i){return i===lastIdx?"#C25E3C":"#005F68";});
-      const pointBd = data.map(function(_,i){return i===lastIdx?"#fff":"#005F68";});
+      const n = data.length;
+      // Linear regression forecast (next 3 years) when ≥3 points
+      let forecastYears = [], forecastVals = [];
+      if(n>=3){
+        const xs = series.map(function(p){return p.year;});
+        const xMean = xs.reduce(function(a,b){return a+b;},0)/n;
+        const yMean = data.reduce(function(a,b){return a+b;},0)/n;
+        let num=0, den=0;
+        for(let i=0;i<n;i++){num+=(xs[i]-xMean)*(data[i]-yMean); den+=Math.pow(xs[i]-xMean,2);}
+        const slope = den===0?0:num/den;
+        const intercept = yMean - slope*xMean;
+        const lastY = xs[n-1];
+        for(let k=1;k<=3;k++){
+          const fy = lastY+k;
+          forecastYears.push(fy);
+          forecastVals.push(Math.max(0, slope*fy+intercept));
+        }
+      }
+      const allLabels = labels.concat(forecastYears.map(String));
+      // Actual dataset: real values, then nulls
+      const actualData = data.concat(forecastYears.map(function(){return null;}));
+      // Forecast dataset: nulls for actual (except last to bridge), then forecast values
+      const forecastData = data.map(function(_,i){return i===n-1?data[n-1]:null;}).concat(forecastVals);
+      const lastIdx = n-1;
+      const radii = actualData.map(function(_,i){return i===lastIdx?5:0;});
+      const pointBg = actualData.map(function(_,i){return i===lastIdx?"#C25E3C":"#005F68";});
+      const pointBd = actualData.map(function(_,i){return i===lastIdx?"#fff":"#005F68";});
+      const fcRadii = forecastData.map(function(_,i){return i>=n?4:0;});
+      const fcBg = forecastData.map(function(){return "#C25E3C";});
+      const datasets = [{
+        data:actualData,
+        borderColor:"#005F68",
+        backgroundColor:grad,
+        borderWidth:2.6,
+        tension:.4,
+        fill:true,
+        pointRadius:radii,
+        pointHoverRadius:6,
+        pointBackgroundColor:pointBg,
+        pointBorderColor:pointBd,
+        pointBorderWidth:2,
+      }];
+      if(forecastVals.length){
+        datasets.push({
+          data:forecastData,
+          borderColor:"#C25E3C",
+          backgroundColor:"rgba(194,94,60,0)",
+          borderWidth:2.4,
+          borderDash:[6,5],
+          tension:.4,
+          fill:false,
+          pointRadius:fcRadii,
+          pointHoverRadius:6,
+          pointBackgroundColor:fcBg,
+          pointBorderColor:"#fff",
+          pointBorderWidth:2,
+        });
+      }
       STATE.charts[job.id] = new Chart(ctx,{
         type:"line",
-        data:{
-          labels:labels,
-          datasets:[{
-            data:data,
-            borderColor:"#005F68",
-            backgroundColor:grad,
-            borderWidth:2.4,
-            tension:.4,
-            fill:true,
-            pointRadius:radii,
-            pointHoverRadius:6,
-            pointBackgroundColor:pointBg,
-            pointBorderColor:pointBd,
-            pointBorderWidth:2,
-          }],
-        },
+        data:{labels:allLabels, datasets:datasets},
         options:{
           responsive:true,maintainAspectRatio:false,
           layout:{padding:{top:6,right:6,left:6,bottom:0}},
@@ -500,7 +599,10 @@ function flushPendingCharts(){
             displayColors:false,
             callbacks:{
               title:function(items){return items[0].label+" йил";},
-              label:function(c){return "  "+fmtNum(c.parsed.y);},
+              label:function(c){
+                const isFc = c.datasetIndex===1;
+                return "  "+fmtNum(c.parsed.y)+(isFc?" (прогноз)":"");
+              },
             },
           }},
           scales:{
