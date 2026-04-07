@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQB AI Маслаҳатчи — Бизнес маслаҳатчи</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+:root{
+  --ink:#0b1220;
+  --body:#3d4d63;
+  --muted:#647896;
+  --surface:#ffffff;
+  --surface-2:#f4f6fa;
+  --surface-3:#e8ecf4;
+  --line:#dce3ef;
+  --line-soft:#eef2f8;
+  --primary:#1e3a5f;
+  --primary-mid:#2d5a8c;
+  --primary-bright:#3b82c4;
+  --accent:#0d9488;
+  --accent-bright:#14b8a6;
+  --accent-soft:#ccfbf1;
+  --warn:#d97706;
+  --warn-soft:#fff7ed;
+  --ok:#059669;
+  --ok-soft:#d1fae5;
+  --danger:#dc2626;
+  --danger-soft:#fef2f2;
+  --focus-ring:rgba(45,90,140,.35);
+  --radius-xl:24px;
+  --radius:14px;
+  --radius-sm:10px;
+  --shadow-sm:0 1px 2px rgba(11,18,32,.04);
+  --shadow-md:0 4px 20px rgba(11,18,32,.07);
+  --shadow-lg:0 24px 48px rgba(11,18,32,.1);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --font:'Source Sans 3',system-ui,'Segoe UI',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --legacy-blue:var(--primary-mid);
+  --blue:var(--primary-mid);
+  --blue-bright:var(--primary-bright);
+  --blue-dk:var(--primary);
+  --blue-lt:#e8f0fa;
+  --blue-border:#b8cce3;
+  --blue-soft:#d6e6f7;
+  --blue-hero-top:#f6f9fc;
+  --blue-hero-mid:#eef4fb;
+  --green:var(--ok);
+  --green-bright:var(--accent-bright);
+  --green-dk:#047857;
+  --green-lt:var(--ok-soft);
+  --green-border:#6ee7b7;
+  --orange:var(--warn);
+  --orange-lt:var(--warn-soft);
+  --dark:var(--ink);
+  --bg:var(--surface-2);
+  --card:var(--surface);
+  --border:var(--line);
+  --border-lt:var(--line-soft);
+  --focus:#60a5fa;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--surface-2);color:var(--body);min-height:100vh;line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"kern" 1}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(900px 500px at 12% -8%,rgba(45,90,140,.09),transparent),radial-gradient(700px 400px at 100% 0%,rgba(13,148,136,.06),transparent);z-index:0}
+.app-wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+.nav-top{background:rgba(255,255,255,.82);border-bottom:1px solid var(--line);padding:12px 0;position:sticky;top:0;z-index:200;backdrop-filter:saturate(1.2) blur(16px)}
+.nav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.nav-logo{width:44px;height:44px;background:linear-gradient(145deg,var(--primary) 0%,var(--primary-bright) 100%);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:10px;letter-spacing:.04em;box-shadow:0 10px 28px rgba(30,58,95,.28)}
+.nav-text{display:flex;flex-direction:column;gap:2px}
+.nav-title{font-weight:700;font-size:17px;letter-spacing:-.02em;color:var(--ink);line-height:1.2}
+.nav-sub{font-size:12px;color:var(--muted);font-weight:500}
+.nav-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.trust-pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--muted);padding:6px 10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line)}
+.trust-pill svg{width:14px;height:14px;opacity:.75}
+.nav-badge{background:var(--accent-soft);color:#0f766e;font-size:11px;padding:7px 12px;border-radius:999px;font-weight:700;border:1px solid rgba(13,148,136,.25)}
+.flow-bar-wrap{max-width:960px;margin:0 auto;padding:12px 24px 0}
+.flow-bar{display:flex;align-items:center;gap:12px}
+.flow-bar-track{flex:1;height:4px;background:var(--line-soft);border-radius:999px;overflow:hidden}
+.flow-bar-fill{height:100%;width:25%;border-radius:999px;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .5s var(--ease-out)}
+.flow-bar-pct{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--muted);min-width:38px;text-align:right}
+.steps{display:flex;gap:10px;max-width:960px;margin:16px auto 0;padding:0 24px 8px;overflow-x:auto;align-items:stretch;scrollbar-width:thin}
+.steps::-webkit-scrollbar{height:4px}
+.step{flex:1;min-width:108px;text-align:left;padding:14px 14px 12px;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:border-color .2s,background .2s,transform .2s,box-shadow .2s;background:var(--surface);position:relative}
+.step::after{content:'';position:absolute;left:12px;right:12px;bottom:8px;height:2px;border-radius:2px;background:transparent;transition:background .25s}
+.step.active{color:var(--ink);border-color:var(--primary-bright);background:linear-gradient(180deg,#fff,var(--blue-lt));box-shadow:var(--shadow-md)}
+.step.active::after{background:linear-gradient(90deg,var(--primary-bright),var(--accent))}
+.step.done{color:var(--green-dk);border-color:rgba(5,150,105,.35);background:var(--ok-soft)}
+.step.done::after{background:var(--ok)}
+.step.disabled{opacity:.42;cursor:not-allowed;pointer-events:none}
+.step:not(.disabled):not(.active):hover{border-color:var(--line);background:var(--surface-2);transform:translateY(-1px)}
+.step-num{display:inline-flex;width:22px;height:22px;border-radius:8px;align-items:center;justify-content:center;font-size:10px;margin-right:8px;background:var(--surface-3);color:var(--muted);font-weight:800;vertical-align:middle}
+.step.active .step-num{background:var(--primary);color:#fff}
+.step.done .step-num{background:var(--ok);color:#fff}
+.main-shell{flex:1;padding-bottom:64px}
+.screen{display:none;max-width:960px;margin:0 auto;padding:32px 24px 48px;animation:screenIn .4s var(--ease-out) both}
+.screen.active{display:block}
+@keyframes screenIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.step-kicker{display:inline-block;font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-bright);margin-bottom:10px;padding:4px 10px;border-radius:999px;background:var(--blue-lt);border:1px solid var(--blue-border)}
+.screen-title{font-size:clamp(24px,3.6vw,32px);font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.02em;line-height:1.2}
+.screen-desc{font-size:15px;color:var(--muted);margin-bottom:32px;max-width:52ch;line-height:1.6}
+.card-s{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);padding:28px 28px 26px;box-shadow:var(--shadow-sm);margin-bottom:20px;transition:box-shadow .25s}
+.card-s:hover{box-shadow:var(--shadow-md)}
+.card-s h4{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:-.01em;text-transform:uppercase;font-size:12px;letter-spacing:.08em;color:var(--primary)}
+.card-s h4::before{content:'';width:3px;height:14px;background:linear-gradient(180deg,var(--accent),var(--primary-bright));border-radius:3px}
+.form-grid{display:grid;gap:20px 22px}
+.form-grid-2{grid-template-columns:repeat(2,1fr)}
+.field{display:flex;flex-direction:column;gap:8px}
+.label-s{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.hint-s{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.45}
+.profile-chip{display:inline-block;margin-top:12px;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:800;background:var(--blue-lt);color:var(--primary);border:2px solid var(--blue-border);letter-spacing:.01em}
+.input-s{width:100%;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;font-size:15px;font-family:inherit;transition:border-color .2s,box-shadow .2s;background:var(--surface-2);color:var(--ink);outline:none;min-height:50px}
+.input-s:hover{border-color:#c5d0e2}
+.input-s:focus{border-color:var(--primary-bright);box-shadow:0 0 0 4px var(--focus-ring);background:var(--surface)}
+select.input-s{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23647896' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s var(--ease-out);user-select:none;color:var(--body);background:var(--surface);-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.chip:hover{border-color:var(--primary-bright);color:var(--ink);background:var(--surface-2)}
+.chip:active{transform:scale(.97)}
+.chip.sel{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(30,58,95,.22)}
+.btn-main{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;border:none;border-radius:var(--radius-sm);padding:15px 28px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 28px rgba(30,58,95,.25)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(30,58,95,.3)}
+.btn-main:active{transform:translateY(0)}
+.btn-ghost{background:var(--surface);color:var(--primary);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 22px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s,border-color .2s}
+.btn-ghost:hover{background:var(--surface-2);border-color:var(--line)}
+.btn-green{background:linear-gradient(135deg,var(--accent) 0%,#0f766e 100%);color:#fff;border:none;border-radius:var(--radius-sm);padding:15px 28px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 28px rgba(13,148,136,.28)}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(13,148,136,.32)}
+.btn-green:active{transform:translateY(0)}
+.btn-row{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:14px;flex-wrap:wrap}
+#map{height:260px;border-radius:var(--radius-xl);border:1px solid var(--line)}
+.loader-wrap{text-align:center;padding:40px 20px 56px}
+.analysis-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);overflow:hidden;max-width:640px;margin:0 auto}
+.analysis-hero{background:linear-gradient(165deg,var(--surface) 0%,var(--blue-lt) 50%,var(--surface-2) 100%);padding:36px 28px 24px;text-align:center;border-bottom:1px solid var(--line)}
+.analysis-spinner{width:56px;height:56px;border-width:3px;margin:0 auto 20px}
+.analysis-hero .screen-title{margin-bottom:8px;font-size:24px;font-weight:700;letter-spacing:-.02em}
+.analysis-hero .screen-desc{margin:0 auto 22px;max-width:44ch}
+.analysis-progress{height:8px;background:var(--line-soft);border-radius:999px;overflow:hidden;max-width:400px;margin:0 auto 12px}
+.analysis-progress-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--primary-bright),var(--accent));transition:width .45s var(--ease-out)}
+.analysis-phase{font-size:13px;font-weight:600;color:var(--muted);margin:0;font-family:var(--font-mono)}
+.mini-stepper{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;padding:24px 14px 20px;background:linear-gradient(180deg,var(--surface-2) 0%,var(--surface) 100%);border-top:1px solid var(--line);position:relative;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.mini-stepper::before{content:'';position:absolute;left:calc(8% + 18px);right:calc(8% + 18px);top:39px;height:2px;background:var(--line-soft);border-radius:2px;pointer-events:none}
+.mini-step{flex:1;min-width:88px;max-width:140px;text-align:center;position:relative;z-index:1;padding:0 2px}
+.mini-ico{width:36px;height:36px;border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:var(--font-mono);background:var(--surface);color:var(--muted);border:2px solid var(--line);transition:transform .2s var(--ease-out),background .25s,border-color .25s,box-shadow .25s}
+.mini-lbl{font-size:11px;font-weight:600;color:var(--muted);line-height:1.3;max-width:11em;margin:0 auto;hyphens:auto}
+.mini-step.done .mini-ico{background:var(--ok);color:#fff;border-color:var(--ok);box-shadow:0 4px 12px rgba(5,150,105,.25)}
+.mini-step.done .mini-lbl{color:var(--green-dk);font-weight:600}
+.mini-step.current .mini-ico{background:linear-gradient(145deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(30,58,95,.28);transform:scale(1.05)}
+.mini-step.current .mini-lbl{color:var(--primary);font-weight:700}
+.mini-step.current.done .mini-ico{transform:none}
+.analysis-actions{display:flex;justify-content:center;padding:8px 20px 24px;background:var(--surface)}
+.analysis-actions .btn-ghost{min-height:48px}
+.spinner{width:48px;height:48px;border:3px solid var(--line);border-top-color:var(--primary-bright);border-radius:50%;animation:spin .75s linear infinite;margin:0 auto 20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.result-snapshot{background:var(--surface);border-radius:var(--radius-xl);border:1px solid var(--line);box-shadow:var(--shadow-lg);margin-bottom:32px;overflow:hidden;position:relative}
+.result-snapshot::before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-bright),var(--accent));pointer-events:none}
+.result-snapshot-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:18px 24px 14px;background:linear-gradient(180deg,var(--blue-lt) 0%,var(--surface) 100%);border-bottom:1px solid var(--line)}
+.result-snapshot-badge{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);padding:8px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(30,58,95,.2)}
+.result-snapshot-hint{font-size:13px;color:var(--muted);font-weight:600;max-width:36ch;line-height:1.4}
+.result-snapshot-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:22px}
+.dash{display:grid;grid-template-columns:minmax(200px,260px) 1fr;gap:22px;align-items:stretch}
+.score-card{background:linear-gradient(165deg,var(--surface) 0%,var(--surface-2) 100%);border:2px solid var(--blue-border);border-radius:var(--radius-xl);padding:24px 20px 22px;text-align:center;box-shadow:var(--shadow-md);position:relative}
+.score-card-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:12px;opacity:.9}
+.score-ring{width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 16px;border:7px solid;font-family:var(--font-mono);box-shadow:inset 0 2px 12px rgba(11,18,32,.04)}
+.score-ring.high{border-color:var(--ok);color:var(--ok);background:var(--ok-soft)}
+.score-ring.mid{border-color:var(--warn);color:var(--warn);background:var(--warn-soft)}
+.score-ring.low{border-color:var(--danger);color:var(--danger);background:var(--danger-soft)}
+.score-num{font-size:36px;font-weight:700;line-height:1;font-family:var(--font-mono)}
+.score-lbl{font-size:11px;font-weight:700;opacity:.8}
+.score-txt{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.015em}
+.score-desc-t{font-size:13px;color:var(--body);line-height:1.5;margin-top:4px}
+.score-expl{font-size:13px;color:var(--primary);font-weight:700;margin-top:12px;padding:10px 12px;background:var(--blue-lt);border-radius:var(--radius-sm);border:1px solid var(--blue-border)}
+.score-scale{height:8px;background:var(--line-soft);border-radius:999px;overflow:hidden;margin-top:12px}
+.score-fill{height:100%;width:0;background:linear-gradient(90deg,var(--danger) 0%,var(--warn) 50%,var(--ok) 100%);transition:width .45s var(--ease-out)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.metrics-caption{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.m-box{border-radius:var(--radius);padding:18px 16px;text-align:left;color:#fff;box-shadow:var(--shadow-md);min-height:128px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.12)}
+.m-box .m-lbl{font-size:12px;opacity:.92;font-weight:700;line-height:1.35}
+.m-box.bl{background:linear-gradient(145deg,var(--primary) 0%,var(--primary-mid) 100%)}
+.m-box.gr{background:linear-gradient(145deg,var(--accent) 0%,#0f766e 100%)}
+.m-box.or{background:linear-gradient(145deg,#ea580c 0%,var(--warn) 100%)}
+.m-box.dk{background:linear-gradient(145deg,#1e293b 0%,var(--ink) 100%)}
+.m-val{font-size:clamp(26px,4vw,36px);font-weight:800;line-height:1.1;letter-spacing:-.03em;font-family:var(--font-mono)}
+.m-lbl{font-size:13px;opacity:.95;font-weight:600;line-height:1.35}
+.biz-card{background:var(--surface);border:2px solid var(--blue-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);margin-bottom:24px}
+.biz-head{background:linear-gradient(180deg,var(--surface),var(--blue-lt));padding:22px 26px;border-bottom:1px solid var(--line)}
+.biz-head-feature{background:linear-gradient(135deg,#e8f2fb 0%,#f4f9fc 45%,#ffffff 100%);border-bottom:2px solid var(--blue-border);padding:0;position:relative}
+.biz-head-feature::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--primary-bright),var(--accent));border-radius:var(--radius-xl) 0 0 0}
+.biz-head-inner{display:flex;gap:20px;align-items:flex-start;padding:26px 28px 26px 32px}
+.biz-head-icon{flex-shrink:0;width:58px;height:58px;border-radius:18px;background:var(--surface);border:2px solid var(--blue-border);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);color:var(--primary)}
+.biz-head-text{flex:1;min-width:0}
+.biz-reco-pill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);background:var(--surface);border:2px solid var(--blue-border);padding:6px 12px;border-radius:999px;margin-bottom:12px}
+.biz-title{font-size:clamp(20px,2.8vw,28px);font-weight:700;color:var(--ink);line-height:1.25;margin:0;letter-spacing:-.02em}
+.biz-lead{font-size:16px;color:var(--body);line-height:1.65;margin:14px 0 0;font-weight:500}
+.biz-loc-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.biz-loc-pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--primary);background:var(--surface);padding:10px 16px;border-radius:12px;border:2px solid var(--blue-border);box-shadow:var(--shadow-sm)}
+.biz-loc-pill svg{flex-shrink:0;opacity:.85}
+.biz-body{padding:26px 28px}
+.insight-section{margin-bottom:4px}
+.insight-section-head{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.insight-section-head span{color:var(--ink)}
+.insight-section-head::before{content:'';width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--primary-bright));flex-shrink:0}
+.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.insight-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:var(--surface)}
+.insight-card.good{background:var(--ok-soft);border-color:rgba(5,150,105,.25)}
+.insight-card.risk{background:var(--danger-soft);border-color:#fecaca}
+.insight-title{font-size:12px;font-weight:800;margin-bottom:10px;letter-spacing:.02em}
+.insight-title.good{color:var(--ok)}
+.insight-title.risk{color:#b91c1c}
+.insight-list{list-style:none;padding:0;margin:0}
+.insight-item{font-size:14px;line-height:1.55;color:var(--body);padding:9px 0;border-bottom:1px dashed rgba(11,18,32,.1)}
+.insight-item:last-child{border-bottom:none}
+.insight-tip{margin-top:12px;font-size:12px;color:var(--muted);font-weight:600}
+.steps-list{padding:24px 26px;border-top:1px solid var(--line);background:var(--surface-2)}
+.credit-box{margin:0 26px 22px;padding:16px 18px;background:var(--blue-lt);border-radius:var(--radius);font-size:13px;border:1px solid var(--blue-border)}
+.alt-card{border:1px solid var(--line);background:var(--surface);padding:18px;border-radius:var(--radius);margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.alt-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.alt-name{font-size:14px;font-weight:800;color:var(--ink)}
+.alt-invest{font-size:11px;font-weight:700;color:var(--warn);background:var(--warn-soft);padding:6px 10px;border-radius:999px;white-space:nowrap}
+.alt-desc{font-size:13px;color:var(--muted);margin:8px 0 0}
+.result-note{margin:0 26px 16px;padding:14px 16px;border-radius:var(--radius);background:var(--blue-lt);color:var(--primary);font-size:13px;font-weight:600;border:1px solid var(--blue-border)}
+.alt-section{background:var(--blue-lt);border:1px solid var(--blue-border);border-radius:var(--radius-xl);padding:20px;margin-top:14px}
+.alt-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.alt-title h4{margin:0;font-size:17px;font-weight:800;color:var(--primary)}
+.alt-pill{font-size:11px;font-weight:700;color:var(--primary);background:var(--surface);border:1px solid var(--blue-border);padding:5px 10px;border-radius:999px}
+.bank-solutions{margin:0 26px 22px}
+.bank-solutions h5{margin:0 0 12px;font-size:13px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.06em}
+.bank-main{display:grid;grid-template-columns:130px 1fr;gap:14px;border:1px solid var(--blue-border);background:linear-gradient(135deg,var(--surface) 0%,var(--blue-lt) 100%);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow-sm);margin-bottom:12px}
+.bank-main-photo{width:100%;height:96px;object-fit:cover;border-radius:var(--radius-sm);background:var(--surface-3)}
+.bank-main-badge{display:inline-block;font-size:10px;font-weight:800;color:var(--primary);background:var(--surface);border:1px solid var(--blue-border);padding:5px 10px;border-radius:999px;margin-bottom:8px}
+.bank-main-name{font-size:15px;font-weight:800;color:var(--primary);margin-bottom:4px}
+.bank-main-desc{font-size:13px;color:var(--body)}
+.bank-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bank-card{display:grid;grid-template-columns:130px 1fr;gap:14px;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow-sm)}
+.bank-sub-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);padding:5px 10px;border-radius:999px;margin-bottom:8px}
+.bank-name{font-size:15px;font-weight:800;color:var(--primary);margin-bottom:4px}
+.bank-desc{font-size:13px;color:var(--body);line-height:1.5}
+.biz-head p,.alt-desc,.bank-desc{line-height:1.55}
+.modal-s{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(11,18,32,.5);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.modal-s.show{display:flex}
+.modal-box{background:var(--surface);border-radius:var(--radius-xl);padding:40px 36px;max-width:420px;width:92%;text-align:center;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+button:focus-visible,.input-s:focus-visible,.chip:focus-visible,.step:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+button:disabled{opacity:.65;cursor:not-allowed;transform:none !important;box-shadow:none !important}
+@media(max-width:640px){
+  .nav-inner{padding:0 16px}
+  .nav-title{font-size:15px}
+  .trust-pill{display:none}
+  .flow-bar-wrap{padding:10px 16px 0}
+  .steps{gap:8px;margin-top:12px;padding:0 16px 6px}
+  .step{min-width:100px;padding:12px 10px;font-size:11px}
+  .step-num{width:18px;height:18px;font-size:9px;margin-right:6px}
+  .screen{padding:22px 16px 40px}
+  .screen-title{font-size:24px}
+  .screen-desc{font-size:14px;margin-bottom:24px}
+  .card-s{padding:20px 18px}
+  .form-grid-2{grid-template-columns:1fr}
+  .chip{padding:11px 16px;font-size:12px;min-height:46px;display:inline-flex;align-items:center}
+  .btn-main,.btn-green{width:100%;justify-content:center;padding:16px}
+  .btn-ghost{width:100%;margin-bottom:8px}
+  .btn-row{flex-direction:column-reverse;gap:10px}
+  .dash{grid-template-columns:1fr}
+  .result-snapshot-head{flex-direction:column;align-items:flex-start;padding:16px 18px 12px}
+  .result-snapshot-body{padding:18px 16px 22px}
+  .biz-head-inner{flex-direction:column;padding:22px 20px 22px 24px}
+  .biz-head-icon{width:52px;height:52px}
+  .insight-grid{grid-template-columns:1fr}
+  #map{height:200px}
+  .m-val{font-size:28px}
+  .metrics{gap:10px}
+  .bank-main,.bank-list,.bank-card{grid-template-columns:1fr}
+  .bank-main-photo{height:120px}
+  .form-grid-2{grid-template-columns:1fr !important}
+  .mini-stepper{padding:18px 10px 16px;gap:4px}
+  .mini-stepper::before{left:12px;right:12px;top:36px}
+  .mini-step{min-width:76px;max-width:none;flex:1 1 26%}
+  .mini-ico{width:32px;height:32px;font-size:11px}
+  .mini-lbl{font-size:10px}
+  .analysis-hero{padding:28px 18px 18px}
+  .analysis-actions .btn-ghost{width:100%;max-width:100%}
+}
+@media(min-width:641px) and (max-width:900px){
+  .screen,.nav-inner,.steps,.flow-bar-wrap{max-width:880px}
+  .dash{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .screen{animation:none}
+  .spinner{animation-duration:1.2s}
+}
+/* ── Scoring breakdown ── */
+.sub-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.sub-score-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;text-align:center;box-shadow:var(--shadow-sm)}
+.sub-score-label{font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.sub-score-bar-wrap{height:8px;background:var(--line-soft);border-radius:999px;overflow:hidden;margin-bottom:6px}
+.sub-score-bar{height:100%;border-radius:999px;transition:width .6s var(--ease-out)}
+.sub-score-bar.geo{background:linear-gradient(90deg,#0ea5e9,#06b6d4)}
+.sub-score-bar.prof{background:linear-gradient(90deg,var(--primary),var(--primary-bright))}
+.sub-score-bar.ready{background:linear-gradient(90deg,var(--accent),var(--ok))}
+.sub-score-val{font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--ink)}
+.sub-score-note{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.3}
+/* ── Geo card ── */
+.geo-card{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:1.5px solid #7dd3fc;border-radius:var(--radius-xl);padding:20px 22px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.geo-pin{flex-shrink:0;width:48px;height:48px;border-radius:14px;background:linear-gradient(145deg,#0284c7,#0369a1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 6px 16px rgba(3,105,161,.3)}
+.geo-body{flex:1}
+.geo-title{font-size:15px;font-weight:800;color:#0c4a6e;margin-bottom:4px}
+.geo-note{font-size:13px;color:#0369a1;line-height:1.55}
+.geo-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.geo-tag{font-size:11px;font-weight:700;background:#fff;color:#0369a1;border:1px solid #7dd3fc;padding:4px 10px;border-radius:999px}
+/* ── Zero-budget path ── */
+.zero-budget-card{background:linear-gradient(135deg,#fefce8,#fef9c3);border:1.5px solid #fde047;border-radius:var(--radius-xl);padding:20px 22px;margin-bottom:16px}
+.zero-budget-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.zero-budget-icon{font-size:30px;line-height:1}
+.zero-budget-title{font-size:16px;font-weight:800;color:#713f12}
+.zero-budget-sub{font-size:12px;color:#92400e;margin-top:2px}
+.zero-budget-note{font-size:13px;color:#78350f;line-height:1.6;margin-bottom:14px;padding:12px 14px;background:rgba(255,255,255,.6);border-radius:var(--radius-sm);border:1px solid #fde047}
+.zero-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.zero-step{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:rgba(255,255,255,.7);border-radius:var(--radius-sm);border:1px solid #fde047}
+.zero-step-num{flex-shrink:0;width:24px;height:24px;border-radius:8px;background:#ca8a04;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono)}
+.zero-step-txt{font-size:13px;color:#78350f;line-height:1.5;font-weight:600}
+/* ── Biz card redesign ── */
+.biz-geo-fit{margin:14px 0 0;padding:12px 14px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:var(--radius-sm);border:1px solid #86efac;font-size:13px;color:#166534;font-weight:600;display:flex;align-items:flex-start;gap:8px}
+.biz-geo-fit::before{content:'📍';flex-shrink:0}
+/* ── Steps redesign ── */
+.steps-ol{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.steps-ol li{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm)}
+.steps-ol .snum{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:linear-gradient(145deg,var(--primary),var(--primary-mid));color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono)}
+.steps-ol .stxt{font-size:13px;color:var(--body);line-height:1.5;font-weight:500}
+@media(max-width:640px){
+  .sub-scores{grid-template-columns:1fr}
+  .geo-card{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="app-wrap">
+<nav class="nav-top"><div class="nav-inner"><a class="nav-brand" href="#"><div class="nav-logo">SQB</div><div class="nav-text"><div class="nav-title">SQB AI Маслаҳатчи</div><div class="nav-sub">Бизнес маслаҳатчи</div></div></a><div class="nav-meta"><span class="trust-pill" title="Маълумотлар шифрланади"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Хавфсиз</span><span class="nav-badge" id="apiStatus">API тайёр</span></div></div></nav>
+<div class="flow-bar-wrap"><div class="flow-bar"><div class="flow-bar-track"><div class="flow-bar-fill" id="flowProgressFill"></div></div><span class="flow-bar-pct" id="flowProgressPct">25%</span></div></div>
+<div class="steps" id="stepNav"><div class="step active" data-s="1"><span class="step-num">1</span>Профил</div><div class="step" data-s="2"><span class="step-num">2</span>Молия</div><div class="step" data-s="3"><span class="step-num">3</span>Таҳлил</div><div class="step" data-s="4"><span class="step-num">4</span>Натижа</div></div>
+<main class="main-shell">
+<div class="screen active" id="s1"><span class="step-kicker">Қадам 1 / 4</span><h2 class="screen-title">Сизни тезда бахолаймиз</h2><p class="screen-desc">1-саҳифада профил ва ҳудудни танлайсиз, кейин мос молия саволлари очилади</p><div class="card-s"><h4>Асосий профил</h4><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="userName">Исмингиз</label><input class="input-s" id="userName" placeholder="Алишер" autocomplete="given-name"></div><div class="field"><label class="label-s" for="ageRange">Ёш диапазони</label><select class="input-s" id="ageRange"><option value="">Танланг</option><option value="18-24">18-24</option><option value="25-34">25-34</option><option value="35-49">35-49</option><option value="50+">50+</option></select><div class="hint-s">Нега: саволлар мураккаблигини мослаш учун.</div></div><div class="field"><label class="label-s" for="eduLevel">Олий маълумотлисизми?</label><select class="input-s" id="eduLevel"><option value="">Танланг</option><option value="yes">Ҳа</option><option value="no">Йўқ</option></select><div class="hint-s">Нега: тушунтириш услубини мослаштириш учун.</div></div><div class="field"><label class="label-s" for="expLevel">Иш/тажриба ҳолати</label><select class="input-s" id="expLevel"><option value="">Танланг</option><option value="none">Тажриба йўқ</option><option value="low">1 йилдан кам</option><option value="mid">1-3 йил</option><option value="high">3+ йил</option></select><div class="hint-s">Нега: сизга мос соҳани очиш учун.</div></div><div class="field"><label class="label-s" for="budgetRange">Тахминий бюджет</label><select class="input-s" id="budgetRange"><option value="">Танланг</option><option value="0-20">0-20 млн</option><option value="20-50">20-50 млн</option><option value="50-100">50-100 млн</option><option value="100-300">100-300 млн</option><option value="300+">300+ млн</option></select><div class="hint-s">Нега: реал молиявий тавсия бериш учун.</div></div><div class="field"><label class="label-s" for="userDistrict">Ҳудуд</label><select class="input-s" id="userDistrict"><option value="">Танланг</option><option>Шофиркон</option><option>Ғиждувон</option></select><div class="hint-s">Фақат 2 та ҳудуд: Шофиркон ва Ғиждувон.</div></div><div class="field"><label class="label-s" for="userRegion">Вилоят</label><select class="input-s" id="userRegion"><option>Бухоро вилояти</option></select></div></div><div id="profileBadge" class="profile-chip" style="display:none"></div></div><div class="btn-row" style="justify-content:flex-end"><button type="button" class="btn-main" onclick="handleSegmentationNext()">Кейинги қадам</button></div></div>
+<div class="screen" id="s2"><span class="step-kicker">Қадам 2 / 4</span><h2 class="screen-title">Молия саволлари</h2><p class="screen-desc" id="financeDesc">Сизга мос соҳа бўйича қисқа саволлар.</p><div class="card-s" id="beginnerFinance" style="display:none"><h4>🌱 Бошланғич</h4><p class="hint-s" style="margin:0">Молия саволлари йўқ — фақат пастда <strong>бизнес йўналиши</strong>ни танланг.</p></div><div class="card-s" id="intermediateFinance" style="display:none"><h4>📈 Ўсувчи — саволлар</h4><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="iOwnFunds">Ўз маблағ диапазони</label><select class="input-s" id="iOwnFunds"><option value="0-30">0-30 млн</option><option value="30-80">30-80 млн</option><option value="80-150">80-150 млн</option><option value="150+">150+ млн</option></select></div><div class="field"><label class="label-s" for="iIncome">Ойлик тушум</label><select class="input-s" id="iIncome"><option value="no">Йўқ</option><option value="0-10">0-10 млн</option><option value="10-25">10-25 млн</option><option value="25-50">25-50 млн</option><option value="50+">50+ млн</option></select><div class="hint-s">Нега: ойлик оқимни баҳолаш учун.</div></div><div class="field"><label class="label-s" for="iExpense">Ойлик харажат</label><select class="input-s" id="iExpense"><option value="0-5">0-5 млн</option><option value="5-15">5-15 млн</option><option value="15-30">15-30 млн</option><option value="30+">30+ млн</option></select></div><div class="field"><label class="label-s" for="iYatt">ЯТТ очасизми?</label><select class="input-s" id="iYatt"><option value="yes">Ҳа</option><option value="no">Йўқ</option></select><div class="hint-s">Якка тадбиркор (ЯТТ) шаклида иш бошлаш режаси.</div></div><div class="field"><label class="label-s" for="iCollateral">Гаров</label><select class="input-s" id="iCollateral"><option>Уй / хонадон</option><option>Ер участка</option><option>Автомобил</option><option>Тижорат мулки</option><option>Йўқ</option></select></div></div></div><div class="card-s" id="advancedFinance" style="display:none"><h4>💰 Капитал — чуқур саволлар</h4><p class="hint-s" style="margin:0 0 12px">Техник сўзлар ўрнида оддий тилда сўраймиз.</p><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="aCapex">Бизнесни бошлаш учун биринчи бор қанча сарфлайсиз?</label><select class="input-s" id="aCapex"><option value="100-300">100-300 млн (ускуна, жиҳоз, ремонт)</option><option value="300-700">300-700 млн</option><option value="700-1000">700 млн — 1 млрд</option><option value="1000+">1 млрд+</option></select><div class="hint-s">Бу — бошланғич йирик харажат (Капекс дегани шу).</div></div><div class="field"><label class="label-s" for="aOpex">Ойлик иш юритишга қанча кетади?</label><select class="input-s" id="aOpex"><option value="10-30">10-30 млн (иш ҳақи, хом-ашё, коммунал…)</option><option value="30-70">30-70 млн</option><option value="70-150">70-150 млн</option><option value="150+">150+ млн</option></select><div class="hint-s">Бу — ойлик доимий харажат (Опекс дегани шу).</div></div><div class="field"><label class="label-s" for="aLiquidity">Қийин ойда чиқимларни қанча ой олдиндан қоплай оласиз?</label><select class="input-s" id="aLiquidity"><option value="lt1">1 ойдан кам</option><option value="1-3">1-3 ой</option><option value="3-6">3-6 ой</option><option value="6+">6+ ой</option></select><div class="hint-s">Запас пул ёки «подушка» — қанча вақтга етгани.</div></div><div class="field"><label class="label-s" for="aWorst">Агар ой ташвишли бўлса, бизнесда пул қандай?</label><select class="input-s" id="aWorst"><option>Камайиб кетади</option><option>Деярли ўзгармайди</option><option>Оз-оздан ўсади</option><option>Яхши ўсади</option></select><div class="hint-s">Энг ёмон сценарийга яқин баҳо.</div></div><div class="field"><label class="label-s" for="aDscr">Кредит бўлса: ойлик тўловларни даромаддан тўлайсизми?</label><select class="input-s" id="aDscr"><option value="easy">Ҳа, осон</option><option value="ok">Кейинчалик, лекин бўлади</option><option value="hard">Қийин</option><option value="no_credit">Кредит йўқ / билмайман</option></select><div class="hint-s">Банк учун мухим — сиз оддий тилда айтинг.</div></div><div class="field"><label class="label-s" for="aAsset">Гаров (мулк) борми?</label><select class="input-s" id="aAsset"><option>Уй / хонадон</option><option>Ер участка</option><option>Автомобил</option><option>Тижорат мулки</option><option>Йўқ</option></select></div></div></div><div class="card-s"><h4>Бизнес йўналиши</h4><p class="hint-s" style="margin:-8px 0 14px">Бир ёки бир нечта соҳани танланг.</p><div class="chips" id="bizChips"><span class="chip">Озиқ-овқат</span><span class="chip">Тўқимачилик</span><span class="chip">Қурилиш материаллари</span><span class="chip">Чорвачилик</span><span class="chip">Боғдорчилик</span><span class="chip">Мева-сабзавот қайта ишлаш</span><span class="chip">Кафе / ресторан</span><span class="chip">Савдо</span><span class="chip">Транспорт</span><span class="chip">IT / рақамли</span><span class="chip">Таълим курслари</span><span class="chip">Гўзаллик салони</span><span class="chip">Мебель</span><span class="chip">Фармацевтика</span></div></div><div class="card-s"><h4>Бизнес-режангиз борми?</h4><div class="field" style="max-width:400px"><label class="label-s" for="hasPlan">Режа ҳолати</label><select class="input-s" id="hasPlan" onchange="document.getElementById('planUpload').style.display=this.value==='yes'?'block':'none'"><option value="no">Йўқ, AI яратсин</option><option value="yes">Ҳа, баҳолаш керак</option></select></div><div id="planUpload" style="display:none;margin-top:14px"><label class="label-s" for="planFile">Файл юклаш</label><input class="input-s" id="planFile" type="file" accept=".pdf,.docx,.txt"></div></div><div class="btn-row"><button type="button" class="btn-ghost" onclick="go(1)">← Орқага</button><button type="button" class="btn-green" onclick="analyze()">AI таҳлилни бошлаш</button></div></div>
+<div class="screen" id="s3"><span class="step-kicker">Қадам 3 / 4</span><div class="loader-wrap"><div class="analysis-card"><div class="analysis-hero"><div class="spinner analysis-spinner" aria-hidden="true"></div><h2 class="screen-title">AI таҳлил қилмоқда</h2><p class="screen-desc">Маълумотларингиз текширилмоқда — бир оз кутинг</p><div class="analysis-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="analysisProgressBar"><div class="analysis-progress-fill" id="analysisProgressFill"></div></div><p class="analysis-phase" id="analysisPhaseHint">1/6 — Шахсий профил</p></div><div class="mini-stepper" id="miniStepper" aria-label="Таҳлил босқичлари"><div class="mini-step current" id="ms1" data-i="1"><span class="mini-ico" aria-hidden="true">1</span><div class="mini-lbl">Шахсий профил</div></div><div class="mini-step" id="ms2" data-i="2"><span class="mini-ico" aria-hidden="true">2</span><div class="mini-lbl">Ҳудуд бозори</div></div><div class="mini-step" id="ms3" data-i="3"><span class="mini-ico" aria-hidden="true">3</span><div class="mini-lbl">Молиявий имконият</div></div><div class="mini-step" id="ms4" data-i="4"><span class="mini-ico" aria-hidden="true">4</span><div class="mini-lbl">Бизнес-модел</div></div><div class="mini-step" id="ms5" data-i="5"><span class="mini-ico" aria-hidden="true">5</span><div class="mini-lbl">Скоринг</div></div><div class="mini-step" id="ms6" data-i="6"><span class="mini-ico" aria-hidden="true">6</span><div class="mini-lbl">Бизнес-режа</div></div></div><div class="analysis-actions"><button type="button" class="btn-ghost" onclick="cancelAnalysisAndGo(2)">← Молияга қайтиш</button></div></div></div></div>
+<div class="screen" id="s4"><span class="step-kicker">Қадам 4 / 4</span><h2 class="screen-title">Таҳлил натижаси</h2><p class="screen-desc">Пастда — <strong>AI таҳлили жавоби</strong>: умумий баҳо, асосий сонлар ва кейин тавсия этилган бизнес.</p><div class="result-snapshot"><div class="result-snapshot-head"><span class="result-snapshot-badge">AI таҳлил жавоби</span><span class="result-snapshot-hint">Бир қарашда: балл, молиявий сонлар — кейин батафсил тавсия пастда.</span></div><div class="result-snapshot-body"><div class="dash"><div class="score-card"><div class="score-card-label">Умумий баҳо</div><div class="score-ring high" id="scoreRing"><span class="score-num" id="scoreVal">—</span><span class="score-lbl">/100</span></div><div class="score-txt" id="scoreLbl">Баҳоланмоқда</div><div class="score-desc-t" id="scoreDesc"></div><div class="score-expl" id="scoreExplain">—</div><div class="score-scale"><div class="score-fill" id="scoreFill"></div></div></div><div class="metrics-wrap"><p class="metrics-caption">Асосий кўрсаткичлар</p><div class="metrics"><div class="m-box bl"><div class="m-lbl">Бошланғич сармоя</div><div class="m-val" id="mInvest">—</div></div><div class="m-box gr"><div class="m-lbl">Кутилаётган ойлик фойда</div><div class="m-val" id="mProfit">—</div></div><div class="m-box or"><div class="m-lbl">Қоплаш муддати</div><div class="m-val" id="mPayback">—</div></div><div class="m-box dk"><div class="m-lbl">Янги иш ўринлари</div><div class="m-val" id="mJobs">—</div></div></div></div></div></div></div><div id="aiResult"></div><div id="altResult"></div><div class="btn-row" style="margin-top:28px;margin-bottom:40px"><button type="button" class="btn-ghost" onclick="restartFromScratch()">Янги таҳлил</button><button type="button" class="btn-green" onclick="applyBank()">Банкка ариза юбориш</button></div></div>
+</main>
+<div class="modal-s" id="bankModal"><div class="modal-box"><div style="font-size:48px;margin-bottom:14px;line-height:1" aria-hidden="true">✓</div><h3 style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:20px">Ариза юборилди</h3><p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.5">Маҳалла банкири тез орада боғланади</p><div style="text-align:left;background:var(--blue-lt);padding:18px;border-radius:var(--radius);font-size:14px;margin-bottom:22px;border:1px solid var(--blue-border)"><div><strong>Банкир:</strong> <span id="bankerName">Абдуллаев Шерзод</span></div><div style="margin-top:6px"><strong>Телефон:</strong> <span id="bankerPhone">+998 91 234 56 78</span></div><div style="margin-top:10px;font-size:12px;color:var(--muted)">Ариза: <span id="appId">—</span></div></div><button type="button" class="btn-main" onclick="document.getElementById('bankModal').classList.remove('show')">Тушундим</button></div></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const API_KEY='REDACTED_OPENAI_KEY';
+let map,marker;
+let userProfile='intermediate';
+var analysisAnimTimer=null;
+var aiAbortController=null;
+var analysisInProgress=false;
+var suppressApiAbortMessage=false;
+var canReturnToResults=false;
+function getCurrentScreen(){
+  var a=document.querySelector('.screen.active');
+  return a?parseInt(a.id.replace('s',''),10):1;
+}
+function canNavigateToStep(t){
+  var cur=getCurrentScreen();
+  if(t===cur)return false;
+  if(t>cur){
+    if(t===4 && canReturnToResults && cur<4){
+      if(cur===3 && analysisInProgress)return false;
+      return true;
+    }
+    return false;
+  }
+  if(cur===4 && t===3)return false;
+  return true;
+}
+function updateStepNavAvailability(){
+  var cur=getCurrentScreen();
+  document.querySelectorAll('.step[data-s]').forEach(function(el){
+    var t=parseInt(el.getAttribute('data-s'),10);
+    if(t===cur){el.classList.remove('disabled');el.setAttribute('aria-disabled','false');return}
+    if(canNavigateToStep(t)){el.classList.remove('disabled');el.setAttribute('aria-disabled','false')}
+    else{el.classList.add('disabled');el.setAttribute('aria-disabled','true')}
+  });
+}
+function resetLoaderUI(){
+  for(var k=1;k<=6;k++){
+    var ms=document.getElementById('ms'+k);
+    if(ms){
+      ms.classList.remove('done');
+      ms.classList.toggle('current',k===1);
+      var ico=ms.querySelector('.mini-ico');
+      if(ico)ico.textContent=String(k);
+    }
+  }
+  var pf=document.getElementById('analysisProgressFill');
+  if(pf)pf.style.width='0%';
+  var pb=document.getElementById('analysisProgressBar');
+  if(pb)pb.setAttribute('aria-valuenow','0');
+  var hint=document.getElementById('analysisPhaseHint');
+  if(hint)hint.textContent='1/6 — Шахсий профил';
+}
+function cancelAnalysisAndGo(target){
+  if(analysisAnimTimer){clearTimeout(analysisAnimTimer);analysisAnimTimer=null}
+  if(aiAbortController){suppressApiAbortMessage=true;try{aiAbortController.abort()}catch(e){}}
+  aiAbortController=null;
+  analysisInProgress=false;
+  var b=document.querySelector('#s2 .btn-green');
+  if(b){b.disabled=false;b.textContent='AI таҳлилни бошлаш'}
+  resetLoaderUI();
+  go(target);
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.addEventListener('click',function(e){
+    var chip=e.target.closest('.chip');
+    if(!chip)return;
+    var group=chip.closest('.chips');
+    if((group&&group.getAttribute('data-single')==='1')||chip.closest('#areaChips')){
+      group.querySelectorAll('.chip').forEach(function(x){x.classList.remove('sel')});
+      chip.classList.add('sel');
+    }else{
+      chip.classList.toggle('sel');
+    }
+  });
+  document.addEventListener('click',function(e){
+    var s=e.target.closest('.step[data-s]');
+    if(!s)return;
+    if(s.classList.contains('disabled'))return;
+    var t=parseInt(s.getAttribute('data-s'),10);
+    if(!canNavigateToStep(t))return;
+    if(getCurrentScreen()===3 && t<3){cancelAnalysisAndGo(t);return}
+    go(t);
+  });
+  updateStepNavAvailability();
+  syncFlowProgress(1);
+  document.getElementById('bankModal').addEventListener('click',function(e){
+    if(e.target===this)this.classList.remove('show');
+  });
+});
+function syncFlowProgress(step){
+  var fill=document.getElementById('flowProgressFill');
+  var pct=document.getElementById('flowProgressPct');
+  var v=Math.min(100,Math.round(step/4*100));
+  if(fill)fill.style.width=v+'%';
+  if(pct)pct.textContent=v+'%';
+}
+function go(n){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('s'+n).classList.add('active');
+  document.querySelectorAll('.step').forEach(function(s,i){s.classList.remove('active','done');if(i+1<n)s.classList.add('done');if(i+1===n)s.classList.add('active')});
+  syncFlowProgress(n);
+  if(n===2&&!map&&document.getElementById('map')){
+    map=L.map('map').setView([39.65,66.96],10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OpenStreetMap'}).addTo(map);
+    map.on('click',function(e){if(marker)map.removeLayer(marker);marker=L.marker(e.latlng).addTo(map)});
+  }else if(n===2&&map&&document.getElementById('map')){setTimeout(function(){map.invalidateSize()},100)}
+  if(n===1){resetLoaderUI()}
+  updateStepNavAvailability();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restartFromScratch(){
+  canReturnToResults=false;
+  var ai=document.getElementById('aiResult');if(ai)while(ai.firstChild)ai.removeChild(ai.firstChild);
+  var alt=document.getElementById('altResult');if(alt)while(alt.firstChild)alt.removeChild(alt.firstChild);
+  resetLoaderUI();
+  go(1);
+}
+function getSel(id){return Array.from(document.querySelectorAll('#'+id+' .chip.sel')).map(function(c){return c.textContent}).join(', ')}
+function getSelVal(id){var c=document.querySelector('#'+id+' .chip.sel');return c?c.getAttribute('data-v')||c.textContent:''}
+function detectProfile(){
+  // Foydalanuvchi qoidasi (jadval asosida):
+  //   ADVANCED  : tajriba 3+ yil  YOKI  byudjet 100-300 / 300+ mln
+  //   INTERMEDIATE: tajriba 1-3 yil  YOKI  byudjet 50-100 mln
+  //   BEGINNER  : qolgan barchasi (tajriba yo'q/<1 yil va byudjet 0-20 yoki 20-50)
+  var exp=document.getElementById('expLevel').value;       // none|low|mid|high
+  var budget=document.getElementById('budgetRange').value; // 0-20|20-50|50-100|100-300|300+
+  if(exp==='high'||budget==='100-300'||budget==='300+')return 'advanced';
+  if(exp==='mid'||budget==='50-100')return 'intermediate';
+  return 'beginner';
+}
+function handleSegmentationNext(){
+  var required=['ageRange','eduLevel','expLevel','budgetRange'];
+  for(var i=0;i<required.length;i++){
+    var el=document.getElementById(required[i]);
+    if(!el.value){alert('Илтимос, барча асосий саволларга жавоб беринг.');el.focus();return;}
+  }
+  if(!document.getElementById('userDistrict').value){alert("Илтимос, ҳудудни танланг (Шофиркон ёки Ғиждувон).");return;}
+  userProfile=detectProfile();
+  var badge=document.getElementById('profileBadge');
+  var txt=userProfile==='beginner'?"Бошланғич — сиз янги бошловчисиз"
+    :userProfile==='advanced'?"Капитал — сиз тажрибали инвесторсиз"
+    :"Ўсувчи — сиз ўрта даражадасиз";
+  badge.textContent=txt;badge.style.display='inline-block';
+  prepareFinanceStep();
+}
+function prepareFinanceStep(){
+  var d=document.getElementById('financeDesc');
+  var b=document.getElementById('beginnerFinance');
+  var i=document.getElementById('intermediateFinance');
+  var a=document.getElementById('advancedFinance');
+  b.style.display='none';i.style.display='none';a.style.display='none';
+  var banner=document.getElementById('profileAssessmentBanner');
+  if(banner)banner.parentNode.removeChild(banner);
+  var newBanner=document.createElement('div');newBanner.id='profileAssessmentBanner';
+  if(userProfile==='beginner'){
+    newBanner.style.cssText='margin:0 0 20px;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#e0f2fe,#bae6fd);border:1.5px solid #38bdf8;display:flex;align-items:center;gap:16px';
+    newBanner.innerHTML='<div style="font-size:40px;line-height:1">🌱</div><div><div style="font-size:18px;font-weight:800;color:#0369a1;margin-bottom:4px">Бошланғич</div><div style="font-size:13px;color:#0284c7;font-weight:600">Сиз янги бошловчисиз! Молия саволлари йўқ — фақат бизнес йўналишини танланг.</div></div>';
+    b.style.display='block';d.textContent="Бошланғич профил: молия саволлари йўқ — фақат бизнес йўналиши.";
+  } else if(userProfile==='advanced'){
+    newBanner.style.cssText='margin:0 0 20px;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1.5px solid #f59e0b;display:flex;align-items:center;gap:16px';
+    newBanner.innerHTML='<div style="font-size:40px;line-height:1">💰</div><div><div style="font-size:18px;font-weight:800;color:#92400e;margin-bottom:4px">Капитал</div><div style="font-size:13px;color:#b45309;font-weight:600">Сиз тажрибали инвесторсиз! Чуқур молия саволлари — оддий тилда берилади.</div></div>';
+    a.style.display='block';d.textContent='Капитал профил: тажрибали фойдаланувчи — техник сўзларсиз, оддий тилда саволлар.';
+  } else {
+    newBanner.style.cssText='margin:0 0 20px;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#d1fae5,#a7f3d0);border:1.5px solid #34d399;display:flex;align-items:center;gap:16px';
+    newBanner.innerHTML='<div style="font-size:40px;line-height:1">📈</div><div><div style="font-size:18px;font-weight:800;color:#065f46;margin-bottom:4px">Ўсувчи</div><div style="font-size:13px;color:#047857;font-weight:600">Сиз ўрта даражадасиз! Молия ва ЯТТ/гаров бўйича қисқа саволлар.</div></div>';
+    i.style.display='block';d.textContent="Ўсувчи профил: молия ва ЯТТ/гаров бўйича қисқа саволлар.";
+  }
+  var finDesc=document.getElementById('financeDesc');
+  if(finDesc&&finDesc.parentNode)finDesc.parentNode.insertBefore(newBanner,finDesc.nextSibling);
+  go(2);
+}
+function rangeMid(v){
+  if(!v)return 0;
+  if(v.indexOf('+')>-1){return parseInt(v,10)||300}
+  var p=v.split('-');
+  if(p.length!==2)return parseInt(v,10)||0;
+  return Math.round((parseInt(p[0],10)+parseInt(p[1],10))/2);
+}
+function analyze(){
+  var btn=document.querySelector('#s2 .btn-green');
+  if(btn){btn.disabled=true;btn.textContent='Юкланмоқда...'}
+  if(analysisAnimTimer){clearTimeout(analysisAnimTimer);analysisAnimTimer=null}
+  canReturnToResults=false;
+  analysisInProgress=true;
+  resetLoaderUI();
+  go(3);
+  var i=0;
+  var hints=['Шахсий профил','Ҳудуд бозори','Молиявий имконият','Бизнес-модел','Скоринг','Бизнес-режа'];
+  function next(){
+    if(i<6){
+      var m=document.getElementById('ms'+(i+1));
+      if(m){
+        m.classList.add('done');
+        m.classList.remove('current');
+        var ico=m.querySelector('.mini-ico');
+        if(ico)ico.textContent='✓';
+      }
+      var nextM=document.getElementById('ms'+(i+2));
+      if(nextM){nextM.classList.add('current')}
+      var pct=Math.round(((i+1)/6)*100);
+      var pf=document.getElementById('analysisProgressFill');
+      if(pf)pf.style.width=pct+'%';
+      var pb=document.getElementById('analysisProgressBar');
+      if(pb)pb.setAttribute('aria-valuenow',String(pct));
+      var hint=document.getElementById('analysisPhaseHint');
+      if(hint){
+        if(i+1<6){hint.textContent=(i+2)+'/6 — '+(hints[i+1]||'')}
+        else{hint.textContent='6/6 — '+hints[5]}
+      }
+      i++;
+      analysisAnimTimer=setTimeout(next,700);
+    }else{
+      analysisAnimTimer=null;
+      callAI();
+    }
+  }
+  next();
+}
+function callAI(){
+  if(aiAbortController){try{aiAbortController.abort()}catch(e){}}
+  aiAbortController=new AbortController();
+  // Lotin → Kirill transliteratsiya (foydalanuvchi ismi va boshqa kirishlar uchun)
+  function toCyrillic(s){
+    if(!s)return s;
+    if(/^[\u0400-\u04FF\s\-']+$/.test(s))return s; // allaqachon kirill
+    var map={"sh":"ш","Sh":"Ш","SH":"Ш","ch":"ч","Ch":"Ч","CH":"Ч","yo":"ё","Yo":"Ё","YO":"Ё","yu":"ю","Yu":"Ю","YU":"Ю","ya":"я","Ya":"Я","YA":"Я","o'":"ў","O'":"Ў","oʻ":"ў","Oʻ":"Ў","g'":"ғ","G'":"Ғ","gʻ":"ғ","Gʻ":"Ғ","kh":"х","Kh":"Х","ts":"ц","Ts":"Ц"};
+    var out=s;
+    Object.keys(map).forEach(function(k){out=out.split(k).join(map[k]);});
+    var single={a:"а",b:"б",c:"к",d:"д",e:"е",f:"ф",g:"г",h:"ҳ",i:"и",j:"ж",k:"к",l:"л",m:"м",n:"н",o:"о",p:"п",q:"қ",r:"р",s:"с",t:"т",u:"у",v:"в",w:"в",x:"х",y:"й",z:"з",A:"А",B:"Б",C:"К",D:"Д",E:"Е",F:"Ф",G:"Г",H:"Ҳ",I:"И",J:"Ж",K:"К",L:"Л",M:"М",N:"Н",O:"О",P:"П",Q:"Қ",R:"Р",S:"С",T:"Т",U:"У",V:"В",W:"В",X:"Х",Y:"Й",Z:"З"};
+    var res="";for(var i=0;i<out.length;i++){res+=single[out[i]]||out[i];}
+    return res;
+  }
+  var rawName=document.getElementById('userName').value||'Фойдаланувчи';
+  var seg={name:toCyrillic(rawName),ageRange:document.getElementById('ageRange').value||'номаълум',edu:document.getElementById('eduLevel').value||'номаълум',exp:document.getElementById('expLevel').value||'номаълум',budgetRange:document.getElementById('budgetRange').value||'0-20'};
+  var finance='';var ownFunds=rangeMid(seg.budgetRange);var credit=0;var income=0;var collateral='Йўқ';
+  if(userProfile==='beginner'){income=0;credit=0;ownFunds=rangeMid(seg.budgetRange);finance="Boshlang'ich: byudjet="+seg.budgetRange+', yo\'nalish='+(getSel('bizChips')||'tanlanmagan');}
+  else if(userProfile==='advanced'){ownFunds=rangeMid(document.getElementById('aCapex').value);income=Math.max(5,Math.round(rangeMid(document.getElementById('aOpex').value)*0.45));credit=Math.round(ownFunds*0.4);collateral=document.getElementById('aAsset').value;function advTxt(id){var s=document.getElementById(id);return s.options[s.selectedIndex].text}finance='Kapital: boshlangich xarajat='+advTxt('aCapex')+'; oylik='+advTxt('aOpex')+'; zaxira='+advTxt('aLiquidity')+'; qiyin='+advTxt('aWorst')+'; kredit='+advTxt('aDscr');}
+  else{ownFunds=rangeMid(document.getElementById('iOwnFunds').value);var incSel=document.getElementById('iIncome').value;income=incSel==='no'?0:rangeMid(incSel);credit=Math.round(ownFunds*0.3);collateral=document.getElementById('iCollateral').value;finance="O'suvchi: tushum="+(incSel==='no'?'yo\'q':incSel)+', xarajat='+document.getElementById('iExpense').value+', ЯТТ='+document.getElementById('iYatt').value+', garov='+collateral;}
+  var totalBudget=ownFunds+credit;
+  var isZero=(totalBudget<=5);
+  // Profil tasniflashi detectProfile() tomonidan aniqlanadi (qadam 1 da)
+  userProfile=detectProfile();
+  var district=document.getElementById('userDistrict').value||'';
+  var bizType=getSel('bizChips')||'';
+
+  var geoKnowledge='';
+  if(district==='Шофиркон'){geoKnowledge='ГЕО-ШОФИРКОН: Бухоро вилоятининг қишлоқ хўжалик тумани. Кучли томонлар: пахта, сабзавот (помидор, бодринг, қалампир), полиз (тарвуз, қовун), чорвачилик (қорамол, қўй), паррандачилик. Бозор: Бухоро шаҳри 35 км. Нол бюджет имкониятлари: улушчиликда деҳқончилик, мавсумий сабзавот териб-сотиш, қўшни ерларда ишчи, парранда боқиш.';}
+  else if(district==='Ғиждувон'){geoKnowledge='ГЕО-ҒИЖДУВОН: Бухоро вилоятининг ҳунармандчилик маркази. Кучли томонлар: ёғоч ўймакорлиги, гилам тўқиш, кулолчилик, зардўзлик, сабзавотчилик, чорвачилик. Ғиждувон бозори кучли — маҳаллий буюмлар сотилади. Нол бюджет имкониятлари: уста ёнида шогирдлик (1-2 ой), гилам тўқиш (хомашё минимал), уй чорвачилиги.';}
+
+  var profileTone=userProfile==='beginner'?'Juda oddiy va qulay tilda yoz. Texnik atamalar ishlatma. Har bir qadam aniq va sodda bolsin.'
+    :userProfile==='advanced'?'Professional va batafsil tushuntir. Moliyaviy koʻrsatkichlarni aniq ber.'
+    :"Oʻrtacha darajada tushuntir. Oddiy moliyaviy atamalar mumkin.";
+
+  var zeroBudgetInstr=isZero
+    ?'!!! MUHIM — NOLDAN BOSHLASH YOʻLI: Foydalanuvchi mablagʻsiz ('+totalBudget+' mln). Maxsus yoʻl koʻrsat: zeroBudgetNote da motivatsion va real maslahat ber. zeroBudgetSteps da 4 ta aniq qadam ber (nol xarajat bilan boshlanadigan). Biznesni ham 0 xarajat bilan boshlanadigan tanlashga harakat qil.'
+    :'Byudjet: '+ownFunds+' mln oz mablag + '+credit+' mln kredit = jami '+totalBudget+' mln.';
+
+  var regionFull=document.getElementById('userRegion').value+', '+district;
+  var prompt=
+    '=== USER INPUT (analyze THIS specific user — do not use defaults) ===\n'
+    +JSON.stringify({
+      name:seg.name,
+      age:seg.ageRange,
+      education_level:seg.edu,
+      years_of_experience:seg.exp,
+      estimated_budget_mln_uzs:totalBudget,
+      own_funds_mln:ownFunds,
+      requested_credit_mln:credit,
+      monthly_income_mln:income,
+      collateral:collateral,
+      region:regionFull,
+      district:district,
+      business_direction:bizType,
+      finance_details:finance,
+      classified_profile_hint:userProfile,
+      is_zero_budget:isZero
+    },null,2)+'\n\n'
+    +'=== KONTEKST ===\n'+geoKnowledge+'\n'+profileTone+'\n'+zeroBudgetInstr+'\n\n'
+    +'=== VAZIFA ===\n'
+    +'1) Profil ALLAQACHON aniqlangan: "'+userProfile+'". Shu profil uslubida javob ber. Qoidalar (precedence): ADVANCED = tajriba 3+ yil YOKI byudjet 100-300/300+ mln; INTERMEDIATE = tajriba 1-3 yil YOKI byudjet 50-100 mln; BEGINNER = qolgan barchasi. "profile" maydoniga shu qiymatni qaytaring.\n'
+    +'2) HAR BIR maydonni MAXSUS shu foydalanuvchi uchun hisobla. Generic yoki default qiymat berma.\n'
+    +'3) FAQAT yuqoridagi INPUT asosida ishla. Yetishmagan maʼlumotni oʻylab topma.\n'
+    +'4) BARCHA matn maydonlari Oʻzbek KIRILL yozuvida boʻlishi shart (lotin yozuv mumkin emas).\n\n'
+    +'=== SCORING (har biri 0-100, haqiqiy hisoblash) ===\n'
+    +'- geoScore: '+regionFull+' uchun "'+bizType+'" yoʻnalishining mosligi\n'
+    +'- profileScore: yosh='+seg.ageRange+', tajriba='+seg.exp+', taʼlim='+seg.edu+'\n'
+    +'- readinessScore: byudjet='+totalBudget+' mln, garov='+collateral+', daromad='+income+' mln\n'
+    +'- score = round(geoScore*0.35 + profileScore*0.30 + readinessScore*0.35). Hech qachon 75 default berma — har bir foydalanuvchi uchun haqiqiy son.\n'
+    +'- scoreLabel: <40 "Past", 40-59 "Oʻrtача", 60-74 "Яхши", 75-89 "Жуда яхши", 90+ "Аъло"\n\n'
+    +'=== METRIKA QOIDALARi ===\n'
+    +'- invest: '+(isZero?'"0 млн — хизматга асосли"':'"'+totalBudget+' млн"')+' (haqiqiy byudjet)\n'
+    +'- profit: shu biznes uchun realistik OYLIK SOF foyda diapazoni Cyrillic raqamlar bilan, masalan "2-4 млн/ой". Default "1-3" berma — biznesga qarab hisobla.\n'
+    +'- payback: '+(isZero?'"—"':'"N-M ой" diapazon, biznes va byudjetga qarab haqiqiy hisoblash')+'\n'
+    +'- jobs: shu biznes nechta ish oʻrni yaratishini hisobla (masalan "1", "2-3", "5+"). Default "1-2" berma.\n\n'
+    +'=== JAVOB FORMATI ===\n'
+    +'⚠️⚠️⚠️ TIL OGOHLANTIRISHI: Quyidagi JSON ichidagi HAR BIR matn maydoni (name, desc, geoFit, geoNote, scoreDesc, scoreLabel, steps, risks, advantages, mainBiz.*, alternatives.name/desc/steps, zeroBudget*, bankerAction, creditProgram) FAQAT KIRILL ALIFBOSIDA boʻlishi SHART. Lotin harfi (a-z, A-Z) ishlatish — KATTA XATO. Foydalanuvchi ismi ham kirillga ўгирилсин (Avbdu→Абду, Alisher→Алишер). Shofirkon→Шофиркон, Buxoro→Бухоро, Bog\'dorchilik→Боғдорчилик, Sabzavot→Сабзавот, yetishtirish→етиштириш, Yozgi→Ёзги, Meva→Мева. Grammatika tabiiy va toʻgʻri oʻzbek tilida boʻlsin.\n\n'
+    +'FAQAT VALID JSON qaytaring (markdown yoki izoh yoʻq). Quyidagi maydonlarni TOʻLDIRING (qiymatlar shu foydalanuvchiga oid boʻlsin, namunalarni nusxalamang, BARCHASI KIRILL):\n'
+    +'{\n'
+    +'  "profile": "<beginner|intermediate|advanced>",\n'
+    +'  "score": <int 0-100>,\n'
+    +'  "scoreLabel": "<Past|Ўртача|Яхши|Жуда яхши|Аъло>",\n'
+    +'  "scoreDesc": "<MUHIM: 2-3 jumla. FAQAT tanlangan biznes yoʻnalishi (\\\"'+bizType+'\\\") '+regionFull+' sharoitida qanchalik ishlashi ҳақидa AI baholashi. Foydalanuvchi haqida (yoshi, taʼlimi, tajribasi, ismi, profili) HECH NARSA yozmang — bular boshqa joyda koʻrsatilgan. Faqat: bu biznes shu hududda muvaffaqiyatli boʻladimi, qaysi omillar yordam beradi yoki toʻsqinlik qiladi, va umumiy AI xulosasi. Tabiiy, motivatsion oʻzbek tilida. Faqat KIRILL alifbosi. Misol: \\\"Тўқимачилик йўналиши Шофирконда барқарор талабга эга ва маҳаллий хом ашё мавжудлиги боис фойдали бўлиши мумкин. Кичик ҳажмдан бошлаб маҳаллий бозорга йўналтирилса, биринчи ойлардан реал даромад олиш имкони бор. Рақобат ўртача, шу боис сифат ва нархни тўғри белгилаш муҳим.\\\">",\n'
+    +'  "geoScore": <int>,\n'
+    +'  "geoNote": "<'+district+' uchun qisqa baho — Cyrillic>",\n'
+    +'  "geoOpportunities": ["<3-4 ta imkoniyat shu hudud uchun>"],\n'
+    +'  "profileScore": <int>,\n'
+    +'  "readinessScore": <int>,\n'
+    +'  "isZeroBudget": '+isZero+',\n'
+    +'  "zeroBudgetNote": "<Cyrillic motivatsion maslahat — agar isZeroBudget true>",\n'
+    +'  "zeroBudgetSteps": ["<4 ta nol-byudjet qadam>"],\n'
+    +'  "invest": "<haqiqiy byudjet>",\n'
+    +'  "profit": "<X-Y млн/ой shu biznes uchun>",\n'
+    +'  "payback": "<N-M ой yoki —>",\n'
+    +'  "jobs": "<haqiqiy ish oʻrinlari soni>",\n'
+    +'  "mainBiz": {\n'
+    +'    "name": "<aniq biznes nomi Cyrillic>",\n'
+    +'    "desc": "<2-3 jumla tavsif Cyrillic>",\n'
+    +'    "geoFit": "<'+district+' da nima uchun mos — Cyrillic>",\n'
+    +'    "steps": ["<3-5 ta birinchi qadam Cyrillic>"],\n'
+    +'    "risks": ["<3 ta xavf Cyrillic>"],\n'
+    +'    "advantages": ["<3 ta afzallik Cyrillic>"]\n'
+    +'  },\n'
+    +'  "alternatives": [{"name":"<alt biznes Cyrillic>","desc":"<tavsif Cyrillic>","invest":"<narx>","steps":["<5-7 ta amaliy qadam Cyrillic — bu bizni qanday boshlash bo\'yicha aniq yo\'l xaritasi>"]}],\n'
+    +'  "creditProgram": "<SQB mahsuloti nomi — masalan: Mikrokredit, Yosh tadbirkor krediti, Agroko\'makchi krediti>",\n'
+    +'  "bankerAction": "<bankir uchun qisqa izoh Cyrillic>"\n'
+    +'}';
+
+  var timer=setTimeout(function(){if(aiAbortController)aiAbortController.abort()},55000);
+  fetch('https://api.openai.com/v1/chat/completions',{signal:aiAbortController.signal,method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:2500,response_format:{type:'json_object'},messages:[{role:'system',content:"⚠️ ENG MUHIM QOIDA — TIL: JSON ichidagi HAR BIR foydalanuvchi koʻradigan satr 100% OʻZBEK KIRILL alifbosida boʻlishi SHART. Hech qanday lotin harfi (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z), hech qanday lotin oʻzbek soʻzi, hech qanday transliteratsiya boʻlmasligi kerak. Faqat: а б в г ғ д е ё ж з и й к қ л м н о ў п р с т у ф х ҳ ц ч ш ъ ь э ю я. Misollar: ❌ 'Sabzavot yetishtirish' → ✅ 'Сабзавот етиштириш'. ❌ 'Bog'dorchilik Shofirkon mintaqasida' → ✅ 'Боғдорчилик Шофиркон минтақасида'. ❌ 'Yozgi sabzavot ekinlarini tanlang' → ✅ 'Ёзги сабзавот экинларини танланг'. ❌ 'Avbdu uchun yaxshi baho' → ✅ 'Абду учун яхши баҳо'. ❌ 'Meva bog'lari' → ✅ 'Мева боғлари'. Hatto inson ismlari ham kirillda yozilishi shart (Avbdu→Абду, Alisher→Алишер, Shofirkon→Шофиркон, Bukhara→Бухоро). Maydonlar: name, desc, geoFit, geoNote, scoreDesc, scoreLabel, steps, risks, advantages, alternatives.name/desc/steps, mainBiz.* — HAMMASI kirill. Faqat raqamlar, %, mln, ой kabi oʻlchov birliklari oddiy holatda qoladi. Agar bitta lotin soʻz chiqsa — javob NOTOʻGʻRI hisoblanadi va rad etiladi. Grammatika va jumla tuzилиши tabiiy, toʻgʻri, tushunarli oʻzbek tilida boʻlsin.\n\nYou are an SQB AI Business Consultant. Analyze users and provide personalized business recommendations based STRICTLY on the given input data.\n\nCLASSIFY the user into exactly one profile:\n- beginner: age 18-24, recently finished school\n- intermediate: age 25-34 OR university graduate (possibly unemployed)\n- advanced: age above 24\n\nINPUT FIELDS: age, education_level, years_of_experience, estimated_budget, region, business_direction.\n\nRULES:\n1. Classify the user into beginner / intermediate / advanced using the rules above.\n2. Analyze ONLY using provided data — never invent missing facts.\n3. Provide tailored, realistic, actionable recommendations: suitable business ideas (aligned with budget, region, direction), growth strategy / next steps, and relevant SQB Bank loan products (mandatory for beginner & intermediate).\n4. All user-facing text MUST be in Uzbek Cyrillic.\n5. Return ONLY valid JSON matching the schema in the user message. No markdown, no commentary, no text outside JSON.\n6. Numbers: invest must reflect real budget (or '0 млн — хизматга асосли' if zero); profit must be a range like 'X-Y млн/ой'; payback a range like 'N-M ой' or '—' if invest=0.\n7. Include a 'profile' field with value 'beginner' | 'intermediate' | 'advanced' matching your classification."},{role:'user',content:prompt}]})}).then(function(r){clearTimeout(timer);return r.json()}).then(function(d){
+    try{
+      if(d.error)throw new Error(d.error.message||'API хатоси');
+      if(!d.choices||!d.choices[0])throw new Error('Жавоб бўш келди');
+      var t=(d.choices[0].message&&d.choices[0].message.content)||'';
+      var m=t.match(/\{[\s\S]*\}/);
+      if(!m)throw new Error('JSON топилмади');
+      var raw=m[0];
+      raw=raw.replace(/,\s*([}\]])/g,'$1');
+      var parsed=null;
+      try{parsed=JSON.parse(raw);}catch(je){
+        var cleaned=t.replace(/```json|```/g,'').trim();
+        var m2=cleaned.match(/\{[\s\S]*\}/);
+        if(m2){raw=m2[0].replace(/,\s*([}\]])/g,'$1');parsed=JSON.parse(raw);}
+        else throw new Error('JSON ўқиб бўлмади: '+je.message);
+      }
+      // userProfile JS tarafida deterministik aniqlanadi — AI qiymatini ishlatmaymiz
+      showResult(parsed);
+    }catch(err){showErr('Хатолик: '+err.message);}
+    analysisInProgress=false;
+    canReturnToResults=true;
+    go(4);resetBtn();
+  }).catch(function(e){clearTimeout(timer);analysisInProgress=false;
+    if(e.name==='AbortError'){
+      resetBtn();
+      if(suppressApiAbortMessage){suppressApiAbortMessage=false;return}
+      showErr('Вақт тугади (55 сон). Интернет алоқасини текширинг ва қайта уриниб кўринг.');
+      return
+    }
+    showErr('Тармоқ хатоси: '+e.message+'. Интернет алоқасини текширинг.');
+    resetBtn()});
+  function resetBtn(){var b=document.querySelector('#s2 .btn-green');if(b){b.disabled=false;b.textContent='AI таҳлилни бошлаш'};aiAbortController=null}
+}
+
+function showResult(r){
+  r=r||{};
+  r.mainBiz=r.mainBiz||{};
+  r.mainBiz.advantages=Array.isArray(r.mainBiz.advantages)?r.mainBiz.advantages:[];
+  r.mainBiz.risks=Array.isArray(r.mainBiz.risks)?r.mainBiz.risks:[];
+  r.mainBiz.steps=Array.isArray(r.mainBiz.steps)?r.mainBiz.steps:[];
+  r.alternatives=Array.isArray(r.alternatives)?r.alternatives:[];
+  r.geoOpportunities=Array.isArray(r.geoOpportunities)?r.geoOpportunities:[];
+  r.zeroBudgetSteps=Array.isArray(r.zeroBudgetSteps)?r.zeroBudgetSteps:[];
+
+  // ── Score ring ──
+  var scoreNum=typeof r.score==='number'?r.score:0;
+  document.getElementById('scoreVal').textContent=scoreNum||'—';
+  document.getElementById('scoreLbl').textContent=r.scoreLabel||'Баҳо';
+  document.getElementById('scoreDesc').textContent=r.scoreDesc||'';
+  document.getElementById('scoreExplain').textContent=scoreNum+'/100';
+  document.getElementById('scoreFill').style.width=Math.max(0,Math.min(100,scoreNum))+'%';
+  var ring=document.getElementById('scoreRing');
+  ring.className='score-ring '+(scoreNum>=70?'high':scoreNum>=40?'mid':'low');
+
+  // ── 4 metric boxes ── only real values
+  document.getElementById('mInvest').textContent=r.invest||'—';
+  document.getElementById('mProfit').textContent=r.profit||'—';
+  document.getElementById('mPayback').textContent=r.payback||'—';
+  document.getElementById('mJobs').textContent=r.jobs||'—';
+
+  var ai=document.getElementById('aiResult');
+  while(ai.firstChild)ai.removeChild(ai.firstChild);
+
+  // ── 1. Profile type badge ──
+  var typeInfo=userProfile==='beginner'
+    ?{emoji:'🌱',label:"Бошланғич",bg:'linear-gradient(135deg,#e0f2fe,#bae6fd)',border:'#38bdf8',color:'#0369a1'}
+    :userProfile==='advanced'
+    ?{emoji:'💰',label:'Капитал',bg:'linear-gradient(135deg,#fef3c7,#fde68a)',border:'#f59e0b',color:'#92400e'}
+    :{emoji:'📈',label:"Ўсувчи",bg:'linear-gradient(135deg,#d1fae5,#a7f3d0)',border:'#34d399',color:'#065f46'};
+  var typeBadge=document.createElement('div');
+  typeBadge.style.cssText='display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:12px;background:'+typeInfo.bg+';border:1.5px solid '+typeInfo.border+';margin-bottom:16px';
+  typeBadge.innerHTML='<span style="font-size:26px">'+typeInfo.emoji+'</span><div><div style="font-size:15px;font-weight:800;color:'+typeInfo.color+'">'+typeInfo.label+'</div><div style="font-size:12px;color:'+typeInfo.color+';opacity:.85;margin-top:2px">Сиз ушбу профил асосида таҳлил олдингиз</div></div>';
+  ai.appendChild(typeBadge);
+
+  // ── 2. Sub-score breakdown ──
+  var geoS=typeof r.geoScore==='number'?r.geoScore:0;
+  var profS=typeof r.profileScore==='number'?r.profileScore:0;
+  var readS=typeof r.readinessScore==='number'?r.readinessScore:0;
+  function scoreColor(v){return v>=70?'#059669':v>=40?'#d97706':'#dc2626';}
+  var subWrap=document.createElement('div');subWrap.className='sub-scores';
+  function makeSubCard(label,val,barClass,note){
+    var c=document.createElement('div');c.className='sub-score-card';
+    c.innerHTML='<div class="sub-score-label">'+label+'</div>'
+      +'<div class="sub-score-bar-wrap"><div class="sub-score-bar '+barClass+'" style="width:'+Math.max(0,Math.min(100,val))+'%"></div></div>'
+      +'<div class="sub-score-val" style="color:'+scoreColor(val)+'">'+val+'</div>'
+      +'<div class="sub-score-note">'+note+'</div>';
+    return c;
+  }
+  var dist=document.getElementById('userDistrict').value||'Ҳудуд';
+  subWrap.appendChild(makeSubCard('📍 Жуғрофий мослик',geoS,'geo',dist+' учун мос даража'));
+  subWrap.appendChild(makeSubCard('👤 Шахсий профил',profS,'prof','Тажриба ва маълумот баҳоси'));
+  subWrap.appendChild(makeSubCard('💼 Молиявий тайёрлик',readS,'ready','Бюджет ва гаров баҳоси'));
+  ai.appendChild(subWrap);
+
+  // ── 3. Geography card ──
+  if(r.geoNote){
+    var geoCard=document.createElement('div');geoCard.className='geo-card';
+    var geoPin=document.createElement('div');geoPin.className='geo-pin';geoPin.textContent='📍';
+    var geoBody=document.createElement('div');geoBody.className='geo-body';
+    var geoTitle=document.createElement('div');geoTitle.className='geo-title';geoTitle.textContent=dist+' — Ҳудудий имконият';
+    var geoNote=document.createElement('div');geoNote.className='geo-note';geoNote.textContent=r.geoNote;
+    geoBody.appendChild(geoTitle);geoBody.appendChild(geoNote);
+    if(r.geoOpportunities.length){
+      var tags=document.createElement('div');tags.className='geo-tags';
+      r.geoOpportunities.forEach(function(op){var t=document.createElement('span');t.className='geo-tag';t.textContent=op;tags.appendChild(t);});
+      geoBody.appendChild(tags);
+    }
+    geoCard.appendChild(geoPin);geoCard.appendChild(geoBody);
+    ai.appendChild(geoCard);
+  }
+
+  // ── 4. Zero-budget path ──
+  if(r.isZeroBudget&&r.zeroBudgetNote){
+    var zCard=document.createElement('div');zCard.className='zero-budget-card';
+    var zHead=document.createElement('div');zHead.className='zero-budget-head';
+    zHead.innerHTML='<div class="zero-budget-icon">💡</div><div><div class="zero-budget-title">Маблағсиз ҳам бошлаш мумкин!</div><div class="zero-budget-sub">Нол бюджетдан бошланадиган реал йўл</div></div>';
+    var zNote=document.createElement('div');zNote.className='zero-budget-note';zNote.textContent=r.zeroBudgetNote;
+    zCard.appendChild(zHead);zCard.appendChild(zNote);
+    if(r.zeroBudgetSteps.length){
+      var zList=document.createElement('ul');zList.className='zero-steps';
+      r.zeroBudgetSteps.forEach(function(s,i){
+        var li=document.createElement('li');li.className='zero-step';
+        li.innerHTML='<div class="zero-step-num">'+(i+1)+'</div><div class="zero-step-txt">'+s+'</div>';
+        zList.appendChild(li);
+      });
+      zCard.appendChild(zList);
+    }
+    ai.appendChild(zCard);
+  }
+
+  // ── 5. Main business card ──
+  var card=document.createElement('div');card.className='biz-card';
+  var head=document.createElement('div');head.className='biz-head biz-head-feature';
+  var inner=document.createElement('div');inner.className='biz-head-inner';
+  var icon=document.createElement('div');icon.className='biz-head-icon';icon.setAttribute('aria-hidden','true');
+  icon.innerHTML='<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>';
+  var textWrap=document.createElement('div');textWrap.className='biz-head-text';
+  var pill=document.createElement('span');pill.className='biz-reco-pill';pill.textContent='✦ Асосий тавсия';
+  var h3=document.createElement('h3');h3.className='biz-title';h3.textContent=r.mainBiz.name||'Тавсия этилган бизнес';
+  var desc=document.createElement('p');desc.className='biz-lead';desc.textContent=r.mainBiz.desc||'';
+  textWrap.appendChild(pill);textWrap.appendChild(h3);textWrap.appendChild(desc);
+  if(r.mainBiz.geoFit){var gf=document.createElement('div');gf.className='biz-geo-fit';gf.textContent=r.mainBiz.geoFit;textWrap.appendChild(gf);}
+  if(dist){var locRow=document.createElement('div');locRow.className='biz-loc-row';var lp=document.createElement('span');lp.className='biz-loc-pill';lp.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> '+dist;locRow.appendChild(lp);textWrap.appendChild(locRow);}
+  inner.appendChild(icon);inner.appendChild(textWrap);head.appendChild(inner);card.appendChild(head);
+
+
+  // Steps
+  // Профилга қараб мажбурий биринчи қадам (ЯТТ ёки МЧЖ очиш)
+  var mandatoryFirst=null;
+  if(userProfile==='intermediate'){
+    mandatoryFirst={text:'ЯТТ (Якка тартибдаги тадбиркор) сифатида рўйхатдан ўтиш — расмий фаолият юритиш учун биринчи қадам.',btn:'▶ Видео қўлланма (YouTube)',url:'https://youtu.be/K1xXhsxbR9w?si=CUu5IP67fkBykuN7'};
+  } else if(userProfile==='advanced'){
+    mandatoryFirst={text:'МЧЖ (Масъулияти чекланган жамият) ташкил этиш — йирик бизнес учун расмий шакл.',btn:'▶ МЧЖ очиш бўйича қўлланма',url:'https://uzum.uz/media/uz/mchj-ochish/?srsltid=AfmBOoqOOM_DOZL7weN-4F7GoN9sYdWG4_H4IuSmvhMAtNSH1L0_17Vj'};
+  }
+  if(mandatoryFirst||r.mainBiz.steps.length){
+    var sl=document.createElement('div');sl.className='steps-list';
+    var h5s=document.createElement('div');h5s.style.cssText='font-size:12px;font-weight:800;color:var(--ink);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em';h5s.textContent='📋 Биринчи қадамлар';
+    sl.appendChild(h5s);
+    var ol=document.createElement('ol');ol.className='steps-ol';
+    var idx=0;
+    if(mandatoryFirst){
+      idx++;
+      var liM=document.createElement('li');
+      liM.innerHTML='<div class="snum">'+idx+'</div><div class="stxt"><strong>'+mandatoryFirst.text+'</strong><div style="margin-top:10px"><a href="'+mandatoryFirst.url+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:9px 16px;background:var(--primary);color:#fff;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">'+mandatoryFirst.btn+'</a></div></div>';
+      ol.appendChild(liM);
+    }
+    r.mainBiz.steps.forEach(function(s){
+      idx++;
+      var li=document.createElement('li');
+      li.innerHTML='<div class="snum">'+idx+'</div><div class="stxt">'+s+'</div>';
+      ol.appendChild(li);
+    });
+    sl.appendChild(ol);card.appendChild(sl);
+  }
+
+  // Bank section
+  var cr=document.createElement('div');cr.className='credit-box';
+  cr.innerHTML='<strong style="color:var(--primary)">🏦 Банк ечими: </strong>Қуйидаги маҳсулотлардан мосини танланг.';
+  card.appendChild(cr);
+  var solutions=document.createElement('div');solutions.className='bank-solutions';
+  var ttl=document.createElement('h5');ttl.textContent='Тавсия этилган SQB маҳсулотлари';solutions.appendChild(ttl);
+  var products=getBankProducts(r.creditProgram,r);
+  if(!products||!products.length){products=[{name:'Mikrokredit (standart)',desc:'Сумма: 300 000 000 UZS | Ставка: 26.9%-28.9% | Муддат: 60 ой',image:'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80'}];}
+  var SQB_BASE='https://sqb.uz/uz/individuals/credits/';
+  var main=products[0]||{name:'—',desc:'—',image:'',url:SQB_BASE};
+  var mainCard=document.createElement('a');mainCard.className='bank-main';mainCard.href=main.url||SQB_BASE;mainCard.target='_blank';mainCard.rel='noopener noreferrer';mainCard.style.cssText='text-decoration:none;color:inherit;display:flex;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease';
+  mainCard.onmouseover=function(){this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.12)'};
+  mainCard.onmouseout=function(){this.style.transform='';this.style.boxShadow=''};
+  var mImg=document.createElement('img');mImg.className='bank-main-photo';mImg.alt=main.name||'';mImg.src=main.image||'';
+  mainCard.appendChild(mImg);
+  var mBody=document.createElement('div');
+  mBody.innerHTML='<span class="bank-main-badge">1-ASOSIY TAVSIYA</span><div class="bank-main-name">🏦 '+(main.name||'')+'</div><div class="bank-main-desc">'+(main.desc||'')+'</div><div style="margin-top:10px;font-size:12px;font-weight:700;color:var(--primary)">Батафсил сайтда →</div>';
+  mainCard.appendChild(mBody);solutions.appendChild(mainCard);
+  var list=document.createElement('div');list.className='bank-list';
+  products.slice(1).forEach(function(p){
+    var bc=document.createElement('a');bc.className='bank-card';bc.href=p.url||SQB_BASE;bc.target='_blank';bc.rel='noopener noreferrer';bc.style.cssText='text-decoration:none;color:inherit;display:flex;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease';
+    bc.onmouseover=function(){this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(0,0,0,.1)'};
+    bc.onmouseout=function(){this.style.transform='';this.style.boxShadow=''};
+    var img=document.createElement('img');img.className='bank-main-photo';img.alt=p.name||'';img.src=p.image||'';bc.appendChild(img);
+    var bBody=document.createElement('div');
+    bBody.innerHTML='<span class="bank-sub-badge">Қўшимча вариант</span><div class="bank-name">🏦 '+(p.name||'')+'</div><div class="bank-desc">'+(p.desc||'')+'</div><div style="margin-top:8px;font-size:11px;font-weight:700;color:var(--primary)">sqb.uz сайтида кўриш →</div>';
+    bc.appendChild(bBody);list.appendChild(bc);
+  });
+  if(list.childNodes.length)solutions.appendChild(list);
+  card.appendChild(solutions);
+  ai.appendChild(card);
+
+  // ── 6. Alternatives ──
+  var alt=document.getElementById('altResult');
+  while(alt.firstChild)alt.removeChild(alt.firstChild);
+  if(r.alternatives&&r.alternatives.length){
+    var section=document.createElement('div');section.className='alt-section';
+    var at=document.createElement('div');at.className='alt-title';
+    at.innerHTML='<h4>🔄 Захира вариантлар</h4><span class="alt-pill">'+r.alternatives.length+' та вариант</span>';
+    section.appendChild(at);
+    r.alternatives.forEach(function(x){
+      var ac=document.createElement('div');ac.className='alt-card';
+      ac.style.cursor='pointer';ac.style.transition='transform .15s ease, box-shadow .15s ease';
+      ac.onmouseover=function(){this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(0,0,0,.1)'};
+      ac.onmouseout=function(){this.style.transform='';this.style.boxShadow=''};
+      ac.innerHTML='<div class="alt-head"><div class="alt-name">'+(x.name||'Альтернатива')+'</div><div class="alt-invest">'+(x.invest||'')+'</div></div><p class="alt-desc">'+(x.desc||'')+'</p><div style="margin-top:10px;font-size:12px;font-weight:700;color:var(--primary)">📋 Қадамма-қадам кўрсатмани очиш →</div>';
+      ac.onclick=function(){openAltStepsDialog(x);};
+      section.appendChild(ac);
+    });
+    alt.appendChild(section);
+  }
+}
+
+function openAltStepsDialog(x){
+  var existing=document.getElementById('altStepsDialog');
+  if(existing)existing.parentNode.removeChild(existing);
+  var overlay=document.createElement('div');
+  overlay.id='altStepsDialog';
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(15,23,42,.55);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;backdrop-filter:blur(4px)';
+  overlay.onclick=function(e){if(e.target===overlay)overlay.parentNode.removeChild(overlay);};
+  var box=document.createElement('div');
+  box.style.cssText='background:var(--surface);border-radius:16px;max-width:560px;width:100%;max-height:85vh;overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.25);border:1px solid var(--line)';
+  var head=document.createElement('div');
+  head.style.cssText='padding:22px 26px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--blue-lt),var(--surface));position:sticky;top:0';
+  head.innerHTML='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px"><div><div style="font-size:11px;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">🔄 Захира варианти</div><h3 style="margin:0;font-size:19px;font-weight:800;color:var(--ink);line-height:1.3">'+(x.name||'Альтернатива')+'</h3>'+(x.invest?'<div style="margin-top:6px;font-size:13px;color:var(--muted);font-weight:600">💰 '+x.invest+'</div>':'')+'</div><button type="button" aria-label="Ёпиш" style="background:transparent;border:none;font-size:24px;color:var(--muted);cursor:pointer;padding:0;line-height:1;font-family:inherit">×</button></div>';
+  head.querySelector('button').onclick=function(){overlay.parentNode.removeChild(overlay);};
+  box.appendChild(head);
+  var body=document.createElement('div');body.style.cssText='padding:22px 26px';
+  if(x.desc){var p=document.createElement('p');p.style.cssText='margin:0 0 18px;font-size:14px;color:var(--body);line-height:1.55';p.textContent=x.desc;body.appendChild(p);}
+  var stepsTitle=document.createElement('div');stepsTitle.style.cssText='font-size:12px;font-weight:800;color:var(--ink);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em';stepsTitle.textContent='📋 Қадамма-қадам кўрсатма';
+  body.appendChild(stepsTitle);
+  var steps=Array.isArray(x.steps)&&x.steps.length?x.steps:['Бизнес ғоясини аниқлаштиринг ва бозорни ўрганинг','Бошланғич сармояни ҳисобланг ва маблағни тайёрланг','Расмий рўйхатдан ўтинг (ЯТТ ёки МЧЖ)','Жой/ускуна/хом ашёни тайинланг','Биринчи мижозларни топинг ва сотувни бошланг'];
+  var ol=document.createElement('ol');ol.style.cssText='list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px';
+  steps.forEach(function(s,i){
+    var li=document.createElement('li');
+    li.style.cssText='display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px';
+    li.innerHTML='<div style="flex-shrink:0;width:26px;height:26px;border-radius:8px;background:linear-gradient(145deg,var(--primary),var(--primary-mid));color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono)">'+(i+1)+'</div><div style="font-size:13px;color:var(--body);line-height:1.5;font-weight:500">'+s+'</div>';
+    ol.appendChild(li);
+  });
+  body.appendChild(ol);
+  box.appendChild(body);
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+}
+function getBankProducts(creditProgram,result){
+  // Manba: https://sqb.uz/uz/individuals/credits/
+  var SQB_HOST='https://sqb.uz';
+  var SQB=SQB_HOST+'/uz/individuals/credits/';
+  var catalog=[
+    {name:"Ochiq kredit liniyasi mikroqarz",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"26.9%",term_months:24,features:["istalgan vaqt foydalanish"],tags:["micro","quick"],url:SQB_HOST+"/uz/individuals/credits/ochiq-kredit-liniyasi-bo-yicha-mikroqarz-krediti-uz/",image:"https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=900&q=80"},
+    {name:"Ish haqi loyihasi uchun mikroqarz",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"22%",term_months:48,features:["ish haqi mijozlari uchun"],tags:["micro","salary","quick"],url:SQB_HOST+"/uz/individuals/credits/mikrozaym-salary-uz/",image:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"},
+    {name:"Mikrokredit",amount_max:300000000,amount_max_text:"300 000 000 UZS",interest_rate:"26.9%",term_months:60,features:["o'zini band qilganlar"],tags:["micro","business"],url:SQB_HOST+"/uz/individuals/credits/mikrokredit-uz/",image:"https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=900&q=80"},
+    {name:"O'zini o'zi band qilganlar uchun mikroqarz",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"24%",term_months:48,features:["shaffof shartlar"],tags:["micro","self","business"],url:SQB_HOST+"/uz/individuals/credits/mikrozaym-self-made-uz/",image:"https://images.unsplash.com/photo-1556745753-b2904692b3cd?auto=format&fit=crop&w=900&q=80"},
+    {name:"Yangicha mikroqarz",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"24%",term_months:48,features:["individual yondashuv"],tags:["micro","self"],url:SQB_HOST+"/uz/individuals/credits/yangicha-mikroqarz-uz/",image:"https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=900&q=80"},
+    {name:"SQB Mobile ilovasida mikroqarz",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"24%",term_months:48,features:["onlayn rasmiylashtirish"],tags:["micro","quick","online"],url:SQB_HOST+"/uz/individuals/credits/sqb-mobile-ilovasida-mikroqarz-uz/",image:"https://images.unsplash.com/photo-1605792657660-596af9009e82?auto=format&fit=crop&w=900&q=80"},
+    {name:"Yosh tadbirkor krediti",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"18%",term_months:60,features:["yoshlar uchun imtiyoz"],tags:["business","micro","young"],url:SQB_HOST+"/uz/individuals/credits/yosh-tadbirkor-mikrozaym-uz/",image:"https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80"},
+    {name:"Agroko'makchi krediti",amount_max:15000000,amount_max_text:"15 000 000 UZS",interest_rate:"18%",term_months:12,features:["qishloq xo'jaligi"],tags:["agro","business"],url:SQB_HOST+"/uz/individuals/credits/mikrozayem-agroko-makchi-uz/",image:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"},
+    {name:"Iste'mol krediti Yangicha",amount_max:200000000,amount_max_text:"200 000 000 UZS",interest_rate:"21.99%",term_months:60,features:["iste'mol ehtiyojlari"],tags:["consumer"],url:SQB_HOST+"/uz/individuals/credits/consumer-credit-new-uz/",image:"https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=900&q=80"},
+    {name:"Ta'lim krediti",amount_max:0,amount_max_text:"shartnoma summasi",interest_rate:"14%",term_months:132,features:["uzoq muddat","davlat ko'magi"],tags:["education","low-risk"],url:SQB_HOST+"/uz/individuals/credits/educational-credit-uz/",image:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"},
+    {name:"Avto Imkon avtokrediti",amount_max:800000000,amount_max_text:"800 000 000 UZS",interest_rate:"20%",term_months:60,features:["yengil avto"],tags:["auto","high"],url:SQB_HOST+"/uz/individuals/credits/avtokredit-imkon-uz/",image:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"},
+    {name:"Avtokredit JAC",amount_max:250000000,amount_max_text:"250 000 000 UZS",interest_rate:"0%",term_months:60,features:["rasmiy diler","0% stavka"],tags:["auto"],url:SQB_HOST+"/uz/individuals/credits/avtokredit-jac-uz/",image:"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80"},
+    {name:"Uzavto-Imkon avtokrediti",amount_max:0,amount_max_text:"avto qiymatining 75%",interest_rate:"0%",term_months:60,features:["mahalliy avto"],tags:["auto"],url:SQB_HOST+"/uz/individuals/credits/avtokredit-uzavto-imkon-uz/",image:"https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"},
+    {name:"Green komfort",amount_max:200000000,amount_max_text:"200 000 000 UZS",interest_rate:"20%",term_months:36,features:["yashil texnologiya","quyosh paneli"],tags:["green","consumer"],url:SQB_HOST+"/uz/individuals/credits/green-komfort-uz/",image:"https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80"},
+    {name:"Kredit karta",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"26.9%",term_months:48,features:["revolving liniya"],tags:["card","quick","consumer"],url:SQB_HOST+"/uz/individuals/credits/credit-card-new-uz/",image:"https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=900&q=80"},
+    {name:"Yangicha OVERDRAFT",amount_max:100000000,amount_max_text:"100 000 000 UZS",interest_rate:"26.9%",term_months:24,features:["karta limiti"],tags:["quick","overdraft"],url:SQB_HOST+"/uz/individuals/credits/overdraft-offline-uz/",image:"https://images.unsplash.com/photo-1580508174046-170816f65662?auto=format&fit=crop&w=900&q=80"},
+    {name:"Premium Nasiya",amount_max:0,amount_max_text:"partner asosida",interest_rate:"individual",term_months:12,features:["POS bo'lib to'lash"],tags:["installment","quick","consumer"],url:SQB_HOST+"/uz/individuals/credits/premium-nasiya-uz/",image:"https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=80"}
+  ];
+  var investText=((result&&result.invest)||'').toLowerCase();
+  var score=(result&&typeof result.score==='number')?result.score:60;
+  var investVal=(parseInt((investText.match(/\d+/)||['0'])[0],10)||100)*1000000;
+  var biz=((result&&result.mainBiz&&result.mainBiz.name)||'').toLowerCase()+' '+((result&&result.mainBiz&&result.mainBiz.desc)||'').toLowerCase();
+  var aiText=(creditProgram||'').toLowerCase();
+  function addByName(arr,name){var p=catalog.find(function(x){return x.name===name});if(p&&!arr.some(function(y){return y.name===p.name}))arr.push(p);}
+  function addByTag(arr,tag){catalog.filter(function(x){return x.tags.indexOf(tag)>-1}).forEach(function(p){if(!arr.some(function(y){return y.name===p.name}))arr.push(p);});}
+  var picks=[];catalog.forEach(function(p){if(aiText.indexOf(p.name.toLowerCase().split('(')[0].trim())>-1)addByName(picks,p.name);});
+  var ageR=(document.getElementById('ageRange')&&document.getElementById('ageRange').value)||'';
+  if(/agro|ферма|чорва|қишлоқ|деҳқон|боғ|fermer/.test(biz)){addByName(picks,"Agroko'makchi krediti");addByTag(picks,"agro")}
+  if(/ta'lim|курс|education|таълим|ўқув/.test(biz)){addByName(picks,"Ta'lim krediti")}
+  if(/auto|avto|transport|такси|юк/.test(biz)){addByTag(picks,"auto")}
+  if(/green|эко|қуёш|panel|solar/.test(biz)){addByName(picks,"Green komfort")}
+  if(/18-25|18-29|25-29/.test(ageR)){addByName(picks,"Yosh tadbirkor krediti")}
+  if(userProfile==='beginner'||investVal<=100000000||score<45){addByName(picks,"SQB Mobile ilovasida mikroqarz");addByName(picks,"Yangicha mikroqarz");addByName(picks,"Ochiq kredit liniyasi mikroqarz")}
+  else if(userProfile==='intermediate'||investVal<=300000000){addByName(picks,"Mikrokredit");addByName(picks,"O'zini o'zi band qilganlar uchun mikroqarz");addByName(picks,"Iste'mol krediti Yangicha")}
+  else{addByName(picks,"Mikrokredit");addByName(picks,"Avto Imkon avtokrediti");addByName(picks,"Yosh tadbirkor krediti")}
+  if(!picks.length){addByName(picks,"Mikrokredit");addByName(picks,"Yangicha mikroqarz");addByName(picks,"Ochiq kredit liniyasi mikroqarz")}
+  return picks.slice(0,4).map(function(p){var f=(p.features||[]).join(', ');return {name:p.name,url:p.url||SQB,image:p.image||'',desc:'Сумма: '+p.amount_max_text+' | Ставка: '+p.interest_rate+' | Муддат: '+p.term_months+' ой' + (f?(' | '+f):'')};});
+}
+function detectBankProductName(text,idx){return '';}
+function showErr(m){
+  canReturnToResults=true;
+  var ai=document.getElementById('aiResult');
+  while(ai.firstChild)ai.removeChild(ai.firstChild);
+  var d=document.createElement('div');
+  d.className='card-s';
+  d.style.cssText='border-left:4px solid #ef4444;padding:24px 26px';
+  d.innerHTML='<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">'
+    +'<span style="font-size:32px">⚠️</span>'
+    +'<div><div style="font-size:16px;font-weight:800;color:#dc2626">Таҳлилда хатолик юз берди</div>'
+    +'<div style="font-size:13px;color:#6b7280;margin-top:3px">'+m+'</div></div></div>'
+    +'<div style="font-size:13px;color:#374151;margin-bottom:18px;padding:12px 14px;background:#fef2f2;border-radius:10px;border:1px solid #fecaca">'
+    +'💡 <strong>Нима қилиш керак:</strong> Интернет алоқасини текширинг ва қайта уриниб кўринг.'
+    +'</div>'
+    +'<div style="display:flex;gap:10px;flex-wrap:wrap">'
+    +'<button onclick="cancelAnalysisAndGo(2)" style="padding:11px 20px;background:#1e3a5f;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">← Молияга қайтиш</button>'
+    +'<button onclick="restartFromScratch()" style="padding:11px 20px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">🔄 Янги таҳлил</button>'
+    +'</div>';
+  ai.appendChild(d);
+  go(4);
+}
+function applyBank(){var id='SQB-'+Date.now().toString(36).toUpperCase();document.getElementById('appId').textContent=id;document.getElementById('bankModal').classList.add('show');}
+</script>
+</body>
+</html>

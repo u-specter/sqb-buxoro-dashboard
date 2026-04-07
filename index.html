@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="uz-Cyrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SQB Bank • Бухоро вилояти таҳлилий панели</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-expand-lg sqb-navbar sticky-top">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand d-flex align-items-center gap-3" href="#home">
+      <div class="brand-mark"><i class="bi bi-bank2"></i></div>
+      <div class="brand-text">
+        <div class="brand-title">SQB BANK</div>
+        <div class="brand-sub">Президент таҳлилий панели</div>
+      </div>
+    </a>
+
+    <div class="district-tabs ms-lg-4" role="tablist">
+      <button class="dt-btn active" data-district="gijduvon">
+        <i class="bi bi-bank"></i><span>ҒИЖДУВОН</span>
+      </button>
+      <button class="dt-btn" data-district="shofirkon">
+        <i class="bi bi-bank"></i><span>ШОФИРКОН</span>
+      </button>
+    </div>
+
+    <div class="ms-auto d-flex align-items-center gap-3 flex-grow-1 flex-lg-grow-0 mt-3 mt-lg-0" style="max-width:520px;">
+      <div class="search-wrap flex-grow-1">
+        <i class="bi bi-search"></i>
+        <input id="searchInput" class="form-control" type="search" placeholder="Кўрсаткич бўйича қидириш...">
+      </div>
+      <div class="date-pill d-none d-xl-flex">
+        <i class="bi bi-calendar3"></i><span id="todayDate"></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="app-shell">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="side-title">Слайдлар</div>
+    <a class="side-item active" href="#home" data-slide="0">
+      <i class="bi bi-house-door-fill"></i><span>Бош саҳифа</span>
+    </a>
+    <a class="side-item" href="#slide-1" data-slide="1"><i class="bi bi-graph-up-arrow"></i><span>1. Иқтисодий фаоллик</span></a>
+    <a class="side-item" href="#slide-2" data-slide="2"><i class="bi bi-buildings"></i><span>2. Инфратузилма</span></a>
+    <a class="side-item" href="#slide-3" data-slide="3"><i class="bi bi-people-fill"></i><span>3. Аҳоли ва бандлик</span></a>
+    <a class="side-item" href="#slide-4" data-slide="4"><i class="bi bi-stars"></i><span>4. Имкониятлар (1)</span></a>
+    <a class="side-item" href="#slide-5" data-slide="5"><i class="bi bi-stars"></i><span>5. Имкониятлар (2)</span></a>
+    <a class="side-item" href="#slide-6" data-slide="6"><i class="bi bi-tree"></i><span>6. Қишлоқ хўжалиги</span></a>
+    <a class="side-item" href="#slide-7" data-slide="7"><i class="bi bi-gear-wide-connected"></i><span>7. Саноат</span></a>
+    <a class="side-item" href="#slide-8" data-slide="8"><i class="bi bi-shop"></i><span>8. Хизматлар</span></a>
+    <a class="side-item" href="#slide-9" data-slide="9"><i class="bi bi-flag-fill"></i><span>9. Хулоса ва режа</span></a>
+
+    <a class="side-item side-advisor" href="advisor/index.html" target="_blank" rel="noopener">
+      <i class="bi bi-robot"></i><span>SQB AI Advisor</span>
+      <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+    </a>
+
+    <div class="side-foot">
+      <div class="legend"><span class="dot ok"></span>Топилган</div>
+      <div class="legend"><span class="dot no"></span>Топилмаган</div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><i class="bi bi-geo-alt-fill"></i> Бухоро вилояти • <span id="heroDistrict">Ғиждувон тумани</span></div>
+          <h1 class="hero-title">SQB Bank таҳлилий маълумотлар базаси</h1>
+          <p class="hero-sub">9 та регламент слайди бўйича 159 та кўрсаткич — Ўзбекистон Республикаси Президенти учун тайёрланган интерактив дашборд.</p>
+
+          <div class="kpi-grid">
+            <div class="kpi-tile">
+              <div class="kpi-ic"><i class="bi bi-collection"></i></div>
+              <div class="kpi-lab">Жами кўрсаткичлар</div>
+              <div class="kpi-val" data-count="159">0</div>
+            </div>
+            <div class="kpi-tile ok">
+              <div class="kpi-ic"><i class="bi bi-check2-circle"></i></div>
+              <div class="kpi-lab">Топилган</div>
+              <div class="kpi-val" id="kpiFound" data-count="130">0</div>
+            </div>
+            <div class="kpi-tile warn">
+              <div class="kpi-ic"><i class="bi bi-exclamation-triangle"></i></div>
+              <div class="kpi-lab">Топилмаган</div>
+              <div class="kpi-val" id="kpiMissing" data-count="29">0</div>
+            </div>
+            <div class="kpi-tile teal">
+              <div class="kpi-ic"><i class="bi bi-pie-chart-fill"></i></div>
+              <div class="kpi-lab">Тўлиқлик</div>
+              <div class="kpi-val"><span id="kpiPct">0</span>%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-chart">
+          <canvas id="coverageDonut"></canvas>
+          <div class="chart-center">
+            <div id="chartPct">82%</div>
+            <div class="chart-lbl">Тўлиқлик</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>9 ТА СЛАЙД БЎЙИЧА КЎРСАТКИЧЛАР ҚАМРОВИ</span></div>
+
+      <div class="row g-4 px-4 pb-5" id="slidesOverview"></div>
+    </section>
+
+    <!-- DYNAMIC SLIDE PAGES -->
+    <div id="slidePages"></div>
+
+  </main>
+</div>
+
+<footer class="sqb-footer">
+  <div class="container-fluid px-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <div><i class="bi bi-bank2"></i> SQB Bank • Бухоро вилояти таҳлили • 2026</div>
+    <div class="opacity-75">Маълумот манбаси: 📁 Туман маълумотлари / 📄 Аналитик маълумотномалар</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
