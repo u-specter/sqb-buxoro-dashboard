@@ -725,7 +725,15 @@ function findIndicator(data, no){
 function kpiFromIndicator(data, no, opts){
   const ind = findIndicator(data, no);
   if(!ind || !ind.found || !ind.value) return null;
-  const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
+  const raw = String(ind.value).trim();
+  // Special: "N% (M киши)" — percent + count
+  const pcm = raw.match(/^(-?\d+(?:[.,]\d+)?)\s*%\s*\(\s*([\d\s]+)\s*киши\s*\)/i);
+  if(pcm){
+    const pct = parseFloat(pcm[1].replace(",","."));
+    const cnt = parseInt(pcm[2].replace(/\s/g,""),10);
+    return {value:pct, unit:"%", sub:fmtNum(cnt)+" киши", delta:null, deltaDir:null};
+  }
+  const p = parseValue(raw, {name:ind.name, desc:ind.desc});
   const out = {value:null, unit:opts.unit||"", delta:null, deltaDir:null};
   if(p.type==="timeseries"){
     out.value = p.last;
@@ -762,17 +770,31 @@ function kpiFromIndicator(data, no, opts){
       if(!isNaN(n)){out.value=n; out.unit=opts.unit||"";}
     }
   }
+  if(out.value==null){
+    // Fallback: first number in the raw text
+    const mm = raw.match(/(\d[\d\s]*(?:[.,]\d+)?)/);
+    if(mm){
+      const n = parseFloat(mm[1].replace(/\s/g,"").replace(",","."));
+      if(!isNaN(n)){
+        out.value = n;
+        if(!out.unit){
+          const tail = raw.slice(mm.index+mm[0].length).trim();
+          if(tail) out.unit = tail.split(/\s/)[0];
+        }
+      }
+    }
+  }
   if(out.value==null) return null;
   return out;
 }
 
 const REGION_KPI_DEFS = [
-  {no:1,  icon:"bi-buildings-fill",     label:"Саноат ишлаб чиқариш", unit:"млрд сўм"},
-  {no:4,  icon:"bi-globe2",              label:"Экспорт",              unit:"млн $"},
-  {no:11, icon:"bi-shop-window",         label:"Янги корхоналар",      unit:"та"},
-  {no:6,  icon:"bi-cash-coin",           label:"Маҳаллий бюджет",      unit:"млрд сўм"},
-  {no:47, icon:"bi-people-fill",         label:"Аҳоли",                unit:"минг киши"},
-  {no:51, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%"},
+  {no:48, icon:"bi-geo-alt-fill",        label:"Маҳаллалар сони",      unit:"та"},
+  {no:50, icon:"bi-house-door-fill",     label:"Хонадонлар сони",      unit:""},
+  {no:49, icon:"bi-people",              label:"Оилалар сони",         unit:""},
+  {no:47, icon:"bi-people-fill",         label:"Аҳоли сони",           unit:"минг киши"},
+  {no:52, icon:"bi-person-x-fill",       label:"Ишсизлик",             unit:"%", pctCount:true},
+  {no:51, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%", pctCount:true},
 ];
 
 function renderRegionKpis(data){
@@ -786,7 +808,9 @@ function renderRegionKpis(data){
     } else {
       valHtml = '<div class="rk-val">'+fmtNum(k.value)+
         (k.unit?' <span class="rk-unit">'+escapeHTML(k.unit)+'</span>':'')+'</div>';
-      if(k.delta){
+      if(k.sub){
+        deltaHtml = '<div class="rk-sub">'+escapeHTML(k.sub)+'</div>';
+      } else if(k.delta && !def.pctCount){
         const arrow = k.deltaDir==='up'?'▲':(k.deltaDir==='down'?'▼':'▬');
         deltaHtml = '<div class="rk-delta '+k.deltaDir+'">'+arrow+' '+escapeHTML(k.delta)+'</div>';
       }
@@ -806,45 +830,51 @@ function renderRegionKpis(data){
 function buildRegionInsights(district){
   const data = STATE.data[district];
   if(!data) return [];
-  const stats = [];
-  data.indicators.forEach(function(ind){
-    if(!ind.found || !ind.value) return;
-    const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
-    if(p.type!=="timeseries" || p.values.length<2) return;
-    stats.push({name:ind.name, p:p});
-  });
-  if(!stats.length) return [];
-
-  // Sort by CAGR for growth/decline
-  const byCagr = stats.filter(function(s){return s.p.cagr!=null;}).slice().sort(function(a,b){return b.p.cagr-a.p.cagr;});
-  const top = byCagr.slice(0,2);
-  const decline = byCagr[byCagr.length-1];
-  // Stable: smallest abs cagr
-  const stable = byCagr.slice().sort(function(a,b){return Math.abs(a.p.cagr)-Math.abs(b.p.cagr);})[0];
-
   const out = [];
-  top.forEach(function(s){
-    if(s.p.cagr>2){
-      out.push({e:"✨", t:'<b>'+escapeHTML(s.name)+'</b> — '+s.p.cagr.toFixed(1)+'% йиллик ўсиш суръати, охирги қиймат '+fmtNum(s.p.last)+(s.p.unit?' '+s.p.unit:'')+'.'});
+
+  const mah = kpiFromIndicator(data, 48, {});
+  const xon = kpiFromIndicator(data, 50, {});
+  const oila = kpiFromIndicator(data, 49, {});
+  const ishsiz = kpiFromIndicator(data, 52, {});
+  const kamb = kpiFromIndicator(data, 51, {});
+
+  if(mah && mah.value!=null){
+    out.push({e:"🏘", t:'<b>Маҳаллалар ('+fmtNum(mah.value)+' та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.'});
+  }
+  if(xon && oila && xon.value!=null && oila.value!=null){
+    out.push({e:"🏠", t:'<b>'+fmtNum(xon.value)+' хонадон ва '+fmtNum(oila.value)+' оила</b> — оилавий тадбиркорлик (оналар дастури, ҳунармандчилик) орқали уй иқтисодиётини ривожлантириш резерви юқори.'});
+  }
+  if(ishsiz && ishsiz.value!=null){
+    const pct = ishsiz.value;
+    const msg = pct>=5
+      ? 'расмий даража '+pct.toFixed(1)+'% — ўртачадан юқори. Норасмий бандликни легаллаштириш ва қайта тайёрлаш дастурлари керак.'
+      : 'расмий даража '+pct.toFixed(1)+'% — нормал чегарада, лекин норасмий бандлик улуши юқори. Меҳнат бозорини расмийлаштириш устувор.';
+    out.push({e:"💼", t:'<b>Ишсизлик</b> — '+msg+(ishsiz.sub?' Ҳозир '+ishsiz.sub+' ишсиз рўйхатда.':'')});
+  }
+  if(kamb && kamb.value!=null){
+    const pct = kamb.value;
+    const msg = pct>3
+      ? pct.toFixed(1)+'% — 2026 йилгача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.'
+      : pct.toFixed(1)+'% — мақсадли кўрсаткичга яқин, "қайта тушиш" хавфини олдини олиш учун устивор чоралар сақлансин.';
+    out.push({e:"📉", t:'<b>Камбағаллик</b> — '+msg+(kamb.sub?' Жами '+kamb.sub+'.':'')});
+  }
+  // NPL (#10)
+  const nplInd = findIndicator(data, 10);
+  if(nplInd && nplInd.found && nplInd.value){
+    const nplStr = String(nplInd.value);
+    const nplM = nplStr.match(/(\d+(?:[.,]\d+)?)\s*%/);
+    if(nplM){
+      const nplPct = parseFloat(nplM[1].replace(",","."));
+      const msg = nplPct>3
+        ? 'муаммоли кредитлар '+nplPct.toFixed(1)+'% — хавфли даража. Портфель реструктуризацияси ва муаммоли мижозлар билан индивидуал иш олиб борилсин.'
+        : 'NPL даражаси '+nplPct.toFixed(1)+'% — назорат остида, лекин янги кредитлар бериш даврида маҳалла банкирлари орқали скоринг кучайтирилсин.';
+      out.push({e:"💳", t:'<b>NPL кредитлар</b> — '+msg});
+    } else {
+      out.push({e:"💳", t:'<b>NPL кредитлар</b> — муаммоли активлар улушини мунтазам мониторинг қилиш ва эрта огоҳлантириш тизимини жорий этиш тавсия этилади.'});
     }
-  });
-  if(decline && decline.p.cagr<-1 && top.indexOf(decline)<0){
-    out.push({e:"🔻", t:'<b>'+escapeHTML(decline.name)+'</b> — '+Math.abs(decline.p.cagr).toFixed(1)+'% га камаймоқда, дарҳол чора кўриш керак.'});
   }
-  if(stable && top.indexOf(stable)<0 && stable!==decline){
-    out.push({e:"📊", t:'<b>'+escapeHTML(stable.name)+'</b> — барқарор динамика, охирги қиймат '+fmtNum(stable.p.last)+(stable.p.unit?' '+stable.p.unit:'')+'.'});
-  }
-  // Volatile fallback
-  if(out.length<3){
-    const volatile = stats.find(function(s){
-      const v = s.p.values; if(v.length<3) return false;
-      let inc=0,dec=0;
-      for(let i=1;i<v.length;i++){if(v[i]>v[i-1])inc++;else if(v[i]<v[i-1])dec++;}
-      return inc>0 && dec>0 && Math.abs(inc-dec)<=1;
-    });
-    if(volatile) out.push({e:"↕", t:'<b>'+escapeHTML(volatile.name)+'</b> — нотурғун динамика, барқарорлаштириш зарур.'});
-  }
-  return out.slice(0,4);
+
+  return out.slice(0,6);
 }
 
 function renderAiPanel(data){
