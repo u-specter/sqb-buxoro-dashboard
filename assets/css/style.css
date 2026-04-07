@@ -161,6 +161,7 @@ body{
 .rk-delta.down{background:rgba(255,181,151,.18);color:#FFB597}
 .rk-delta.flat{background:rgba(255,255,255,.14);color:#fff}
 .rk-sub{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:30px;background:rgba(255,255,255,.12);color:#d6eef1;font-size:12px;font-weight:700;border:1px solid rgba(255,255,255,.15)}
+.rk-sub.warn{background:rgba(255,140,80,.18);color:#FFB597;border-color:rgba(255,140,80,.4)}
 
 /* AI INSIGHTS PANEL */
 .ai-panel{

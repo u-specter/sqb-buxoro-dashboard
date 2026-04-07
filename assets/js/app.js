@@ -726,12 +726,12 @@ function kpiFromIndicator(data, no, opts){
   const ind = findIndicator(data, no);
   if(!ind || !ind.found || !ind.value) return null;
   const raw = String(ind.value).trim();
-  // Special: "N% (M киши)" — percent + count
+  // Special: "N% (M киши)" — show count as main, % as sub
   const pcm = raw.match(/^(-?\d+(?:[.,]\d+)?)\s*%\s*\(\s*([\d\s]+)\s*киши\s*\)/i);
   if(pcm){
     const pct = parseFloat(pcm[1].replace(",","."));
     const cnt = parseInt(pcm[2].replace(/\s/g,""),10);
-    return {value:pct, unit:"%", sub:fmtNum(cnt)+" киши", delta:null, deltaDir:null};
+    return {value:cnt, unit:"киши", sub:pct.toFixed(1).replace(".",",")+"%", subClass:"warn", delta:null, deltaDir:null};
   }
   const p = parseValue(raw, {name:ind.name, desc:ind.desc});
   const out = {value:null, unit:opts.unit||"", delta:null, deltaDir:null};
@@ -809,7 +809,7 @@ function renderRegionKpis(data){
       valHtml = '<div class="rk-val">'+fmtNum(k.value)+
         (k.unit?' <span class="rk-unit">'+escapeHTML(k.unit)+'</span>':'')+'</div>';
       if(k.sub){
-        deltaHtml = '<div class="rk-sub">'+escapeHTML(k.sub)+'</div>';
+        deltaHtml = '<div class="rk-sub'+(k.subClass?' '+k.subClass:'')+'">'+escapeHTML(k.sub)+'</div>';
       } else if(k.delta && !def.pctCount){
         const arrow = k.deltaDir==='up'?'▲':(k.deltaDir==='down'?'▼':'▬');
         deltaHtml = '<div class="rk-delta '+k.deltaDir+'">'+arrow+' '+escapeHTML(k.delta)+'</div>';
