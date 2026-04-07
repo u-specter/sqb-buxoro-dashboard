@@ -26,6 +26,10 @@ const STATE = {
 function parseValue(raw, ctx){
   ctx = ctx || {};
   if(raw==null || raw==="") return {type:"empty"};
+  // === Pre-typed object (rich data) ===
+  if(typeof raw === "object" && raw.type){
+    return raw; // pass through — caller handles known types
+  }
   const str = String(raw).trim();
 
   // Strip leading "[Tag]" prefix and capture as label
@@ -347,6 +351,36 @@ function renderValue(ind, canvasId){
       '<div class="ms-delta '+(up?'up':'down')+'">'+arrow+' '+sign+p.deltaPct.toFixed(1)+'%</div>'+
       '<div class="ms-note">'+escapeHTML(p.note||'2024 йилга нисбатан')+'</div>'+
       '</div></div>';
+  }
+
+  // === Google Trends — 24 ой қидирув индекси ===
+  if(p.type==="timeseries_monthly"){
+    STATE.pending.push({id:canvasId, kind:"area", labels:p.labels, values:p.values});
+    return '<div class="ic-value rich">'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'Динамика')+'</div>'+
+      '<span class="val-tag">'+(p.subtitle?escapeHTML(p.subtitle):'')+'</span></div>'+
+      '<div class="trend-top">'+
+        '<div class="trend-num">'+p.avg+' <span class="metric-unit">/100 ўртача</span></div>'+
+        '<span class="metric-delta up">▲ макс '+p.max+'</span>'+
+        '<span class="metric-delta down" style="margin-left:6px">▼ мин '+p.min+'</span>'+
+      '</div>'+
+      '<div class="value-chart-wrap trend" style="height:140px"><canvas id="'+canvasId+'"></canvas></div>'+
+      '</div>';
+  }
+
+  // === ML прогноз — 5 секторли мульти-чизиқли (факт+прогноз) ===
+  if(p.type==="multi_series_forecast"){
+    STATE.pending.push({id:canvasId, kind:"forecast", years:p.years, sectors:p.sectors, factUntil:p.fact_until});
+    const top3 = p.sectors.slice(0, 3).map(function(s){
+      return '<div class="ml-sector"><span class="ml-name">'+escapeHTML(s.name)+'</span>'+
+        '<span class="ml-grow">'+escapeHTML(s.growth||'')+'</span></div>';
+    }).join('');
+    return '<div class="ic-value rich">'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'ML прогноз')+'</div>'+
+      '<span class="val-tag">'+(p.subtitle?escapeHTML(p.subtitle):'')+'</span></div>'+
+      '<div class="value-chart-wrap" style="height:200px"><canvas id="'+canvasId+'"></canvas></div>'+
+      '<div class="ml-sectors">'+top3+'</div>'+
+      '</div>';
   }
 
   if(p.type==="single_metric"){
