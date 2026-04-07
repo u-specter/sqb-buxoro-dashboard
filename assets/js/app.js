@@ -2,8 +2,8 @@
 // Note: all dynamic strings pass through escapeHTML() before being inserted.
 const SLIDES = [
   {n:1,title:"Иқтисодий фаоллик",          section:"I",  icon:"bi-graph-up-arrow",       desc:"Саноат, қурилиш, ишлаб чиқариш ва иқтисодий ўсиш кўрсаткичлари"},
-  {n:2,title:"Инфратузилма",                section:"II", icon:"bi-buildings",            desc:"Йўл, газ, сув, электр энергия ва коммунал инфратузилма"},
-  {n:3,title:"Аҳоли ва бандлик",            section:"III",icon:"bi-people-fill",          desc:"Демография, иш билан таъминлаш, мигратсия ва камбағаллик"},
+  {n:2,title:"Аҳоли ва бандлик",            section:"III",icon:"bi-people-fill",          desc:"Демография, иш билан таъминлаш, мигратсия ва камбағаллик"},
+  {n:3,title:"Инфратузилма",                section:"II", icon:"bi-buildings",            desc:"Йўл, газ, сув, электр энергия ва коммунал инфратузилма"},
   {n:4,title:"Имкониятлар (1-қисм)",        section:"IV", icon:"bi-stars",                desc:"Туман имкониятлари, ресурслар ва салоҳият — биринчи қисм"},
   {n:5,title:"Маҳалла тадбиркорлик",        section:"IV", icon:"bi-shop-window",          desc:"Маҳалла даражасидаги тадбиркорлик ва иқтисодий фаоллик"},
   {n:6,title:"Лойиҳалар фабрикаси: Қишлоқ хўжалиги", section:"V", icon:"bi-tree",         desc:"АПК, деҳқончилик, чорвачилик лойиҳалари"},
