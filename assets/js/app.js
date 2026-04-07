@@ -368,6 +368,45 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
+  // === Sector table — multi-sector with hajm + growth ===
+  if(p.type==="sector_table"){
+    const max = Math.max.apply(null, p.sectors.map(function(s){return s.value;}));
+    const fmt = function(n){
+      if(n>=1000) return (n/1000).toFixed(2).replace('.',',')+' трлн';
+      return n.toFixed(1).replace('.',',');
+    };
+    const rows = p.sectors.map(function(s){
+      const barW = max>0 ? Math.round((s.value/max)*100) : 0;
+      const isPositive = s.growth >= 100;
+      const deltaFromBase = (s.growth - 100).toFixed(1).replace('.',',');
+      return '<div class="st-row" style="--c:'+s.color+'">'+
+        '<div class="st-ic"><i class="bi '+(s.icon||'bi-circle-fill')+'"></i></div>'+
+        '<div class="st-body">'+
+          '<div class="st-name">'+escapeHTML(s.name)+'</div>'+
+          '<div class="st-bar"><div class="st-bar-fill" style="width:'+barW+'%"></div></div>'+
+        '</div>'+
+        '<div class="st-val">'+
+          '<div class="st-num">'+fmt(s.value)+'</div>'+
+          '<div class="st-unit">'+escapeHTML(p.unit||'млрд сўм')+'</div>'+
+        '</div>'+
+        '<div class="st-growth '+(isPositive?'up':'down')+'">'+
+          '<i class="bi bi-arrow-'+(isPositive?'up':'down')+'-short"></i>'+
+          '<span>+'+deltaFromBase+'%</span>'+
+        '</div>'+
+      '</div>';
+    }).join('');
+    const totalSum = p.sectors.reduce(function(a,s){return a+s.value;},0);
+    return '<div class="ic-value rich st-wrap">'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'Секторлар')+'</div>'+
+      (p.subtitle?'<span class="val-tag">'+escapeHTML(p.subtitle)+'</span>':'')+'</div>'+
+      '<div class="st-list">'+rows+'</div>'+
+      '<div class="st-foot">'+
+        '<span class="st-foot-lab">ЖАМИ</span>'+
+        '<span class="st-foot-val">'+fmt(totalSum)+' '+escapeHTML(p.unit||'')+'</span>'+
+      '</div>'+
+      '</div>';
+  }
+
   // === Category breakdown — Neo-Brutalist Cards (Variant 1) ===
   if(p.type==="category_breakdown"){
     const total = p.categories.reduce(function(s,c){return s+(c.count||0);},0);
