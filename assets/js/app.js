@@ -41,9 +41,9 @@ function parseValue(raw, ctx){
   // ---- Metric + delta detection (e.g. "43.1 млн $ | ўсиш: +108.5% (тахминий)") ----
   // Requires the literal "ўсиш:" keyword so it only fires for explicitly tagged metrics.
   if(/ўсиш\s*:/i.test(body) && !/^\s*(?:19|20)\d{2}\s*[:\-]/.test(body)){
-    const md = body.match(/^\s*(-?\d{1,7}(?:[\.,]\d+)?)\s*([^\|]*?)\s*\|\s*ўсиш\s*:\s*([+\-]?\d{1,4}(?:[\.,]\d+)?)\s*%\s*(?:\(([^)]*)\))?\s*$/i);
+    const md = body.match(/^\s*(-?\d[\d\s\u00A0]{0,14}(?:[\.,]\d+)?)\s*([^\|]*?)\s*\|\s*ўсиш\s*:\s*([+\-]?\d{1,4}(?:[\.,]\d+)?)\s*%\s*(?:\(([^)]*)\))?\s*$/i);
     if(md){
-      const value = parseFloat(md[1].replace(",","."));
+      const value = parseFloat(md[1].replace(/[\s\u00A0]/g,"").replace(",","."));
       const unit = (md[2]||"").trim();
       const deltaPct = parseFloat(md[3].replace(",","."));
       const note = (md[4]||"").trim();
