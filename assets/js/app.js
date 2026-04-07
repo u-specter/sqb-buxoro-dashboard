@@ -36,6 +36,21 @@ function parseValue(raw, ctx){
   const body = tagM ? str.slice(tagM[0].length) : str;
   if(tagM) label = tagM[1];
 
+  // ---- Metric + delta detection (e.g. "43.1 млн $ | ўсиш: +108.5% (тахминий)") ----
+  // Requires the literal "ўсиш:" keyword so it only fires for explicitly tagged metrics.
+  if(/ўсиш\s*:/i.test(body) && !/^\s*(?:19|20)\d{2}\s*[:\-]/.test(body)){
+    const md = body.match(/^\s*(-?\d{1,7}(?:[\.,]\d+)?)\s*([^\|]*?)\s*\|\s*ўсиш\s*:\s*([+\-]?\d{1,4}(?:[\.,]\d+)?)\s*%\s*(?:\(([^)]*)\))?\s*$/i);
+    if(md){
+      const value = parseFloat(md[1].replace(",","."));
+      const unit = (md[2]||"").trim();
+      const deltaPct = parseFloat(md[3].replace(",","."));
+      const note = (md[4]||"").trim();
+      if(!isNaN(value) && !isNaN(deltaPct)){
+        return {type:"metric_delta", label:label, value:value, unit:unit, deltaPct:deltaPct, note:note};
+      }
+    }
+  }
+
   // ---- Labeled breakdown detection (e.g. "Юридик шахслар: 1 854 та | Кичик бизнес: 194 та") ----
   // Split on |, ;, or ". " — each segment must look like "Label: number unit"
   const segs = body.split(/\s*[\|;]\s*|\.\s+(?=[А-ЯЎҒҲҚЁA-Z])/).map(function(s){return s.trim();}).filter(Boolean);
@@ -50,6 +65,37 @@ function parseValue(raw, ctx){
     if(labeled.length===segs.length){
       return {type:"breakdown", label:label, items:segs.slice(0,6)};
     }
+  }
+
+  // ---- Estimated trend detection (YYYY: N ±M) ----
+  const estPairs = [];
+  const seenEstY = {};
+  const ep = /((?:19|20)\d{2})\s*:?\s*(-?\d{1,7}(?:[\.,]\d+)?)\s*[±\+\-]\s*(\d{1,7}(?:[\.,]\d+)?)/g;
+  // Use explicit ± character only to avoid false positives
+  const ep2 = /((?:19|20)\d{2})\s*:?\s*(-?\d{1,7}(?:[\.,]\d+)?)\s*±\s*(\d{1,7}(?:[\.,]\d+)?)/g;
+  let mep;
+  while((mep = ep2.exec(body))!==null){
+    const y = parseInt(mep[1]);
+    const v = parseFloat(mep[2].replace(",","."));
+    const er = parseFloat(mep[3].replace(",","."));
+    if(y>=2010 && y<=2035 && !isNaN(v) && !isNaN(er) && !seenEstY[y]){
+      seenEstY[y]=1; estPairs.push({year:y, value:v, error:er});
+    }
+  }
+  if(estPairs.length>=1){
+    estPairs.sort(function(a,b){return a.year-b.year;});
+    const vals = estPairs.map(function(p){return p.value;});
+    const last = vals[vals.length-1];
+    const prev = vals.length>=2 ? vals[vals.length-2] : null;
+    const yoy = (prev!=null && prev!==0) ? ((last-prev)/Math.abs(prev))*100 : null;
+    const yoyAbs = (prev!=null) ? (last-prev) : null;
+    const unit = detectUnit(label, body);
+    const insight = "🤖 Баҳоланган қиймат — расмий манба йўқлиги сабабли вилоят улуши асосида ҳисобланган, ишончлилик оралиғи ±"+estPairs[estPairs.length-1].error+" "+unit+".";
+    return {
+      type:"estimated_trend", label:label, series:estPairs,
+      unit:unit, last:last, prev:prev, yoy:yoy, yoyAbs:yoyAbs,
+      insight:insight,
+    };
   }
 
   // ---- Explicit year-value pair detection ----
@@ -257,6 +303,35 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
+  if(p.type==="estimated_trend"){
+    STATE.pending.push({id:canvasId, kind:"band", series:p.series});
+    const yoyPill = (p.yoy!=null) ?
+      ('<span class="metric-delta '+(p.yoy>=0?'up':'down')+'">'+(p.yoy>=0?'▲ +':'▼ ')+fmtNum(p.yoyAbs)+' ('+(p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%)</span>')
+      : '';
+    return '<div class="ic-value rich">'+
+      '<div class="ic-value-head"><div class="ic-value-label">Баҳоланган динамика</div>'+
+      (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
+      '<div class="trend-top">'+
+        '<div class="trend-num">'+fmtNum(p.last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+'</div>'+
+        yoyPill+
+      '</div>'+
+      '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
+      (p.insight?'<div class="trend-insight"><i class="bi bi-robot"></i><em>'+escapeHTML(p.insight)+'</em></div>':'')+
+      '</div>';
+  }
+
+  if(p.type==="metric_delta"){
+    const up = p.deltaPct>=0;
+    const sign = up?"+":"";
+    const arrow = up?"▲":"▼";
+    return '<div class="ic-value rich"><div class="metric-square">'+
+      '<div class="ms-num">'+fmtNum(p.value)+'</div>'+
+      (p.unit?'<div class="ms-unit">'+escapeHTML(p.unit)+'</div>':'')+
+      '<div class="ms-delta '+(up?'up':'down')+'">'+arrow+' '+sign+p.deltaPct.toFixed(1)+'%</div>'+
+      '<div class="ms-note">'+escapeHTML(p.note||'2024 йилга нисбатан')+'</div>'+
+      '</div></div>';
+  }
+
   if(p.type==="single_metric"){
     return '<div class="ic-value rich">'+
       '<div class="ic-value-head"><div class="ic-value-label">Қиймат</div>'+
@@ -360,6 +435,57 @@ function flushPendingCharts(){
             x:{display:true,grid:{display:false},border:{display:false},
                ticks:{font:{family:"Inter",size:10,weight:"600"},color:"#7a8a93",padding:4}},
             y:{display:false,grid:{color:"rgba(0,126,136,.06)"},border:{display:false}},
+          },
+          animation:{duration:700},
+        },
+      });
+    }
+    if(job.kind==="band"){
+      const series = job.series || [];
+      const labels = series.map(function(p){return p.year;});
+      const main = series.map(function(p){return p.value;});
+      const upper = series.map(function(p){return p.value+p.error;});
+      const lower = series.map(function(p){return p.value-p.error;});
+      const errors = series.map(function(p){return p.error;});
+      const lastIdx = main.length-1;
+      const radii = main.map(function(_,i){return i===lastIdx?5:0;});
+      const pointBg = main.map(function(_,i){return i===lastIdx?"#C25E3C":"#005F68";});
+      const pointBd = main.map(function(_,i){return i===lastIdx?"#fff":"#005F68";});
+      STATE.charts[job.id] = new Chart(ctx,{
+        type:"line",
+        data:{
+          labels:labels,
+          datasets:[
+            {label:"upper", data:upper, borderColor:"rgba(0,0,0,0)",
+             backgroundColor:"rgba(0,126,136,.15)", fill:"+1",
+             pointRadius:0, pointHoverRadius:0, tension:.4, borderWidth:0},
+            {label:"lower", data:lower, borderColor:"rgba(0,0,0,0)",
+             backgroundColor:"rgba(0,0,0,0)", fill:false,
+             pointRadius:0, pointHoverRadius:0, tension:.4, borderWidth:0},
+            {label:"main", data:main, borderColor:"#005F68",
+             backgroundColor:"rgba(0,0,0,0)", borderWidth:2.5, tension:.4, fill:false,
+             pointRadius:radii, pointHoverRadius:6,
+             pointBackgroundColor:pointBg, pointBorderColor:pointBd, pointBorderWidth:2},
+          ],
+        },
+        options:{
+          responsive:true,maintainAspectRatio:false,
+          layout:{padding:{top:6,right:6,left:6,bottom:0}},
+          plugins:{legend:{display:false},tooltip:{
+            backgroundColor:"#102836",padding:10,
+            titleFont:{family:"Inter",size:11,weight:"700"},
+            bodyFont:{family:"Inter",size:13,weight:"700"},
+            displayColors:false,
+            filter:function(item){return item.datasetIndex===2;},
+            callbacks:{
+              title:function(items){return items[0].label+" йил";},
+              label:function(c){return "  "+fmtNum(c.parsed.y)+" ±"+errors[c.dataIndex];},
+            },
+          }},
+          scales:{
+            x:{display:true,grid:{display:false},border:{display:false},
+               ticks:{font:{family:"Inter",size:10,weight:"600"},color:"#7a8a93",padding:4}},
+            y:{display:false,grid:{display:false},border:{display:false}},
           },
           animation:{duration:700},
         },
@@ -576,6 +702,11 @@ function kpiFromIndicator(data, no, opts){
       out.delta = (p.delta>=0?'+':'')+p.delta.toFixed(1)+'%';
       out.deltaDir = p.delta>0?'up':(p.delta<0?'down':'flat');
     }
+  } else if(p.type==="metric_delta"){
+    out.value = p.value;
+    out.unit = opts.unit || p.unit || "";
+    out.delta = (p.deltaPct>=0?'+':'')+p.deltaPct.toFixed(1)+'%';
+    out.deltaDir = p.deltaPct>0?'up':(p.deltaPct<0?'down':'flat');
   } else if(p.type==="breakdown"){
     // Take the first numeric item (most representative, e.g. "Юридик шахслар: 1 854 та")
     for(let i=0;i<p.items.length;i++){
