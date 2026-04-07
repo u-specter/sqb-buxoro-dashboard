@@ -486,6 +486,7 @@ body{
   font-size:52px;font-weight:900;color:var(--navy);
   line-height:1;font-variant-numeric:tabular-nums;
   font-family:'Inter',system-ui,sans-serif;
+  white-space:nowrap;
 }
 .ms-unit{
   margin-top:4px;font-size:12px;font-weight:700;
