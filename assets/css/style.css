@@ -994,64 +994,67 @@ body{
   .nb-grid { grid-template-columns: 1fr; }
 }
 
-/* === Sector Table — Stripe Dashboard (Variant C) === */
+/* === Sector Table — Stripe Dashboard (sayt mavzusiga moslashgan) === */
 .sc-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 28px;
-  margin-top: 14px;
+  background: var(--cream);
+  border: 1px solid var(--cream-2);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-top: 12px;
 }
 .sc-head {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--cream-2);
 }
 .sc-h-left .sc-h-lab,
 .sc-h-right .sc-h-lab {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.14em;
   margin-bottom: 6px;
   text-transform: uppercase;
 }
 .sc-h-left .sc-h-val {
-  font-family: 'Manrope', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--navy);
   line-height: 1;
 }
 .sc-h-unit {
-  font-size: 16px;
-  color: rgba(255,255,255,0.4);
-  font-weight: 500;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
 }
 .sc-h-right { text-align: right; }
 .sc-h-right .sc-h-pct {
   font-size: 14px;
-  font-weight: 700;
-  color: #4ade80;
+  font-weight: 800;
+  color: #1f8a4c;
   font-variant-numeric: tabular-nums;
 }
 .sc-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 .sc-item {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
 }
 .sc-bar-wrap {
   position: relative;
-  background: rgba(255,255,255,0.03);
+  background: #fff;
+  border: 1px solid var(--cream-2);
   height: 36px;
   border-radius: 8px;
   overflow: hidden;
@@ -1062,41 +1065,47 @@ body{
 .sc-bar-fill {
   position: absolute;
   left: 0; top: 0; bottom: 0;
-  background: linear-gradient(90deg,
-    color-mix(in srgb, var(--c) 30%, transparent),
-    color-mix(in srgb, var(--c) 12%, transparent));
-  border-left: 2px solid var(--c);
+  background: color-mix(in srgb, var(--c) 18%, transparent);
+  border-left: 3px solid var(--c);
   transition: width 1.2s ease-out;
 }
 .sc-bar-text {
   position: relative;
   font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.92);
+  font-weight: 700;
+  color: var(--navy);
   letter-spacing: 0.1px;
 }
 .sc-vals {
   display: flex;
   align-items: baseline;
-  gap: 12px;
-  min-width: 160px;
+  gap: 10px;
+  min-width: 150px;
   justify-content: flex-end;
 }
 .sc-num {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 17px;
-  font-weight: 700;
-  color: #fff;
+  font-weight: 800;
+  color: var(--navy);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
 }
 .sc-pct {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
+  padding: 3px 8px;
+  border-radius: 6px;
 }
-.sc-pct.up { color: #4ade80; }
-.sc-pct.down { color: #f87171; }
+.sc-pct.up {
+  color: #1f8a4c;
+  background: rgba(31,138,76,0.1);
+}
+.sc-pct.down {
+  color: #c25e3c;
+  background: rgba(194,94,60,0.1);
+}
 
 /* === Sector Table — soft, refined (legacy) === */
 .st-wrap { padding: 6px 0; }
