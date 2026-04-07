@@ -368,6 +368,39 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
+  // === Yearly credits — bar chart + total (sayt mavzusi) ===
+  if(p.type==="yearly_credits"){
+    const max = Math.max.apply(null, p.values);
+    const last = p.values[p.values.length-1];
+    const prev = p.values[p.values.length-2];
+    const yoyAbs = last - prev;
+    const yoyPct = prev>0 ? ((last-prev)/prev*100) : 0;
+    const fmt = function(n){ return n.toLocaleString('ru-RU').replace(/,/g,' '); };
+    const bars = p.years.map(function(y, i){
+      const v = p.values[i];
+      const h = max>0 ? Math.round((v/max)*100) : 0;
+      const isLast = i === p.years.length-1;
+      return '<div class="yc-bar-item">'+
+        '<div class="yc-bar-val">'+fmt(v)+'</div>'+
+        '<div class="yc-bar-col"><div class="yc-bar-fill'+(isLast?' active':'')+'" style="height:'+h+'%"></div></div>'+
+        '<div class="yc-bar-year">'+y+'</div>'+
+      '</div>';
+    }).join('');
+    return '<div class="ic-value rich yc-card">'+
+      '<div class="yc-head">'+
+        '<div class="yc-h-left">'+
+          '<div class="yc-h-lab">ЖАМИ 2021–2025</div>'+
+          '<div class="yc-h-val">'+fmt(p.total)+' <span class="yc-h-unit">'+escapeHTML(p.unit||'')+'</span></div>'+
+        '</div>'+
+        '<div class="yc-h-right">'+
+          '<div class="yc-h-lab">2024 → 2025</div>'+
+          '<div class="yc-h-pct">↑ +'+fmt(yoyAbs)+' ('+(yoyPct>=0?'+':'')+yoyPct.toFixed(1).replace('.',',')+'%)</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="yc-chart">'+bars+'</div>'+
+      '</div>';
+  }
+
   // === Sector table — Stripe Dashboard (Variant C) ===
   if(p.type==="sector_table"){
     const max = Math.max.apply(null, p.sectors.map(function(s){return s.value;}));
