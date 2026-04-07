@@ -286,7 +286,9 @@ body{
   border:1px solid var(--line);box-shadow:var(--shadow);
   transition:.25s;position:relative;display:flex;flex-direction:column;
   animation:fadeUp .45s ease both;
+  min-width:0;max-width:100%;overflow:hidden;word-break:break-word;overflow-wrap:anywhere;
 }
+.ind-card *{min-width:0;}
 .ind-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
 .ind-card.missing{background:linear-gradient(180deg,#fff,#FFF8F4)}
 .ic-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}

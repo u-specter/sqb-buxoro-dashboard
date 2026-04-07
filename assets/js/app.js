@@ -320,7 +320,6 @@ function renderValue(ind, canvasId){
         yoyPill+
       '</div>'+
       '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
-      +
       '</div>';
   }
 
@@ -337,7 +336,6 @@ function renderValue(ind, canvasId){
         yoyPill+
       '</div>'+
       '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
-      +
       '</div>';
   }
 
