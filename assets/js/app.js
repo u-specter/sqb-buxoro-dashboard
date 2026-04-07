@@ -535,7 +535,7 @@ function cardHTML(i,idx){
   return '<div class="ind-card '+(found?'':'missing')+'" style="animation-delay:'+Math.min(idx*30,400)+'ms">'+
     '<div class="ic-head"><div class="ic-no">#'+i.no+'</div>'+
     '<div class="ic-badges">'+
-    '<span class="b src src-'+srcSlug(i.source_org||'SQB')+'"><i class="bi bi-shield-check"></i> Манба: '+escapeHTML(i.source_org||'SQB')+'</span>'+
+    '<span class="b src src-'+srcSlug(i.source_org||'SQB')+'">Манба: '+escapeHTML(i.source_org||'SQB')+'</span>'+
     '</div></div>'+
     '<h3 class="ic-title">'+escapeHTML(i.name)+'</h3>'+
     '<p class="ic-desc">'+escapeHTML(i.desc||'')+'</p>'+
