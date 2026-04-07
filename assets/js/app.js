@@ -483,15 +483,11 @@ function renderOverview(data){
   const wrap = document.getElementById("slidesOverview");
   const html = SLIDES.map(function(s){
     const inds = data.indicators.filter(function(i){return i.slide===s.n;});
-    const f = inds.filter(function(i){return i.found;}).length;
-    const pct = Math.round(f/inds.length*100);
     return '<div class="col-xl-4 col-lg-6"><div class="ov-card" data-slide="'+s.n+'">'+
       '<div class="ov-num">'+String(s.n).padStart(2,"0")+'</div>'+
       '<div class="ov-ic"><i class="bi '+s.icon+'"></i></div>'+
       '<div class="ov-title">Слайд '+s.n+'. '+escapeHTML(s.title)+'</div>'+
       '<div class="ov-meta">'+s.section+'-бўлим • '+inds.length+' та кўрсаткич</div>'+
-      '<div class="ov-bar"><div style="width:'+pct+'%"></div></div>'+
-      '<div class="ov-stats"><span>'+f+' / '+inds.length+' топилган</span><span class="pct">'+pct+'%</span></div>'+
       '</div></div>';
   }).join("");
   wrap.innerHTML = html;
