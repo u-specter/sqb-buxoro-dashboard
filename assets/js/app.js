@@ -376,7 +376,7 @@ function renderValue(ind, canvasId){
       '<div class="hf-top">'+
         '<div><div class="hf-num">'+escapeHTML(heroNum)+'</div>'+
         '<div class="hf-lab">'+escapeHTML(heroLabel)+'</div></div>'+
-        '<div class="hf-ic"><i class="bi bi-buildings-fill"></i></div>'+
+        '<div class="hf-ic"><i class="bi '+(/устувор|соҳа|йўналиш/i.test(p.hero+heroLabel)?'bi-stars':'bi-buildings-fill')+'"></i></div>'+
       '</div>'+
       factsHtml+
       '</div></div>';

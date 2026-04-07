@@ -423,11 +423,11 @@ body{
 .hf-lab{font-size:11px;color:var(--accent-2);font-weight:800;
   text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
 .hf-ic{font-size:36px;color:var(--accent);opacity:.4}
-.hf-row{display:flex;justify-content:space-between;align-items:center;
-  padding:8px 0;font-size:13px;border-bottom:1px solid rgba(0,0,0,.04)}
+.hf-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:10px 0;font-size:13px;border-bottom:1px solid rgba(0,0,0,.04)}
 .hf-row:last-child{border-bottom:0}
-.hf-name{color:var(--muted);font-weight:600}
-.hf-val{font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.hf-name{color:var(--navy);font-weight:800;flex-shrink:0;max-width:45%}
+.hf-val{font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right;line-height:1.4}
 .hf-val.green{color:var(--success)}
 
 /* Trend (timeseries) chart + AI insight */
