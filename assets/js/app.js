@@ -760,11 +760,11 @@ function kpiFromIndicator(data, no, opts){
   if(!ind || !ind.found || !ind.value) return null;
   const raw = String(ind.value).trim();
   // Special: "N% (M киши)" — show count as main, % as sub
-  const pcm = raw.match(/^(-?\d+(?:[.,]\d+)?)\s*%\s*\(\s*([\d\s]+)\s*киши\s*\)/i);
+  const pcm = raw.match(/^(-?\d+(?:[.,]\d+)?)\s*%\s*\(\s*([\d\s]+)\s*(киши|та|нафар)\s*\)/i);
   if(pcm){
     const pct = parseFloat(pcm[1].replace(",","."));
     const cnt = parseInt(pcm[2].replace(/\s/g,""),10);
-    return {value:cnt, unit:"киши", sub:pct.toFixed(1).replace(".",",")+"%", subClass:"warn", delta:null, deltaDir:null};
+    return {value:cnt, unit:pcm[3], sub:pct.toFixed(1).replace(".",",")+"%", subClass:"warn", delta:null, deltaDir:null};
   }
   const p = parseValue(raw, {name:ind.name, desc:ind.desc});
   const out = {value:null, unit:opts.unit||"", delta:null, deltaDir:null};
