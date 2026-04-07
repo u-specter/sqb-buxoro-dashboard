@@ -320,7 +320,7 @@ function renderValue(ind, canvasId){
         yoyPill+
       '</div>'+
       '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
-      (p.insight?'<div class="trend-insight"><i class="bi bi-robot"></i><em>'+escapeHTML(p.insight)+'</em></div>':'')+
+      +
       '</div>';
   }
 
@@ -337,7 +337,7 @@ function renderValue(ind, canvasId){
         yoyPill+
       '</div>'+
       '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
-      (p.insight?'<div class="trend-insight"><i class="bi bi-robot"></i><em>'+escapeHTML(p.insight)+'</em></div>':'')+
+      +
       '</div>';
   }
 
