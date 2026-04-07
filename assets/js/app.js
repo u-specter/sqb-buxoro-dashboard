@@ -286,9 +286,10 @@ function fmtNum(n){
   if(n==null||isNaN(n)) return "—";
   const abs = Math.abs(n);
   if(abs>=1000) return n.toLocaleString("ru-RU",{maximumFractionDigits:0});
-  if(abs>=100) return n.toFixed(1);
-  if(abs>=10) return n.toFixed(1);
-  return n.toFixed(2);
+  if(Number.isInteger(n)) return String(n);
+  if(abs>=100) return n.toFixed(1).replace(/\.0$/,"");
+  if(abs>=10) return n.toFixed(1).replace(/\.0$/,"");
+  return n.toFixed(2).replace(/\.?0+$/,"");
 }
 
 // ============================================================
