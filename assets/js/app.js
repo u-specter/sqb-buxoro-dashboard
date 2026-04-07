@@ -51,6 +51,24 @@ function parseValue(raw, ctx){
     }
   }
 
+  // ---- Hero + facts detection: leading "Жами: ..." segment ----
+  {
+    const hfSegs = body.split(/\s*\|\s*/).map(function(s){return s.trim();}).filter(Boolean);
+    if(hfSegs.length>=2){
+      const heroM = hfSegs[0].match(/^Жами\s*:\s*(.+)$/i);
+      if(heroM){
+        const facts = [];
+        for(let i=1;i<hfSegs.length;i++){
+          const fm = hfSegs[i].match(/^([^:]{2,60}):\s*(.+)$/);
+          if(fm) facts.push({name:fm[1].trim(), value:fm[2].trim()});
+        }
+        if(facts.length>=1){
+          return {type:"hero_facts", label:label, hero:heroM[1].trim(), facts:facts};
+        }
+      }
+    }
+  }
+
   // ---- Labeled breakdown detection (e.g. "Юридик шахслар: 1 854 та | Кичик бизнес: 194 та") ----
   // Split on |, ;, or ". " — each segment must look like "Label: number unit"
   const segs = body.split(/\s*[\|;]\s*|\.\s+(?=[А-ЯЎҒҲҚЁA-Z])/).map(function(s){return s.trim();}).filter(Boolean);
@@ -341,6 +359,27 @@ function renderValue(ind, canvasId){
       (p.delta!=null?'<div class="metric-delta-wrap">'+deltaHTML(p.delta)+
         '<span class="metric-prev">'+fmtNum(p.prev)+' → '+fmtNum(p.value)+'</span></div>':'')+
       '</div>';
+  }
+
+  if(p.type==="hero_facts"){
+    // Split hero into leading numeric and trailing label
+    const hm = p.hero.match(/^([\d\s.,]+)\s*(.*)$/);
+    const heroNum = hm ? hm[1].trim() : p.hero;
+    const heroTail = hm ? hm[2].trim() : "";
+    const heroLabel = heroTail || "Жами";
+    const factsHtml = p.facts.map(function(f){
+      const isMoney = /(млн\s*сўм|млрд\s*сўм|кредит)/i.test(f.name+" "+f.value);
+      return '<div class="hf-row"><span class="hf-name">'+escapeHTML(f.name)+'</span>'+
+        '<span class="hf-val'+(isMoney?' green':'')+'">'+escapeHTML(f.value)+'</span></div>';
+    }).join("");
+    return '<div class="ic-value rich"><div class="hero-facts">'+
+      '<div class="hf-top">'+
+        '<div><div class="hf-num">'+escapeHTML(heroNum)+'</div>'+
+        '<div class="hf-lab">'+escapeHTML(heroLabel)+'</div></div>'+
+        '<div class="hf-ic"><i class="bi bi-buildings-fill"></i></div>'+
+      '</div>'+
+      factsHtml+
+      '</div></div>';
   }
 
   if(p.type==="breakdown"){
@@ -715,6 +754,12 @@ function kpiFromIndicator(data, no, opts){
         const n = parseFloat(m[1].replace(/\s/g,"").replace(",","."));
         if(!isNaN(n)){out.value=n; out.unit=opts.unit||""; break;}
       }
+    }
+  } else if(p.type==="hero_facts"){
+    const m = p.hero.match(/([\d\s]+(?:[.,]\d+)?)/);
+    if(m){
+      const n = parseFloat(m[1].replace(/\s/g,"").replace(",","."));
+      if(!isNaN(n)){out.value=n; out.unit=opts.unit||"";}
     }
   }
   if(out.value==null) return null;
