@@ -911,6 +911,7 @@ function cardHTML(i,idx){
     '<h3 class="ic-title">'+escapeHTML(i.name)+'</h3>'+
     '<p class="ic-desc">'+escapeHTML(i.desc||'')+'</p>'+
     renderValue(i,cid)+
+    (i.ai_insight ? '<div class="ai-insight"><div class="ai-insight-head"><i class="bi bi-robot"></i><span>ИИ ТАВСИЯСИ</span></div><p class="ai-insight-text">'+escapeHTML(i.ai_insight)+'</p></div>' : '')+
     '</div>';
 }
 

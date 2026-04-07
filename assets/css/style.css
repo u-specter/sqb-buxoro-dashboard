@@ -1329,3 +1329,37 @@ body{
   margin-top: 8px;
   font-variant-numeric: tabular-nums;
 }
+
+/* === AI INSIGHT — insight under every indicator card === */
+.ai-insight {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(0,126,136,0.05), rgba(6,160,171,0.03));
+  border: 1px solid rgba(0,126,136,0.14);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+}
+.ai-insight-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.ai-insight-head i {
+  font-size: 14px;
+  color: var(--accent);
+}
+.ai-insight-head span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.ai-insight-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--navy);
+  margin: 0;
+  font-weight: 500;
+}
