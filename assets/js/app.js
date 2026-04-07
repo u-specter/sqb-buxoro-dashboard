@@ -822,12 +822,12 @@ function kpiFromIndicator(data, no, opts){
 }
 
 const REGION_KPI_DEFS = [
-  {no:48, icon:"bi-geo-alt-fill",        label:"Маҳаллалар сони",      unit:"та"},
-  {no:50, icon:"bi-house-door-fill",     label:"Хонадонлар сони",      unit:""},
-  {no:49, icon:"bi-people",              label:"Оилалар сони",         unit:""},
-  {no:47, icon:"bi-people-fill",         label:"Аҳоли сони",           unit:"минг киши"},
-  {no:52, icon:"bi-person-x-fill",       label:"Ишсизлик",             unit:"%", pctCount:true},
-  {no:51, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%", pctCount:true},
+  {no:22, icon:"bi-geo-alt-fill",        label:"Маҳаллалар сони",      unit:"та"},
+  {no:24, icon:"bi-house-door-fill",     label:"Хонадонлар сони",      unit:""},
+  {no:23, icon:"bi-people",              label:"Оилалар сони",         unit:""},
+  {no:21, icon:"bi-people-fill",         label:"Аҳоли сони",           unit:"минг киши"},
+  {no:26, icon:"bi-person-x-fill",       label:"Ишсизлик",             unit:"%", pctCount:true},
+  {no:25, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%", pctCount:true},
 ];
 
 function renderRegionKpis(data){
@@ -865,11 +865,11 @@ function buildRegionInsights(district){
   if(!data) return [];
   const out = [];
 
-  const mah = kpiFromIndicator(data, 48, {});
-  const xon = kpiFromIndicator(data, 50, {});
-  const oila = kpiFromIndicator(data, 49, {});
-  const ishsiz = kpiFromIndicator(data, 52, {});
-  const kamb = kpiFromIndicator(data, 51, {});
+  const mah = kpiFromIndicator(data, 22, {});
+  const xon = kpiFromIndicator(data, 24, {});
+  const oila = kpiFromIndicator(data, 23, {});
+  const ishsiz = kpiFromIndicator(data, 26, {});
+  const kamb = kpiFromIndicator(data, 25, {});
 
   if(mah && mah.value!=null){
     out.push({e:"🏘", t:'<b>Маҳаллалар ('+fmtNum(mah.value)+' та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.'});
@@ -891,22 +891,6 @@ function buildRegionInsights(district){
       : pct.toFixed(1)+'% — мақсадли кўрсаткичга яқин, "қайта тушиш" хавфини олдини олиш учун устивор чоралар сақлансин.';
     out.push({e:"📉", t:'<b>Камбағаллик</b> — '+msg+(kamb.sub?' Жами '+kamb.sub+'.':'')});
   }
-  // NPL (#10)
-  const nplInd = findIndicator(data, 10);
-  if(nplInd && nplInd.found && nplInd.value){
-    const nplStr = String(nplInd.value);
-    const nplM = nplStr.match(/(\d+(?:[.,]\d+)?)\s*%/);
-    if(nplM){
-      const nplPct = parseFloat(nplM[1].replace(",","."));
-      const msg = nplPct>3
-        ? 'муаммоли кредитлар '+nplPct.toFixed(1)+'% — хавфли даража. Портфель реструктуризацияси ва муаммоли мижозлар билан индивидуал иш олиб борилсин.'
-        : 'NPL даражаси '+nplPct.toFixed(1)+'% — назорат остида, лекин янги кредитлар бериш даврида маҳалла банкирлари орқали скоринг кучайтирилсин.';
-      out.push({e:"💳", t:'<b>NPL кредитлар</b> — '+msg});
-    } else {
-      out.push({e:"💳", t:'<b>NPL кредитлар</b> — муаммоли активлар улушини мунтазам мониторинг қилиш ва эрта огоҳлантириш тизимини жорий этиш тавсия этилади.'});
-    }
-  }
-
   return out.slice(0,6);
 }
 
