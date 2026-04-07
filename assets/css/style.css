@@ -298,9 +298,18 @@ body{
   letter-spacing:.04em;display:inline-flex;align-items:center;gap:5px;
   white-space:nowrap;
 }
-.b.ok{background:rgba(46,125,107,.12);color:var(--success);border:1px solid rgba(46,125,107,.3)}
 .b.no{background:rgba(194,94,60,.12);color:var(--warn);border:1px solid rgba(194,94,60,.3)}
-.b.tag{background:var(--cream-2);color:var(--navy);border:1px solid var(--line)}
+.b.src{background:#0f766e;color:#fff;border:1px solid #0b5a54;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.b.src i{font-size:12px}
+.b.src.src-stat{background:#0f766e;border-color:#0b5a54}
+.b.src.src-cb{background:#1e3a8a;border-color:#172a63}
+.b.src.src-tax{background:#c2410c;border-color:#9a3412}
+.b.src.src-cad{background:#166534;border-color:#14532d}
+.b.src.src-hok{background:#6b21a8;border-color:#581c87}
+.b.src.src-en{background:#b45309;border-color:#92400e}
+.b.src.src-road{background:#334155;border-color:#1e293b}
+.b.src.src-lab{background:#0369a1;border-color:#075985}
+.b.src.src-sqb{background:#475569;border-color:#334155}
 
 .ic-title{font-size:17px;font-weight:800;color:var(--navy);line-height:1.3;margin:0 0 8px}
 .ic-desc{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 14px;flex-grow:0}

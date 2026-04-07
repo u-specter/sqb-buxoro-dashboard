@@ -535,13 +535,17 @@ function cardHTML(i,idx){
   return '<div class="ind-card '+(found?'':'missing')+'" style="animation-delay:'+Math.min(idx*30,400)+'ms">'+
     '<div class="ic-head"><div class="ic-no">#'+i.no+'</div>'+
     '<div class="ic-badges">'+
-    '<span class="b '+(found?'ok':'no')+'"><i class="bi '+(found?'bi-check-circle-fill':'bi-x-circle-fill')+'"></i> '+(found?'Топилган':'Топилмаган')+'</span>'+
-    '<span class="b tag">Слайд '+i.slide+'</span>'+
+    '<span class="b src src-'+srcSlug(i.source_org||'SQB')+'"><i class="bi bi-shield-check"></i> Манба: '+escapeHTML(i.source_org||'SQB')+'</span>'+
     '</div></div>'+
     '<h3 class="ic-title">'+escapeHTML(i.name)+'</h3>'+
     '<p class="ic-desc">'+escapeHTML(i.desc||'')+'</p>'+
     renderValue(i,cid)+
     '</div>';
+}
+
+function srcSlug(s){
+  const map = {'stat.uz':'stat','Марказий банк':'cb','Солиқ қўмитаси':'tax','Кадастр':'cad','Хокимият':'hok','Минэнерго':'en','Узавтойул':'road','Mehnat.uz':'lab','SQB':'sqb'};
+  return map[s]||'sqb';
 }
 
 function escapeHTML(str){
