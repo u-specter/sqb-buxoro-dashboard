@@ -368,42 +368,45 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
-  // === Sector table — multi-sector with hajm + growth ===
+  // === Sector table — Stripe Dashboard (Variant C) ===
   if(p.type==="sector_table"){
     const max = Math.max.apply(null, p.sectors.map(function(s){return s.value;}));
-    const fmt = function(n){
-      if(n>=1000) return (n/1000).toFixed(2).replace('.',',')+' трлн';
+    const totalSum = p.sectors.reduce(function(a,s){return a+s.value;},0);
+    const avgGrowth = (p.sectors.reduce(function(a,s){return a+(s.growth-100);},0) / p.sectors.length);
+    const fmtTrln = function(n){
+      if(n>=1000) return (n/1000).toFixed(2).replace('.',',');
       return n.toFixed(1).replace('.',',');
     };
-    const rows = p.sectors.map(function(s){
+    const fmtMlrd = function(n){
+      return n.toLocaleString('ru-RU', {minimumFractionDigits:1, maximumFractionDigits:1}).replace('.',',');
+    };
+    const items = p.sectors.map(function(s){
       const barW = max>0 ? Math.round((s.value/max)*100) : 0;
       const isPositive = s.growth >= 100;
       const deltaFromBase = (s.growth - 100).toFixed(1).replace('.',',');
-      return '<div class="st-row" style="--c:'+s.color+'">'+
-        '<div class="st-ic"><i class="bi '+(s.icon||'bi-circle-fill')+'"></i></div>'+
-        '<div class="st-body">'+
-          '<div class="st-name">'+escapeHTML(s.name)+'</div>'+
-          '<div class="st-bar"><div class="st-bar-fill" style="width:'+barW+'%"></div></div>'+
+      return '<div class="sc-item">'+
+        '<div class="sc-bar-wrap" style="--c:'+s.color+'">'+
+          '<div class="sc-bar-fill" style="width:'+barW+'%"></div>'+
+          '<span class="sc-bar-text">'+escapeHTML(s.name)+'</span>'+
         '</div>'+
-        '<div class="st-val">'+
-          '<div class="st-num">'+fmt(s.value)+'</div>'+
-          '<div class="st-unit">'+escapeHTML(p.unit||'млрд сўм')+'</div>'+
-        '</div>'+
-        '<div class="st-growth '+(isPositive?'up':'down')+'">'+
-          '<i class="bi bi-arrow-'+(isPositive?'up':'down')+'-short"></i>'+
-          '<span>+'+deltaFromBase+'%</span>'+
+        '<div class="sc-vals">'+
+          '<span class="sc-num">'+fmtMlrd(s.value)+'</span>'+
+          '<span class="sc-pct '+(isPositive?'up':'down')+'">+'+deltaFromBase+'%</span>'+
         '</div>'+
       '</div>';
     }).join('');
-    const totalSum = p.sectors.reduce(function(a,s){return a+s.value;},0);
-    return '<div class="ic-value rich st-wrap">'+
-      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'Секторлар')+'</div>'+
-      (p.subtitle?'<span class="val-tag">'+escapeHTML(p.subtitle)+'</span>':'')+'</div>'+
-      '<div class="st-list">'+rows+'</div>'+
-      '<div class="st-foot">'+
-        '<span class="st-foot-lab">ЖАМИ</span>'+
-        '<span class="st-foot-val">'+fmt(totalSum)+' '+escapeHTML(p.unit||'')+'</span>'+
+    return '<div class="ic-value rich sc-card">'+
+      '<div class="sc-head">'+
+        '<div class="sc-h-left">'+
+          '<div class="sc-h-lab">МАКРОИҚТИСОДИЙ ҲАЖМ</div>'+
+          '<div class="sc-h-val">'+fmtTrln(totalSum)+' <span class="sc-h-unit">трлн сўм</span></div>'+
+        '</div>'+
+        '<div class="sc-h-right">'+
+          '<div class="sc-h-lab">2024 → 2025</div>'+
+          '<div class="sc-h-pct">↑ +'+avgGrowth.toFixed(1).replace('.',',')+'% ўртача</div>'+
+        '</div>'+
       '</div>'+
+      '<div class="sc-list">'+items+'</div>'+
       '</div>';
   }
 

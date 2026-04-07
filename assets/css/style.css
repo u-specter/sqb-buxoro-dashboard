@@ -994,7 +994,111 @@ body{
   .nb-grid { grid-template-columns: 1fr; }
 }
 
-/* === Sector Table — soft, refined === */
+/* === Sector Table — Stripe Dashboard (Variant C) === */
+.sc-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 14px;
+}
+.sc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+.sc-h-left .sc-h-lab,
+.sc-h-right .sc-h-lab {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.sc-h-left .sc-h-val {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+  line-height: 1;
+}
+.sc-h-unit {
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+}
+.sc-h-right { text-align: right; }
+.sc-h-right .sc-h-pct {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4ade80;
+  font-variant-numeric: tabular-nums;
+}
+.sc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sc-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+.sc-bar-wrap {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+.sc-bar-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--c) 30%, transparent),
+    color-mix(in srgb, var(--c) 12%, transparent));
+  border-left: 2px solid var(--c);
+  transition: width 1.2s ease-out;
+}
+.sc-bar-text {
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.1px;
+}
+.sc-vals {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 160px;
+  justify-content: flex-end;
+}
+.sc-num {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.3px;
+}
+.sc-pct {
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.sc-pct.up { color: #4ade80; }
+.sc-pct.down { color: #f87171; }
+
+/* === Sector Table — soft, refined (legacy) === */
 .st-wrap { padding: 6px 0; }
 .st-list {
   display: flex;
