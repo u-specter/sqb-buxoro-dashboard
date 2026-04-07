@@ -17,7 +17,6 @@ const STATE = {
   data:{gijduvon:null,shofirkon:null},
   search:"",
   filter:"all",
-  donut:null,
   charts:{},     // canvasId -> Chart instance (for cleanup)
   pending:[],    // queue of {id, type, parsed} to init after DOM insert
 };
@@ -478,16 +477,8 @@ function render(){
 
   document.getElementById("heroDistrict").textContent = label;
 
-  const total = data.total, found = data.found, missing = total-found, pct = Math.round(found/total*100);
-  animateCount(document.querySelector('.kpi-tile .kpi-val[data-count="159"]'),159);
-  const kF = document.getElementById("kpiFound");
-  kF.dataset.count=found; animateCount(kF,found);
-  const kM = document.getElementById("kpiMissing");
-  kM.dataset.count=missing; animateCount(kM,missing);
-  animatePct("kpiPct",pct);
-  document.getElementById("chartPct").textContent = pct+"%";
-
-  drawDonut(found,missing);
+  renderRegionKpis(data);
+  renderAiPanel(data);
   renderOverview(data);
 
   SLIDES.forEach(function(s){
@@ -577,61 +568,138 @@ function escapeHTML(str){
   });
 }
 
-function animateCount(el,target){
-  if(!el) return;
-  const start=parseInt(el.textContent)||0;
-  const dur=900;const t0=performance.now();
-  function step(t){
-    const p=Math.min(1,(t-t0)/dur);
-    const eased=1-Math.pow(1-p,3);
-    el.textContent=Math.round(start+(target-start)*eased);
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-function animatePct(id,target){
-  const el=document.getElementById(id);if(!el)return;
-  const start=parseInt(el.textContent)||0;
-  const dur=900;const t0=performance.now();
-  function step(t){
-    const p=Math.min(1,(t-t0)/dur);
-    const eased=1-Math.pow(1-p,3);
-    el.textContent=Math.round(start+(target-start)*eased);
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+// ============================================================
+// REGION KPI TILES (hero)
+// ============================================================
+function findIndicator(data, no){
+  return (data.indicators||[]).find(function(i){return i.no===no;});
 }
 
-function drawDonut(found,missing){
-  const ctx = document.getElementById("coverageDonut");
-  if(!ctx) return;
-  if(STATE.donut){
-    STATE.donut.data.datasets[0].data = [found,missing];
-    STATE.donut.update();
+function kpiFromIndicator(data, no, opts){
+  const ind = findIndicator(data, no);
+  if(!ind || !ind.found || !ind.value) return null;
+  const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
+  const out = {value:null, unit:opts.unit||"", delta:null, deltaDir:null};
+  if(p.type==="timeseries"){
+    out.value = p.last;
+    out.unit = opts.unit || p.unit || "";
+    if(p.yoy!=null){
+      out.delta = (p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%';
+      out.deltaDir = p.yoy>0?'up':(p.yoy<0?'down':'flat');
+    }
+  } else if(p.type==="single_metric"){
+    out.value = p.value;
+    out.unit = opts.unit || p.unit || "";
+    if(p.delta!=null){
+      out.delta = (p.delta>=0?'+':'')+p.delta.toFixed(1)+'%';
+      out.deltaDir = p.delta>0?'up':(p.delta<0?'down':'flat');
+    }
+  } else if(p.type==="breakdown"){
+    // Take the first numeric item (most representative, e.g. "Юридик шахслар: 1 854 та")
+    for(let i=0;i<p.items.length;i++){
+      const m = p.items[i].match(/[:\-]\s*([\d\s]+(?:[.,]\d+)?)/);
+      if(m){
+        const n = parseFloat(m[1].replace(/\s/g,"").replace(",","."));
+        if(!isNaN(n)){out.value=n; out.unit=opts.unit||""; break;}
+      }
+    }
+  }
+  if(out.value==null) return null;
+  return out;
+}
+
+const REGION_KPI_DEFS = [
+  {no:1,  icon:"bi-buildings-fill",     label:"Саноат ишлаб чиқариш", unit:"млрд сўм"},
+  {no:4,  icon:"bi-globe2",              label:"Экспорт",              unit:"млн $"},
+  {no:11, icon:"bi-shop-window",         label:"Янги корхоналар",      unit:"та"},
+  {no:6,  icon:"bi-cash-coin",           label:"Маҳаллий бюджет",      unit:"млрд сўм"},
+  {no:47, icon:"bi-people-fill",         label:"Аҳоли",                unit:"минг киши"},
+  {no:51, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%"},
+];
+
+function renderRegionKpis(data){
+  const wrap = document.getElementById("regionKpis");
+  if(!wrap) return;
+  const html = REGION_KPI_DEFS.map(function(def){
+    const k = kpiFromIndicator(data, def.no, {unit:def.unit});
+    let valHtml, deltaHtml="";
+    if(!k){
+      valHtml = '<div class="rk-val">—</div>';
+    } else {
+      valHtml = '<div class="rk-val">'+fmtNum(k.value)+
+        (k.unit?' <span class="rk-unit">'+escapeHTML(k.unit)+'</span>':'')+'</div>';
+      if(k.delta){
+        const arrow = k.deltaDir==='up'?'▲':(k.deltaDir==='down'?'▼':'▬');
+        deltaHtml = '<div class="rk-delta '+k.deltaDir+'">'+arrow+' '+escapeHTML(k.delta)+'</div>';
+      }
+    }
+    return '<div class="rk-tile">'+
+      '<div class="rk-ic"><i class="bi '+def.icon+'"></i></div>'+
+      '<div class="rk-lab">'+escapeHTML(def.label)+'</div>'+
+      valHtml + deltaHtml +
+    '</div>';
+  }).join("");
+  wrap.innerHTML = html;
+}
+
+// ============================================================
+// AI INSIGHTS
+// ============================================================
+function buildRegionInsights(district){
+  const data = STATE.data[district];
+  if(!data) return [];
+  const stats = [];
+  data.indicators.forEach(function(ind){
+    if(!ind.found || !ind.value) return;
+    const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
+    if(p.type!=="timeseries" || p.values.length<2) return;
+    stats.push({name:ind.name, p:p});
+  });
+  if(!stats.length) return [];
+
+  // Sort by CAGR for growth/decline
+  const byCagr = stats.filter(function(s){return s.p.cagr!=null;}).slice().sort(function(a,b){return b.p.cagr-a.p.cagr;});
+  const top = byCagr.slice(0,2);
+  const decline = byCagr[byCagr.length-1];
+  // Stable: smallest abs cagr
+  const stable = byCagr.slice().sort(function(a,b){return Math.abs(a.p.cagr)-Math.abs(b.p.cagr);})[0];
+
+  const out = [];
+  top.forEach(function(s){
+    if(s.p.cagr>2){
+      out.push({e:"✨", t:'<b>'+escapeHTML(s.name)+'</b> — '+s.p.cagr.toFixed(1)+'% йиллик ўсиш суръати, охирги қиймат '+fmtNum(s.p.last)+(s.p.unit?' '+s.p.unit:'')+'.'});
+    }
+  });
+  if(decline && decline.p.cagr<-1 && top.indexOf(decline)<0){
+    out.push({e:"🔻", t:'<b>'+escapeHTML(decline.name)+'</b> — '+Math.abs(decline.p.cagr).toFixed(1)+'% га камаймоқда, дарҳол чора кўриш керак.'});
+  }
+  if(stable && top.indexOf(stable)<0 && stable!==decline){
+    out.push({e:"📊", t:'<b>'+escapeHTML(stable.name)+'</b> — барқарор динамика, охирги қиймат '+fmtNum(stable.p.last)+(stable.p.unit?' '+stable.p.unit:'')+'.'});
+  }
+  // Volatile fallback
+  if(out.length<3){
+    const volatile = stats.find(function(s){
+      const v = s.p.values; if(v.length<3) return false;
+      let inc=0,dec=0;
+      for(let i=1;i<v.length;i++){if(v[i]>v[i-1])inc++;else if(v[i]<v[i-1])dec++;}
+      return inc>0 && dec>0 && Math.abs(inc-dec)<=1;
+    });
+    if(volatile) out.push({e:"↕", t:'<b>'+escapeHTML(volatile.name)+'</b> — нотурғун динамика, барқарорлаштириш зарур.'});
+  }
+  return out.slice(0,4);
+}
+
+function renderAiPanel(data){
+  const ul = document.getElementById("aiBullets");
+  if(!ul) return;
+  const items = buildRegionInsights(STATE.district);
+  if(!items.length){
+    ul.innerHTML = '<li><span class="ai-emoji">ℹ</span><span>Таҳлил учун маълумот етарли эмас.</span></li>';
     return;
   }
-  STATE.donut = new Chart(ctx,{
-    type:'doughnut',
-    data:{
-      labels:['Топилган','Топилмаган'],
-      datasets:[{
-        data:[found,missing],
-        backgroundColor:['#06A0AB','rgba(255,255,255,0.18)'],
-        borderColor:['#06A0AB','rgba(255,255,255,0.25)'],
-        borderWidth:2,
-        hoverOffset:8,
-      }],
-    },
-    options:{
-      cutout:'72%',
-      plugins:{legend:{display:false},tooltip:{
-        bodyFont:{family:'Inter',size:13},
-        backgroundColor:'#102836',
-        padding:12,
-      }},
-      animation:{animateRotate:true,duration:1100},
-    },
-  });
+  ul.innerHTML = items.map(function(it){
+    return '<li><span class="ai-emoji">'+it.e+'</span><span>'+it.t+'</span></li>';
+  }).join("");
 }
 
 document.addEventListener("DOMContentLoaded",init);
