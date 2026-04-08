@@ -466,12 +466,14 @@ function buildInsight(vals, cagr){
 function detectUnit(label, body){
   const hay = (label+" "+body).toLowerCase();
   if(/млрд\s*сў?м|млрд\.?\s*so/i.test(hay)) return "млрд сўм";
+  if(/трлн\s*сў?м/i.test(hay)) return "трлн сўм";
   if(/млн\s*сў?м/i.test(hay)) return "млн сўм";
   if(/млн\s*\$|млн\s*usd/i.test(hay)) return "млн $";
+  if(/минг\s*киши|минг\s*нафар|минг\s*аҳол/i.test(hay)) return "минг киши";
   if(/\bга\b/.test(hay)) return "га";
   if(/\bта\b/.test(hay)) return "та";
   if(/%|фоиз/.test(hay)) return "%";
-  if(/киши|аҳол/.test(hay)) return "киши";
+  if(/киши|аҳол|нафар/.test(hay)) return "киши";
   return "";
 }
 
