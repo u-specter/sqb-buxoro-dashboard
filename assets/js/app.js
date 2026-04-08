@@ -875,7 +875,7 @@ function renderAllCards(){
 
 function renderCardsForSlide(n){
   const data = STATE.data[STATE.district];
-  let inds = data.indicators.filter(function(i){return i.slide===n;});
+  let inds = data.indicators.filter(function(i){return i.slide===n && !i.hidden;});
 
   if(STATE.filter==="found") inds = inds.filter(function(i){return i.found;});
   else if(STATE.filter==="missing") inds = inds.filter(function(i){return !i.found;});
