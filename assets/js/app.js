@@ -1271,12 +1271,12 @@ function kpiFromIndicator(data, no, opts){
 }
 
 const REGION_KPI_DEFS = [
-  {no:31, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta"},
-  {no:33, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:""},
-  {no:32, icon:"bi-people",              labelKey:"kpi_oila",      unit:""},
-  {no:30, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi"},
+  {no:30, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta"},
+  {no:32, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:""},
+  {no:31, icon:"bi-people",              labelKey:"kpi_oila",      unit:""},
+  {no:29, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi"},
   {no:24, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true},
-  {no:29, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true},
+  {no:28, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true},
 ];
 
 function renderRegionKpis(data){
@@ -1339,11 +1339,11 @@ function buildRegionInsights(district){
   const tpl = AI_TPL[STATE.lang] || AI_TPL.uz;
   const out = [];
 
-  const mah = kpiFromIndicator(data, 31, {});
-  const xon = kpiFromIndicator(data, 33, {});
-  const oila = kpiFromIndicator(data, 32, {});
+  const mah = kpiFromIndicator(data, 30, {});
+  const xon = kpiFromIndicator(data, 32, {});
+  const oila = kpiFromIndicator(data, 31, {});
   const ishsiz = kpiFromIndicator(data, 24, {});
-  const kamb = kpiFromIndicator(data, 29, {});
+  const kamb = kpiFromIndicator(data, 28, {});
 
   if(mah && mah.value!=null){
     out.push({e:"🏘", t: tpl.mah(fmtNum(mah.value))});
