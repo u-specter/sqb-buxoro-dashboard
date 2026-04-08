@@ -2,7 +2,7 @@
   "ru": {
     "gij:1:name": "Макроэкономические показатели района",
     "gij:1:desc": "Объемы и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
-    "gij:1:value": "Всего: 13 064,4 млрд сум (факт 2025 года) | Промышленность: 3 182,8 млрд сум (+7,4%) | Сельское хозяйство: 5 375,7 млрд сум (+1,6%) | Строительство: 984,7 млрд сум (+23,8%) | Рыночные услуги: 3 521,2 млрд сум (+16,8%)",
+    "gij:1:value": "Всего: 13 064,4 млрд сум (факт 2025 года) | Промышленность: 3 182,8 млрд сум (+7,4%) | Сельское хозяйство: 5 375,7 млрд сум (+3,5%) | Строительство: 984,7 млрд сум (+23,8%) | Рыночные услуги: 3 521,2 млрд сум (+16,8%)",
     "gij:1:ai_insight": "Общий объем ≈ 13,06 трлн сум. Сельское хозяйство на первом месте (41%), строительство растет быстрее всего (+23,8%). Услуги +16,8% — положительная тенденция. Рекомендация: увеличить долю промышленности и IT-услуг, углубить переработку в сельском хозяйстве.",
     "gij:2:name": "Динамика производства промышленной продукции",
     "gij:2:desc": "Объем производства промышленной продукции в районе (млрд сум) — годовая динамика",
@@ -558,8 +558,8 @@
     "shof:65:ai_insight": "Местные туристы 435,7 тыс. (2025) → 505,4 тыс. (план на 2026) +16%. Позитивная динамика. Рекомендация: расширение через агротуризм и фермы по сушке фруктов.",
     "shof:66:name": "Экспорт туристических услуг",
     "shof:66:desc": "Валютные поступления от туризма (млн США $)",
-    "shof:66:value": "28,8 млн $ | рост: +41,6%",
-    "shof:66:ai_insight": "Экспорт туризма 28,8 млн $ (+41,6%) — очень высокий рост. Рекомендация: вывести до 50 млн $ к 2027 году — комплексный маркетинг.",
+    "shof:66:value": "28,8 млн $ | рост: +43,5%",
+    "shof:66:ai_insight": "Экспорт туризма 28,8 млн $ (+43,5%) — очень высокий рост. Рекомендация: вывести до 50 млн $ к 2027 году — комплексный маркетинг.",
     "shof:67:name": "8. Стратегическое сотрудничество SQB",
     "shof:67:desc": "Комплексный пакет: кластер по сушке фруктов + кредит JICA + Easy Work. Шофиркон — приоритетный район для SQB.",
     "shof:67:value": "Всего: 120 млрд сум | Доля SQB: 65% | NPL: 0,8% | Льготный: 12% | План на 2026: 351 млрд | Агрокредит: 650 млрд",
@@ -595,12 +595,12 @@
     "shof:75:name": "Региональные инвестиционные проекты",
     "shof:75:desc": "Инвестиционные проекты в разрезе банков — стоимость, кредит, рабочие места и состав отраслей",
     "shof:75:value": "Всего: 8 проектов | Стоимость проекта: 178 248,4 млн сум | Банковский кредит: 93 320 млн сум | Рабочие места: 143 | Выделенные: 6 (6 126 млн сум) | Не выделенные: 2 (85 520 млн сум) | Промышленность: 2 (165 520 млн сум) | Услуги: 6 (12 728 млн сум) | Сельское хозяйство: 0",
-    "shof:75:ai_insight": "В Шофирконе из 8 проектов кредит выделен на 6, 2 проекта (85 520 млн сум — 91,6%) не выделены. Стоимость промышленных проектов составляет 165 520 млн сум — очень высокая. Рекомендация: привлечь дополнительные банковские источники для финансирования невыделенных кредитов на сумму 85,5 млрд сум; усилить контроль за промышленными проектами; ускорить запуск 6 проектов в сфере услуг для 143 рабочих мест; если невыделенные кредиты будут активированы, возможно создание еще 100+ рабочих мест к 2026 году."
+    "shof:75:ai_insight": "В Шофирконе из 8 проектов кредит выделен на 6, 2 проекта (85 520 млн сум — 93,5%) не выделены. Стоимость промышленных проектов составляет 165 520 млн сум — очень высокая. Рекомендация: привлечь дополнительные банковские источники для финансирования невыделенных кредитов на сумму 85,5 млрд сум; усилить контроль за промышленными проектами; ускорить запуск 6 проектов в сфере услуг для 143 рабочих мест; если невыделенные кредиты будут активированы, возможно создание еще 100+ рабочих мест к 2026 году."
   },
   "en": {
     "gij:1:name": "Macroeconomic indicators of the district",
     "gij:1:desc": "Volume + growth rate of industry, agriculture, construction, and market services",
-    "gij:1:value": "Total: 13,064.4 billion soums (2025 actual) | Industry: 3,182.8 billion soums (+7.4%) | Agriculture: 5,375.7 billion soums (+1.6%) | Construction: 984.7 billion soums (+23.8%) | Market services: 3,521.2 billion soums (+16.8%)",
+    "gij:1:value": "Total: 13,064.4 billion soums (2025 actual) | Industry: 3,182.8 billion soums (+7.4%) | Agriculture: 5,375.7 billion soums (+3.5%) | Construction: 984.7 billion soums (+23.8%) | Market services: 3,521.2 billion soums (+16.8%)",
     "gij:1:ai_insight": "Total volume ≈ 13.06 trillion soums. Agriculture is dominant (41%), construction is growing the fastest (+23.8%). Services +16.8% — positive trend. Recommendation: increase the share of industry and IT services, depth of processing in agriculture.",
     "gij:2:name": "Dynamics of industrial product production",
     "gij:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
@@ -1156,8 +1156,8 @@
     "shof:65:ai_insight": "Domestic tourists 435.7 thousand (2025) → 505.4 thousand (2026 plan) +16%. Positive dynamics. Recommendation: expansion through agritourism and fruit drying farms.",
     "shof:66:name": "Export of tourism services",
     "shof:66:desc": "Currency revenue from tourism sector (million USD)",
-    "shof:66:value": "28.8 million $ | growth: +41.6%",
-    "shof:66:ai_insight": "Tourism export 28.8 million $ (+41.6%) — very high growth. Recommendation: increase to 50 million $ by 2027 — comprehensive marketing.",
+    "shof:66:value": "28.8 million $ | growth: +43.5%",
+    "shof:66:ai_insight": "Tourism export 28.8 million $ (+43.5%) — very high growth. Recommendation: increase to 50 million $ by 2027 — comprehensive marketing.",
     "shof:67:name": "8. SQB strategic partnership",
     "shof:67:desc": "Comprehensive package: Fruit drying cluster + JICA loan + Easy Work. Shofirkon is a priority district for SQB.",
     "shof:67:value": "Total: 120 billion soums | SQB share: 65% | NPL: 0.8% | Preferential: 12% | 2026 plan: 351 billion | Agro credit: 650 billion",
@@ -1193,6 +1193,6 @@
     "shof:75:name": "Regional investment projects",
     "shof:75:desc": "Investment projects in the banking sector — value, credit, jobs, and sector composition",
     "shof:75:value": "Total: 8 projects | Project value: 178,248.4 million soums | Bank credit: 93,320 million soums | Jobs: 143 | Allocated: 6 (6,126 million soums) | Not allocated: 2 (85,520 million soums) | Industry: 2 (165,520 million soums) | Services: 6 (12,728 million soums) | Agriculture: 0",
-    "shof:75:ai_insight": "In Shofirkon, credit has been allocated to 6 out of 8 projects, while 2 projects (85,520 million soums — 91.6%) have not been allocated. The value of industrial projects is 165,520 million soums — very high. Recommendation: attract additional bank sources for unallocated credits of 85.5 billion soums; strengthen oversight of industrial projects; expedite the launch of 6 service sector projects for 143 jobs; if unallocated credits are activated, another 100+ jobs could be possible by 2026."
+    "shof:75:ai_insight": "In Shofirkon, credit has been allocated to 6 out of 8 projects, while 2 projects (85,520 million soums — 93.5%) have not been allocated. The value of industrial projects is 165,520 million soums — very high. Recommendation: attract additional bank sources for unallocated credits of 85.5 billion soums; strengthen oversight of industrial projects; expedite the launch of 6 service sector projects for 143 jobs; if unallocated credits are activated, another 100+ jobs could be possible by 2026."
   }
 }
