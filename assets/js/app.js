@@ -56,7 +56,7 @@ const I18N = {
       mahalla:["Маҳаллалар","МФЙ тармоғи"],oilalar:["Оилалар","оилавий иқтисод"],tadbirkor:["Тадбиркорлар","микробизнес"],
       kredit:["Кредит портфели","SQB"],npl:["NPL мониторинг","муаммоли актив"],bankir:["Маҳалла банкири","молиявий вакил"],
       analiz:["Таҳлил","тренд + динамика"],modellar:["Моделлар","прогноз ва скоринг"],rag:["RAG","ҳужжатлар базаси"],
-      analitika:["Аналитика","дашборд"],prognoz:["Прогноз","2026-2028"],bizmes:["Бизнес","микрокредит"],mehnat:["Меҳнат бозори","бандлик"],
+      analitika:["Аналитика","дашборд"],prognoz:["Прогноз","2026-2028"],bizmes:["Бизнес ва меҳнат бозори","микрокредит + бандлик"],
     },
   },
   ru:{
@@ -110,7 +110,7 @@ const I18N = {
       mahalla:["Махалли","сеть МФЙ"],oilalar:["Семьи","семейная экон."],tadbirkor:["Предпринимат.","микробизнес"],
       kredit:["Кредит. портфель","SQB"],npl:["NPL мониторинг","проблемные"],bankir:["Махалла банкир","фин. представит."],
       analiz:["Анализ","тренд + динамика"],modellar:["Модели","прогноз + скоринг"],rag:["RAG","база документов"],
-      analitika:["Аналитика","дашборд"],prognoz:["Прогноз","2026-2028"],bizmes:["Бизнес","микрокредит"],mehnat:["Рынок труда","занятость"],
+      analitika:["Аналитика","дашборд"],prognoz:["Прогноз","2026-2028"],bizmes:["Бизнес и рынок труда","микрокредит + занятость"],
     },
   },
   en:{
@@ -164,7 +164,7 @@ const I18N = {
       mahalla:["Mahallas","MFY network"],oilalar:["Families","family economy"],tadbirkor:["Entrepreneurs","microbusiness"],
       kredit:["Credit portfolio","SQB"],npl:["NPL monitoring","problem assets"],bankir:["Mahalla banker","financial agent"],
       analiz:["Analysis","trend + dynamics"],modellar:["Models","forecast + scoring"],rag:["RAG","document base"],
-      analitika:["Analytics","dashboard"],prognoz:["Forecast","2026-2028"],bizmes:["Business","microcredit"],mehnat:["Labor market","employment"],
+      analitika:["Analytics","dashboard"],prognoz:["Forecast","2026-2028"],bizmes:["Business & labor market","microcredit + employment"],
     },
   },
 };
