@@ -1244,8 +1244,8 @@ const REGION_KPI_DEFS = [
   {no:25, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:""},
   {no:24, icon:"bi-people",              labelKey:"kpi_oila",      unit:""},
   {no:22, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi"},
-  {no:41, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true},
-  {no:40, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true},
+  {no:27, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true},
+  {no:26, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true},
 ];
 
 function renderRegionKpis(data){
@@ -1288,8 +1288,8 @@ function buildRegionInsights(district){
   const mah = kpiFromIndicator(data, 23, {});
   const xon = kpiFromIndicator(data, 25, {});
   const oila = kpiFromIndicator(data, 24, {});
-  const ishsiz = kpiFromIndicator(data, 41, {});
-  const kamb = kpiFromIndicator(data, 40, {});
+  const ishsiz = kpiFromIndicator(data, 27, {});
+  const kamb = kpiFromIndicator(data, 26, {});
 
   if(mah && mah.value!=null){
     out.push({e:"🏘", t:'<b>Маҳаллалар ('+fmtNum(mah.value)+' та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.'});
