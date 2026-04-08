@@ -308,7 +308,7 @@ function renderValue(ind, canvasId){
   const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
 
   if(p.type==="timeseries"){
-    STATE.pending.push({id:canvasId, kind:"line", series:p.series});
+    STATE.pending.push({id:canvasId, kind:"line", series:p.series, noForecast:!!ind.no_forecast});
     const yoyPill = (p.yoy!=null) ?
       ('<span class="metric-delta '+(p.yoy>=0?'up':'down')+'">'+(p.yoy>=0?'▲ +':'▼ ')+fmtNum(p.yoyAbs)+' ('+(p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%)</span>')
       : '';
@@ -604,7 +604,7 @@ function flushPendingCharts(){
       const n = data.length;
       // Linear regression forecast (next 3 years) when ≥3 points
       let forecastYears = [], forecastVals = [];
-      if(n>=3){
+      if(n>=3 && !job.noForecast){
         const xs = series.map(function(p){return p.year;});
         const xMean = xs.reduce(function(a,b){return a+b;},0)/n;
         const yMean = data.reduce(function(a,b){return a+b;},0)/n;
