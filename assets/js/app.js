@@ -1053,19 +1053,31 @@ function buildRegionInsights(district){
   if(xon && oila && xon.value!=null && oila.value!=null){
     out.push({e:"🏠", t:'<b>'+fmtNum(xon.value)+' хонадон ва '+fmtNum(oila.value)+' оила</b> — оилавий тадбиркорлик (оналар дастури, ҳунармандчилик) орқали уй иқтисодиётини ривожлантириш резерви юқори.'});
   }
-  if(ishsiz && ishsiz.value!=null){
-    const pct = ishsiz.value;
-    const msg = pct>=5
-      ? 'расмий даража '+pct.toFixed(1)+'% — ўртачадан юқори. Норасмий бандликни легаллаштириш ва қайта тайёрлаш дастурлари керак.'
-      : 'расмий даража '+pct.toFixed(1)+'% — нормал чегарада, лекин норасмий бандлик улуши юқори. Меҳнат бозорини расмийлаштириш устувор.';
-    out.push({e:"💼", t:'<b>Ишсизлик</b> — '+msg+(ishsiz.sub?' Ҳозир '+ishsiz.sub+' ишсиз рўйхатда.':'')});
+  function extractPct(k){
+    if(!k) return null;
+    if(k.unit==='%') return k.value;
+    if(k.sub){
+      const m=String(k.sub).match(/(-?\d+(?:[.,]\d+)?)\s*%/);
+      if(m) return parseFloat(m[1].replace(',','.'));
+    }
+    return null;
   }
-  if(kamb && kamb.value!=null){
-    const pct = kamb.value;
-    const msg = pct>3
-      ? pct.toFixed(1)+'% — 2026 йилгача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.'
-      : pct.toFixed(1)+'% — мақсадли кўрсаткичга яқин, "қайта тушиш" хавфини олдини олиш учун устивор чоралар сақлансин.';
-    out.push({e:"📉", t:'<b>Камбағаллик</b> — '+msg+(kamb.sub?' Жами '+kamb.sub+'.':'')});
+  const ishsizPct = extractPct(ishsiz);
+  const kambPct = extractPct(kamb);
+
+  if(ishsizPct!=null){
+    const msg = ishsizPct>=5
+      ? 'расмий даража '+ishsizPct.toFixed(1).replace('.',',')+'% — ўртачадан юқори. Норасмий бандликни легаллаштириш ва қайта тайёрлаш дастурлари керак.'
+      : 'расмий даража '+ishsizPct.toFixed(1).replace('.',',')+'% — нормал чегарада, лекин норасмий бандлик улуши юқори. Меҳнат бозорини расмийлаштириш устувор.';
+    const count = (ishsiz && ishsiz.unit!=='%') ? ' Ҳозир '+fmtNum(ishsiz.value)+' нафар ишсиз рўйхатда.' : '';
+    out.push({e:"💼", t:'<b>Ишсизлик</b> — '+msg+count});
+  }
+  if(kambPct!=null){
+    const msg = kambPct>3
+      ? kambPct.toFixed(1).replace('.',',')+'% — 2026 йилгача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.'
+      : kambPct.toFixed(1).replace('.',',')+'% — мақсадли кўрсаткичга яқин, "қайта тушиш" хавфини олдини олиш учун устивор чоралар сақлансин.';
+    const count = (kamb && kamb.unit!=='%') ? ' Жами '+fmtNum(kamb.value)+' нафар.' : '';
+    out.push({e:"📉", t:'<b>Камбағаллик</b> — '+msg+count});
   }
   return out.slice(0,6);
 }
