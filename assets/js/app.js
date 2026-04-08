@@ -1280,9 +1280,31 @@ function renderRegionKpis(data){
 // ============================================================
 // AI INSIGHTS
 // ============================================================
+const AI_TPL = {
+  uz:{
+    mah: (n)=>`<b>Маҳаллалар (${n} та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.`,
+    fam: (x,o)=>`<b>${x} хонадон ва ${o} оила</b> — оилавий тадбиркорлик (оналар дастури, ҳунармандчилик) орқали уй иқтисодиётини ривожлантириш резерви юқори.`,
+    ishsiz:(p,cnt)=>`<b>Ишсизлик</b> — расмий даража ${p}% — нормал чегарада, лекин норасмий бандлик улуши юқори. Меҳнат бозорини расмийлаштириш устувор.${cnt?' Ҳозир '+cnt+' нафар ишсиз рўйхатда.':''}`,
+    kamb:(p,cnt)=>`<b>Камбағаллик</b> — ${p}% — 2026 йилгача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.${cnt?' Жами '+cnt+' нафар.':''}`,
+  },
+  ru:{
+    mah: (n)=>`<b>Махалли (${n} шт)</b> — рекомендуется определить индивидуальный драйвер-сектор для каждой махалли и усилить мониторинг через махаллинских банкиров.`,
+    fam: (x,o)=>`<b>${x} домохозяйств и ${o} семей</b> — высокий резерв развития домашней экономики через семейное предпринимательство (программа для матерей, ремёсла).`,
+    ishsiz:(p,cnt)=>`<b>Безработица</b> — официальный уровень ${p}% — в норме, но доля неформальной занятости высока. Приоритет — формализация рынка труда.${cnt?' Сейчас ${cnt} безработных в реестре.'.replace('${cnt}',cnt):''}`,
+    kamb:(p,cnt)=>`<b>Бедность</b> — ${p}% — для снижения до 2,0% к 2026 году каждой малообеспеченной семье сформировать адресный пакет микрокредитов и субсидий.${cnt?' Всего ${cnt} человек.'.replace('${cnt}',cnt):''}`,
+  },
+  en:{
+    mah: (n)=>`<b>Mahallas (${n})</b> — recommend assigning an individual driver sector to each mahalla and strengthening monitoring through mahalla bankers.`,
+    fam: (x,o)=>`<b>${x} households and ${o} families</b> — high reserve for developing home economy through family entrepreneurship (mothers' program, crafts).`,
+    ishsiz:(p,cnt)=>`<b>Unemployment</b> — official rate ${p}% is within norm, but informal employment share is high. Labor market formalization is a priority.${cnt?' Currently '+cnt+' unemployed registered.':''}`,
+    kamb:(p,cnt)=>`<b>Poverty</b> — ${p}% — to reduce to 2.0% by 2026, a targeted microcredit and subsidy package should be formed for each poor family.${cnt?' Total '+cnt+' people.':''}`,
+  },
+};
+
 function buildRegionInsights(district){
   const data = STATE.data[district];
   if(!data) return [];
+  const tpl = AI_TPL[STATE.lang] || AI_TPL.uz;
   const out = [];
 
   const mah = kpiFromIndicator(data, 38, {});
@@ -1292,10 +1314,10 @@ function buildRegionInsights(district){
   const kamb = kpiFromIndicator(data, 26, {});
 
   if(mah && mah.value!=null){
-    out.push({e:"🏘", t:'<b>Маҳаллалар ('+fmtNum(mah.value)+' та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.'});
+    out.push({e:"🏘", t: tpl.mah(fmtNum(mah.value))});
   }
   if(xon && oila && xon.value!=null && oila.value!=null){
-    out.push({e:"🏠", t:'<b>'+fmtNum(xon.value)+' хонадон ва '+fmtNum(oila.value)+' оила</b> — оилавий тадбиркорлик (оналар дастури, ҳунармандчилик) орқали уй иқтисодиётини ривожлантириш резерви юқори.'});
+    out.push({e:"🏠", t: tpl.fam(fmtNum(xon.value), fmtNum(oila.value))});
   }
   function extractPct(k){
     if(!k) return null;
@@ -1308,20 +1330,13 @@ function buildRegionInsights(district){
   }
   const ishsizPct = extractPct(ishsiz);
   const kambPct = extractPct(kamb);
-
   if(ishsizPct!=null){
-    const msg = ishsizPct>=5
-      ? 'расмий даража '+ishsizPct.toFixed(1).replace('.',',')+'% — ўртачадан юқори. Норасмий бандликни легаллаштириш ва қайта тайёрлаш дастурлари керак.'
-      : 'расмий даража '+ishsizPct.toFixed(1).replace('.',',')+'% — нормал чегарада, лекин норасмий бандлик улуши юқори. Меҳнат бозорини расмийлаштириш устувор.';
-    const count = (ishsiz && ishsiz.unit!=='%') ? ' Ҳозир '+fmtNum(ishsiz.value)+' нафар ишсиз рўйхатда.' : '';
-    out.push({e:"💼", t:'<b>Ишсизлик</b> — '+msg+count});
+    const cnt = (ishsiz && ishsiz.unit!=='%') ? fmtNum(ishsiz.value) : '';
+    out.push({e:"💼", t: tpl.ishsiz(ishsizPct.toFixed(1).replace('.',','), cnt)});
   }
   if(kambPct!=null){
-    const msg = kambPct>3
-      ? kambPct.toFixed(1).replace('.',',')+'% — 2026 йилгача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.'
-      : kambPct.toFixed(1).replace('.',',')+'% — мақсадли кўрсаткичга яқин, "қайта тушиш" хавфини олдини олиш учун устивор чоралар сақлансин.';
-    const count = (kamb && kamb.unit!=='%') ? ' Жами '+fmtNum(kamb.value)+' нафар.' : '';
-    out.push({e:"📉", t:'<b>Камбағаллик</b> — '+msg+count});
+    const cnt = (kamb && kamb.unit!=='%') ? fmtNum(kamb.value) : '';
+    out.push({e:"📉", t: tpl.kamb(kambPct.toFixed(1).replace('.',','), cnt)});
   }
   return out.slice(0,6);
 }
