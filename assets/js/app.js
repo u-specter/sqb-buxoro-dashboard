@@ -809,7 +809,9 @@ function flushPendingCharts(){
         for(let k=1;k<=3;k++){
           const fy = lastY+k;
           forecastYears.push(fy);
-          forecastVals.push(Math.max(0, slope*fy+intercept));
+          const lastVal = data[n-1];
+          const floor = Math.max(0, lastVal*0.5);
+          forecastVals.push(Math.max(floor, slope*fy+intercept));
         }
       }
       const allLabels = labels.concat(forecastYears.map(String));
