@@ -169,6 +169,14 @@ const I18N = {
   },
 };
 function T(k){ return (I18N[STATE.lang]||I18N.uz)[k] ?? I18N.uz[k] ?? k; }
+function Tind(district, ind, field){
+  // Translate indicator field via STATE.i18n_ind cache; fallback to original UZ
+  const orig = ind[field] || "";
+  if(STATE.lang==='uz' || !STATE.i18n_ind || !STATE.i18n_ind[STATE.lang]) return orig;
+  const dprefix = district==='gijduvon'?'gij':'shof';
+  const key = dprefix+":"+ind.no+":"+field;
+  return STATE.i18n_ind[STATE.lang][key] || orig;
+}
 
 const SLIDES = [
   {n:1, icon:"bi-graph-up-arrow"},
@@ -931,6 +939,12 @@ async function init(){
   ]);
   STATE.data.gijduvon = g;
   STATE.data.shofirkon = s;
+  // Optional indicator translations
+  STATE.i18n_ind = {ru:{},en:{}};
+  try{
+    const tr = await fetch("assets/data/i18n_indicators.json").then(r=>r.ok?r.json():null);
+    if(tr) STATE.i18n_ind = tr;
+  }catch(e){}
 
   buildSlidePages();
   bindEvents();
@@ -1125,15 +1139,19 @@ function renderCardsForSlide(n){
 function cardHTML(i,idx){
   const found = i.found;
   const cid = "vchart-"+STATE.district+"-"+i.slide+"-"+i.no;
+  const tName = Tind(STATE.district, i, 'name');
+  const tDesc = Tind(STATE.district, i, 'desc');
+  const tAi = i.ai_insight ? Tind(STATE.district, i, 'ai_insight') : '';
+  const i_view = Object.assign({}, i, {value: Tind(STATE.district, i, 'value')});
   return '<div class="ind-card '+(found?'':'missing')+'" style="animation-delay:'+Math.min(idx*30,400)+'ms">'+
     '<div class="ic-head"><div class="ic-no">#'+i.no+'</div>'+
     '<div class="ic-badges">'+
-    '<span class="b src src-'+srcSlug(i.source_org||'SQB')+'">Манба: '+escapeHTML(i.source_org||'SQB')+'</span>'+
+    '<span class="b src src-'+srcSlug(i.source_org||'SQB')+'">'+T('label_source')+' '+escapeHTML(i.source_org||'SQB')+'</span>'+
     '</div></div>'+
-    '<h3 class="ic-title">'+escapeHTML(i.name)+'</h3>'+
-    '<p class="ic-desc">'+escapeHTML(i.desc||'')+'</p>'+
-    renderValue(i,cid)+
-    (i.ai_insight ? '<div class="ai-insight"><div class="ai-insight-head"><i class="bi bi-robot"></i><span>ИИ ТАВСИЯСИ</span></div><p class="ai-insight-text">'+escapeHTML(i.ai_insight)+'</p></div>' : '')+
+    '<h3 class="ic-title">'+escapeHTML(tName)+'</h3>'+
+    '<p class="ic-desc">'+escapeHTML(tDesc||'')+'</p>'+
+    renderValue(i_view,cid)+
+    (tAi ? '<div class="ai-insight"><div class="ai-insight-head"><i class="bi bi-robot"></i><span>'+T('ai_label')+'</span></div><p class="ai-insight-text">'+escapeHTML(tAi)+'</p></div>' : '')+
     '</div>';
 }
 
