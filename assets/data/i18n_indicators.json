@@ -2,7 +2,6 @@
   "ru": {
     "gij:1:name": "Макроэкономические показатели района",
     "gij:1:desc": "Объемы и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
-    "gij:1:value": "Всего: 13 064,4 млрд сум (факт 2025 года) | Промышленность: 3 182,8 млрд сум (+7,4%) | Сельское хозяйство: 5 375,7 млрд сум (+3,5%) | Строительство: 984,7 млрд сум (+23,8%) | Рыночные услуги: 3 521,2 млрд сум (+16,8%)",
     "gij:1:ai_insight": "Общий объем ≈ 13,06 трлн сум. Сельское хозяйство на первом месте (41%), строительство растет быстрее всего (+23,8%). Услуги +16,8% — положительная тенденция. Рекомендация: увеличить долю промышленности и IT-услуг, углубить переработку в сельском хозяйстве.",
     "gij:2:name": "Динамика производства промышленной продукции",
     "gij:2:desc": "Объем производства промышленной продукции в районе (млрд сум) — годовая динамика",
@@ -292,7 +291,6 @@
     "gij:74:ai_insight": "В Гиждуване из 11 проектов кредит выделен на 9, 2 проекта (3 500 млн сум) еще не профинансированы. В сфере услуг 6 проектов (18 110 млн сум), в промышленности 4 проекта (29 688 млн сум). Рекомендация: заключить соглашения с банками для финансирования 2 не выделенных проектов; мониторинг для создания 124 рабочих мест; увеличить количество проектов до 15 и рабочих мест до 150 к 2026 году.",
     "shof:1:name": "Макроэкономические показатели района",
     "shof:1:desc": "Объем и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
-    "shof:1:value": "Всего: 7 832,4 млрд сум (факт 2025 года) | Промышленность: 1 220,0 млрд сум (+4,2%) | Сельское хозяйство: 4 397,8 млрд сум (+5,6%) | Строительство: 977,0 млрд сум (+13,6%) | Рыночные услуги: 1 237,6 млрд сум (+13,6%)",
     "shof:1:ai_insight": "Общий объем ≈ 7,83 трлн сум. Сельское хозяйство очень преобладает (56%), аграрность высокая. Строительство и услуги +13,6%. Рекомендация: развивать кластеры переработки продуктов питания и нестандартные услуги.",
     "shof:2:name": "Динамика производства промышленной продукции",
     "shof:2:desc": "Объем производства промышленной продукции в районе (млрд сўм) — годовая динамика",
@@ -590,7 +588,6 @@
   "en": {
     "gij:1:name": "Macroeconomic indicators of the district",
     "gij:1:desc": "Volume + growth rate of industry, agriculture, construction, and market services",
-    "gij:1:value": "Total: 13,064.4 billion soums (2025 actual) | Industry: 3,182.8 billion soums (+7.4%) | Agriculture: 5,375.7 billion soums (+3.5%) | Construction: 984.7 billion soums (+23.8%) | Market services: 3,521.2 billion soums (+16.8%)",
     "gij:1:ai_insight": "Total volume ≈ 13.06 trillion soums. Agriculture is dominant (41%), construction is growing the fastest (+23.8%). Services +16.8% — positive trend. Recommendation: increase the share of industry and IT services, depth of processing in agriculture.",
     "gij:2:name": "Dynamics of industrial product production",
     "gij:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
@@ -880,7 +877,6 @@
     "gij:74:ai_insight": "Out of 11 projects in Gijduvan, credit has been allocated to 9, 2 projects (3,500 million soums) have not yet been financed. 6 projects in services (18,110 million soums), 4 projects in industry (29,688 million soums). Recommendation: negotiate with banks to finance the 2 unallocated projects; monitor to create 124 jobs; increase the number of projects to 15 and jobs to 150 by 2026.",
     "shof:1:name": "Macro-economic indicators of the district",
     "shof:1:desc": "Volume of industry, agriculture, construction, and market services + growth rate",
-    "shof:1:value": "Total: 7,832.4 billion soums (2025 fact) | Industry: 1,220.0 billion soums (+4.2%) | Agriculture: 4,397.8 billion soums (+5.6%) | Construction: 977.0 billion soums (+13.6%) | Market services: 1,237.6 billion soums (+13.6%)",
     "shof:1:ai_insight": "Total volume ≈ 7.83 trillion soums. Agriculture is very dominant (56%), agrarianism is high. Construction and services +13.6%. Recommendation: develop food processing clusters and non-standard services.",
     "shof:2:name": "Dynamics of industrial product production",
     "shof:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
