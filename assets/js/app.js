@@ -856,6 +856,7 @@ function render(){
 
 function renderOverview(data){
   const wrap = document.getElementById("slidesOverview");
+  if(!wrap) return;
   const html = SLIDES.map(function(s){
     const inds = data.indicators.filter(function(i){return i.slide===s.n;});
     return '<div class="col-xl-4 col-lg-6"><div class="ov-card" data-slide="'+s.n+'">'+
