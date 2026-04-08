@@ -42,8 +42,8 @@ const I18N = {
     slide_word:"СЛАЙД",
     section_word:"-БЎЛИМ",
     indicators_word:"та кўрсаткич",
-    slide_titles:["Иқтисодий фаоллик","Инфратузилма","Аҳоли ва бандлик","Маҳалла тадбиркорлиги ва банк","Имкониятлар","Туризм","Хулоса ва режа"],
-    slide_descs:["Саноат, қурилиш, ишлаб чиқариш ва иқтисодий ўсиш кўрсаткичлари","Йўл, газ, сув, электр энергия ва коммунал инфратузилма","Демография, иш билан таъминлаш, мигратсия ва камбағаллик","Маҳалла даражасидаги тадбиркорлик ва банк молиявий хизматлари","Туман иқтисодий имкониятлари ва салоҳият","Туризм соҳаси кўрсаткичлари ва туристик салоҳият","Якуний хулосалар, тавсиялар ва ҳаракатлар режаси"],
+    slide_titles:["Иқтисодий фаоллик","Инфратузилма","Аҳоли ва бандлик","Маҳалла тадбиркорлиги ва банк","Имкониятлар","Хулоса ва режа"],
+    slide_descs:["Саноат, қурилиш, ишлаб чиқариш ва иқтисодий ўсиш кўрсаткичлари","Йўл, газ, сув, электр энергия ва коммунал инфратузилма","Демография, иш билан таъминлаш, мигратсия ва камбағаллик","Маҳалла даражасидаги тадбиркорлик ва банк молиявий хизматлари","Туман иқтисодий имкониятлари ва салоҳият","Якуний хулосалар, тавсиялар ва ҳаракатлар режаси"],
     arch_data_layer:"DATA LEVEL · Маълумот қатлами",
     arch_ai_layer:"AI LEVEL · Сунъий интеллект қатлами",
     arch_platform_layer:"PLATFORMS · Платформалар",
@@ -96,8 +96,8 @@ const I18N = {
     slide_word:"СЛАЙД",
     section_word:"-РАЗДЕЛ",
     indicators_word:"показателей",
-    slide_titles:["Экономическая активность","Инфраструктура","Население и занятость","Махаллинское предпринимательство и банк","Возможности","Туризм","Выводы и план"],
-    slide_descs:["Промышленность, строительство, производство и показатели экономического роста","Дороги, газ, вода, электроэнергия и коммунальная инфраструктура","Демография, занятость, миграция и бедность","Предпринимательство на уровне махалли и банковские услуги","Экономические возможности и потенциал района","Показатели сферы туризма и туристический потенциал","Итоговые выводы, рекомендации и план действий"],
+    slide_titles:["Экономическая активность","Инфраструктура","Население и занятость","Махаллинское предпринимательство и банк","Возможности","Выводы и план"],
+    slide_descs:["Промышленность, строительство, производство и показатели экономического роста","Дороги, газ, вода, электроэнергия и коммунальная инфраструктура","Демография, занятость, миграция и бедность","Предпринимательство на уровне махалли и банковские услуги","Экономические возможности и потенциал района","Итоговые выводы, рекомендации и план действий"],
     arch_data_layer:"DATA LEVEL · Уровень данных",
     arch_ai_layer:"AI LEVEL · Уровень искусственного интеллекта",
     arch_platform_layer:"PLATFORMS · Платформы",
@@ -150,8 +150,8 @@ const I18N = {
     slide_word:"SLIDE",
     section_word:"-SECTION",
     indicators_word:"indicators",
-    slide_titles:["Economic Activity","Infrastructure","Population & Employment","Mahalla Business & Banking","Opportunities","Tourism","Conclusions & Plan"],
-    slide_descs:["Industry, construction, production and economic growth indicators","Roads, gas, water, electricity and utility infrastructure","Demography, employment, migration and poverty","Mahalla-level entrepreneurship and bank financial services","District economic opportunities and potential","Tourism sector indicators and touristic potential","Final conclusions, recommendations and action plan"],
+    slide_titles:["Economic Activity","Infrastructure","Population & Employment","Mahalla Business & Banking","Opportunities","Conclusions & Plan"],
+    slide_descs:["Industry, construction, production and economic growth indicators","Roads, gas, water, electricity and utility infrastructure","Demography, employment, migration and poverty","Mahalla-level entrepreneurship and bank financial services","District economic opportunities and potential","Final conclusions, recommendations and action plan"],
     arch_data_layer:"DATA LEVEL",
     arch_ai_layer:"AI LEVEL",
     arch_platform_layer:"PLATFORMS",
@@ -184,10 +184,9 @@ const SLIDES = [
   {n:3, icon:"bi-people-fill"},
   {n:4, icon:"bi-bank2"},
   {n:5, icon:"bi-stars"},
-  {n:6, icon:"bi-geo-alt-fill"},
-  {n:7, icon:"bi-flag-fill"},
+  {n:6, icon:"bi-flag-fill"},
 ];
-const SLIDE_SECTIONS = ["I","II","III","IV","IV","V","V"];
+const SLIDE_SECTIONS = ["I","II","III","IV","IV","V"];
 SLIDES.forEach(function(s,idx){
   Object.defineProperty(s,'title',{get:function(){return T('slide_titles')[idx];}});
   Object.defineProperty(s,'desc',{get:function(){return T('slide_descs')[idx];}});
