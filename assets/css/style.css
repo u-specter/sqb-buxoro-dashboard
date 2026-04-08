@@ -1370,3 +1370,25 @@ body{
 
 .arch-wrap{display:flex;justify-content:center;margin-top:20px}
 .arch-img{max-width:100%;height:auto;border-radius:16px;box-shadow:0 10px 30px rgba(16,40,54,.08);background:#fff;padding:16px}
+
+/* Architecture diagram (HTML/CSS) */
+.arch-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:1400px;margin:24px auto 0}
+.arch-layer{width:100%;background:#fff;border:1.5px dashed rgba(0,126,136,.35);border-radius:18px;padding:22px 26px;position:relative;box-shadow:0 6px 24px rgba(16,40,54,.06)}
+.arch-layer.data-layer{border-color:rgba(99,153,34,.45);background:linear-gradient(180deg,#f6faf0,#fff)}
+.arch-layer.ai-layer{border-color:rgba(0,126,136,.45);background:linear-gradient(180deg,#eef8f9,#fff)}
+.arch-layer.platform-layer{border-color:rgba(194,94,60,.45);background:linear-gradient(180deg,#fdf3ee,#fff)}
+.arch-layer-label{position:absolute;top:-12px;left:24px;background:#fff;padding:2px 14px;font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--navy);border-radius:20px;border:1px solid rgba(16,40,54,.15)}
+.arch-section{margin-top:14px}
+.arch-section:first-of-type{margin-top:6px}
+.arch-section-label{font-size:13px;font-weight:800;color:var(--accent-2);margin-bottom:8px;letter-spacing:.04em}
+.arch-blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:8px}
+.arch-block{padding:14px 12px;border-radius:12px;text-align:center;transition:.2s;cursor:default;border:1px solid transparent}
+.arch-block:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.arch-block.d{background:#27500a;border-color:#97c459;color:#c0dd97}
+.arch-block.p{background:#0a3850;border-color:#5994c4;color:#97c0dd}
+.arch-block.b{background:#502c0a;border-color:#c4955e;color:#dfc097}
+.arch-block.ai{background:#0a4f50;border-color:#5ec1c4;color:#97dde0}
+.arch-block.pl{background:#502c0a;border-color:#c25e3c;color:#ffb597}
+.ab-title{font-size:14px;font-weight:700;color:#fff}
+.ab-sub{font-size:11px;font-weight:500;opacity:.85;margin-top:3px;color:inherit}
+.arch-arrow{font-size:22px;color:var(--accent-2);font-weight:900;line-height:1}
