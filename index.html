@@ -25,16 +25,16 @@
 
       <div class="district-tabs ms-lg-4" role="tablist">
         <button class="dt-btn active" data-district="gijduvon">
-          <i class="bi bi-bank"></i><span>ҒИЖДУВОН</span>
+          <i class="bi bi-bank"></i><span data-i18n="gij_short">ҒИЖДУВОН</span>
         </button>
         <button class="dt-btn" data-district="shofirkon">
-          <i class="bi bi-bank"></i><span>ШОФИРКОН</span>
+          <i class="bi bi-bank"></i><span data-i18n="shof_short">ШОФИРКОН</span>
         </button>
       </div>
 
       <div class="ms-auto d-flex align-items-center gap-3 flex-grow-1 flex-lg-grow-0 mt-3 mt-lg-0"
         style="max-width:520px;">
-        <div class="year-pill"><i class="bi bi-calendar3"></i><span>2026 йил</span></div>
+        <div class="year-pill"><i class="bi bi-calendar3"></i><span data-i18n="year">2026 йил</span></div>
       </div>
     </div>
   </nav>
@@ -42,28 +42,28 @@
   <div class="app-shell">
     <!-- SIDEBAR -->
     <aside class="sidebar">
-      <div class="side-title">Слайдлар</div>
+      <div class="side-title" data-i18n="sidebar_title">Слайдлар</div>
       <a class="side-item active" href="#home" data-slide="0">
-        <i class="bi bi-house-door-fill"></i><span>Бош саҳифа</span>
+        <i class="bi bi-house-door-fill"></i><span data-i18n="home">Бош саҳифа</span>
       </a>
-      <a class="side-item" href="#slide-1" data-slide="1"><i class="bi bi-graph-up-arrow"></i><span>1. Иқтисодий
-          фаоллик</span></a>
-      <a class="side-item" href="#slide-2" data-slide="2"><i class="bi bi-buildings"></i><span>2.
-          Инфратузилма</span></a>
-      <a class="side-item" href="#slide-3" data-slide="3"><i class="bi bi-people-fill"></i><span>3. Аҳоли ва
-          бандлик</span></a>
-      <a class="side-item" href="#slide-4" data-slide="4"><i class="bi bi-bank2"></i><span>4. Маҳалла тадбиркорлиги ва
-          банк</span></a>
-      <a class="side-item" href="#slide-5" data-slide="5"><i class="bi bi-stars"></i><span>5. Имкониятлар</span></a>
-      <a class="side-item" href="#slide-6" data-slide="6"><i class="bi bi-geo-alt-fill"></i><span>6. Туризм</span></a>
-      <a class="side-item" href="#slide-7" data-slide="7"><i class="bi bi-flag-fill"></i><span>7. Хулоса ва
-          режа</span></a>
+      <a class="side-item" href="#slide-1" data-slide="1"><i class="bi bi-graph-up-arrow"></i><span data-slide-title="1">1. Иқтисодий фаоллик</span></a>
+      <a class="side-item" href="#slide-2" data-slide="2"><i class="bi bi-buildings"></i><span data-slide-title="2">2. Инфратузилма</span></a>
+      <a class="side-item" href="#slide-3" data-slide="3"><i class="bi bi-people-fill"></i><span data-slide-title="3">3. Аҳоли ва бандлик</span></a>
+      <a class="side-item" href="#slide-4" data-slide="4"><i class="bi bi-bank2"></i><span data-slide-title="4">4. Маҳалла тадбиркорлиги ва банк</span></a>
+      <a class="side-item" href="#slide-5" data-slide="5"><i class="bi bi-stars"></i><span data-slide-title="5">5. Имкониятлар</span></a>
+      <a class="side-item" href="#slide-6" data-slide="6"><i class="bi bi-geo-alt-fill"></i><span data-slide-title="6">6. Туризм</span></a>
+      <a class="side-item" href="#slide-7" data-slide="7"><i class="bi bi-flag-fill"></i><span data-slide-title="7">7. Хулоса ва режа</span></a>
 
       <a class="side-item side-advisor" href="gluon_advisor_uz (1).html" target="_blank" rel="noopener">
-        <i class="bi bi-robot"></i><span>SQB AI Advisor</span>
+        <i class="bi bi-robot"></i><span data-i18n="advisor">SQB AI Advisor</span>
         <i class="bi bi-box-arrow-up-right ms-auto small"></i>
       </a>
 
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="uz">UZ</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
     </aside>
 
     <!-- MAIN -->
@@ -74,9 +74,8 @@
         <div class="hero">
           <div class="hero-bg"></div>
           <div class="hero-content">
-            <div class="eyebrow"><i class="bi bi-geo-alt-fill"></i> Бухоро вилояти • <span id="heroDistrict">Ғиждувон
-                тумани</span></div>
-            <h1 class="hero-title">Туманнинг умумий ҳолати</h1>
+            <div class="eyebrow"><i class="bi bi-geo-alt-fill"></i> <span data-i18n="region">Бухоро вилояти</span> • <span id="heroDistrict">Ғиждувон тумани</span></div>
+            <h1 class="hero-title" data-i18n="hero_title">Туманнинг умумий ҳолати</h1>
 
             <div class="region-kpis" id="regionKpis"></div>
 
@@ -84,8 +83,8 @@
               <div class="ai-panel-head">
                 <div class="ai-ic"><i class="bi bi-robot"></i></div>
                 <div>
-                  <div class="ai-title">Сунъий интеллект таҳлили</div>
-                  <div class="ai-sub">Кўрсаткичлар динамикаси асосида автоматик хулосалар</div>
+                  <div class="ai-title" data-i18n="ai_title">Сунъий интеллект таҳлили</div>
+                  <div class="ai-sub" data-i18n="ai_sub">Кўрсаткичлар динамикаси асосида автоматик хулосалар</div>
                 </div>
               </div>
               <ul class="ai-bullets" id="aiBullets"></ul>
@@ -93,40 +92,40 @@
           </div>
         </div>
 
-        <div class="section-divider"><span>АРХИТЕКТУРА ВА ТУЗИЛМА</span></div>
+        <div class="section-divider"><span data-i18n="arch_title">АРХИТЕКТУРА ВА ТУЗИЛМА</span></div>
 
         <div class="arch-wrap px-4 pb-5">
           <div class="arch-layer data-layer">
-            <div class="arch-layer-label">DATA LEVEL · Маълумот қатлами</div>
+            <div class="arch-layer-label" data-i18n="arch_data_layer">DATA LEVEL · Маълумот қатлами</div>
             <div class="arch-section">
-              <div class="arch-section-label">📊 Маълумотлар</div>
+              <div class="arch-section-label" data-i18n="arch_data_section">📊 Маълумотлар</div>
               <div class="arch-blocks">
-                <div class="arch-block d"><div class="ab-title">Туманлар</div><div class="ab-sub">географик</div></div>
-                <div class="arch-block d"><div class="ab-title">Инфратузилма</div><div class="ab-sub">тизимлар</div></div>
-                <div class="arch-block d"><div class="ab-title">Туризм</div><div class="ab-sub">сайёҳлик</div></div>
-                <div class="arch-block d"><div class="ab-title">Иқтисодиёт</div><div class="ab-sub">кўрсаткичлар</div></div>
+                <div class="arch-block d" data-arch="tumanlar"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block d" data-arch="infra"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block d" data-arch="turizm"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block d" data-arch="iqtisod"><div class="ab-title"></div><div class="ab-sub"></div></div>
               </div>
               <div class="arch-blocks">
-                <div class="arch-block d"><div class="ab-title">Қишлоқ хўжалиги</div><div class="ab-sub">агрозона</div></div>
-                <div class="arch-block d"><div class="ab-title">Аҳоли</div><div class="ab-sub">демография</div></div>
-                <div class="arch-block d"><div class="ab-title">Бандлик</div><div class="ab-sub">меҳнат бозори</div></div>
-                <div class="arch-block d"><div class="ab-title">Ижтимоий ҳимоя</div><div class="ab-sub">нозик гуруҳлар</div></div>
-              </div>
-            </div>
-            <div class="arch-section">
-              <div class="arch-section-label">👥 Аҳоли</div>
-              <div class="arch-blocks">
-                <div class="arch-block p"><div class="ab-title">Маҳаллалар</div><div class="ab-sub">МФЙ тармоғи</div></div>
-                <div class="arch-block p"><div class="ab-title">Оилалар</div><div class="ab-sub">оилавий иқтисод</div></div>
-                <div class="arch-block p"><div class="ab-title">Тадбиркорлар</div><div class="ab-sub">микробизнес</div></div>
+                <div class="arch-block d" data-arch="qishloq"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block d" data-arch="aholi"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block d" data-arch="bandlik"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block d" data-arch="ijtimoiy"><div class="ab-title"></div><div class="ab-sub"></div></div>
               </div>
             </div>
             <div class="arch-section">
-              <div class="arch-section-label">🏦 Банк</div>
+              <div class="arch-section-label" data-i18n="arch_people_section">👥 Аҳоли</div>
               <div class="arch-blocks">
-                <div class="arch-block b"><div class="ab-title">Кредит портфели</div><div class="ab-sub">SQB</div></div>
-                <div class="arch-block b"><div class="ab-title">NPL мониторинг</div><div class="ab-sub">муаммоли актив</div></div>
-                <div class="arch-block b"><div class="ab-title">Маҳалла банкири</div><div class="ab-sub">молиявий вакил</div></div>
+                <div class="arch-block p" data-arch="mahalla"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block p" data-arch="oilalar"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block p" data-arch="tadbirkor"><div class="ab-title"></div><div class="ab-sub"></div></div>
+              </div>
+            </div>
+            <div class="arch-section">
+              <div class="arch-section-label" data-i18n="arch_bank_section">🏦 Банк</div>
+              <div class="arch-blocks">
+                <div class="arch-block b" data-arch="kredit"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block b" data-arch="npl"><div class="ab-title"></div><div class="ab-sub"></div></div>
+                <div class="arch-block b" data-arch="bankir"><div class="ab-title"></div><div class="ab-sub"></div></div>
               </div>
             </div>
           </div>
@@ -134,23 +133,23 @@
           <div class="arch-arrow">▼</div>
 
           <div class="arch-layer ai-layer">
-            <div class="arch-layer-label">AI LEVEL · Сунъий интеллект қатлами</div>
+            <div class="arch-layer-label" data-i18n="arch_ai_layer">AI LEVEL · Сунъий интеллект қатлами</div>
             <div class="arch-blocks">
-              <div class="arch-block ai"><div class="ab-title">Таҳлил</div><div class="ab-sub">тренд + динамика</div></div>
-              <div class="arch-block ai"><div class="ab-title">Моделлар</div><div class="ab-sub">прогноз ва скоринг</div></div>
-              <div class="arch-block ai"><div class="ab-title">RAG</div><div class="ab-sub">ҳужжатлар базаси</div></div>
+              <div class="arch-block ai" data-arch="analiz"><div class="ab-title"></div><div class="ab-sub"></div></div>
+              <div class="arch-block ai" data-arch="modellar"><div class="ab-title"></div><div class="ab-sub"></div></div>
+              <div class="arch-block ai" data-arch="rag"><div class="ab-title"></div><div class="ab-sub"></div></div>
             </div>
           </div>
 
           <div class="arch-arrow">▼</div>
 
           <div class="arch-layer platform-layer">
-            <div class="arch-layer-label">PLATFORMS · Платформалар</div>
+            <div class="arch-layer-label" data-i18n="arch_platform_layer">PLATFORMS · Платформалар</div>
             <div class="arch-blocks">
-              <div class="arch-block pl"><div class="ab-title">Аналитика</div><div class="ab-sub">дашборд</div></div>
-              <div class="arch-block pl"><div class="ab-title">Прогноз</div><div class="ab-sub">2026-2028</div></div>
-              <div class="arch-block pl"><div class="ab-title">Бизнес</div><div class="ab-sub">микрокредит</div></div>
-              <div class="arch-block pl"><div class="ab-title">Меҳнат бозори</div><div class="ab-sub">бандлик</div></div>
+              <div class="arch-block pl" data-arch="analitika"><div class="ab-title"></div><div class="ab-sub"></div></div>
+              <div class="arch-block pl" data-arch="prognoz"><div class="ab-title"></div><div class="ab-sub"></div></div>
+              <div class="arch-block pl" data-arch="bizmes"><div class="ab-title"></div><div class="ab-sub"></div></div>
+              <div class="arch-block pl" data-arch="mehnat"><div class="ab-title"></div><div class="ab-sub"></div></div>
             </div>
           </div>
         </div>
@@ -164,9 +163,8 @@
 
   <footer class="sqb-footer">
     <div class="container-fluid px-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div><i class="bi bi-bank2"></i> SQB Bank • Бухоро вилояти таҳлили • 2026</div>
-      <div class="opacity-75">Расмий манбалар: stat.uz • Марказий банк • Солиқ қўмитаси • Кадастр агентлиги • Туман
-        ҳокимиятлари</div>
+      <div><i class="bi bi-bank2"></i> SQB Bank • <span data-i18n="region">Бухоро вилояти</span> • 2026</div>
+      <div class="opacity-75"><span data-i18n="footer_sources">Расмий манбалар:</span> stat.uz • Марказий банк • Солиқ қўмитаси • Кадастр • Хокимият</div>
     </div>
   </footer>
 

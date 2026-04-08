@@ -1392,3 +1392,9 @@ body{
 .ab-title{font-size:14px;font-weight:700;color:#fff}
 .ab-sub{font-size:11px;font-weight:500;opacity:.85;margin-top:3px;color:inherit}
 .arch-arrow{font-size:22px;color:var(--accent-2);font-weight:900;line-height:1}
+
+/* Language switcher in sidebar */
+.lang-switcher{display:flex;gap:6px;margin:18px 14px 8px;padding:5px;background:rgba(0,126,136,.06);border:1px solid var(--line);border-radius:14px}
+.lang-btn{flex:1;border:0;background:transparent;color:var(--muted);font-weight:800;font-size:12px;letter-spacing:.08em;padding:9px 0;border-radius:10px;cursor:pointer;transition:.2s;font-family:inherit}
+.lang-btn:hover{background:rgba(0,126,136,.1);color:var(--navy)}
+.lang-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 4px 14px rgba(0,126,136,.35)}

@@ -1,22 +1,203 @@
 // SQB Bank Presidential Dashboard
 // Note: all dynamic strings pass through escapeHTML() before being inserted.
+
+// ============================================================
+// I18N — three-language UI (uz / ru / en)
+// ============================================================
+const I18N = {
+  uz:{
+    sidebar_title:"Слайдлар",
+    home:"Бош саҳифа",
+    advisor:"SQB AI Advisor",
+    year:"2026 йил",
+    region:"Бухоро вилояти",
+    gij_district:"Ғиждувон тумани",
+    shof_district:"Шофиркон тумани",
+    gij_short:"ҒИЖДУВОН",
+    shof_short:"ШОФИРКОН",
+    hero_title:"Туманнинг умумий ҳолати",
+    ai_title:"Сунъий интеллект таҳлили",
+    ai_sub:"Кўрсаткичлар динамикаси асосида автоматик хулосалар",
+    arch_title:"АРХИТЕКТУРА ВА ТУЗИЛМА",
+    footer_sources:"Расмий манбалар:",
+    kpi_mahalla:"Маҳаллалар сони",
+    kpi_xonadon:"Хонадонлар сони",
+    kpi_oila:"Оилалар сони",
+    kpi_aholi:"Аҳоли сони",
+    kpi_ishsizlik:"Ишсизлик",
+    kpi_kambag:"Камбағаллик",
+    unit_ta:"та",
+    unit_ming_kishi:"минг киши",
+    label_source:"Манба:",
+    label_value:"Қиймат",
+    label_status:"Ҳолат",
+    label_no_data:"Маълумот мавжуд эмас",
+    label_breakdown:"Тақсимот",
+    label_trend:"Йиллик динамика",
+    label_total:"Жами",
+    label_year:"йил",
+    label_forecast:"(прогноз)",
+    label_growth:"ўсиш",
+    ai_label:"ИИ ТАВСИЯСИ",
+    slide_word:"СЛАЙД",
+    section_word:"-БЎЛИМ",
+    indicators_word:"та кўрсаткич",
+    slide_titles:["Иқтисодий фаоллик","Инфратузилма","Аҳоли ва бандлик","Маҳалла тадбиркорлиги ва банк","Имкониятлар","Туризм","Хулоса ва режа"],
+    slide_descs:["Саноат, қурилиш, ишлаб чиқариш ва иқтисодий ўсиш кўрсаткичлари","Йўл, газ, сув, электр энергия ва коммунал инфратузилма","Демография, иш билан таъминлаш, мигратсия ва камбағаллик","Маҳалла даражасидаги тадбиркорлик ва банк молиявий хизматлари","Туман иқтисодий имкониятлари ва салоҳият","Туризм соҳаси кўрсаткичлари ва туристик салоҳият","Якуний хулосалар, тавсиялар ва ҳаракатлар режаси"],
+    arch_data_layer:"DATA LEVEL · Маълумот қатлами",
+    arch_ai_layer:"AI LEVEL · Сунъий интеллект қатлами",
+    arch_platform_layer:"PLATFORMS · Платформалар",
+    arch_data_section:"📊 Маълумотлар",
+    arch_people_section:"👥 Аҳоли",
+    arch_bank_section:"🏦 Банк",
+    arch_blocks:{
+      tumanlar:["Туманлар","географик"],infra:["Инфратузилма","тизимлар"],turizm:["Туризм","сайёҳлик"],iqtisod:["Иқтисодиёт","кўрсаткичлар"],
+      qishloq:["Қишлоқ хўжалиги","агрозона"],aholi:["Аҳоли","демография"],bandlik:["Бандлик","меҳнат бозори"],ijtimoiy:["Ижтимоий ҳимоя","нозик гуруҳлар"],
+      mahalla:["Маҳаллалар","МФЙ тармоғи"],oilalar:["Оилалар","оилавий иқтисод"],tadbirkor:["Тадбиркорлар","микробизнес"],
+      kredit:["Кредит портфели","SQB"],npl:["NPL мониторинг","муаммоли актив"],bankir:["Маҳалла банкири","молиявий вакил"],
+      analiz:["Таҳлил","тренд + динамика"],modellar:["Моделлар","прогноз ва скоринг"],rag:["RAG","ҳужжатлар базаси"],
+      analitika:["Аналитика","дашборд"],prognoz:["Прогноз","2026-2028"],bizmes:["Бизнес","микрокредит"],mehnat:["Меҳнат бозори","бандлик"],
+    },
+  },
+  ru:{
+    sidebar_title:"Слайды",
+    home:"Главная",
+    advisor:"SQB AI Advisor",
+    year:"2026 год",
+    region:"Бухарская область",
+    gij_district:"Гиждуванский район",
+    shof_district:"Шафирканский район",
+    gij_short:"ГИЖДУВАН",
+    shof_short:"ШАФИРКАН",
+    hero_title:"Общее состояние района",
+    ai_title:"Анализ искусственного интеллекта",
+    ai_sub:"Автоматические выводы на основе динамики показателей",
+    arch_title:"АРХИТЕКТУРА И СТРУКТУРА",
+    footer_sources:"Официальные источники:",
+    kpi_mahalla:"Количество махаллей",
+    kpi_xonadon:"Домохозяйства",
+    kpi_oila:"Семьи",
+    kpi_aholi:"Население",
+    kpi_ishsizlik:"Безработица",
+    kpi_kambag:"Бедность",
+    unit_ta:"шт",
+    unit_ming_kishi:"тыс. чел",
+    label_source:"Источник:",
+    label_value:"Значение",
+    label_status:"Статус",
+    label_no_data:"Данные отсутствуют",
+    label_breakdown:"Распределение",
+    label_trend:"Годовая динамика",
+    label_total:"Всего",
+    label_year:"год",
+    label_forecast:"(прогноз)",
+    label_growth:"рост",
+    ai_label:"AI РЕКОМЕНДАЦИЯ",
+    slide_word:"СЛАЙД",
+    section_word:"-РАЗДЕЛ",
+    indicators_word:"показателей",
+    slide_titles:["Экономическая активность","Инфраструктура","Население и занятость","Махаллинское предпринимательство и банк","Возможности","Туризм","Выводы и план"],
+    slide_descs:["Промышленность, строительство, производство и показатели экономического роста","Дороги, газ, вода, электроэнергия и коммунальная инфраструктура","Демография, занятость, миграция и бедность","Предпринимательство на уровне махалли и банковские услуги","Экономические возможности и потенциал района","Показатели сферы туризма и туристический потенциал","Итоговые выводы, рекомендации и план действий"],
+    arch_data_layer:"DATA LEVEL · Уровень данных",
+    arch_ai_layer:"AI LEVEL · Уровень искусственного интеллекта",
+    arch_platform_layer:"PLATFORMS · Платформы",
+    arch_data_section:"📊 Данные",
+    arch_people_section:"👥 Население",
+    arch_bank_section:"🏦 Банк",
+    arch_blocks:{
+      tumanlar:["Районы","география"],infra:["Инфраструктура","системы"],turizm:["Туризм","туристы"],iqtisod:["Экономика","показатели"],
+      qishloq:["Сельское хоз-во","агрозона"],aholi:["Население","демография"],bandlik:["Занятость","рынок труда"],ijtimoiy:["Соц. защита","уязвимые"],
+      mahalla:["Махалли","сеть МФЙ"],oilalar:["Семьи","семейная экон."],tadbirkor:["Предпринимат.","микробизнес"],
+      kredit:["Кредит. портфель","SQB"],npl:["NPL мониторинг","проблемные"],bankir:["Махалла банкир","фин. представит."],
+      analiz:["Анализ","тренд + динамика"],modellar:["Модели","прогноз + скоринг"],rag:["RAG","база документов"],
+      analitika:["Аналитика","дашборд"],prognoz:["Прогноз","2026-2028"],bizmes:["Бизнес","микрокредит"],mehnat:["Рынок труда","занятость"],
+    },
+  },
+  en:{
+    sidebar_title:"Slides",
+    home:"Home",
+    advisor:"SQB AI Advisor",
+    year:"2026",
+    region:"Bukhara Region",
+    gij_district:"Gijduvon District",
+    shof_district:"Shofirkon District",
+    gij_short:"GIJDUVON",
+    shof_short:"SHOFIRKON",
+    hero_title:"District Overview",
+    ai_title:"AI Analysis",
+    ai_sub:"Automated insights based on indicator dynamics",
+    arch_title:"ARCHITECTURE & STRUCTURE",
+    footer_sources:"Official sources:",
+    kpi_mahalla:"Mahallas",
+    kpi_xonadon:"Households",
+    kpi_oila:"Families",
+    kpi_aholi:"Population",
+    kpi_ishsizlik:"Unemployment",
+    kpi_kambag:"Poverty",
+    unit_ta:"units",
+    unit_ming_kishi:"k people",
+    label_source:"Source:",
+    label_value:"Value",
+    label_status:"Status",
+    label_no_data:"No data available",
+    label_breakdown:"Breakdown",
+    label_trend:"Annual trend",
+    label_total:"Total",
+    label_year:"yr",
+    label_forecast:"(forecast)",
+    label_growth:"growth",
+    ai_label:"AI INSIGHT",
+    slide_word:"SLIDE",
+    section_word:"-SECTION",
+    indicators_word:"indicators",
+    slide_titles:["Economic Activity","Infrastructure","Population & Employment","Mahalla Business & Banking","Opportunities","Tourism","Conclusions & Plan"],
+    slide_descs:["Industry, construction, production and economic growth indicators","Roads, gas, water, electricity and utility infrastructure","Demography, employment, migration and poverty","Mahalla-level entrepreneurship and bank financial services","District economic opportunities and potential","Tourism sector indicators and touristic potential","Final conclusions, recommendations and action plan"],
+    arch_data_layer:"DATA LEVEL",
+    arch_ai_layer:"AI LEVEL",
+    arch_platform_layer:"PLATFORMS",
+    arch_data_section:"📊 Data",
+    arch_people_section:"👥 People",
+    arch_bank_section:"🏦 Bank",
+    arch_blocks:{
+      tumanlar:["Districts","geographic"],infra:["Infrastructure","systems"],turizm:["Tourism","tourists"],iqtisod:["Economy","indicators"],
+      qishloq:["Agriculture","agro-zone"],aholi:["Population","demography"],bandlik:["Employment","labor market"],ijtimoiy:["Social Protection","vulnerable"],
+      mahalla:["Mahallas","MFY network"],oilalar:["Families","family economy"],tadbirkor:["Entrepreneurs","microbusiness"],
+      kredit:["Credit portfolio","SQB"],npl:["NPL monitoring","problem assets"],bankir:["Mahalla banker","financial agent"],
+      analiz:["Analysis","trend + dynamics"],modellar:["Models","forecast + scoring"],rag:["RAG","document base"],
+      analitika:["Analytics","dashboard"],prognoz:["Forecast","2026-2028"],bizmes:["Business","microcredit"],mehnat:["Labor market","employment"],
+    },
+  },
+};
+function T(k){ return (I18N[STATE.lang]||I18N.uz)[k] ?? I18N.uz[k] ?? k; }
+
 const SLIDES = [
-  {n:1,title:"Иқтисодий фаоллик",          section:"I",  icon:"bi-graph-up-arrow",       desc:"Саноат, қурилиш, ишлаб чиқариш ва иқтисодий ўсиш кўрсаткичлари"},
-  {n:2,title:"Инфратузилма",                section:"II", icon:"bi-buildings",            desc:"Йўл, газ, сув, электр энергия ва коммунал инфратузилма"},
-  {n:3,title:"Аҳоли ва бандлик",            section:"III",icon:"bi-people-fill",          desc:"Демография, иш билан таъминлаш, мигратсия ва камбағаллик"},
-  {n:4,title:"Маҳалла тадбиркорлиги ва банк хизматлари", section:"IV", icon:"bi-bank2", desc:"Маҳалла даражасидаги тадбиркорлик ва банк молиявий хизматлари"},
-  {n:5,title:"Имкониятлар",                  section:"IV", icon:"bi-stars",                desc:"Туман иқтисодий имкониятлари ва салоҳият"},
-  {n:6,title:"Туризм",                       section:"V",  icon:"bi-geo-alt-fill",         desc:"Туризм соҳаси кўрсаткичлари ва туристик салоҳият"},
-  {n:7,title:"Хулоса ва ҳаракатлар режаси",  section:"V", icon:"bi-flag-fill",            desc:"Якуний хулосалар, тавсиялар ва ҳаракатлар режаси"},
+  {n:1, icon:"bi-graph-up-arrow"},
+  {n:2, icon:"bi-buildings"},
+  {n:3, icon:"bi-people-fill"},
+  {n:4, icon:"bi-bank2"},
+  {n:5, icon:"bi-stars"},
+  {n:6, icon:"bi-geo-alt-fill"},
+  {n:7, icon:"bi-flag-fill"},
 ];
+const SLIDE_SECTIONS = ["I","II","III","IV","IV","V","V"];
+SLIDES.forEach(function(s,idx){
+  Object.defineProperty(s,'title',{get:function(){return T('slide_titles')[idx];}});
+  Object.defineProperty(s,'desc',{get:function(){return T('slide_descs')[idx];}});
+  s.section = SLIDE_SECTIONS[idx];
+});
 
 const STATE = {
   district:"gijduvon",
+  lang: (typeof localStorage!=="undefined" && localStorage.getItem("dash_lang")) || "uz",
   data:{gijduvon:null,shofirkon:null},
   search:"",
   filter:"all",
   charts:{},     // canvasId -> Chart instance (for cleanup)
   pending:[],    // queue of {id, type, parsed} to init after DOM insert
+};
+const DISTRICT_LABEL = {
+  get gijduvon(){return T('gij_district');},
+  get shofirkon(){return T('shof_district');},
 };
 
 // ============================================================
@@ -742,7 +923,6 @@ function flushPendingCharts(){
   STATE.pending = [];
 }
 
-const DISTRICT_LABEL = {gijduvon:"Ғиждувон тумани", shofirkon:"Шофиркон тумани"};
 
 async function init(){
   const [g,s] = await Promise.all([
@@ -754,8 +934,43 @@ async function init(){
 
   buildSlidePages();
   bindEvents();
+  applyLang(STATE.lang);
   render();
   handleHash();
+}
+
+function applyLang(lang){
+  if(I18N[lang]) STATE.lang = lang;
+  try{ localStorage.setItem("dash_lang", STATE.lang); }catch(e){}
+  document.documentElement.lang = STATE.lang==='uz'?'uz-Cyrl':STATE.lang;
+  // 1) Generic data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    el.textContent = T(el.getAttribute('data-i18n'));
+  });
+  // 2) Sidebar slide titles
+  document.querySelectorAll('[data-slide-title]').forEach(function(el){
+    const n = parseInt(el.getAttribute('data-slide-title'),10);
+    el.textContent = n+'. '+T('slide_titles')[n-1];
+  });
+  // 3) Architecture blocks
+  document.querySelectorAll('[data-arch]').forEach(function(el){
+    const k = el.getAttribute('data-arch');
+    const blk = T('arch_blocks')[k];
+    if(blk){
+      const t=el.querySelector('.ab-title'), s=el.querySelector('.ab-sub');
+      if(t) t.textContent=blk[0]; if(s) s.textContent=blk[1];
+    }
+  });
+  // 4) Lang switcher state
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang===STATE.lang);
+  });
+  // 5) Re-render dynamic UI (slide headers, cards, AI panel)
+  if(STATE.data.gijduvon){
+    buildSlidePages();
+    render();
+    handleHash();
+  }
 }
 
 function setDate(){
@@ -769,9 +984,9 @@ function buildSlidePages(){
   const html = SLIDES.map(function(s){
     return '<section id="slide-'+s.n+'" class="page" data-slide-page="'+s.n+'">'+
       '<div class="slide-header"><div class="sh-left">'+
-      '<div class="sh-eye">СЛАЙД '+s.n+' • '+s.section+'-БЎЛИМ</div>'+
+      '<div class="sh-eye">'+T('slide_word')+' '+s.n+' • '+s.section+T('section_word')+'</div>'+
       '<h1 class="sh-title"><i class="bi '+s.icon+'"></i> '+escapeHTML(s.title)+'</h1>'+
-      '<div class="sh-meta">'+escapeHTML(s.desc)+' • <strong id="sh-district-'+s.n+'">Ғиждувон тумани</strong></div>'+
+      '<div class="sh-meta">'+escapeHTML(s.desc)+' • <strong id="sh-district-'+s.n+'">'+escapeHTML(DISTRICT_LABEL[STATE.district])+'</strong></div>'+
       '</div></div>'+
       '<div class="cards-grid" id="cards-'+s.n+'"></div>'+
       '</section>';
@@ -786,6 +1001,12 @@ function bindEvents(){
       btn.classList.add("active");
       STATE.district = btn.dataset.district;
       render();
+    });
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      applyLang(btn.dataset.lang);
     });
   });
 
@@ -1001,19 +1222,20 @@ function kpiFromIndicator(data, no, opts){
 }
 
 const REGION_KPI_DEFS = [
-  {no:23, icon:"bi-geo-alt-fill",        label:"Маҳаллалар сони",      unit:"та"},
-  {no:25, icon:"bi-house-door-fill",     label:"Хонадонлар сони",      unit:""},
-  {no:24, icon:"bi-people",              label:"Оилалар сони",         unit:""},
-  {no:22, icon:"bi-people-fill",         label:"Аҳоли сони",           unit:"минг киши"},
-  {no:41, icon:"bi-person-x-fill",       label:"Ишсизлик",             unit:"%", pctCount:true},
-  {no:40, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%", pctCount:true},
+  {no:23, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta"},
+  {no:25, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:""},
+  {no:24, icon:"bi-people",              labelKey:"kpi_oila",      unit:""},
+  {no:22, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi"},
+  {no:41, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true},
+  {no:40, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true},
 ];
 
 function renderRegionKpis(data){
   const wrap = document.getElementById("regionKpis");
   if(!wrap) return;
   const html = REGION_KPI_DEFS.map(function(def){
-    const k = kpiFromIndicator(data, def.no, {unit:def.unit});
+    const unit = def.unitKey ? T(def.unitKey) : (def.unit||"");
+    const k = kpiFromIndicator(data, def.no, {unit:unit});
     let valHtml, deltaHtml="";
     if(!k){
       valHtml = '<div class="rk-val">—</div>';
@@ -1027,9 +1249,10 @@ function renderRegionKpis(data){
         deltaHtml = '<div class="rk-delta '+k.deltaDir+'">'+arrow+' '+escapeHTML(k.delta)+'</div>';
       }
     }
+    const label = T(def.labelKey);
     return '<div class="rk-tile">'+
       '<div class="rk-ic"><i class="bi '+def.icon+'"></i></div>'+
-      '<div class="rk-lab">'+escapeHTML(def.label)+'</div>'+
+      '<div class="rk-lab">'+escapeHTML(label)+'</div>'+
       valHtml + deltaHtml +
     '</div>';
   }).join("");
