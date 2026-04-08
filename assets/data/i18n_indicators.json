@@ -2,7 +2,6 @@
   "ru": {
     "gij:1:name": "Макроэкономические показатели района",
     "gij:1:desc": "Объемы и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
-    "gij:1:ai_insight": "Общий объем ≈ 13,06 трлн сум. Сельское хозяйство на первом месте (41%), строительство растет быстрее всего (+23,8%). Услуги +16,8% — положительная тенденция. Рекомендация: увеличить долю промышленности и IT-услуг, углубить переработку в сельском хозяйстве.",
     "gij:2:name": "Динамика производства промышленной продукции",
     "gij:2:desc": "Объем производства промышленной продукции в районе (млрд сум) — годовая динамика",
     "gij:2:value": "2021: 1796,7 | 2022: 2102,8 | 2023: 2744,1 | 2024: 2963,6 | 2025: 3182,8 (млрд сум)",
@@ -291,7 +290,6 @@
     "gij:74:ai_insight": "В Гиждуване из 11 проектов кредит выделен на 9, 2 проекта (3 500 млн сум) еще не профинансированы. В сфере услуг 6 проектов (18 110 млн сум), в промышленности 4 проекта (29 688 млн сум). Рекомендация: заключить соглашения с банками для финансирования 2 не выделенных проектов; мониторинг для создания 124 рабочих мест; увеличить количество проектов до 15 и рабочих мест до 150 к 2026 году.",
     "shof:1:name": "Макроэкономические показатели района",
     "shof:1:desc": "Объем и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
-    "shof:1:ai_insight": "Общий объем ≈ 7,83 трлн сум. Сельское хозяйство очень преобладает (56%), аграрность высокая. Строительство и услуги +13,6%. Рекомендация: развивать кластеры переработки продуктов питания и нестандартные услуги.",
     "shof:2:name": "Динамика производства промышленной продукции",
     "shof:2:desc": "Объем производства промышленной продукции в районе (млрд сўм) — годовая динамика",
     "shof:2:value": "2021: 988 | 2022: 810.3 | 2023: 1022.3 | 2024: 1104.1 | 2025: 1220 (млрд сўм)",
@@ -588,7 +586,6 @@
   "en": {
     "gij:1:name": "Macroeconomic indicators of the district",
     "gij:1:desc": "Volume + growth rate of industry, agriculture, construction, and market services",
-    "gij:1:ai_insight": "Total volume ≈ 13.06 trillion soums. Agriculture is dominant (41%), construction is growing the fastest (+23.8%). Services +16.8% — positive trend. Recommendation: increase the share of industry and IT services, depth of processing in agriculture.",
     "gij:2:name": "Dynamics of industrial product production",
     "gij:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
     "gij:2:value": "2021: 1,796.7 | 2022: 2,102.8 | 2023: 2,744.1 | 2024: 2,963.6 | 2025: 3,182.8 (billion soums)",
@@ -877,7 +874,6 @@
     "gij:74:ai_insight": "Out of 11 projects in Gijduvan, credit has been allocated to 9, 2 projects (3,500 million soums) have not yet been financed. 6 projects in services (18,110 million soums), 4 projects in industry (29,688 million soums). Recommendation: negotiate with banks to finance the 2 unallocated projects; monitor to create 124 jobs; increase the number of projects to 15 and jobs to 150 by 2026.",
     "shof:1:name": "Macro-economic indicators of the district",
     "shof:1:desc": "Volume of industry, agriculture, construction, and market services + growth rate",
-    "shof:1:ai_insight": "Total volume ≈ 7.83 trillion soums. Agriculture is very dominant (56%), agrarianism is high. Construction and services +13.6%. Recommendation: develop food processing clusters and non-standard services.",
     "shof:2:name": "Dynamics of industrial product production",
     "shof:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
     "shof:2:value": "2021: 988 | 2022: 810.3 | 2023: 1022.3 | 2024: 1104.1 | 2025: 1220 (billion soums)",
