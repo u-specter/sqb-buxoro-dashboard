@@ -1367,3 +1367,6 @@ body{
   margin: 0;
   font-weight: 500;
 }
+
+.arch-wrap{display:flex;justify-content:center;margin-top:20px}
+.arch-img{max-width:100%;height:auto;border-radius:16px;box-shadow:0 10px 30px rgba(16,40,54,.08);background:#fff;padding:16px}
