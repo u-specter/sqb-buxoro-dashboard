@@ -433,8 +433,8 @@ body{
   padding:10px 0;font-size:13px;border-bottom:1px solid rgba(0,0,0,.04)}
 .hf-row:last-child{border-bottom:0}
 .hf-name{color:var(--navy);font-weight:800;flex-shrink:0;max-width:45%}
-.hf-val{font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right;line-height:1.4}
-.hf-val.green{color:var(--success)}
+.hf-val{font-weight:600;color:#6b7c85 !important;font-variant-numeric:tabular-nums;text-align:right;line-height:1.4}
+.hf-val.green{color:#2e7d6b !important}
 
 /* Trend (timeseries) chart + AI insight */
 .value-chart-wrap.trend{height:140px;margin-top:10px}
