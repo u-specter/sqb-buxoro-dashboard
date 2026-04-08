@@ -789,7 +789,8 @@ function bindEvents(){
     });
   });
 
-  document.getElementById("searchInput").addEventListener("input",function(e){
+  const si=document.getElementById("searchInput");
+  if(si) si.addEventListener("input",function(e){
     STATE.search = e.target.value.toLowerCase().trim();
     renderAllCards();
   });
