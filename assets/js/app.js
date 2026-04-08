@@ -1156,7 +1156,7 @@ function cardHTML(i,idx){
 }
 
 function srcSlug(s){
-  const map = {'stat.uz':'stat','Марказий банк':'cb','Солиқ қўмитаси':'tax','Кадастр':'cad','Хокимият':'hok','Минэнерго':'en','Узавтойул':'road','Mehnat.uz':'lab','SQB':'sqb'};
+  const map = {'stat.uz':'stat','Марказий банк':'cb','Солиқ қўмитаси':'tax','Кадастр':'cad','Хокимият':'hok','Минэнерго':'en','Узавтойул':'road','Mehnat.uz':'lab','Иқтисодиёт вазирлиги':'stat','SQB':'sqb'};
   return map[s]||'sqb';
 }
 
