@@ -684,7 +684,7 @@ function renderValue(ind, canvasId){
     const heroTail = hm ? hm[2].trim() : "";
     const heroLabel = heroTail || "Жами";
     const factsHtml = p.facts.map(function(f){
-      const isMoney = /(млн\s*сўм|млрд\s*сўм|кредит)/i.test(f.name+" "+f.value);
+      const isMoney = /(млн\s*сўм|млрд\s*сўм|трлн\s*сўм)/i.test(f.value);
       return '<div class="hf-row"><span class="hf-name">'+escapeHTML(f.name)+'</span>'+
         '<span class="hf-val'+(isMoney?' green':'')+'">'+escapeHTML(f.value)+'</span></div>';
     }).join("");
