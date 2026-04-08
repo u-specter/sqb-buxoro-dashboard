@@ -1292,7 +1292,8 @@ function renderRegionKpis(data){
       valHtml = '<div class="rk-val">'+fmtNum(k.value)+
         (k.unit?' <span class="rk-unit">'+escapeHTML(k.unit)+'</span>':'')+'</div>';
       if(k.sub){
-        deltaHtml = '<div class="rk-sub'+(k.subClass?' '+k.subClass:'')+'">'+escapeHTML(k.sub)+'</div>';
+        const arrow = def.pctCount ? '<span class="rk-arrow">▼ </span>' : '';
+        deltaHtml = '<div class="rk-sub'+(k.subClass?' '+k.subClass:'')+'">'+arrow+escapeHTML(k.sub)+'</div>';
       } else if(k.delta && !def.pctCount){
         const arrow = k.deltaDir==='up'?'▲':(k.deltaDir==='down'?'▼':'▬');
         deltaHtml = '<div class="rk-delta '+k.deltaDir+'">'+arrow+' '+escapeHTML(k.delta)+'</div>';
