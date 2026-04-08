@@ -880,7 +880,7 @@ function flushPendingCharts(){
         plugins:job.showLabels?[dataLabelsPlugin]:[],
         options:{
           responsive:true,maintainAspectRatio:false,
-          layout:{padding:{top:18,right:6,left:6,bottom:0}},
+          layout:{padding:{top:22,right:26,left:26,bottom:0}},
           plugins:{legend:{display:false},tooltip:{
             backgroundColor:"#102836",padding:10,
             titleFont:{family:"Inter",size:11,weight:"700"},
