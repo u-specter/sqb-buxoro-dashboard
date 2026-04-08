@@ -38,7 +38,7 @@ const I18N = {
     label_year:"йил",
     label_forecast:"(прогноз)",
     label_growth:"ўсиш",
-    ai_label:"ИИ ТАВСИЯСИ",
+    ai_label:"СИ ТАВСИЯСИ",
     slide_word:"СЛАЙД",
     section_word:"-БЎЛИМ",
     indicators_word:"та кўрсаткич",
