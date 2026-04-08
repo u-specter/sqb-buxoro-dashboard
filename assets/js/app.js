@@ -998,12 +998,12 @@ function kpiFromIndicator(data, no, opts){
 }
 
 const REGION_KPI_DEFS = [
-  {no:24, icon:"bi-geo-alt-fill",        label:"Маҳаллалар сони",      unit:"та"},
-  {no:26, icon:"bi-house-door-fill",     label:"Хонадонлар сони",      unit:""},
-  {no:25, icon:"bi-people",              label:"Оилалар сони",         unit:""},
-  {no:23, icon:"bi-people-fill",         label:"Аҳоли сони",           unit:"минг киши"},
-  {no:28, icon:"bi-person-x-fill",       label:"Ишсизлик",             unit:"%", pctCount:true},
-  {no:27, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%", pctCount:true},
+  {no:23, icon:"bi-geo-alt-fill",        label:"Маҳаллалар сони",      unit:"та"},
+  {no:25, icon:"bi-house-door-fill",     label:"Хонадонлар сони",      unit:""},
+  {no:24, icon:"bi-people",              label:"Оилалар сони",         unit:""},
+  {no:22, icon:"bi-people-fill",         label:"Аҳоли сони",           unit:"минг киши"},
+  {no:27, icon:"bi-person-x-fill",       label:"Ишсизлик",             unit:"%", pctCount:true},
+  {no:26, icon:"bi-arrow-down-circle",   label:"Камбағаллик",          unit:"%", pctCount:true},
 ];
 
 function renderRegionKpis(data){
@@ -1041,11 +1041,11 @@ function buildRegionInsights(district){
   if(!data) return [];
   const out = [];
 
-  const mah = kpiFromIndicator(data, 27, {});
-  const xon = kpiFromIndicator(data, 26, {});
-  const oila = kpiFromIndicator(data, 28, {});
-  const ishsiz = kpiFromIndicator(data, 28, {});
-  const kamb = kpiFromIndicator(data, 27, {});
+  const mah = kpiFromIndicator(data, 23, {});
+  const xon = kpiFromIndicator(data, 25, {});
+  const oila = kpiFromIndicator(data, 24, {});
+  const ishsiz = kpiFromIndicator(data, 27, {});
+  const kamb = kpiFromIndicator(data, 26, {});
 
   if(mah && mah.value!=null){
     out.push({e:"🏘", t:'<b>Маҳаллалар ('+fmtNum(mah.value)+' та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.'});
