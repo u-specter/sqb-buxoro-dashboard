@@ -491,7 +491,7 @@ function fmtNum(n){
 function renderValue(ind, canvasId){
   if(!ind.found || !ind.value){
     return '<div class="ic-value empty">'+
-      '<div class="ic-value-label">Ҳолат</div>'+
+      '<div class="ic-value-label">'+T("label_status")+'</div>'+
       '<div class="ic-value-text">Маълумот мавжуд эмас</div></div>';
   }
   const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
@@ -502,7 +502,7 @@ function renderValue(ind, canvasId){
       ('<span class="metric-delta '+(p.yoy>=0?'up':'down')+'">'+(p.yoy>=0?'▲ +':'▼ ')+fmtNum(p.yoyAbs)+' ('+(p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%)</span>')
       : '';
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">Йиллик динамика</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+T("label_trend")+'</div>'+
       (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
       '<div class="trend-top">'+
         '<div class="trend-num">'+fmtNum(p.last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+'</div>'+
@@ -518,7 +518,7 @@ function renderValue(ind, canvasId){
       ('<span class="metric-delta '+(p.yoy>=0?'up':'down')+'">'+(p.yoy>=0?'▲ +':'▼ ')+fmtNum(p.yoyAbs)+' ('+(p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%)</span>')
       : '';
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">Баҳоланган динамика</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+T("label_trend")+'</div>'+
       (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
       '<div class="trend-top">'+
         '<div class="trend-num">'+fmtNum(p.last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+'</div>'+
@@ -544,7 +544,7 @@ function renderValue(ind, canvasId){
   if(p.type==="timeseries_monthly"){
     STATE.pending.push({id:canvasId, kind:"area", labels:p.labels, values:p.values});
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'Динамика')+'</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||T('label_trend'))+'</div>'+
       '<span class="val-tag">'+(p.subtitle?escapeHTML(p.subtitle):'')+'</span></div>'+
       '<div class="trend-top">'+
         '<div class="trend-num">'+p.avg+' <span class="metric-unit">/100 ўртача</span></div>'+
@@ -644,7 +644,7 @@ function renderValue(ind, canvasId){
       '</div>';
     }).join('');
     return '<div class="ic-value rich nb-wrap">'+
-      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'Типология')+'</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||T('label_breakdown'))+'</div>'+
       (p.subtitle?'<span class="val-tag">'+escapeHTML(p.subtitle)+'</span>':'')+'</div>'+
       '<div class="nb-grid">'+cards+'</div>'+
       '<div class="nb-total">ЖАМИ <b>'+total+'</b> МФЙ</div>'+
@@ -659,7 +659,7 @@ function renderValue(ind, canvasId){
         '<span class="ml-grow">'+escapeHTML(s.growth||'')+'</span></div>';
     }).join('');
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||'ML прогноз')+'</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||T('label_trend'))+'</div>'+
       '<span class="val-tag">'+(p.subtitle?escapeHTML(p.subtitle):'')+'</span></div>'+
       '<div class="value-chart-wrap" style="height:200px"><canvas id="'+canvasId+'"></canvas></div>'+
       '<div class="ml-sectors">'+top3+'</div>'+
@@ -668,7 +668,7 @@ function renderValue(ind, canvasId){
 
   if(p.type==="single_metric"){
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">Қиймат</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+T("label_value")+'</div>'+
       (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
       '<div class="metric-value">'+fmtNum(p.value)+'</div>'+
       (p.unit?'<div class="metric-unit">'+escapeHTML(p.unit)+'</div>':'')+
@@ -701,7 +701,7 @@ function renderValue(ind, canvasId){
   if(p.type==="breakdown"){
     STATE.pending.push({id:canvasId, kind:"bars", data:p.items.map(function(_,i){return p.items.length-i;})});
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">Тақсимот</div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+T("label_breakdown")+'</div>'+
       (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
       '<ul class="value-pills">'+
       p.items.map(function(t){return '<li>'+escapeHTML(t)+'</li>';}).join("")+
@@ -710,7 +710,7 @@ function renderValue(ind, canvasId){
 
   if(p.type==="list"){
     return '<div class="ic-value rich">'+
-      '<div class="ic-value-head"><div class="ic-value-label">Рўйхат</div></div>'+
+      '<div class="ic-value-head"><div class="ic-value-label">'+T("label_breakdown")+'</div></div>'+
       '<ul class="value-list">'+
       p.items.map(function(t){return '<li>'+escapeHTML(t)+'</li>';}).join("")+
       '</ul></div>';
@@ -718,7 +718,7 @@ function renderValue(ind, canvasId){
 
   // text fallback
   return '<div class="ic-value rich">'+
-    '<div class="ic-value-head"><div class="ic-value-label">Маълумот</div>'+
+    '<div class="ic-value-head"><div class="ic-value-label">'+T("label_value")+'</div>'+
     (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
     '<blockquote class="value-text">'+escapeHTML(p.text||ind.value)+'</blockquote>'+
     '</div>';
