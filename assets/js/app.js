@@ -1200,6 +1200,10 @@ function findIndicator(data, no){
 function kpiFromIndicator(data, no, opts){
   const ind = findIndicator(data, no);
   if(!ind || !ind.found || !ind.value) return null;
+  // Override: indicator can carry kpi_count and kpi_pct fields directly
+  if(ind.kpi_count!=null && ind.kpi_pct!=null){
+    return {value:ind.kpi_count, unit:'нафар', sub:String(ind.kpi_pct).replace('.',',')+"%", subClass:'warn', delta:null, deltaDir:null};
+  }
   const raw = String(ind.value).trim();
   // Special: "N% (M киши)" — show count as main, % as sub
   const pcm = raw.match(/(-?\d+(?:[.,]\d+)?)\s*%\s*\(\s*([\d\s]+)\s*(киши|та|нафар)\s*\)/i);
