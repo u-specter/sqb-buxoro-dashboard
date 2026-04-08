@@ -796,6 +796,7 @@ function bindEvents(){
   });
 
   document.querySelectorAll(".side-item").forEach(function(a){
+    if(a.classList.contains("side-advisor")) return;
     a.addEventListener("click",function(e){
       const slide = a.dataset.slide;
       navigate(slide==="0"?"home":"slide-"+slide);
