@@ -497,7 +497,8 @@ function renderValue(ind, canvasId){
   const p = parseValue(ind.value, {name:ind.name, desc:ind.desc});
 
   if(p.type==="timeseries"){
-    STATE.pending.push({id:canvasId, kind:"line", series:p.series, noForecast:!!ind.no_forecast});
+    STATE.pending.push({id:canvasId, kind:"line", series:p.series, noForecast:!!ind.no_forecast, showLabels:true});
+    const lastYear = p.series.length ? p.series[p.series.length-1].year : '';
     const yoyPill = (p.yoy!=null) ?
       ('<span class="metric-delta '+(p.yoy>=0?'up':'down')+'">'+(p.yoy>=0?'▲ +':'▼ ')+fmtNum(p.yoyAbs)+' ('+(p.yoy>=0?'+':'')+p.yoy.toFixed(1)+'%)</span>')
       : '';
@@ -505,7 +506,8 @@ function renderValue(ind, canvasId){
       '<div class="ic-value-head"><div class="ic-value-label">'+T("label_trend")+'</div>'+
       (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
       '<div class="trend-top">'+
-        '<div class="trend-num">'+fmtNum(p.last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+'</div>'+
+        '<div class="trend-num">'+fmtNum(p.last)+(p.unit?' <span class="metric-unit">'+escapeHTML(p.unit)+'</span>':'')+
+        (lastYear?' <span class="trend-year">('+lastYear+' '+T('label_year')+')</span>':'')+'</div>'+
         yoyPill+
       '</div>'+
       '<div class="value-chart-wrap trend"><canvas id="'+canvasId+'"></canvas></div>'+
@@ -848,12 +850,34 @@ function flushPendingCharts(){
           pointBorderWidth:2,
         });
       }
+      const dataLabelsPlugin = {
+        id:'dataLabels_'+job.id,
+        afterDatasetsDraw(chart){
+          const {ctx} = chart;
+          ctx.save();
+          ctx.font = "700 10px Inter,system-ui,sans-serif";
+          ctx.textAlign = "center";
+          chart.data.datasets.forEach(function(ds,di){
+            const meta = chart.getDatasetMeta(di);
+            meta.data.forEach(function(pt,i){
+              const v = ds.data[i];
+              if(v==null) return;
+              const isFc = di===1;
+              ctx.fillStyle = isFc ? "#C25E3C" : "#1B3A4B";
+              const label = fmtNum(v);
+              ctx.fillText(label, pt.x, pt.y - 8);
+            });
+          });
+          ctx.restore();
+        }
+      };
       STATE.charts[job.id] = new Chart(ctx,{
         type:"line",
         data:{labels:allLabels, datasets:datasets},
+        plugins:job.showLabels?[dataLabelsPlugin]:[],
         options:{
           responsive:true,maintainAspectRatio:false,
-          layout:{padding:{top:6,right:6,left:6,bottom:0}},
+          layout:{padding:{top:18,right:6,left:6,bottom:0}},
           plugins:{legend:{display:false},tooltip:{
             backgroundColor:"#102836",padding:10,
             titleFont:{family:"Inter",size:11,weight:"700"},
