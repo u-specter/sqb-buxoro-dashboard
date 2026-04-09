@@ -683,9 +683,10 @@ function renderValue(ind, canvasId){
   if(p.type==="hero_facts"){
     // Split hero into leading numeric and trailing label
     const hm = p.hero.match(/^([\d\s.,]+)\s*(.*)$/);
-    const heroNum = hm ? hm[1].trim() : p.hero;
-    const heroTail = hm ? hm[2].trim() : "";
-    const heroLabel = heroTail || "Жами";
+    const hasNum = hm && /\d/.test(hm[1]);
+    const heroNum = hasNum ? hm[1].trim() : '';
+    const heroTail = hasNum ? (hm[2]||'').trim() : '';
+    const heroLabel = hasNum ? (heroTail || 'Жами') : p.hero;
     const factsHtml = p.facts.map(function(f){
       const isMoney = /(млн\s*сўм|млрд\s*сўм|трлн\s*сўм)/i.test(f.value);
       return '<div class="hf-row"><span class="hf-name">'+escapeHTML(f.name)+'</span>'+
