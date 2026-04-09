@@ -1648,3 +1648,11 @@ body{
   max-width:100%;overflow:hidden;
 }
 canvas{max-width:100% !important}
+
+/* Fix: ensure hero and main content visible on mobile */
+@media(max-width:768px){
+  .hero{overflow:visible}
+  .main{min-height:auto;overflow:visible}
+  .app-shell{min-height:auto;overflow:visible}
+  #home.page.active{display:block;overflow:visible}
+}
