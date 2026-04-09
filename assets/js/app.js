@@ -1084,6 +1084,21 @@ function bindEvents(){
   });
 
   window.addEventListener("hashchange",handleHash);
+
+  // Hamburger sidebar toggle for mobile
+  var ham = document.getElementById("sidebarToggle");
+  var overlay = document.getElementById("sidebarOverlay");
+  var sidebar = document.querySelector(".sidebar");
+  function closeSidebar(){ if(sidebar) sidebar.classList.remove("open"); if(overlay) overlay.classList.remove("active"); }
+  if(ham) ham.addEventListener("click",function(){
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("active");
+  });
+  if(overlay) overlay.addEventListener("click", closeSidebar);
+  // Close sidebar when a nav item is clicked on mobile
+  document.querySelectorAll(".side-item").forEach(function(a){
+    a.addEventListener("click", closeSidebar);
+  });
 }
 
 function navigate(id){ location.hash = "#"+id; }

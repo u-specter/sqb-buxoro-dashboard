@@ -476,7 +476,6 @@ body{
   .region-kpis{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:1100px){
-  .sidebar{display:none}
   .region-kpis{grid-template-columns:repeat(3,1fr)}
 }
 /* ---- Metric Square (indicators #4, #5) ---- */
@@ -1402,3 +1401,250 @@ body{
 .trend-year{font-size:13px;color:var(--muted);font-weight:600;margin-left:4px}
 
 .rk-arrow{font-size:11px;font-weight:900}
+
+/* ================================================================
+   HAMBURGER BUTTON
+   ================================================================ */
+.hamburger{
+  display:none;
+  border:0;background:rgba(255,255,255,.1);color:#fff;
+  width:44px;height:44px;border-radius:12px;font-size:22px;
+  align-items:center;justify-content:center;cursor:pointer;
+  transition:.2s;flex-shrink:0;
+  border:1px solid rgba(255,255,255,.18);
+}
+.hamburger:hover{background:rgba(255,255,255,.18)}
+
+/* SIDEBAR OVERLAY */
+.sidebar-overlay{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(0,0,0,.45);opacity:0;transition:opacity .3s ease;
+  pointer-events:none;
+}
+.sidebar-overlay.active{display:block;opacity:1;pointer-events:auto}
+
+/* ================================================================
+   RESPONSIVE — TABLET LANDSCAPE (max-width: 1200px)
+   ================================================================ */
+@media(max-width:1200px){
+  .hero{padding:32px 32px;margin:18px}
+  .hero-title{font-size:34px}
+  .region-kpis{grid-template-columns:repeat(3,1fr)}
+  .cards-grid{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+  .slide-header{padding:28px 32px}
+  .sh-title{font-size:28px}
+  .sh-stat{padding:12px 16px;min-width:90px}
+  .sh-stat .v{font-size:24px}
+}
+
+/* ================================================================
+   RESPONSIVE — TABLET PORTRAIT (max-width: 900px) — enhanced
+   ================================================================ */
+@media(max-width:900px){
+  .hero{padding:28px 24px;margin:14px}
+  .hero-title{font-size:28px}
+  .region-kpis{grid-template-columns:repeat(3,1fr);gap:10px}
+  .rk-val{font-size:22px}
+  .rk-lab{font-size:10px}
+  .rk-tile{padding:14px 14px 12px;border-radius:14px}
+  .cards-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:0 14px 30px}
+  .slide-header{flex-direction:column;align-items:flex-start;padding:24px;margin:14px}
+  .sh-title{font-size:24px}
+  .sh-right{flex-wrap:wrap}
+  .filter-bar{margin:0 14px 14px}
+  .ai-panel{padding:18px 20px}
+  .ai-title{font-size:16px}
+  .ai-bullets li{padding:10px 14px;font-size:13px}
+  .metric-value{font-size:34px}
+  .trend-num{font-size:24px}
+  .arch-blocks{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+  .arch-block{padding:12px 10px}
+  .ab-title{font-size:13px}
+  .ab-sub{font-size:10px}
+  .arch-wrap{padding-left:14px !important;padding-right:14px !important}
+  .section-divider{margin:24px 14px 18px}
+  .sqb-footer .container-fluid{flex-direction:column;text-align:center;gap:6px}
+}
+
+/* ================================================================
+   RESPONSIVE — MOBILE SIDEBAR (max-width: 768px)
+   ================================================================ */
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .sidebar{
+    position:fixed;left:-290px;top:0;bottom:0;z-index:1000;
+    width:280px;transition:left .3s ease;
+    background:#fff;
+    box-shadow:4px 0 20px rgba(0,0,0,.3);
+    height:100vh;padding-top:22px;
+  }
+  .sidebar.open{left:0}
+  .main{margin-left:0 !important}
+  .app-shell{flex-direction:column}
+  .sqb-navbar .container-fluid{flex-wrap:wrap;padding-left:12px;padding-right:12px}
+  .district-tabs{order:3;width:100%;justify-content:center;margin-top:10px;flex-shrink:0}
+  .dt-btn{padding:8px 14px;font-size:12px}
+  .dt-btn i{font-size:15px}
+  .year-pill{padding:8px 14px;font-size:13px;order:2}
+  .sqb-navbar{padding:.6rem 0}
+}
+
+/* ================================================================
+   RESPONSIVE — PHONE (max-width: 600px)
+   ================================================================ */
+@media(max-width:600px){
+  body{font-size:14px}
+
+  /* Navbar */
+  .sqb-navbar{padding:.5rem 0}
+  .brand-logo{height:36px}
+  .sqb-navbar .container-fluid{gap:8px;padding-left:10px;padding-right:10px}
+  .district-tabs{gap:6px;padding:4px;border-radius:10px}
+  .dt-btn{padding:7px 12px;font-size:11px;gap:6px;border-radius:8px}
+  .dt-btn i{font-size:14px}
+  .year-pill{padding:7px 12px;font-size:12px;border-radius:10px}
+
+  /* Hero */
+  .hero{padding:20px 16px;margin:10px;border-radius:16px}
+  .hero-title{font-size:22px !important;margin-bottom:10px}
+  .hero-sub{font-size:14px;margin-bottom:18px}
+  .eyebrow{font-size:11px;padding:6px 12px;margin-bottom:12px}
+  .hero-content{padding:0}
+
+  /* KPI tiles — 2 columns */
+  .region-kpis{grid-template-columns:repeat(2,1fr) !important;gap:8px;margin-bottom:18px}
+  .rk-tile{padding:12px 12px 10px;border-radius:12px}
+  .rk-val{font-size:20px}
+  .rk-lab{font-size:10px;letter-spacing:.06em}
+  .rk-ic{width:32px;height:32px;border-radius:9px;font-size:15px;margin-bottom:8px}
+  .rk-delta{font-size:11px;padding:2px 7px;margin-top:6px}
+  .rk-sub{font-size:11px;padding:3px 8px;margin-top:6px}
+  .rk-unit{font-size:11px}
+
+  /* AI panel */
+  .ai-panel{padding:16px;border-radius:14px}
+  .ai-panel-head{gap:10px;margin-bottom:10px}
+  .ai-ic{width:38px;height:38px;font-size:18px;border-radius:10px}
+  .ai-title{font-size:15px}
+  .ai-sub{font-size:11px}
+  .ai-bullets li{padding:10px 12px;border-radius:10px;font-size:13px;gap:8px}
+  .ai-bullets li .ai-emoji{font-size:16px}
+
+  /* Cards grid — single column */
+  .cards-grid{grid-template-columns:1fr !important;padding:0 10px 20px;gap:12px}
+  .ind-card{padding:16px;border-radius:14px}
+  .ic-head{margin-bottom:10px}
+  .ic-no{width:36px;height:36px;font-size:13px;border-radius:9px}
+  .ic-title{font-size:15px}
+  .ic-desc{font-size:12px}
+  .ic-value{padding:12px 14px;border-radius:10px}
+  .ic-value-label{font-size:9px}
+  .ic-value-text{font-size:13px}
+  .metric-value{font-size:28px}
+  .metric-value-sm{font-size:20px}
+  .metric-unit{font-size:10px}
+  .metric-delta{font-size:11px;padding:3px 8px}
+  .trend-num{font-size:22px}
+  .value-chart-wrap{height:70px}
+  .value-chart-wrap.trend{height:110px}
+
+  /* Slide header */
+  .slide-header{padding:20px 16px;margin:10px;border-radius:14px;gap:14px}
+  .sh-eye{font-size:11px}
+  .sh-title{font-size:20px}
+  .sh-meta{font-size:13px}
+  .sh-right{gap:8px}
+  .sh-stat{padding:10px 14px;min-width:80px;border-radius:10px}
+  .sh-stat .v{font-size:22px}
+  .sh-stat .l{font-size:10px}
+
+  /* Filter bar */
+  .filter-bar{margin:0 10px 10px;gap:6px}
+  .chip{padding:7px 12px;font-size:12px;border-radius:20px}
+
+  /* Architecture diagram */
+  .arch-wrap{padding-left:10px !important;padding-right:10px !important;padding-bottom:20px !important}
+  .arch-blocks{grid-template-columns:repeat(2,1fr) !important;gap:6px}
+  .arch-block{padding:10px 8px;border-radius:10px}
+  .ab-title{font-size:12px}
+  .ab-sub{font-size:9px}
+  .arch-layer{padding:20px 12px;border-radius:14px;margin-bottom:8px}
+  .arch-layer-label{font-size:10px;padding:2px 10px;left:12px}
+  .arch-section-label{font-size:12px}
+  .arch-arrow{font-size:18px}
+  .section-divider{margin:20px 10px 14px}
+  .section-divider span{font-size:11px;letter-spacing:.12em;padding:0 14px}
+
+  /* Hero facts */
+  .hf-num{font-size:clamp(13px,1.6vw,18px)}
+  .hf-lab{font-size:10px}
+  .hf-ic{font-size:28px}
+  .hf-row{padding:8px 0;font-size:12px;gap:10px}
+  .hf-name{font-size:12px;max-width:50%}
+  .hf-val{font-size:12px}
+
+  /* Metric square */
+  .ms-num{font-size:36px}
+  .ms-unit{font-size:11px}
+  .ms-delta{font-size:12px;padding:5px 12px}
+
+  /* Overview cards */
+  .ov-card{padding:18px;border-radius:14px}
+  .ov-ic{width:44px;height:44px;font-size:20px;border-radius:12px}
+  .ov-title{font-size:16px}
+  .ov-num{font-size:48px}
+
+  /* Category breakdown */
+  .cat-grid{grid-template-columns:1fr;gap:8px}
+  .cat-num{font-size:22px}
+  .cb-wrap{grid-template-columns:1fr}
+  .cb-donut-wrap{width:180px;height:180px;margin:0 auto}
+  .cb-center-num{font-size:36px}
+
+  /* Footer */
+  .sqb-footer{padding:14px 0;font-size:12px}
+  .sqb-footer .container-fluid{flex-direction:column;text-align:center;gap:6px;padding:0 10px}
+
+  /* Global padding/margin reduction */
+  .px-4{padding-left:10px !important;padding-right:10px !important}
+
+  /* Touch-friendly: ensure buttons are min 44px tap targets */
+  .dt-btn,.chip,.lang-btn,.side-item,.hamburger{min-height:44px}
+  .lang-btn{padding:10px 0}
+  .side-item{padding:12px 14px;min-height:44px}
+
+  /* Value pills & list */
+  .value-pills li{font-size:10px;padding:3px 8px}
+  .value-list li{font-size:12px;padding:5px 0 5px 16px}
+  .value-text{font-size:12px;padding:6px 10px}
+}
+
+/* ================================================================
+   RESPONSIVE — VERY SMALL PHONE (max-width: 400px)
+   ================================================================ */
+@media(max-width:400px){
+  .region-kpis{grid-template-columns:1fr !important}
+  .rk-tile{display:flex;align-items:center;gap:12px;padding:12px 14px}
+  .rk-ic{margin-bottom:0;flex-shrink:0}
+  .hero-title{font-size:19px !important}
+  .sh-title{font-size:18px}
+  .sh-right{flex-direction:column;width:100%}
+  .sh-stat{width:100%;min-width:unset}
+  .arch-blocks{grid-template-columns:1fr !important}
+  .ms-num{font-size:28px}
+  .metric-value{font-size:24px}
+  .trend-num{font-size:18px}
+  .ai-bullets li{flex-direction:column;gap:4px}
+  .cb2-row{grid-template-columns:44px 1fr 40px;gap:8px;padding:10px 12px}
+  .cb2-num{font-size:22px}
+}
+
+/* ================================================================
+   CHART CONTAINER OVERFLOW PREVENTION (all sizes)
+   ================================================================ */
+.value-chart-wrap,
+.value-chart-wrap.trend,
+.cb-donut-wrap{
+  max-width:100%;overflow:hidden;
+}
+canvas{max-width:100% !important}
