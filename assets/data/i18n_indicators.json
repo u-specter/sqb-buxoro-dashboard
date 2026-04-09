@@ -2,7 +2,6 @@
   "ru": {
     "gij:1:desc": "Объемы и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
     "gij:2:desc": "Объем производства промышленной продукции в районе (млрд сум) — годовая динамика",
-    "gij:2:value": "2021: 1796,7 | 2022: 2102,8 | 2023: 2744,1 | 2024: 2963,6 | 2025: 3182,8 (млрд сум)",
     "gij:3:desc": "Рейтинг основных приоритетных отраслей и обоснование",
     "gij:3:value": "Всего: 3 приоритетные отрасли | 1-е место Легкая промышленность: текстильный и швейный кластер, историческое преимущество | 2-е место Сельское хозяйство: фруктоводство, виноградарство, шелководство — экспортный потенциал | 3-е место Туризм и ремесленничество: Гиждуванская школа гончарного дела (наследие ЮНЕСКО)",
     "gij:4:value": "Всего: 147 200 экономически активных населения | Сельское хозяйство: 39% — 57 408 | Услуги: 25% — 36 800 | Промышленность: 23% — 33 856 | Строительство: 13% — 19 136",
@@ -147,7 +146,6 @@
     "gij:74:ai_insight": "В Гиждуване из 11 проектов кредит выделен на 9, 2 проекта (3 500 млн сум) еще не профинансированы. В сфере услуг 6 проектов (18 110 млн сум), в промышленности 4 проекта (29 688 млн сум). Рекомендация: заключить соглашения с банками для финансирования 2 не выделенных проектов; мониторинг для создания 124 рабочих мест; увеличить количество проектов до 15 и рабочих мест до 150 к 2026 году.",
     "shof:1:desc": "Объем и темпы роста промышленности, сельского хозяйства, строительства и рыночных услуг",
     "shof:2:desc": "Объем производства промышленной продукции в районе (млрд сўм) — годовая динамика",
-    "shof:2:value": "2021: 988 | 2022: 810.3 | 2023: 1022.3 | 2024: 1104.1 | 2025: 1220 (млрд сўм)",
     "shof:3:desc": "Рейтинг основных приоритетных отраслей и обоснование",
     "shof:3:value": "Всего: 3 приоритетные отрасли | 1-е место Сельское хозяйство: хлопководство, зерноводство, животноводство — основа экономики | 2-е место Пищевая промышленность: переработка муки, масла, молочных продуктов | 3-е место Строительные материалы: кирпич, цемент, местное сырьё",
     "shof:4:value": "Всего: 84 500 экономически активного населения | Сельское хозяйство: 60% — 50 700 | Услуги: 18% — 15 210 | Промышленность: 17% — 14 365 | Строительство: 5% — 4 225",
@@ -315,7 +313,6 @@
   "en": {
     "gij:1:desc": "Volume + growth rate of industry, agriculture, construction, and market services",
     "gij:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
-    "gij:2:value": "2021: 1,796.7 | 2022: 2,102.8 | 2023: 2,744.1 | 2024: 2,963.6 | 2025: 3,182.8 (billion soums)",
     "gij:3:desc": "Ranking of key priority sectors and justification",
     "gij:3:value": "Total: 3 priority sectors | 1st place Light industry: textile and garment cluster, historical advantage | 2nd place Agriculture: fruit growing, viticulture, sericulture — export potential | 3rd place Tourism and handicrafts: Gijduvan pottery school (UNESCO heritage)",
     "gij:4:value": "Total: 147,200 economically active population | Agriculture: 39% — 57,408 | Services: 25% — 36,800 | Industry: 23% — 33,856 | Construction: 13% — 19,136",
@@ -460,7 +457,6 @@
     "gij:74:ai_insight": "Out of 11 projects in Gijduvan, credit has been allocated to 9, 2 projects (3,500 million soums) have not yet been financed. 6 projects in services (18,110 million soums), 4 projects in industry (29,688 million soums). Recommendation: negotiate with banks to finance the 2 unallocated projects; monitor to create 124 jobs; increase the number of projects to 15 and jobs to 150 by 2026.",
     "shof:1:desc": "Volume of industry, agriculture, construction, and market services + growth rate",
     "shof:2:desc": "Volume of industrial product production in the district (billion soums) — annual dynamics",
-    "shof:2:value": "2021: 988 | 2022: 810.3 | 2023: 1022.3 | 2024: 1104.1 | 2025: 1220 (billion soums)",
     "shof:3:desc": "Ranking of priority sectors and justification",
     "shof:3:value": "Total: 3 priority sectors | 1st place Agriculture: cotton, grain, livestock — the foundation of the economy | 2nd place Food industry: flour, oil, dairy processing | 3rd place Construction materials: bricks, cement, local raw materials",
     "shof:4:value": "Total: 84,500 economically active population | Agriculture: 60% — 50,700 | Services: 18% — 15,210 | Industry: 17% — 14,365 | Construction: 5% — 4,225",
