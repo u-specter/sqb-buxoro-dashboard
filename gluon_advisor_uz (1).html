@@ -221,15 +221,9 @@ select.input-s{appearance:none;cursor:pointer;background-image:url("data:image/s
 .insight-tip{margin-top:12px;font-size:12px;color:var(--muted);font-weight:600}
 .steps-list{padding:24px 26px;border-top:1px solid var(--line);background:var(--surface-2)}
 .credit-box{margin:0 26px 22px;padding:16px 18px;background:var(--blue-lt);border-radius:var(--radius);font-size:13px;border:1px solid var(--blue-border)}
-#s4.screen{max-width:1400px}
-#aiResult{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-#aiResult>*{min-width:0}
-@media(max-width:900px){#aiResult{grid-template-columns:1fr}#s4.screen{max-width:960px}}
 .alt-card{border:1px solid var(--line);background:var(--surface);padding:18px;border-radius:var(--radius);margin-bottom:12px;box-shadow:var(--shadow-sm)}
-.plan-toggle,.plan-download{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;flex-shrink:0;white-space:nowrap;border:none}
-.plan-toggle{background:linear-gradient(135deg,#1e3a5f,#38bdf8);color:#fff !important;box-shadow:0 4px 12px rgba(30,58,95,.25)}
-.plan-download{background:linear-gradient(135deg,#475569,#94a3b8);color:#fff !important;box-shadow:0 4px 12px rgba(71,85,105,.25);text-decoration:none}
-.plan-toggle:hover,.plan-download:hover{transform:translateY(-1px) scale(1.04);box-shadow:0 6px 18px rgba(30,58,95,.35);filter:brightness(1.1)}
+.plan-toggle{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:linear-gradient(135deg,#1e3a5f,#38bdf8);color:#fff !important;font-size:12px;font-weight:800;letter-spacing:.02em;box-shadow:0 4px 12px rgba(30,58,95,.25);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;flex-shrink:0;white-space:nowrap;border:none}
+.plan-toggle:hover{transform:translateY(-1px) scale(1.04);box-shadow:0 6px 18px rgba(30,58,95,.35);filter:brightness(1.1)}
 .plan-toggle:active{transform:translateY(0)}
 .plan-toggle.open{background:linear-gradient(135deg,#059669,#10b981);box-shadow:0 4px 12px rgba(16,185,129,.3)}
 .alt-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -346,30 +340,17 @@ button:disabled{opacity:.65;cursor:not-allowed;transform:none !important;box-sha
   .sub-scores{grid-template-columns:1fr}
   .geo-card{flex-direction:column}
 }
-/* Custom Select Dropdowns (DOM-rendered for screen recording) */
+
+/* Custom Select Dropdowns */
 .custom-select-wrap{position:relative;width:100%}
-.custom-select-trigger{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);
-  background:var(--surface);color:var(--ink);font-size:14px;font-weight:500;
-  cursor:pointer;transition:border-color .2s,box-shadow .2s;
-  min-height:44px;user-select:none;
-}
+.custom-select-trigger{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s,box-shadow .2s;min-height:44px;user-select:none}
 .custom-select-trigger:hover{border-color:var(--primary-bright)}
 .custom-select-trigger.open{border-color:var(--primary-bright);box-shadow:0 0 0 3px rgba(30,58,138,.12)}
 .custom-select-trigger::after{content:'\25BE';font-size:12px;color:var(--muted);margin-left:8px;transition:transform .2s}
 .custom-select-trigger.open::after{transform:rotate(180deg)}
-.custom-options{
-  position:absolute;top:100%;left:0;right:0;z-index:9999;
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:0 8px 30px rgba(0,0,0,.15);
-  max-height:220px;overflow-y:auto;margin-top:4px;
-  display:none;
-}
+.custom-options{position:absolute;top:100%;left:0;right:0;z-index:9999;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,.15);max-height:220px;overflow-y:auto;margin-top:4px;display:none}
 .custom-options.show{display:block}
-.custom-option{
-  padding:10px 14px;font-size:14px;cursor:pointer;transition:background .15s;
-}
+.custom-option{padding:10px 14px;font-size:14px;cursor:pointer;transition:background .15s}
 .custom-option:hover{background:var(--blue-lt,#eef3ff)}
 .custom-option.selected{background:var(--primary-bright,#1e3a8a);color:#fff;font-weight:600}
 </style>
@@ -390,13 +371,9 @@ button:disabled{opacity:.65;cursor:not-allowed;transform:none !important;box-sha
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const API_KEY=''; // Key is on server (Netlify/Vercel proxy)
-// Auto-detect proxy URL: Netlify vs Vercel vs local
-const PROXY_URL = (function(){
-  const h = window.location.hostname;
-  if(h.includes('netlify')) return PROXY_URL;
-  if(h.includes('vercel')) return '/api/openai-proxy';
-  return PROXY_URL; // default
-})();
+
+// Auto-detect proxy URL
+const PROXY_URL = (function(){const h=window.location.hostname;if(h.includes('netlify')) return '/.netlify/functions/openai-proxy';if(h.includes('vercel')) return '/api/openai-proxy';return '/.netlify/functions/openai-proxy';})();
 
 let map,marker;
 // ════════════════════════════════════════════════════
@@ -1736,7 +1713,7 @@ function renderBeginnerReport(r,ai){
   }
   function makeCard(num,emoji,title,subtitle,accent){
     var card=document.createElement('section');
-    card.style.cssText='margin:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,31,68,.06);display:flex;flex-direction:column';
+    card.style.cssText='margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,31,68,.06)';
     var hd=document.createElement('div');
     hd.style.cssText='padding:18px 24px;background:linear-gradient(135deg,'+accent.from+','+accent.to+');border-bottom:1px solid '+accent.border+';display:flex;align-items:center;gap:14px';
     var nb=document.createElement('div');
@@ -1771,7 +1748,7 @@ function renderBeginnerReport(r,ai){
       item.style.cssText='padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px;transition:border-color .15s ease';
       var head=document.createElement('div');
       head.style.cssText='cursor:pointer';
-      head.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap"><div style="font-size:14px;font-weight:800;color:var(--ink);flex:1;min-width:150px">'+(i+1)+'. '+(b.name||'-')+'</div><div class="plan-btn-group" style="display:flex;align-items:center;gap:6px;flex-shrink:0"><div class="plan-toggle">'+t('planToggle')+'</div></div></div>'
+      head.innerHTML='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px"><div style="font-size:14px;font-weight:800;color:var(--ink)">'+(i+1)+'. '+(b.name||'-')+'</div><div class="plan-toggle">'+t('planToggle')+'</div></div>'
         +(b.why?'<div style="font-size:12px;color:var(--body);line-height:1.5;margin-bottom:8px"><strong style="color:#0369a1">Нима учун:</strong> '+b.why+'</div>':'');
       item.appendChild(head);
       var planBox=document.createElement('div');
@@ -1847,7 +1824,7 @@ function renderBeginnerReport(r,ai){
         var card=document.createElement('div');
         card.style.cssText='padding:14px;background:#fff;border:1px solid #e9d5ff;border-radius:12px;transition:border-color .15s ease';
         var head=document.createElement('div');head.style.cssText='cursor:pointer';
-        head.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap"><div style="font-size:13px;font-weight:800;color:#6b21a8;flex:1;min-width:150px">'+(g.title||'-')+'</div><div class="plan-btn-group" style="display:flex;align-items:center;gap:6px;flex-shrink:0"><div class="plan-toggle">'+t('planToggle')+'</div></div></div>'
+        head.innerHTML='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px"><div style="font-size:13px;font-weight:800;color:#6b21a8">'+(g.title||'-')+'</div><div class="plan-toggle">'+t('planToggle')+'</div></div>'
           +(g.description?'<div style="font-size:12px;color:var(--body);line-height:1.5;margin-bottom:8px">'+g.description+'</div>':'')
           +'<div style="display:flex;flex-wrap:wrap;gap:6px;font-size:11px">'
           +(g.investment?'<span style="padding:3px 9px;background:#eff6ff;color:#0369a1;border:1px solid #bfdbfe;border-radius:999px;font-weight:600">💰 '+g.investment+'</span>':'')
@@ -1891,14 +1868,8 @@ function renderBeginnerReport(r,ai){
       var head=document.createElement('div');head.style.cssText='cursor:pointer';
       var hr=document.createElement('div');
       hr.style.cssText='display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap';
-      hr.innerHTML='<div style="font-size:14px;font-weight:800;color:var(--ink);flex:1;min-width:150px">'+(rc.category||'-')+'</div>';
-      var btnGroup=document.createElement('div');
-      btnGroup.className='plan-btn-group';
-      btnGroup.style.cssText='display:flex;align-items:center;gap:6px;flex-shrink:0';
-      var tgl=document.createElement('div');tgl.className='plan-toggle';tgl.textContent=t('planToggle');
-      btnGroup.appendChild(tgl);
-      btnGroup.appendChild(riskTag(rc.riskLevel));
-      hr.appendChild(btnGroup);
+      hr.innerHTML='<div style="display:flex;align-items:center;gap:10px;flex:1;flex-wrap:wrap"><div style="font-size:14px;font-weight:800;color:var(--ink)">'+(rc.category||'-')+'</div><div class="plan-toggle">'+t('planToggle')+'</div></div>';
+      hr.appendChild(riskTag(rc.riskLevel));
       head.appendChild(hr);
       if(Array.isArray(rc.examples)&&rc.examples.length){
         var ex=document.createElement('div');
@@ -2229,22 +2200,7 @@ function openBusinessPlanDialog(item){
 }
 
 function attachAccordionToggle(head,planBox,refObj){
-  var loaded=false, loading=false, dlAdded=false;
-  function addDlBtn(){
-    if(dlAdded)return;dlAdded=true;
-    var group=head.querySelector('.plan-btn-group');
-    if(!group){var toggle=head.querySelector('.plan-toggle');group=toggle?toggle.parentNode:null;}
-    if(!group)return;
-    var dl=document.createElement('button');
-    dl.type='button';
-    dl.className='plan-download';
-    dl.textContent=(currentLang==='ru'?'Скачать бизнес-план':'Бизнес режани юклаш');
-    dl.onclick=function(ev){ev.stopPropagation();downloadPlanAsDocx((refObj&&(refObj.name||refObj.category))||'',refObj&&refObj.plan);};
-    // Insert after plan-toggle, before risk tag if present
-    var toggle=group.querySelector('.plan-toggle');
-    if(toggle&&toggle.nextSibling)group.insertBefore(dl,toggle.nextSibling);
-    else group.appendChild(dl);
-  }
+  var loaded=false, loading=false;
   head.addEventListener('click',function(){
     var open=planBox.style.display!=='none';
     var toggle=head.querySelector('.plan-toggle');
@@ -2256,24 +2212,23 @@ function attachAccordionToggle(head,planBox,refObj){
     planBox.style.display='block';
     if(toggle){toggle.textContent=t('planToggleOpen');toggle.classList.add('open');}
     if(loaded||loading)return;
-    if(refObj&&refObj.plan){loaded=true;renderPlanInto(refObj.plan,planBox);addDlBtn();return;}
+    if(refObj&&refObj.plan){loaded=true;renderPlanInto(refObj.plan,planBox);return;}
     loading=true;
     var loader=document.createElement('div');
     loader.style.cssText='padding:30px 20px;text-align:center';
-    loader.innerHTML='<div class="spinner" style="width:36px;height:36px;border:3px solid #e2e8f0;border-top-color:var(--primary);border-radius:50%;margin:0 auto 12px;animation:spin 1s linear infinite"></div><div style="font-size:12px;color:var(--muted);font-weight:600">'+(currentLang==='ru'?'Бизнес-план готовится…':'Бизнес-режа тайёрланмоқда…')+'</div>';
+    loader.innerHTML='<div class="spinner" style="width:36px;height:36px;border:3px solid #e2e8f0;border-top-color:var(--primary);border-radius:50%;margin:0 auto 12px;animation:spin 1s linear infinite"></div><div style="font-size:12px;color:var(--muted);font-weight:600">Бизнес-режа тайёрланмоқда…</div>';
     planBox.appendChild(loader);
     fetchSingleBusinessPlan((refObj&&(refObj.name||refObj.category))||'').then(function(p){
       while(planBox.firstChild)planBox.removeChild(planBox.firstChild);
       if(refObj)refObj.plan=p;
       loaded=true;loading=false;
       renderPlanInto(p,planBox);
-      addDlBtn();
     }).catch(function(){
       while(planBox.firstChild)planBox.removeChild(planBox.firstChild);
       loading=false;
       var err=document.createElement('div');
       err.style.cssText='padding:18px;text-align:center;color:#dc2626;font-size:13px';
-      err.innerHTML=(currentLang==='ru'?'Не удалось получить бизнес-план.':'Бизнес-режани олиш мумкин бўлмади.')+' <button type="button" id="planRetry'+Math.random().toString(36).slice(2,7)+'" class="btn-green" style="margin-left:6px;font-size:12px;padding:6px 12px">'+(currentLang==='ru'?'Повторить':'Қайта уриниш')+'</button>';
+      err.innerHTML='Бизнес-режани олиш мумкин бўлмади. <button type="button" id="planRetry'+Math.random().toString(36).slice(2,7)+'" class="btn-green" style="margin-left:6px;font-size:12px;padding:6px 12px">Қайта уриниш</button>';
       planBox.appendChild(err);
       err.querySelector('button').onclick=function(ev){ev.stopPropagation();loaded=false;planBox.style.display='none';head.click();};
     });
@@ -2380,90 +2335,6 @@ function renderPlanInto(p,body){
     sm.appendChild(u);
     section('🧠','9. Якуний маслаҳат (СИ дан)',sm);
   }
-}
-
-function downloadPlanAsDocx(name,plan){
-  if(!plan)return;
-  var p=plan;
-  var isRu=(currentLang==='ru');
-  var labels=isRu?{
-    title:'БИЗНЕС-ПЛАН',what:'1. Что это за бизнес?',why:'2. Почему подходит?',money:'3. Сколько нужно денег?',
-    min:'Минимум',optimal:'Оптимально',audience:'Целевая аудитория',whereSell:'Где можно продать',
-    competition:'Анализ конкурентов',economy:'4. Экономический эффект',revenue:'Выручка в месяц',
-    costs:'Затраты',profit:'Чистая прибыль',payback:'Окупаемость',risks:'5. Какие есть риски?',
-    howToStart:'6. Как начать (пошагово)',week1:'1 неделя',month1:'1 месяц',month2to3:'2-3 месяц',
-    incomeGrowth:'7. Как увеличить доход?',credit:'8. Нужен ли кредит?',
-    creditAmount:'Сумма',creditUse:'На что',summary:'9. Итог (совет от AI)'
-  }:{
-    title:'БИЗНЕС-РЕЖА',what:'1. Бу қандай бизнес?',why:'2. Нима учун мос?',money:'3. Қанча пул керак?',
-    min:'Минимум',optimal:'Оптимал',audience:'Мақсадли аудитория',whereSell:'Қаерда сотиш мумкин',
-    competition:'Рақобат таҳлили',economy:'4. Иқтисодий самара',revenue:'Тушум',
-    costs:'Харажат',profit:'Соф фойда',payback:'Қопланиш',risks:'5. Қандай хавфлар бор?',
-    howToStart:'6. Қандай бошлаш керак (қадамма-қадам)',week1:'1-ҳафта',month1:'1-ой',month2to3:'2-3-ой',
-    incomeGrowth:'7. Даромадни қандай ошириш?',credit:'8. Кредит керакми?',
-    creditAmount:'Сумма',creditUse:'Нимага',summary:'9. Якуний маслаҳат (СИ дан)'
-  };
-  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-  function list(arr){if(!Array.isArray(arr)||!arr.length)return '';return '<ul>'+arr.map(function(it){return '<li>'+esc(it)+'</li>';}).join('')+'</ul>';}
-  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">'
-    +'<head><meta charset="utf-8"><style>*{cursor:pointer !important}'
-    +'body{font-family:"Times New Roman",Times,serif;font-size:12pt;color:#000;line-height:1.6;margin:2cm}'
-    +'h1{font-size:16pt;font-weight:bold;text-align:center;margin-bottom:6pt;border-bottom:1pt solid #000;padding-bottom:6pt}'
-    +'h2{font-size:13pt;font-weight:bold;margin-top:18pt;margin-bottom:6pt;border-bottom:0.5pt solid #000;padding-bottom:4pt}'
-    +'h3{font-size:12pt;font-weight:bold;margin-top:12pt;margin-bottom:4pt}'
-    +'p{margin:4pt 0}'
-    +'ul{margin:4pt 0 8pt 18pt}'
-    +'li{margin-bottom:2pt}'
-    +'table{border-collapse:collapse;width:100%;margin:8pt 0}'
-    +'td,th{border:1pt solid #000;padding:6pt 10pt;text-align:left;font-size:11pt;font-family:"Times New Roman",Times,serif}'
-    +'th{font-weight:bold}'
-    +'.meta{font-size:10pt;text-align:center;margin-bottom:12pt}'
-    +'</style></head><body>'
-    +'<h1>'+esc(name)+'</h1>'
-    +'<p class="meta">'+labels.title+' | '+(new Date().toLocaleDateString())+'</p>';
-  if(p.what)html+='<h2>'+labels.what+'</h2><p>'+esc(p.what)+'</p>';
-  if(Array.isArray(p.why)&&p.why.length)html+='<h2>'+labels.why+'</h2>'+list(p.why);
-  if(p.money){
-    html+='<h2>'+labels.money+'</h2><table><tr><th>'+labels.min+'</th><td>'+esc(p.money.min||'-')+'</td></tr><tr><th>'+labels.optimal+'</th><td>'+esc(p.money.optimal||'-')+'</td></tr></table>';
-  }
-  if(p.audience)html+='<h2>'+labels.audience+'</h2><p>'+esc(p.audience)+'</p>';
-  if(p.whereSell)html+='<h2>'+labels.whereSell+'</h2><p>'+esc(p.whereSell)+'</p>';
-  if(p.competition)html+='<h2>'+labels.competition+'</h2><p>'+esc(p.competition)+'</p>';
-  if(p.economy){
-    html+='<h2>'+labels.economy+'</h2><table>'
-      +'<tr><th>'+labels.revenue+'</th><td>'+esc(p.economy.revenue||'-')+'</td></tr>'
-      +'<tr><th>'+labels.costs+'</th><td>'+esc(p.economy.costs||'-')+'</td></tr>'
-      +'<tr><th>'+labels.profit+'</th><td>'+esc(p.economy.profit||'-')+'</td></tr>'
-      +'<tr><th>'+labels.payback+'</th><td>'+esc(p.economy.payback||'-')+'</td></tr>'
-      +'</table>';
-  }
-  if(Array.isArray(p.risks)&&p.risks.length)html+='<h2>'+labels.risks+'</h2>'+list(p.risks);
-  if(p.howToStart){
-    html+='<h2>'+labels.howToStart+'</h2>';
-    [['week1',labels.week1],['month1',labels.month1],['month2to3',labels.month2to3]].forEach(function(ph){
-      if(Array.isArray(p.howToStart[ph[0]])&&p.howToStart[ph[0]].length){
-        html+='<h3>'+ph[1]+':</h3>'+list(p.howToStart[ph[0]]);
-      }
-    });
-  }
-  if(Array.isArray(p.incomeGrowth)&&p.incomeGrowth.length)html+='<h2>'+labels.incomeGrowth+'</h2>'+list(p.incomeGrowth);
-  if(p.credit){
-    html+='<h2>'+labels.credit+'</h2>';
-    if(p.credit.needed)html+='<p><strong>'+esc(p.credit.needed)+'</strong></p>';
-    html+='<table>';
-    if(p.credit.amount)html+='<tr><th>'+labels.creditAmount+'</th><td>'+esc(p.credit.amount)+'</td></tr>';
-    if(p.credit.useFor)html+='<tr><th>'+labels.creditUse+'</th><td>'+esc(p.credit.useFor)+'</td></tr>';
-    html+='</table>';
-  }
-  if(Array.isArray(p.summary)&&p.summary.length)html+='<h2>'+labels.summary+'</h2>'+list(p.summary);
-  html+='</body></html>';
-  var blob=new Blob(['\ufeff'+html],{type:'application/msword'});
-  var url=URL.createObjectURL(blob);
-  var a=document.createElement('a');
-  a.href=url;
-  a.download=(name||'biznes-reja').replace(/[^a-zA-Zа-яА-ЯўғқҳёЎҒҚҲЁ0-9\s\-]/g,'').replace(/\s+/g,'_').substring(0,50)+'.doc';
-  document.body.appendChild(a);a.click();
-  setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},100);
 }
 
 function showResult(r){
@@ -3157,86 +3028,35 @@ function showErr(m){
 }
 function applyBank(){var id='SQB-'+Date.now().toString(36).toUpperCase();document.getElementById('appId').textContent=id;document.getElementById('bankModal').classList.add('show');}
 </script>
+
 <script>
-/* Custom DOM-rendered select dropdowns (for screen recording compatibility) */
 (function(){
-  function clearElement(el){while(el.firstChild)el.removeChild(el.firstChild);}
-
-  function buildCustomOptions(sel, optBox, trigger){
-    clearElement(optBox);
-    Array.from(sel.options).forEach(function(opt, idx){
-      var div=document.createElement('div');
-      div.className='custom-option'+(idx===sel.selectedIndex?' selected':'');
-      div.textContent=opt.text;
-      div.dataset.value=opt.value;
-      div.dataset.idx=idx;
-      div.addEventListener('click',function(e){
-        e.stopPropagation();
-        sel.selectedIndex=idx;
-        sel.dispatchEvent(new Event('change',{bubbles:true}));
-        trigger.textContent=opt.text;
-        optBox.querySelectorAll('.custom-option').forEach(function(o){o.classList.remove('selected')});
-        div.classList.add('selected');
-        optBox.classList.remove('show');
-        trigger.classList.remove('open');
-      });
-      optBox.appendChild(div);
-    });
-  }
-
   document.querySelectorAll('select.input-s').forEach(function(sel){
     if(sel.parentElement.classList.contains('custom-select-wrap'))return;
-
-    var wrap=document.createElement('div');
-    wrap.className='custom-select-wrap';
-    sel.parentNode.insertBefore(wrap,sel);
-    wrap.appendChild(sel);
-
-    sel.style.position='absolute';
-    sel.style.opacity='0';
-    sel.style.pointerEvents='none';
-    sel.style.width='100%';
-    sel.style.height='0';
-
-    var trigger=document.createElement('div');
-    trigger.className='custom-select-trigger';
-    trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:(sel.options[0]?sel.options[0].text:'');
+    var wrap=document.createElement('div');wrap.className='custom-select-wrap';
+    sel.parentNode.insertBefore(wrap,sel);wrap.appendChild(sel);
+    sel.style.cssText='position:absolute;opacity:0;pointer-events:none;width:100%;height:0';
+    var trigger=document.createElement('div');trigger.className='custom-select-trigger';
+    trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'Танланг';
     wrap.appendChild(trigger);
-
-    var optBox=document.createElement('div');
-    optBox.className='custom-options';
-    buildCustomOptions(sel,optBox,trigger);
-    wrap.appendChild(optBox);
-
-    trigger.addEventListener('click',function(e){
-      e.stopPropagation();
-      document.querySelectorAll('.custom-options.show').forEach(function(o){
-        if(o!==optBox){o.classList.remove('show');if(o.previousElementSibling)o.previousElementSibling.classList.remove('open');}
-      });
-      optBox.classList.toggle('show');
-      trigger.classList.toggle('open');
-    });
-
-    sel.addEventListener('change',function(){
-      trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';
-      optBox.querySelectorAll('.custom-option').forEach(function(o){
-        o.classList.toggle('selected',Number(o.dataset.idx)===sel.selectedIndex);
-      });
-    });
-
-    var observer=new MutationObserver(function(){
-      trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';
-      buildCustomOptions(sel,optBox,trigger);
-    });
-    observer.observe(sel,{attributes:true,childList:true,subtree:true});
+    var optBox=document.createElement('div');optBox.className='custom-options';
+    function buildOpts(){while(optBox.firstChild)optBox.removeChild(optBox.firstChild);
+      Array.from(sel.options).forEach(function(opt,idx){
+        var div=document.createElement('div');div.className='custom-option'+(idx===sel.selectedIndex?' selected':'');
+        div.textContent=opt.text;div.dataset.value=opt.value;div.dataset.idx=idx;
+        div.addEventListener('click',function(e){e.stopPropagation();sel.selectedIndex=idx;
+          sel.dispatchEvent(new Event('change',{bubbles:true}));trigger.textContent=opt.text;
+          optBox.querySelectorAll('.custom-option').forEach(function(o){o.classList.remove('selected')});
+          div.classList.add('selected');optBox.classList.remove('show');trigger.classList.remove('open');});
+        optBox.appendChild(div);});}
+    buildOpts();wrap.appendChild(optBox);
+    trigger.addEventListener('click',function(e){e.stopPropagation();
+      document.querySelectorAll('.custom-options.show').forEach(function(o){if(o!==optBox){o.classList.remove('show');o.previousElementSibling&&o.previousElementSibling.classList.remove('open');}});
+      optBox.classList.toggle('show');trigger.classList.toggle('open');});
+    sel.addEventListener('change',function(){trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';});
+    new MutationObserver(function(){buildOpts();trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';}).observe(sel,{childList:true,subtree:true});
   });
-
-  document.addEventListener('click',function(){
-    document.querySelectorAll('.custom-options.show').forEach(function(o){
-      o.classList.remove('show');
-      if(o.previousElementSibling)o.previousElementSibling.classList.remove('open');
-    });
-  });
+  document.addEventListener('click',function(){document.querySelectorAll('.custom-options.show').forEach(function(o){o.classList.remove('show');o.previousElementSibling&&o.previousElementSibling.classList.remove('open');});});
 })();
 </script>
 </body>
