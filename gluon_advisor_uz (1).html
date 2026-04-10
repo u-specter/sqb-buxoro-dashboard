@@ -367,9 +367,9 @@ const API_KEY=''; // Key is on server (Netlify/Vercel proxy)
 // Auto-detect proxy URL: Netlify vs Vercel vs local
 const PROXY_URL = (function(){
   const h = window.location.hostname;
-  if(h.includes('netlify')) return PROXY_URL;
+  if(h.includes('netlify')) return '/.netlify/functions/openai-proxy';
   if(h.includes('vercel')) return '/api/openai-proxy';
-  return PROXY_URL; // default
+  return '/.netlify/functions/openai-proxy';
 })();
 
 let map,marker;
