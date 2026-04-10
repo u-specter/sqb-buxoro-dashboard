@@ -346,6 +346,32 @@ button:disabled{opacity:.65;cursor:not-allowed;transform:none !important;box-sha
   .sub-scores{grid-template-columns:1fr}
   .geo-card{flex-direction:column}
 }
+/* Custom Select Dropdowns (DOM-rendered for screen recording) */
+.custom-select-wrap{position:relative;width:100%}
+.custom-select-trigger{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);color:var(--ink);font-size:14px;font-weight:500;
+  cursor:pointer;transition:border-color .2s,box-shadow .2s;
+  min-height:44px;user-select:none;
+}
+.custom-select-trigger:hover{border-color:var(--primary-bright)}
+.custom-select-trigger.open{border-color:var(--primary-bright);box-shadow:0 0 0 3px rgba(30,58,138,.12)}
+.custom-select-trigger::after{content:'\25BE';font-size:12px;color:var(--muted);margin-left:8px;transition:transform .2s}
+.custom-select-trigger.open::after{transform:rotate(180deg)}
+.custom-options{
+  position:absolute;top:100%;left:0;right:0;z-index:9999;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,.15);
+  max-height:220px;overflow-y:auto;margin-top:4px;
+  display:none;
+}
+.custom-options.show{display:block}
+.custom-option{
+  padding:10px 14px;font-size:14px;cursor:pointer;transition:background .15s;
+}
+.custom-option:hover{background:var(--blue-lt,#eef3ff)}
+.custom-option.selected{background:var(--primary-bright,#1e3a8a);color:#fff;font-weight:600}
 </style>
 </head>
 <body>
@@ -3130,6 +3156,88 @@ function showErr(m){
   go(4);
 }
 function applyBank(){var id='SQB-'+Date.now().toString(36).toUpperCase();document.getElementById('appId').textContent=id;document.getElementById('bankModal').classList.add('show');}
+</script>
+<script>
+/* Custom DOM-rendered select dropdowns (for screen recording compatibility) */
+(function(){
+  function clearElement(el){while(el.firstChild)el.removeChild(el.firstChild);}
+
+  function buildCustomOptions(sel, optBox, trigger){
+    clearElement(optBox);
+    Array.from(sel.options).forEach(function(opt, idx){
+      var div=document.createElement('div');
+      div.className='custom-option'+(idx===sel.selectedIndex?' selected':'');
+      div.textContent=opt.text;
+      div.dataset.value=opt.value;
+      div.dataset.idx=idx;
+      div.addEventListener('click',function(e){
+        e.stopPropagation();
+        sel.selectedIndex=idx;
+        sel.dispatchEvent(new Event('change',{bubbles:true}));
+        trigger.textContent=opt.text;
+        optBox.querySelectorAll('.custom-option').forEach(function(o){o.classList.remove('selected')});
+        div.classList.add('selected');
+        optBox.classList.remove('show');
+        trigger.classList.remove('open');
+      });
+      optBox.appendChild(div);
+    });
+  }
+
+  document.querySelectorAll('select.input-s').forEach(function(sel){
+    if(sel.parentElement.classList.contains('custom-select-wrap'))return;
+
+    var wrap=document.createElement('div');
+    wrap.className='custom-select-wrap';
+    sel.parentNode.insertBefore(wrap,sel);
+    wrap.appendChild(sel);
+
+    sel.style.position='absolute';
+    sel.style.opacity='0';
+    sel.style.pointerEvents='none';
+    sel.style.width='100%';
+    sel.style.height='0';
+
+    var trigger=document.createElement('div');
+    trigger.className='custom-select-trigger';
+    trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:(sel.options[0]?sel.options[0].text:'');
+    wrap.appendChild(trigger);
+
+    var optBox=document.createElement('div');
+    optBox.className='custom-options';
+    buildCustomOptions(sel,optBox,trigger);
+    wrap.appendChild(optBox);
+
+    trigger.addEventListener('click',function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.custom-options.show').forEach(function(o){
+        if(o!==optBox){o.classList.remove('show');if(o.previousElementSibling)o.previousElementSibling.classList.remove('open');}
+      });
+      optBox.classList.toggle('show');
+      trigger.classList.toggle('open');
+    });
+
+    sel.addEventListener('change',function(){
+      trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';
+      optBox.querySelectorAll('.custom-option').forEach(function(o){
+        o.classList.toggle('selected',Number(o.dataset.idx)===sel.selectedIndex);
+      });
+    });
+
+    var observer=new MutationObserver(function(){
+      trigger.textContent=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';
+      buildCustomOptions(sel,optBox,trigger);
+    });
+    observer.observe(sel,{attributes:true,childList:true,subtree:true});
+  });
+
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.custom-options.show').forEach(function(o){
+      o.classList.remove('show');
+      if(o.previousElementSibling)o.previousElementSibling.classList.remove('open');
+    });
+  });
+})();
 </script>
 </body>
 </html>
