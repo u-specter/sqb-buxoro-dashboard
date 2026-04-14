@@ -25,13 +25,21 @@
 
       <button class="hamburger d-lg-none" id="sidebarToggle" aria-label="Menu"><i class="bi bi-list"></i></button>
 
-      <div class="district-tabs ms-lg-4" role="tablist">
-        <button class="dt-btn active" data-district="gijduvon">
-          <i class="bi bi-bank"></i><span data-i18n="gij_short">ҒИЖДУВОН</span>
-        </button>
-        <button class="dt-btn" data-district="shofirkon">
-          <i class="bi bi-bank"></i><span data-i18n="shof_short">ШОФИРКОН</span>
-        </button>
+      <!-- Region → District cascading selector -->
+      <div class="region-selector ms-lg-4" id="regionSelector">
+        <div class="rs-current" id="rsCurrent" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span class="rs-region-name" id="rsRegionName">Бухоро вилояти</span>
+          <i class="bi bi-chevron-right rs-sep"></i>
+          <span class="rs-district-name" id="rsDistrictName">Ғиждувон</span>
+          <i class="bi bi-chevron-down rs-arrow"></i>
+        </div>
+        <div class="rs-dropdown" id="rsDropdown">
+          <!-- Level 1: Regions -->
+          <div class="rs-panel rs-regions" id="rsRegions"></div>
+          <!-- Level 2: Districts (shown after region click) -->
+          <div class="rs-panel rs-districts" id="rsDistricts" style="display:none"></div>
+        </div>
       </div>
 
       <div class="ms-auto d-flex align-items-center gap-3 flex-grow-1 flex-lg-grow-0 mt-3 mt-lg-0"

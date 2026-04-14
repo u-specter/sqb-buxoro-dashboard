@@ -193,19 +193,87 @@ SLIDES.forEach(function(s,idx){
   s.section = SLIDE_SECTIONS[idx];
 });
 
+// ============================================================
+// REGIONS & DISTRICTS CONFIG
+// Add new regions/districts here — data files must exist in assets/data/
+// ============================================================
+const REGIONS = [
+  {
+    id: "bukhara",
+    name: {uz:"Бухоро вилояти", ru:"Бухарская область", en:"Bukhara Region"},
+    districts: [
+      {id:"gijduvon",  name:{uz:"Ғиждувон",  ru:"Гиждуван",   en:"Gijduvon"},  file:"gijduvon.json",  hasData:true},
+      {id:"shofirkon", name:{uz:"Шофиркон",  ru:"Шафиркан",   en:"Shofirkon"}, file:"shofirkon.json", hasData:true},
+      {id:"kogon",     name:{uz:"Когон",     ru:"Каган",      en:"Kogon"},     file:"kogon.json",     hasData:false},
+      {id:"jondor",    name:{uz:"Жондор",    ru:"Жондор",     en:"Jondor"},    file:"jondor.json",    hasData:false},
+      {id:"vobkent",   name:{uz:"Вобкент",   ru:"Вабкент",    en:"Vobkent"},   file:"vobkent.json",   hasData:false},
+      {id:"romitan",   name:{uz:"Ромитан",   ru:"Ромитан",    en:"Romitan"},   file:"romitan.json",   hasData:false},
+      {id:"olot",      name:{uz:"Олот",      ru:"Алат",       en:"Olot"},      file:"olot.json",      hasData:false},
+      {id:"peshku",    name:{uz:"Пешку",     ru:"Пешку",      en:"Peshku"},    file:"peshku.json",    hasData:false},
+      {id:"qorovulbozor",name:{uz:"Қоровулбозор",ru:"Каравульбазар",en:"Qorovulbozor"},file:"qorovulbozor.json",hasData:false},
+      {id:"qorakol",   name:{uz:"Қоракўл",   ru:"Каракуль",   en:"Qorakol"},   file:"qorakol.json",   hasData:false},
+      {id:"bukhara_sh",name:{uz:"Бухоро шаҳри",ru:"г. Бухара", en:"Bukhara city"},file:"bukhara_sh.json",hasData:false},
+    ]
+  },
+  {
+    id: "fergana",
+    name: {uz:"Фарғона вилояти", ru:"Ферганская область", en:"Fergana Region"},
+    districts: [
+      {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true},
+      {id:"fergana_sh",name:{uz:"Фарғона шаҳри",ru:"г. Фергана",en:"Fergana city"},file:"fergana_sh.json",hasData:false},
+      {id:"margilan",  name:{uz:"Марғилон",   ru:"Маргилан",   en:"Margilan"},   file:"margilan.json",  hasData:false},
+      {id:"rishton",   name:{uz:"Риштон",     ru:"Риштан",     en:"Rishton"},    file:"rishton.json",   hasData:false},
+      {id:"beshariq",  name:{uz:"Бешариқ",    ru:"Бешарык",    en:"Beshariq"},   file:"beshariq.json",  hasData:false},
+      {id:"bagdod",    name:{uz:"Боғдод",     ru:"Багдад",     en:"Bagdod"},     file:"bagdod.json",    hasData:false},
+      {id:"dangara",   name:{uz:"Данғара",    ru:"Дангара",    en:"Dangara"},    file:"dangara.json",   hasData:false},
+      {id:"furqat",    name:{uz:"Фурқат",     ru:"Фуркат",     en:"Furqat"},     file:"furqat.json",    hasData:false},
+      {id:"oltiariq",  name:{uz:"Олтиариқ",   ru:"Алтыарык",   en:"Oltiariq"},   file:"oltiariq.json",  hasData:false},
+      {id:"qува",      name:{uz:"Қува",       ru:"Кува",       en:"Quva"},       file:"quva.json",      hasData:false},
+      {id:"toshloq",   name:{uz:"Тошлоқ",     ru:"Ташлак",     en:"Toshloq"},    file:"toshloq.json",   hasData:false},
+      {id:"uchkoprik", name:{uz:"Учкўприк",   ru:"Учкуприк",   en:"Uchkoprik"},  file:"uchkoprik.json", hasData:false},
+      {id:"yozyovon",  name:{uz:"Ёзёвон",     ru:"Язъяван",    en:"Yazyavan"},   file:"yazyavan.json",  hasData:false},
+    ]
+  },
+];
+
+function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
+function getDistrict(regionId, districtId){
+  var r = getRegion(regionId);
+  return r ? r.districts.find(function(d){return d.id===districtId;}) : null;
+}
+function getDistrictAny(districtId){
+  for(var i=0;i<REGIONS.length;i++){
+    var d = REGIONS[i].districts.find(function(d){return d.id===districtId;});
+    if(d) return {region:REGIONS[i], district:d};
+  }
+  return null;
+}
+function districtLabel(districtId){
+  var info = getDistrictAny(districtId);
+  if(!info) return districtId;
+  return info.district.name[STATE.lang] || info.district.name.uz;
+}
+function regionLabel(regionId){
+  var r = getRegion(regionId);
+  if(!r) return regionId;
+  return r.name[STATE.lang] || r.name.uz;
+}
+
 const STATE = {
+  region:"bukhara",
   district:"gijduvon",
   lang: (typeof localStorage!=="undefined" && localStorage.getItem("dash_lang")) || "uz",
-  data:{gijduvon:null,shofirkon:null},
+  data:{},          // districtId -> JSON data (динамик юкланади)
   search:"",
   filter:"all",
-  charts:{},     // canvasId -> Chart instance (for cleanup)
-  pending:[],    // queue of {id, type, parsed} to init after DOM insert
+  charts:{},
+  pending:[],
 };
-const DISTRICT_LABEL = {
-  get gijduvon(){return T('gij_district');},
-  get shofirkon(){return T('shof_district');},
-};
+// Backward compatibility — DISTRICT_LABEL[key] dynamic lookup
+const DISTRICT_LABEL = {};
+Object.defineProperty(DISTRICT_LABEL, 'gijduvon',  {get:function(){return districtLabel('gijduvon');}});
+Object.defineProperty(DISTRICT_LABEL, 'shofirkon', {get:function(){return districtLabel('shofirkon');}});
+Object.defineProperty(DISTRICT_LABEL, 'qoqon',     {get:function(){return districtLabel('qoqon');}});
 
 // ============================================================
 // VALUE PARSER — classifies indicator.value into a typed object
@@ -953,18 +1021,132 @@ function flushPendingCharts(){
         },
       });
     }
+    if(job.kind==="forecast"){
+      var colors = ["#06A0AB","#C25E3C","#7C3AED","#D97706","#059669"];
+      var datasets = job.sectors.map(function(sec, si){
+        return {
+          label: sec.name,
+          data: sec.data,
+          borderColor: colors[si % colors.length],
+          backgroundColor: "transparent",
+          borderWidth: 2.5,
+          tension: 0.4,
+          fill: false,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          pointBackgroundColor: colors[si % colors.length],
+          pointBorderColor: "#fff",
+          pointBorderWidth: 2,
+        };
+      });
+      // Data labels plugin — show values at each point
+      var fcLabelsPlugin = {
+        id:'fcLabels_'+job.id,
+        afterDatasetsDraw:function(chart){
+          var ctx2 = chart.ctx;
+          ctx2.save();
+          ctx2.font = "700 9px Inter,system-ui,sans-serif";
+          ctx2.textAlign = "center";
+          chart.data.datasets.forEach(function(ds,di){
+            var meta = chart.getDatasetMeta(di);
+            ctx2.fillStyle = ds.borderColor;
+            meta.data.forEach(function(pt,i){
+              var v = ds.data[i];
+              if(v==null) return;
+              // Alternate offset to avoid overlap: even dataset above, odd below
+              var yOff = di % 2 === 0 ? -10 : 14;
+              ctx2.fillText(fmtNum(v), pt.x, pt.y + yOff);
+            });
+          });
+          ctx2.restore();
+        }
+      };
+      STATE.charts[job.id] = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: job.years.map(String),
+          datasets: datasets
+        },
+        plugins: [fcLabelsPlugin],
+        options: {
+          responsive:true, maintainAspectRatio:false,
+          layout:{padding:{top:22,right:30,left:30,bottom:0}},
+          plugins:{
+            legend:{
+              display:true, position:"bottom",
+              labels:{
+                color:"#fff", font:{family:"Inter",size:12,weight:"700"},
+                boxWidth:14, boxHeight:3, padding:16, usePointStyle:false,
+              }
+            },
+            tooltip:{
+              backgroundColor:"#102836",padding:10,
+              titleFont:{family:"Inter",size:11,weight:"700"},
+              bodyFont:{family:"Inter",size:12,weight:"600"},
+              callbacks:{
+                title:function(items){return items[0].label+" йил";},
+                label:function(c){return "  "+c.dataset.label+": "+fmtNum(c.parsed.y);}
+              }
+            }
+          },
+          scales:{
+            x:{display:true,grid:{display:false},border:{display:false},
+               ticks:{font:{family:"Inter",size:10,weight:"600"},color:"#7a8a93",padding:4}},
+            y:{display:false,grid:{display:false},border:{display:false}},
+          },
+          animation:{duration:700},
+        }
+      });
+    }
   });
   STATE.pending = [];
 }
 
 
+async function loadDistrictData(districtId){
+  if(STATE.data[districtId]) return STATE.data[districtId];
+  var info = getDistrictAny(districtId);
+  if(!info || !info.district.hasData) return null;
+  try{
+    var res = await fetch("assets/data/"+info.district.file);
+    if(!res.ok) return null;
+    var data = await res.json();
+    STATE.data[districtId] = data;
+    return data;
+  }catch(e){
+    console.warn("Failed to load data for "+districtId, e);
+    return null;
+  }
+}
+
+async function switchDistrict(regionId, districtId){
+  STATE.region = regionId;
+  STATE.district = districtId;
+  // Load data if not cached
+  await loadDistrictData(districtId);
+  updateSelectorUI();
+  buildSlidePages();
+  render();
+  handleHash();
+}
+
 async function init(){
-  const [g,s] = await Promise.all([
-    fetch("assets/data/gijduvon.json").then(r=>r.json()),
-    fetch("assets/data/shofirkon.json").then(r=>r.json()),
-  ]);
-  STATE.data.gijduvon = g;
-  STATE.data.shofirkon = s;
+  // Load all districts that have data
+  var loadPromises = [];
+  REGIONS.forEach(function(r){
+    r.districts.forEach(function(d){
+      if(d.hasData){
+        loadPromises.push(
+          fetch("assets/data/"+d.file)
+            .then(function(res){return res.json();})
+            .then(function(data){STATE.data[d.id]=data;})
+            .catch(function(e){console.warn("Skip "+d.id, e);})
+        );
+      }
+    });
+  });
+  await Promise.all(loadPromises);
+
   // Optional indicator translations
   STATE.i18n_ind = {ru:{},en:{}};
   try{
@@ -972,6 +1154,7 @@ async function init(){
     if(tr) STATE.i18n_ind = tr;
   }catch(e){}
 
+  buildRegionSelector();
   buildSlidePages();
   bindEvents();
   applyLang(STATE.lang);
@@ -1006,7 +1189,8 @@ function applyLang(lang){
     b.classList.toggle('active', b.dataset.lang===STATE.lang);
   });
   // 5) Re-render dynamic UI (slide headers, cards, AI panel)
-  if(STATE.data.gijduvon){
+  if(STATE.data[STATE.district]){
+    updateSelectorUI();
     buildSlidePages();
     render();
     handleHash();
@@ -1026,7 +1210,7 @@ function buildSlidePages(){
       '<div class="slide-header"><div class="sh-left">'+
       '<div class="sh-eye">'+T('slide_word')+' '+s.n+' • '+s.section+T('section_word')+'</div>'+
       '<h1 class="sh-title"><i class="bi '+s.icon+'"></i> '+escapeHTML(s.title)+'</h1>'+
-      '<div class="sh-meta">'+escapeHTML(s.desc)+' • <strong id="sh-district-'+s.n+'">'+escapeHTML(DISTRICT_LABEL[STATE.district])+'</strong></div>'+
+      '<div class="sh-meta">'+escapeHTML(s.desc)+' • <strong id="sh-district-'+s.n+'">'+escapeHTML(districtLabel(STATE.district))+'</strong></div>'+
       '</div></div>'+
       '<div class="cards-grid" id="cards-'+s.n+'"></div>'+
       '</section>';
@@ -1035,14 +1219,29 @@ function buildSlidePages(){
 }
 
 function bindEvents(){
-  document.querySelectorAll(".dt-btn").forEach(function(btn){
-    btn.addEventListener("click",function(){
-      document.querySelectorAll(".dt-btn").forEach(function(b){b.classList.remove("active");});
-      btn.classList.add("active");
-      STATE.district = btn.dataset.district;
-      render();
+  // Region selector toggle
+  var rsCurrent = document.getElementById("rsCurrent");
+  var rsDropdown = document.getElementById("rsDropdown");
+  if(rsCurrent && rsDropdown){
+    rsCurrent.addEventListener("click",function(e){
+      e.stopPropagation();
+      var open = rsDropdown.classList.toggle("open");
+      rsCurrent.setAttribute("aria-expanded", String(open));
+      if(open) showRegionsList();
     });
-  });
+    // Close on outside click
+    document.addEventListener("click",function(e){
+      if(!e.target.closest(".region-selector")){
+        rsDropdown.classList.remove("open");
+        rsCurrent.setAttribute("aria-expanded","false");
+      }
+    });
+    // Keyboard
+    rsCurrent.addEventListener("keydown",function(e){
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();rsCurrent.click();}
+      if(e.key==="Escape"){rsDropdown.classList.remove("open");rsCurrent.setAttribute("aria-expanded","false");}
+    });
+  }
 
   document.querySelectorAll(".lang-btn").forEach(function(btn){
     btn.addEventListener("click",function(){
@@ -1114,7 +1313,7 @@ function handleHash(){
 
 function render(){
   const data = STATE.data[STATE.district];
-  const label = DISTRICT_LABEL[STATE.district];
+  const label = districtLabel(STATE.district);
 
   document.getElementById("heroDistrict").textContent = label;
 
@@ -1398,6 +1597,149 @@ function renderAiPanel(data){
   ul.innerHTML = items.map(function(it){
     return '<li><span class="ai-emoji">'+it.e+'</span><span>'+it.t+'</span></li>';
   }).join("");
+}
+
+// ============================================================
+// REGION SELECTOR (cascading: Region → District)
+// All dynamic content uses escapeHTML() — no raw user input.
+// ============================================================
+function buildRegionSelector(){
+  updateSelectorUI();
+}
+
+function updateSelectorUI(){
+  var nameEl = document.getElementById("rsRegionName");
+  var distEl = document.getElementById("rsDistrictName");
+  if(nameEl) nameEl.textContent = regionLabel(STATE.region);
+  if(distEl) distEl.textContent = districtLabel(STATE.district);
+}
+
+function showRegionsList(){
+  var panel = document.getElementById("rsRegions");
+  var distPanel = document.getElementById("rsDistricts");
+  if(!panel) return;
+  panel.style.display = "";
+  if(distPanel) distPanel.style.display = "none";
+
+  // Build with safe DOM methods
+  panel.textContent = "";
+  var title = document.createElement("div");
+  title.className = "rs-title";
+  title.textContent = "Вилоятни танланг";
+  panel.appendChild(title);
+
+  REGIONS.forEach(function(r){
+    var count = r.districts.filter(function(d){return d.hasData;}).length;
+    var total = r.districts.length;
+    var isActive = r.id === STATE.region;
+
+    var item = document.createElement("div");
+    item.className = "rs-item" + (isActive?" active":"");
+    item.dataset.region = r.id;
+
+    var icon = document.createElement("i");
+    icon.className = "bi bi-geo-alt"+(isActive?"-fill":"");
+    item.appendChild(icon);
+
+    var info = document.createElement("div");
+    info.className = "rs-item-info";
+    var nameDiv = document.createElement("div");
+    nameDiv.className = "rs-item-name";
+    nameDiv.textContent = r.name[STATE.lang]||r.name.uz;
+    info.appendChild(nameDiv);
+    var meta = document.createElement("div");
+    meta.className = "rs-item-meta";
+    meta.textContent = count+" / "+total+" туман маълумоти мавжуд";
+    info.appendChild(meta);
+    item.appendChild(info);
+
+    var arrow = document.createElement("i");
+    arrow.className = "bi bi-chevron-right";
+    item.appendChild(arrow);
+
+    item.addEventListener("click",function(e){
+      e.stopPropagation();
+      showDistrictsList(r.id);
+    });
+    panel.appendChild(item);
+  });
+}
+
+function showDistrictsList(regionId){
+  var panel = document.getElementById("rsDistricts");
+  var regPanel = document.getElementById("rsRegions");
+  if(!panel) return;
+  if(regPanel) regPanel.style.display = "none";
+  panel.style.display = "";
+
+  var region = getRegion(regionId);
+  if(!region) return;
+
+  panel.textContent = "";
+
+  // Back button
+  var backEl = document.createElement("div");
+  backEl.className = "rs-back";
+  var backIcon = document.createElement("i");
+  backIcon.className = "bi bi-arrow-left";
+  backEl.appendChild(backIcon);
+  backEl.appendChild(document.createTextNode(" "+(region.name[STATE.lang]||region.name.uz)));
+  backEl.addEventListener("click",function(e){
+    e.stopPropagation();
+    showRegionsList();
+  });
+  panel.appendChild(backEl);
+
+  var title = document.createElement("div");
+  title.className = "rs-title";
+  title.textContent = "Туманни танланг";
+  panel.appendChild(title);
+
+  region.districts.forEach(function(d){
+    var isActive = d.id === STATE.district;
+    var disabled = !d.hasData;
+
+    var item = document.createElement("div");
+    item.className = "rs-item"+(isActive?" active":"")+(disabled?" disabled":"");
+    item.dataset.district = d.id;
+    item.dataset.region = regionId;
+
+    var icon = document.createElement("i");
+    icon.className = "bi bi-building"+(disabled?" text-muted":"");
+    item.appendChild(icon);
+
+    var info = document.createElement("div");
+    info.className = "rs-item-info";
+    var nameDiv = document.createElement("div");
+    nameDiv.className = "rs-item-name";
+    nameDiv.textContent = d.name[STATE.lang]||d.name.uz;
+    info.appendChild(nameDiv);
+    if(disabled){
+      var metaDiv = document.createElement("div");
+      metaDiv.className = "rs-item-meta";
+      metaDiv.textContent = "маълумот тайёрланмоқда";
+      info.appendChild(metaDiv);
+    }
+    item.appendChild(info);
+
+    if(isActive){
+      var check = document.createElement("i");
+      check.className = "bi bi-check-circle-fill rs-check";
+      item.appendChild(check);
+    }
+
+    if(!disabled){
+      item.addEventListener("click",function(e){
+        e.stopPropagation();
+        var dd = document.getElementById("rsDropdown");
+        if(dd) dd.classList.remove("open");
+        var cur = document.getElementById("rsCurrent");
+        if(cur) cur.setAttribute("aria-expanded","false");
+        switchDistrict(regionId, d.id);
+      });
+    }
+    panel.appendChild(item);
+  });
 }
 
 document.addEventListener("DOMContentLoaded",init);

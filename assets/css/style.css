@@ -40,19 +40,62 @@ body{
 .sqb-navbar .navbar-brand{color:#fff;display:flex;gap:14px;align-items:center}
 .brand-logo{height:46px;width:auto;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.25))}
 
-.district-tabs{display:flex;gap:10px;background:rgba(255,255,255,.06);padding:6px;border-radius:14px;border:1px solid rgba(255,255,255,.12)}
-.dt-btn{
-  border:0;background:transparent;color:#cfe6e9;
-  padding:10px 22px;border-radius:10px;font-weight:700;letter-spacing:.08em;
-  display:flex;align-items:center;gap:10px;cursor:pointer;transition:.25s;
-  font-size:14px;
+/* ---- Region Selector (cascading dropdown) ---- */
+.region-selector{position:relative}
+.rs-current{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  padding:8px 16px;border-radius:12px;cursor:pointer;transition:.25s;
+  color:#fff;font-size:13px;font-weight:600;white-space:nowrap;
+  user-select:none;
 }
-.dt-btn i{font-size:18px}
-.dt-btn:hover{background:rgba(255,255,255,.08);color:#fff}
-.dt-btn.active{
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#fff;box-shadow:0 8px 22px rgba(0,126,136,.5);
+.rs-current:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+.rs-current .rs-sep{font-size:10px;color:rgba(255,255,255,.3);margin:0 2px}
+.rs-current .rs-arrow{font-size:11px;color:rgba(255,255,255,.4);transition:transform .2s}
+.rs-current[aria-expanded="true"] .rs-arrow{transform:rotate(180deg)}
+.rs-region-name{color:rgba(255,255,255,.6)}
+.rs-district-name{color:#fff;font-weight:700}
+
+.rs-dropdown{
+  position:absolute;top:calc(100% + 8px);left:0;
+  min-width:320px;max-height:420px;overflow-y:auto;
+  background:#1a2d3a;border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;box-shadow:0 16px 48px rgba(0,0,0,.5);
+  z-index:500;display:none;
+  backdrop-filter:blur(20px);
 }
+.rs-dropdown.open{display:block;animation:rsFadeIn .15s ease}
+@keyframes rsFadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+.rs-title{
+  padding:12px 16px 6px;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);
+}
+.rs-back{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;font-size:13px;font-weight:600;color:var(--accent);
+  cursor:pointer;transition:.2s;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.rs-back:hover{background:rgba(255,255,255,.04);color:var(--accent-2)}
+
+.rs-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 16px;cursor:pointer;transition:.2s;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.rs-item:last-child{border-bottom:none}
+.rs-item:hover{background:rgba(255,255,255,.06)}
+.rs-item.active{background:rgba(0,126,136,.15)}
+.rs-item.active .rs-item-name{color:#fff;font-weight:700}
+.rs-item.disabled{opacity:.4;cursor:not-allowed}
+.rs-item.disabled:hover{background:transparent}
+.rs-item i{font-size:16px;color:rgba(255,255,255,.4);flex-shrink:0}
+.rs-item.active i{color:var(--accent)}
+.rs-item-info{flex:1;min-width:0}
+.rs-item-name{font-size:14px;font-weight:500;color:rgba(255,255,255,.85);line-height:1.3}
+.rs-item-meta{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px}
+.rs-check{color:var(--accent);font-size:16px;flex-shrink:0}
+.text-muted{color:rgba(255,255,255,.2)!important}
 
 .year-pill{display:flex;align-items:center;gap:8px;color:#fff;background:linear-gradient(135deg,rgba(6,160,171,.18),rgba(0,126,136,.12));padding:10px 20px;border-radius:14px;font-size:15px;font-weight:800;letter-spacing:.06em;border:1px solid rgba(255,255,255,.18);white-space:nowrap;box-shadow:0 4px 14px rgba(0,126,136,.2)}
 .year-pill i{font-size:16px;color:var(--accent)}
@@ -524,7 +567,9 @@ body{
   .sh-title{font-size:24px}
   .cards-grid{grid-template-columns:1fr;padding:0 14px 30px}
   .filter-bar{margin:0 14px 14px}
-  .district-tabs{order:3;width:100%;justify-content:center;margin-top:10px}
+  .region-selector{order:3;width:100%;margin-top:10px}
+  .rs-current{justify-content:center}
+  .rs-dropdown{left:50%;transform:translateX(-50%);min-width:280px}
 }
 
 /* === Category breakdown (mahalla typology, clusters) === */
@@ -1483,9 +1528,9 @@ body{
   .main{margin-left:0 !important}
   .app-shell{flex-direction:column}
   .sqb-navbar .container-fluid{flex-wrap:wrap;padding-left:12px;padding-right:12px}
-  .district-tabs{order:3;width:100%;justify-content:center;margin-top:10px;flex-shrink:0}
-  .dt-btn{padding:8px 14px;font-size:12px}
-  .dt-btn i{font-size:15px}
+  .region-selector{order:3;width:100%;margin-top:10px;flex-shrink:0}
+  .rs-current{font-size:12px;padding:8px 14px;justify-content:center}
+  .rs-dropdown{left:50%;transform:translateX(-50%)}
   .year-pill{padding:8px 14px;font-size:13px;order:2}
   .sqb-navbar{padding:.6rem 0}
 }
@@ -1500,9 +1545,8 @@ body{
   .sqb-navbar{padding:.5rem 0}
   .brand-logo{height:36px}
   .sqb-navbar .container-fluid{gap:8px;padding-left:10px;padding-right:10px}
-  .district-tabs{gap:6px;padding:4px;border-radius:10px}
-  .dt-btn{padding:7px 12px;font-size:11px;gap:6px;border-radius:8px}
-  .dt-btn i{font-size:14px}
+  .rs-current{font-size:11px;padding:7px 12px;border-radius:10px;gap:6px}
+  .rs-dropdown{min-width:260px}
   .year-pill{padding:7px 12px;font-size:12px;border-radius:10px}
 
   /* Hero */
@@ -1610,7 +1654,7 @@ body{
   .px-4{padding-left:10px !important;padding-right:10px !important}
 
   /* Touch-friendly: ensure buttons are min 44px tap targets */
-  .dt-btn,.chip,.lang-btn,.side-item,.hamburger{min-height:44px}
+  .rs-current,.chip,.lang-btn,.side-item,.hamburger{min-height:44px}
   .lang-btn{padding:10px 0}
   .side-item{padding:12px 14px;min-height:44px}
 
