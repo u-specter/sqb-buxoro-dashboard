@@ -1333,7 +1333,7 @@ function render(){
   var heroTitleEl = document.querySelector('[data-i18n="hero_title"]');
   if(heroTitleEl){
     var dName = info ? (info.district.name[STATE.lang] || info.district.name.uz) : '';
-    var titles = {uz: isShahar ? dName+" шаҳарнинг умумий ҳолати" : dName+" туманнинг умумий ҳолати",
+    var titles = {uz: isShahar ? dName+" шаҳрининг умумий ҳолати" : dName+" туманининг умумий ҳолати",
                   ru: isShahar ? "Общее состояние г. "+dName : "Общее состояние "+dName+" района",
                   en: isShahar ? dName+" City Overview" : dName+" District Overview"};
     heroTitleEl.textContent = titles[STATE.lang] || titles.uz;
