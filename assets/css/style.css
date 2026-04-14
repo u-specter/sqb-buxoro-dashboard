@@ -1328,20 +1328,20 @@ body{
   font-family: 'Inter', sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: #fff;
+  color: var(--navy);
   letter-spacing: -1px;
   line-height: 1;
 }
 .yc-h-unit {
   font-size: 14px;
-  color: rgba(255,255,255,0.5);
+  color: var(--muted);
   font-weight: 600;
 }
 .yc-h-right { text-align: right; }
 .yc-h-right .yc-h-pct {
   font-size: 13px;
   font-weight: 800;
-  color: #34D399;
+  color: #059669;
   font-variant-numeric: tabular-nums;
 }
 .yc-chart {
@@ -1361,7 +1361,7 @@ body{
 .yc-bar-val {
   font-size: 13px;
   font-weight: 800;
-  color: #fff;
+  color: var(--accent);
   font-variant-numeric: tabular-nums;
   margin-bottom: 6px;
 }
@@ -1393,7 +1393,7 @@ body{
 .yc-bar-year {
   font-size: 11px;
   font-weight: 700;
-  color: rgba(255,255,255,0.5);
+  color: var(--muted);
   margin-top: 8px;
   font-variant-numeric: tabular-nums;
 }
