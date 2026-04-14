@@ -1412,9 +1412,24 @@ function escapeHTML(str){
 function findIndicator(data, no){
   return (data.indicators||[]).find(function(i){return i.no===no;});
 }
+function findIndicatorByName(data, namePattern){
+  return (data.indicators||[]).find(function(i){
+    return i.name && i.name.toLowerCase().indexOf(namePattern.toLowerCase())>=0;
+  });
+}
 
 function kpiFromIndicator(data, no, opts){
-  const ind = findIndicator(data, no);
+  // Try by no first, then by name pattern if opts.namePattern is set
+  var ind = findIndicator(data, no);
+  if(!ind && opts && opts.namePattern){
+    ind = findIndicatorByName(data, opts.namePattern);
+  }
+  if(!ind && opts && opts.altNo){
+    for(var a=0;a<opts.altNo.length;a++){
+      ind = findIndicator(data, opts.altNo[a]);
+      if(ind) break;
+    }
+  }
   if(!ind || !ind.found || !ind.value) return null;
   // Override: indicator can carry kpi_count and kpi_pct fields directly
   if(ind.kpi_count!=null && ind.kpi_pct!=null){
@@ -1484,12 +1499,12 @@ function kpiFromIndicator(data, no, opts){
 }
 
 const REGION_KPI_DEFS = [
-  {no:24, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta"},
-  {no:26, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:""},
-  {no:25, icon:"bi-people",              labelKey:"kpi_oila",      unit:""},
-  {no:23, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi"},
-  {no:19, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true},
-  {no:20, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true},
+  {no:24, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta",         namePattern:"Маҳаллалар сони"},
+  {no:26, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:"",                   namePattern:"Хонадонлар сони"},
+  {no:25, icon:"bi-people",              labelKey:"kpi_oila",      unit:"",                   namePattern:"Оилалар сони"},
+  {no:23, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi", namePattern:"Аҳоли сони"},
+  {no:19, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true,   namePattern:"Ишсизлик"},
+  {no:20, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true,   namePattern:"Камбағаллик"},
 ];
 
 function renderRegionKpis(data){
@@ -1497,7 +1512,7 @@ function renderRegionKpis(data){
   if(!wrap) return;
   const html = REGION_KPI_DEFS.map(function(def){
     const unit = def.unitKey ? T(def.unitKey) : (def.unit||"");
-    const k = kpiFromIndicator(data, def.no, {unit:unit});
+    const k = kpiFromIndicator(data, def.no, {unit:unit, namePattern:def.namePattern});
     let valHtml, deltaHtml="";
     if(!k){
       valHtml = '<div class="rk-val">—</div>';
@@ -1552,11 +1567,11 @@ function buildRegionInsights(district){
   const tpl = AI_TPL[STATE.lang] || AI_TPL.uz;
   const out = [];
 
-  const mah = kpiFromIndicator(data, 24, {});
-  const xon = kpiFromIndicator(data, 26, {});
-  const oila = kpiFromIndicator(data, 25, {});
-  const ishsiz = kpiFromIndicator(data, 19, {});
-  const kamb = kpiFromIndicator(data, 20, {});
+  const mah = kpiFromIndicator(data, 24, {namePattern:"Маҳаллалар сони"});
+  const xon = kpiFromIndicator(data, 26, {namePattern:"Хонадонлар сони"});
+  const oila = kpiFromIndicator(data, 25, {namePattern:"Оилалар сони"});
+  const ishsiz = kpiFromIndicator(data, 19, {namePattern:"Ишсизлик"});
+  const kamb = kpiFromIndicator(data, 20, {namePattern:"Камбағаллик"});
 
   if(mah && mah.value!=null){
     out.push({e:"🏘", t: tpl.mah(fmtNum(mah.value))});
