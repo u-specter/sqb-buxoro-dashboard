@@ -260,8 +260,8 @@ function regionLabel(regionId){
 }
 
 const STATE = {
-  region:"bukhara",
-  district:"gijduvon",
+  region:"fergana",
+  district:"qoqon",
   lang: (typeof localStorage!=="undefined" && localStorage.getItem("dash_lang")) || "uz",
   data:{},          // districtId -> JSON data (динамик юкланади)
   search:"",
