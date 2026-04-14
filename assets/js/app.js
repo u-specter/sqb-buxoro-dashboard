@@ -738,7 +738,7 @@ function renderValue(ind, canvasId){
     return '<div class="ic-value rich">'+
       '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||T('label_trend'))+'</div>'+
       '<span class="val-tag">'+(p.subtitle?escapeHTML(p.subtitle):'')+'</span></div>'+
-      '<div class="value-chart-wrap" style="height:200px"><canvas id="'+canvasId+'"></canvas></div>'+
+      '<div class="value-chart-wrap" style="height:240px"><canvas id="'+canvasId+'"></canvas></div>'+
       '<div class="ml-sectors">'+top3+'</div>'+
       '</div>';
   }
@@ -1051,7 +1051,7 @@ function flushPendingCharts(){
         afterDatasetsDraw:function(chart){
           var ctx2 = chart.ctx;
           ctx2.save();
-          ctx2.font = "700 9px Inter,system-ui,sans-serif";
+          ctx2.font = "700 10px Inter,system-ui,sans-serif";
           ctx2.textAlign = "center";
           chart.data.datasets.forEach(function(ds,di){
             var meta = chart.getDatasetMeta(di);
@@ -1059,8 +1059,8 @@ function flushPendingCharts(){
             meta.data.forEach(function(pt,i){
               var v = ds.data[i];
               if(v==null) return;
-              // Alternate offset to avoid overlap: even dataset above, odd below
-              var yOff = di % 2 === 0 ? -10 : 14;
+              // Larger offset to avoid overlap
+              var yOff = di % 2 === 0 ? -14 : 18;
               ctx2.fillText(fmtNum(v), pt.x, pt.y + yOff);
             });
           });
