@@ -1045,7 +1045,7 @@ function flushPendingCharts(){
           pointBorderWidth: 2,
         };
       });
-      // Data labels plugin — show value only at last point per dataset
+      // Data labels plugin — show value ONLY at last point
       var fcLabelsPlugin = {
         id:'fcLabels_'+job.id,
         afterDatasetsDraw:function(chart){
@@ -1053,15 +1053,14 @@ function flushPendingCharts(){
           ctx2.save();
           chart.data.datasets.forEach(function(ds,di){
             var meta = chart.getDatasetMeta(di);
-            meta.data.forEach(function(pt,i){
-              var v = ds.data[i];
-              if(v==null) return;
-              ctx2.font = "700 11px Inter,system-ui,sans-serif";
-              ctx2.fillStyle = ds.borderColor;
-              ctx2.textAlign = "center";
-              var yOff = di % 2 === 0 ? -12 : 16;
-              ctx2.fillText(fmtNum(v), pt.x, pt.y + yOff);
-            });
+            var lastIdx = ds.data.length - 1;
+            var pt = meta.data[lastIdx];
+            var v = ds.data[lastIdx];
+            if(v==null || !pt) return;
+            ctx2.font = "700 11px Inter,system-ui,sans-serif";
+            ctx2.fillStyle = ds.borderColor;
+            ctx2.textAlign = "left";
+            ctx2.fillText(fmtNum(v), pt.x + 8, pt.y + 4);
           });
           ctx2.restore();
         }
