@@ -1451,14 +1451,19 @@ function kpiFromIndicator(data, no, opts){
       }
     }
   }
-  // Then try by no (legacy — works for Gijduvon/Shofirkon)
-  var ind = findIndicator(data, no);
-  if(!ind && opts && opts.namePattern){
-    // Only match exact card names (not combined cards)
-    ind = (data.indicators||[]).find(function(i){
-      return i.name && i.name.toLowerCase() === opts.namePattern.toLowerCase() + 'лар сони' ||
-             i.name && i.name.toLowerCase() === opts.namePattern.toLowerCase() + ' сони';
+  // Then try by namePattern — prefer cards with kpi_count/kpi_pct
+  var ind = null;
+  if(opts && opts.namePattern){
+    var pat = opts.namePattern.toLowerCase();
+    var candidates = (data.indicators||[]).filter(function(i){
+      return i.name && i.name.toLowerCase().indexOf(pat)>=0;
     });
+    // Prefer card with kpi_count (explicit KPI data)
+    ind = candidates.find(function(c){return c.kpi_count!=null;}) || candidates[0] || null;
+  }
+  // Fallback: try by no (legacy — works for Gijduvon/Shofirkon where no matches)
+  if(!ind){
+    ind = findIndicator(data, no);
   }
   if(!ind || !ind.found || !ind.value) return null;
   // Override: indicator can carry kpi_count and kpi_pct fields directly
