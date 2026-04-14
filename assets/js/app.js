@@ -701,24 +701,33 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
-  // === Category breakdown — Neo-Brutalist Cards (Variant 1) ===
+  // === Category breakdown — horizontal bar (Stripe-like) ===
   if(p.type==="category_breakdown"){
     const total = p.categories.reduce(function(s,c){return s+(c.count||0);},0);
-    const cards = p.categories.map(function(c){
+    const maxCat = Math.max.apply(null, p.categories.map(function(c){return c.count;}));
+    const items = p.categories.map(function(c){
       const pct = total>0 ? Math.round((c.count/total)*100) : 0;
-      return '<div class="nb-card" style="--c:'+c.color+'">'+
-        '<div class="nb-tag">'+c.count+' МФЙ · '+pct+'%</div>'+
-        '<div class="nb-ic"><i class="bi '+(c.icon||'bi-circle-fill')+'"></i></div>'+
-        '<div class="nb-num">'+c.count+'</div>'+
-        '<div class="nb-name">'+escapeHTML(c.name)+'</div>'+
-        '<div class="nb-desc">'+escapeHTML(c.desc||'')+'</div>'+
+      const barW = maxCat>0 ? Math.round((c.count/maxCat)*100) : 0;
+      return '<div class="sc-item">'+
+        '<div class="sc-bar-wrap" style="--c:'+c.color+'">'+
+          '<div class="sc-bar-fill" style="width:'+barW+'%"></div>'+
+          '<span class="sc-bar-text"><i class="bi '+(c.icon||'bi-circle-fill')+'" style="margin-right:6px"></i>'+escapeHTML(c.name)+'</span>'+
+        '</div>'+
+        '<div class="sc-vals">'+
+          '<span class="sc-num">'+c.count+'</span>'+
+          '<span class="sc-pct up">'+pct+'%</span>'+
+        '</div>'+
       '</div>';
     }).join('');
-    return '<div class="ic-value rich nb-wrap">'+
-      '<div class="ic-value-head"><div class="ic-value-label">'+escapeHTML(p.title||T('label_breakdown'))+'</div>'+
-      (p.subtitle?'<span class="val-tag">'+escapeHTML(p.subtitle)+'</span>':'')+'</div>'+
-      '<div class="nb-grid">'+cards+'</div>'+
-      '<div class="nb-total">ЖАМИ <b>'+total+'</b> МФЙ</div>'+
+    return '<div class="ic-value rich sc-card">'+
+      '<div class="sc-head">'+
+        '<div class="sc-h-left">'+
+          '<div class="sc-h-lab">'+escapeHTML(p.title||T('label_breakdown'))+'</div>'+
+          '<div class="sc-h-val">'+total+' <span class="sc-h-unit">та МФЙ</span></div>'+
+        '</div>'+
+        (p.subtitle?'<div class="sc-h-right"><div class="sc-h-lab">'+escapeHTML(p.subtitle)+'</div></div>':'')+
+      '</div>'+
+      '<div class="sc-list">'+items+'</div>'+
       '</div>';
   }
 
