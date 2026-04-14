@@ -1448,6 +1448,16 @@ function kpiFromIndicator(data, no, opts){
   if(!ind){
     ind = findIndicator(data, no);
   }
+  // Check kpi_data map on any indicator (for combined cards)
+  if(!ind && opts && opts.namePattern){
+    for(var j=0;j<(data.indicators||[]).length;j++){
+      var candidate = data.indicators[j];
+      if(candidate.kpi_data && candidate.kpi_data[opts.namePattern]){
+        var kd = candidate.kpi_data[opts.namePattern];
+        return {value:kd.value, unit:kd.unit||'', delta:null, deltaDir:null};
+      }
+    }
+  }
   if(!ind || !ind.found || !ind.value) return null;
   // Override: indicator can carry kpi_count and kpi_pct fields directly
   if(ind.kpi_count!=null && ind.kpi_pct!=null){
