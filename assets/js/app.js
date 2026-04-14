@@ -1332,9 +1332,10 @@ function render(){
   var isShahar = info && info.district.type === "shahar";
   var heroTitleEl = document.querySelector('[data-i18n="hero_title"]');
   if(heroTitleEl){
-    var titles = {uz: isShahar ? "Шаҳарнинг умумий ҳолати" : "Туманнинг умумий ҳолати",
-                  ru: isShahar ? "Общее состояние города" : "Общее состояние района",
-                  en: isShahar ? "City Overview" : "District Overview"};
+    var dName = info ? (info.district.name[STATE.lang] || info.district.name.uz) : '';
+    var titles = {uz: isShahar ? dName+" шаҳарнинг умумий ҳолати" : dName+" туманнинг умумий ҳолати",
+                  ru: isShahar ? "Общее состояние г. "+dName : "Общее состояние "+dName+" района",
+                  en: isShahar ? dName+" City Overview" : dName+" District Overview"};
     heroTitleEl.textContent = titles[STATE.lang] || titles.uz;
   }
 
