@@ -1440,16 +1440,8 @@ function findIndicatorByName(data, namePattern){
 }
 
 function kpiFromIndicator(data, no, opts){
-  // Try by name pattern FIRST (universal), fallback to no (legacy)
-  var ind = null;
+  // FIRST: check kpi_data map on any indicator (for combined cards)
   if(opts && opts.namePattern){
-    ind = findIndicatorByName(data, opts.namePattern);
-  }
-  if(!ind){
-    ind = findIndicator(data, no);
-  }
-  // Check kpi_data map on any indicator (for combined cards)
-  if(!ind && opts && opts.namePattern){
     for(var j=0;j<(data.indicators||[]).length;j++){
       var candidate = data.indicators[j];
       if(candidate.kpi_data && candidate.kpi_data[opts.namePattern]){
@@ -1457,6 +1449,15 @@ function kpiFromIndicator(data, no, opts){
         return {value:kd.value, unit:kd.unit||'', delta:null, deltaDir:null};
       }
     }
+  }
+  // Then try by no (legacy — works for Gijduvon/Shofirkon)
+  var ind = findIndicator(data, no);
+  if(!ind && opts && opts.namePattern){
+    // Only match exact card names (not combined cards)
+    ind = (data.indicators||[]).find(function(i){
+      return i.name && i.name.toLowerCase() === opts.namePattern.toLowerCase() + 'лар сони' ||
+             i.name && i.name.toLowerCase() === opts.namePattern.toLowerCase() + ' сони';
+    });
   }
   if(!ind || !ind.found || !ind.value) return null;
   // Override: indicator can carry kpi_count and kpi_pct fields directly
