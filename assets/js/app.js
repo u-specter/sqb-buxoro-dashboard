@@ -1517,10 +1517,10 @@ function kpiFromIndicator(data, no, opts){
 }
 
 const REGION_KPI_DEFS = [
-  {no:24, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta",         namePattern:"Маҳаллалар сони"},
-  {no:26, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:"",                   namePattern:"Хонадонлар сони"},
-  {no:25, icon:"bi-people",              labelKey:"kpi_oila",      unit:"",                   namePattern:"Оилалар сони"},
-  {no:23, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi", namePattern:"Аҳоли сони"},
+  {no:24, icon:"bi-geo-alt-fill",        labelKey:"kpi_mahalla",   unitKey:"unit_ta",         namePattern:"Маҳалла"},
+  {no:26, icon:"bi-house-door-fill",     labelKey:"kpi_xonadon",   unit:"",                   namePattern:"Хонадон"},
+  {no:25, icon:"bi-people",              labelKey:"kpi_oila",      unit:"",                   namePattern:"Оила"},
+  {no:23, icon:"bi-people-fill",         labelKey:"kpi_aholi",     unitKey:"unit_ming_kishi", namePattern:"Аҳоли"},
   {no:19, icon:"bi-person-x-fill",       labelKey:"kpi_ishsizlik", unit:"%", pctCount:true,   namePattern:"Ишсизлик"},
   {no:20, icon:"bi-arrow-down-circle",   labelKey:"kpi_kambag",    unit:"%", pctCount:true,   namePattern:"Камбағаллик"},
 ];
@@ -1585,9 +1585,9 @@ function buildRegionInsights(district){
   const tpl = AI_TPL[STATE.lang] || AI_TPL.uz;
   const out = [];
 
-  const mah = kpiFromIndicator(data, 24, {namePattern:"Маҳаллалар сони"});
-  const xon = kpiFromIndicator(data, 26, {namePattern:"Хонадонлар сони"});
-  const oila = kpiFromIndicator(data, 25, {namePattern:"Оилалар сони"});
+  const mah = kpiFromIndicator(data, 24, {namePattern:"Маҳалла"});
+  const xon = kpiFromIndicator(data, 26, {namePattern:"Хонадон"});
+  const oila = kpiFromIndicator(data, 25, {namePattern:"Оила"});
   const ishsiz = kpiFromIndicator(data, 19, {namePattern:"Ишсизлик"});
   const kamb = kpiFromIndicator(data, 20, {namePattern:"Камбағаллик"});
 
