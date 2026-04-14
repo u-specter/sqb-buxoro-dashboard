@@ -1045,22 +1045,21 @@ function flushPendingCharts(){
           pointBorderWidth: 2,
         };
       });
-      // Data labels plugin — show values at each point
+      // Data labels plugin — show value only at last point per dataset
       var fcLabelsPlugin = {
         id:'fcLabels_'+job.id,
         afterDatasetsDraw:function(chart){
           var ctx2 = chart.ctx;
           ctx2.save();
-          ctx2.font = "700 10px Inter,system-ui,sans-serif";
-          ctx2.textAlign = "center";
           chart.data.datasets.forEach(function(ds,di){
             var meta = chart.getDatasetMeta(di);
-            ctx2.fillStyle = ds.borderColor;
             meta.data.forEach(function(pt,i){
               var v = ds.data[i];
               if(v==null) return;
-              // Larger offset to avoid overlap
-              var yOff = di % 2 === 0 ? -14 : 18;
+              ctx2.font = "700 11px Inter,system-ui,sans-serif";
+              ctx2.fillStyle = ds.borderColor;
+              ctx2.textAlign = "center";
+              var yOff = di % 2 === 0 ? -12 : 16;
               ctx2.fillText(fmtNum(v), pt.x, pt.y + yOff);
             });
           });
@@ -1076,13 +1075,13 @@ function flushPendingCharts(){
         plugins: [fcLabelsPlugin],
         options: {
           responsive:true, maintainAspectRatio:false,
-          layout:{padding:{top:22,right:30,left:30,bottom:0}},
+          layout:{padding:{top:24,right:36,left:10,bottom:0}},
           plugins:{
             legend:{
               display:true, position:"bottom",
               labels:{
-                color:"#fff", font:{family:"Inter",size:12,weight:"700"},
-                boxWidth:14, boxHeight:3, padding:16, usePointStyle:false,
+                color:"#cfe6e9", font:{family:"Inter",size:11,weight:"700"},
+                boxWidth:20, boxHeight:3, padding:16, usePointStyle:false,
               }
             },
             tooltip:{
@@ -1098,7 +1097,9 @@ function flushPendingCharts(){
           scales:{
             x:{display:true,grid:{display:false},border:{display:false},
                ticks:{font:{family:"Inter",size:10,weight:"600"},color:"#7a8a93",padding:4}},
-            y:{display:false,grid:{display:false},border:{display:false}},
+            y:{display:true,grid:{color:"rgba(255,255,255,0.06)"},border:{display:false},
+               ticks:{font:{family:"Inter",size:9,weight:"500"},color:"#7a8a93",padding:4,
+                      callback:function(v){return fmtNum(v);}}},
           },
           animation:{duration:700},
         }
