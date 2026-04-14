@@ -784,6 +784,25 @@ body{
   .cb-donut-wrap { margin: 0 auto; }
 }
 
+/* === Category Breakdown v3 — Donut + Table === */
+.cb-layout{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center;margin-top:8px}
+.cb-chart-side{position:relative;width:160px;height:160px}
+.cb-chart-side canvas{width:100%!important;height:100%!important}
+.cb-table-side{min-width:0}
+.cb-table{width:100%;border-collapse:collapse}
+.cb-table .cb-row{border:none;display:table-row;background:none;padding:0}
+.cb-table .cb-row:hover{background:rgba(255,255,255,.04)}
+.cb-dot-cell{width:14px;padding:7px 0}
+.cb-dot{display:inline-block;width:10px;height:10px;border-radius:3px}
+.cb-name-cell{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);padding:7px 8px;white-space:nowrap}
+.cb-bar-cell{padding:7px 8px;width:40%}
+.cb-bar-bg{height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.cb-bar-cell .cb-bar-fill{height:100%;border-radius:3px;transition:width .8s ease}
+.cb-count-cell{font-size:13px;font-weight:800;color:#fff;text-align:right;padding:7px 8px;white-space:nowrap}
+.cb-pct-cell{font-size:12px;font-weight:600;color:rgba(255,255,255,.45);text-align:right;padding:7px 0;width:40px}
+.cb-total{margin-top:10px;font-size:12px;font-weight:600;color:rgba(255,255,255,.5);text-align:right}
+@media(max-width:600px){.cb-layout{grid-template-columns:1fr;}.cb-chart-side{margin:0 auto}}
+
 /* === Category Breakdown v2 — Minimal Stripes === */
 .cb2-wrap { padding: 4px 0; }
 .cb2-head {

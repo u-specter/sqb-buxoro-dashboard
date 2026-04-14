@@ -701,33 +701,30 @@ function renderValue(ind, canvasId){
       '</div>';
   }
 
-  // === Category breakdown — horizontal bar (Stripe-like) ===
+  // === Category breakdown — clean table with color dots ===
   if(p.type==="category_breakdown"){
     const total = p.categories.reduce(function(s,c){return s+(c.count||0);},0);
     const maxCat = Math.max.apply(null, p.categories.map(function(c){return c.count;}));
-    const items = p.categories.map(function(c){
-      const pct = total>0 ? Math.round((c.count/total)*100) : 0;
-      const barW = maxCat>0 ? Math.round((c.count/maxCat)*100) : 0;
-      return '<div class="sc-item">'+
-        '<div class="sc-bar-wrap" style="--c:'+c.color+'">'+
-          '<div class="sc-bar-fill" style="width:'+barW+'%"></div>'+
-          '<span class="sc-bar-text"><i class="bi '+(c.icon||'bi-circle-fill')+'" style="margin-right:6px"></i>'+escapeHTML(c.name)+'</span>'+
-        '</div>'+
-        '<div class="sc-vals">'+
-          '<span class="sc-num">'+c.count+'</span>'+
-          '<span class="sc-pct up">'+pct+'%</span>'+
-        '</div>'+
-      '</div>';
+    STATE.pending.push({id:canvasId, kind:"category_donut", categories:p.categories, total:total});
+    var rows = p.categories.map(function(c){
+      var pct = total>0 ? Math.round((c.count/total)*100) : 0;
+      var barW = maxCat>0 ? Math.round((c.count/maxCat)*100) : 0;
+      return '<tr class="cb-row">'+
+        '<td class="cb-dot-cell"><span class="cb-dot" style="background:'+c.color+'"></span></td>'+
+        '<td class="cb-name-cell">'+escapeHTML(c.name)+'</td>'+
+        '<td class="cb-bar-cell"><div class="cb-bar-bg"><div class="cb-bar-fill" style="width:'+barW+'%;background:'+c.color+'"></div></div></td>'+
+        '<td class="cb-count-cell">'+c.count+' та</td>'+
+        '<td class="cb-pct-cell">'+pct+'%</td>'+
+      '</tr>';
     }).join('');
-    return '<div class="ic-value rich sc-card">'+
-      '<div class="sc-head">'+
-        '<div class="sc-h-left">'+
-          '<div class="sc-h-lab">'+escapeHTML(p.title||T('label_breakdown'))+'</div>'+
-          '<div class="sc-h-val">'+total+' <span class="sc-h-unit">та МФЙ</span></div>'+
+    return '<div class="ic-value rich">'+
+      '<div class="cb-layout">'+
+        '<div class="cb-chart-side"><canvas id="'+canvasId+'" style="max-height:160px"></canvas></div>'+
+        '<div class="cb-table-side">'+
+          '<table class="cb-table"><tbody>'+rows+'</tbody></table>'+
+          '<div class="cb-total">Жами: <b>'+total+'</b> та маҳалла</div>'+
         '</div>'+
-        (p.subtitle?'<div class="sc-h-right"><div class="sc-h-lab">'+escapeHTML(p.subtitle)+'</div></div>':'')+
       '</div>'+
-      '<div class="sc-list">'+items+'</div>'+
       '</div>';
   }
 
