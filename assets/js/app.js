@@ -1419,16 +1419,13 @@ function findIndicatorByName(data, namePattern){
 }
 
 function kpiFromIndicator(data, no, opts){
-  // Try by no first, then by name pattern if opts.namePattern is set
-  var ind = findIndicator(data, no);
-  if(!ind && opts && opts.namePattern){
+  // Try by name pattern FIRST (universal), fallback to no (legacy)
+  var ind = null;
+  if(opts && opts.namePattern){
     ind = findIndicatorByName(data, opts.namePattern);
   }
-  if(!ind && opts && opts.altNo){
-    for(var a=0;a<opts.altNo.length;a++){
-      ind = findIndicator(data, opts.altNo[a]);
-      if(ind) break;
-    }
+  if(!ind){
+    ind = findIndicator(data, no);
   }
   if(!ind || !ind.found || !ind.value) return null;
   // Override: indicator can carry kpi_count and kpi_pct fields directly
