@@ -219,7 +219,7 @@ const REGIONS = [
     id: "fergana",
     name: {uz:"Фарғона вилояти", ru:"Ферганская область", en:"Fergana Region"},
     districts: [
-      {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true},
+      {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true, type:"shahar"},
       {id:"fergana_sh",name:{uz:"Фарғона шаҳри",ru:"г. Фергана",en:"Fergana city"},file:"fergana_sh.json",hasData:false},
       {id:"margilan",  name:{uz:"Марғилон",   ru:"Маргилан",   en:"Margilan"},   file:"margilan.json",  hasData:false},
       {id:"rishton",   name:{uz:"Риштон",     ru:"Риштан",     en:"Rishton"},    file:"rishton.json",   hasData:false},
@@ -1316,6 +1316,21 @@ function render(){
   const label = districtLabel(STATE.district);
 
   document.getElementById("heroDistrict").textContent = label;
+
+  // Update region name dynamically
+  var regionEls = document.querySelectorAll('[data-i18n="region"]');
+  regionEls.forEach(function(el){ el.textContent = regionLabel(STATE.region); });
+
+  // Update hero title — шаҳар/туман
+  var info = getDistrictAny(STATE.district);
+  var isShahar = info && info.district.type === "shahar";
+  var heroTitleEl = document.querySelector('[data-i18n="hero_title"]');
+  if(heroTitleEl){
+    var titles = {uz: isShahar ? "Шаҳарнинг умумий ҳолати" : "Туманнинг умумий ҳолати",
+                  ru: isShahar ? "Общее состояние города" : "Общее состояние района",
+                  en: isShahar ? "City Overview" : "District Overview"};
+    heroTitleEl.textContent = titles[STATE.lang] || titles.uz;
+  }
 
   renderRegionKpis(data);
   renderAiPanel(data);
