@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<style>*{cursor:pointer !important}
+<style>
 :root{
   --ink:#0b1220;
   --body:#3d4d63;
@@ -356,150 +356,14 @@ button:disabled{opacity:.65;cursor:not-allowed;transform:none !important;box-sha
 <main class="main-shell">
 <div class="screen active" id="s1"><span class="step-kicker" data-i18n="stepKicker1">Қадам 1 / 4</span><h2 class="screen-title" data-i18n="s1Title">Сизни тезда бахолаймиз</h2><p class="screen-desc" data-i18n="s1Desc">1-саҳифада профил ва ҳудудни танлайсиз, кейин мос молия саволлари очилади</p><div class="card-s"><h4 data-i18n="mainProfile">Асосий профил</h4><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="userName" data-i18n="nameLabel">Исмингиз</label><input class="input-s" id="userName" placeholder="Алишер" autocomplete="given-name"></div><div class="field"><label class="label-s" for="ageRange" data-i18n="ageLabel">Ёш диапазони</label><select class="input-s" id="ageRange"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="18-24">18-24</option><option value="25-34">25-34</option><option value="35-49">35-49</option><option value="50+">50+</option></select><div class="hint-s" data-i18n="hintAge">Нега: саволлар мураккаблигини мослаш учун.</div></div><div class="field"><label class="label-s" for="eduLevel" data-i18n="eduLabel">Олий маълумотлисизми?</label><select class="input-s" id="eduLevel"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="yes" data-i18n="yes">Ҳа</option><option value="no" data-i18n="no">Йўқ</option></select><div class="hint-s" data-i18n="hintEdu">Нега: тушунтириш услубини мослаштириш учун.</div></div><div class="field"><label class="label-s" for="userStatus" data-i18n="statusLabel">Сизнинг ҳолатингиз қандай?</label><select class="input-s" id="userStatus" onchange="handleStatusChange()"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="employed" data-i18n="statusEmployed">Ишлайман</option><option value="unemployed" data-i18n="statusUnemployed">Ишсизман</option><option value="entrepreneur" data-i18n="statusEntrepreneur">Тадбиркор</option><option value="future" data-i18n="statusFuture">Бўлажак тадбиркор</option></select><div class="hint-s" data-i18n="hintStatus">Нега: сизга мос саволларни белгилаш учун.</div></div><div class="field" id="expLevelField" style="display:none;transition:opacity .25s ease"><label class="label-s" for="expLevel" data-i18n="expLabel">Тажрибангиз борми?</label><select class="input-s" id="expLevel"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="none" data-i18n="expNone">Тажрибам йўқ</option><option value="low" data-i18n="expLow">Тажрибам бор (1 йилгача)</option><option value="mid" data-i18n="expMid">Тажрибам бор (1–3 йил)</option><option value="high" data-i18n="expHigh">Тажрибам бор (3+ йил)</option></select><div class="hint-s" data-i18n="hintExp">Нега: сизга мос даражани аниқлаш учун.</div></div><div class="field"><label class="label-s" for="userDistrict" data-i18n="districtLabel">Ҳудуд</label><select class="input-s" id="userDistrict" onchange="handleDistrictChange()"><option value="" data-i18n="selectPlaceholder">Танланг</option><option>Шофиркон</option><option>Ғиждувон</option></select><div class="hint-s" data-i18n="hintDistrict">Фақат 2 та ҳудуд: Шофиркон ва Ғиждувон.</div></div><div class="field" id="userMahallaField" style="display:none"><label class="label-s" for="userMahalla" data-i18n="mahallaLabel">Маҳалла</label><select class="input-s" id="userMahalla"><option value="" data-i18n="selectPlaceholder">Танланг</option></select><div class="hint-s" data-i18n="hintMahalla">Маҳалла бўйича маҳаллий имкониятлар учун.</div></div><div class="field"><label class="label-s" for="userRegion" data-i18n="regionLabel">Вилоят</label><select class="input-s" id="userRegion"><option>Бухоро вилояти</option></select></div></div><div id="profileBadge" class="profile-chip" style="display:none"></div></div><div class="btn-row" style="justify-content:flex-end"><button type="button" class="btn-main" onclick="handleSegmentationNext()" data-i18n="nextStep">Кейинги қадам</button></div></div>
 <div class="screen" id="s2"><span class="step-kicker" data-i18n="stepKicker2">Қадам 2 / 4</span><h2 class="screen-title" data-i18n="s2Title">Молия саволлари</h2><p class="screen-desc" id="financeDesc" data-i18n="s2Desc">Сизга мос соҳа бўйича қисқа саволлар.</p><div class="card-s" id="beginnerFinance" style="display:none"><h4 data-i18n="beginnerCardTitle">🌱 Бошланғич</h4><p class="hint-s" style="margin:0 0 14px" data-i18n="bSimpleHint">Қуйидаги савол — мос тавсия бериш учун.</p><div class="field" style="max-width:420px"><label class="label-s" for="bOwnFunds" data-i18n="initialFundsLabel">Бошланғич маблағингиз борми?</label><select class="input-s" id="bOwnFunds"><option value="0" data-i18n="rangeNoFunds">Йўқ — маблағсизман</option><option value="1-20">1-20 млн</option></select><div class="hint-s" data-i18n="initialFundsHint">Нега: бошланғич сармояга мос бизнес тавсия этиш учун.</div></div></div><div class="card-s" id="intermediateFinance" style="display:none"><h4 data-i18n="intermediateCardTitle">📈 Ўсувчи — саволлар</h4><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="iOwnFunds" data-i18n="initialFundsLabel">Бошланғич маблағингиз борми?</label><select class="input-s" id="iOwnFunds"><option value="0" data-i18n="rangeNoFunds">Йўқ — маблағсизман</option><option value="5-30">5-30 млн</option><option value="30-80">30-80 млн</option><option value="80-150">80-150 млн</option><option value="150+">150+ млн</option></select></div><div class="field"><label class="label-s" for="iWorkField" data-i18n="workSectorLabel">Қайси соҳада ишлайсиз?</label><select class="input-s" id="iWorkField"><option value="" data-i18n="selectPlaceholder">Танланг</option><option>IT</option><option>Молия</option><option data-i18n="bdTrade">Савдо</option><option data-i18n="bdEdu">Таълим</option><option data-i18n="sectorOther">Бошқа</option></select><div class="hint-s" data-i18n="workSectorHint">Иш соҳангиз — мос имкониятлар тавсияси учун.</div></div><div class="field"><label class="label-s" for="iBizPlace" data-i18n="bizPlaceLabel">Бизнес учун фаолият жойи борми?</label><select class="input-s" id="iBizPlace"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="own" data-i18n="yesOwn">Ҳа, ўз жойим бор</option><option value="rent" data-i18n="rentLoc">Ҳа, ижарага оламан</option><option value="no" data-i18n="noLoc">Йўқ, ҳозирча йўқ</option></select><div class="hint-s" data-i18n="bizPlaceHint">Дўкон, офис, устaхона ёки бошқа фаолият жойи.</div></div><div class="field"><label class="label-s" for="iExpense" data-i18n="monthlyExpenseLabel">Ойлик харажат</label><select class="input-s" id="iExpense"><option value="1-5">1-5 млн</option><option value="5-15">5-15 млн</option><option value="15-30">15-30 млн</option><option value="30+">30+ млн</option></select></div><div class="field"><label class="label-s" for="iRegistration" data-i18n="bRegistrationLabel">Расмий рўйхатдан ўтган бизнес борми?</label><select class="input-s" id="iRegistration"><option value="no" data-i18n="bRegNo">Йўқ, ҳозирча йўқ</option><option value="yatt" data-i18n="bRegYatt">Ҳа, ЯТТ (ИП)</option><option value="mchj" data-i18n="bRegMchj">Ҳа, МЧЖ (ООО)</option></select><div class="hint-s" data-i18n="bRegistrationHint">Расмий ҳужжатлар бор-йўқлиги — режада тавсия учун.</div></div></div></div><div class="card-s" id="advancedFinance" style="display:none"><h4>💰 Капитал — чуқур саволлар</h4><p class="hint-s" style="margin:0 0 12px">Техник сўзлар ўрнида оддий тилда сўраймиз.</p><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="aCapex">Бизнесни бошлаш учун биринчи бор қанча сарфлайсиз?</label><select class="input-s" id="aCapex"><option value="100-300">100-300 млн (ускуна, жиҳоз, ремонт)</option><option value="300-700">300-700 млн</option><option value="700-1000">700 млн — 1 млрд</option><option value="1000+">1 млрд+</option></select><div class="hint-s">Бу — бошланғич йирик харажат (Капекс дегани шу).</div></div><div class="field"><label class="label-s" for="aOpex">Ойлик иш юритишга қанча кетади?</label><select class="input-s" id="aOpex"><option value="10-30">10-30 млн (иш ҳақи, хом-ашё, коммунал…)</option><option value="30-70">30-70 млн</option><option value="70-150">70-150 млн</option><option value="150+">150+ млн</option></select><div class="hint-s">Бу — ойлик доимий харажат (Опекс дегани шу).</div></div><div class="field"><label class="label-s" for="aLiquidity">Қийин ойда чиқимларни қанча ой олдиндан қоплай оласиз?</label><select class="input-s" id="aLiquidity"><option value="lt1">1 ойдан кам</option><option value="1-3">1-3 ой</option><option value="3-6">3-6 ой</option><option value="6+">6+ ой</option></select><div class="hint-s">Запас пул ёки «подушка» — қанча вақтга етгани.</div></div><div class="field"><label class="label-s" for="aWorst">Агар ой ташвишли бўлса, бизнесда пул қандай?</label><select class="input-s" id="aWorst"><option>Камайиб кетади</option><option>Деярли ўзгармайди</option><option>Оз-оздан ўсади</option><option>Яхши ўсади</option></select><div class="hint-s">Энг ёмон сценарийга яқин баҳо.</div></div><div class="field"><label class="label-s" for="aDscr">Кредит бўлса: ойлик тўловларни даромаддан тўлайсизми?</label><select class="input-s" id="aDscr"><option value="easy">Ҳа, осон</option><option value="ok">Кейинчалик, лекин бўлади</option><option value="hard">Қийин</option><option value="no_credit">Кредит йўқ / билмайман</option></select><div class="hint-s">Банк учун мухим — сиз оддий тилда айтинг.</div></div><div class="field"><label class="label-s" for="aAsset">Гаров (мулк) борми?</label><select class="input-s" id="aAsset"><option>Уй / хонадон</option><option>Ер участка</option><option>Автомобил</option><option>Тижорат мулки</option><option>Йўқ</option></select></div></div></div><div class="card-s" id="businessFinance" style="display:none"><h4 data-i18n="businessCardTitle">🏢 Бизнес — саволлар</h4><div class="form-grid form-grid-2"><div class="field"><label class="label-s" for="bGrow" data-i18n="bGrowLabel">Ҳозир бизнесингизни қандай ўстирмоқчисиз?</label><select class="input-s" id="bGrow"><option value="" data-i18n="selectPlaceholder">Танланг</option><option data-i18n="bGrowOpt1">Даромадни кўпайтириш</option><option data-i18n="bGrowOpt2">Мижозларни кўпайтириш</option><option data-i18n="bGrowOpt3">Янги маҳсулот қўшиш</option><option data-i18n="bGrowOpt4">Янги жой очиш</option></select></div><div class="field"><label class="label-s" for="bProblem" data-i18n="bProblemLabel">Ҳозир бизнесингизда энг катта муаммо нима?</label><select class="input-s" id="bProblem"><option value="" data-i18n="selectPlaceholder">Танланг</option><option data-i18n="bProblemOpt1">Мижоз етишмайди</option><option data-i18n="bProblemOpt2">Пул етишмайди</option><option data-i18n="bProblemOpt3">Ходимлар етишмайди</option><option data-i18n="bProblemOpt4">Вақт етишмайди</option><option data-i18n="bProblemOpt5">Муаммо йўқ</option></select></div><div class="field"><label class="label-s" for="bRevenue" data-i18n="bRevenueLabel">Бизнесингизнинг ўртача ойлик тушуми қанча?</label><select class="input-s" id="bRevenue"><option value="" data-i18n="selectPlaceholder">Танланг</option><option>50 млн гача</option><option>50–100 млн</option><option>100–200 млн</option><option>200 млн+</option></select></div><div class="field"><label class="label-s" for="bExpand" data-i18n="bExpandLabel">Бизнесингизни кенгайтириш учун ўз маблағингиз мавжудми?</label><select class="input-s" id="bExpand" onchange="handleBExpandChange()"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="yes" data-i18n="yes">Ҳа</option><option value="no" data-i18n="no">Йўқ</option><option value="credit" data-i18n="bExpandCredit">Кредит керак</option></select></div><div class="field" id="bNeedAmountWrap" style="display:none"><label class="label-s" for="bNeedAmount" data-i18n="bNeedAmountLabel">Бизнесингизни кенгайтириш учун қанча маблағ керак?</label><select class="input-s" id="bNeedAmount"><option value="" data-i18n="selectPlaceholder">Танланг</option><option>50 млн гача</option><option>50–100 млн</option><option>100–300 млн</option><option>300 млн+</option></select></div><div class="field" id="bUseWrap" style="display:none"><label class="label-s" for="bUse" data-i18n="bUseLabel">Агар маблағ ажратилса, уни нимага ишлатасиз?</label><select class="input-s" id="bUse"><option value="" data-i18n="selectPlaceholder">Танланг</option><option data-i18n="bUseOpt1">Маркетинг</option><option data-i18n="bUseOpt2">Ускуна оламан</option><option data-i18n="bUseOpt3">Янги жой очаман</option><option data-i18n="bUseOpt4">Маҳсулотни кўпайтираман</option></select></div><div class="field"><label class="label-s" for="bCollateral" data-i18n="bCollateralLabel">Гаровга қўйиш учун мол-мулкингиз мавжудми?</label><select class="input-s" id="bCollateral" onchange="handleBCollateralChange()"><option value="" data-i18n="selectPlaceholder">Танланг</option><option value="yes" data-i18n="yes">Ҳа</option><option value="no" data-i18n="no">Йўқ</option></select></div><div class="field" id="bCollateralTypeWrap" style="display:none"><label class="label-s" for="bCollateralType" data-i18n="bCollateralTypeLabel">Гаров тури?</label><select class="input-s" id="bCollateralType"><option value="" data-i18n="selectPlaceholder">Танланг</option><option data-i18n="coll1">Уй / хонадон</option><option data-i18n="coll2">Ер участка</option><option data-i18n="coll3">Автомобил</option><option data-i18n="coll4">Тижорат мулки</option><option data-i18n="sectorOther">Бошқа</option></select></div><div class="field"><label class="label-s" for="bRegistration" data-i18n="bRegistrationLabel">Расмий рўйхатдан ўтган бизнес борми?</label><select class="input-s" id="bRegistration"><option value="no" data-i18n="bRegNo">Йўқ, ҳозирча йўқ</option><option value="yatt" data-i18n="bRegYatt">Ҳа, ЯТТ (ИП)</option><option value="mchj" data-i18n="bRegMchj">Ҳа, МЧЖ (ООО)</option></select><div class="hint-s" data-i18n="bRegistrationHint">Расмий ҳужжатлар бор-йўқлиги — режада тавсия учун.</div></div></div></div><div class="card-s"><h4 data-i18n="bizDirection">Бизнес йўналиши</h4><p class="hint-s" style="margin:-8px 0 14px" data-i18n="bizDirectionHint">Фақат битта соҳани танланг.</p><div class="chips" id="bizChips" data-single="1"><span class="chip" data-i18n="bdFood">Озиқ-овқат</span><span class="chip" data-i18n="bdTextile">Тўқимачилик</span><span class="chip" data-i18n="bdConstr">Қурилиш материаллари</span><span class="chip" data-i18n="bdCattle">Чорвачилик</span><span class="chip" data-i18n="bdGarden">Боғдорчилик</span><span class="chip" data-i18n="bdProcess">Мева-сабзавот қайта ишлаш</span><span class="chip" data-i18n="bdCafe">Кафе / ресторан</span><span class="chip" data-i18n="bdTrade">Савдо</span><span class="chip" data-i18n="bdTransport">Транспорт</span><span class="chip" data-i18n="bdIT">IT / рақамли</span><span class="chip" data-i18n="bdEdu">Таълим курслари</span><span class="chip" data-i18n="bdBeauty">Гўзаллик салони</span><span class="chip" data-i18n="bdFurniture">Мебель</span><span class="chip" data-i18n="bdPharm">Фармацевтика</span></div></div><div class="card-s"><h4 data-i18n="hasPlan">Бизнес-режангиз борми?</h4><div class="field" style="max-width:400px"><label class="label-s" for="hasPlan">Режа ҳолати</label><select class="input-s" id="hasPlan" onchange="document.getElementById('planUpload').style.display=this.value==='yes'?'block':'none'"><option value="no" data-i18n="planNo">Йўқ, AI яратсин</option><option value="yes" data-i18n="planYes">Ҳа, баҳолаш керак</option></select></div><div id="planUpload" style="display:none;margin-top:14px"><label class="label-s" for="planFile">Файл юклаш</label><input class="input-s" id="planFile" type="file" accept=".pdf,.docx,.txt"></div></div><div class="btn-row"><button type="button" class="btn-ghost" onclick="go(1)" data-i18n="back">← Орқага</button><button type="button" class="btn-green" onclick="analyze()" data-i18n="startAI">AI таҳлилни бошлаш</button></div></div>
-<div class="screen" id="s3"><span class="step-kicker" data-i18n="stepKicker3">Қадам 3 / 4</span><div class="loader-wrap"><div class="analysis-card"><div class="analysis-hero"><div class="spinner analysis-spinner" aria-hidden="true"></div><h2 class="screen-title" data-i18n="s3Title">AI таҳлил қилмоқда</h2><p class="screen-desc" data-i18n="s3Desc">Маълумотларингиз текширилмоқда — бир оз кутинг</p><div class="analysis-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="analysisProgressBar"><div class="analysis-progress-fill" id="analysisProgressFill"></div></div><p class="analysis-phase" id="analysisPhaseHint">1/6 — Шахсий профил</p></div><div class="mini-stepper" id="miniStepper" aria-label="Таҳлил босқичлари"><div class="mini-step current" id="ms1" data-i="1"><span class="mini-ico" aria-hidden="true">1</span><div class="mini-lbl" data-i18n="ms1">Шахсий профил</div></div><div class="mini-step" id="ms2" data-i="2"><span class="mini-ico" aria-hidden="true">2</span><div class="mini-lbl" data-i18n="ms2">Ҳудуд бозори</div></div><div class="mini-step" id="ms3" data-i="3"><span class="mini-ico" aria-hidden="true">3</span><div class="mini-lbl" data-i18n="ms3">Молиявий имконият</div></div><div class="mini-step" id="ms4" data-i="4"><span class="mini-ico" aria-hidden="true">4</span><div class="mini-lbl" data-i18n="ms4">Бизнес-модел</div></div><div class="mini-step" id="ms5" data-i="5"><span class="mini-ico" aria-hidden="true">5</span><div class="mini-lbl" data-i18n="ms5">Скоринг</div></div><div class="mini-step" id="ms6" data-i="6"><span class="mini-ico" aria-hidden="true">6</span><div class="mini-lbl" data-i18n="ms6">Бизнес-режа</div></div></div><div class="analysis-actions"><button type="button" class="btn-ghost" onclick="cancelAnalysisAndGo(2)" data-i18n="backToFinance">← Молияга қайтиш</button></div></div></div>
-<!-- ═══ DUMMY PREVIEW OF STEP 4 RESULTS ═══ -->
-<div id="s3Preview" style="display:none;margin-top:32px;animation:screenIn .4s var(--ease-out) both">
-  <h2 class="screen-title">Таҳлил натижаси структураси</h2>
-  <p class="screen-desc">AI таҳлил тайёрланмоқда... Қуйида натижа қандай кўринишини кўришингиз мумкин.</p>
-
-  <!-- Profile card dummy -->
-  <section style="margin:0 0 24px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,31,68,.06)">
-    <div style="padding:18px 24px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-bottom:1px solid #a7f3d0;display:flex;align-items:center;gap:14px">
-      <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:#fff;color:#065f46;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.08)">1</div>
-      <div>
-        <div style="font-size:11px;font-weight:800;color:#065f46;opacity:.7;text-transform:uppercase;letter-spacing:.08em">ТАҲЛИЛ 1</div>
-        <div style="font-size:16px;font-weight:800;color:#065f46;margin-top:2px">👤 Шахсий профил — "Бизнес йўналиши" доирасида ғоялар</div>
-        <div style="font-size:12px;color:#065f46;opacity:.85;margin-top:3px">Ёш, тажриба, бюджет</div>
-      </div>
-    </div>
-    <div style="padding:22px 24px">
-      <div style="padding:14px 16px;background:#f0fdf4;border-left:3px solid #10b981;border-radius:8px;margin-bottom:18px;font-size:13px;color:var(--ink);line-height:1.6">
-        Фойдаланувчи профили ва молиявий имкониятларига қараб, AI сизга мос бизнес ғояларини танлаб беради ва ҳар бири бўйича тавсия қилади.
-      </div>
-      <div style="font-size:11px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">СИЗГА МОС БИЗНЕС ТОИФАЛАРИ</div>
-      <!-- Business item 1 -->
-      <div style="padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-          <div style="font-size:14px;font-weight:800;color:var(--ink);flex:1;min-width:150px">Бизнес ғоя №1</div>
-          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
-            <div class="plan-toggle" style="pointer-events:none;opacity:.5">📋 Бизнес режа ▾</div>
-            <span style="display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:#dcfce7;color:#166534;border:1px solid #bbf7d0">Паст хавф</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
-          <span style="display:inline-block;padding:5px 12px;background:#eff6ff;color:#0369a1;border:1px solid #bfdbfe;border-radius:999px;font-size:12px;font-weight:600">Сизга мос йўналиш тавсияси</span>
-          <span style="display:inline-block;padding:5px 12px;background:#eff6ff;color:#0369a1;border:1px solid #bfdbfe;border-radius:999px;font-size:12px;font-weight:600">Бозор имконияти таҳлили</span>
-        </div>
-        <div style="font-size:12px;color:var(--body);line-height:1.5"><strong style="color:#059669">Нима учун мос:</strong> Сизнинг профилингиз ва имкониятларингизга қараб танланади.</div>
-      </div>
-      <!-- Business item 2 -->
-      <div style="padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-          <div style="font-size:14px;font-weight:800;color:var(--ink);flex:1;min-width:150px">Бизнес ғоя №2</div>
-          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
-            <div class="plan-toggle" style="pointer-events:none;opacity:.5">📋 Бизнес режа ▾</div>
-            <span style="display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:#fef3c7;color:#92400e;border:1px solid #fde68a">Ўртача хавф</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
-          <span style="display:inline-block;padding:5px 12px;background:#eff6ff;color:#0369a1;border:1px solid #bfdbfe;border-radius:999px;font-size:12px;font-weight:600">Даромад манбаси таҳлили</span>
-          <span style="display:inline-block;padding:5px 12px;background:#eff6ff;color:#0369a1;border:1px solid #bfdbfe;border-radius:999px;font-size:12px;font-weight:600">Хавф даражаси баҳоси</span>
-        </div>
-        <div style="font-size:12px;color:var(--body);line-height:1.5"><strong style="color:#059669">Нима учун мос:</strong> Ҳудудингиздаги талаб ва рақобатга қараб танланади.</div>
-      </div>
-      <!-- Business item 3 -->
-      <div style="padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-          <div style="font-size:14px;font-weight:800;color:var(--ink);flex:1;min-width:150px">Бизнес ғоя №3</div>
-          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
-            <div class="plan-toggle" style="pointer-events:none;opacity:.5">📋 Бизнес режа ▾</div>
-            <span style="display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:#dcfce7;color:#166534;border:1px solid #bbf7d0">Паст хавф</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
-          <span style="display:inline-block;padding:5px 12px;background:#eff6ff;color:#0369a1;border:1px solid #bfdbfe;border-radius:999px;font-size:12px;font-weight:600">Бошланғич сармоя таҳлили</span>
-        </div>
-        <div style="font-size:12px;color:var(--body);line-height:1.5"><strong style="color:#059669">Нима учун мос:</strong> Молиявий имкониятларингизга мос равишда танланади.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Region card dummy -->
-  <section style="margin:0 0 24px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,31,68,.06)">
-    <div style="padding:18px 24px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-bottom:1px solid #bfdbfe;display:flex;align-items:center;gap:14px">
-      <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:#fff;color:#1e3a5f;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.08)">2</div>
-      <div>
-        <div style="font-size:11px;font-weight:800;color:#1e3a5f;opacity:.7;text-transform:uppercase;letter-spacing:.08em">ТАҲЛИЛ 2</div>
-        <div style="font-size:16px;font-weight:800;color:#1e3a5f;margin-top:2px">🗺️ Ҳудуд бозори таҳлили</div>
-        <div style="font-size:12px;color:#1e3a5f;opacity:.85;margin-top:3px">Маҳаллий имкониятлар ва рақобат</div>
-      </div>
-    </div>
-    <div style="padding:22px 24px">
-      <div style="padding:14px 16px;background:#f8fafc;border-left:3px solid #38bdf8;border-radius:8px;margin-bottom:18px;font-size:13px;color:var(--ink);line-height:1.6">
-        Сизнинг ҳудудингиздаги иқтисодий вазият, бозор талаби ва рақобат даражаси таҳлил қилинади. Маҳаллий имкониятлар аниқланади.
-      </div>
-      <div style="font-size:11px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">ҲУДУДДАГИ ИМКОНИЯТЛАР (3)</div>
-      <div style="padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px">
-        <div style="font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px">1. Маҳаллий бозор имконияти</div>
-        <div style="font-size:12px;color:var(--body);line-height:1.5">Ҳудудингиздаги энг истиқболли соҳалар ва бозор бўшлиқлари кўрсатилади.</div>
-      </div>
-      <div style="padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px">
-        <div style="font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px">2. Рақобат таҳлили</div>
-        <div style="font-size:12px;color:var(--body);line-height:1.5">Мавжуд рақобатчилар ва сизнинг устунликларингиз баҳоланади.</div>
-      </div>
-      <div style="padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:4px solid #38bdf8;border-radius:10px">
-        <div style="font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px">3. Ўсиш имконияти</div>
-        <div style="font-size:12px;color:var(--body);line-height:1.5">Келажакда бизнесни кенгайтириш йўллари ва стратегиялар тавсия этилади.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bank product card dummy -->
-  <section style="margin:0 0 24px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(15,31,68,.06)">
-    <div style="padding:18px 24px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border-bottom:1px solid #fde68a;display:flex;align-items:center;gap:14px">
-      <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:#fff;color:#92400e;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.08)">3</div>
-      <div>
-        <div style="font-size:11px;font-weight:800;color:#92400e;opacity:.7;text-transform:uppercase;letter-spacing:.08em">ТАҲЛИЛ 3</div>
-        <div style="font-size:16px;font-weight:800;color:#92400e;margin-top:2px">🏦 SQB банк маҳсулоти</div>
-        <div style="font-size:12px;color:#92400e;opacity:.85;margin-top:3px">Кредит имкониятлари ва шартлар</div>
-      </div>
-    </div>
-    <div style="padding:22px 24px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line)">
-        <div style="font-size:18px;font-weight:800;color:var(--ink);flex:1;min-width:200px">🏦 Сизга мос банк маҳсулоти</div>
-        <span style="padding:8px 16px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em;background:#dcfce7;color:#166534;border:1px solid #bbf7d0">Тавсия этилади</span>
-      </div>
-      <div style="padding:10px 0;border-top:1px solid #f1f5f9;display:flex;gap:14px">
-        <div style="font-size:11px;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.06em;width:140px;flex-shrink:0">Нима учун</div>
-        <div style="font-size:13px;color:var(--ink);line-height:1.5;flex:1">Сизнинг профилингизга мос кредит ёки молиявий маҳсулот тавсия этилади.</div>
-      </div>
-      <div style="padding:10px 0;border-top:1px solid #f1f5f9;display:flex;gap:14px">
-        <div style="font-size:11px;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.06em;width:140px;flex-shrink:0">Миқдори</div>
-        <div style="font-size:13px;color:var(--ink);line-height:1.5;flex:1">AI таҳлил асосида аниқланади</div>
-      </div>
-      <div style="padding:10px 0;border-top:1px solid #f1f5f9;display:flex;gap:14px">
-        <div style="font-size:11px;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.06em;width:140px;flex-shrink:0">Шартлари</div>
-        <div style="font-size:13px;color:var(--ink);line-height:1.5;flex:1">Фоиз ставкаси, муддат ва гаров шартлари кўрсатилади.</div>
-      </div>
-    </div>
-  </section>
-
-  <div style="text-align:center;padding:16px 0">
-    <div id="s3PreviewSpinner" class="spinner" style="width:32px;height:32px;border:3px solid #e2e8f0;border-top-color:var(--primary);margin:0 auto 10px"></div>
-    <div id="s3PreviewHint" style="font-size:13px;color:var(--muted);font-weight:600">AI ҳақиқий натижаларни тайёрламоқда...</div>
-    <button type="button" class="btn-main" style="margin-top:16px;display:none" id="goToResultsBtn" onclick="go(4)">Натижаларга ўтиш →</button>
-  </div>
-</div>
-</div>
+<div class="screen" id="s3"><span class="step-kicker" data-i18n="stepKicker3">Қадам 3 / 4</span><div class="loader-wrap"><div class="analysis-card"><div class="analysis-hero"><div class="spinner analysis-spinner" aria-hidden="true"></div><h2 class="screen-title" data-i18n="s3Title">AI таҳлил қилмоқда</h2><p class="screen-desc" data-i18n="s3Desc">Маълумотларингиз текширилмоқда — бир оз кутинг</p><div class="analysis-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="analysisProgressBar"><div class="analysis-progress-fill" id="analysisProgressFill"></div></div><p class="analysis-phase" id="analysisPhaseHint">1/6 — Шахсий профил</p></div><div class="mini-stepper" id="miniStepper" aria-label="Таҳлил босқичлари"><div class="mini-step current" id="ms1" data-i="1"><span class="mini-ico" aria-hidden="true">1</span><div class="mini-lbl" data-i18n="ms1">Шахсий профил</div></div><div class="mini-step" id="ms2" data-i="2"><span class="mini-ico" aria-hidden="true">2</span><div class="mini-lbl" data-i18n="ms2">Ҳудуд бозори</div></div><div class="mini-step" id="ms3" data-i="3"><span class="mini-ico" aria-hidden="true">3</span><div class="mini-lbl" data-i18n="ms3">Молиявий имконият</div></div><div class="mini-step" id="ms4" data-i="4"><span class="mini-ico" aria-hidden="true">4</span><div class="mini-lbl" data-i18n="ms4">Бизнес-модел</div></div><div class="mini-step" id="ms5" data-i="5"><span class="mini-ico" aria-hidden="true">5</span><div class="mini-lbl" data-i18n="ms5">Скоринг</div></div><div class="mini-step" id="ms6" data-i="6"><span class="mini-ico" aria-hidden="true">6</span><div class="mini-lbl" data-i18n="ms6">Бизнес-режа</div></div></div><div class="analysis-actions"><button type="button" class="btn-ghost" onclick="cancelAnalysisAndGo(2)" data-i18n="backToFinance">← Молияга қайтиш</button></div></div></div></div>
 <div class="screen" id="s4"><span class="step-kicker" data-i18n="stepKicker4">Қадам 4 / 4</span><h2 class="screen-title" data-i18n="s4Title">Таҳлил натижаси</h2><p class="screen-desc" data-i18n="s4Desc">Пастда — AI таҳлили жавоби: умумий баҳо, асосий сонлар ва кейин тавсия этилган бизнес.</p><div class="result-snapshot"><div class="result-snapshot-head"><span class="result-snapshot-badge">AI таҳлил жавоби</span><span class="result-snapshot-hint">Бир қарашда: балл, молиявий сонлар — кейин батафсил тавсия пастда.</span></div><div class="result-snapshot-body"><div class="dash"><div class="score-card"><div class="score-card-label">Умумий баҳо</div><div class="score-ring high" id="scoreRing"><span class="score-num" id="scoreVal">—</span><span class="score-lbl">/100</span></div><div class="score-txt" id="scoreLbl">Баҳоланмоқда</div><div class="score-desc-t" id="scoreDesc"></div><div class="score-expl" id="scoreExplain">—</div><div class="score-scale"><div class="score-fill" id="scoreFill"></div></div></div><div class="metrics-wrap"><p class="metrics-caption">Асосий кўрсаткичлар</p><div class="metrics"><div class="m-box bl"><div class="m-lbl">Бошланғич сармоя</div><div class="m-val" id="mInvest">—</div></div><div class="m-box gr"><div class="m-lbl">Кутилаётган ойлик фойда</div><div class="m-val" id="mProfit">—</div></div><div class="m-box or"><div class="m-lbl">Қоплаш муддати</div><div class="m-val" id="mPayback">—</div></div><div class="m-box dk"><div class="m-lbl">Янги иш ўринлари</div><div class="m-val" id="mJobs">—</div></div></div></div></div></div></div><div id="aiResult"></div><div id="altResult"></div><div class="btn-row" style="margin-top:28px;margin-bottom:40px"><button type="button" class="btn-ghost" onclick="restartFromScratch()" data-i18n="newAnalysis">Янги таҳлил</button><button type="button" class="btn-green" onclick="applyBank()" data-i18n="applyBank">Банкка ариза юбориш</button></div></div>
 </main>
 <div class="modal-s" id="bankModal"><div class="modal-box"><div style="font-size:48px;margin-bottom:14px;line-height:1" aria-hidden="true">✓</div><h3 style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:20px">Ариза юборилди</h3><p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.5">Маҳалла банкири тез орада боғланади</p><div style="text-align:left;background:var(--blue-lt);padding:18px;border-radius:var(--radius);font-size:14px;margin-bottom:22px;border:1px solid var(--blue-border)"><div><strong>Банкир:</strong> <span id="bankerName">Абдуллаев Шерзод</span></div><div style="margin-top:6px"><strong>Телефон:</strong> <span id="bankerPhone">+998 91 234 56 78</span></div><div style="margin-top:10px;font-size:12px;color:var(--muted)">Ариза: <span id="appId">—</span></div></div><button type="button" class="btn-main" onclick="document.getElementById('bankModal').classList.remove('show')">Тушундим</button></div></div>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const API_KEY='';
-const PROXY_URL='/api/openai-proxy';
-
+const API_KEY='REDACTED_OPENAI_KEY';
 let map,marker;
 // ════════════════════════════════════════════════════
 //  i18n — Uzbek Cyrillic / Russian
@@ -805,8 +669,7 @@ function canNavigateToStep(t){
     }
     return false;
   }
-  // Allow going from step 4 back to step 3 (to see preview while business plan generates)
-  if(cur===4 && t===3)return true;
+  if(cur===4 && t===3)return false;
   return true;
 }
 function updateStepNavAvailability(){
@@ -834,12 +697,6 @@ function resetLoaderUI(){
   if(pb)pb.setAttribute('aria-valuenow','0');
   var hint=document.getElementById('analysisPhaseHint');
   if(hint)hint.textContent='1/6 — '+t('ms1');
-  var preview=document.getElementById('s3Preview');
-  if(preview)preview.style.display='none';
-  var goBtn=document.getElementById('goToResultsBtn');
-  if(goBtn)goBtn.style.display='none';
-  var loaderWrap=document.querySelector('#s3 .loader-wrap');
-  if(loaderWrap)loaderWrap.style.display='';
 }
 function cancelAnalysisAndGo(target){
   if(analysisAnimTimer){clearTimeout(analysisAnimTimer);analysisAnimTimer=null}
@@ -896,13 +753,6 @@ function go(n){
     map.on('click',function(e){if(marker)map.removeLayer(marker);marker=L.marker(e.latlng).addTo(map)});
   }else if(n===2&&map&&document.getElementById('map')){setTimeout(function(){map.invalidateSize()},100)}
   if(n===1){resetLoaderUI()}
-  if(n===3 && canReturnToResults){
-    // Coming back to step 3 from step 4 — show preview with "go to results" button
-    var preview=document.getElementById('s3Preview');
-    if(preview)preview.style.display='block';
-    var goBtn=document.getElementById('goToResultsBtn');
-    if(goBtn)goBtn.style.display='inline-block';
-  }
   updateStepNavAvailability();
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -1049,12 +899,37 @@ function analyze(){
   analysisInProgress=true;
   resetLoaderUI();
   go(3);
-  // Skip 6-step animation — show preview instantly
-  var analysisCard=document.querySelector('#s3 .loader-wrap');
-  if(analysisCard)analysisCard.style.display='none';
-  var preview=document.getElementById('s3Preview');
-  if(preview)preview.style.display='block';
-  callAI();
+  var i=0;
+  var hints=[t('ms1'),t('ms2'),t('ms3'),t('ms4'),t('ms5'),t('ms6')];
+  function next(){
+    if(i<6){
+      var m=document.getElementById('ms'+(i+1));
+      if(m){
+        m.classList.add('done');
+        m.classList.remove('current');
+        var ico=m.querySelector('.mini-ico');
+        if(ico)ico.textContent='✓';
+      }
+      var nextM=document.getElementById('ms'+(i+2));
+      if(nextM){nextM.classList.add('current')}
+      var pct=Math.round(((i+1)/6)*100);
+      var pf=document.getElementById('analysisProgressFill');
+      if(pf)pf.style.width=pct+'%';
+      var pb=document.getElementById('analysisProgressBar');
+      if(pb)pb.setAttribute('aria-valuenow',String(pct));
+      var hint=document.getElementById('analysisPhaseHint');
+      if(hint){
+        if(i+1<6){hint.textContent=(i+2)+'/6 — '+(hints[i+1]||'')}
+        else{hint.textContent='6/6 — '+hints[5]}
+      }
+      i++;
+      analysisAnimTimer=setTimeout(next,700);
+    }else{
+      analysisAnimTimer=null;
+      callAI();
+    }
+  }
+  next();
 }
 // ============================================================
 //  4 та категория-махсус промптни ясайдиган функция
@@ -1778,7 +1653,7 @@ function callAI(){
   });
 
   var timer=setTimeout(function(){if(aiAbortController)aiAbortController.abort()},120000);
-  fetch(PROXY_URL,{signal:aiAbortController.signal,method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:4000,response_format:{type:'json_object'},messages:[{role:'system',content:aiSysContent()+'\n\n'+aiLangRule()},{role:'user',content:prompt+'\n\n'+aiLangRule()}]})}).then(function(r){clearTimeout(timer);return r.json()}).then(function(d){
+  fetch('https://api.openai.com/v1/chat/completions',{signal:aiAbortController.signal,method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:4000,response_format:{type:'json_object'},messages:[{role:'system',content:aiSysContent()+'\n\n'+aiLangRule()},{role:'user',content:prompt+'\n\n'+aiLangRule()}]})}).then(function(r){clearTimeout(timer);return r.json()}).then(function(d){
     try{
       if(d.error)throw new Error(d.error.message||'API хатоси');
       if(!d.choices||!d.choices[0])throw new Error('Жавоб бўш келди');
@@ -1801,12 +1676,7 @@ function callAI(){
     }catch(err){showErr('Хатолик: '+err.message);}
     analysisInProgress=false;
     canReturnToResults=true;
-    // Show "go to results" button — user navigates manually
-    var goBtn=document.getElementById('goToResultsBtn');
-    if(goBtn)goBtn.style.display='inline-block';
-    var sp=document.getElementById('s3PreviewSpinner');if(sp)sp.style.display='none';
-    var sh=document.getElementById('s3PreviewHint');if(sh)sh.style.display='none';
-    resetBtn();
+    go(4);resetBtn();
   }).catch(function(e){clearTimeout(timer);analysisInProgress=false;
     if(e.name==='AbortError'){
       resetBtn();
@@ -2267,7 +2137,7 @@ function fetchSingleBusinessPlan(name){
     +'  "credit":{"needed":"<\\\"кредитсиз бошлаш мумкин\\\" ёки \\\"кредит фойдали\\\">","amount":"<X-Y млн>","useFor":"<маблағ нимага. Кирилл>"},\n'
     +'  "summary":["<3 та якуний маслаҳат. Кирилл>"]\n'
     +'}';
-  return fetch(PROXY_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:1800,response_format:{type:'json_object'},messages:[{role:'system',content:aiSysContent()+'\n\n'+aiLangRule()},{role:'user',content:prompt+'\n\n'+aiLangRule()}]})})
+  return fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:1800,response_format:{type:'json_object'},messages:[{role:'system',content:aiSysContent()+'\n\n'+aiLangRule()},{role:'user',content:prompt+'\n\n'+aiLangRule()}]})})
     .then(function(rs){return rs.json();})
     .then(function(d){
       var t=(d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content)||'';
