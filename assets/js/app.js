@@ -895,13 +895,13 @@ function flushPendingCharts(){
       const forecastData = data.map(function(_,i){return i===n-1?data[n-1]:null;}).concat(forecastVals);
       const lastIdx = n-1;
       const radii = actualData.map(function(_,i){return i===lastIdx?5:0;});
-      const pointBg = actualData.map(function(_,i){return i===lastIdx?"#C25E3C":"#005F68";});
-      const pointBd = actualData.map(function(_,i){return i===lastIdx?"#fff":"#005F68";});
+      const pointBg = actualData.map(function(_,i){return i===lastIdx?"#C25E3C":"#003D64";});
+      const pointBd = actualData.map(function(_,i){return i===lastIdx?"#fff":"#003D64";});
       const fcRadii = forecastData.map(function(_,i){return i>=n?4:0;});
       const fcBg = forecastData.map(function(){return "#C25E3C";});
       const datasets = [{
         data:actualData,
-        borderColor:"#005F68",
+        borderColor:"#003D64",
         backgroundColor:grad,
         borderWidth:2.6,
         tension:.4,
@@ -987,8 +987,8 @@ function flushPendingCharts(){
       const errors = series.map(function(p){return p.error;});
       const lastIdx = main.length-1;
       const radii = main.map(function(_,i){return i===lastIdx?5:0;});
-      const pointBg = main.map(function(_,i){return i===lastIdx?"#C25E3C":"#005F68";});
-      const pointBd = main.map(function(_,i){return i===lastIdx?"#fff":"#005F68";});
+      const pointBg = main.map(function(_,i){return i===lastIdx?"#C25E3C":"#003D64";});
+      const pointBd = main.map(function(_,i){return i===lastIdx?"#fff":"#003D64";});
       STATE.charts[job.id] = new Chart(ctx,{
         type:"line",
         data:{
@@ -1000,7 +1000,7 @@ function flushPendingCharts(){
             {label:"lower", data:lower, borderColor:"rgba(0,0,0,0)",
              backgroundColor:"rgba(0,0,0,0)", fill:false,
              pointRadius:0, pointHoverRadius:0, tension:.4, borderWidth:0},
-            {label:"main", data:main, borderColor:"#005F68",
+            {label:"main", data:main, borderColor:"#003D64",
              backgroundColor:"rgba(0,0,0,0)", borderWidth:2.5, tension:.4, fill:false,
              pointRadius:radii, pointHoverRadius:6,
              pointBackgroundColor:pointBg, pointBorderColor:pointBd, pointBorderWidth:2},
@@ -1127,12 +1127,31 @@ async function loadDistrictData(districtId){
   }
 }
 
+var HERO_BG_MAP = {
+  qoqon: "freepik__remove-all-trees-bushes-and-plants-from-the-foregr__54828 1.png"
+};
+function updateHeroBg(districtId){
+  var el = document.querySelector(".hero-bg");
+  if(!el) return;
+  var img = HERO_BG_MAP[districtId];
+  if(img){
+    el.style.backgroundImage = "linear-gradient(rgba(15,31,68,0.55),rgba(15,31,68,0.55)), url('"+img+"')";
+    el.style.backgroundSize = "cover";
+    el.style.backgroundPosition = "center";
+  } else {
+    el.style.backgroundImage = "";
+    el.style.backgroundSize = "";
+    el.style.backgroundPosition = "";
+  }
+}
+
 async function switchDistrict(regionId, districtId){
   STATE.region = regionId;
   STATE.district = districtId;
   // Load data if not cached
   await loadDistrictData(districtId);
   updateSelectorUI();
+  updateHeroBg(districtId);
   buildSlidePages();
   render();
   handleHash();
@@ -1166,6 +1185,7 @@ async function init(){
   buildSlidePages();
   bindEvents();
   applyLang(STATE.lang);
+  updateHeroBg(STATE.district);
   render();
   handleHash();
 }

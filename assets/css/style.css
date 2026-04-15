@@ -2,8 +2,8 @@
 :root{
   --navy:#1B3A4B;
   --navy-2:#102836;
-  --teal:#005F68;
-  --accent:#007E88;
+  --teal:#003D64;
+  --accent:#0590C9;
   --accent-2:#06A0AB;
   --cream:#F5F2EC;
   --cream-2:#EFEAE0;
@@ -133,7 +133,7 @@ body{
   box-shadow:0 8px 18px rgba(16,40,54,.2);
 }
 .side-item.active i{color:#fff}
-.side-advisor{margin-top:18px;background:linear-gradient(135deg,#005F68,#007E88);color:#fff !important;border:1px solid rgba(255,255,255,.15);box-shadow:0 6px 18px rgba(0,95,104,.25)}
+.side-advisor{margin-top:18px;background:linear-gradient(135deg,#003D64,#0590C9);color:#fff !important;border:1px solid rgba(255,255,255,.15);box-shadow:0 6px 18px rgba(0,95,104,.25)}
 .side-advisor i{color:#fff !important}
 .side-advisor:hover{background:linear-gradient(135deg,#00747F,#009AA6);color:#fff !important;transform:translateY(-1px)}
 .side-foot{margin-top:18px;padding:14px;border-top:1px solid var(--line)}
@@ -212,7 +212,9 @@ body{
 /* AI INSIGHTS PANEL */
 .ai-panel{
   position:relative;border-radius:20px;padding:22px 26px;
-  background:linear-gradient(135deg,#0B3D49 0%,#0E4F60 45%,#06A0AB 100%);
+  background:rgba(64,61,73,0.45);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(16px);
   border:1px solid rgba(255,255,255,.18);
   box-shadow:0 18px 42px rgba(0,0,0,.28);
   overflow:hidden;
