@@ -1128,7 +1128,10 @@ async function loadDistrictData(districtId){
 }
 
 var HERO_BG_MAP = {
-  qoqon: "freepik__remove-all-trees-bushes-and-plants-from-the-foregr__54828 1.png"
+  qoqon: "freepik__remove-all-trees-bushes-and-plants-from-the-foregr__54828 1.png",
+  shofirkon: "shofirkon.jpg",
+  gijduvon: "gijduvon.jpg",
+  qoshtepa: "qoshtepa.jpg"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");
