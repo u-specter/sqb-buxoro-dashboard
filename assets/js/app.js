@@ -220,6 +220,7 @@ const REGIONS = [
     name: {uz:"Фарғона вилояти", ru:"Ферганская область", en:"Fergana Region"},
     districts: [
       {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true, type:"shahar"},
+      {id:"qoshtepa",  name:{uz:"Қўштепа",   ru:"Куштепа",    en:"Qoshtepa"},   file:"qoshtepa.json",  hasData:true},
       {id:"fergana_sh",name:{uz:"Фарғона шаҳри",ru:"г. Фергана",en:"Fergana city"},file:"fergana_sh.json",hasData:false},
       {id:"margilan",  name:{uz:"Марғилон",   ru:"Маргилан",   en:"Margilan"},   file:"margilan.json",  hasData:false},
       {id:"rishton",   name:{uz:"Риштон",     ru:"Риштан",     en:"Rishton"},    file:"rishton.json",   hasData:false},
@@ -274,6 +275,7 @@ const DISTRICT_LABEL = {};
 Object.defineProperty(DISTRICT_LABEL, 'gijduvon',  {get:function(){return districtLabel('gijduvon');}});
 Object.defineProperty(DISTRICT_LABEL, 'shofirkon', {get:function(){return districtLabel('shofirkon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoqon',     {get:function(){return districtLabel('qoqon');}});
+Object.defineProperty(DISTRICT_LABEL, 'qoshtepa',  {get:function(){return districtLabel('qoshtepa');}});
 
 // ============================================================
 // VALUE PARSER — classifies indicator.value into a typed object
