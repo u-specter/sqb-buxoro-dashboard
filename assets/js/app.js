@@ -1441,7 +1441,12 @@ function findIndicatorByName(data, namePattern){
 }
 
 function kpiFromIndicator(data, no, opts){
-  // FIRST: check kpi_data map on any indicator (for combined cards)
+  // FIRST: check hero_kpis at root level
+  if(opts && opts.namePattern && data.hero_kpis && data.hero_kpis[opts.namePattern]){
+    var hk = data.hero_kpis[opts.namePattern];
+    return {value:hk.value, unit:hk.unit||'', delta:null, deltaDir:null};
+  }
+  // Then check kpi_data map on any indicator (for combined cards)
   if(opts && opts.namePattern){
     for(var j=0;j<(data.indicators||[]).length;j++){
       var candidate = data.indicators[j];
