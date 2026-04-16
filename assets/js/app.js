@@ -204,15 +204,6 @@ const REGIONS = [
     districts: [
       {id:"gijduvon",  name:{uz:"Ғиждувон",  ru:"Гиждуван",   en:"Gijduvon"},  file:"gijduvon.json",  hasData:true},
       {id:"shofirkon", name:{uz:"Шофиркон",  ru:"Шафиркан",   en:"Shofirkon"}, file:"shofirkon.json", hasData:true},
-      {id:"kogon",     name:{uz:"Когон",     ru:"Каган",      en:"Kogon"},     file:"kogon.json",     hasData:false},
-      {id:"jondor",    name:{uz:"Жондор",    ru:"Жондор",     en:"Jondor"},    file:"jondor.json",    hasData:false},
-      {id:"vobkent",   name:{uz:"Вобкент",   ru:"Вабкент",    en:"Vobkent"},   file:"vobkent.json",   hasData:false},
-      {id:"romitan",   name:{uz:"Ромитан",   ru:"Ромитан",    en:"Romitan"},   file:"romitan.json",   hasData:false},
-      {id:"olot",      name:{uz:"Олот",      ru:"Алат",       en:"Olot"},      file:"olot.json",      hasData:false},
-      {id:"peshku",    name:{uz:"Пешку",     ru:"Пешку",      en:"Peshku"},    file:"peshku.json",    hasData:false},
-      {id:"qorovulbozor",name:{uz:"Қоровулбозор",ru:"Каравульбазар",en:"Qorovulbozor"},file:"qorovulbozor.json",hasData:false},
-      {id:"qorakol",   name:{uz:"Қоракўл",   ru:"Каракуль",   en:"Qorakol"},   file:"qorakol.json",   hasData:false},
-      {id:"bukhara_sh",name:{uz:"Бухоро шаҳри",ru:"г. Бухара", en:"Bukhara city"},file:"bukhara_sh.json",hasData:false},
     ]
   },
   {
@@ -221,18 +212,6 @@ const REGIONS = [
     districts: [
       {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true, type:"shahar"},
       {id:"qoshtepa",  name:{uz:"Қўштепа",   ru:"Куштепа",    en:"Qoshtepa"},   file:"qoshtepa.json",  hasData:true},
-      {id:"fergana_sh",name:{uz:"Фарғона шаҳри",ru:"г. Фергана",en:"Fergana city"},file:"fergana_sh.json",hasData:false},
-      {id:"margilan",  name:{uz:"Марғилон",   ru:"Маргилан",   en:"Margilan"},   file:"margilan.json",  hasData:false},
-      {id:"rishton",   name:{uz:"Риштон",     ru:"Риштан",     en:"Rishton"},    file:"rishton.json",   hasData:false},
-      {id:"beshariq",  name:{uz:"Бешариқ",    ru:"Бешарык",    en:"Beshariq"},   file:"beshariq.json",  hasData:false},
-      {id:"bagdod",    name:{uz:"Боғдод",     ru:"Багдад",     en:"Bagdod"},     file:"bagdod.json",    hasData:false},
-      {id:"dangara",   name:{uz:"Данғара",    ru:"Дангара",    en:"Dangara"},    file:"dangara.json",   hasData:false},
-      {id:"furqat",    name:{uz:"Фурқат",     ru:"Фуркат",     en:"Furqat"},     file:"furqat.json",    hasData:false},
-      {id:"oltiariq",  name:{uz:"Олтиариқ",   ru:"Алтыарык",   en:"Oltiariq"},   file:"oltiariq.json",  hasData:false},
-      {id:"qува",      name:{uz:"Қува",       ru:"Кува",       en:"Quva"},       file:"quva.json",      hasData:false},
-      {id:"toshloq",   name:{uz:"Тошлоқ",     ru:"Ташлак",     en:"Toshloq"},    file:"toshloq.json",   hasData:false},
-      {id:"uchkoprik", name:{uz:"Учкўприк",   ru:"Учкуприк",   en:"Uchkoprik"},  file:"uchkoprik.json", hasData:false},
-      {id:"yozyovon",  name:{uz:"Ёзёвон",     ru:"Язъяван",    en:"Yazyavan"},   file:"yazyavan.json",  hasData:false},
     ]
   },
   {
@@ -1205,10 +1184,10 @@ async function init(){
 function buildLandingPage(){
   var statsEl=document.getElementById("landingStats");
   if(statsEl){
-    var totalR=REGIONS.length, totalD=0;
-    REGIONS.forEach(function(r){r.districts.forEach(function(d){if(d.hasData)totalD++;});});
+    var totalInd=0;
+    REGIONS.forEach(function(r){r.districts.forEach(function(d){if(d.hasData && STATE.data[d.id]) totalInd+=STATE.data[d.id].total;});});
     statsEl.textContent="";
-    [{icon:"bi-geo-alt",v:totalR,l:"вилоят"},{icon:"bi-building",v:totalD,l:"туман"},{icon:"bi-translate",v:3,l:"тил"},{icon:"bi-robot",v:"",l:"СИ таҳлил"}].forEach(function(s){
+    [{icon:"bi-bar-chart-line",v:totalInd+"+",l:"кўрсаткич"},{icon:"bi-robot",v:"",l:"СИ таҳлил ва тавсиялар"},{icon:"bi-graph-up-arrow",v:"",l:"хулоса ва режа"},{icon:"bi-shield-check",v:"",l:"расмий манбалар"}].forEach(function(s){
       var d=document.createElement("div");d.className="landing-stat";
       var ic=document.createElement("i");ic.className="bi "+s.icon;d.appendChild(ic);
       if(s.v!==""){var st=document.createElement("strong");st.textContent=s.v;d.appendChild(st);}
