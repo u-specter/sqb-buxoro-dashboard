@@ -268,8 +268,8 @@ function regionLabel(regionId){
 }
 
 const STATE = {
-  region:"fergana",
-  district:"qoqon",
+  region:null,
+  district:null,
   lang: (typeof localStorage!=="undefined" && localStorage.getItem("dash_lang")) || "uz",
   data:{},          // districtId -> JSON data (динамик юкланади)
   search:"",
@@ -1193,12 +1193,68 @@ async function init(){
   }catch(e){}
 
   buildRegionSelector();
+  buildLandingPage();
   buildSlidePages();
   bindEvents();
   applyLang(STATE.lang);
-  updateHeroBg(STATE.district);
-  render();
+  if(STATE.district) updateHeroBg(STATE.district);
+  if(STATE.district) render();
   handleHash();
+}
+
+function buildLandingPage(){
+  var statsEl=document.getElementById("landingStats");
+  if(statsEl){
+    var totalR=REGIONS.length, totalD=0;
+    REGIONS.forEach(function(r){r.districts.forEach(function(d){if(d.hasData)totalD++;});});
+    statsEl.textContent="";
+    [{icon:"bi-geo-alt",v:totalR,l:"вилоят"},{icon:"bi-building",v:totalD,l:"туман"},{icon:"bi-translate",v:3,l:"тил"},{icon:"bi-robot",v:"",l:"СИ таҳлил"}].forEach(function(s){
+      var d=document.createElement("div");d.className="landing-stat";
+      var ic=document.createElement("i");ic.className="bi "+s.icon;d.appendChild(ic);
+      if(s.v!==""){var st=document.createElement("strong");st.textContent=s.v;d.appendChild(st);}
+      d.appendChild(document.createTextNode(" "+s.l));statsEl.appendChild(d);
+    });
+  }
+  var regEl=document.getElementById("landingRegions");
+  if(!regEl)return;
+  regEl.textContent="";
+  REGIONS.forEach(function(r){
+    var dc=r.districts.filter(function(d){return d.hasData;}).length;
+    var card=document.createElement("div");card.className="landing-card";
+    var head=document.createElement("div");head.className="landing-card-head";
+    var icD=document.createElement("div");icD.className="landing-card-icon";
+    var icI=document.createElement("i");icI.className="bi bi-geo-alt-fill";icD.appendChild(icI);head.appendChild(icD);
+    var nm=document.createElement("div");nm.className="landing-card-name";nm.textContent=r.name[STATE.lang]||r.name.uz;head.appendChild(nm);
+    var bg=document.createElement("span");bg.className="landing-card-badge";bg.textContent=dc+" туман";head.appendChild(bg);
+    card.appendChild(head);
+    var dl=document.createElement("div");dl.className="landing-districts";
+    r.districts.forEach(function(d){
+      if(d.hasData){
+        var cnt=STATE.data[d.id]?STATE.data[d.id].total:0;
+        var a=document.createElement("a");a.className="landing-dist";a.href="#";
+        var di=document.createElement("div");di.className="landing-dist-icon";
+        var dii=document.createElement("i");dii.className="bi bi-building";di.appendChild(dii);a.appendChild(di);
+        var inf=document.createElement("div");inf.className="landing-dist-info";
+        var n=document.createElement("div");n.className="landing-dist-name";n.textContent=d.name[STATE.lang]||d.name.uz;inf.appendChild(n);
+        var m=document.createElement("div");m.className="landing-dist-meta";m.textContent=cnt+" кўрсаткич";inf.appendChild(m);
+        a.appendChild(inf);
+        var ar=document.createElement("i");ar.className="bi bi-arrow-right landing-dist-arrow";a.appendChild(ar);
+        (function(rid,did){a.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
+        dl.appendChild(a);
+      } else {
+        var dv=document.createElement("div");dv.className="landing-dist disabled";
+        var di2=document.createElement("div");di2.className="landing-dist-icon";
+        var dii2=document.createElement("i");dii2.className="bi bi-building";di2.appendChild(dii2);dv.appendChild(di2);
+        var inf2=document.createElement("div");inf2.className="landing-dist-info";
+        var n2=document.createElement("div");n2.className="landing-dist-name";n2.textContent=d.name[STATE.lang]||d.name.uz;inf2.appendChild(n2);
+        var m2=document.createElement("div");m2.className="landing-dist-meta";m2.textContent="маълумотлар тайёрланмоқда";inf2.appendChild(m2);
+        dv.appendChild(inf2);
+        var sn=document.createElement("span");sn.className="landing-dist-soon";sn.textContent="тез кунда";dv.appendChild(sn);
+        dl.appendChild(dv);
+      }
+    });
+    card.appendChild(dl);regEl.appendChild(card);
+  });
 }
 
 function applyLang(lang){
@@ -1340,13 +1396,23 @@ function bindEvents(){
 function navigate(id){ location.hash = "#"+id; }
 
 function handleHash(){
-  const id = (location.hash||"#home").slice(1);
+  var id = (location.hash||"#landing").slice(1);
+  // Guard: if no district selected, always show landing
+  if(!STATE.district && id!=="landing"){
+    id = "landing";
+    location.hash = "#landing";
+  }
+  // Toggle landing mode on body
+  document.body.classList.toggle("on-landing", id==="landing");
   document.querySelectorAll(".page").forEach(function(p){
     p.classList.toggle("active",p.id===id);
   });
   document.querySelectorAll(".side-item").forEach(function(a){
     a.classList.toggle("active",a.getAttribute("href")==="#"+id);
   });
+  // Hide landing bg when not on landing
+  var lbg = document.querySelector(".landing-bg");
+  if(lbg) lbg.style.display = (id==="landing") ? "" : "none";
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
