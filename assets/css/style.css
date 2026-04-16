@@ -1726,12 +1726,15 @@ canvas{max-width:100% !important}
 /* ================================================================
    LANDING PAGE
    ================================================================ */
-.landing-bg{
-  position:fixed;inset:0;z-index:0;
+.landing-bg{display:none}
+#landing{position:relative;isolation:isolate;overflow:hidden}
+#landing::before{
+  content:'';position:absolute;inset:-4px;z-index:0;
   background:url('../../satellite-bg.jpg') center/cover no-repeat;
   filter:blur(2px) brightness(0.45);
-  transform:scale(1.04);
 }
+body.on-landing{background:#0a0e1a !important}
+body.on-landing .sqb-footer{background:#0a0e1a;border-top-color:rgba(255,255,255,0.06)}
 #landing .landing-content{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:48px 40px 32px}
 .landing-hero{text-align:center;margin-bottom:40px}
 .landing-badge{

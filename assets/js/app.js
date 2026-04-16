@@ -1209,13 +1209,11 @@ function buildLandingPage(){
     var dl=document.createElement("div");dl.className="landing-districts";
     r.districts.forEach(function(d){
       if(d.hasData){
-        var cnt=STATE.data[d.id]?STATE.data[d.id].total:0;
         var a=document.createElement("a");a.className="landing-dist";a.href="#";
         var di=document.createElement("div");di.className="landing-dist-icon";
         var dii=document.createElement("i");dii.className="bi bi-building";di.appendChild(dii);a.appendChild(di);
         var inf=document.createElement("div");inf.className="landing-dist-info";
         var n=document.createElement("div");n.className="landing-dist-name";n.textContent=d.name[STATE.lang]||d.name.uz;inf.appendChild(n);
-        var m=document.createElement("div");m.className="landing-dist-meta";m.textContent=cnt+" кўрсаткич";inf.appendChild(m);
         a.appendChild(inf);
         var ar=document.createElement("i");ar.className="bi bi-arrow-right landing-dist-arrow";a.appendChild(ar);
         (function(rid,did){a.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
