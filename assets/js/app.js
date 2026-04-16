@@ -235,6 +235,13 @@ const REGIONS = [
       {id:"yozyovon",  name:{uz:"Ёзёвон",     ru:"Язъяван",    en:"Yazyavan"},   file:"yazyavan.json",  hasData:false},
     ]
   },
+  {
+    id: "surkhandarya",
+    name: {uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"},
+    districts: [
+      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun.json",    hasData:true},
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
@@ -276,6 +283,7 @@ Object.defineProperty(DISTRICT_LABEL, 'gijduvon',  {get:function(){return distri
 Object.defineProperty(DISTRICT_LABEL, 'shofirkon', {get:function(){return districtLabel('shofirkon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoqon',     {get:function(){return districtLabel('qoqon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoshtepa',  {get:function(){return districtLabel('qoshtepa');}});
+Object.defineProperty(DISTRICT_LABEL, 'boysun',    {get:function(){return districtLabel('boysun');}});
 
 // ============================================================
 // VALUE PARSER — classifies indicator.value into a typed object
