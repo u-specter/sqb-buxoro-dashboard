@@ -218,7 +218,18 @@ const REGIONS = [
     id: "surkhandarya",
     name: {uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"},
     districts: [
-      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun.json",    hasData:true},
+      {id:"surkhandarya_vil", name:{uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"}, file:"boysun.json", hasData:true, type:"viloyat"},
+      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun_tuman.json",    hasData:true},
+    ]
+  },
+  {
+    id: "karakalpakstan",
+    name: {uz:"Қорақалпоғистон Республикаси", ru:"Республика Каракалпакстан", en:"Republic of Karakalpakstan"},
+    districts: [
+      {id:"karakalpakstan_resp", name:{uz:"Қорақалпоғистон Республикаси", ru:"Республика Каракалпакстан", en:"Republic of Karakalpakstan"}, file:"karakalpakstan.json", hasData:true, type:"respublika"},
+      {id:"qongirot",   name:{uz:"Қўнғирот",   ru:"Кунград",     en:"Qongirot"},   file:"qongirot.json",   hasData:true},
+      {id:"qonlikol",   name:{uz:"Қонлиқўл",   ru:"Канлыкуль",   en:"Qonlikol"},   file:"qonlikol.json",   hasData:true},
+      {id:"toxiatosh",  name:{uz:"Тахиатош",   ru:"Тахиаташ",    en:"Taxiatosh"},  file:"toxiatosh.json",  hasData:true},
     ]
   },
 ];
@@ -262,6 +273,7 @@ Object.defineProperty(DISTRICT_LABEL, 'gijduvon',  {get:function(){return distri
 Object.defineProperty(DISTRICT_LABEL, 'shofirkon', {get:function(){return districtLabel('shofirkon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoqon',     {get:function(){return districtLabel('qoqon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoshtepa',  {get:function(){return districtLabel('qoshtepa');}});
+Object.defineProperty(DISTRICT_LABEL, 'surkhandarya_vil', {get:function(){return districtLabel('surkhandarya_vil');}});
 Object.defineProperty(DISTRICT_LABEL, 'boysun',    {get:function(){return districtLabel('boysun');}});
 
 // ============================================================
@@ -1205,6 +1217,12 @@ function buildLandingPage(){
     var icI=document.createElement("i");icI.className="bi bi-geo-alt-fill";icD.appendChild(icI);head.appendChild(icD);
     var nm=document.createElement("div");nm.className="landing-card-name";nm.textContent=r.name[STATE.lang]||r.name.uz;head.appendChild(nm);
     var bg=document.createElement("span");bg.className="landing-card-badge";bg.textContent=dc+" туман";head.appendChild(bg);
+    var chev=document.createElement("i");chev.className="bi bi-chevron-down landing-card-chevron";head.appendChild(chev);
+    head.addEventListener("click",function(){
+      var wasOpen=card.classList.contains("open");
+      regEl.querySelectorAll(".landing-card.open").forEach(function(c){c.classList.remove("open");});
+      if(!wasOpen) card.classList.add("open");
+    });
     card.appendChild(head);
     var dl=document.createElement("div");dl.className="landing-districts";
     r.districts.forEach(function(d){
