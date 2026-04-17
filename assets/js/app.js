@@ -218,7 +218,8 @@ const REGIONS = [
     id: "surkhandarya",
     name: {uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"},
     districts: [
-      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun.json",    hasData:true},
+      {id:"surkhandarya_vil", name:{uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"}, file:"boysun.json", hasData:true, type:"viloyat"},
+      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun_tuman.json",    hasData:true},
     ]
   },
   {
@@ -272,6 +273,7 @@ Object.defineProperty(DISTRICT_LABEL, 'gijduvon',  {get:function(){return distri
 Object.defineProperty(DISTRICT_LABEL, 'shofirkon', {get:function(){return districtLabel('shofirkon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoqon',     {get:function(){return districtLabel('qoqon');}});
 Object.defineProperty(DISTRICT_LABEL, 'qoshtepa',  {get:function(){return districtLabel('qoshtepa');}});
+Object.defineProperty(DISTRICT_LABEL, 'surkhandarya_vil', {get:function(){return districtLabel('surkhandarya_vil');}});
 Object.defineProperty(DISTRICT_LABEL, 'boysun',    {get:function(){return districtLabel('boysun');}});
 
 // ============================================================
