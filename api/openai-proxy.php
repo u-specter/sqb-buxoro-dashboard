@@ -2,7 +2,8 @@
 // OpenAI API Proxy for traditional hosting (ahost, shared hosting, VPS)
 // Place your API key here or better — in a .env file outside web root
 
-$API_KEY = getenv('OPENAI_API_KEY') ?: 'REDACTED';
+$API_KEY = getenv('OPENAI_API_KEY') ?: 'API_KEY';
+// $API_KEY = getenv('OPENAI_API_KEY') ?: 'REDACTED';
 
 // CORS headers
 header('Content-Type: application/json');
