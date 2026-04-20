@@ -1770,71 +1770,33 @@ body.on-landing .sqb-footer{background:#0a0e1a;border-top-color:rgba(255,255,255
   margin-bottom:24px;text-align:center;
 }
 .landing-regions{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:20px;margin-bottom:40px;
+  display:flex;flex-direction:column;gap:28px;margin-bottom:40px;
 }
-.landing-card{
+.landing-region-section{display:flex;flex-direction:column;gap:14px}
+.landing-region-heading{display:flex;align-items:center;gap:14px}
+.landing-region-name{
+  font-size:12px;font-weight:700;color:rgba(255,255,255,0.45);
+  text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap;
+}
+.landing-region-line{flex:1;height:1px;background:rgba(255,255,255,0.1)}
+.landing-pills{display:flex;flex-wrap:wrap;gap:10px}
+.landing-pill{
+  padding:11px 24px;border-radius:40px;
+  border:1.5px solid rgba(255,255,255,0.15);
   background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;overflow:hidden;
-  transition:all 0.3s ease;
-  border-top:3px solid var(--accent);
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+  color:#fff;cursor:pointer;transition:all 0.2s ease;
+  text-decoration:none;white-space:nowrap;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
-.landing-card:hover{
-  border-color:rgba(5,144,201,0.4);
-  box-shadow:0 12px 40px rgba(5,144,201,0.15);
-  transform:translateY(-4px);
+.landing-pill:hover{
+  background:var(--accent);border-color:var(--accent);color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(5,144,201,0.3);
 }
-.landing-card-head{
-  padding:22px 24px 18px;display:flex;align-items:center;gap:14px;
-  border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;
-}
-.landing-card-chevron{color:rgba(255,255,255,0.4);font-size:18px;transition:transform 0.3s ease}
-.landing-card.open .landing-card-chevron{transform:rotate(180deg);color:var(--accent)}
-.landing-card-icon{
-  width:44px;height:44px;border-radius:12px;
-  display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--navy-2),var(--accent));
-  font-size:18px;color:#fff;flex-shrink:0;
-  box-shadow:0 6px 18px rgba(5,144,201,0.25);
-}
-.landing-card-name{font-size:18px;font-weight:800;color:#fff;flex:1}
-.landing-card-badge{
-  padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;
-  background:rgba(5,144,201,0.15);color:var(--accent);
-  border:1px solid rgba(5,144,201,0.25);
-}
-.landing-districts{padding:0 24px;max-height:0;overflow:hidden;display:flex;flex-direction:column;gap:8px;transition:max-height 0.35s ease,padding 0.35s ease}
-.landing-card.open .landing-districts{padding:16px 24px 20px;max-height:600px}
-.landing-dist{
-  display:flex;align-items:center;gap:12px;
-  padding:12px 16px;border-radius:12px;
-  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
-  color:#fff;font-size:13px;font-weight:600;
-  cursor:pointer;transition:all 0.2s;text-decoration:none;
-}
-.landing-dist:hover{
-  background:rgba(5,144,201,0.1);border-color:rgba(5,144,201,0.3);
-  transform:translateX(4px);color:#fff;
-}
-.landing-dist-icon{
-  width:34px;height:34px;border-radius:10px;
-  display:grid;place-items:center;font-size:14px;
-  background:rgba(5,144,201,0.1);color:var(--accent);flex-shrink:0;
-}
-.landing-dist-info{flex:1}
-.landing-dist-name{font-size:13px;font-weight:700}
-.landing-dist-meta{font-size:10px;color:rgba(255,255,255,0.45);margin-top:2px}
-.landing-dist-arrow{color:rgba(255,255,255,0.3);font-size:13px;transition:all 0.2s}
-.landing-dist:hover .landing-dist-arrow{transform:translateX(4px);color:var(--accent)}
-.landing-dist.disabled{opacity:0.38;cursor:default;pointer-events:none}
-.landing-dist.disabled .landing-dist-icon{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.3)}
-.landing-dist-soon{
-  font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;
-  background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.35);
-  letter-spacing:0.04em;
-}
+.landing-pill:active{transform:translateY(0)}
+.landing-pill i{margin-right:6px;font-size:12px;color:var(--accent)}
+.landing-pill:hover i{color:#fff}
 .landing-footer{
   text-align:center;font-size:11px;color:rgba(255,255,255,0.3);
   padding:20px 0;border-top:1px solid rgba(255,255,255,0.06);
