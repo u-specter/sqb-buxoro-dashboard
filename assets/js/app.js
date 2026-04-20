@@ -1210,45 +1210,23 @@ function buildLandingPage(){
   if(!regEl)return;
   regEl.textContent="";
   REGIONS.forEach(function(r){
-    var dc=r.districts.filter(function(d){return d.hasData;}).length;
-    var card=document.createElement("div");card.className="landing-card";
-    var head=document.createElement("div");head.className="landing-card-head";
-    var icD=document.createElement("div");icD.className="landing-card-icon";
-    var icI=document.createElement("i");icI.className="bi bi-geo-alt-fill";icD.appendChild(icI);head.appendChild(icD);
-    var nm=document.createElement("div");nm.className="landing-card-name";nm.textContent=r.name[STATE.lang]||r.name.uz;head.appendChild(nm);
-    var bg=document.createElement("span");bg.className="landing-card-badge";bg.textContent=dc+" туман";head.appendChild(bg);
-    var chev=document.createElement("i");chev.className="bi bi-chevron-down landing-card-chevron";head.appendChild(chev);
-    head.addEventListener("click",function(){
-      var wasOpen=card.classList.contains("open");
-      regEl.querySelectorAll(".landing-card.open").forEach(function(c){c.classList.remove("open");});
-      if(!wasOpen) card.classList.add("open");
-    });
-    card.appendChild(head);
-    var dl=document.createElement("div");dl.className="landing-districts";
+    var section=document.createElement("div");section.className="landing-region-section";
+    var heading=document.createElement("div");heading.className="landing-region-heading";
+    var name=document.createElement("span");name.className="landing-region-name";name.textContent=r.name[STATE.lang]||r.name.uz;heading.appendChild(name);
+    var line=document.createElement("span");line.className="landing-region-line";heading.appendChild(line);
+    section.appendChild(heading);
+    var pills=document.createElement("div");pills.className="landing-pills";
     r.districts.forEach(function(d){
       if(d.hasData){
-        var a=document.createElement("a");a.className="landing-dist";a.href="#";
-        var di=document.createElement("div");di.className="landing-dist-icon";
-        var dii=document.createElement("i");dii.className="bi bi-building";di.appendChild(dii);a.appendChild(di);
-        var inf=document.createElement("div");inf.className="landing-dist-info";
-        var n=document.createElement("div");n.className="landing-dist-name";n.textContent=d.name[STATE.lang]||d.name.uz;inf.appendChild(n);
-        a.appendChild(inf);
-        var ar=document.createElement("i");ar.className="bi bi-arrow-right landing-dist-arrow";a.appendChild(ar);
-        (function(rid,did){a.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
-        dl.appendChild(a);
-      } else {
-        var dv=document.createElement("div");dv.className="landing-dist disabled";
-        var di2=document.createElement("div");di2.className="landing-dist-icon";
-        var dii2=document.createElement("i");dii2.className="bi bi-building";di2.appendChild(dii2);dv.appendChild(di2);
-        var inf2=document.createElement("div");inf2.className="landing-dist-info";
-        var n2=document.createElement("div");n2.className="landing-dist-name";n2.textContent=d.name[STATE.lang]||d.name.uz;inf2.appendChild(n2);
-        var m2=document.createElement("div");m2.className="landing-dist-meta";m2.textContent="маълумотлар тайёрланмоқда";inf2.appendChild(m2);
-        dv.appendChild(inf2);
-        var sn=document.createElement("span");sn.className="landing-dist-soon";sn.textContent="тез кунда";dv.appendChild(sn);
-        dl.appendChild(dv);
+        var pill=document.createElement("a");pill.className="landing-pill";pill.href="#";
+        var ic=document.createElement("i");ic.className="bi bi-geo-alt-fill";pill.appendChild(ic);
+        pill.appendChild(document.createTextNode(d.name[STATE.lang]||d.name.uz));
+        (function(rid,did){pill.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
+        pills.appendChild(pill);
       }
     });
-    card.appendChild(dl);regEl.appendChild(card);
+    section.appendChild(pills);
+    regEl.appendChild(section);
   });
 }
 
