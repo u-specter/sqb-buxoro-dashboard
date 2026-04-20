@@ -1210,38 +1210,75 @@ function buildLandingPage(){
   if(!regEl)return;
   regEl.textContent="";
   REGIONS.forEach(function(r){
-    var dc=r.districts.filter(function(d){return d.hasData;}).length;
-    var col=document.createElement("div");col.className="cmd-col";
-    // Header
-    var head=document.createElement("div");head.className="cmd-col-head";
-    var label=document.createElement("span");label.className="cmd-region-label";
-    label.textContent=r.name[STATE.lang]||r.name.uz;head.appendChild(label);
-    var count=document.createElement("span");count.className="cmd-region-count";
-    count.textContent=dc;head.appendChild(count);
-    col.appendChild(head);
-    // Divider
-    var divider=document.createElement("div");divider.className="cmd-col-divider";
-    col.appendChild(divider);
-    // District list
-    var list=document.createElement("div");list.className="cmd-district-list";
-    var idx=0;
-    r.districts.forEach(function(d){
-      if(d.hasData){
-        idx++;
-        var row=document.createElement("a");row.className="cmd-district-row";row.href="#";
-        var num=document.createElement("span");num.className="cmd-district-index";
-        num.textContent=idx<10?"0"+idx:String(idx);row.appendChild(num);
-        var name=document.createElement("span");name.className="cmd-district-name";
-        name.textContent=d.name[STATE.lang]||d.name.uz;row.appendChild(name);
-        var arrow=document.createElement("i");arrow.className="bi bi-chevron-right cmd-district-arrow";
-        row.appendChild(arrow);
-        (function(rid,did){row.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
-        list.appendChild(row);
-      }
-    });
-    col.appendChild(list);
-    regEl.appendChild(col);
+    var hasAny=r.districts.some(function(d){return d.hasData;});
+    if(!hasAny)return;
+    var tile=document.createElement("a");tile.className="rg-tile";tile.href="#";
+    var icon=document.createElement("div");icon.className="rg-icon";
+    var iconI=document.createElement("i");iconI.className="bi bi-geo-alt-fill";
+    icon.appendChild(iconI);tile.appendChild(icon);
+    var name=document.createElement("div");name.className="rg-name";
+    name.textContent=r.name[STATE.lang]||r.name.uz;tile.appendChild(name);
+    var enter=document.createElement("div");enter.className="rg-enter";
+    enter.appendChild(document.createTextNode("Кириш "));
+    var arrowI=document.createElement("i");arrowI.className="bi bi-arrow-right";
+    enter.appendChild(arrowI);tile.appendChild(enter);
+    (function(region){tile.addEventListener("click",function(e){
+      e.preventDefault();showRegionDetail(region);
+    });})(r);
+    regEl.appendChild(tile);
   });
+}
+
+function showRegionDetail(region){
+  var grid=document.getElementById("landingRegions");
+  var title=document.getElementById("landingSectionTitle");
+  var detail=document.getElementById("rgDetail");
+  if(!detail)return;
+  if(grid)grid.style.display="none";
+  if(title)title.style.display="none";
+  detail.textContent="";
+  // Back button
+  var back=document.createElement("button");back.className="rg-back";
+  var backI=document.createElement("i");backI.className="bi bi-arrow-left";
+  back.appendChild(backI);
+  back.appendChild(document.createTextNode(" Барча вилоятлар"));
+  back.addEventListener("click",function(){hideRegionDetail();});
+  detail.appendChild(back);
+  // Region title
+  var h=document.createElement("div");h.className="rg-detail-title";
+  h.textContent=region.name[STATE.lang]||region.name.uz;detail.appendChild(h);
+  // Subtitle
+  var sub=document.createElement("div");sub.className="rg-detail-sub";
+  sub.textContent="Туманни танланг";detail.appendChild(sub);
+  // District list
+  var list=document.createElement("div");list.className="rg-dist-list";
+  region.districts.forEach(function(d){
+    if(!d.hasData)return;
+    var row=document.createElement("a");row.className="rg-dist-row";row.href="#";
+    var ic=document.createElement("div");ic.className="rg-dist-row-icon";
+    var icI=document.createElement("i");icI.className="bi bi-building";
+    ic.appendChild(icI);row.appendChild(ic);
+    var nm=document.createElement("span");nm.className="rg-dist-row-name";
+    nm.textContent=d.name[STATE.lang]||d.name.uz;row.appendChild(nm);
+    var ar=document.createElement("i");ar.className="bi bi-chevron-right rg-dist-row-arrow";
+    row.appendChild(ar);
+    (function(rid,did){row.addEventListener("click",function(e){
+      e.preventDefault();switchDistrict(rid,did);navigate("home");
+    });})(region.id,d.id);
+    list.appendChild(row);
+  });
+  detail.appendChild(list);
+  // Animate in
+  requestAnimationFrame(function(){detail.classList.add("visible");});
+}
+
+function hideRegionDetail(){
+  var grid=document.getElementById("landingRegions");
+  var title=document.getElementById("landingSectionTitle");
+  var detail=document.getElementById("rgDetail");
+  if(detail)detail.classList.remove("visible");
+  if(grid)grid.style.display="";
+  if(title)title.style.display="";
 }
 
 function applyLang(lang){
