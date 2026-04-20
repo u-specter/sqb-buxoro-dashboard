@@ -1811,6 +1811,53 @@ body.on-landing .sqb-footer{background:#0a0e1a;border-top-color:rgba(255,255,255
 .rg-tile:hover .rg-enter{transform:translateX(4px)}
 .rg-enter i{font-size:12px;transition:transform 0.2s}
 .rg-tile:hover .rg-enter i{transform:translateX(3px)}
+/* Region Detail — туманлар рўйхати */
+.rg-detail{
+  display:none;flex-direction:column;gap:0;
+  opacity:0;transform:translateX(24px);
+  transition:opacity 0.28s ease,transform 0.28s ease;
+}
+.rg-detail.visible{display:flex;opacity:1;transform:translateX(0)}
+.rg-back{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);
+  cursor:pointer;margin-bottom:20px;transition:color 0.2s;
+  background:none;border:none;padding:0;font-family:'Inter',sans-serif;
+}
+.rg-back:hover{color:var(--accent)}
+.rg-back i{font-size:14px}
+.rg-detail-title{
+  font-size:24px;font-weight:800;color:#fff;margin-bottom:6px;
+}
+.rg-detail-sub{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,0.35);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;
+}
+.rg-dist-list{display:flex;flex-direction:column;gap:6px}
+.rg-dist-row{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 20px;border-radius:12px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  cursor:pointer;transition:all 0.2s ease;
+  text-decoration:none;color:#fff;
+}
+.rg-dist-row:hover{
+  background:rgba(5,144,201,0.08);
+  border-color:rgba(5,144,201,0.25);
+  transform:translateX(6px);color:#fff;
+}
+.rg-dist-row-icon{
+  width:36px;height:36px;border-radius:10px;
+  display:grid;place-items:center;font-size:14px;
+  background:rgba(5,144,201,0.1);color:var(--accent);flex-shrink:0;
+}
+.rg-dist-row-name{flex:1;font-size:15px;font-weight:600}
+.rg-dist-row-arrow{
+  font-size:13px;color:rgba(255,255,255,0.2);transition:all 0.2s;
+}
+.rg-dist-row:hover .rg-dist-row-arrow{color:var(--accent);transform:translateX(4px)}
+
 .landing-footer{
   text-align:center;font-size:11px;color:rgba(255,255,255,0.3);
   padding:20px 0;border-top:1px solid rgba(255,255,255,0.06);
