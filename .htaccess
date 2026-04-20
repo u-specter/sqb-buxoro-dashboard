@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Rewrite /api/openai-proxy to /api/openai-proxy.php
+RewriteRule ^api/openai-proxy$ api/openai-proxy.php [L,QSA]
