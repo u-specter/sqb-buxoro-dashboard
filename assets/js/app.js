@@ -1210,23 +1210,37 @@ function buildLandingPage(){
   if(!regEl)return;
   regEl.textContent="";
   REGIONS.forEach(function(r){
-    var section=document.createElement("div");section.className="landing-region-section";
-    var heading=document.createElement("div");heading.className="landing-region-heading";
-    var name=document.createElement("span");name.className="landing-region-name";name.textContent=r.name[STATE.lang]||r.name.uz;heading.appendChild(name);
-    var line=document.createElement("span");line.className="landing-region-line";heading.appendChild(line);
-    section.appendChild(heading);
-    var pills=document.createElement("div");pills.className="landing-pills";
+    var dc=r.districts.filter(function(d){return d.hasData;}).length;
+    var col=document.createElement("div");col.className="cmd-col";
+    // Header
+    var head=document.createElement("div");head.className="cmd-col-head";
+    var label=document.createElement("span");label.className="cmd-region-label";
+    label.textContent=r.name[STATE.lang]||r.name.uz;head.appendChild(label);
+    var count=document.createElement("span");count.className="cmd-region-count";
+    count.textContent=dc;head.appendChild(count);
+    col.appendChild(head);
+    // Divider
+    var divider=document.createElement("div");divider.className="cmd-col-divider";
+    col.appendChild(divider);
+    // District list
+    var list=document.createElement("div");list.className="cmd-district-list";
+    var idx=0;
     r.districts.forEach(function(d){
       if(d.hasData){
-        var pill=document.createElement("a");pill.className="landing-pill";pill.href="#";
-        var ic=document.createElement("i");ic.className="bi bi-geo-alt-fill";pill.appendChild(ic);
-        pill.appendChild(document.createTextNode(d.name[STATE.lang]||d.name.uz));
-        (function(rid,did){pill.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
-        pills.appendChild(pill);
+        idx++;
+        var row=document.createElement("a");row.className="cmd-district-row";row.href="#";
+        var num=document.createElement("span");num.className="cmd-district-index";
+        num.textContent=idx<10?"0"+idx:String(idx);row.appendChild(num);
+        var name=document.createElement("span");name.className="cmd-district-name";
+        name.textContent=d.name[STATE.lang]||d.name.uz;row.appendChild(name);
+        var arrow=document.createElement("i");arrow.className="bi bi-chevron-right cmd-district-arrow";
+        row.appendChild(arrow);
+        (function(rid,did){row.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
+        list.appendChild(row);
       }
     });
-    section.appendChild(pills);
-    regEl.appendChild(section);
+    col.appendChild(list);
+    regEl.appendChild(col);
   });
 }
 
