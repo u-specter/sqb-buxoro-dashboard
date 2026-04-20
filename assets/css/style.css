@@ -1730,7 +1730,7 @@ canvas{max-width:100% !important}
 #landing{position:relative;isolation:isolate;overflow:hidden;min-height:100vh}
 #landing::before{
   content:'';position:absolute;inset:-4px;z-index:0;
-  background:url('../../satellite-bg.jpg') center/cover no-repeat;
+  background:url('../../img/satellite-bg.jpg') center/cover no-repeat;
   filter:blur(2px) brightness(0.45);
 }
 body.on-landing{background:#0a0e1a !important}
