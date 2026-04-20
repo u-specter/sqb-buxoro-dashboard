@@ -1210,37 +1210,22 @@ function buildLandingPage(){
   if(!regEl)return;
   regEl.textContent="";
   REGIONS.forEach(function(r){
-    var dc=r.districts.filter(function(d){return d.hasData;}).length;
-    var col=document.createElement("div");col.className="cmd-col";
-    // Header
-    var head=document.createElement("div");head.className="cmd-col-head";
-    var label=document.createElement("span");label.className="cmd-region-label";
-    label.textContent=r.name[STATE.lang]||r.name.uz;head.appendChild(label);
-    var count=document.createElement("span");count.className="cmd-region-count";
-    count.textContent=dc;head.appendChild(count);
-    col.appendChild(head);
-    // Divider
-    var divider=document.createElement("div");divider.className="cmd-col-divider";
-    col.appendChild(divider);
-    // District list
-    var list=document.createElement("div");list.className="cmd-district-list";
-    var idx=0;
-    r.districts.forEach(function(d){
-      if(d.hasData){
-        idx++;
-        var row=document.createElement("a");row.className="cmd-district-row";row.href="#";
-        var num=document.createElement("span");num.className="cmd-district-index";
-        num.textContent=idx<10?"0"+idx:String(idx);row.appendChild(num);
-        var name=document.createElement("span");name.className="cmd-district-name";
-        name.textContent=d.name[STATE.lang]||d.name.uz;row.appendChild(name);
-        var arrow=document.createElement("i");arrow.className="bi bi-chevron-right cmd-district-arrow";
-        row.appendChild(arrow);
-        (function(rid,did){row.addEventListener("click",function(e){e.preventDefault();switchDistrict(rid,did);navigate("home");});})(r.id,d.id);
-        list.appendChild(row);
-      }
-    });
-    col.appendChild(list);
-    regEl.appendChild(col);
+    var firstDist=r.districts.find(function(d){return d.hasData;});
+    if(!firstDist)return;
+    var tile=document.createElement("a");tile.className="rg-tile";tile.href="#";
+    var icon=document.createElement("div");icon.className="rg-icon";
+    var iconI=document.createElement("i");iconI.className="bi bi-geo-alt-fill";
+    icon.appendChild(iconI);tile.appendChild(icon);
+    var name=document.createElement("div");name.className="rg-name";
+    name.textContent=r.name[STATE.lang]||r.name.uz;tile.appendChild(name);
+    var enter=document.createElement("div");enter.className="rg-enter";
+    enter.appendChild(document.createTextNode("Кириш "));
+    var arrowI=document.createElement("i");arrowI.className="bi bi-arrow-right";
+    enter.appendChild(arrowI);tile.appendChild(enter);
+    (function(rid,did){tile.addEventListener("click",function(e){
+      e.preventDefault();switchDistrict(rid,did);navigate("home");
+    });})(r.id,firstDist.id);
+    regEl.appendChild(tile);
   });
 }
 
