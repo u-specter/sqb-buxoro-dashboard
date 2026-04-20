@@ -1,8 +1,0 @@
-  RewriteEngine On
-                                                                                                                                                                                                                                      # Redirect old URL to new clean one
-  RewriteRule ^gluon_advisor_uz[\s%20]*\(1\)\.html$ /gluon-advisor [R=301,L]
-
-  # Remove .html extension - allows /gluon-advisor instead of /gluon-advisor.html
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+)$ $1.html [L]
