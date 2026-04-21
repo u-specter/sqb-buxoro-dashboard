@@ -229,7 +229,7 @@ const REGIONS = [
       {id:"karakalpakstan_resp", name:{uz:"Қорақалпоғистон Республикаси", ru:"Республика Каракалпакстан", en:"Republic of Karakalpakstan"}, file:"karakalpakstan.json", hasData:true, type:"respublika"},
       {id:"qongirot",   name:{uz:"Қўнғирот",   ru:"Кунград",     en:"Qongirot"},   file:"qongirot.json",   hasData:true},
       {id:"qonlikol",   name:{uz:"Қонлиқўл",   ru:"Канлыкуль",   en:"Qonlikol"},   file:"qonlikol.json",   hasData:true},
-      {id:"toxiatosh",  name:{uz:"Тахиатош",   ru:"Тахиаташ",    en:"Taxiatosh"},  file:"toxiatosh.json",  hasData:true},
+      {id:"toxiatosh",  name:{uz:"Тахиатош",   ru:"Тахиаташ",    en:"Taxiatosh"},  file:"toxiatosh.json",  hasData:false},
     ]
   },
 ];
@@ -1438,7 +1438,7 @@ function handleHash(){
     a.classList.toggle("active",a.getAttribute("href")==="#"+id);
   });
   // Hide landing bg when not on landing
-  var lbg = document.querySelector(".landing-bg");
+  var lbg = document.querySelector(".landing-bg") || document.querySelector(".landing-bg-3d");
   if(lbg) lbg.style.display = (id==="landing") ? "" : "none";
   window.scrollTo({top:0,behavior:"smooth"});
 }
