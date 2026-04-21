@@ -1130,7 +1130,8 @@ var HERO_BG_MAP = {
   shofirkon: "img/shofirkon.jpg",
   gijduvon: "img/gijduvon.jpg",
   qoshtepa: "img/qoshtepa.jpg",
-  boysun: "img/boysun.jpg"
+  boysun: "img/boysun.jpg",
+  qongirot: "img/kongirat_opt.jpg"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");
