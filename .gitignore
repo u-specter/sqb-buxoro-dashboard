@@ -1,2 +1,2 @@
-.env
-.idea/
+_env.crash
+.wrangler/
