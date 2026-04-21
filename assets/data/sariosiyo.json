@@ -5,21 +5,21 @@
   "year": 2026,
   "total": 44,
   "hero_kpis": {
-    "aholi": {
-      "value": 0,
-      "label": "Аҳоли (минг)"
+    "Аҳоли": {
+      "value": 239.1,
+      "unit": "минг киши"
     },
-    "mahalla": {
-      "value": 0,
-      "label": "Маҳаллалар"
+    "Маҳалла": {
+      "value": 41,
+      "unit": "та"
     },
-    "oila": {
-      "value": 0,
-      "label": "Оилалар"
+    "Оила": {
+      "value": 56635,
+      "unit": "та"
     },
-    "xonadon": {
-      "value": 0,
-      "label": "Хонадонлар"
+    "Хонадон": {
+      "value": 43872,
+      "unit": "та"
     }
   },
   "indicators": [
