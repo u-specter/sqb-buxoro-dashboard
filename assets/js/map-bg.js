@@ -280,25 +280,6 @@
   var arcGroup = new THREE.Group();
   scene.add(arcGroup);
 
-  function makeGlowTexture() {
-    var size = 128;
-    var cvs = document.createElement('canvas');
-    cvs.width = cvs.height = size;
-    var ctx = cvs.getContext('2d');
-    var grad = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-    grad.addColorStop(0.00, 'rgba(255,255,255,1)');
-    grad.addColorStop(0.25, 'rgba(165,243,252,0.85)');
-    grad.addColorStop(0.55, 'rgba(34,211,238,0.35)');
-    grad.addColorStop(1.00, 'rgba(34,211,238,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, size, size);
-    var tex = new THREE.CanvasTexture(cvs);
-    tex.needsUpdate = true;
-    return tex;
-  }
-
-  var sharedGlowTex = makeGlowTexture();
-
   function createArcCurve(startVec, endVec) {
     var dist = startVec.distanceTo(endVec);
     var mid = startVec.clone().lerp(endVec, 0.5);
@@ -306,8 +287,6 @@
     mid.y += h;
     return new THREE.QuadraticBezierCurve3(startVec.clone(), mid, endVec.clone());
   }
-
-  var arcs = [];
 
   CONNECTIONS.forEach(function (pair) {
     var a = null, b = null;
@@ -327,48 +306,16 @@
     var curve = createArcCurve(startVec, endVec);
     var points = curve.getPoints(60);
 
-    /* Base arc line */
+    /* Static arc line only — no moving pulses */
     var baseMat = new THREE.LineBasicMaterial({
       color: isHub ? 0x7dd3fc : 0x38bdf8,
       transparent: true,
-      opacity: isHub ? 0.35 : 0.22
+      opacity: isHub ? 0.18 : 0.10
     });
     arcGroup.add(new THREE.Line(
       new THREE.BufferGeometry().setFromPoints(points),
       baseMat
     ));
-
-    /* Pulse sphere */
-    var pulse = new THREE.Mesh(
-      new THREE.SphereGeometry(0.14, 16, 16),
-      new THREE.MeshBasicMaterial({
-        color: isHub ? 0xffffff : 0xa5f3fc,
-        transparent: true,
-        opacity: 1
-      })
-    );
-    arcGroup.add(pulse);
-
-    /* Halo sprite */
-    var haloMat = new THREE.SpriteMaterial({
-      map: sharedGlowTex,
-      color: isHub ? 0xa5f3fc : 0x22d3ee,
-      transparent: true,
-      opacity: 0.9,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false
-    });
-    var halo = new THREE.Sprite(haloMat);
-    halo.scale.set(1.6, 1.6, 1.6);
-    arcGroup.add(halo);
-
-    arcs.push({
-      curve: curve,
-      pulse: pulse,
-      halo: halo,
-      offset: Math.random(),
-      speed: 0.18 + Math.random() * 0.08
-    });
   });
 
   /* ==========================================================================
@@ -447,20 +394,6 @@
     var camZ = CAMERA_RADIUS - Math.cos(cameraAngle * 0.7) * 1.5;
     camera.position.set(camX, CAMERA_HEIGHT, camZ);
     camera.lookAt(0, 0, 0);
-
-    /* Pulse spheres travel along arcs */
-    if (introProgress > 0.3) {
-      arcs.forEach(function (arc, i) {
-        arc.offset = (arc.offset + arc.speed * dt) % 1;
-        var pos = arc.curve.getPointAt(arc.offset);
-        arc.pulse.position.copy(pos);
-        arc.halo.position.copy(pos);
-
-        /* Breathing scale on halo */
-        var breathe = 0.9 + Math.sin(t * 3 + i) * 0.1;
-        arc.halo.scale.set(1.6 * breathe, 1.6 * breathe, 1.6 * breathe);
-      });
-    }
 
     /* Slow star rotation */
     if (scene.userData.stars) {
