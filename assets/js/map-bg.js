@@ -53,7 +53,7 @@
      SCENE SETUP
      ========================================================================== */
   var scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x020617, 40, 90);
+  scene.fog = new THREE.Fog(0x000a18, 40, 90);
 
   var w = container.clientWidth  || window.innerWidth;
   var h = container.clientHeight || window.innerHeight;
@@ -68,19 +68,19 @@
   renderer.setClearColor(0x000000, 0);
   container.appendChild(renderer.domElement);
 
-  /* --- Lights --- */
-  var hemi = new THREE.HemisphereLight(0x88c7ff, 0x041020, 0.6);
+  /* --- Lights (SQB brand: #003164 navy, #B4B4B6 silver, #FB0007 red) --- */
+  var hemi = new THREE.HemisphereLight(0x6080a0, 0x001020, 0.6);
   scene.add(hemi);
 
-  var key = new THREE.DirectionalLight(0x93e6ff, 0.8);
+  var key = new THREE.DirectionalLight(0xc0c8d0, 0.8);
   key.position.set(-8, 18, 14);
   scene.add(key);
 
-  var rim = new THREE.DirectionalLight(0x22d3ee, 0.45);
+  var rim = new THREE.DirectionalLight(0xB4B4B6, 0.4);
   rim.position.set(14, 8, -16);
   scene.add(rim);
 
-  var fill = new THREE.PointLight(0x0ea5e9, 0.3, 40);
+  var fill = new THREE.PointLight(0x003164, 0.3, 40);
   fill.position.set(0, 6, 0);
   scene.add(fill);
 
@@ -90,9 +90,9 @@
 
     var glowGeo = new THREE.CircleGeometry(18, 64);
     var glowMat = new THREE.MeshBasicMaterial({
-      color: 0x0ea5e9,
+      color: 0x003164,
       transparent: true,
-      opacity: 0.08,
+      opacity: 0.10,
       side: THREE.DoubleSide
     });
     var glow = new THREE.Mesh(glowGeo, glowMat);
@@ -102,9 +102,9 @@
 
     var ringGeo = new THREE.RingGeometry(14.5, 14.8, 96);
     var ringMat = new THREE.MeshBasicMaterial({
-      color: 0x22d3ee,
+      color: 0xB4B4B6,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.15,
       side: THREE.DoubleSide
     });
     var ring = new THREE.Mesh(ringGeo, ringMat);
@@ -123,28 +123,30 @@
 
   var EXTRUDE_DEPTH = 0.6;
 
+  /* SQB brand surfaces: #003164 navy base */
   var topMat = new THREE.MeshPhongMaterial({
-    color: 0x102a4a,
-    emissive: 0x061224,
-    specular: 0x1e3a5c,
+    color: 0x002248,
+    emissive: 0x001030,
+    specular: 0x304860,
     shininess: 40,
     transparent: true,
     opacity: 0.96
   });
 
   var sideMat = new THREE.MeshPhongMaterial({
-    color: 0x081a32,
-    emissive: 0x030912,
-    specular: 0x0a1e38,
+    color: 0x001830,
+    emissive: 0x000a18,
+    specular: 0x182838,
     shininess: 20,
     transparent: true,
     opacity: 0.92
   });
 
+  /* Tashkent HQ — slight red accent from #FB0007 */
   var tshTopMat = new THREE.MeshPhongMaterial({
-    color: 0x1e4978,
-    emissive: 0x0a1f3c,
-    specular: 0x22d3ee,
+    color: 0x003164,
+    emissive: 0x180008,
+    specular: 0xFB0007,
     shininess: 80,
     transparent: true,
     opacity: 0.96
@@ -209,12 +211,12 @@
         return new THREE.Vector3(p.x, EXTRUDE_DEPTH + 0.02, p.z);
       });
 
-      /* Main crisp edge */
+      /* Main crisp edge — silver (#B4B4B6), Tashkent with red hint */
       var lineGeo = new THREE.BufferGeometry().setFromPoints(topPts);
       var lineMat = new THREE.LineBasicMaterial({
-        color: region.code === 'TSH' ? 0xa5f3fc : 0x67e8f9,
+        color: region.code === 'TSH' ? 0xFB0007 : 0xB4B4B6,
         transparent: true,
-        opacity: region.code === 'TSH' ? 1.0 : 0.95
+        opacity: region.code === 'TSH' ? 0.9 : 0.7
       });
       group.add(new THREE.Line(lineGeo, lineMat));
 
@@ -224,7 +226,7 @@
       });
       group.add(new THREE.Line(
         new THREE.BufferGeometry().setFromPoints(gPts1),
-        new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.55 })
+        new THREE.LineBasicMaterial({ color: region.code === 'TSH' ? 0xFB0007 : 0x8090a0, transparent: true, opacity: 0.35 })
       ));
 
       /* Glow layer 2 */
@@ -233,7 +235,7 @@
       });
       group.add(new THREE.Line(
         new THREE.BufferGeometry().setFromPoints(gPts2),
-        new THREE.LineBasicMaterial({ color: 0x0ea5e9, transparent: true, opacity: 0.25 })
+        new THREE.LineBasicMaterial({ color: 0x003164, transparent: true, opacity: 0.2 })
       ));
 
       /* Bottom edge at ground level */
@@ -242,7 +244,7 @@
       });
       group.add(new THREE.Line(
         new THREE.BufferGeometry().setFromPoints(botPts),
-        new THREE.LineBasicMaterial({ color: 0x0ea5e9, transparent: true, opacity: 0.5 })
+        new THREE.LineBasicMaterial({ color: 0x003164, transparent: true, opacity: 0.35 })
       ));
 
       /* Vertical edge lines — sparse, connecting top and bottom */
@@ -255,7 +257,7 @@
       if (vertPts.length > 0) {
         group.add(new THREE.LineSegments(
           new THREE.BufferGeometry().setFromPoints(vertPts),
-          new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.18 })
+          new THREE.LineBasicMaterial({ color: 0xB4B4B6, transparent: true, opacity: 0.12 })
         ));
       }
     });
@@ -306,11 +308,11 @@
     var curve = createArcCurve(startVec, endVec);
     var points = curve.getPoints(60);
 
-    /* Static arc line only — no moving pulses */
+    /* Static arc line — silver for hub, faint for lateral */
     var baseMat = new THREE.LineBasicMaterial({
-      color: isHub ? 0x7dd3fc : 0x38bdf8,
+      color: isHub ? 0xB4B4B6 : 0x607080,
       transparent: true,
-      opacity: isHub ? 0.18 : 0.10
+      opacity: isHub ? 0.15 : 0.08
     });
     arcGroup.add(new THREE.Line(
       new THREE.BufferGeometry().setFromPoints(points),
@@ -334,10 +336,10 @@
     var geom = new THREE.BufferGeometry();
     geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     var mat = new THREE.PointsMaterial({
-      color: 0x67e8f9,
-      size: 0.08,
+      color: 0xB4B4B6,
+      size: 0.07,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.3,
       sizeAttenuation: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false
