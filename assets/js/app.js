@@ -234,6 +234,13 @@ const REGIONS = [
       {id:"toxiatosh",  name:{uz:"Тахиатош",   ru:"Тахиаташ",    en:"Taxiatosh"},  file:"toxiatosh.json",  hasData:false},
     ]
   },
+  {
+    id: "tashkent",
+    name: {uz:"Тошкент шаҳри", ru:"Город Ташкент", en:"Tashkent City"},
+    districts: [
+      {id:"mirzoulgbek", name:{uz:"Мирзо Улуғбек", ru:"Мирзо-Улугбек", en:"Mirzo Ulugbek"}, file:"mirzoulgbek.json", hasData:true},
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
