@@ -246,7 +246,8 @@ const REGIONS = [
     id: "andijan",
     name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
     districts: [
-      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:false},
+      {id:"andijan_vil", name:{uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"}, file:"andijan.json", hasData:false, type:"viloyat"},
+      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:true},
     ]
   },
 ];
@@ -1472,20 +1473,13 @@ function render(){
 
   // Update hero title — шаҳар/туман
   var info = getDistrictAny(STATE.district);
-  var dType = info && info.district.type || "";
+  var isShahar = info && info.district.type === "shahar";
   var heroTitleEl = document.querySelector('[data-i18n="hero_title"]');
   if(heroTitleEl){
     var dName = info ? (info.district.name[STATE.lang] || info.district.name.uz) : '';
-    var titles;
-    if(dType === "viloyat"){
-      titles = {uz: dName+"нинг умумий ҳолати", ru: "Общее состояние "+dName, en: dName+" Overview"};
-    } else if(dType === "respublika"){
-      titles = {uz: dName+"нинг умумий ҳолати", ru: "Общее состояние "+dName, en: dName+" Overview"};
-    } else if(dType === "shahar"){
-      titles = {uz: dName+" шаҳрининг умумий ҳолати", ru: "Общее состояние г. "+dName, en: dName+" City Overview"};
-    } else {
-      titles = {uz: dName+" туманининг умумий ҳолати", ru: "Общее состояние "+dName+" района", en: dName+" District Overview"};
-    }
+    var titles = {uz: isShahar ? dName+" шаҳрининг умумий ҳолати" : dName+" туманининг умумий ҳолати",
+                  ru: isShahar ? "Общее состояние г. "+dName : "Общее состояние "+dName+" района",
+                  en: isShahar ? dName+" City Overview" : dName+" District Overview"};
     heroTitleEl.textContent = titles[STATE.lang] || titles.uz;
   }
 

@@ -1,0 +1,14 @@
+{
+  "district": "andijan_vil",
+  "district_name": "Андижон вилояти",
+  "region": "Андижон вилояти",
+  "year": 2026,
+  "total": 0,
+  "hero_kpis": {
+    "Аҳоли": {"value": 0, "unit": "минг киши"},
+    "Маҳалла": {"value": 0, "unit": "та"},
+    "Оила": {"value": 0, "unit": "та"},
+    "Хонадон": {"value": 0, "unit": "та"}
+  },
+  "indicators": []
+}
