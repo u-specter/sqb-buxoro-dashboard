@@ -199,14 +199,6 @@ SLIDES.forEach(function(s,idx){
 // ============================================================
 const REGIONS = [
   {
-    id: "andijan",
-    name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
-    districts: [
-      {id:"andijan_vil", name:{uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"}, file:"andijan.json", hasData:false, type:"viloyat"},
-      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:true},
-    ]
-  },
-  {
     id: "bukhara",
     name: {uz:"Бухоро вилояти", ru:"Бухарская область", en:"Bukhara Region"},
     districts: [
@@ -247,6 +239,15 @@ const REGIONS = [
     districts: [
       {id:"mirzoulgbek", name:{uz:"Мирзо Улуғбек", ru:"Мирзо-Улугбек", en:"Mirzo Ulugbek"}, file:"mirzoulgbek.json", hasData:true},
       {id:"uchtepa",     name:{uz:"Учтепа",        ru:"Учтепа",       en:"Uchtepa"},      file:"uchtepa.json",      hasData:true},
+    ]
+  },
+  {
+    id: "andijan",
+    name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
+    districts: [
+      {id:"xonobod",    name:{uz:"Хонобод",      ru:"Ханабад",      en:"Xonobod"},     file:"xonobod.json",     hasData:true, type:"shahar"},
+      {id:"andijan_vil", name:{uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"}, file:"andijan.json", hasData:false, type:"viloyat"},
+      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:true}
     ]
   },
   {
@@ -1154,6 +1155,7 @@ async function loadDistrictData(districtId){
 var HERO_BG_MAP = {
   shofirkon: "img/shofirkon.jpg",
   gijduvon: "img/gijduvon.jpg",
+  qoqon: "img/qoqon.png",
   qoshtepa: "img/qoshtepa.jpg",
   boysun: "img/boysun.jpg",
   qongirot: "img/kongirat_opt.jpg",

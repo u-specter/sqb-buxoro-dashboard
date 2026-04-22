@@ -2193,11 +2193,13 @@
             </div>
               <div class="field"><label class="label-s" for="userRegion" data-i18n="regionLabel">Вилоят</label><select
                 class="input-s" id="userRegion" onchange="handleRegionChange()">
+                <option>Андижон вилояти</option>
                 <option>Бухоро вилояти</option>
-                <option>Фарғона вилояти</option>
                 <option>Қорақалпоғистон Республикаси</option>
+                <option>Сирдарё вилояти</option>
                 <option>Сурхондарё вилояти</option>
                 <option>Тошкент шаҳри</option>
+                <option>Фарғона вилояти</option>
               </select></div>
             <div class="field"><label class="label-s" for="userDistrict" data-i18n="districtLabel">Ҳудуд</label><select
                 class="input-s" id="userDistrict" onchange="handleDistrictChange()">
@@ -2771,7 +2773,16 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     const API_KEY = '';
-    const PROXY_URL = 'https://api.openai.com/v1/chat/completions';
+    const PROXY_URL = '/api/openai-proxy';
+    const OPENAI_DIRECT = 'https://api.openai.com/v1/chat/completions';
+    const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
+
+    function smartFetch(body, signal) {
+      if (IS_LOCAL && API_KEY) {
+        return fetch(OPENAI_DIRECT, {signal:signal, method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY}, body:JSON.stringify(body)});
+      }
+      return fetch(PROXY_URL, {signal:signal, method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    }
 
     let map, marker;
     // ════════════════════════════════════════════════════
@@ -3189,11 +3200,13 @@
     function getSel(id) { return Array.from(document.querySelectorAll('#' + id + ' .chip.sel')).map(function (c) { return c.textContent }).join(', ') }
     function getSelVal(id) { var c = document.querySelector('#' + id + ' .chip.sel'); return c ? c.getAttribute('data-v') || c.textContent : '' }
     var REGION_DISTRICTS = {
+      'Андижон вилояти': ['Шаҳрихон тумани', 'Хонобод шаҳри'],
       'Бухоро вилояти': ['Шофиркон', 'Ғиждувон'],
-      'Фарғона вилояти': ['Қўқон шаҳри', 'Қўштепа тумани'],
       'Қорақалпоғистон Республикаси': ['Қонликўл тумани', 'Конғирот тумани'],
-      'Сурхондарё вилояти': ['Бойсун тумани', 'Термиз тумани'],
-      'Тошкент шаҳри': ['Мирзо Улуғбек тумани', 'Учтепа тумани']
+      'Сирдарё вилояти': ['Гулистон шаҳри'],
+      'Сурхондарё вилояти': ['Бойсун тумани', 'Термиз тумани', 'Сариосиё тумани'],
+      'Тошкент шаҳри': ['Мирзо Улуғбек тумани', 'Учтепа тумани'],
+      'Фарғона вилояти': ['Қўқон шаҳри', 'Қўштепа тумани']
     };
     var MAHALLA_LIST = {
       'Шофиркон': ['Ғуломте', 'Жўйнав', 'Искогаре', 'Қалмақон', 'Қуйи Чуқурак', 'Қўрғони Вардонзе', 'Талисафед', 'Чуқурак', 'Шароф Рашидов', 'Янгиқишлоқ', 'Арабхона', 'Бобоато', 'Бобур', 'Боғиафзал', 'Жилвон', 'Жўшўра', 'Мирзоқул', 'М.Чандир', 'Пашмон', 'Читкарон', 'Шодлик', 'Денов', 'Доригар', 'Дўрман', 'Жуйрабод', 'Зарчабек', 'Калон', 'Кўришкент', 'Қайрағоч', 'Маҳаллақози', 'Мингчинор', 'Навбаҳор', 'Неккиши', 'Паттахон', 'Султонобод', 'Темирчи', 'Хорин', 'Шибирғон', 'Алишер Навоий', 'Бобоҳайдар', 'Гулистон', 'Котиён', 'Нурафшон', 'Пахтаобод', 'Саврак', 'Талсангобод', 'Тезгузар', 'Тинчлик', 'Хожа Ориф'],
@@ -3205,7 +3218,11 @@
       'Бойсун тумани': ['Газа МФЙ', 'Инкобод МФЙ', 'Пулҳоким МФЙ', 'Дуоба МФЙ', 'Даштигоз МФЙ', 'Дехибола МФЙ', 'Хўжаидод МФЙ', 'Ўрмончи МФЙ', 'Авлод МФЙ', 'Ҳунармандлар МФЙ', 'Боғиболо МФЙ', 'Кўчкак МФЙ', 'Пасурхи МФЙ', 'Бибиширин МФЙ', 'Ширинобод МФЙ', 'Тўда МФЙ', 'Бошработ МФЙ', 'Кўлқамиш МФЙ', 'Юқори Мачай МФЙ', 'Шифобулоқ МФЙ', 'Дарбанд МФЙ', 'Даҳнаижом МФЙ', 'Хўжабулғон МФЙ', 'Тиллокамар МФЙ', 'Сайроб МФЙ', 'Мунчоқ МФЙ', 'Чилонзор МФЙ', 'Урта Мачай', 'Темир Дарвоза', 'Кизилнавр', 'Шўрсой МФЙ', 'Мустақиллик МФЙ', 'Пойгабоши МФЙ', 'Оби МФЙ', 'Косиблар МФЙ', 'Тузбозор МФЙ', 'Чорчинор МФЙ', 'АриқУсти МФЙ', 'Тоқчи МФЙ'],
       'Термиз тумани': ['Келажак', 'Наврўз', 'Қорахон', 'Жўйжангал', 'Солиобод', 'Қўнғирот', 'Намуна', 'Ат-Термизий', 'Гулбаҳор', 'Мустақиллик', 'Янгиобод', 'Истиқлол', 'Ш.рашидов', 'Дўстлик', 'М.эштемиров', 'Айритом', 'Сабзипоя', 'Орол', 'Нурафшон', 'Гулистон', 'Термиз', 'Янгиҳаёт', 'Бунёдкор', 'Халқобод', 'Амир Темур', 'Қуёшли-юрт', 'Учқизил', 'Қаҳрамон', 'Нурли диёр', 'Янгиер'],
       'Мирзо Улуғбек тумани': [],
-      'Учтепа тумани': []
+      'Учтепа тумани': [],
+      'Сариосиё тумани': ['Боғиобод', 'Боғи шириш', 'Боғистон', 'Гулобод', 'Дўстлик', 'Карш', 'Маланд', 'Нилу', 'Нодирабеги', 'Нуробод', 'Сангардак', 'Себзор', 'Субхидам', 'Тортўли', 'Хонжиза', 'Хуфар', 'Чилонзор', 'Чош', 'Шабнам', 'Эхтиром', 'Янги хаёт', 'Ёқутли боғ', 'Анорзор', 'Боғисамарқанд', 'Бўйрапўш', 'Жаннатмакон', 'Келажак сари', 'Лочин', 'Маржона', 'Нелоба', 'Сарижар', 'Теракзор', 'Халқабод', 'Хулкар', 'Шарафобод', 'Шохжахон', 'Бойсунобод', 'Боғи шамол', 'Дарагистон', 'Кончилар', 'Маданкон', 'Нихолзор', 'Феруз', 'Хуршид', 'Ширин', 'Шоқишлоқ', 'Хамкорлик', 'А.Навоий', 'Аэропорт', 'Афросиёб', 'Биллур', 'Галабутта', 'Дийдор', 'Лутфикор', 'М.Улуғбек', 'Мехршавқат', 'Нурбулоқ', 'С.Шерозий', 'Турмушобод', 'Шарқ юлдузи', 'Шахриобод'],
+      'Шаҳрихон тумани': [],
+      'Хонобод шаҳри': [],
+      'Гулистон шаҳри': []
     };
     function handleDistrictChange() {
       var d = document.getElementById('userDistrict').value;
@@ -4086,7 +4103,7 @@
       });
 
       var timer = setTimeout(function () { if (aiAbortController) aiAbortController.abort() }, 120000);
-      fetch(OPENAI_URL, { signal: aiAbortController.signal, method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY }, body: JSON.stringify({ model: 'gpt-4o-mini', max_tokens: 4000, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: aiSysContent() + '\n\n' + aiLangRule() }, { role: 'user', content: prompt + '\n\n' + aiLangRule() }] }) }).then(function (r) { clearTimeout(timer); return r.json() }).then(function (d) {
+      smartFetch({ model: 'gpt-4o-mini', max_tokens: 4000, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: aiSysContent() + '\n\n' + aiLangRule() }, { role: 'user', content: prompt + '\n\n' + aiLangRule() }] }, aiAbortController.signal).then(function (r) { clearTimeout(timer); return r.json() }).then(function (d) {
         try {
           if (d.error) throw new Error(d.error.message || 'API хатоси');
           if (!d.choices || !d.choices[0]) throw new Error('Жавоб бўш келди');
@@ -4577,7 +4594,7 @@
         + '  "credit":{"needed":"<\\\"кредитсиз бошлаш мумкин\\\" ёки \\\"кредит фойдали\\\">","amount":"<X-Y млн>","useFor":"<маблағ нимага. Кирилл>"},\n'
         + '  "summary":["<3 та якуний маслаҳат. Кирилл>"]\n'
         + '}';
-      return fetch(OPENAI_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY }, body: JSON.stringify({ model: 'gpt-4o-mini', max_tokens: 1800, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: aiSysContent() + '\n\n' + aiLangRule() }, { role: 'user', content: prompt + '\n\n' + aiLangRule() }] }) })
+      return smartFetch({ model: 'gpt-4o-mini', max_tokens: 1800, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: aiSysContent() + '\n\n' + aiLangRule() }, { role: 'user', content: prompt + '\n\n' + aiLangRule() }] })
         .then(function (rs) { return rs.json(); })
         .then(function (d) {
           var t = (d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content) || '';
