@@ -1804,7 +1804,7 @@ function buildRegionInsights(district){
   }
   if(kambPct!=null){
     const cnt = (kamb && kamb.unit!=='%') ? fmtNum(kamb.value) : '';
-    const kambGoals = {qonlikol:'3,6'};
+    const kambGoals = {qonlikol:'3,6',boysun:'3,0'};
     const kGoal = kambGoals[district] || null;
     out.push({e:"📉", t: tpl.kamb(kambPct.toFixed(1).replace('.',','), cnt, kGoal)});
   }
