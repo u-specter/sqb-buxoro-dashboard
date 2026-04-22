@@ -242,6 +242,13 @@ const REGIONS = [
       {id:"uchtepa",     name:{uz:"Учтепа",        ru:"Учтепа",       en:"Uchtepa"},      file:"uchtepa.json",      hasData:true},
     ]
   },
+  {
+    id: "andijan",
+    name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
+    districts: [
+      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:false},
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
