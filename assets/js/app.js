@@ -221,6 +221,7 @@ const REGIONS = [
       {id:"surkhandarya_vil", name:{uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"}, file:"boysun.json", hasData:true, type:"viloyat"},
       {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun_tuman.json",    hasData:true},
       {id:"sariosiyo", name:{uz:"Сариосиё",  ru:"Сариасия",   en:"Sariosiyo"}, file:"sariosiyo.json",  hasData:true},
+      {id:"termiz",    name:{uz:"Термиз",    ru:"Термез",     en:"Termez"},    file:"termiz.json",    hasData:true},
     ]
   },
   {
