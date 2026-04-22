@@ -225,6 +225,13 @@ const REGIONS = [
     ]
   },
   {
+    id: "sirdaryo",
+    name: {uz:"Сирдарё вилояти", ru:"Сырдарьинская область", en:"Syrdarya Region"},
+    districts: [
+      {id:"guliston", name:{uz:"Гулистон", ru:"Гулистан", en:"Guliston"}, file:"guliston.json", hasData:true},
+    ]
+  },
+  {
     id: "surkhandarya",
     name: {uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"},
     districts: [
