@@ -199,29 +199,19 @@ SLIDES.forEach(function(s,idx){
 // ============================================================
 const REGIONS = [
   {
+    id: "andijan",
+    name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
+    districts: [
+      {id:"andijan_vil", name:{uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"}, file:"andijan.json", hasData:false, type:"viloyat"},
+      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:true},
+    ]
+  },
+  {
     id: "bukhara",
     name: {uz:"Бухоро вилояти", ru:"Бухарская область", en:"Bukhara Region"},
     districts: [
       {id:"gijduvon",  name:{uz:"Ғиждувон",  ru:"Гиждуван",   en:"Gijduvon"},  file:"gijduvon.json",  hasData:true},
       {id:"shofirkon", name:{uz:"Шофиркон",  ru:"Шафиркан",   en:"Shofirkon"}, file:"shofirkon.json", hasData:true},
-    ]
-  },
-  {
-    id: "fergana",
-    name: {uz:"Фарғона вилояти", ru:"Ферганская область", en:"Fergana Region"},
-    districts: [
-      {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true, type:"shahar"},
-      {id:"qoshtepa",  name:{uz:"Қўштепа",   ru:"Куштепа",    en:"Qoshtepa"},   file:"qoshtepa.json",  hasData:true},
-    ]
-  },
-  {
-    id: "surkhandarya",
-    name: {uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"},
-    districts: [
-      {id:"surkhandarya_vil", name:{uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"}, file:"boysun.json", hasData:true, type:"viloyat"},
-      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun_tuman.json",    hasData:true},
-      {id:"sariosiyo", name:{uz:"Сариосиё",  ru:"Сариасия",   en:"Sariosiyo"}, file:"sariosiyo.json",  hasData:true},
-      {id:"termiz",    name:{uz:"Термиз",    ru:"Термез",     en:"Termez"},    file:"termiz.json",    hasData:true},
     ]
   },
   {
@@ -235,6 +225,16 @@ const REGIONS = [
     ]
   },
   {
+    id: "surkhandarya",
+    name: {uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"},
+    districts: [
+      {id:"surkhandarya_vil", name:{uz:"Сурхондарё вилояти", ru:"Сурхандарьинская область", en:"Surkhandarya Region"}, file:"boysun.json", hasData:true, type:"viloyat"},
+      {id:"boysun",    name:{uz:"Бойсун",    ru:"Байсун",     en:"Boysun"},    file:"boysun_tuman.json",    hasData:true},
+      {id:"sariosiyo", name:{uz:"Сариосиё",  ru:"Сариасия",   en:"Sariosiyo"}, file:"sariosiyo.json",  hasData:true},
+      {id:"termiz",    name:{uz:"Термиз",    ru:"Термез",     en:"Termez"},    file:"termiz.json",    hasData:true},
+    ]
+  },
+  {
     id: "tashkent",
     name: {uz:"Тошкент шаҳри", ru:"Город Ташкент", en:"Tashkent City"},
     districts: [
@@ -243,10 +243,11 @@ const REGIONS = [
     ]
   },
   {
-    id: "andijan",
-    name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
+    id: "fergana",
+    name: {uz:"Фарғона вилояти", ru:"Ферганская область", en:"Fergana Region"},
     districts: [
-      {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:false},
+      {id:"qoqon",     name:{uz:"Қўқон",     ru:"Коканд",     en:"Kokand"},     file:"qoqon.json",     hasData:true, type:"shahar"},
+      {id:"qoshtepa",  name:{uz:"Қўштепа",   ru:"Куштепа",    en:"Qoshtepa"},   file:"qoshtepa.json",  hasData:true},
     ]
   },
 ];
@@ -1472,20 +1473,13 @@ function render(){
 
   // Update hero title — шаҳар/туман
   var info = getDistrictAny(STATE.district);
-  var dType = info && info.district.type || "";
+  var isShahar = info && info.district.type === "shahar";
   var heroTitleEl = document.querySelector('[data-i18n="hero_title"]');
   if(heroTitleEl){
     var dName = info ? (info.district.name[STATE.lang] || info.district.name.uz) : '';
-    var titles;
-    if(dType === "viloyat"){
-      titles = {uz: dName+"нинг умумий ҳолати", ru: "Общее состояние "+dName, en: dName+" Overview"};
-    } else if(dType === "respublika"){
-      titles = {uz: dName+"нинг умумий ҳолати", ru: "Общее состояние "+dName, en: dName+" Overview"};
-    } else if(dType === "shahar"){
-      titles = {uz: dName+" шаҳрининг умумий ҳолати", ru: "Общее состояние г. "+dName, en: dName+" City Overview"};
-    } else {
-      titles = {uz: dName+" туманининг умумий ҳолати", ru: "Общее состояние "+dName+" района", en: dName+" District Overview"};
-    }
+    var titles = {uz: isShahar ? dName+" шаҳрининг умумий ҳолати" : dName+" туманининг умумий ҳолати",
+                  ru: isShahar ? "Общее состояние г. "+dName : "Общее состояние "+dName+" района",
+                  en: isShahar ? dName+" City Overview" : dName+" District Overview"};
     heroTitleEl.textContent = titles[STATE.lang] || titles.uz;
   }
 
