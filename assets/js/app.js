@@ -239,6 +239,7 @@ const REGIONS = [
     name: {uz:"Тошкент шаҳри", ru:"Город Ташкент", en:"Tashkent City"},
     districts: [
       {id:"mirzoulgbek", name:{uz:"Мирзо Улуғбек", ru:"Мирзо-Улугбек", en:"Mirzo Ulugbek"}, file:"mirzoulgbek.json", hasData:true},
+      {id:"uchtepa",     name:{uz:"Учтепа",        ru:"Учтепа",       en:"Uchtepa"},      file:"uchtepa.json",      hasData:true},
     ]
   },
 ];
