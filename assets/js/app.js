@@ -1465,13 +1465,20 @@ function render(){
 
   // Update hero title — шаҳар/туман
   var info = getDistrictAny(STATE.district);
-  var isShahar = info && info.district.type === "shahar";
+  var dType = info && info.district.type || "";
   var heroTitleEl = document.querySelector('[data-i18n="hero_title"]');
   if(heroTitleEl){
     var dName = info ? (info.district.name[STATE.lang] || info.district.name.uz) : '';
-    var titles = {uz: isShahar ? dName+" шаҳрининг умумий ҳолати" : dName+" туманининг умумий ҳолати",
-                  ru: isShahar ? "Общее состояние г. "+dName : "Общее состояние "+dName+" района",
-                  en: isShahar ? dName+" City Overview" : dName+" District Overview"};
+    var titles;
+    if(dType === "viloyat"){
+      titles = {uz: dName+"нинг умумий ҳолати", ru: "Общее состояние "+dName, en: dName+" Overview"};
+    } else if(dType === "respublika"){
+      titles = {uz: dName+"нинг умумий ҳолати", ru: "Общее состояние "+dName, en: dName+" Overview"};
+    } else if(dType === "shahar"){
+      titles = {uz: dName+" шаҳрининг умумий ҳолати", ru: "Общее состояние г. "+dName, en: dName+" City Overview"};
+    } else {
+      titles = {uz: dName+" туманининг умумий ҳолати", ru: "Общее состояние "+dName+" района", en: dName+" District Overview"};
+    }
     heroTitleEl.textContent = titles[STATE.lang] || titles.uz;
   }
 
