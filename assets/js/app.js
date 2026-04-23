@@ -1162,7 +1162,8 @@ var HERO_BG_MAP = {
   qonlikol: "img/konlikol.jpg",
   toxiatosh: "img/taxiatash_opt.jpg",
   sariosiyo: "img/sariosiyo.png",
-  termiz: "img/termiz.png"
+  termiz: "img/termiz.png",
+  surkhandarya_vil: "img/surxondaryo.png"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");
