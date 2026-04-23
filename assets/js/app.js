@@ -1576,7 +1576,7 @@ function cardHTML(i,idx){
   const tDesc = Tind(STATE.district, i, 'desc');
   const tAi = i.ai_insight ? Tind(STATE.district, i, 'ai_insight') : '';
   const i_view = Object.assign({}, i, {value: Tind(STATE.district, i, 'value')});
-  return '<div class="ind-card '+(found?'':'missing')+'" style="animation-delay:'+Math.min(idx*30,400)+'ms">'+
+  var cardHtml = '<div class="ind-card '+(found?'':'missing')+'" style="animation-delay:'+Math.min(idx*30,400)+'ms">'+
     '<div class="ic-head"><div class="ic-no">#'+i.no+'</div>'+
     '<div class="ic-badges">'+
     '<span class="b src src-'+srcSlug(i.source_org||'SQB')+'">'+T('label_source')+' '+escapeHTML(i.source_org||'SQB')+'</span>'+
@@ -1586,6 +1586,14 @@ function cardHTML(i,idx){
     renderValue(i_view,cid)+
     (tAi ? '<div class="ai-insight"><div class="ai-insight-head"><i class="bi bi-robot"></i><span>'+T('ai_label')+'</span></div><p class="ai-insight-text">'+escapeHTML(tAi)+'</p></div>' : '')+
     '</div>';
+  return colorizeCategories(cardHtml);
+}
+
+function colorizeCategories(html){
+  return html
+    .replace(/Қизил тоифа/g,'<span style="color:#e53935;font-weight:700">Қизил тоифа</span>')
+    .replace(/Сариқ тоифа/g,'<span style="color:#f9a825;font-weight:700">Сариқ тоифа</span>')
+    .replace(/Яшил тоифа/g,'<span style="color:#43a047;font-weight:700">Яшил тоифа</span>');
 }
 
 function srcSlug(s){
@@ -1644,7 +1652,8 @@ function kpiFromIndicator(data, no, opts){
   if(!ind || !ind.found || !ind.value) return null;
   // Override: indicator can carry kpi_count and kpi_pct fields directly
   if(ind.kpi_count!=null && ind.kpi_pct!=null){
-    return {value:ind.kpi_count, unit:'нафар', sub:String(ind.kpi_pct).replace('.',',')+"%", subClass:'warn', delta:null, deltaDir:null};
+    var kpiUnit = (opts && opts.namePattern && opts.namePattern.toLowerCase().indexOf('камбағал')>=0) ? 'оила' : 'нафар';
+    return {value:ind.kpi_count, unit:kpiUnit, sub:String(ind.kpi_pct).replace('.',',')+"%", subClass:'warn', delta:null, deltaDir:null};
   }
   const raw = String(ind.value).trim();
   // Special: "N% (M киши)" — show count as main, % as sub
@@ -1756,19 +1765,19 @@ const AI_TPL = {
     mah: (n)=>`<b>Маҳаллалар (${n} та)</b> — ҳар бир маҳаллага индивидуал драйвер сектор белгилаш ва маҳалла банкирлари орқали кузатув тизимини кучайтириш тавсия этилади.`,
     fam: (x,o)=>`<b>${x} та хонадон ва ${o} та оила</b> — оилавий тадбиркорлик (оналар дастури, ҳунармандчилик) орқали уй иқтисодиётини ривожлантириш резерви юқори.`,
     ishsiz:(p,cnt)=>`<b>Ишсизлик</b> — расмий даража ${p}% — нормал чегарада, лекин норасмий бандлик улуши юқори. Меҳнат бозорини расмийлаштириш устувор.${cnt?' Ҳозир '+cnt+' нафар ишсиз рўйхатда.':''}`,
-    kamb:(p,cnt)=>`<b>Камбағаллик</b> — ${p}% — 2026 йил охиригача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.${cnt?' Жами '+cnt+' нафар.':''}`,
+    kamb:(p,cnt)=>`<b>Камбағаллик</b> — ${p}% — 2026 йил охиригача 2,0% гача тушириш учун ҳар бир камбағал оилага мақсадли микрокредит ва субсидия пакети шакллантирилсин.${cnt?' Жами '+cnt+' оила.':''}`,
   },
   ru:{
     mah: (n)=>`<b>Махалли (${n} шт)</b> — рекомендуется определить индивидуальный драйвер-сектор для каждой махалли и усилить мониторинг через махаллинских банкиров.`,
     fam: (x,o)=>`<b>${x} домохозяйств и ${o} семей</b> — высокий резерв развития домашней экономики через семейное предпринимательство (программа для матерей, ремёсла).`,
     ishsiz:(p,cnt)=>`<b>Безработица</b> — официальный уровень ${p}% — в норме, но доля неформальной занятости высока. Приоритет — формализация рынка труда.${cnt?' Сейчас ${cnt} безработных в реестре.'.replace('${cnt}',cnt):''}`,
-    kamb:(p,cnt)=>`<b>Бедность</b> — ${p}% — для снижения до 2,0% к 2026 году каждой малообеспеченной семье сформировать адресный пакет микрокредитов и субсидий.${cnt?' Всего ${cnt} человек.'.replace('${cnt}',cnt):''}`,
+    kamb:(p,cnt)=>`<b>Бедность</b> — ${p}% — для снижения до 2,0% к 2026 году каждой малообеспеченной семье сформировать адресный пакет микрокредитов и субсидий.${cnt?' Всего ${cnt} семей.'.replace('${cnt}',cnt):''}`,
   },
   en:{
     mah: (n)=>`<b>Mahallas (${n})</b> — recommend assigning an individual driver sector to each mahalla and strengthening monitoring through mahalla bankers.`,
     fam: (x,o)=>`<b>${x} households and ${o} families</b> — high reserve for developing home economy through family entrepreneurship (mothers' program, crafts).`,
     ishsiz:(p,cnt)=>`<b>Unemployment</b> — official rate ${p}% is within norm, but informal employment share is high. Labor market formalization is a priority.${cnt?' Currently '+cnt+' unemployed registered.':''}`,
-    kamb:(p,cnt)=>`<b>Poverty</b> — ${p}% — to reduce to 2.0% by 2026, a targeted microcredit and subsidy package should be formed for each poor family.${cnt?' Total '+cnt+' people.':''}`,
+    kamb:(p,cnt)=>`<b>Poverty</b> — ${p}% — to reduce to 2.0% by 2026, a targeted microcredit and subsidy package should be formed for each poor family.${cnt?' Total '+cnt+' families.':''}`,
   },
 };
 
