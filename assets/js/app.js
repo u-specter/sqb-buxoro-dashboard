@@ -265,6 +265,13 @@ const REGIONS = [
       {id:"yangiqorgon", name:{uz:"Янгиқўрғон", ru:"Янгикурган", en:"Yangiqorgon"}, file:"yangiqorgon.json", hasData:true}
     ]
   },
+  {
+    id: "jizzax",
+    name: {uz:"Жиззах вилояти", ru:"Джизакская область", en:"Jizzakh Region"},
+    districts: [
+      {id:"forish", name:{uz:"Фориш", ru:"Фариш", en:"Forish"}, file:"forish.json", hasData:true}
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
