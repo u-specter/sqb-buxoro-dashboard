@@ -258,6 +258,13 @@ const REGIONS = [
       {id:"shahrixon", name:{uz:"Шаҳрихон", ru:"Шахрихан", en:"Shahrixon"}, file:"shahrixon.json", hasData:true}
     ]
   },
+  {
+    id: "namangan",
+    name: {uz:"Наманган вилояти", ru:"Наманганская область", en:"Namangan Region"},
+    districts: [
+      {id:"yangiqorgon", name:{uz:"Янгиқўрғон", ru:"Янгикурган", en:"Yangiqorgon"}, file:"yangiqorgon.json", hasData:true}
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
