@@ -272,6 +272,20 @@ const REGIONS = [
       {id:"forish", name:{uz:"Фориш", ru:"Фариш", en:"Forish"}, file:"forish.json", hasData:true}
     ]
   },
+  {
+    id: "samarqand",
+    name: {uz:"Самарқанд вилояти", ru:"Самаркандская область", en:"Samarkand Region"},
+    districts: [
+      {id:"payariq", name:{uz:"Пайариқ", ru:"Пайарык", en:"Payariq"}, file:"payariq.json", hasData:true}
+    ]
+  },
+  {
+    id: "navoiy",
+    name: {uz:"Навоий вилояти", ru:"Навоийская область", en:"Navoiy Region"},
+    districts: [
+      {id:"karmana", name:{uz:"Кармана", ru:"Кармана", en:"Karmana"}, file:"karmana.json", hasData:true}
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
