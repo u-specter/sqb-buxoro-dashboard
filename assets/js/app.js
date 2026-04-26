@@ -372,7 +372,7 @@ function parseValue(raw, ctx){
       if(heroM){
         const facts = [];
         for(let i=1;i<hfSegs.length;i++){
-          const fm = hfSegs[i].match(/^([^:]{2,60}):\s*(.+)$/);
+          const fm = hfSegs[i].match(/^([^:]{2,60}):\s*([\s\S]+)$/);
           if(fm) facts.push({name:fm[1].trim(), value:fm[2].trim()});
         }
         if(facts.length>=1){
@@ -818,8 +818,15 @@ function renderValue(ind, canvasId){
     const heroLabel = hasNum ? (heroTail || 'Жами') : p.hero;
     const factsHtml = p.facts.map(function(f){
       const isMoney = /(млн\s*сўм|млрд\s*сўм|трлн\s*сўм)/i.test(f.value);
+      const parts = String(f.value).split(/\n/);
+      let inner;
+      if(parts.length >= 2){
+        inner = '<span class="hf-sub">'+escapeHTML(parts[0])+'</span>'+escapeHTML(parts.slice(1).join(' '));
+      } else {
+        inner = escapeHTML(f.value);
+      }
       return '<div class="hf-row"><span class="hf-name">'+escapeHTML(f.name)+'</span>'+
-        '<span class="hf-val'+(isMoney?' green':'')+'">'+escapeHTML(f.value)+'</span></div>';
+        '<span class="hf-val'+(isMoney?' green':'')+'">'+inner+'</span></div>';
     }).join("");
     return '<div class="ic-value rich"><div class="hero-facts">'+
       '<div class="hf-top">'+
