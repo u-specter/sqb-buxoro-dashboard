@@ -56,13 +56,66 @@
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
+  // Lightweight markdown → HTML for bot replies (bold, italic, code, lists, headings)
+  function mdToHtml(src) {
+    let s = escapeHtml(src);
+
+    // protect inline code so * / _ inside don't get parsed
+    const codes = [];
+    s = s.replace(/`([^`\n]+)`/g, (_, c) => `${codes.push(c) - 1}`);
+
+    // bold first, then italic (avoid eating bold's stars)
+    s = s.replace(/\*\*([^\n*][^*]*?)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(^|[\s(>])\*([^\s*][^*\n]*?)\*(?=[\s).,;:!?]|$)/g, '$1<em>$2</em>');
+    s = s.replace(/(^|[\s(>])_([^\s_][^_\n]*?)_(?=[\s).,;:!?]|$)/g, '$1<em>$2</em>');
+
+    // restore code
+    s = s.replace(/(\d+)/g, (_, i) => `<code>${codes[+i]}</code>`);
+
+    // block-level: lists / headings / paragraphs
+    const lines = s.split(/\r?\n/);
+    const out = [];
+    let listType = null, listBuf = [];
+    const flushList = () => {
+      if (listType) {
+        out.push(`<${listType}>${listBuf.map(li => `<li>${li}</li>`).join('')}</${listType}>`);
+        listType = null; listBuf = [];
+      }
+    };
+    for (const raw of lines) {
+      const line = raw;
+      const ol = line.match(/^\s*(\d+)\.\s+(.*)$/);
+      const ul = line.match(/^\s*[-•*]\s+(.*)$/);
+      const h  = line.match(/^(#{1,4})\s+(.*)$/);
+      if (ol) {
+        if (listType !== 'ol') { flushList(); listType = 'ol'; }
+        listBuf.push(ol[2]);
+      } else if (ul) {
+        if (listType !== 'ul') { flushList(); listType = 'ul'; }
+        listBuf.push(ul[1]);
+      } else if (h) {
+        flushList();
+        const lvl = Math.min(h[1].length + 2, 6);
+        out.push(`<h${lvl}>${h[2]}</h${lvl}>`);
+      } else if (line.trim() === '') {
+        flushList();
+      } else {
+        flushList();
+        out.push(`<p>${line}</p>`);
+      }
+    }
+    flushList();
+    return out.join('') || '<p></p>';
+  }
+
   function renderEmpty() {
     const chips = SUGGESTIONS.map(q =>
       `<button type="button" class="sqb-chip" data-q="${escapeHtml(q)}">${escapeHtml(q)}</button>`
     ).join('');
     $body.innerHTML = `
       <div class="sqb-chat-empty">
-        <div class="sqb-empty-title">Салом! 👋</div>
+        <div class="sqb-empty-icon"><i class="bi bi-stars"></i></div>
+        <div class="sqb-empty-title">Салом! Сизга қандай ёрдам берай?</div>
         Ўзбекистон туманлари бўйича иқтисодий, демографик ва инфратузилма маълумотлари асосида саволларингизга жавоб бераман.
         <div class="sqb-chips">${chips}</div>
       </div>
@@ -72,23 +125,17 @@
     });
   }
 
-  function appendMsg(role, text, citations) {
+  function appendMsg(role, text) {
     // Remove empty-state on first real message
     const empty = $body.querySelector('.sqb-chat-empty');
     if (empty) empty.remove();
 
     const el = document.createElement('div');
     el.className = 'sqb-msg ' + (role === 'user' ? 'user' : 'bot');
-    el.textContent = text;
-    if (citations && citations.length) {
-      const seen = new Set();
-      const names = citations.map(c => c.filename).filter(n => n && !seen.has(n) && seen.add(n));
-      if (names.length) {
-        const cite = document.createElement('span');
-        cite.className = 'sqb-cite';
-        cite.textContent = '📄 Манба: ' + names.join(', ');
-        el.appendChild(cite);
-      }
+    if (role === 'user') {
+      el.textContent = text;
+    } else {
+      el.innerHTML = mdToHtml(text);
     }
     $body.appendChild(el);
     $body.scrollTop = $body.scrollHeight;
@@ -128,7 +175,7 @@
         return;
       }
       const answer = (data.text || '').trim() || 'Маълумот топилмади.';
-      appendMsg('assistant', answer, data.citations || []);
+      appendMsg('assistant', answer);
       state.messages.push({ role: 'assistant', content: answer });
     } catch (err) {
       typing.remove();

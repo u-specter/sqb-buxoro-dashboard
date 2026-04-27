@@ -141,6 +141,11 @@ if (!empty($resp['output']) && is_array($resp['output'])) {
     }
 }
 
+// Strip inline citation markers like 【4:0†source】 the model sometimes injects
+$text = preg_replace('/【[^】]*】/u', '', $text);
+$text = preg_replace('/\[\d+(?::\d+)?(?:†[^\]]*)?\]/u', '', $text);
+$text = trim(preg_replace('/[ \t]+\n/u', "\n", $text));
+
 echo json_encode([
     'text'      => $text,
     'citations' => $citations,
