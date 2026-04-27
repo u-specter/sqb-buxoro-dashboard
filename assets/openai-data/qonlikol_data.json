@@ -1,0 +1,489 @@
+{
+  "id": "qonlikol",
+  "name_uz": "Қонлиқўл тумани",
+  "name_ru": "Канликульский район",
+  "name_latin": "Qo'nlikoʻl tumani",
+  "viloyat": "Qoraqalpog'iston",
+  "type": "tuman",
+  "data_year": 2025,
+  "sources": ["stat.uz", "SQB", "Xokimiyat", "Mehnat.uz", "Markaziy bank", "Energetika vazirligi", "Geologiya qo'mitasi"],
+  "character_note": "Qo'nlikoʻl — 7 ta regionning eng kichigi (54.8k aholi, 11 mahalla). Lekin noyob ustunliklar: elektr tarmog'i 100% soz (hamma regionda birinchi!), gaz 98.7%, temir yo'l 500m, A380 tranzit, Qoraqalpog'iston 1% soliq imtiyozi. To'qimachilik eksport drayveri. Mehnаt resurslari kamaymoqda — migratsiya signali, bu hal qilinishi kerak.",
+
+  "demographics": {
+    "population": 54800,
+    "mahallas": 11,
+    "mahalla_categories": {"easy": 4, "medium": 6, "hard": 1},
+    "families": 10787,
+    "households": 9674,
+    "territory_ha": 74409,
+    "population_density_per_km2": 74.1,
+    "scale_note": "7 ta regionning ENG KICHIGI — 54.8k aholi. Lekin sifat ko'rsatkichlari yuqori."
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 548.3,
+    "industry_dynamics": {
+      "2021": 356.4, "2022": 332.6, "2023": 431.0, "2024": 443.2, "2025": 548.3,
+      "unit": "mlrd so'm"
+    },
+    "industry_index_2025_pct": 109.4,
+    "industry_large_bln": 328.1,
+    "industry_small_bln": 220.1,
+    "small_business_note": "Kichik biznes ulushi o'smoqda — yaxshi signal",
+    "services_gdp_share_pct": 63.4,
+    "employment_by_sector": {
+      "agriculture": 9300,
+      "services": 3400,
+      "industry": 2500
+    },
+    "export_usd_mln": 13.87,
+    "import_usd_mln": 3.27,
+    "trade_surplus_usd_mln": 10.6,
+    "export_note": "Eksport importdan 4.2 barobar ko'p — ijobiy savdo balansi",
+    "export_main_driver": "To'qimachilik — asosiy eksport drayveri",
+    "local_budget_bln_sum": 27.8,
+    "local_budget_trend": "7.4 (2021) → 13.1 → 14.0 → 14.1 → 27.8 (2025) — 3.8 barobar o'sdi",
+    "credits_bln_sum": 250,
+    "credits_trend": {
+      "2021": 80, "2022": 120, "2023": 150, "2024": 200, "2025": 250,
+      "note": "Yillik 25-30% o'sish — barqaror"
+    },
+    "google_trends_score": 54,
+    "google_trends_trend": "48 (2024) → 54 (2025), +12.5%",
+    "google_trends_searches": ["Tekstil korxonalari", "Ish o'rinlari", "Tadbirkorlik kreditlari"],
+    "tax_rate_special": 1,
+    "tax_note": "Qoraqalpog'iston uchun MAXSUS SOLIQ STAVKASI 1% — investor uchun ulkan imtiyoz!",
+    "annual_jobs_target": 1500,
+    "jobs_breakdown": {"processing_pct": 60, "services_pct": 40},
+    "priority_sectors": [
+      "To'qimachilik (eksport poydevori)",
+      "Qishloq xo'jaligi (bандлик asosiy manbai)",
+      "Oziq-ovqat mahsulotlari ishlab chiqarish",
+      "Tranzit-logistika xizmatlari (A380)"
+    ]
+  },
+
+  "strategic_assets": {
+    "electricity": {
+      "outages_per_month": 1.2,
+      "transformers_old_pct": 0,
+      "transformers_note": "100% SOZ — 7 ta regionning ENG YAXSHI elektr infratuzilmasi!",
+      "lines_need_replacement_pct": 12.4,
+      "gas_supply_pct": 98.7,
+      "note": "Elektr + gaz = sanoat uchun mukammal energiya infratuzilmasi"
+    },
+    "transport": {
+      "railway_distance_m": 500,
+      "roads_total_km": 470.1,
+      "roads_asphalt_pct": 85.4,
+      "a380_transit": true,
+      "daily_transit_trucks": "2000-3000",
+      "nukus_distance_km": null,
+      "qongirot_distance_note": "Qo'ng'irot va Nukus oralig'idagi strategik nuqta — A380 tranzit yo'li ustida",
+      "logistic_opportunity": "Kuniga 2-3k yuk mashinasi o'tadi — Truck Stop, TIR-park, restoran, servis"
+    },
+    "land_resources": {
+      "total_ha": 74409,
+      "irrigated_ha": 33144,
+      "pasture_ha": 45000,
+      "canal_concrete_pct": 67,
+      "loess_deposit_count": 2,
+      "loess_reserve_mln_m3": 1.085,
+      "loess_note": "1,085 mln m³ g'isht xom-ashyosi — Nukus/Qo'ng'irot qurilish bumi uchun arzon yetkazib berish"
+    }
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 86.6,
+    "water_trend": "80.3% (2021) → 82.2 → 83.4 → 86.6 → 86.6% (2025)",
+    "water_note": "2024-2025 o'sish to'xtagan — 90%+ ga yetkazish zarur",
+    "roads_asphalt_pct": 85.4,
+    "internet_coverage_pct": 65,
+    "internet_speed_mbps": 25,
+    "internet_note": "65% qoplam + 25 Mbps — 7 ta regionning ENG YOMONI. IT va e-commerce uchun to'siq.",
+    "sewage_pct": 2.2,
+    "sewage_note": "KRITIK past. Sog'liq va ekologiya xavfi.",
+    "electricity_quality": "100% transformatorlar soz — eng yaxshi",
+    "gas_supply_pct": 98.7
+  },
+
+  "agriculture_detail": {
+    "main_crops": ["paxta", "g'alla", "meva-sabzavot", "poliz"],
+    "licorice_miya": {
+      "exists": true,
+      "note": "Miya (solodka) — sho'rga chidamli noyob ekin. Tayyor ekstrakt xom-ashyodan 5-7x qimmat. Farmatsevtika va oziq-ovqat sanoatiga eksport.",
+      "opportunity": "Miya ildizi qayta ishlash zavodi — past investitsiya, yuqori marja"
+    },
+    "salt_tolerant_crops": "Sho'r yerlarda o'simdigan ekinlar — Qoraqalpog'iston iqlimiga mos",
+    "water_saving_target_pct": 40,
+    "canal_concrete_pct": 67
+  },
+
+  "education": {
+    "preschool_coverage_pct": 81,
+    "preschool_trend": "68% (2021) → 74 → 76 → 79 → 81% (2025)",
+    "preschool_gap_pct": 19,
+    "colleges": 2,
+    "college_students": 1480,
+    "technical_schools": 1,
+    "technical_students": 1060,
+    "youth_digital_pct": 40,
+    "youth_note": "Aholi 40%+ yoshlar — BPO, IT-autsorsing, raqamli xizmatlar uchun tayyor baza"
+  },
+
+  "labor": {
+    "total_resources_k": 16.94,
+    "total_resources_trend": "19.37k (2021) → 16.94k (2025) — KAMAYMOQDA",
+    "labor_decline_note": "OGOHLANTIRISH: Mehnat resurslari kamaymoqda. Aholi o'sishi bor, lekin mehnat resursi kamayishi = migratsiya yoki qarishish signali.",
+    "formal_employed": 10180,
+    "informal_employed": 5215,
+    "informal_tax_loss_bln": 5,
+    "avg_salary_mln_sum": 4.007,
+    "unemployment_pct": 5.3,
+    "unemployed_count": 906,
+    "unemployment_trend": "10.1% (2021) → 9.3 → 7.5 → 5.8 → 5.3% (2025)",
+    "target_2026_pct": 4.9,
+    "youth_unemployed": 328,
+    "women_unemployed": 528,
+    "poverty_pct": 7.5,
+    "poor_families": 1543,
+    "poverty_target_2026_pct": 3.6,
+    "poverty_trend": "18% → 14% → 15% → 9% → 7.5% — umumiy pasayish",
+    "social_protection_families": 4501,
+    "difficult_mahalla": {
+      "count": 1,
+      "name": "Boston MFY",
+      "unemployed": 78,
+      "women": 28,
+      "men": 32,
+      "youth": 18
+    }
+  },
+
+  "mahalla_economy": {
+    "total": 11,
+    "by_type": {
+      "farming_vegetables_melon": 1,
+      "trade_service": 1,
+      "livestock_dairy_meat": 1,
+      "other_medium": 6,
+      "easy": 4,
+      "hard": 1
+    },
+    "processing_note": "Dehqonchilik mahallalarida qayta ishlash = 0% — asosiy yo'qotish joyi"
+  },
+
+  "banking_programs": {
+    "micro_projects_2026": {
+      "total_projects": 110,
+      "total_jobs": 200,
+      "total_bln_sum": 7.7,
+      "avg_cost_per_job_mln_sum": 38.5
+    },
+    "har_bir_oila_tadbirkor": {
+      "rate_pct": 12,
+      "max_amount_mln_sum": 300,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "note": "12% — Qo'nlikoʻlda boshqa regionlardan PAST stavka (boshqalarida 18%)"
+    },
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "best_for": ["tikuvchilik", "hunarmandchilik", "savdo", "miya qayta ishlash", "sut mahsulotlari"]
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Elektr 100% SOZ — 7 ta regionning eng yaxshisi",
+      "detail": "Transformatorlar 100% yangi. Uzilish 1.2/oy — minimal. Gaz 98.7%. Sanoat uchun mukammal energiya muhiti. Energiya-talab ishlab chiqarish uchun ideal."
+    },
+    {
+      "title": "Qoraqalpog'iston 1% soliq imtiyozi",
+      "detail": "Maxsus soliq stavkasi 1% — O'zbekistondagi investorlar uchun eng qulay soliq muhiti. '10 ta tayyor loyiha' paketi investorlarga taklif qilinmoqda."
+    },
+    {
+      "title": "Temir yo'l 500m + A380 tranzit",
+      "detail": "Temir yo'l 500m (Qo'ng'irot bilan teng rekord). A380 ustida kuniga 2-3k yuk mashinasi. Qo'ng'irot-Nukus oralig'idagi strategik joylashuv."
+    },
+    {
+      "title": "Eksport balansi ijobiy (+$10.6M)",
+      "detail": "Import $3.27M dan eksport $13.87M — 4.2x ko'p. To'qimachilik — asosiy eksport drayveri. Savdo balansi musbat."
+    },
+    {
+      "title": "67% kanal betonlangan — sув tejash",
+      "detail": "Boshqa Qoraqalpog'iston tumanlariga nisbatan yaxshi. Sug'orish samaradorligi yuqori."
+    },
+    {
+      "title": "Miya (licorice) — noyob ekin",
+      "detail": "Sho'r yerlarda o'sadigan noyob ekin. Farmatsevtika va oziq-ovqat sanoatiga eksport. Tayyor ekstrakt xom-ashyodan 5-7x qimmat."
+    },
+    {
+      "title": "45,000 ga yaylov + chorvachilik bazasi",
+      "detail": "Mahalla-2 chorvachilikka ixtisoslashgan. Go'sht va sut qayta ishlash uchun xom-ashyo bor."
+    },
+    {
+      "title": "Yoshlar 40%+ — raqamli xizmatlar uchun tayyor",
+      "detail": "Aholi yoshligini hisobga olib, BPO, IT-autsorsing, freelance — migratsiyaning alternativasi."
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "A380 tranzit foydalanilmayapti",
+      "severity": "KRITIK",
+      "data": "Kuniga 2-3k yuk mashinasi o'tadi. Lekin zamonaviy Truck Stop, ovqatlanish, dam olish, texnik xizmat yo'q.",
+      "opportunity": "Truck Stop + TIR-park + restoran + yoqilg'i + texnik servis + dush/uyqu + mini-bozor — barcha-biri kompleks",
+      "investment_range_mln_sum": "300-2000",
+      "monthly_income_mln_sum": "30-200",
+      "payback_years": "3-6",
+      "suitable_for": ["kapital bor", "xizmat ko'rsatish tajribasi"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB",
+      "risk": "Mev­suimiylik (qish kamroq); raqobat (Qo'ng'irot ham xuddi shuni qilishi mumkin)"
+    },
+    {
+      "gap": "To'qimachilik kichik bизнes integratsiyasi past",
+      "severity": "YUQORI",
+      "data": "To'qimachilik = eksport drayveri. Kichik biznes ulushi (220.1 mlrd) o'smoqda, lekin yirik korxona (328.1 mlrd) ustun. Kichik tikuvchilik va to'qimachilik kooperatsiyasi yo'q.",
+      "opportunity": "To'qimachilik klasteri atrofida kichik tikuvchilik sexlari, buyurtma ishlab chiqarish, uy to'qimachilik",
+      "investment_range_mln_sum": "20-200",
+      "monthly_income_mln_sum": "8-50",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "texnik malaka", "oilaviy biznes"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Xomashyo narxi o'zgarishi; buyurtma topish"
+    },
+    {
+      "gap": "Miya (licorice) qayta ishlanmayapti",
+      "severity": "YUQORI",
+      "data": "Sho'rga chidamli miya ekin o'sadi. Tayyor ekstrakt xom-ashyodan 5-7x qimmat. Farmatsevtika va oziq-ovqat sanoati global talabi katta.",
+      "opportunity": "Miya ildizi qayta ishlash mini-zavod — ekstrakt, tabletka, choy, sirop",
+      "investment_range_mln_sum": "50-300",
+      "monthly_income_mln_sum": "15-80",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer", "farmatsevtika bilimlari", "eksport tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Bozor topish; sertifikat olish"
+    },
+    {
+      "gap": "Internet 65% / 25 Mbps — 7 ta regionning eng yomoni",
+      "severity": "YUQORI",
+      "data": "IT va e-commerce uchun asosiy to'siq. Yoshlar 40% — raqamli xizmatlar uchun tayyor, lekin internet kuchsiz.",
+      "opportunity": "Internet infratuzilmasini kengaytirish xizmati; WiFi hot spot o'rnatish; mahalliy e-commerce",
+      "investment_range_mln_sum": "10-100",
+      "monthly_income_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["IT bilimlari", "texnik malaka"],
+      "bank_product": "Yoshlar biznesda",
+      "risk": "Katta operator bilan raqobat"
+    },
+    {
+      "gap": "G'isht xom-ashyosi (1.085 mln m³) ishlatilmayapti",
+      "severity": "O'RTA-YUQORI",
+      "data": "2 ta loess koni — 1,085 mln m³ zaxira. Nukus va Qo'ng'irotda qurilish bumi davom etmoqda. Transport (temir yo'l 500m) arzon.",
+      "opportunity": "G'isht zavodi, quruq qurilish aralashmasi, beton bloklar",
+      "investment_range_mln_sum": "100-600",
+      "monthly_income_mln_sum": "20-80",
+      "payback_years": "3-5",
+      "suitable_for": ["qurilish tajribasi", "kapital bor"],
+      "bank_product": "SQB yoki Har bir oila tadbirkor",
+      "risk": "Mev­suimiylik (qurilish qish sekin); energiya zarur"
+    },
+    {
+      "gap": "Go'sht va sut qayta ishlash yo'q",
+      "severity": "O'RTA-YUQORI",
+      "data": "45,000 ga yaylov + chorvachilik mahallasi bor. Lekin go'sht tirik vazn shaklida, sut xom sifatida sotilmoqda.",
+      "opportunity": "Mini go'sht kombinati, pishloq-qatiq sex, 'Qo'nlikoʻl go'shti' brendi",
+      "investment_range_mln_sum": "50-400",
+      "monthly_income_mln_sum": "10-60",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; sifat nazorati"
+    },
+    {
+      "gap": "Mehnat resurslari kamaymoqda (migratsiya)",
+      "severity": "O'RTA",
+      "data": "19.37k (2021) → 16.94k (2025) — 2.43k kishi kamaydi. Migratsiya to'xtatilmasa, iqtisodiy o'sish sekinlashadi.",
+      "opportunity": "Mahalliy ish o'rinlarini ko'paytirish, BPO markaz, remote work uchun infratuzilma",
+      "investment_range_mln_sum": "20-150",
+      "monthly_income_mln_sum": "8-40",
+      "payback_years": "2-4",
+      "suitable_for": ["IT bilimlari", "yoshlar bilan ishlash tajribasi"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Internet 65% — to'siq"
+    },
+    {
+      "gap": "Kanalizatsiya 2.2% — kritik",
+      "severity": "KRITIK-INFRATUZILMA",
+      "data": "Sog'liq xavfi. Turizm va mehmonxona infratuzilmasi uchun asosiy to'siq.",
+      "opportunity": "Bio-tualet, mahalliy kanalizatsiya yechimlari o'rnatish va texnik xizmat",
+      "investment_range_mln_sum": "20-200",
+      "monthly_income_mln_sum": "5-20",
+      "payback_years": "3-6",
+      "suitable_for": ["muhandislik bilimi bor"],
+      "bank_product": "SQB ekologik kredit",
+      "risk": "Davlat infratuzilmasiga bog'liqlik"
+    },
+    {
+      "gap": "Sabzavot va poliz qayta ishlanmayapti",
+      "severity": "O'RTA",
+      "data": "Mahalla-8 sabzavot va polizchilikka ixtisoslashgan. Lekin konserva yoki quritish yo'q.",
+      "opportunity": "Sabzavot konserva, quruq sabzavot, tarvuz va qovun quritmasi, meva shiralari",
+      "investment_range_mln_sum": "30-200",
+      "monthly_income_mln_sum": "8-40",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Mev­suimiylik; sovitgich zarur"
+    },
+    {
+      "gap": "Quyosh energiyasi ishlatilmayapti",
+      "severity": "PAST",
+      "data": "300+ quyoshli kun. Elektr yaxshi, lekin fermerlarga mustaqil energiya kerak (suv nasoсlari).",
+      "opportunity": "Fermer xo'jaliklari uchun quyosh nasoslari, mini-SES, solar suv isitgich",
+      "investment_range_mln_sum": "5-50",
+      "monthly_income_mln_sum": "3-15",
+      "payback_years": "3-5",
+      "suitable_for": ["texnik malaka bor", "fermer"],
+      "bank_product": "Agro bank ekologik kredit",
+      "risk": "Dastlabki kapital"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Yo'l bo'yi tranzit xizmatlari",
+      "type": "Truck Stop / TIR-park / Restoran / Texnik servis / Yoqilg'i",
+      "why_qonlikol": "A380 ustida kuniga 2-3k yuk mashinasi. Qo'ng'irot-Nukus oralig'ida strategik joylashuv. Temir yo'l 500m. 1% soliq imtiyozi. Hozir zamonaviy Truck Stop yo'q — raqib yo'q.",
+      "investment_mln_sum": "300-2000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "3-6",
+      "suitable_for": ["kapital bor", "xizmat ko'rsatish tajribasi"],
+      "bank_product": "SQB yoki Har bir oila tadbirkor",
+      "risk": "Qish sezon kamroq; Qo'ng'irot ham xuddi shuni qilsa raqobat"
+    },
+    {
+      "rank": 2,
+      "sector": "Tikuvchilik va to'qimachilik",
+      "type": "Tikuvchilik sexi / To'qimachilik klasteri kooperatsiyasi / Brend kiyim",
+      "why_qonlikol": "To'qimachilik — eksport drayveri. Xomashyo yaqin. Ayollar uchun uy-da ishlash mumkin. 1% soliq. HAMROH garovsiz 100 mln.",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "8-50",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "oilaviy biznes", "texnik malaka"],
+      "bank_product": "HAMROH (garovsiz 100 mln)",
+      "risk": "Buyurtma topish; sifat talabi"
+    },
+    {
+      "rank": 3,
+      "sector": "Miya (licorice) qayta ishlash",
+      "type": "Miya ildizi ekstrakt zavodi / Farmatsevtika xomashyosi / Licorice choy",
+      "why_qonlikol": "Noyob imkoniyat — O'zbekistonda kam bor. Tayyor ekstrakt xom-ashyodan 5-7x qimmat. Sho'r yer — miya uchun ideal. Eksportga Rossiya, Yevropa, Osiyo.",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer", "eksport tajribasi", "farmatsevtika bilimlari"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Bozor topish; sertifikat; noyob soha"
+    },
+    {
+      "rank": 4,
+      "sector": "G'isht va qurilish materiallari",
+      "type": "G'isht zavodi, quruq qurilish aralashmasi, beton bloklar",
+      "why_qonlikol": "1,085 mln m³ loess zaxira — 2 konda. Nukus va Qo'ng'irotda qurilish davom etmoqda. Temir yo'l 500m — yetkazib berish arzon. 1% soliq.",
+      "investment_mln_sum": "100-600",
+      "monthly_income_estimate_mln_sum": "20-80",
+      "payback_years": "3-5",
+      "suitable_for": ["qurilish tajribasi", "kapital bor"],
+      "bank_product": "SQB yoki Har bir oila tadbirkor",
+      "risk": "Qurilish bozori tsikllari"
+    },
+    {
+      "rank": 5,
+      "sector": "Go'sht va sut mahsulotlari",
+      "type": "Mini go'sht kombinati / Pishloq-qatiq sex / Kolbasa / 'Qo'nlikoʻl go'shti' brendi",
+      "why_qonlikol": "45,000 ga yaylov + chorvachilik mahallasi. Xomashyo tayyor. 1% soliq. Nukus va Qo'ng'irot yaqin bozor.",
+      "investment_mln_sum": "50-400",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; sifat nazorati"
+    },
+    {
+      "rank": 6,
+      "sector": "Sabzavot va poliz qayta ishlash",
+      "type": "Sabzavot konserva, quruq sabzavot, tarvuz quritmasi, meva shiralari",
+      "why_qonlikol": "Mahalla-8 sabzavotchilikka ixtisoslashgan. Qayta ishlash = 0%. 100% soz elektr — konserva uchun ideal. 1% soliq.",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "8-40",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki HAMROH",
+      "risk": "Mev­suimiylik; sovitgich"
+    },
+    {
+      "rank": 7,
+      "sector": "IT va raqamli xizmatlar",
+      "type": "BPO markaz, freelance hub, SMM agentlik, raqamli ta'lim",
+      "why_qonlikol": "Yoshlar 40%. 2 kollej + 1 texnikum (2,540 o'quvchi). 1% soliq. Migratsiyaning alternativasi. Internet to'siq — lekin kengaytirish bilan hal qilinadi.",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["IT bilimlari", "ingliz tili", "yoshlar"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Internet 65% / 25 Mbps — asosiy to'siq"
+    },
+    {
+      "rank": 8,
+      "sector": "Sovuq saqlash va logistika",
+      "type": "Cold storage, muzxona, fermer logistika xizmati",
+      "why_qonlikol": "100% soz elektr — sovutgich uchun ideal! Fermerlар mahsuloti yo'qolmoqda. Temir yo'l 500m — eksport logistikasi arzon.",
+      "investment_mln_sum": "100-600",
+      "monthly_income_estimate_mln_sum": "15-60",
+      "payback_years": "3-5",
+      "suitable_for": ["kapital bor", "logistika tajribasi"],
+      "bank_product": "Agro bank yoki SQB",
+      "risk": "Elektr xarajati; mijozlar bazasini shakllantirish"
+    },
+    {
+      "rank": 9,
+      "sector": "Xususiy bog'cha va ta'lim xizmatlari",
+      "type": "Mini-bog'cha, oilaviy MTT, til kurslari, IT bolalar kursi",
+      "why_qonlikol": "Bog'cha 81% — 19% bo'shliq (taxminan 700+ bola). 10,787 oila uchun talab bor. 1% soliq.",
+      "investment_mln_sum": "20-100",
+      "monthly_income_estimate_mln_sum": "5-20",
+      "payback_years": "2-3",
+      "suitable_for": ["ayollar", "pedagogik ta'lim"],
+      "bank_product": "HAMROH",
+      "risk": "Ruxsatnomalar"
+    },
+    {
+      "rank": 10,
+      "sector": "Moliyaviy va biznes xizmatlari",
+      "type": "Buxgalteriya, norasmiy rasmiylashtirish, biznes konsalting",
+      "why_qonlikol": "5,215 norasmiy sektor — 5 mlrd so'm soliq yo'qotish. 110 mikroloyiha — hamma buxgalter kerak. 1% soliq imtiyozidan to'g'ri foydalanishga yordam.",
+      "investment_mln_sum": "5-30",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya tajribasi", "huquq bilimlari"],
+      "bank_product": "Yoshlar biznesda",
+      "risk": "Kichik bozor (54.8k aholi)"
+    }
+  ],
+
+  "unique_position": {
+    "electricity_champion": "7 ta region orasida transformatorlar 100% soz — energiya-talab ishlab chiqarish (sovutgich, qayta ishlash) uchun ideal.",
+    "tax_haven": "1% soliq stavkasi + 7 ta regionning eng kichik aholi — investorlar uchun 'toza sahifa', raqobat past.",
+    "transit_middle": "Qo'ng'irot-Nukus A380 o'rtasida — kuniga 2-3k yuk mashinasi captive audience sifatida.",
+    "licorice_niche": "Miya qayta ishlash — 7 ta regionning hech birida yo'q noyob imkoniyat."
+  },
+
+  "ai_prompt_context_uz": "Qo'nlikoʻl tumani (Qoraqalpog'iston) — 54.8 ming aholi, 11 mahalla. 7 ta regionning ENG KICHIGI, lekin noyob ustunliklar: (1) Elektr 100% SOZ transformator — 7 ta regionning ENG YAXSHI energiyasi; (2) Gaz 98.7%; (3) Temir yo'l 500m; (4) A380 tranzit (kuniga 2-3k yuk mashinasi); (5) Qoraqalpog'iston 1% MAXSUS SOLIQ — investor uchun ideal; (6) Miya (licorice) — noyob sho'rga chidamli ekin, ekstrakt 5-7x qimmat; (7) 45,000 ga yaylov chorvachilik. MUAMMOLAR: Internet 65%/25 Mbps — eng yomoni; Kanalizatsiya 2.2%; Mehnat resurslari kamaymoqda (19.4k → 16.9k) — migratsiya. ASOSIY IMKONIYATLAR: (1) A380 Truck Stop — kuniga 2-3k mashina, zamonaviy servis yo'q; (2) Miya qayta ishlash zavodi — 7 regionda YO'Q, noyob; (3) To'qimachilik klasteri — eksport drayveri, kengaytirish; (4) G'isht zavodi — 1,085 mln m³ loess, Nukus/Qo'ng'irot qurilish bumi; (5) Cold storage — 100% soz elektr, fermalar uchun ideal; (6) Go'sht/sut qayta ishlash — 45k ga yaylov. Yillik 1,500 ish o'rni maqsad: 60% qayta ishlash, 40% xizmat. BANK: HAMROH (ayollar, 100 mln garovsiz), Har bir oila tadbirkor (300 mln, 12% — boshqalardan past!), Agro bank imtiyozli.",
+
+  "ai_prompt_context_ru": "Канликульский район (Каракалпакстан) — 54.8 тыс. жителей, 11 махаллей. САМЫЙ МАЛЕНЬКИЙ из 7 регионов, но уникальные преимущества: (1) Электросеть 100% исправна — ЛУЧШАЯ среди 7 регионов; (2) Газ 98.7%; (3) Ж/д 500м; (4) Трасса А380 (2-3k грузовиков/день); (5) СПЕЦНАЛОГ Каракалпакстана 1% — идеально для инвесторов; (6) Солодка (мия) — уникальное солеустойчивое растение, экстракт в 5-7x дороже сырья; (7) 45,000 га пастбищ. ПРОБЛЕМЫ: Интернет 65%/25 Мбит/с — худший; Канализация 2.2%; Трудовые ресурсы сокращаются (19.4k → 16.9k) — миграция. ГЛАВНЫЕ ВОЗМОЖНОСТИ: (1) Truck Stop на А380 — 2-3k машин/день, нет современного сервиса; (2) Завод по переработке солодки — уникальная ниша, никто не делает; (3) Текстильный кластер — расширение экспорта; (4) Кирпичный завод — 1,085 млн м³ лёсс, стройбум в Нукусе/Кунграде; (5) Cold storage — 100% исправное электричество; (6) Переработка мяса/молока — 45k га пастбищ. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога 100 млн), Каждая семья — предприниматель (300 млн, 12% — ниже других!), льготные кредиты Агробанка."
+}

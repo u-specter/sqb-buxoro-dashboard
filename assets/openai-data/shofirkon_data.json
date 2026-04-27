@@ -1,0 +1,536 @@
+{
+  "id": "shofirkon",
+  "name_uz": "Шофиркон тумани",
+  "name_ru": "Шафирканский район",
+  "name_latin": "Shofirkon tumani",
+  "viloyat": "Buxoro",
+  "type": "tuman",
+  "data_year": 2025,
+  "sources": ["stat.uz", "SQB", "Xokimiyat", "Mehnat.uz", "Markaziy bank"],
+  "character_note": "Shofirkon — Buxoro viloyatining eng agrar tumani (Q/x 60%). Meva quritish klasteri eksportni +123.6% oshirdi — rekord. Lekin: investitsiya -4.1%, kanalizatsiya 2.4% (viloyatda eng yomoni), o'rtacha maosh 2.3 mln (2.6x milliy o'rtachadan past), mehmomxona atigi 1 ta. Salohiyat ulkan, ammo infratuzilma va diversifikatsiya — asosiy vazifa.",
+
+  "demographics": {
+    "population": 189800,
+    "population_trend": "184,300 (2023) → 187,000 (2024) → 189,800 (2025)",
+    "mahallas": 50,
+    "mahalla_note": "8 shaharcha + 13 qishloq FY + submahallalar",
+    "families": 43000,
+    "households": 36300,
+    "avg_family_size": 4.4
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 1220,
+    "industry_growth_pct": 4.2,
+    "industry_dynamics": {
+      "2021": 988, "2022": 810.3, "2023": 1022.3, "2024": 1104.1, "2025": 1220,
+      "note": "2022 da tushish kuzatildi, so'ng barqaror o'sish"
+    },
+    "agriculture_volume_bln_sum": 4397.8,
+    "agriculture_growth_pct": 5.6,
+    "agriculture_share_pct": 60,
+    "agriculture_note": "4 ta regionning ENG AGRAR tumani. Paxta 12,110 ga + g'alla 6,100 ga — asosiy tarkib",
+    "construction_bln_sum": 977,
+    "construction_growth_pct": 13.6,
+    "market_services_bln_sum": 1237.6,
+    "services_growth_pct": 13.6,
+    "total_economy_bln_sum": 7830,
+    "local_budget_bln_sum": 142.5,
+    "local_budget_trend": "90.3 (2023) → 103.9 (2024) → 142.5 (2025), +58% — viloyatda eng yuqori sur'at",
+    "credits_bln_sum": 690.9,
+    "credits_trend": {
+      "2021": 278.3, "2022": 354.6, "2023": 316.0, "2024": 543.6, "2025": 690.9,
+      "growth_5yr_x": 2.48
+    },
+    "npl_pct": 0.8,
+    "npl_note": "0.8% — 4 ta regionning ENG PAST NPL. Kredit sog'liqligi a'lo!",
+    "investment_growth_pct": -4.1,
+    "investment_note": "YAGONA MANFIY ko'rsatkich! FDI yo'q. JICA/ADB bilan 100+ mln $ dastur zarur",
+    "export_usd_mln": 12.3,
+    "export_growth_pct": 123.6,
+    "export_2027_forecast_mln_usd": 26.7,
+    "export_driver": "Meva quritish klasteri — yagona eksport drayveri. MONO-EKSPORT XAVFI bor",
+    "google_trends_score": 44,
+    "google_trends_trend": "40 (2024) → 44 (2025), +10%. G'ijduvondan past (50)",
+    "avg_salary_mln_sum": 2.3,
+    "avg_salary_note": "KRITIK: milliy o'rtacha 5.98 mln — Shofirkon 2.3 mln, 2.6 martadan past. Asosiy muammo: paxta mav­sumiy va norasmiy ish.",
+    "small_business_count": 1599,
+    "small_business_trend": "1637 (2023) → 1599 (2024) — -38 netto. Kichik biznes qisqarmoqda!",
+    "priority_sectors_2026": ["Farmatsevtika (yangi)", "Oziq-ovqat qayta ishlash klasteri", "Meva quritish kengaytirish", "Tikuvchilik"]
+  },
+
+  "agriculture_detail": {
+    "cotton_area_ha": 12110,
+    "grain_area_ha": 6100,
+    "irrigated_area_ha": 20568,
+    "cotton_note": "12,110 ga paxta — viloyatda muhim. Paxta tozalash zavodi mavjud. Tikuvchilik uchun xom-ashyo baza bor.",
+    "agro_zones": {
+      "center_cotton": "Paxtachilik — markaziy katta hududlar (qizil zona)",
+      "spread_vegetables": "Sabzavotchilik — keng tarqalgan (sariq zona)",
+      "north_gardening": "Bog'dorchilik — shimoliy hududlar (yashil zona)",
+      "south_east_livestock": "Chorvachilik — janubiy va sharqiy hududlar (jigarrang zona)"
+    },
+    "processing_plants_existing": ["Paxta tozalash", "G'isht zavodi (3 ta)", "Sharob zavodi (1 ta)"],
+    "processing_plants_planned": {
+      "count": 4,
+      "types": ["Sut zavodi", "Go'sht zavodi", "Un zavodi", "Yog' va konserva zavodi"],
+      "investment_mln_usd": "50-80",
+      "jobs": "800-1200",
+      "export_markets": ["Rossiya", "Qozog'iston"]
+    },
+    "cold_storage": {
+      "total_warehouses": 3,
+      "total_capacity_tons": 800,
+      "refrigerated_warehouses": 2,
+      "refrigerated_capacity_tons": 400,
+      "regular_warehouses": 1,
+      "regular_capacity_tons": 400,
+      "gap_vs_gijduvon": "G'ijduvondan 9.25x kam (7,400 vs 800 tonna) — kritik bo'shliq"
+    }
+  },
+
+  "tourism": {
+    "tourists_2025": 510200,
+    "tourists_2026_plan": 606100,
+    "tourists_growth_pct": 18.8,
+    "foreign_tourists_2025": 74500,
+    "foreign_tourists_2026": 100700,
+    "foreign_growth_pct": 35.2,
+    "domestic_tourists_2026": 505400,
+    "tourism_export_dynamics_mln_usd": {
+      "2021": 4.6, "2022": 7.7, "2023": 12.2, "2024": 17.3, "2025": 20.3,
+      "growth_5yr": "4.4 barobar"
+    },
+    "hotels_2025": 1,
+    "hotels_2026_plan": 3,
+    "hotel_beds_2025": 68,
+    "hotel_beds_2026_plan": 84,
+    "beds_per_tourist": 0.000133,
+    "hotels_gap_note": "510k sayyoh uchun ATIGI 1 MEHMONXONA (68 o'rin) — 4 ta regionning eng yomoni. Ulkan imkoniyat!",
+    "bukhara_proximity": "Buxoro shahriga yaqin — Ipak yo'li tranziti",
+    "tourism_directions": [
+      "Tarixiy ob'ektlar: masjid-madrasalar, shahar markazi",
+      "Agro-turizm: paxtazor va bog'larni ko'rish",
+      "Gastro-turizm: mahalliy taomlar",
+      "Meva quritish klasteri ekskursiya"
+    ],
+    "tourism_note": "Shofirkon turizmi hali nolga yaqin — 510k sayyoh bor, lekin infratuzilma yo'q. First mover uchun ideal."
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 66.5,
+    "water_trend": "48.6% (2023) → 50.1% (2024) → 66.5% (2025) — o'smoqda lekin 4 ta regionning eng pasti",
+    "roads_repair_pct": 22,
+    "roads_trend": "18% (2023) → 20% (2024) → 22% (2025) — sekin",
+    "sewage_pct": 2.4,
+    "sewage_note": "VILOYATDA ENG PAST. Mamlakat bo'yicha quyi 5%. 2023: 0% → 2024: 0.4% → 2025: 2.4% — tezlashmoqda lekin kritik",
+    "public_transport_pct": 8,
+    "public_transport_note": "4 ta regionning eng pasti — qishloq aholisi shaxsiy transport bilan",
+    "electricity_quality_pct": 49,
+    "electricity_note": "PASAYISH TRENDI: 54% (2023) → 51% (2024) → 49% (2025). Yagona pasayayotgan ko'rsatkich.",
+    "gas_supply_pct": 92,
+    "gas_note": "GAS YAXSHI — 92%! Qo'shtepa (10.1%) bilan katta farq. Sanoat uchun qulay.",
+    "solar_potential_days": 300,
+    "solar_project": "Nur Bukhara Solar (500 MW) — tumanга yaqin. Arzon elektr imkoniyati.",
+    "land": {
+      "total_ha": 371894,
+      "agriculture_ha": 323456,
+      "agriculture_pct": 87,
+      "forest_ha": 44669,
+      "water_ha": 1873,
+      "industry_transport_ha": 1298,
+      "historical_ha": 343
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 87.6,
+      "children_3_7": 15426,
+      "enrolled": 13519,
+      "total_mtt": 283,
+      "state_mtt": 48,
+      "dxsh": 17,
+      "family_mtt": 218,
+      "gap_pct": 12.4,
+      "note": "Buxoro viloyati tumanlarida yaxshi ko'rsatkich. 218 oilaviy MTT — model ishlaydi."
+    }
+  },
+
+  "healthcare": {
+    "medical_organizations": 25,
+    "hospital_beds": 364,
+    "budget_beds": 301,
+    "non_budget_beds": 63,
+    "total_staff": 1965,
+    "doctors": 385,
+    "nurses": 1017,
+    "junior_staff": 270,
+    "warning": "Kanalizatsiya 2.4% sababli kasallanish xavfi yuqori — sanitariya investitsiyasi zarur",
+    "opportunity": "63 xususiy o'rin (17%) — xususiy klinikalar uchun joy bor"
+  },
+
+  "labor": {
+    "total_resources": 90700,
+    "employed": 67900,
+    "unemployment_count": 2100,
+    "unemployment_pct": 3.4,
+    "unemployment_trend": "7,800 (2021) → 7,000 → 5,100 → 4,500 → 2,100 (2025) — 73% qisqarish",
+    "real_unemployment_pct": 14.5,
+    "informal_sector_pct": 33.4,
+    "informal_note": "VILOYATDA ENG YUQORI norasmiy bandlik (33.4%). Sabab: paxta mav­sumiy va qishloq xo'jaligi tsikllari",
+    "migration_count": 7300,
+    "avg_salary_mln_sum": 2.3,
+    "avg_salary_national_mln_sum": 5.98,
+    "salary_gap_x": 2.6,
+    "salary_note": "Milliy o'rtachadan 2.6x past — asosiy ijtimoiy muammo. Norasmiy ish va past malaka sabab.",
+    "poverty_families": 1650,
+    "poverty_pct": 3.6,
+    "poverty_trend": "5,200 (2020) → 4,650 → 4,600 → 3,200 → 2,000 → 1,650 (2025) — 68% qisqarish",
+    "difficult_mahallas_count": 4,
+    "difficult_unemployed": 280,
+    "difficult_micro_projects": 95,
+    "difficult_sum_bln": 3.8,
+    "youth_program_2026": {
+      "total": 1580,
+      "entrepreneurship": 1240,
+      "employment": 145,
+      "credit": 105,
+      "retraining": 90,
+      "entrepreneurship_pct": 78
+    },
+    "women_program_2026": {
+      "total": 3560,
+      "self_employment": 2020,
+      "employment": 660,
+      "entrepreneurship": 330,
+      "retraining": 310,
+      "credit": 240
+    }
+  },
+
+  "mahalla_economy": {
+    "total": 50,
+    "specialized": 39,
+    "by_type": {
+      "cotton": 15,
+      "grain": 10,
+      "livestock_dairy": 8,
+      "construction_materials": 6
+    },
+    "note": "Paxta + g'alla = 25 mahalla (64%). Diversifikatsiya past — strategik zaiflik."
+  },
+
+  "banking_programs": {
+    "micro_projects_2026": {
+      "total_projects": 490,
+      "total_jobs": 980,
+      "mahalla_bankers": 13,
+      "banks": {
+        "SQB": 133,
+        "Xalq_bank": 98,
+        "Mikrokreditbank": 73,
+        "Agro_bank": 65,
+        "Hamkor_bank": 41,
+        "Milliy_bank": 40,
+        "Infin_bank": 40
+      }
+    },
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "program_2026_2027": "2 trln so'm, 6,000 loyiha rejalashtirilgan",
+      "best_for": ["tikuvchilik", "meva quritish", "sut mahsulotlari", "bolalar bog'chasi", "savdo"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "best_for": ["fermerchilik", "qayta ishlash", "chorvachilik", "mehmonxona"]
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Eksport raketa o'sishi",
+      "detail": "+123.6% — 4 ta regionning rekord eksport o'sishi. Meva quritish klasteri drayveri. Buxoro strategiyasida #1 muhim tumanlardan."
+    },
+    {
+      "title": "Gaz 92% — sanoat uchun qulay",
+      "detail": "Farg'ona regionlaridan farqli (Qo'shtepa 10.1%): gaz yetarli. Sanoat va qayta ishlash zavodlari uchun energiya muammosi yo'q."
+    },
+    {
+      "title": "NPL 0.8% — rekord past",
+      "detail": "4 ta regionning eng past NPL. Kredit sog'liqligi a'lo — bank uchun ishonchli hudud."
+    },
+    {
+      "title": "Buxoro strategiyasida ustuvur 2026",
+      "detail": "Farmatsevtika + oziq-ovqat qayta ishlash 2026 uchun belgilangan. Davlat investitsiyasi oqimi kutilmoqda."
+    },
+    {
+      "title": "Paxta xom-ashyo bazasi",
+      "detail": "12,110 ga paxta — tikuvchilik va to'qimachilik uchun tayyor xom-ashyo. Paxta tozalash zavodi mavjud."
+    },
+    {
+      "title": "Katta yer fondi",
+      "detail": "371,894 ha yer — katta sanoat va agro kengaytirish imkoniyati."
+    },
+    {
+      "title": "Qurilish sektor o'sishi",
+      "detail": "+13.6% qurilish o'sishi. 6 mahalla qurilish materiallariga ixtisoslashgan — mahalliy bozor bor."
+    },
+    {
+      "title": "Nur Bukhara Solar (500 MW) yaqin",
+      "detail": "500 MW quyosh stansiyasi yaqinda — arzon elektr energiyasi sanoat uchun imkoniyat yaratadi."
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "ATIGI 1 MEHMONXONA (68 o'rin, 510k sayyoh)",
+      "severity": "KRITIK",
+      "data": "4 ta regionning eng yomoni. 2026 da 606k sayyoh kutilmoqda. Xorijiy sayyohlar +35.2% o'smoqda.",
+      "opportunity": "Mini-mehmonxona, B&B, hostel, yo'l bo'yi seryomlashtirilgan stopover point — first mover uchun bozor bo'sh",
+      "investment_range_mln_sum": "80-500",
+      "monthly_income_mln_sum": "10-60",
+      "payback_years": "3-5",
+      "suitable_for": ["mulk egasi", "kapital bor"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB"
+    },
+    {
+      "gap": "Meva quritish — mono-eksport xavfi",
+      "severity": "YUQORI",
+      "data": "Eksport +123.6% — yagona drayveri meva quritish. Agar hosil yomonlashsa — eksport qulab tushadi.",
+      "opportunity": "Eksport diversifikatsiya: quritilgan do'mlanmish, quritilgan sabzavot, organik sertifikat, brending, qadoqlash",
+      "investment_range_mln_sum": "50-300",
+      "monthly_income_mln_sum": "15-80",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer", "eksport tajribasi bor"],
+      "bank_product": "Agro bank yoki SQB"
+    },
+    {
+      "gap": "4 ta qayta ishlash zavodi rejalashtirilgan — lekin hali qurilmagan",
+      "severity": "YUQORI",
+      "data": "Sut, go'sht, un, yog'—konseerva. $50-80 mln investitsiya, 800-1,200 ish o'rni. Buxoro strategiyasida.",
+      "opportunity": "Zavod qurish, yetkazib berish, logistika, kadrlar — butun zanjir bo'yicha imkoniyat",
+      "investment_range_mln_sum": "200-2000",
+      "monthly_income_mln_sum": "50-300",
+      "payback_years": "4-7",
+      "suitable_for": ["yirik investor", "xalqaro moliya"],
+      "bank_product": "SQB + JICA/ADB liniyalari"
+    },
+    {
+      "gap": "Sovuq saqlash 9x kam (800 vs 7,400 tonna G'ijduvon)",
+      "severity": "YUQORI",
+      "data": "Meva quritish klasterining asosiy cheklov — saqlash yetarli emas. Hosil yo'qotilmoqda.",
+      "opportunity": "Cold storage, muzxona, frigorifik omborxona qurish yoki ijaraga berish",
+      "investment_range_mln_sum": "100-600",
+      "monthly_income_mln_sum": "15-60",
+      "payback_years": "3-5",
+      "suitable_for": ["kapital bor"],
+      "bank_product": "Agro bank yoki SQB"
+    },
+    {
+      "gap": "O'rtacha maosh 2.3 mln (milliy 5.98 mln dan 2.6x past)",
+      "severity": "YUQORI",
+      "data": "Norasmiy 33.4% + past maosh = aholining katta qismi kredit layoqatsiz. Iqtisodiy faollik cheklangan.",
+      "opportunity": "Kasb-hunar kurslari, qayta o'qitish, IT va raqamli xizmatlar orqali daromad oshirish",
+      "investment_range_mln_sum": "10-100",
+      "monthly_income_mln_sum": "5-25",
+      "payback_years": "1-3",
+      "suitable_for": ["pedagogik tajriba", "IT bilimlari bor"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda"
+    },
+    {
+      "gap": "Investitsiya -4.1% — yagona manfiy",
+      "severity": "O'RTA-YUQORI",
+      "data": "FDI yo'q, mahalliy investorlar kam. Kichik biznes ham qisqarmoqda (-38 netto).",
+      "opportunity": "Investitsiya jalb qilish konsalting, biznes-inkubator, startap tanlovi",
+      "investment_range_mln_sum": "10-50",
+      "monthly_income_mln_sum": "5-20",
+      "payback_years": "2-3",
+      "suitable_for": ["moliya tajribasi bor"],
+      "bank_product": "SQB"
+    },
+    {
+      "gap": "Paxta — mav­sumiy, qayta ishlash minimal",
+      "severity": "O'RTA-YUQORI",
+      "data": "12,110 ga paxta bor, paxta tozalash zavodi bor — lekin to'qimachilik va tikuvchilik kichik. Kulba MFYda bor.",
+      "opportunity": "Tikuvchilik sexi, milliy kiyim, forma, to'qimachilik — paxta xom-ashyo arzon va yaqin",
+      "investment_range_mln_sum": "30-300",
+      "monthly_income_mln_sum": "8-50",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "texnik malaka"],
+      "bank_product": "HAMROH"
+    },
+    {
+      "gap": "Kanalizatsiya 2.4% — viloyatda eng yomoni",
+      "severity": "KRITIK-INFRATUZILMA",
+      "data": "Salomatlik va ekologiya xavfi yuqori. AIIB/ADB Water Supply loyihasiga kiritish zarur.",
+      "opportunity": "Bio-tualet, mahalliy kanalizatsiya, kompost tizim o'rnatish va texnik xizmat",
+      "investment_range_mln_sum": "20-200",
+      "monthly_income_mln_sum": "5-20",
+      "payback_years": "3-5",
+      "suitable_for": ["muhandislik bilimi bor"],
+      "bank_product": "SQB ekologik kredit"
+    },
+    {
+      "gap": "Elektr sifati pasaymoqda (54%→49%)",
+      "severity": "O'RTA",
+      "data": "4 ta ichida yagona pasayayotgan ko'rsatkich. Nur Bukhara Solar yaqinda — imkoniyat bor.",
+      "opportunity": "Quyosh panellari, UPS tizimi, energiya tejash texnologiyalari",
+      "investment_range_mln_sum": "20-200",
+      "monthly_income_mln_sum": "8-40",
+      "payback_years": "3-5",
+      "suitable_for": ["texnik bilim bor"],
+      "bank_product": "SQB ekologik kredit"
+    },
+    {
+      "gap": "Google Trends 44/100 — past brending",
+      "severity": "PAST",
+      "data": "Turizm va investitsiya uchun taniqlilik kichik. 'Shofirkon meva quritish' — tanilmagan brend.",
+      "opportunity": "SMM, veb-sayt, mahalliy mahsulotlar brending, e-commerce eksport kanallari",
+      "investment_range_mln_sum": "3-30",
+      "monthly_income_mln_sum": "3-15",
+      "payback_years": "1-2",
+      "suitable_for": ["yoshlar", "IT bilimlari"],
+      "bank_product": "Yoshlar biznesda"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Mehmonxona va turizm joylashuvi",
+      "type": "Mini-mehmonxona / hostel / B&B / yo'l bo'yi stopover",
+      "why_shofirkon": "510k sayyoh, ATIGI 1 mehmonxona (68 o'rin). 2026 da xorijiy sayyohlar +35.2%. Buxoro-Samarkand yo'lida. First mover — raqib yo'q.",
+      "investment_mln_sum": "80-500",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "3-5",
+      "suitable_for": ["mulk egasi", "kapital bor"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB",
+      "risk": "Mev­suimiylik; infratuzilma (kanalizatsiya)"
+    },
+    {
+      "rank": 2,
+      "sector": "Meva quritish va qayta ishlash",
+      "type": "Quritilgan meva zavodi / qadoqlash / organik sertifikat / eksport",
+      "why_shofirkon": "Eksport +123.6% — drayveri shu soha. Lekin sovuq saqlash 800 tonna — yetarli emas. Kengaytirish uchun joy va talab bor. Rossiya/Qozog'iston bozori tayyorligini tasdiqlagan.",
+      "investment_mln_sum": "50-400",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer yoki fermer oila", "eksport tajribasi"],
+      "bank_product": "Agro bank imtiyozli yoki SQB",
+      "risk": "Mono-soha xavfi; ob-havo ta'siri"
+    },
+    {
+      "rank": 3,
+      "sector": "Tikuvchilik va to'qimachilik",
+      "type": "Tikuvchilik sexi / milliy kiyim / korxona formasi / trikotaj",
+      "why_shofirkon": "12,110 ga paxta + paxta tozalash zavodi = xom-ashyo arzon va yaqin. Kulba MFYda model bor. 3,560 ayolga bandlik rejalashtirilgan.",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "8-50",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "texnik malaka"],
+      "bank_product": "HAMROH (garovsiz 100 mln)",
+      "risk": "Sifat va buyurtma topish"
+    },
+    {
+      "rank": 4,
+      "sector": "Sut va go'sht mahsulotlari",
+      "type": "Pishloq, qatiq, sariyog', go'sht mahsulotlari",
+      "why_shofirkon": "8 mahalla chorvachilik va sut mahsulotlariga ixtisoslashgan. 4 yangi zavod rejasida sut va go'sht bor — davlat yo'nalishi. Mahalliy bozor talab katta.",
+      "investment_mln_sum": "50-400",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; sifat nazorati"
+    },
+    {
+      "rank": 5,
+      "sector": "Qurilish materiallari",
+      "type": "G'isht, beton, qorishmalar, armirovka",
+      "why_shofirkon": "6 mahalla qurilish materiallariga ixtisoslashgan — baza bor. Qurilish +13.6% o'smoqda. 3 ta g'isht zavodi mavjud — kengaytirish mumkin.",
+      "investment_mln_sum": "80-500",
+      "monthly_income_estimate_mln_sum": "15-70",
+      "payback_years": "3-5",
+      "suitable_for": ["qurilish tajribasi", "kapital bor"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Sezsonallik (qish sekin)"
+    },
+    {
+      "rank": 6,
+      "sector": "Agro-turizm",
+      "type": "Paxtazor ekskursiya / meva bog'i dam olishi / fermer hayoti",
+      "why_shofirkon": "Butun dunyo 'paxta ko'k oltinni' ko'rmoqchi. Noyob tajriba — mev­sum sentyabr-oktyabr. Buxoro sayyohlari uchun yangi yo'nalish.",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-3",
+      "suitable_for": ["fermer yer egasi"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Kuchli mev­suimiylik; ingliz tili kerak xorij uchun"
+    },
+    {
+      "rank": 7,
+      "sector": "Quyosh energiyasi",
+      "type": "Solar panel o'rnatish va texnik xizmat, Nur Bukhara Solar integratsiya",
+      "why_shofirkon": "Elektr sifati pasaymoqda (49%). 300+ quyoshli kun. Nur Bukhara Solar (500 MW) yaqin — infratuzilma bor.",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "8-40",
+      "payback_years": "3-5",
+      "suitable_for": ["texnik bilim bor", "kapital bor"],
+      "bank_product": "SQB ekologik kredit",
+      "risk": "Tarmoqqa ulash; texnik kadrlar"
+    },
+    {
+      "rank": 8,
+      "sector": "Ta'lim va kasb-hunar",
+      "type": "Tikuvchilik kursi / fermer o'qitish / raqamli xizmatlar kursi",
+      "why_shofirkon": "O'rtacha maosh 2.3 mln — malaka oshirish zarur. 1,580 yoshga qayta o'qitish rejalashtirilgan. Norasmiy 33.4% — ularni formallashtirishda yordam kerak.",
+      "investment_mln_sum": "10-80",
+      "monthly_income_estimate_mln_sum": "5-20",
+      "payback_years": "1-3",
+      "suitable_for": ["ayollar", "pedagogik tajriba bor"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Talabalar jalb qilish"
+    },
+    {
+      "rank": 9,
+      "sector": "Savdo va xizmat ko'rsatish",
+      "type": "Universal do'kon / xizmat markazi / avtomobil texnik xizmati",
+      "why_shofirkon": "Public transport 8% — aholi shaxsiy mashinada. Xizmatlar +13.6% o'smoqda. 43,000 oila uchun savdo infratuzilmasi kichik.",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["boshlang'ich tadbirkor"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Xarid quvvati past (maosh 2.3 mln)"
+    },
+    {
+      "rank": 10,
+      "sector": "Raqamli va moliyaviy xizmatlar",
+      "type": "Buxgalteriya, norasmiy rasmiylashtirish, onlayn savdo yordam",
+      "why_shofirkon": "33.4% norasmiy sektor = 30,000+ kishi rasmiylashtirish uchun yordam kerak. 490 mikroloyiha — hamma buxgalter kerak.",
+      "investment_mln_sum": "5-30",
+      "monthly_income_estimate_mln_sum": "4-15",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya yoki huquq bilimlari"],
+      "bank_product": "Yoshlar biznesda",
+      "risk": "Xarid quvvati past"
+    }
+  ],
+
+  "cross_region_note": {
+    "gijduvon_synergy": "Shofirkon va G'ijduvon 51 km masofada — birgalikda 'Buxoro tashqarisining iqtisodiy klasteri' sifatida harakat qilishi mumkin: G'ijduvon UNESCO turizm + Shofirkon agro-eksport.",
+    "bukhara_proximity": "Buxoro shahriga yaqinlik — sayyohlar, investorlar va logistika uchun strategik ustunlik."
+  },
+
+  "ai_prompt_context_uz": "Shofirkon tumani (Buxoro viloyati, G'ijduvondan ~51 km) — 190 ming aholi, Buxoro viloyatining ENG AGRAR tumani (Q/x 60%). ASOSIY FARQI: Eksport +123.6% rekord (meva quritish klasteri drayveri). Lekin: investitsiya -4.1% (yagona manfiy), atigi 1 mehmonxona (68 o'rin, 510k sayyoh uchun), kanalizatsiya 2.4% (viloyatda eng yomoni), o'rtacha maosh 2.3 mln (milliy 5.98 mln dan 2.6x past), norasmiy bandlik 33.4% (viloyatda eng yuqori). KUCHLI TOMONLARI: (1) NPL 0.8% — 4 ta regionning rekord past; (2) Gaz 92% — sanoat qulay; (3) Paxta 12,110 ga — tikuvchilik uchun xom-ashyo bor; (4) Nur Bukhara Solar (500 MW) yaqin; (5) Buxoro strategiyasida farmatsevtika va oziq-ovqat qayta ishlash 2026 uchun belgilangan. KRITIK IMKONIYATLAR: (1) Mehmonxona — first mover, bozor bo'sh, 510k sayyoh bor; (2) Meva quritish kengaytirish — drayverni yo'qotmaslik va diversifikatsiya; (3) Sut/go'sht qayta ishlash — 8 mahalla chorvachilik, zavodlar rejalashtirilgan; (4) Tikuvchilik — paxta xom-ashyo arzon; (5) Sovuq saqlash — 800 tonna yetarli emas, G'ijduvon 7,400 tonna. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln, 2026-27 uchun 2 trln so'm), Har bir oila tadbirkor (300 mln, 18%, 3 yil), Agro bank imtiyozli kreditlar.",
+
+  "ai_prompt_context_ru": "Шафирканский район (Бухарская область, ~51 км от Гиждувана) — 190 тыс. жителей, САМЫЙ АГРАРНЫЙ район Бухарской области (с/х 60%). ГЛАВНАЯ ОСОБЕННОСТЬ: Экспорт +123.6% рекорд (кластер сушки фруктов — двигатель). НО: инвестиции -4.1% (единственный отрицательный), всего 1 гостиница (68 мест на 510k туристов), канализация 2.4% (худший в области), зарплата 2.3 млн (в 2.6 раза ниже нац. среднего 5.98 млн), неформальная занятость 33.4% (высшая в области). СИЛЬНЫЕ СТОРОНЫ: (1) NPL 0.8% — рекордно низкий из 4 регионов; (2) Газ 92% — удобно для промышленности; (3) Хлопок 12,110 га — сырьё для швейного; (4) Nur Bukhara Solar (500 МВт) рядом; (5) В стратегии Бухары фармацевтика и переработка продуктов — приоритет 2026. КРИТИЧЕСКИЕ ВОЗМОЖНОСТИ: (1) Гостиница — first mover, рынок свободен; (2) Расширение кластера сушки фруктов; (3) Переработка молока/мяса — 8 махаллей животноводство; (4) Швейное — хлопковое сырьё дешёвое; (5) Холодное хранение — всего 800 тонн. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога до 100 млн, бюджет 2 трлн), Каждая семья — предприниматель (300 млн, 18%, 3 года), льготные кредиты Агробанка."
+}

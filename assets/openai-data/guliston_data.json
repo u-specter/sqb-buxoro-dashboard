@@ -1,0 +1,683 @@
+{
+  "id": "guliston",
+  "name_uz": "Гулистон тумани",
+  "name_ru": "Гулистанский район",
+  "name_latin": "Guliston tumani",
+  "viloyat": "Sirdaryo",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "sirstat.uz", "stat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "gov.uz", "spot.uz", "gazeta.uz", "sirdaryo.uz"],
+  "data_quality_note": "Hokimiyat ma'lumotlarida hero_kpis Oila/Xonadon qiymatlari 200,000/195,000 — 78,000 aholi uchun nomutanosib (taxminan 10x ko'p). Realistik baho: ~20,000 oila, ~19,500 xonadon. Indikator ma'lumotlari to'g'ri.",
+
+  "demographics": {
+    "population": 78000,
+    "population_official_2022_apr": 76293,
+    "population_density_per_km2": 224,
+    "area_km2": 349,
+    "area_ha": 34900,
+    "mahallas": 24,
+    "families": 20000,
+    "households": 19500,
+    "settlements": {
+      "type": "tuman (Guliston shahri ALOHIDA — viloyat poytaxti, tumandan tashqarida)",
+      "viloyat_center_distance_km": 10,
+      "viloyat_center_name": "Guliston shahri (94 800 aholi)"
+    },
+    "ethnic_groups": ["o'zbeklar", "qozoqlar", "ruslar", "tojiklar", "tatarlar"],
+    "borders": {
+      "north": "Sayxunobod tumani",
+      "south": "Mirzaobod tumani",
+      "east": "Sirdaryo tumani / Guliston shahri",
+      "west": "Sardoba tumani"
+    },
+    "note": "Sirdaryo viloyatining markaziy tumani — Guliston shahri (viloyat poytaxti) tumandan ALOHIDA hisoblanadi. Aholi soni viloyat bo'yicha o'rta darajada (4-7 o'rin)"
+  },
+
+  "geography": {
+    "terrain": "tekislik (Sirdaryo cho'l-qir hududi)",
+    "main_river": "Sirdaryo (yaqinida)",
+    "irrigation_canals": ["Do'stlik kanali (asosiy)"],
+    "climate": {
+      "type": "Quruq kontinental cho'l iqlimi",
+      "sunny_days_per_year": "300+",
+      "key_advantage": "Quyosh energetikasi va saxroviy q/x uchun ideal"
+    },
+    "distance_to_tashkent_km": 110,
+    "distance_to_railway_km": 2,
+    "distance_to_viloyat_center_km": 10,
+    "key_advantage": "Toshkent–Farg'ona avtomagistralining markazida; temir yo'lga 2 km — eng yaxshi logistika joylashuvlaridan biri",
+    "river_eco_tourism_zone": "Sohilobod va Ahillik mahallalari hududida 360 ga ekoturizm kompleksi rejada (Sirdaryo tumanidagi Kamolot bilan birga)"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 526.3,
+    "industry_growth_5y_multiplier": 1.45,
+    "industry_growth_pct_2025": 5.8,
+    "industry_dynamics": {
+      "2021": 361.7,
+      "2022": 362.0,
+      "2023": 423.5,
+      "2024": 447.2,
+      "2025": 526.3,
+      "2026_forecast": 560.0,
+      "unit": "mlrd so'm"
+    },
+    "industry_breakdown_2025": {
+      "large_enterprises_bln_sum": 700,
+      "small_business_bln_sum": 690,
+      "note": "Yirik korxonalar va kichik biznes muvozanatda — sog'lom rivojlanish belgisi"
+    },
+    "services_volume_bln_sum": 419,
+    "services_growth_5y_multiplier": 2.16,
+    "services_dynamics": {
+      "2021": 194,
+      "2022": 225,
+      "2023": 264,
+      "2024": 350,
+      "2025": 419,
+      "unit": "mlrd so'm"
+    },
+    "export_volume_thousand_usd": 26500,
+    "export_growth_5y_multiplier": 2.94,
+    "export_dynamics_thousand_usd": {
+      "2021": 9000,
+      "2022": 11500,
+      "2023": 15000,
+      "2024": 20500,
+      "2025": 26500
+    },
+    "sector_shares": {
+      "services_pct": 45,
+      "industry_pct": 30,
+      "agriculture_pct": 25
+    },
+    "sector_employment": {
+      "services_thousand": 20.3,
+      "industry_thousand": 11.2,
+      "agriculture_thousand": 14.5
+    },
+    "new_enterprises_2025": 1500,
+    "closed_enterprises_2025": 600,
+    "net_enterprise_growth_2025": 900,
+    "google_trends_score": null,
+    "google_trends_note": "Tuman daraжasida rasmiy hisoblanmagan; lekin transport faolligi yuqori (yuk aylanmasi 7,281k tonna)",
+    "cargo_turnover_thousand_tons": 7281,
+    "passenger_turnover_thousand": 25483.2,
+    "social_optimism_pct": 65,
+    "priority_sectors": [
+      "agro-saneat va qayta ishlash (g'allа, sut, sabzavot)",
+      "ipakchilik va pistачilik (premium niches)",
+      "logistika va omborxona xizmati",
+      "qurilish materiallari (qum-shag'al)",
+      "BPO/IT xizmatlari (Toshkentga yaqinlik + 97% internet)",
+      "quyosh energetikasi"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": null,
+      "viloyat_thousand_sum_2024_est": 4200,
+      "national_mln_sum_2025": 5.98,
+      "source": "Tuman bo'yicha alohida ma'lumot yo'q; Sirdaryo viloyati o'rtachasi va milliy darajadan baholash"
+    },
+    "local_budget_bln_sum_2025": 185,
+    "local_budget_dynamics": {
+      "2021": 62.5,
+      "2022": 80.0,
+      "2023": 95.0,
+      "2024": 140.0,
+      "2025": 185.0,
+      "growth_5y_multiplier": 2.96
+    },
+    "contingent_budget_bln_sum_2025": 370
+  },
+
+  "credits": {
+    "by_year_bln_sum": null,
+    "npl_pct_dynamics": {
+      "2021": 3.9,
+      "2022": 4.5,
+      "2023": 4.9,
+      "2024": 5.0,
+      "2025": 5.5
+    },
+    "npl_risk_level": "O'RTA-YUQORI (yomonlashmoqda)",
+    "npl_alert": "TUMANIMIZDA NPL O'SAYAPTI: 3.9% (2021) → 5.5% (2025). Bu MOAR 4 tumanlardan farqli (Forish 2.9%, Sariosiyo 4.2%) tendentsiya. Kreditlar sifati ko'rib chiqilishi kerak",
+    "npl_target_2026": 2.0,
+    "npl_target_note": "SQB 2026 maqsadi — NPL ni 5.5% dan 2.0% ga tushish (juda ambitsioz)",
+    "credit_plan_2026_bln_sum": 1400,
+    "credit_plan_2026_breakdown": {
+      "small_business_bln_sum": 400,
+      "agriculture_bln_sum": 350,
+      "industry_bln_sum": 350,
+      "services_bln_sum": 350
+    }
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 97.9,
+    "water_supply_dynamics": {
+      "2021": 96.0, "2022": 96.5, "2023": 97.0, "2024": 97.6, "2025": 97.9, "2026_forecast": 98.2
+    },
+    "water_supply_note": "Respublikadagi eng yaxshi ko'rsatkichlardan biri (95%+ o'rtacha bilan solishtirganda) — bu kuchli tomon",
+    "sewerage_pct": 60,
+    "roads_total_km": 310,
+    "roads_asphalted_pct": 82,
+    "roads_note": "82% asfalt — boshqa tumanlardan yuqori (Forish 39%, Sariosiyo 58.3%); logistik jozibadorlik yuqori",
+    "irrigation_canals_concrete_pct": 80,
+    "annual_passenger_volume_thousand": 25483.2,
+    "annual_cargo_volume_thousand_tons": 7281,
+    "railway_distance_km": 2,
+    "railway_advantage": "Toshkent-Farg'ona poyezdlari uchun strategik nuqta",
+    "electricity": {
+      "outages_per_month_avg_2025": 2,
+      "old_transformers_pct": 35,
+      "lines_need_replacement_pct": 25,
+      "internet_coverage_pct": 97,
+      "internet_speed_mbps": "70-120",
+      "risk_level": "PAST-O'RTA",
+      "note": "Internet quvvati va tezligi mamlakat bo'yicha eng yuqori — BPO/IT xizmatlari uchun ideal"
+    },
+    "land": {
+      "total_ha": 34900,
+      "irrigated_ha": 12000,
+      "irrigated_pct": 34.4,
+      "industrial_zone_use_pct": "75-85",
+      "available_industrial_land": "15-25%",
+      "note": "Sug'oriladigan ER nisbati Forishdan (0.08%) 430 baravar yuqori — qishloq xo'jaligi uchun ideal"
+    },
+    "natural_resources": {
+      "sand_gravel_mines": 3,
+      "note": "Cheklangan mineral baza — qurilish materiallari sektorini sement/bazalt impotrtidan tejash uchun yaqin tumanlarga (Forish, Boysun) kooperatsiya tavsiya etiladi"
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 87.1,
+      "trend": "GROWING — 82.6% (2023) → 84.8% (2024) → 87.1% (2025); 2026 maqsad 90%",
+      "annual_growth_pp": 2.2,
+      "available_seats": 340,
+      "opportunity": "Bo'sh 340 o'rin va o'sayotgan talab — DXSh asosida xususiy MTT va mini-bog'cha uchun joy bor"
+    },
+    "schools": {
+      "total": 32,
+      "note": "Tumanda 32 ta umumiy o'rta ta'lim maktabi"
+    },
+    "vocational": {
+      "polytechnicum": "Guliston tuman politexnikumi (kasb-hunar maktabi)",
+      "dual_education": "Joriy etilgan, 2025 da ish beruvchilar bilan o'qish-seminar dasturlari"
+    },
+    "higher_education": {
+      "guliston_university": "Guliston shahri (10 km)da joylashgan — tuman talabalariga yaqin",
+      "lu_ban_workshop_planned": "Xitoy bilan hamkorlikda kasb-hunar markazi ochiladi (Guliston universiteti qoshida)",
+      "youth_18_24_education_pct": 53.6
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand": 46.0,
+    "total_resources_dynamics": {
+      "2021": 43.5, "2022": 44.5, "2023": 45.0, "2024": 45.5, "2025": 46.0
+    },
+    "employed_2025": 40500,
+    "employed_growth_pct_2025": 2.8,
+    "informal_sector_2021": 17000,
+    "abroad_migrants_dynamics": {
+      "2021": 8500, "2022": 9500, "2023": 10000, "2024": 10500, "2025": 11500
+    },
+    "abroad_migrants_alert": "MIGRATSIYA O'SAYAPTI! 8500 (2021) → 11500 (2025). Mahalliy iqtisodiyotga yuk — qaytarilish dasturi zarur",
+    "returned_migrants_2025": 5000,
+    "returned_migrants_growth_pct_2025": 11.1,
+    "returned_migrants_advantage": "5000 nafar qaytgan migrant — Forishdan (259) 19x ko'p, Qo'qondan (2570) 2x ko'p; xorijiy tajribani biznesga yo'naltirish katta imkoniyat",
+    "unemployment_pct_2025": 7.0,
+    "unemployment_dynamics_pct": {
+      "2021": 9.5, "2022": 9.0, "2023": 8.5, "2024": 8.0, "2025": 7.0
+    },
+    "unemployed_count_2025": 2000,
+    "unemployment_target_2027_pct": 2.0,
+    "youth_unemployed": 1200,
+    "unemployed_women": 1190,
+    "poverty_pct_2025": 10.5,
+    "poverty_dynamics_pct": {
+      "2021": 14.0, "2022": 13.5, "2023": 13.0, "2024": 12.0, "2025": 10.5
+    },
+    "poor_families": 2200,
+    "social_aid_needed_families": 7000,
+    "poverty_target_2028_pct": 2.5,
+    "difficult_mahallas": [
+      {"name": "A.Yassaviy", "category": "qizil"},
+      {"name": "Birlashgan", "category": "qizil"},
+      {"name": "A.Navoiy", "category": "qizil"},
+      {"name": "Inoqlik", "category": "qizil"},
+      {"name": "Chortoq", "category": "qizil"}
+    ],
+    "mahalla_categories": {
+      "heavy_qizil": 8,
+      "medium_sariq": 10,
+      "easy_yashil": 6,
+      "total": 24,
+      "note": "5 ta og'ir mahalla nomma-nom keltirilgan; jami og'ir tijorat 8 ta — 3 tasi nomi rasmiylashtirilmagan"
+    },
+    "jobs_plan_2026_2028": {
+      "total_new_jobs": 6780,
+      "agriculture": 1700,
+      "industry": 2650,
+      "tourism": 350,
+      "formalization": 1300,
+      "youth_target_reduction": "1200 → 400",
+      "women_target_reduction": "1190 → 500"
+    }
+  },
+
+  "tourism": {
+    "current_state": "Tumanda yirik turistik infratuzilma yo'q — transit hudud sifatida",
+    "investment_plan_2026_2028_bln_sum": 50,
+    "planned_routes": 3,
+    "tourism_directions": [
+      "agroturizm (ipakchilik + pistачilik + uzumchilik)",
+      "gastroturizm (mahalliy q/x mahsulotlari)",
+      "transit-eko-turizm (Toshkent-Farg'ona yo'lida dam olish)"
+    ],
+    "river_eco_tourism_complex": {
+      "location": "Sohilobod va Ahillik mahallalari + Sirdaryo tumanidagi Kamolot mahallasi",
+      "area_ha": 360,
+      "type": "daryo bo'yi ekoturizm majmuasi",
+      "status": "rejada (2025 dekabrda elon qilingan)"
+    },
+    "transit_advantage": "Toshkent (110 km) va Farg'ona vodiysi o'rtasida joylashgan — transit sayyohlar oqimi katta",
+    "target_2028": "150 minggacha transit sayyohni tumanda ushlab qolish",
+    "key_gap": "Transit sayyohlar tumanda 1-2 soat to'xtaydi va o'tib ketadi — 'yo'l bo'yi xabilari' (gastrobozor, ustaxonalar, dam olish maskanlari) yaratish kerak",
+    "opportunity": "2 ta 'Eco/Silk Resort', agrotur marshrutlari, gastrobozorlar va hunarmandchilik markazlari"
+  },
+
+  "trade_and_logistics": {
+    "warehouses_count": 4,
+    "warehouses_total_m2": 800,
+    "warehouses_needed_additional": 2,
+    "dry_port_potential": "YUQORI",
+    "dry_port_concept": "Agro-Quruq port majmuasi: sovutgich omborlar + qadoqlash linyalari + yuk stansiyasi yagona hududda",
+    "dry_port_investment_usd_mln": "15-25",
+    "dry_port_impact": "Yuk aylanmasini 7.3 → 12 mln tonna (+65%)ga oshirish imkoniyati",
+    "key_advantage": "Temir yo'lgа 2 km, vilоyat markazigа 10 km, Тoshkent-Farg'ona magistraliga tushishliki"
+  },
+
+  "mahalla_economy": {
+    "total": 24,
+    "by_specialization": {
+      "silk_ipakchilik": {
+        "count": 3,
+        "mahallas": ["Soyibobod", "Mustaqillik", "Chortoq"],
+        "uniqueness": "Sirdaryo viloyatidagi nodir ipakchilik hududlari"
+      },
+      "potato_cabbage": {
+        "count": 6,
+        "specialty": "kartoshka va karam yetishtirish"
+      }
+    },
+    "agriculture_indicators": {
+      "per_capita_agri_thousand_sum": 24038,
+      "vs_viloyat_average": "+26%",
+      "grain_area_ha": 21800,
+      "vineyards_ha": 800,
+      "pistachio_ha_planned_2026_2028": 30,
+      "pistachio_target_ha": 150,
+      "farmer_clusters": 5,
+      "farmer_clusters_target": 12
+    },
+    "processing_gaps": {
+      "meat_processing_pct": 21,
+      "vegetables_processing_pct": 11,
+      "vineyards_processing_pct": 15,
+      "note": "Boshqa tumanlardan yaxshiroq, lekin 30-50%ga ko'tarish potensial katta"
+    },
+    "key_advantage": "Ipakchilik va pistачilik — strategik 'niche mahsulotlar', eksport narxi q/x mahsulotlaridan 4-10x yuqori"
+  },
+
+  "banking_programs": {
+    "sqb_status": "Tumanda mavjud (filial)",
+    "atms": 7,
+    "other_banks": 2,
+    "total_bank_staff": 55,
+    "mahalla_bankirs_total": 4,
+    "mahalla_bankirs_for_24_mahallas": "1 bankir 6 mahallaga (juda kam)",
+    "mahalla_bankirs_target": "12 (6 ayol + 6 erkak)",
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for": ["ipakchilik", "tikuvchilik", "pista qadoqlash", "agroturizm gestxauz", "MTT"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank"],
+      "best_for": ["chorvачilik", "kartoshka/karam", "pista boshlang'ich invеstitsiya", "yo'l bo'yi xizmat"]
+    },
+    "micro_projects_2026": {
+      "total_projects": 80,
+      "total_jobs": 400,
+      "total_bln_sum": 25,
+      "industrial_projects": 3,
+      "industrial_bln_sum": 2.27,
+      "service_projects": 6,
+      "service_bln_sum": 10,
+      "planned_total_jobs": 2280,
+      "planned_total_investment_bln_sum": 120
+    },
+    "ksz": {
+      "name": "Guliston KSZ (kichik sanoat zonasi)",
+      "enterprises": 35,
+      "jobs": 1200,
+      "investment_2025_usd_mln": 30,
+      "investment_growth_5y_multiplier": 3.75,
+      "tti_2025_usd_mln": 18,
+      "tti_target_2028_usd_mln": "45-50",
+      "expansion_target": "70-80 korxona (2x kengaytirish)"
+    },
+    "investment_plan_2026_2031": {
+      "total_bln_sum": 374,
+      "by_year": {
+        "2026": 50, "2027": 57, "2028": 60, "2029": 67, "2030": 70, "2031": 70
+      },
+      "annual_growth_pct": 14
+    },
+    "credit_plan_2026_phased": {
+      "0_12_months_bln_sum": 1362,
+      "1_3_years_bln_sum": 56,
+      "3_5_years_bln_sum": 120,
+      "total_bln_sum": 1458
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Eng yaxshi infratuzilma 4 tumanlar ichida",
+      "detail": "Suv 97.9% (Forishda 62.5%), yo'l asfalt 82% (Forishda 39%), internet 97% va 70-120 Mbps, kanalizatsiya 60%; mineral inflastruktura yetuk"
+    },
+    {
+      "title": "Strategic logistic location",
+      "detail": "Toshkent-Farg'ona magistralida; tеmir yo'l 2 km da; Toshkent 110 km; viloyat markazi 10 km — 'Quruq port' uchun ideal joy"
+    },
+    {
+      "title": "Eksport 5 yilda 3x o'sgan",
+      "detail": "$9 mln (2021) → $26.5 mln (2025); 2028 maqsad $50+ mln — yuqori dinаmika"
+    },
+    {
+      "title": "Mahalliy byudjet 3x o'sgan",
+      "detail": "62.5 → 185 mlrd so'm (2021-2025); kontingent byudjet 370 mlrd so'm — sog'lom soliq bazasi"
+    },
+    {
+      "title": "Niche mahsulotlar — ipakchilik va pistачilik",
+      "detail": "3 ta ipakchilik MFY (Soyibobod, Mustaqillik, Chortoq); 30 ga pistачilik (150 ga reжa); eksport narxi q/x mahsulotlaridan 4-10x yuqori"
+    },
+    {
+      "title": "Toshkentga yaqinlik — IT/BPO uchun",
+      "detail": "110 km Toshkentdan; internet 97% va 70-120 Mbps; arzon meхnat resursi; Tashkent IT-Park 'filiali' modeli mumkin"
+    },
+    {
+      "title": "Qaytgan migrantlar 5000",
+      "detail": "Forishdan (259) 19x ko'p, Qo'qondan (2570) 2x ko'p; xorijiy tajribani biznesga yo'naltirish ulkan resurs"
+    },
+    {
+      "title": "Maktabgacha qamrov o'sayapti",
+      "detail": "82.6% → 87.1% (2023-2025); 2026 maqsad 90%; bo'sh 340 o'rin xususiy MTT uchun bozor ochadi"
+    },
+    {
+      "title": "Diversifikatsiyalashgan iqtisodiyot",
+      "detail": "Xizmatlar 45% + sanoat 30% + q/x 25% — 'uch ustun' modeli; ekonomik xavfsizlik darajasi yuqori"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "NPL O'SAYAPTI — kreditlash sifatida muammo",
+      "severity": "YUQORI",
+      "data": "NPL: 3.9% (2021) → 5.5% (2025); boshqa 4 tumanlardan farqli o'laroq yomonlashmoqda. SQB 2026 maqsad 2%",
+      "opportunity": "Kreditga tayyorlash xizmatlari, biznes-trener, buxgalteriya konsalting, moliyaviy savodxonlik kurslari — yangi bozor",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/iqtisodiyot ma'lumoti bor", "qaytgan migrantlar (xorijiy biznes tajribasi)"]
+    },
+    {
+      "gap": "Migratsiya o'sayapti (8.5k → 11.5k)",
+      "severity": "YUQORI",
+      "data": "5 yilda xorijga ketuvchilar 35% oshgan; mahalliy iqtisodiyot meхnat resurslarini yo'qotmoqda",
+      "opportunity": "'Reintegratsiya' dasturi, qaytgan migrantlar uchun biznes-akselerator, malakali kadrlar uchun qulay sharoitlar (ish haqi, infratuzilma)",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["xorijiy hamkor", "tajribali tadbirkor", "kadrlar agentligi"]
+    },
+    {
+      "gap": "Logistik salohiyat — 'Quruq port' yo'q",
+      "severity": "YUQORI (FURSAT)",
+      "data": "Tеmir yo'l 2 km, magistral, 7.3 mln tonna yuk aylanmasi, 4 ta omborxona 800 m² (juda kam); 'Quruq port' kontseptsiyasi rejada",
+      "opportunity": "Sovutgich omborlar (3-5 t/m²), qadoqlash linyalari, yuk stansiyasi, bojxona broker xizmati; yuk aylanmasini 7.3 → 12 mln tonna (+65%)",
+      "investment_range_usd_mln": "15-25",
+      "suitable_for": ["yirik investor", "logistika tajribasi", "DXSh sherigi"]
+    },
+    {
+      "gap": "Q/x qayta ishlash hali ham past",
+      "severity": "O'RTA-YUQORI",
+      "data": "Go'sht qayta ishlash 21%, sabzavot 11%, uzum 15% — boshqa tumanlardan yaxshiroq, lekin 30-50% potensial bor; 21,800 ga g'alla, 800 ga uzumzor, 30 ga pista",
+      "opportunity": "FudPark (3-5 ta), sovutgich omborlar tarmog'i, qadoqlash sertifikatlash markazi, 'Guliston pistasi' xalqaro brendi",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["fermer-bog'bonlar", "agro tajribasi", "eksport tajribasi"]
+    },
+    {
+      "gap": "BPO/IT xizmatlari — bo'sh bozor",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "Internet 97% va 70-120 Mbps (eng yuqori), Toshkent 110 km, 5000 qaytgan migrant, 1200 ishsiz yosh — kadrlar tayyor; biror BPO markazi yo'q",
+      "opportunity": "Call-center (2-3 ta), 500-800 iш ўрни; remote IT, online support, accounting outsourcing; Tashkent IT-Park filiali modeli",
+      "investment_range_mln_sum": "30-300",
+      "suitable_for": ["IT tajribasi bor", "qaytgan migrantlar (chet tili biluvchilar)", "remote ish tajribasi bor"]
+    },
+    {
+      "gap": "Ipakchilikni doimiy bandlikka aylantirish",
+      "severity": "O'RTA-YUQORI",
+      "data": "3 MFY ipakchilikka ixtisoslashgan (Soyibobod, Mustaqillik, Chortoq); ipak gavlama va tikuvchilik bo'g'ini yo'q",
+      "opportunity": "To'la sikl ishlab chiqarish (pillа → ipak gavlama → tayor mahsulot); har MFYda 80-120 yangi iш ўрни; 'Guliston ipagi' brendi",
+      "investment_range_mln_sum": "30-200",
+      "suitable_for": ["ayollar", "to'qimachilik tajribasi", "oilaviy biznes"]
+    },
+    {
+      "gap": "Pistачilikni 30 → 150 ga kengaytirish",
+      "severity": "O'RTA",
+      "data": "30 ga yangi pistа bog'lar (2026-2028); pista — premium eksport mahsuloti (Kazakhstan, Russia, Europe)",
+      "opportunity": "Yangi 100-120 ga pista bog'lari; qayta ishlash va paqovka markazi; halal sertifikatlash; B2B eksport",
+      "investment_range_mln_sum": "20-150",
+      "suitable_for": ["fermerlar", "yer egasi", "eksport tajribasi"]
+    },
+    {
+      "gap": "Transit-turizm rivojlanmagan",
+      "severity": "O'RTA",
+      "data": "Toshkent-Farg'ona o'rtasida joylashgan, lekin sayyohlar 1-2 soat to'xtaydi va o'tib ketadi; yo'l bo'yi xizmat infratuzilmasi yo'q. 50 mlrd so'm investitsiya rejada",
+      "opportunity": "2 ta Eco/Silk Resort (20 mlrd so'm), agrotur marshrutlari (15 mlrd), gastrobozor + hunarmandchilik markazi (15 mlrd); 360 ga daryo bo'yi ekoturizm kompleksi (Sohilobod-Ahillik-Kamolot)",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["turizm tajribasi", "kapital bor", "qaytgan migrantlar (chet tili)"]
+    },
+    {
+      "gap": "Quyosh energetikasi ishlatilmagan",
+      "severity": "O'RTA",
+      "data": "300+ quyoshli kun/yil, 34,900 ga maydon (lekin q/x bilan zich); industrial zone 75-85% ishlatilgan",
+      "opportunity": "10-20 MW quyosh stansiyasi KSZ uchun (elektr xarajatini 25-30% kamaytirish); rooftop solar; 100 MW miqyosida — Toshkentga 'yashil elektr' eksport",
+      "investment_range_usd_mln": "10-25",
+      "suitable_for": ["texnik bilim bor", "katta kapital", "ESCO modeli"]
+    },
+    {
+      "gap": "8 ta og'ir mahalla — bandlik muammosi",
+      "severity": "YUQORI",
+      "data": "A.Yassaviy, Birlashgan, A.Navoiy, Inoqlik, Chortoq + 3 ta nomi rasmiylashtirilmagan; 1200 ishsiz yosh + 1190 ishsiz ayol",
+      "opportunity": "'Mahalla 360' 5 yillik pasport (ixtisoslashuv + iш ўрni + microcredit + infratuzilma); 'Bir mahalla — bir drayver': ipakchilik (Chortoq), savdo (A.Navoiy), q/x (Inoqlik)",
+      "investment_range_mln_sum": "5-50 har lojiha",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar"]
+    },
+    {
+      "gap": "Mahalla bankirlari atigi 4 ta",
+      "severity": "O'RTA",
+      "data": "24 MFY uchun 4 mahalla bankiri (1 bankir 6 mahallaga); ayollar ulushi past",
+      "opportunity": "12 ta bankirga (6 ayol + 6 erkak) kengaytirish; SQB AI Advisor platformasini barcha 24 MFYga jo'natish",
+      "note": "Bu SQB ichi qarori — biznes-imkoniyat emas, lekin tadbirkorlar uchun ahamiyat katta"
+    },
+    {
+      "gap": "5000 qaytgan migrant — integratsiya mexanizmi yo'q",
+      "severity": "O'RTA",
+      "data": "5000 nafar 2025 da qaytgan (+11.1%); xorijdagi (Rossiya, Koreya, Turkiya, Qozog'iston) tajribalari ulkan",
+      "opportunity": "Reintegratsiya akselatorлari, biznes-trening, qurilish/tikuvchilik/restoran tajribasini biznesga aylantirish",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["xorijda ishlagan", "qurilish/zavod/savdo tajribasi"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Logistika va omborxona ('Quruq port')",
+      "type": "Sovutgich omborxona / qadoqlash markazi / yuk station kompleksi / bojxona broker",
+      "why_guliston": "Tеmir yo'l 2 km, Toshkent 110 km, magistral; yuk aylanmasi 7.3 mln t/yil. Hozirda atigi 4 omborxona (800 m²) — keskin yetishmasligi. 'Agro-Quruq port' davlat tomonidan rejalashtirilgan",
+      "investment_mln_sum": "500-3000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "3-6",
+      "suitable_for": ["yirik investor", "logistika tajribasi", "kapital bor"],
+      "bank_product": "SQB biznes kreditlari yoki XHL (АБP, EBRR)",
+      "risk": "Boshlang'ich kapital katta; davlat infratuzilma rivoji bilan korrelyatsiya"
+    },
+    {
+      "rank": 2,
+      "sector": "BPO va remote IT xizmatlari",
+      "type": "Call-center (2-3 ta) / accounting outsourcing / online support / remote IT",
+      "why_guliston": "Internet 97% va 70-120 Mbps (eng yuqori), Toshkent 110 km, 5000 qaytgan migrant + 1200 yosh ishsiz, 53.6% yoshlar 18-24 ta'limdа. Tashkent IT-Park modelining filiali — arzon, lekin sifatli",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "1-3",
+      "suitable_for": ["IT tajribasi bor", "qaytgan migrantlar", "yoshlar (chet tili)", "remote menejment tajribasi"],
+      "bank_product": "Yoshlar biznesda yoki SQB biznes kreditlari",
+      "risk": "Kadrlar tayyorlash uzoq; Toshkent kompaniyalari bilan raqobat"
+    },
+    {
+      "rank": 3,
+      "sector": "Q/x qayta ishlash va FudPark",
+      "type": "Sut zavodi / go'sht qayta ishlash / sabzavot konservasi / 'FudPark' (kichik fermer markaz)",
+      "why_guliston": "21,800 ha don ekin, jon boshiga q/x 24,038 ming so'm (viloyatdan +26%); meal qayta ishlash 21%, sabzavot 11% — bozor bo'sh; 5 ta fermer klaster bor, 12 gacha kengaytirish rejada",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["fermerlar", "agro tajribasi", "oilaviy biznes"],
+      "bank_product": "Agro bank yoki SQB FudPark kreditlari (3-5 mlrd so'm/klaster)",
+      "risk": "Hosil mavsumiyligi; sertifikatlash"
+    },
+    {
+      "rank": 4,
+      "sector": "Ipak ishlab chiqarish to'la sikli",
+      "type": "Pillа boqish kengaytirish / ipak gavlama sexi / tikuvchilik kooperativi / 'Guliston ipagi' brend",
+      "why_guliston": "3 ta MFY (Soyibobod, Mustaqillik, Chortoq) ixtisoslashgan; ipak gavlama va tikuvchilik bo'g'ini yo'q. Eksport narxi q/x mahsulotlaridan 4-10x yuqori. HAMROH 100 mln so'm garovsiz",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "to'qimachilik tajribasi", "oilaviy biznes"],
+      "bank_product": "HAMROH (garovsiz 100 mln) yoki Har bir oila tadbirkor",
+      "risk": "Pillа mavsumiyligi (yiliga 1-2 marta); ekspert kadrlar"
+    },
+    {
+      "rank": 5,
+      "sector": "Pistачilik klasteri",
+      "type": "Yangi pistа bog'lari (50-150 ga) / qadoqlash va sertifikatlash markazi / B2B eksport",
+      "why_guliston": "30 ga mavjud, 150 ga maqsad; 'Guliston pistasi' xalqaro brendi tayyorlanmoqda. Pista — premium eksport mahsuloti (Kazakhstan, Russia, EU). Aprel-may navlar mart-aprelga ko'chmoqda — uzoq mавsum",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-30 (3 yildan keyin)",
+      "payback_years": "4-7",
+      "suitable_for": ["yer egasi", "fermer", "eksport tajribasi", "uzoq muddatli investor"],
+      "bank_product": "Agro bank uzoq muddatli kreditlari yoki Har bir oila tadbirkor",
+      "risk": "3-4 yil hosildan oldin daromad yo'q; iqlim o'zgarishi"
+    },
+    {
+      "rank": 6,
+      "sector": "Quyosh energetikasi (KSZ uchun)",
+      "type": "10-20 MW quyosh stansiyasi (KSZ uchun) / rooftop solar / ESCO model",
+      "why_guliston": "300+ quyoshli kun/yil, 34,900 ga, KSZda elektr xarajatini 25-30% kamaytirish kerak (35% transformer eskirgan). Toshkentga 'yashil elektr' eksport potensiali",
+      "investment_usd_mln": "10-25",
+      "monthly_income_estimate_mln_sum": "15-100",
+      "payback_years": "5-8",
+      "suitable_for": ["texnik bilim", "katta kapital", "ESCO operator"],
+      "bank_product": "SQB biznes kreditlari yoki XHL (АБП yashil energiya)",
+      "risk": "Texnik mutaxassislar; Tarif tartibga solish"
+    },
+    {
+      "rank": 7,
+      "sector": "Transit yo'l bo'yi xizmati",
+      "type": "Eco/Silk Resort / gastrobozor / hunarmandchilik markazi / motel + AYAQSh + restoran",
+      "why_guliston": "Toshkent-Farg'ona magistralida joylashgan; transit sayyohlar oqimi 25.5 mln yo'lovchi/yil. 360 ha daryo bo'yi ekoturizm kompleksi rejada (Sohilobod-Ahillik-Kamolot). 50 mlrd so'm investitsiya rejada",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["turizm/mehmondo'stlik tajribasi", "qaytgan migrantlar", "oilaviy biznes"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB biznes kreditlari",
+      "risk": "Mavsumiylik; yo'l infratuzilmasi rivoji"
+    },
+    {
+      "rank": 8,
+      "sector": "Xususiy bog'cha va ta'lim markazi",
+      "type": "Xususiy MTT / mini-bog'cha / kasb-hunar markazi / til kurslari",
+      "why_guliston": "Maktabgacha qamrov 87.1% va o'sayapti (2026 maqsad 90%); 340 bo'sh o'rin; 32 ta umumiy o'rta maktabda 2 sменada talab. Lu Ban Workshop (Xitoy) Guliston universiteti qoshida ochilmoqda — ekosystema rivojlanyapti",
+      "investment_mln_sum": "50-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumot bor ayollar", "Toshkentga ko'chgan oilalar uchun premium MTT"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Litsenziya jarayoni"
+    },
+    {
+      "rank": 9,
+      "sector": "Moliyaviy maslahat va NPL bilan ishlash",
+      "type": "Buxgalteriya / soliq / biznes-reja xizmati / kreditga tayyorlash kurslari",
+      "why_guliston": "NPL 5.5% va o'sayapti — yagona tumanlardan biri. 1500 yangi korxona 2025da, 80 mikrolojiha 2026da — biznes-rejaga talab katta. Moliyaviy savodxonlik past",
+      "investment_mln_sum": "5-50",
+      "monthly_income_estimate_mln_sum": "5-20",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya/iqtisodiyot ma'lumot", "qaytgan migrantlar (xorijiy biznes)", "tajribali"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Past barаr boshlang'ich; raqobat o'sib boradi"
+    },
+    {
+      "rank": 10,
+      "sector": "Toshkent kompaniyalari uchun uzoq filiallar",
+      "type": "Production-facility (Tashkentdan ko'chgan) / outsource service / sub-supply chain",
+      "why_guliston": "Sirdaryoga ko'chayotgan korxonalar uchun yer chegirma bilan beriladi. KSZ 35 → 70-80 korxona kengaytirilmoqda. Toshkent 110 km — har kuni harakat mumkin",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "payback_years": "3-5",
+      "suitable_for": ["sanoat tajribasi", "Toshkent biznesi", "yirik investor"],
+      "bank_product": "SQB biznes kreditlari yoki XHL",
+      "risk": "Tashkent bilan koordinatsiya; logistika"
+    },
+    {
+      "rank": 11,
+      "sector": "Reintegratsiya biznes (qaytgan migrantlar uchun)",
+      "type": "Qurilish brigadasi / mexanik servis / oziq-ovqat (xorijiy oshxona) / tikuvchilik",
+      "why_guliston": "5000 nafar 2025 da qaytgan (+11.1%); Forishdan 19x ko'p; xorijiy malakalari (Rossiya qurilish, Koreya zavod, Turkiya tikuvchilik) — markaz hududda ishga ulash kerak",
+      "investment_mln_sum": "20-300",
+      "monthly_income_estimate_mln_sum": "5-50",
+      "payback_years": "1-4",
+      "suitable_for": ["xorijda ishlagan", "tajribali tadbirkor"],
+      "bank_product": "Yoshlar biznesda yoki Har bir oila tadbirkor",
+      "risk": "Mahalliy bozorga moslashish"
+    },
+    {
+      "rank": 12,
+      "sector": "Daryo bo'yi ekoturizm",
+      "type": "Eco-resort / boating / picnic complex / fishing tour (360 ga zonасида)",
+      "why_guliston": "Sohilobod va Ahillik mahallalarida 360 ha daryo bo'yi ekoturizm majmuasi rejalashtirilgan (Kamolot bilan birga); transit sayyohlar oqimi 25 mln yo'lovchi/yil",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "10-80",
+      "payback_years": "4-7",
+      "suitable_for": ["turizm tajribasi bor", "kapital bor"],
+      "bank_product": "SQB turizm kreditlari yoki davlat-xususiy sheriklik",
+      "risk": "Mavsumiylik (yoz/baxor yuqori); davlat lojihasi muddati"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Guliston tumani (Sirdaryo viloyati) — 78 ming aholi (Guliston shahri ALOHIDA, 94.8 ming), 24 mahalla, viloyat markazidan 10 km, Toshkentdan 110 km, Toshkent-Farg'ona magistralida joylashgan. KUCHLI TOMONLARI: (1) Eng yaxshi infrastruktura 4 tumanlar ichida: suv 97.9%, yo'l asfalt 82%, internet 97% va 70-120 Mbps; (2) Strategik logistik joy: tеmir yo'l 2 km, magistral; (3) Eksport 3x o'sgan ($9 → $26.5 mln 2021-2025); (4) Mahalliy byudjet 3x o'sgan (62.5 → 185 mlrd so'm); (5) Niche mahsulotlar — ipakchilik (3 MFY: Soyibobod, Mustaqillik, Chortoq) va pistачilik (30 ga, 150 ga maqsad); (6) 5000 qaytgan migrant — Forishdan 19x ko'p; (7) Maktabgacha qamrov 87.1% va o'sayapti; (8) Diversifikatsiya: xizmatlar 45% + sanoat 30% + q/x 25%; (9) Toshkent Sirdaryoga ko'chayotgan kompaniyalarga yer chegirma berilyapti. PROBLEMALAR va IMKONIYATLAR: (1) NPL O'SAYAPTI! 3.9% (2021) → 5.5% (2025) — tumanlardan farqli o'laroq yomonlashgan; (2) Migratsiya ortmoqda (8.5k → 11.5k, +35%); (3) 'Quruq port' yo'q — yuk aylanmasi 7.3 mln t, 4 ta omborxona faqat 800 m²; (4) BPO/IT xizmatlari rivojlanmagan — Toshkent IT-Park filiali imkoniyati; (5) Q/x qayta ishlash hali ham past (go'sht 21%, sabzavot 11%); (6) Transit-turizm rivojlanmagan — 25 mln yo'lovchi/yil o'tib ketadi; (7) 8 og'ir mahalla (A.Yassaviy, Birlashgan, A.Navoiy, Inoqlik, Chortoq); (8) Mahalla bankirlari atigi 4 ta; (9) 7000 oila ijtimoiy yordamga muhtoj. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), 80 mikrolojiha 2026 rejada, KSZ 35 → 70-80 korxonaga kengaytirilmoqda. ASOSIY DRAYVERLAR: 'Quruq port' va logistika, q/x qayta ishlash + 'FudPark', BPO/IT xizmatlari, ipak/pista premium nichalar, Toshkent kompaniyalari uchun ishlab chiqarish bazasi.",
+
+  "ai_prompt_context_ru": "Гулистанский район (Сырдарьинская область) — 78 тыс. жителей (город Гулистан ОТДЕЛЬНО, 94.8 тыс.), 24 махалли, в 10 км от областного центра, в 110 км от Ташкента, на магистрали Ташкент-Фергана. СИЛЬНЫЕ СТОРОНЫ: (1) Лучшая инфраструктура из 4 районов: вода 97.9%, дороги асфальт 82%, интернет 97% и 70-120 Мбит/с; (2) Стратегическое логистическое расположение: ж/д в 2 км, магистраль; (3) Экспорт вырос в 3 раза ($9 → $26.5 млн в 2021-2025); (4) Местный бюджет вырос в 3 раза (62.5 → 185 млрд сум); (5) Нишевые продукты — шелководство (3 махалли: Сойибобод, Мустакиллик, Чортоқ) и фисташки (30 га, цель 150 га); (6) 5000 вернувшихся мигрантов — в 19 раз больше Фариша; (7) Дошкольное образование 87.1% и растёт; (8) Диверсификация: услуги 45% + промышленность 30% + с/х 25%; (9) Ташкентским компаниям, переезжающим в Сырдарью, дают землю со скидкой. ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) NPL РАСТЁТ! 3.9% (2021) → 5.5% (2025) — единственный регион с ухудшением; (2) Миграция за рубеж растёт (8.5k → 11.5k, +35%); (3) Нет 'Сухого порта' — грузооборот 7.3 млн т, 4 склада всего 800 м²; (4) BPO/IT не развит — возможность филиала Tashkent IT-Park; (5) Переработка с/х всё ещё низкая (мясо 21%, овощи 11%); (6) Транзитный туризм не развит — 25 млн пассажиров/год проезжают мимо; (7) 8 тяжёлых махаллей (А.Яссавий, Бирлашган, А.Навои, Иноклик, Чортоқ); (8) Махаллинских банкиров всего 4; (9) 7000 семей нуждаются в социальной помощи. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн), 'Каждая семья — предприниматель' (до 300 млн, 18%, 3 года), 80 микропроектов в плане 2026, КСЗ расширяется с 35 до 70-80 предприятий. КЛЮЧЕВЫЕ ДРАЙВЕРЫ: 'Сухой порт' и логистика, переработка с/х + 'FudPark', BPO/IT-услуги, шёлк/фисташки premium-ниши, производственные базы для ташкентских компаний."
+}

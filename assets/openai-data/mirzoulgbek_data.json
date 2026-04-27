@@ -1,0 +1,672 @@
+{
+  "id": "mirzoulgbek",
+  "name_uz": "Мирзо Улуғбек тумани",
+  "name_ru": "Мирзо-Улугбекский район",
+  "name_latin": "Mirzo Ulug'bek tumani",
+  "viloyat": "Toshkent shahri",
+  "type": "tuman (poytaxt shahar tipidagi)",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "stat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "Toshkent shahar hokimligi", "Spot.uz", "yellowpages.uz", "Toshkent 2026 PQ"],
+
+  "data_quality_note": "Hokimiyat ma'lumotlarida 3 ta anomaly: (1) hero_kpis 'Xonadon = 0' — clearly typo, baho ~84,000 (oilalar bilan tеxnologik tеng); (2) Aholi zichligi 483 kishi/km² — realistik shahar zichligi ~6,800 kishi/km² (337,100 / 49.11 km²); 483 ko'rsatkichi xato; (3) Mehnat resurslari 2023da 450 → 2,120 ming kishigacha sakrаshи nazar — admin chegara kengayganini hisobga olganda taxminan 200-250 ming, statistik raqamlardagi shubhada qayta tasdiqlash zarur. Boshqa ma'lumotlar barqaror.",
+
+  "tashkent_2026_strategy_context": "Prezident PQ 16.12.2025 — 2026 yil Toshkent shahri uchun 'Jadal rivojlanish va aholi daromadlari o'sishi yili'; 12 ta tuman bo'yicha 3 yo'nalish; 2026da $9 mlrd jalb qilish; jon boshiga ТТI $3 ming (2026) → $3.5 ming (2027); Toshkent ВРПсини 2030ga $52 mlrd, jon boshiga $15K; aholi 100 ming/yil ko'paymoqda; 100 mingdan ortiq maktab/MTT o'rin keraк",
+
+  "demographics": {
+    "population": 337100,
+    "population_density_per_km2_realistic": 6864,
+    "population_density_per_km2_file": 483,
+    "population_density_note": "Faktik zichlik 6,864 kishi/km² (poytaxt shahar tumani uchun normal); fildagi 483 kishi/km² — xato",
+    "area_km2": 49.11,
+    "area_ha": 4911,
+    "area_growth_5y_pct": 60,
+    "area_note": "2024-2025 da admin chegara kengaytirilgan: 3,074 ha (2023) → 4,911 ha (2025) — +60%",
+    "mahallas": 60,
+    "families": 85000,
+    "families_growth_5y_pct": 55,
+    "families_dynamics": {
+      "2021": 55000,
+      "2025": 85000
+    },
+    "households_estimate": 84000,
+    "households_note": "Fayldagi 0 — typo; oilalar bilan tеnglik baholangan (~84,000)",
+    "settlements": {
+      "type": "Toshkent shahri 12 tumanidan biri (shimoli-sharqida)",
+      "established_year": 1929,
+      "former_names": ["Proletarskiy (1929-1935)", "Kuybishev (1935-1992)"],
+      "renamed_year_1992": "Mirzo Ulug'bek (Temuriylar davri olimi sharafiga)",
+      "key_streets": ["Pushkin", "Parkent", "Temur Malik", "Oqqo'rg'on", "Buyuk Ipak yo'li", "Habib Abdullayev", "Kichik Halqa yo'li"],
+      "streets_total": 532
+    },
+    "borders": {
+      "south_west": "Yashnobod tumani",
+      "north_west": "Yunusobod tumani",
+      "north_east_south_east": "Toshkent viloyati Qibray tumani"
+    },
+    "annual_population_growth_estimate": "+10-15 ming (Toshkent shahri 100 ming/yil ko'payishining 10-15%)",
+    "ranking_in_tashkent": "12 tumandan 9-o'rin (2025), Toshkent 2026 maqsadi — top-5 ga kirish"
+  },
+
+  "geography": {
+    "type": "URBAN — poytaxt shahari ichidagi tuman",
+    "distance_to_tashkent_center_km": 11.3,
+    "distance_to_railway_km": 11,
+    "key_advantage": "Toshkent shahar markazidagi (Amir Temur xiyoboni) sharqiy tomonida; Kichik Halqa yo'li va Buyuk Ipak yo'li shokkochasidan o'tadi; transport tugun"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 12318.7,
+    "industry_growth_5y_multiplier": 2.4,
+    "industry_growth_pct_2025": 21.2,
+    "industry_dynamics": {
+      "2021": 5186.1,
+      "2022": 5649.4,
+      "2023": 8245.0,
+      "2024": 11007.8,
+      "2025": 12318.7,
+      "growth_index_pct": {
+        "2021": 96.1,
+        "2022": 101.6,
+        "2023": 108.8,
+        "2024": 114.7,
+        "2025": 121.2
+      },
+      "unit": "mlrd so'm"
+    },
+    "industry_breakdown_2025": {
+      "large_enterprises_mln_sum": 358692.8,
+      "small_business_mln_sum": 143971.3,
+      "large_vs_small_multiplier": 2.49,
+      "concentration_alert": "Yirik korxonalar kichik biznesdan 2.5x katta — konsentratsiya хави borligi"
+    },
+    "services_volume_bln_sum": 35930.8,
+    "services_growth_pct_2025": 34.4,
+    "services_advantage": "35,931 mlrd so'm — 6 tumanlar ichida ENG YUQORI (Karmanadan 11.7x ko'p, Forishdan ~50x ko'p); shahar tipidagi sektor",
+    "small_business_dynamics_mln_sum": {
+      "2021": 39653,
+      "2025": 143971,
+      "growth_5y_multiplier": 3.6
+    },
+    "yhm_per_capita_thousand_sum_2025": 26596.3,
+    "sector_shares": {
+      "services_pct_estimate": 65,
+      "industry_pct_estimate": 30,
+      "construction_pct_estimate": 5,
+      "agriculture_pct_estimate": 0,
+      "note": "Q/x mavjud emas — shahar tumani; sektor ulushlari saneatdan dominant lekin xizmatlar sho'lar"
+    },
+    "yearly_drivers": [
+      "Savdo va chakana savdo (35,931 mlrd so'm bozor xizmatlari)",
+      "Saneat va ishlab chiqarish (12,319 mlrd so'm)",
+      "Xizmat ko'rsatish (yengil sanoat, transport tugun)",
+      "Qurilish va mahalla tadbirkorlik (3000 mikrolojiha 2025)"
+    ],
+    "google_trends_score": null,
+    "google_trends_note": "Tuman daraжasida hisoblanmagan; lekin internet qoplam 95%, tеzlik 50 Mbit/s",
+    "cargo_passenger_turnover_thousand": 521268.1,
+    "cargo_advantage": "521,268 ming — 6 tumanlar ichida ENG YUQORI, urban tipida normal: Karmanadan (93,424) 5.6x ko'p; transport tugun va savdo markaz",
+    "warehouses_count_2025": 21,
+    "warehouses_total_m2": 20500,
+    "warehouses_growth_5y": "9 ta (4,500 m²) → 21 ta (20,500 m²) — 4.6x maydon o'sgan",
+    "priority_sectors": [
+      "Yuqori texnologik saneat (elektrоnika, farmasevtika, mebellar) — 'Vertical Industry' kontseptsiyasi",
+      "Savdo va chakana savdo ('Street Retail' 24/7)",
+      "Ta'lim va intellektual xizmatlar ('Education City' brendi)",
+      "IT-autsorsing va konsulting (talabalar bazasi)",
+      "Logistika va omborxona (KSZ va shahar markazi yaqinida)",
+      "Tadbirkor xizmati (B2B servis: HR, audit, IT)"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": 4094,
+      "growth_5y_pct": 34.6,
+      "salary_dynamics_thousand_sum": {
+        "2021": 3041, "2022": 3078, "2023": 3329, "2024": 3732, "2025": 4094
+      },
+      "national_mln_sum_2025": 5.98,
+      "vs_national_pct": 68.5,
+      "note": "Toshkent shahar tipiga zid past — Olmazor (uniyversitеt), Yunusobod (yangi inwest) dan past darajadagi maoshlar"
+    },
+    "local_budget_dynamics_mln_sum": {
+      "2021": 111045.8,
+      "2022": 158695.5,
+      "2023": 140634.0,
+      "2024": 177179.8,
+      "2025": 169249.5
+    },
+    "local_budget_alert": "Byudjet 5 yilda barqaror o'smayapti — 2023 va 2025da pasayish kuzatilgan; daromad manbalari diversifikatsiya zarur",
+    "contingent_budget_mln_sum_2025": 14247.2,
+    "contingent_budget_growth_5y_multiplier": 4.5,
+    "tax_dynamics_bln_sum": {
+      "2021": 53.1,
+      "2022": 58.1,
+      "2023": 66.3,
+      "2024": 79.9,
+      "2025": 84.1,
+      "growth_5y_pct": 58
+    },
+    "informal_sector_workers": 60211,
+    "informal_sector_growth": "45,250 (2024) → 60,211 (2025) — +33% (xavotirli)",
+    "industrial_zone_use_pct_2025": 90,
+    "industrial_zone_use_2021_pct": 50,
+    "industrial_zone_alert": "10% bo'sh joy qoldi — yangi saneat uchun joy keskin cheklangan; 'Vertical Industry' (kop qavatli) kontseptsiyasi zarur"
+  },
+
+  "credits": {
+    "fdi_dynamics_thousand_usd": {
+      "2021": 500,
+      "2025": 1200,
+      "growth_5y_multiplier": 2.4
+    },
+    "fdi_alert": "TTI atigi $1.2 mln 2025 — Toshkent shahri jon boshiga $3 ming maqsadiga (yiliga $1 mlrd+ uchun tuman) jiddiy yetishmaydi; halqaro inwestor jalb qilish ustuvor",
+    "credit_plan_2026_bln_sum": 300,
+    "credit_plan_2026_breakdown_bln_sum": {
+      "small_business": 100,
+      "agriculture": 50,
+      "industry": 150
+    },
+    "npl_pct_dynamics": {
+      "2021": 2.9,
+      "2025": 3.6
+    },
+    "npl_risk_level": "PAST-O'RTA (yomonlashmoqda)",
+    "npl_alert": "NPL 2.9% (2021) → 3.6% (2025) — yomonlashish trendi (Gulistondagidek); kreditga tayorlash xizmati va biznes-trener uchun bozor",
+    "microcredit_2024": {
+      "projects": 1800,
+      "jobs": 3600,
+      "bln_sum": 100
+    },
+    "microcredit_2025": {
+      "projects": 3000,
+      "jobs": 6000,
+      "bln_sum": 120,
+      "growth_yoy_pct": 67
+    }
+  },
+
+  "infrastructure": {
+    "water_supply_pct_2025": 100,
+    "water_supply_dynamics_pct": {
+      "2021": 98.0, "2022": 99.2, "2023": 99.7, "2024": 99.3, "2025": 100.0
+    },
+    "water_supply_advantage": "100% qoplam — 6 tumanlar ichida MUMKIN BO'LGAN ENG YUQORI",
+    "sewerage_pct": 100,
+    "sewerage_advantage": "100% (barcha yillar) — to'liq shahar tipidagi infratuzilma",
+    "irrigation_canal_concrete_pct_2025": 90,
+    "irrigation_canal_growth": "45% (2021) → 90% (2025) — 2x oshish",
+    "roads_total_km": 345,
+    "roads_asphalted_pct": 100,
+    "roads_advantage": "100% asfalt (barcha yillar) — 6 tumanlar ichida ENG YUQORI; lekin kengaytirish kerak (60% maydon o'sgan)",
+    "roads_alert": "Yo'llar uzunligi 5 yilda o'zgarmagan, lekin maydon +60% — yangi hududlarda yo'llar yetishmaydi",
+    "electricity": {
+      "outages_per_month_avg_2025": 1,
+      "outages_dynamics": {"2021": 5, "2022": 2, "2023": 3, "2024": 1, "2025": 1},
+      "improvement_5y": "5x yaxshilanish — eng yaxshi tendentsiyalardan",
+      "internet_coverage_pct": 95,
+      "internet_speed_mbps": 50,
+      "internet_dynamics": {"2021": "70% / 15 Mbit", "2023": "85% / 25 Mbit", "2025": "95% / 50 Mbit"},
+      "risk_level": "PAST"
+    },
+    "gas_supply_pct": 100,
+    "gas_advantage": "100% (barcha yillar)",
+    "land": {
+      "total_ha": 4911,
+      "irrigated_ha": 0,
+      "agricultural_ha": 0,
+      "mineral_deposits_count": 0,
+      "industrial_zone_use_pct": 90,
+      "industrial_zone_alert": "Atigi 10% bo'sh joy — yangi saneat uchun cheklov; vertical (ko'p qavatli) ishlab chiqarish binolari kerak"
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct_2025": 65.1,
+      "coverage_dynamics_pct": {
+        "2021": 52.0, "2022": 55.5, "2023": 56.6, "2024": 60.5, "2025": 65.1
+      },
+      "growth_5y_pp": 13.1,
+      "target_2030": 80,
+      "gap_pct": 34.9,
+      "opportunity": "Maktabgacha qamrov atigi 65.1% — Toshkentdagi eng past darajalardan; Toshkent shahri 100 ming yangi MTT/maktab o'rin kerakligi rasmiy tasdiqlangan; xususiy MTT uchun ulkan bozor"
+    },
+    "schools": {
+      "total": 65,
+      "single_shift": 40,
+      "two_shift": 25,
+      "two_shift_pct": 38.5,
+      "wikipedia_2012_data": "33 maktab — 12 yilda +32 ta yangi maktab"
+    },
+    "higher_education": {
+      "universities_in_district_count_estimate": 4,
+      "universities_in_district": [
+        "Toshkent davlat texnika universiteti akademik litseyi (3-akad. lits.)",
+        "MEPhI (National Research Nuclear University) Toshkent filiali",
+        "Madaniyat instituti",
+        "Jahon Iqtisodiyoti va Diplomatiya universiteti (UWED)"
+      ],
+      "research_institutes": 27,
+      "design_institutes": 10,
+      "important_note": "Mirzo Ulug'bek nomidagi O'zbekiston Milliy Universiteti (O'zMU) — Olmazor tumanida joylashgan, BU TUMANDA EMAS! Lekin nominal aloqa va kadrlar oqimi mavjud",
+      "university_hub_potential": "27 ilmiy-tadqiqot instituti + 10 lojiha instituti + 4 OTM = O'zbekistondagi eng zich intеllektual klasterlardan biri"
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand_estimate": 230,
+    "total_resources_data_anomaly": "Файлда 2021-2025 динамика 400 → 2,880 ming kishi (xato — populatsiyadan ham ko'p); realistik bah ~180-250 ming kishi",
+    "informal_sector_2024": 45250,
+    "informal_sector_2025": 60211,
+    "informal_sector_alert": "Norasmiy sektor 60,211 nafargacha o'sgan (+33% YoY) — yiliga ~90 mlrd so'm soliq yo'qotish",
+    "child_benefit_dynamics": {
+      "2021": 3569, "2022": 5567, "2023": 8195, "2024": 6582
+    },
+    "unemployment_pct_2025": 3.5,
+    "unemployment_dynamics_count": {
+      "2021": 389, "2022": 633, "2023": 407, "2024": 226, "2025": 101
+    },
+    "unemployed_count_2025": 101,
+    "unemployment_growth_pct_2025": -55.3,
+    "unemployment_alert": "Atigi 101 nafar rasmiy ishsiz — 6 tumanlar ichida ENG KAM (Karmana 2,157, Forish 2,438); shahar bozori juda kuchli",
+    "youth_unemployed_16_30": 704,
+    "youth_unemployed_dynamics": {"2021": 1125, "2025": 704},
+    "youth_unemployment_change_5y_pct": -37.4,
+    "unemployed_women": 169,
+    "unemployed_women_dynamics": {"2021": 143, "2025": 169},
+    "unemployed_women_alert": "Atypically: aёllar ishsizlik 5 yilda OSHGAN (143→169) — boshqa tumanlardan farqli; xizmat sohasi va remote ish dasturlari kengaytirish zarur",
+    "disabled_employed_2021": 3200,
+    "disabled_unemployed_2021": 1710,
+    "poverty_pct_2025": 20.0,
+    "poverty_dynamics_pct": {
+      "2021": 51, "2022": 45, "2023": 33, "2024": 28, "2025": 20
+    },
+    "poor_families_2025": 1800,
+    "poor_families_growth_yoy_pct": 20,
+    "poverty_alert": "Foiz sifatida tushgan (51% → 20%), lekin absolut sonda kambag'al oilalar 2024-2025da +20% oshgan — populatsiya o'sishi tufayli, manzilli yordam zarur",
+    "low_income_families": 150,
+    "salary_thousand_sum_dynamics": {
+      "2021": 3041, "2022": 3078, "2023": 3329, "2024": 3732, "2025": 4094
+    },
+    "salary_growth_5y_pct": 34.6,
+    "tashkent_2030_target_per_capita_usd": 15000,
+    "training_plan_2026": {
+      "tashkent_total_persons": "Aloxida 100 ming MTT/maktab o'rin keraк (Mirziyoyev PQ)",
+      "focus": ["IT/raqamli", "xizmat ko'rsatish", "yuqori texnologik saneat"]
+    }
+  },
+
+  "tourism_and_culture": {
+    "type": "Urban — kommertsiyadagi turizm va madaniy yodgorliklar minimal",
+    "historical_monuments": ["Kirxa (1892) — protestant cherkov"],
+    "annual_visitors_estimate": "minimal — touristik destinatsiya emas",
+    "key_concept": "Education tourism — 4 OTM va 27 ilmiy institut kontingenti orqali 'Education City' brendi"
+  },
+
+  "trade": {
+    "main_market_focus": "Toshkent ichi konsumеr bazasi — 337 ming aholi + transit",
+    "retail_density": "YUQORI — Yunusobod va Mirzo Ulug'bek 5 yilda 500k+ m² yirik savdo majmualari",
+    "tashkent_2025_retail_volume_trln_sum": 76,
+    "key_advantage": "Aholi zichligi 6,800+/km² + jami Toshkent 100 ming/yil ko'paymoqda — chakana savdo va xizmat doimiy bozor",
+    "import_substitution_priorities": [
+      "qurilish materiallari",
+      "mebellar",
+      "plastik idishlar"
+    ]
+  },
+
+  "mahalla_economy": {
+    "total": 60,
+    "total_2012_wikipedia": 49,
+    "growth_5y_pct": 22,
+    "specialization": {
+      "tikuvchilik": "ko'p MFY",
+      "savdo_xizmat": "ko'p MFY",
+      "saneat_zonasi": 1
+    },
+    "drivers": ["Savdo va xizmat ko'rsatish", "Qurilish", "Xizmatlar"],
+    "category": "ko'pchilik o'rta toifa",
+    "agriculture_processing": "tuman shahar tipida — q/x va qayta ishlash mavjud emas",
+    "key_advantage": "60 mahalladan ko'pi o'rta toifa — Sariosiyo (13 og'ir) yoki Forishdan (5 og'ir) bilan solishtirganda statistik xavfsiz; lekin aniq og'ir mahallalar nomi rasmiy ma'lumot yo'q"
+  },
+
+  "banking_programs": {
+    "sqb_branches": 2,
+    "atms": 8,
+    "other_banks": 5,
+    "total_banks_in_district": 7,
+    "total_bank_staff": 72,
+    "bank_staff_gender": {"women": 40, "men": 32},
+    "mahalla_bankirs_total": 30,
+    "mahalla_bankirs_for_60_mahallas": "1 bankir 2 mahallaga (Qoqondan yaxshi, Karmanadan past)",
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for_urban": ["chakana savdo do'kon", "online savdo", "kafe-restoran", "go'zallik salonlari", "xususiy MTT", "tikuvchilik kooperativ", "uy ishi (oilaviy yo'l)"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "rate_alert": "18% — yuqori; subsidiya yoki imtiyozli stavkalar ko'p tarmoqlar uchun zarur",
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "participating_banks": ["Xalq banki", "Mikrokreditbank"],
+      "best_for_urban": ["IT/online biznes", "logistika va omborxona", "savdo nuqtasi", "xizmat ko'rsatish (dukon, restoran)", "vertikal saneat"]
+    },
+    "biznesga_birinchi_qadam": {
+      "type": "Yangi mikroqarz vositasi",
+      "purpose": "Kichik xizmat nuqtalari uchun start"
+    },
+    "micro_projects_2025": {
+      "total_projects": 3000,
+      "total_jobs": 6000,
+      "total_bln_sum": 120,
+      "growth_yoy_pct": 67
+    },
+    "high_tech_project_portfolio": {
+      "projects": 15,
+      "bln_sum": 35,
+      "jobs": 150,
+      "focus": ["elektronika", "farmasevtika", "mebellar"]
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Eng yuqori xizmatlar hajmi (35,931 mlrd so'm)",
+      "detail": "6 tumanlar ichida ENG YUQORI bozor xizmatlari — Karmana (3,072 mlrd) dan 11.7x ko'p; xizmat sektor doimiy o'sishda (+34.4% 2025)"
+    },
+    {
+      "title": "Saneat 5 yilda 2.4x o'sgan",
+      "detail": "5,186 → 12,319 mlrd so'm; o'sish suratasi 96.1% (2021) → 121.2% (2025) — strukturaviy o'sish belgisi"
+    },
+    {
+      "title": "Kichik biznes 5 yilda 3.6x o'sgan",
+      "detail": "39,653 → 143,971 mln so'm; tadbirkorlik markazi sifatida tan olingan"
+    },
+    {
+      "title": "Mukamal infratuzilma (100%-100%-100%)",
+      "detail": "Suv 100%, kanalizatsiya 100%, gaz 100%, yo'l asfalt 100%, internet 95% va 50 Mbit/s — to'liq shahar darajasi"
+    },
+    {
+      "title": "Eng past rasmiy ishsizlik (101 nafar)",
+      "detail": "Atigi 101 nafar — Karmana (2,157) dan 21x kam; ish bozori juda kuchli"
+    },
+    {
+      "title": "Ta'lim va ilmiy hub potensiali",
+      "detail": "27 ilmiy-tadqiqot instituti, 10 loyiha instituti, 4 OTM (UWED, Madaniyat instituti, MEPhI Toshkent filiali, etc); Mirzo Ulug'bek nomidagi O'zMU yaqinida (Olmazor 5-7 km)"
+    },
+    {
+      "title": "Microlojihalar 5 yilda 1.7x oshgan",
+      "detail": "1,800 → 3,000 ta loyiha (2024-2025); 3,600 → 6,000 ish ўрни"
+    },
+    {
+      "title": "Aholi zichligi 6,800+/km²",
+      "detail": "Yirik chakana savdo, fitness, restoran, premium xizmatlar uchun ideal — 'Street Retail 24/7' kontseptsiyasi"
+    },
+    {
+      "title": "Cargo/passenger 521 mln — ENG YUQORI",
+      "detail": "Karmanadan (93,424) 5.6x ko'p; transport tugun va savdo markazi"
+    },
+    {
+      "title": "Yashirin saneat baza (Wikipedia)",
+      "detail": "377 yirik korxona, 28 saneat (Toshkentkabel, Traktor zavodi, Paxtachilik mashinasozligi, Lakboyoq); 3,119 KO'K"
+    },
+    {
+      "title": "Tashkent 2026 'Yili' qamrovi",
+      "detail": "PQ 16.12.2025 — 'Jadal rivojlanish va aholi daromadlari o'sishi yili'; $9 mlrd jalb; jon boshiga ТТI $3K maqsadi; tuman 12dan 9-o'rin → maqsad top-5"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "ТТI atigi $1.2 mln (Toshkent maqsadidan 1000x kam)",
+      "severity": "YUQORI",
+      "data": "TTI 2021: $500K → 2025: $1.2M; Toshkent shahar maqsadi jon boshiga $3K (337k aholi = ~$1 mlrd uchun tumanga); 1000x oshirish kerak",
+      "opportunity": "Halqaro investor uchun premium-paket: vertical industry parki + soliq imtiyozlar; UNVER Tashkent bilan venture fond hamkorligi; Toshkent 2026 PQ ramkasida fast-track inwesyts",
+      "investment_range_usd_mln": "10-50 har lojiha",
+      "suitable_for": ["xorijiy investor", "venture fond", "halqaro broker"]
+    },
+    {
+      "gap": "Maktabgacha qamrov 65.1% — Toshkentda eng past",
+      "severity": "YUQORI",
+      "data": "65.1% (2030 maqsad 80%); Toshkent shahar 100 ming yangi MTT/maktab o'rin keraкligi rasmiy; aholi +10-15k/yil tumanga",
+      "opportunity": "Xususiy MTT (premium), bola rivojlantirish markazlari, davlat-xususiy sheriklik (DXSh) MTTlari, online ta'lim platformasi",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["pedagogik ma'lumot", "premium xizmat", "DXSh tajribasi", "Inha/Amity bitiruvchilari"]
+    },
+    {
+      "gap": "Norasmiy sektor 60,211 nafar (+33% YoY)",
+      "severity": "YUQORI",
+      "data": "45,250 (2024) → 60,211 (2025); yiliga ~90 mlrd so'm soliq yo'qotish; Toshkent yashirin iqtisodiyoti 9.5%",
+      "opportunity": "Buxgalteriya autsorsing, ChP/MChJ tashkil etish konsalting, kichik biznes rasmiyлаштириш xizmati",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "huquq", "konsalting"]
+    },
+    {
+      "gap": "Saneat zonasi 90% to'lgan — yangi joy yo'q",
+      "severity": "YUQORI (FURSAT)",
+      "data": "Saneat zonasidan foydalanish 50% (2021) → 90% (2025); atigi 10% bo'sh; mahalla maydoni katta — vertikal yo'l",
+      "opportunity": "'Vertical Industry' kontseptsiyasi — kop qavatli ishlab chiqarish binolari (3-5 qavatli zavodlar); elektronika, farmasevtika, mebellar uchun ideal",
+      "investment_range_mln_sum": "500-3000",
+      "suitable_for": ["yirik investor", "halqaro hamkor (Janubiy Koreya, Yaponiya, Germaniya)"]
+    },
+    {
+      "gap": "NPL O'SAYAPTI (2.9% → 3.6%)",
+      "severity": "O'RTA",
+      "data": "Gulistondagidek (3.9% → 5.5%) yomonlashayotgan tendentsiya — kichik biznes 3.6x o'sgan, lekin sifat tushgan",
+      "opportunity": "Biznes-trener kompaniya, kreditga tayorlash dasturlari, AI scoring servisi — SQB AI Advisor extension",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["IT/AI tajribasi", "moliya tajribasi", "konsalting"]
+    },
+    {
+      "gap": "Talabalar bandlikga jalb qilinmagan",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "27 ilmiy-tadqiqot instituti + 10 lojiha instituti + 4 OTM — minglab talabalar; lekin koworking, stratap inkubator, IT-autsorсinг tarmog'i rivojlanmagan",
+      "opportunity": "Coworking spaces (10-20 ta), startup inkubator, IT-autsorsing markaz, freelance hub, R&D outsourcing — Education City brendi",
+      "investment_range_mln_sum": "30-500",
+      "suitable_for": ["IT tajribasi bor", "tijoriy tajriba", "talaba boshqaruvchi"]
+    },
+    {
+      "gap": "Avtomobil tirbandlik (Mirzo Ulug'bek ko'chasi)",
+      "severity": "O'RTA",
+      "data": "Mirziyoyev PQ 16.12.2025 — Mirzo Ulug'bek ko'chasi tirbandligi maxsus aytib o'tilgan; Kichik halqa yo'li va Mirzo Ulug'bek ko'chalari muammoli",
+      "opportunity": "BRT (mobil), elektrobus, mikromobillik (samokat, velosiped),  ko'p qavatli avtoturargохлар, taxi-pooling",
+      "investment_range_mln_sum": "100-2000",
+      "suitable_for": ["transport tajribasi", "elektrik avtomobil dilеr", "DXSh"]
+    },
+    {
+      "gap": "Aёllar ishsizlik OSHMOQDA (143→169)",
+      "severity": "O'RTA",
+      "data": "Boshqa tumanlardan farqli — aёllar ishsizligi YOMONlаshmoqda; remote ish va onlайн tadbirkorlik dasturlari kam",
+      "opportunity": "Aёllar uchun online biznes platformasi, uy ishi tarmog'i (e-commerce, mahsulot online), aёllar coworking",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["aёllar (HAMROH 100 mln garovsiz)", "online biznes", "e-commerce"]
+    },
+    {
+      "gap": "Yashil energiya foydalanilmagan",
+      "severity": "O'RTA",
+      "data": "Yirik savdo markazlari va banklar tomida quyosh paneli yo'q; energiya samaradorligi 10-15% kamaytirish potensiali",
+      "opportunity": "ESCO model — Energy Service kompaniyasi; rooftop solar; smart meter tizimi; energiya audit xizmati",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["texnik ma'lumot", "ESCO operator", "B2B savdo"]
+    },
+    {
+      "gap": "Import o'rnini bosish (qurilish, mebellar, plastik)",
+      "severity": "O'RTA",
+      "data": "Tumanda deficit товарлар: qurilish materiallari, mebel, plastik idishlar — Lojiha fabrikasi mexanizmi tasdiqlangan",
+      "opportunity": "Kichik saneat texnoparkda imtiyozli shartlar; mebel ishlab chiqarish (talab juda yuqori), plastik tara",
+      "investment_range_mln_sum": "100-500",
+      "suitable_for": ["saneat tajribasi", "import-substitution focus"]
+    },
+    {
+      "gap": "Yirik korxonalar konsentratsiya хави (2.5x kichik bizneщдан)",
+      "severity": "O'RTA",
+      "data": "Yirik 358,693 mln so'm vs kichik 143,971 mln so'm — 2.5x; agar 1-2 yirik korxona qiymli bo'lsa, sеzilarli ta'sir",
+      "opportunity": "Diversifikatsiya: kichik biznes klasterlar, KO'K-Skeyl dastur (Karmana modeli), mahalliy yetkazib beruvchilar tarmog'i",
+      "investment_range_mln_sum": "50-300",
+      "suitable_for": ["KO'K darajasi", "yirik korxona yetkazib beruvchi"]
+    },
+    {
+      "gap": "Tartibsiz savdo va xizmatlar",
+      "severity": "O'RTA",
+      "data": "Hokimiyat 'Street Retail' kontseptsiyasini taklif etib, 24/7 savdo orqali byudjetga 15-20% qo'shimcha tushum kelish potensiali",
+      "opportunity": "24/7 do'kon-konsept (Mini-market, kafe, suporkimiz), brand mini-magazin, premium chakana savdo nuqtalari",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["chakana savdo tajribasi", "kafe-restoran", "franchaiz operatori"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "IT/BPO/coworking xizmati ('Education City' kontseptsiyasi)",
+      "type": "IT-autsorsing markaz / coworking space / startup inkubator / fintеx servis / call-center",
+      "why_mirzo_ulugbek": "27 ilmiy institut + 10 lojiha institut + 4 OTM = O'zbekistondagi eng zich intеllektual klaster; talabalar bazasi katta; internet 95% va 50 Mbit/s; Toshkent shahar markazidagi 11 km da; Yashnobod Texnoparkga o'xshash imkoniyat",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "20-200",
+      "payback_years": "2-4",
+      "suitable_for": ["IT tajribasi", "halqaro biznes", "qaytgan migrantlar (chet tili)", "talabalar boshqaruvchisi"],
+      "bank_product": "SQB biznes kreditlari yoki halqaro venture fond",
+      "risk": "Talabalar oqimi mavsumiy; halqaro raqobat"
+    },
+    {
+      "rank": 2,
+      "sector": "Vertical Industry (kop qavatli zavod)",
+      "type": "Elektronika / farmasevtika / mebellar 3-5 qavatli ishlab chiqarish binosi",
+      "why_mirzo_ulugbek": "Saneat zonasi 90% to'lgan — gorizontal yo'l yo'q; saneat 5 yilda 2.4x o'sgan; impotrt almashtirish ustuvorlik; 15 ta loyiha portfeli (35 mlrd so'm, 150 ish ўрни). Wikipediaga ko'ra hududda Toshkentkabel, Traktor zavodi, Paxtachilik mashinasozligi — saneat ekosystemasi tayyor",
+      "investment_usd_mln": "10-50",
+      "monthly_income_estimate_mln_sum": "100-500",
+      "payback_years": "5-7",
+      "suitable_for": ["yirik investor", "halqaro hamkor (Janubiy Koreya, Yaponiya, Germaniya)", "saneat tajribasi"],
+      "bank_product": "SQB sanoat kreditlari yoki ХIH",
+      "risk": "Boshlang'ich kapital katta; texnologik investitsiya uzoq"
+    },
+    {
+      "rank": 3,
+      "sector": "Premium MTT va xususiy maktab",
+      "type": "Xususiy MTT (premium) / mini-bog'cha / IT/STEM маrkazi / til kurs / akselerator",
+      "why_mirzo_ulugbek": "Maktabgacha qamrov atigi 65.1% — Toshkentda eng past; Toshkent shahar 100 mingdan ortiq MTT/maktab o'rin kerak (rasmiy); aholi +10-15k/yil tumanga keladi; o'rtacha maoshlar 4 mln so'm — premium uchun bozor",
+      "investment_mln_sum": "200-1000",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumot bor ayollar", "halqaro ta'lim modellari (Inha, Amity, MEPhI)", "DXSh tajribasi"],
+      "bank_product": "HAMROH (ayollar) yoki SQB biznes kreditlari",
+      "risk": "Litsenziya jarayoni; kadrlar tayorlash"
+    },
+    {
+      "rank": 4,
+      "sector": "Chakana savdo va Street Retail 24/7",
+      "type": "Mini-market / brand do'kon / kafe-restoran / fitness / go'zallik salon",
+      "why_mirzo_ulugbek": "Aholi zichligi 6,864/km² — yuqori bozor; bozor xizmatlari 35,931 mlrd so'm va o'sayapti +34.4%; 'Street Retail' 24/7 byudjetga +15-20% impuls; Yunusobod 500k m² yangi savdo majmualari modeli",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "5-50",
+      "payback_years": "2-4",
+      "suitable_for": ["chakana savdo tajribasi", "franchaiz operatori", "kafe-restoran", "ayollar"],
+      "bank_product": "Biznesga birinchi qadam yoki HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Raqobat yuqori; ijara qimmat"
+    },
+    {
+      "rank": 5,
+      "sector": "Logistika va omborxona (urban)",
+      "type": "Sovutgich omborlar / e-commerce fulfillment / last-mile delivery / dropshipping markaz",
+      "why_mirzo_ulugbek": "Cargo/passenger 521,268 ming — eng yuqori; omborxonalar 9 ta (4,500 m²) → 21 ta (20,500 m²) 5 yilda; transport tugun (Buyuk Ipak yo'li, Kichik halqa yo'li); Toshkent e-commerce ko'tarilmoqda; Wildberries, Uzum Market o'sayapti",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "payback_years": "3-5",
+      "suitable_for": ["logistika tajribasi", "e-commerce", "yirik investor"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Land xarajatlar yuqori; raqobat o'sayapti"
+    },
+    {
+      "rank": 6,
+      "sector": "Buxgalteriya va konsalting (norasmiy → rasmiy)",
+      "type": "Buxgalteriya autsorsing / ChP-MChJ tashkil etish konsalting / soliq optimizatsiya / huquqiy xizmat",
+      "why_mirzo_ulugbek": "Norasmiy sektor 60,211 nafargacha o'sgan (+33% YoY); 3,000 mikrolojiha 2025da; 3.6% NPL o'sayapti — biznes-tayorlash bozor talab; Toshkent yashirin iqtisodiyoti 9.5%",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya/iqtisodiyot ma'lumot", "huquqshunоs", "qaytgan migrantlar (xorijiy biznes)"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Past barаr boshlang'ich; raqobat yuqori"
+    },
+    {
+      "rank": 7,
+      "sector": "Premium xizmat sektor (fitness, beauty, healthcare)",
+      "type": "Premium fitness studio / SPA / klinika / kosmetologiya / dietolog markazi",
+      "why_mirzo_ulugbek": "337 ming aholi + zichlik 6,864/km²; o'rtacha maosh 4 mln so'm (Toshkent shahar tipiga past — ammo o'sayapti); 'Toshkent 2026 Yili' jon boshiga $3K maqsadi — orta sinf o'sayapti",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["xizmat tajribasi", "ayollar (HAMROH)", "tibbiy ma'lumot bor"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Premium segment cheklangan; raqobat o'sayapti"
+    },
+    {
+      "rank": 8,
+      "sector": "Mebel va import-substitution",
+      "type": "Mebel ishlab chiqarish / pardoz materiallar / plastik idishlar / qurilish materiallari",
+      "why_mirzo_ulugbek": "Defitsit товарлar (qurilish materiallari, mebel, plastik); 'Lojiha fabrikasi' mexanizmi tasdiqlangan; 27 ilmiy institut R&D yordami; saneat o'sayapti; Toshkent 100 ming/yil aholi o'sishi mebel talabini ko'paytiradi",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["saneat tajribasi", "saneat ekspert", "import-substitution focus"],
+      "bank_product": "SQB sanoat kreditlari yoki Har bir oila tadbirkor",
+      "risk": "Xom ashyo importi; raqobat"
+    },
+    {
+      "rank": 9,
+      "sector": "ESCO va yashil energiya",
+      "type": "Rooftop solar / Energy Service / Smart meter tizimi / energiya audit / EV zaryadlash",
+      "why_mirzo_ulugbek": "Yirik savdo markazlari va banklar tomida solar yo'q; 10-15% energiya samaradorligi potensiali; Toshkent 2030 yashil ko'zlangan; 21 ta omborxona, ko'plab biznes binolar — rooftop bo'sh",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "5-7",
+      "suitable_for": ["texnik ma'lumot bor", "ESCO operator", "B2B savdo"],
+      "bank_product": "SQB biznes kreditlari yoki XIH (АБR yashil energiya)",
+      "risk": "Texnik mutaxassis kam; tarif tartibga solish"
+    },
+    {
+      "rank": 10,
+      "sector": "Online biznes va e-commerce platformasi",
+      "type": "Online savdo / dropshipping / influencer marketing / e-content / product photography studio",
+      "why_mirzo_ulugbek": "Internet 95% va 50 Mbit/s — Toshkent eng yuqori; talabalar bazasi katta; aёllar ishsizligi YOMONlashayapti — online biznes ideal; Inha/Amity ekosystema",
+      "investment_mln_sum": "5-100",
+      "monthly_income_estimate_mln_sum": "3-20",
+      "payback_years": "1-3",
+      "suitable_for": ["aёllar (HAMROH garovsiz 100 mln)", "yoshlar", "qaytgan migrantlar"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Tez raqobat o'sishi; marketing zarur"
+    },
+    {
+      "rank": 11,
+      "sector": "Aёllar uchun online biznes va remote ish hub",
+      "type": "Aёllar coworking / online ta'lim platforma / uydan tikuvchilik tarmog'i / handmade markеtplace",
+      "why_mirzo_ulugbek": "Aёllar ishsizligi 5 yilda OSHGAN (143→169) — Toshkentdagi anomaly; 'Tikuvchilik MFY'lari mavjud; HAMROH garovsiz 100 mln so'm; 40 nafar ayol bank ходimi tumanda",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "3-20",
+      "payback_years": "1-3",
+      "suitable_for": ["aёllar", "to'qimачilik tajribasi", "online biznes"],
+      "bank_product": "HAMROH (eng qulay)",
+      "risk": "Marketing va platforma jonli ushlab turish"
+    },
+    {
+      "rank": 12,
+      "sector": "Mikromobillik va shahar transport",
+      "type": "Elektrik samokat ijara / velosiped sharing / EV-taxi / ko'p qavatli avtoturargohlar",
+      "why_mirzo_ulugbek": "Mirziyoyev PQ 16.12.2025 — Mirzo Ulug'bek ko'chasi tirbandligi rasmiy muammoda; 521 mln cargo/passenger; Toshkent BRT, tunnel investitsiyalari; 'Smart City' kontseptsiyasi rivojlanyapti",
+      "investment_mln_sum": "50-1000",
+      "monthly_income_estimate_mln_sum": "10-100",
+      "payback_years": "3-5",
+      "suitable_for": ["transport biznesi", "fintech", "halqaro hamkor (Yandex, Bolt)"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Tartibga solish; bozor mavsumiy"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Mirzo Ulug'bek tumani (Toshkent shahri) — 337.1 ming aholi (Toshkent shahar 12 tumanidan biri, shimoli-sharqida), 60 mahalla, 49.11 km² maydon, zichlik ~6,800 kishi/km², shahar markazidan 11 km. KUCHLI TOMONLARI: (1) Eng yuqori xizmatlar 35,931 mlrd so'm — 6 tumanlar ichida ENG YUQORI (Karmanadan 11.7x ko'p); (2) Saneat 12,319 mlrd (5 yilda 2.4x); (3) Kichik biznes 143,971 mln so'm (5 yilda 3.6x); (4) Mukamal infratuzilma — suv 100%, kanalizatsiya 100%, gaz 100%, yo'l asfalt 100%, internet 95% va 50 Mbit/s; (5) Eng past rasmiy ishsizlik 101 nafar (Karmanadan 21x kam); (6) 27 ilmiy-tadqiqot instituti + 10 loyiha instituti + 4 OTM (UWED, Madaniyat instituti, MEPhI Toshkent filiali) — O'zbekistondagi eng zich intеllektual klaster; (7) Cargo/pass 521,268 ming (eng yuqori); (8) 21 ta omborxona, 20,500 m²; (9) 'Toshkent 2026 Yili' qamrovi — $9 mlrd jalb maqsadi; (10) Yashirin saneat baza: Toshkentkabel, Traktor zavodi, Paxtachilik mashinasozligi (Wikipedia 28 saneat korxonasi); (11) 60 mahalla ko'pchiligi o'rta toifa — statistik xavfsiz; (12) Mikrolojihalar 5 yilda 1.7x (1,800→3,000). PROBLEMALAR va IMKONIYATLAR: (1) ТТI atigi $1.2 mln — Toshkent maqsadidan 1000x kam; (2) Saneat zona 90% to'lgan — 'Vertical Industry' (kop qavatli zavod) zarur; (3) Maktabgacha qamrov atigi 65.1% — Toshkentda eng past, MTT bozori bo'sh; (4) Norasmiy sektor 60,211 nafar (+33% YoY) — yiliga 90 mlrd so'm soliq yo'qotish; (5) NPL O'SAYAPTI (2.9% → 3.6%) — Gulistondagidek; (6) Aёllar ishsizlik OSHMOQDA (143→169 — anomaly); (7) Saneat zonada talabalar bandlikga jalb qilinmagan — coworking, startup hub bo'sh; (8) Avtomobil tirbandlik (Mirzo Ulug'bek ko'chasi rasmiy muammo); (9) Yirik korxonalar konsentratsiya хavfi (kichik bizneщдan 2.5x katta); (10) Yashil energiya foydalanilmagan; (11) Import deficit (qurilish, mebel, plastik); (12) Yo'llar 5 yilda kengaytirilmagan (maydon +60%). BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln, 70% kafillik), Har bir oila tadbirkor (300 mln, 18%), Yoshlar biznesda, Biznesga birinchi qadam (yangi mikroqarz), 3,000 mikrolojiha 2025 (6,000 ish ўрни, 120 mlrd so'm), 2026 kredit reжаси 300 mlrd (saneat 150 + kichik biz 100 + agri 50). ASOSIY DRAYVERLAR: IT/BPO/coworking ('Education City'), Vertical Industry (elektronika+farma+mebel), premium MTT/maktab, Street Retail 24/7, urbаn logistika va e-commerce, online biznes, ESCO yashil energiya, mikromobillik.",
+
+  "ai_prompt_context_ru": "Мирзо-Улугбекский район (город Ташкент) — 337.1 тыс. жителей (один из 12 районов Ташкента, северо-восток), 60 махаллей, 49.11 км² площади, плотность ~6,800 чел/км², в 11 км от центра. СИЛЬНЫЕ СТОРОНЫ: (1) Самый высокий объём услуг 35,931 млрд сум — из 6 районов САМЫЙ ВЫСОКИЙ (в 11.7x больше Карманы); (2) Промышленность 12,319 млрд (за 5 лет 2.4x); (3) Малый бизнес 143,971 млн сум (за 5 лет 3.6x); (4) Идеальная инфраструктура — вода 100%, канализация 100%, газ 100%, дороги асфальт 100%, интернет 95% и 50 Мбит/с; (5) Самая низкая официальная безработица 101 чел (в 21x меньше Карманы); (6) 27 НИИ + 10 проектных институтов + 4 ВУЗа (УВЭД, Институт культуры, филиал МИФИ Ташкент) — самый плотный интеллектуальный кластер Узбекистана; (7) Грузо/пасс. 521,268 тыс (самый высокий); (8) 21 склад, 20,500 м²; (9) Статус 'Год Ташкента 2026' — цель $9 млрд инвестиций; (10) Скрытая промышленная база: Ташкенткабель, Тракторный завод, Пахтачилик машиностроения (Wikipedia: 28 пром. предприятий); (11) 60 махаллей в основном среднего типа — статистически безопасно; (12) Микропроекты за 5 лет 1.7x (1,800→3,000). ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) ПИИ всего $1.2 млн — в 1000x меньше цели Ташкента; (2) Промзона 90% занята — нужна 'Vertical Industry' (многоэтажные заводы); (3) Дошкольный охват всего 65.1% — самый низкий в Ташкенте, рынок МТТ свободен; (4) Неформальный сектор 60,211 чел (+33% YoY) — потеря ~90 млрд сум налогов в год; (5) NPL РАСТЁТ (2.9% → 3.6%) — как в Гулистоне; (6) Безработица женщин РАСТЁТ (143→169 — аномалия); (7) Студенты не вовлечены — коворкинги, стартап-хабы свободны; (8) Автомобильные пробки (улица Мирзо Улугбек официально проблемная); (9) Концентрация крупных предприятий (в 2.5x больше малого бизнеса); (10) Зелёная энергия не используется; (11) Импорт-дефицит (стройматериалы, мебель, пластик); (12) Дороги за 5 лет не расширены (площадь +60%). БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн, 70% гарантия), 'Каждая семья — предприниматель' (300 млн, 18%), 'Бизнесу первый шаг' (новый микрозайм), 3,000 микропроектов в 2025 (6,000 рабочих мест, 120 млрд сум), кредитный план 2026: 300 млрд (промышленность 150 + малый биз 100 + агри 50). КЛЮЧЕВЫЕ ДРАЙВЕРЫ: IT/BPO/коворкинг ('Education City'), Vertical Industry (электроника+фарма+мебель), премиум МТТ/школа, Street Retail 24/7, городская логистика и e-commerce, онлайн-бизнес, ESCO зелёная энергия, микромобильность."
+}

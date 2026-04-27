@@ -1,0 +1,523 @@
+{
+  "id": "boysun",
+  "name_uz": "Бойсун тумани",
+  "name_ru": "Байсунский район",
+  "name_latin": "Boysun tumani",
+  "viloyat": "Surxondaryo",
+  "type": "tuman",
+  "data_year": 2025,
+  "sources": ["stat.uz", "SQB", "Xokimiyat", "Mehnat.uz", "Markaziy bank", "UNESCO", "Geologiya qo'mitasi"],
+  "character_note": "Boysun — tog'li Surxondaryo tumani. UNESCO nomoddiy madaniy meros ('Boysun Bahori', 2001). Ulkan mineral boyliklar: tsement 159M tonna, gips 23M tonna, shisha 109M tonna. 180k sayyoh/yil, 300k maqsad. Lekin: 19/39 mahalla 'qizil' tоifa (49%!), elektr 4.2 uzilish/oy — eng ko'p, irrigatsiya faqat 4,558 ga (hudud 2%). Potensial ulkan, infratuzilma zaif.",
+
+  "demographics": {
+    "population": 129900,
+    "mahallas": 39,
+    "mahalla_categories": {"red_hard": 19, "yellow_medium": 16, "green_easy": 4},
+    "difficult_mahallas_pct": 49,
+    "difficult_note": "39 mahalladan 19 tasi 'qizil' — 49%! Barcha regionlarda eng yuqori nisbat.",
+    "families": 30776,
+    "households": 23851,
+    "territory_ha": 320577,
+    "irrigated_ha": 4558,
+    "irrigated_pct_of_total": 2,
+    "population_density_per_km2": 40.3
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 300.6,
+    "industry_dynamics": {
+      "2021": 100.6, "2022": 108.7, "2023": 150.7, "2024": 223.7, "2025": 300.6,
+      "unit": "mlrd so'm",
+      "growth_5yr": "3 barobar"
+    },
+    "industry_index_avg": "108-110% — barqaror o'sish",
+    "industry_large_bln_2024": 20.1,
+    "industry_large_growth_note": "Yirik korxona 5.5 → 20.1 mlrd (4 barobar sakrash 2024 da)",
+    "industry_small_bln": 277.5,
+    "small_business_share_pct": 92,
+    "services_volume_bln_sum": 761.5,
+    "services_dynamics": {
+      "2021": 330.0, "2022": 403.4, "2023": 483.2, "2024": 580.8, "2025": 761.5,
+      "growth_5yr": "2.3 barobar"
+    },
+    "agriculture_gdp_share_pct": 64.9,
+    "agriculture_note": "MONO-DRAYVVER xavfi: Q/x 64.9% — diversifikatsiya zarur",
+    "export_usd_mln": 16.34,
+    "export_dynamics": {
+      "2021": 5.61, "2022": 8.98, "2023": 7.06, "2024": 9.18, "2025": 16.34,
+      "unit": "mln $"
+    },
+    "local_budget_bln_sum": 86.8,
+    "local_budget_trend": "58.1 (2021) → 76.0 → 52.8 → 60.7 → 86.8 (2025)",
+    "contingent_budget_bln_sum": 30.3,
+    "credits_bln_sum": 163.7,
+    "credits_trend": {
+      "2021": 67.4, "2022": 92.6, "2023": 117.9, "2024": 135.3, "2025": 163.7
+    },
+    "google_trends_score": 48,
+    "google_trends_trend": "42 (2024) → 48 (2025), +14%",
+    "avg_salary_mln_sum": 4.351,
+    "avg_salary_growth_pct": 29.2,
+    "deficit_products": ["go'sht mahsulotlari", "qurilish materiallari", "mebel", "plastik buyumlar", "sut mahsulotlari"],
+    "new_enterprises": 107,
+    "kpi_2027": {
+      "industry_bln_sum": 400,
+      "new_jobs": 5000,
+      "poverty_target_pct": 3
+    }
+  },
+
+  "mineral_wealth": {
+    "cement_raw_mln_tons": 158.97,
+    "gypsum_anhydrite_mln_tons": 22.91,
+    "glass_raw_mln_tons": 109.16,
+    "total_strategic_reserves_mln_tons": 291.04,
+    "investment_potential_mln_usd": "50-100",
+    "products_possible": [
+      "Tsement",
+      "Gips va gipsokartona",
+      "Shisha buyumlar (idish, oyna)",
+      "Quruq qurilish aralashmalari",
+      "Issiqlik saqlash plitalar"
+    ],
+    "market": "Ichki bozor + Afg'oniston eksport",
+    "mustaqillik_ksz": "KSZ (Sanoat zonasi) mavjud — yer ajratilgan"
+  },
+
+  "tourism": {
+    "current_tourists": 180000,
+    "target_tourists": 300000,
+    "investment_2026_2028_bln_sum": 350,
+    "unesco_heritage": {
+      "name": "Boysun Bahori",
+      "status": "UNESCO nomоddiy madaniy meros (2001 yildan)",
+      "type": "Intangible Cultural Heritage",
+      "significance": "O'zbekistondagi birinchi UNESCO nomoddiy meros. Global brend tayyor."
+    },
+    "key_attractions": [
+      "Boysun Bahori festival (UNESCO) — bahor bayramі, milliy kiyim, qo'shiq, o'yinlar",
+      "Omonxona shifobaxsh bulog'i — davolash turizmi",
+      "Xo'jamayxona va Zavboshi — tog' manzaralari",
+      "Kashtachilik va zardo'zlik ustaxonalari",
+      "Etnografik qishloqlar — milliy turmush tarzi"
+    ],
+    "tourism_directions": [
+      "Ethno-turizm (UNESCO Boysun Bahori)",
+      "Sog'lomlashtirish turizmi (Omonxona bulog'i)",
+      "Tog' va eko-turizm",
+      "Gastro-turizm (tog' go'shti, organik mahsulotlar)",
+      "Sanoat ekskursiyalari (mineral konlar)"
+    ],
+    "silk_mahallas": 6,
+    "silk_note": "6 mahalla ipakchilikka ixtisoslashgan — ipak mahsulotlari va sayyoh uchun master-class",
+    "accommodation_gap": "180k sayyoh, lekin mehmonxona infratuzilmasi kichik — katta first mover imkoniyati"
+  },
+
+  "agriculture_detail": {
+    "pasture_ha": 18300,
+    "main_livestock": ["qoramolchilik", "qorako'lchilik"],
+    "apple_orchard_new_ha": 600,
+    "specialty_crops": ["olma", "kartoshka", "karam", "sabzavot", "ipak qurti"],
+    "karakul_note": "Qorako'l qo'y — noyob teri (astrakhan). Xalqaro bozorda qimmat.",
+    "silk_note": "6 mahalla ipakchilik — ipak ip va gazlama ishlab chiqarish imkoni",
+    "canal_concrete_pct": 17,
+    "canal_note": "17% betonlangan — juda past! Sug'orish suv yo'qotish katta. Faqat 4,558 ga irrigatsiya."
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 72.1,
+    "water_trend": "62.3% (2021) → 62.8 → 63.5 → 64.2 → 72.1% (2025)",
+    "water_note": "2025 da katta sakrash (+7.9%). Lekin 28% hali suvсиz.",
+    "roads_total_km": 1224,
+    "roads_asphalt_pct": 71.1,
+    "viloyat_center_distance_km": 145,
+    "railway_distance_km": 12,
+    "m39_highway": true,
+    "cargo_mln_tons": 3.357,
+    "passengers_mln": 5.78,
+    "electricity": {
+      "outages_per_month": 4.2,
+      "outages_note": "4.2 uzilish/oy — 8 ta regionning ENG KO'P uzilishi! Sanoat o'sishiga to'siq.",
+      "transformers_old_pct": 38,
+      "lines_old_pct": 35
+    },
+    "solar_days": 280,
+    "gas_note": "Ma'lumot yo'q",
+    "mustaqillik_ksz_utilization_pct": 79
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 69.5,
+      "children_3_7": 12050,
+      "enrolled": 8375,
+      "gap_count": 3675,
+      "gap_pct": 30.5,
+      "total_mtt": 116,
+      "state_mtt": 25,
+      "ppp_mtt": 12,
+      "family_mtt": 79,
+      "note": "30.5% bo'shliq — 3,675 bola qamrab olinmagan. Oilaviy MTT 68% ulush."
+    },
+    "vocational": {
+      "technical_schools": 3,
+      "students": 1338,
+      "capacity": 2085,
+      "utilization_pct": 64,
+      "empty_seats": 747,
+      "note": "747 bo'sh o'rin — iqtisodiy potensialga mos emas. 2-son texnikum 45% band."
+    }
+  },
+
+  "labor": {
+    "total_resources": 65596,
+    "employed": 44365,
+    "informal_employed": 19241,
+    "informal_note": "19,241 norasmiy — rasmiylashtirish zarur",
+    "avg_salary_mln_sum": 4.351,
+    "avg_salary_growth_pct": 29.2,
+    "unemployment_pct": 5.6,
+    "unemployed_count": 2607,
+    "unemployment_trend": "6,741 (2021) → 5,923 → 4,584 → 3,892 → 2,607 (2025) — 2.6 barobar kamaydi",
+    "target_2027_pct": 3.0,
+    "youth_unemployed": 437,
+    "women_unemployed": 1342,
+    "women_mahalla_bankers": 1,
+    "women_note": "1,342 ишсиз аёлga qaрши 1 ta аёл banker — nisbat kritik",
+    "poverty_pct": 5.7,
+    "poor_families": 3024,
+    "poverty_trend": "16.4% (2021) → 15.7 → 14.5 → 12.8 → 5.7% (2025) — kuchli pasayish",
+    "returned_migrants": 4952,
+    "emigrated": 2618,
+    "migration_note": "Qaytganlar (4,952) ketganlardan (2,618) 1.9x ko'p — bu kuchli signal, mahalliy iqtisodiyot jalb qilmoqda"
+  },
+
+  "mahalla_economy": {
+    "total": 39,
+    "silkworm": 6,
+    "potato_cabbage": 4,
+    "livestock": "ko'p",
+    "gardening": "mavjud",
+    "difficult_19_note": "19 qizil mahalla — 'bir mahalla bir drayvyer' modeli zarur"
+  },
+
+  "banking_programs": {
+    "micro_projects_2026": {
+      "total_projects": 390,
+      "total_jobs": 980,
+      "total_bln_sum": 13.6,
+      "portfolio_bln_sum": 219.5
+    },
+    "credit_focus": {
+      "export_pct": 30,
+      "import_substitution_pct": 50,
+      "other_pct": 20
+    },
+    "har_bir_oila_tadbirkor": {
+      "rate_pct": 12,
+      "max_amount_mln_sum": 300,
+      "term_years": 3,
+      "grace_months": "3-6",
+      "banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank", "Hamkor bank"]
+    },
+    "hamroh": {
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "best_for": ["kashtachilik", "zardo'zlik", "mehmon uyi", "ipak mahsulotlari", "sut va go'sht qayta ishlash"]
+    },
+    "ai_training_2026": {
+      "target": 1450,
+      "focus": "turizm (75%) va qo'shimcha qiymatli Q/x mahsulotlari"
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "UNESCO 'Boysun Bahori' — global brend",
+      "detail": "2001 yildan UNESCO nomoddiy madaniy meros. O'zbekistondagi birinchi. Milliy kiyim, qo'shiq, o'yin-kulgi festivali. Yevropa va Osiyodan sayyohlar keladi. Brend tayyor — infratuzilma kerak."
+    },
+    {
+      "title": "Ulkan mineral boyliklar (291 mln tonna)",
+      "detail": "Tsement 159M + Gips 23M + Shisha xomashyo 109M tonna. Afg'oniston bozori yaqin — eksport imkoniyati ulkan. 'Mustaqillik' KSZ yer ajratilgan."
+    },
+    {
+      "title": "Eksport 3 yilda 2 barobar o'sdi",
+      "detail": "$5.6M (2021) → $16.3M (2025). Saноат 3 barobar o'sdi. Yirik korxona 4 barobar sakradi (2024)."
+    },
+    {
+      "title": "Qaytgan migrantlar 2x ko'p (4,952 vs 2,618)",
+      "detail": "Ketganlardan 1.9 barobar ko'p qaytgan — mahalliy iqtisodiyot jalb qilmoqda. Tayyor malakali kadrlar bor."
+    },
+    {
+      "title": "6 mahalla ipakchilik + Qorako'l qo'y",
+      "detail": "Ipak — noyob mahsulot. Qorako'l teri (astrakhan) — xalqaro bozorda qimmat. Premium mahsulotlar uchun xomashyo tayyor."
+    },
+    {
+      "title": "18,300 ga tog' yaylov — organik chorvachilik",
+      "detail": "Tog' yaylovida o'sgan qoramol — organik brend uchun ideal. 'Boysun tog' go'shti' — premium narxda sotish imkoni."
+    },
+    {
+      "title": "M-39 xalqaro magistral + temir yo'l 12 km",
+      "detail": "Tranzit logistika imkoniyati. Yuk aylanmasi 3.3 mln tonna. Afg'onistonga chiqish yo'lida strategik joylashuv."
+    },
+    {
+      "title": "280-300 quyoshli kun — solar imkoniyat",
+      "detail": "Elektr 4.2 uzilish/oy (eng ko'p) — quyosh panellari aynan shu muammoni hal qiladi. Sanoat korxonalari uchun zarur."
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Mehmonxona infratuzilmasi 180k sayyohga yetarli emas",
+      "severity": "KRITIK",
+      "data": "180k sayyoh bor, maqsad 300k. UNESCO brendi bor. Omonxona bulog'i bor. Lekin jo'yali mehmonxona yo'q.",
+      "opportunity": "Ethno-mehmonxona, tog' glamping, 'Boysun Ethno-Village' tur-resort, B&B, Omonxona sanatoriy",
+      "investment_range_mln_sum": "100-800",
+      "monthly_income_mln_sum": "15-80",
+      "payback_years": "3-6",
+      "suitable_for": ["mulk egasi", "mehmondo'stlik tajribasi", "kapital bor"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB",
+      "risk": "Mev­suimiylik (yoz ko'p, qish kam); infratuzilma (sув va elektr)"
+    },
+    {
+      "gap": "Mineral boyliklar xomashyo shaklida — qayta ishlash yo'q",
+      "severity": "KRITIK",
+      "data": "291 mln tonna mineral zaxira. 'Mustaqillik' KSZ bor (79% band). Afg'oniston bozori yaqin. Lekin tsement/gips/shisha zavodi yo'q.",
+      "opportunity": "Tsement zavodi, gipsokartona, shisha buyumlar, quruq qurilish aralashmasi",
+      "investment_range_mln_sum": "500-5000",
+      "monthly_income_mln_sum": "100-1000",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "xalqaro kompaniya"],
+      "bank_product": "Xalqaro moliya (ADB, IFC, JICA) yoki SQB yirik kredit",
+      "risk": "Katta kapital; elektr ta'minoti muammosi"
+    },
+    {
+      "gap": "Elektr 4.2 uzilish/oy — 8 ta regionning eng yomoni",
+      "severity": "YUQORI",
+      "data": "38% transformer keksa, 35% liniya almashtirish kerak. Sanoat o'sishi bilan yuklama ortadi.",
+      "opportunity": "Quyosh panellari o'rnatish — sanoat korxonalariga 280-300 quyoshli kun ideal",
+      "investment_range_mln_sum": "30-500",
+      "monthly_income_mln_sum": "10-80",
+      "payback_years": "3-6",
+      "suitable_for": ["texnik bilim bor", "kapital bor"],
+      "bank_product": "SQB ekologik kredit",
+      "risk": "Texnik kadrlar; tarmoqqa ulash"
+    },
+    {
+      "gap": "Go'sht mahsulotlari dефицит #1",
+      "severity": "YUQORI",
+      "data": "18,300 ga yaylov + qoramol + qorako'l qo'y. Lekin go'sht tirik vazn, sut xom holida. Qayta ishlash yo'q.",
+      "opportunity": "'Boysun tog' go'shti' brendi — kolbasa, konserva, quritilgan go'sht, premium organik mahsulot",
+      "investment_range_mln_sum": "50-400",
+      "monthly_income_mln_sum": "15-80",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Brend yaratish; sifat sertifikat"
+    },
+    {
+      "gap": "Ipakchilik va Qorako'l teri qayta ishlanmayapti",
+      "severity": "YUQORI",
+      "data": "6 mahalla ipakchilik ixtisosi. Qorako'l (astrakhan) — xalqaro bozorda $50-200/teri. Lekin xom-ashyo shaklida ketmoqda.",
+      "opportunity": "Ipak gazlama to'qish, ipak ko'ylak/duxoba, qorako'l teri mahsulotlari, ipakchilik masterclass sayyohlar uchun",
+      "investment_range_mln_sum": "30-300",
+      "monthly_income_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "hunarmandchilik bilimlari"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Bozor topish; sifat nazorati"
+    },
+    {
+      "gap": "Kashtachilik va zardo'zlik — turizm bilan bog'liq emas",
+      "severity": "O'RTA-YUQORI",
+      "data": "Boysun — UNESCO madaniy meros. Kashtachilik milliy san'at. Lekin online eksport va sayyohlar uchun masterclass yo'q.",
+      "opportunity": "Kashtachilik ustaxonasi + online do'kon + sayyohlar uchun master-class (premium narx $30-100/seans)",
+      "investment_range_mln_sum": "10-100",
+      "monthly_income_mln_sum": "5-40",
+      "payback_years": "1-3",
+      "suitable_for": ["ayollar", "hunarmandchilik bilimlari"],
+      "bank_product": "HAMROH",
+      "risk": "Sayyohlar oqimi mev­suimiy"
+    },
+    {
+      "gap": "Texnikumlar 36% bo'sh (747 o'rin)",
+      "severity": "O'RTA",
+      "data": "3 texnikum, 2,085 o'rin, faqat 1,338 o'quvchi. 2-son texnikum 45% band. Iqtisodiy o'sish uchun kadrlar kerak.",
+      "opportunity": "Turizm va mehmondo'stlik, tog'-kon va qurilish materiallari, chorvachilik bo'yicha yangi yo'nalishlar",
+      "investment_range_mln_sum": "20-100",
+      "monthly_income_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["ta'lim tajribasi", "sanoat bilimlari"],
+      "bank_product": "SQB yoki HAMROH",
+      "risk": "O'qituvchilar topish; talabalarga jalb"
+    },
+    {
+      "gap": "Bog'cha 30.5% bo'shliq (3,675 bola)",
+      "severity": "O'RTA",
+      "data": "12,050 boladan 3,675 tasi bog'chaga bormaydi. Oilaviy MTT model ishlaydi (79 ta bor).",
+      "opportunity": "Oilaviy MTT, mini-bog'cha, Montessori markazi",
+      "investment_range_mln_sum": "20-100",
+      "monthly_income_mln_sum": "5-25",
+      "payback_years": "2-3",
+      "suitable_for": ["ayollar", "pedagogik ta'lim"],
+      "bank_product": "HAMROH",
+      "risk": "Ruxsatnomalar; tog' qishloqlarida logistika"
+    },
+    {
+      "gap": "Kanal betonlanishi 17% — sug'orish suv yo'qotish",
+      "severity": "O'RTA",
+      "data": "4,558 ga irrigatsiya yeri. 17% betonlangan. Qolgan 83% da suv yo'qotish katta.",
+      "opportunity": "Tomchilatib sug'orish jihozlari o'rnatish va texnik xizmat",
+      "investment_range_mln_sum": "20-150",
+      "monthly_income_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["agronomiya bilimi bor", "texnik malaka"],
+      "bank_product": "Agro bank imtiyozli",
+      "risk": "Davlat subsidiyalariga bog'liqlik"
+    },
+    {
+      "gap": "Organik olma bahçeleri — 600 ga rejasi, bozor yo'q",
+      "severity": "O'RTA",
+      "data": "600 ga yangi olma bog'i rejalashtirilgan. Tog' organik olma — premium narx. Lekin qayta ishlash va eksport kanallari yo'q.",
+      "opportunity": "Olma sharbati, quruq olma, organik sertifikat eksport, fermer bozori",
+      "investment_range_mln_sum": "30-200",
+      "monthly_income_mln_sum": "8-50",
+      "payback_years": "3-6",
+      "suitable_for": ["fermer", "eksport tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Olma bog'i 3-5 yil hosil beradi; sovitgich zarur"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "UNESCO Ethno-turizm va mehmonxona",
+      "type": "Ethno-mehmonxona, tog' glamping, 'Boysun Ethno-Village', Omonxona sog'lomlashtirish markazi",
+      "why_boysun": "UNESCO 'Boysun Bahori' — global brend tayyor. 180k sayyoh bor, maqsad 300k. 350 mlrd so'm davlat investitsiyasi kelmoqda (2026-2028). Hech kim qilmagan ethno-village konsepti.",
+      "investment_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "3-6",
+      "suitable_for": ["mulk egasi", "mehmondo'stlik tajribasi", "kapital bor"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB",
+      "risk": "Mev­suimiylik; elektr uzilish muammosi"
+    },
+    {
+      "rank": 2,
+      "sector": "Qurilish materiallari ishlab chiqarish",
+      "type": "Tsement, gipsokartona, shisha buyumlar, quruq qurilish aralashmasi",
+      "why_boysun": "291 mln tonna mineral zaxira. 'Mustaqillik' KSZ (79% band) — joy bor. Afg'oniston bozori yaqin — ulkan eksport. Deficit tovlar ro'yxatida qurilish materiallari #1.",
+      "investment_mln_sum": "500-5000",
+      "monthly_income_estimate_mln_sum": "100-1000",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "xalqaro kompaniya"],
+      "bank_product": "Xalqaro moliya (ADB, IFC) yoki SQB yirik kredit",
+      "risk": "Katta kapital; elektr muammosi"
+    },
+    {
+      "rank": 3,
+      "sector": "Ipakchilik va kashtachilik",
+      "type": "Ipak gazlama, ipak kiyim brendi, kashtachilik masterclass, online eksport",
+      "why_boysun": "6 mahalla ipakchilik. UNESCO madaniy meros = sayyohlar masterclass uchun pul to'laydi ($30-100/seans). Qorako'l teri ($50-200/dona) xalqaro bozorda. Ayollar uchun ideal.",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "hunarmandchilik bilimlari"],
+      "bank_product": "HAMROH (garovsiz 100 mln)",
+      "risk": "Bozor topish; sifat nazorati"
+    },
+    {
+      "rank": 4,
+      "sector": "Organik chorvachilik va go'sht mahsulotlari",
+      "type": "'Boysun tog' go'shti' brendi — kolbasa, konserva, quritilgan go'sht, premium organik",
+      "why_boysun": "18,300 ga tog' yaylov — organik xomashyo tayyor. Go'sht deficit #1. Termiz va Toshkent bozori katta. Premium 'tog' go'shti' narxi oddiy go'shtdan 2-3x yuqori.",
+      "investment_mln_sum": "50-400",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Brend yaratish; sovitgich; sertifikat"
+    },
+    {
+      "rank": 5,
+      "sector": "Quyosh energiyasi",
+      "type": "Solar panel o'rnatish va texnik xizmat sanoat korxonalari uchun",
+      "why_boysun": "4.2 uzilish/oy — eng ko'p! 280-300 quyoshli kun. Sanoat 3 barobar o'sdi — elektr zarur. KSZ korxonalari solar uchun tayyor to'lovchi.",
+      "investment_mln_sum": "30-500",
+      "monthly_income_estimate_mln_sum": "10-80",
+      "payback_years": "3-6",
+      "suitable_for": ["texnik bilim bor", "kapital bor"],
+      "bank_product": "SQB ekologik kredit",
+      "risk": "Texnik kadrlar topish"
+    },
+    {
+      "rank": 6,
+      "sector": "Organik olma va meva qayta ishlash",
+      "type": "Olma sharbati, quruq olma, organik sertifikat, tog' meva eksporti",
+      "why_boysun": "600 ga olma bog'i rejalashtirilgan. Tog' organik meva = premium narx. M-39 yo'li logistika uchun. Sayyohlar ham sotib oladi.",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "8-50",
+      "payback_years": "3-6",
+      "suitable_for": ["fermer", "eksport tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "3-5 yil bog' katta hosil beradi; sovitgich"
+    },
+    {
+      "rank": 7,
+      "sector": "Gastro-turizm va milliy taomlar",
+      "type": "Tog' tansiq taom restoran, milliy oshxona, UNESCO tematik mehmonxona oshxonasi",
+      "why_boysun": "UNESCO = xorijiy sayyoh. 180k sayyoh uchun yaxshi restoran yo'q. 'Boysun tog' taomi' brendi noyob. Organik xomashyo yaqin.",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["oshpazlik mahorati", "mehmondo'stlik"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Mev­suimiylik; elektr uzilish"
+    },
+    {
+      "rank": 8,
+      "sector": "Kashtachilik va hunarmandchilik markazi",
+      "type": "Kashtachilik o'quv markazi, zardo'zlik, UNESCO sertifikatli kurslar, online do'kon",
+      "why_boysun": "UNESCO brendi = global qiziqish. Kashtachilik Boysunning vizit kartasi. Masterclass uchun sayyohlar $50-200 to'laydi. HAMROH garovsiz 100 mln.",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "5-40",
+      "payback_years": "1-3",
+      "suitable_for": ["ayollar", "hunarmandchilik bilimlari"],
+      "bank_product": "HAMROH",
+      "risk": "Mev­suimiy talab; online eksport logistika"
+    },
+    {
+      "rank": 9,
+      "sector": "Logistika va M-39 tranzit xizmatlari",
+      "type": "Yo'l bo'yi servis, omborxona, Afg'oniston eksport logistika",
+      "why_boysun": "M-39 xalqaro magistral + temir yo'l 12 km. 3.3 mln tonna yuk. Afg'oniston yaqin — mineral eksport uchun logistika talab katta.",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "4-8",
+      "suitable_for": ["kapital bor", "logistika tajribasi"],
+      "bank_product": "SQB yoki xalqaro moliya",
+      "risk": "Geopolitik xavf (Afg'oniston chegarasi); elektr muammosi"
+    },
+    {
+      "rank": 10,
+      "sector": "Moliyaviy va biznes xizmatlari",
+      "type": "Buxgalteriya, norasmiy rasmiylashtirish, biznes konsalting, 19 qizil mahallaga yordam",
+      "why_boysun": "19,241 norasmiy sektor. 19 qizil mahalla — yordam kerak. 390 mikroloyiha — hamma buxgalter zarur. Qaytgan migrantlar (4,952) — rasmiylashtirish kerak.",
+      "investment_mln_sum": "5-40",
+      "monthly_income_estimate_mln_sum": "3-20",
+      "payback_years": "1-3",
+      "suitable_for": ["moliya tajribasi"],
+      "bank_product": "SQB yoki Yoshlar biznesda",
+      "risk": "Kichik bozor; tog' qishloqlarida uzoqlik"
+    }
+  ],
+
+  "cross_region_note": {
+    "afghanistan_proximity": "Afg'oniston chegarasiga yaqinlik — mineral eksport uchun strategik ustunlik. Lekin geopolitik xavfni hisobga olish zarur.",
+    "surxondaryo_context": "Surxondaryo — O'zbekistondagi eng janubiy, eng issiq viloyat. 280-300 quyoshli kun + tog' iqlimi = noyob kombinatsiya."
+  },
+
+  "ai_prompt_context_uz": "Boysun tumani (Surxondaryo viloyati) — 129.9 ming aholi, 39 mahalla. ASOSIY XUSUSIYATI: UNESCO nomoddiy madaniy meros 'Boysun Bahori' (2001) + ULKAN mineral boyliklar (tsement 159M + gips 23M + shisha 109M = 291 mln tonna). KUCHLI TOMONLAR: (1) UNESCO brendi — 180k sayyoh/yil, 300k maqsad, 350 mlrd so'm davlat investitsiyasi (2026-2028); (2) Mineral boyliklar — Afg'oniston eksport imkoni; (3) 6 mahalla ipakchilik + qorako'l qo'y; (4) 18,300 ga tog' yaylov — organik go'sht; (5) Qaytgan migrantlar 2x ko'p (4,952 vs 2,618); (6) Sanoat 3 barobar o'sdi; (7) M-39 xalqaro magistral + temir yo'l 12 km. KRITIK MUAMMOLAR: (1) Elektr 4.2 uzilish/oy — 8 ta regionning eng yomoni; (2) 19/39 mahalla 'qizil' (49%!); (3) Irrigatsiya faqat 4,558 ga (hudud 2%); (4) Kanal 17% betonlangan; (5) Bog'cha 30.5% bo'sh. ASOSIY IMKONIYATLAR: (1) UNESCO ethno-mehmonxona — first mover, 180k sayyoh bor; (2) Mineral qayta ishlash (tsement, gips, shisha) — 291M tonna zaxira; (3) Ipakchilik va kashtachilik — ayollar uchun; (4) 'Boysun tog' go'shti' brendi — organik premium; (5) Quyosh energiyasi — 4.2 uzilish/oy muammosi; (6) Organik olma — 600 ha yangi reja. BANK: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 12%), Agro bank imtiyozli.",
+
+  "ai_prompt_context_ru": "Байсунский район (Сурхандарьинская область) — 129.9 тыс. жителей, 39 махаллей. ГЛАВНЫЕ ОСОБЕННОСТИ: Нематериальное культурное наследие UNESCO 'Байсун Бахори' (2001) + ОГРОМНЫЕ минеральные ресурсы (цемент 159М + гипс 23М + стекло 109М = 291 млн тонн). СИЛЬНЫЕ СТОРОНЫ: (1) Бренд UNESCO — 180k туристов/год, цель 300k, 350 млрд сум госинвестиций (2026-2028); (2) Минеральные ресурсы — экспорт в Афганистан; (3) 6 махаллей шелководство + каракульские овцы; (4) 18,300 га горных пастбищ — органическое мясо; (5) Вернувшихся мигрантов в 2x больше; (6) Промышленность выросла в 3 раза; (7) М-39 + ж/д 12 км. КРИТИЧЕСКИЕ ПРОБЛЕМЫ: (1) Электро-отключений 4.2/мес — худший из 8 регионов; (2) 19/39 махаллей 'красная' категория (49%!); (3) Орошаемых земель только 4,558 га (2%); (4) Каналы беtonированы только 17%. ГЛАВНЫЕ ВОЗМОЖНОСТИ: (1) UNESCO ethno-отель — first mover; (2) Переработка минералов (цемент, гипс, стекло); (3) Шелководство и вышивка — для женщин; (4) Бренд 'Байсунское горное мясо' — органик-премиум; (5) Солнечная энергия; (6) Органические яблоки (600 га). БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога 100 млн), Каждая семья — предприниматель (300 млн, 12%), льготные кредиты Агробанка."
+}

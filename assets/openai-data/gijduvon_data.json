@@ -1,0 +1,561 @@
+{
+  "id": "gijduvon",
+  "name_uz": "Ғиждувон тумани",
+  "name_ru": "Гиждуванский район",
+  "name_latin": "G'ijduvon tumani",
+  "viloyat": "Buxoro",
+  "type": "tuman",
+  "data_year": 2025,
+  "sources": ["stat.uz", "SQB", "Xokimiyat", "Mehnat.uz", "Markaziy bank", "UNESCO", "Wikipedia", "TripAdvisor", "centralasia-travel.com"],
+  "character_note": "G'ijduvon — Buxoro viloyatining ikkinchi yirik tumani. UNESCO kulolchilik maktabi, Gijduvon mayizi va 673k sayyoh — madaniy turizm va qishloq xo'jaligi eksportining tabiiy markazi. Samarkand-Buxoro yo'lida tranzit joylashuv strategik ustunlik. Ishsizlik 2.6% — uch regionning eng yaxshisi.",
+
+  "demographics": {
+    "population": 331500,
+    "population_2023": 322500,
+    "population_2024": 327500,
+    "annual_growth_pct": 1.4,
+    "annual_labor_market_entrants": 4500,
+    "mahallas": 70,
+    "mahalla_note": "14 shaharcha + 14 qishloq FY + submahallalar — Buxoro viloyatidagi eng katta tuman",
+    "families": 95100,
+    "households": 69800,
+    "avg_family_size": 4.5,
+    "bukhara_viloyat_share_pct": 15.77
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 3182.8,
+    "industry_growth_2025_pct": 7.4,
+    "industry_growth_5yr_pct": 118.5,
+    "industry_dynamics": {
+      "2021": 1796.7,
+      "2022": 2102.8,
+      "2023": 2744.1,
+      "2024": 2963.6,
+      "2025": 3182.8,
+      "2026_forecast": 3752,
+      "2027_forecast": 4187,
+      "unit": "mlrd so'm"
+    },
+    "agriculture_volume_bln_sum": 5375.7,
+    "agriculture_growth_pct": 1.6,
+    "agriculture_note": "Asosiy sektor lekin sekin o'smoqda (+1.6%) — intensiv texnologiyalar zarur",
+    "construction_bln_sum": 984.7,
+    "construction_growth_pct": 23.8,
+    "construction_note": "Qurilish sektor jadal o'smoqda — qurilish materiallari va xizmatlar uchun katta imkoniyat",
+    "market_services_bln_sum": 3521.2,
+    "services_growth_pct": 16.8,
+    "services_growth_5yr_pct": 121.9,
+    "local_budget_bln_sum": 198.3,
+    "local_budget_trend": "159 (2023) → 162 (2024) → 198.3 (2025) mlrd, +22.4%",
+    "credits_bln_sum": 1170.8,
+    "credits_trend": {
+      "2021": 443.7,
+      "2022": 704.0,
+      "2023": 506.8,
+      "2024": 845.0,
+      "2025": 1170.8
+    },
+    "investment_growth_5yr_pct": 105.2,
+    "google_trends_score": 50,
+    "google_trends_trend": "45 (2024) → 50 (2025), +11%. Eng faol oy: May 68 ball",
+    "priority_sectors": [
+      "Engil sanoat: to'qimachilik va tikuvchilik klasteri",
+      "Xizmat ko'rsatish: savdo, transport, moliyaviy xizmatlar",
+      "Turizm va hunarmandchilik: UNESCO kulolchilik maktabi",
+      "Qishloq xo'jaligi: mevachilk, uzumchilik — eksport"
+    ]
+  },
+
+  "agriculture_detail": {
+    "grape_area_ha": 16300,
+    "grape_note": "G'ijduvon mayizi — UNESCO nomzodi. Rossiya, Yevropa, Osiyo eksporti. 16,300 ha — respublikada eng katta uzum maydonlaridan",
+    "agro_zones": {
+      "west_gardening": "bog'dorchilik — yashil zona",
+      "center_north_cotton": "paxtachilik — qizil zona (to'qimachilik uchun xom-ashyo)",
+      "south_vegetables": "sabzavotchilik — sariq zona",
+      "east_livestock": "chorvachilik — jigarrang zona"
+    },
+    "cold_storage": {
+      "total_warehouses": 19,
+      "total_capacity_tons": 7400,
+      "refrigerated_warehouses": 17,
+      "refrigerated_capacity_tons": 7380,
+      "regular_warehouses": 2,
+      "regular_capacity_tons": 20,
+      "gap_note": "Quruq mahsulotlar uchun saqlash atigi 20 tonna — keskin kengaytirish kerak"
+    },
+    "irrigation_loss_pct": "35-40",
+    "irrigation_note": "Sug'orish tizimida 35-40% suv yo'qotish — intensiv qishloq xo'jaligi uchun asosiy to'siq"
+  },
+
+  "tourism": {
+    "tourists_2025": 673100,
+    "tourists_2026_plan": 779800,
+    "tourists_growth_pct": 15.9,
+    "foreign_tourists_2025": 116000,
+    "foreign_tourists_2026": 128700,
+    "domestic_tourists_2025": 557100,
+    "domestic_tourists_2026": 651100,
+    "tourism_export_dynamics_mln_usd": {
+      "2021": 8.5,
+      "2022": 14.2,
+      "2023": 22.4,
+      "2024": 31.7,
+      "2025": 36.8
+    },
+    "tourism_export_growth_5yr": "4.3 barobar (8.5 → 36.8 mln $)",
+    "hotels_2025": 20,
+    "hotels_2026_plan": 21,
+    "hotel_beds_2025": 440,
+    "hotel_beds_2026_plan": 448,
+    "beds_per_tourist": 0.00065,
+    "hotels_gap_note": "673k sayyoh uchun atigi 440 o'rin — juda katta bo'shliq. 2027 gacha 30+ mehmonxona, 600+ o'rin kerak",
+    "target_2027": "1 mln sayyoh va 50 mln $ eksport",
+    "bukhara_distance_km": 51,
+    "silk_road_position": "Buxoro-Samarkand Ipak yo'li trasasida tranzit nuqta",
+    "key_attractions": [
+      "UNESCO kulolchilik maktabi (Narzullaev oilasi — 7 avlod, 2009 yildan)",
+      "Ulug'bek madrasasi (1417-1433) — Ulug'bek qurgan 3 ta madrasadan biri",
+      "Abdulxoliq G'ijduvoniy maqbarasi — ziyoratgoh",
+      "G'ijduvon bozori — tarixiy savdo markazi",
+      "G'ijduvon shashligi va baliqi — butun O'zbekistonda mashhur"
+    ],
+    "tourism_directions": [
+      "Kulolchilik va hunarmandchilik (UNESCO — Evropa, AQSh, Yaponiyaga eksport)",
+      "Agro-turizm (uzum bog'lari, mayiz, fermer hayoti)",
+      "Tarixiy meros (Ulug'bek, G'ijduvoniy)",
+      "Gastro-turizm (shashlik, baliq, milliy taomlar)"
+    ],
+    "ceramics_export_markets": ["Yevropa", "AQSh", "Yaponiya", "Janubiy Koreya"],
+    "ceramics_price_range_usd": "20-45 dollar/dona (qo'lda yasalgan)",
+    "ceramics_note": "O'zbekistonda 3 ta asosiy kulolchilik markazi: Rishton, G'ijduvon, Samarkand. G'ijduvon — 'san'at sifatida kulolchilik' yo'lini tanlagan (ommaviy ishlab chiqarish emas)",
+    "gastronomy_note": "G'ijduvon baliqi — suyaksiz qovurish texnikasi butun mamlakatda nusxa ko'riladi. G'ijduvon shashligi milliy brend"
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 77,
+    "water_note": "2023: 61.4% → 2024: 61.5% → 2025: 77% — o'sish bor lekin qishloqlarda past",
+    "roads_repair_pct": 16,
+    "roads_coverage_pct": 60,
+    "roads_note": "Eski yo'llar 60% qamrov, lekin tamirlangan atigi 16% — JICA/ADB bilan hamkorlik zarur",
+    "sewage_pct": 9.6,
+    "sewage_note": "2023: 5% → 2024: 7.2% → 2025: 9.6% — o'sish bor lekin kritik past",
+    "public_transport_pct": 23,
+    "electricity_quality_pct": 98,
+    "electricity_outages_per_month": 2.3,
+    "electricity_note": "Sifat 98% yaxshi, lekin 2.3 uzilish/oy — boshqalarga nisbatan ko'p",
+    "solar_potential_days": 300,
+    "land": {
+      "total_ha": 384068,
+      "agriculture_ha": 341727,
+      "agriculture_pct": 89,
+      "forest_ha": 20662,
+      "water_ha": 15329,
+      "industry_transport_ha": 5401,
+      "settlements_ha": 714,
+      "historical_cultural_ha": 202
+    },
+    "infrastructure_challenges": [
+      "Kanalizatsiya 9.6% — KRITIK",
+      "Ички yo'llar tamirlash 16% — O'RTA-YUQORI",
+      "Sug'orish yo'qotish 35-40% — O'RTA-YUQORI",
+      "Elektr uzilish 2.3/oy — O'RTA",
+      "Ичимлик suvi 77% — O'RTA"
+    ],
+    "recommended_partners": ["JICA", "EBRD", "ADB", "AIIB"]
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 85.2,
+      "children_3_7": 27154,
+      "enrolled": 23137,
+      "total_mtt": 448,
+      "state_mtt": 78,
+      "dxsh": 9,
+      "family_mtt": 361,
+      "gap_pct": 14.8,
+      "opportunity": "14.8% — 4,017 bola bog'chaga bormaydi; xususiy va oilaviy bog'chalar uchun bozor bor"
+    }
+  },
+
+  "healthcare": {
+    "medical_organizations": 34,
+    "hospital_beds": 606,
+    "budget_beds": 543,
+    "non_budget_beds": 63,
+    "total_staff": 2664,
+    "doctors": 589,
+    "nurses": 1446,
+    "junior_staff": 356,
+    "note": "Xususiy tibbiyot muassasalari atigi 63 o'rin (10.4%) — xususiy klinikalar uchun bozor bor",
+    "opportunity": "589 shifokor bazasiga tayanib, pullik tibbiy xizmatlar va ixtisoslashgan klinikalar uchun imkoniyat"
+  },
+
+  "labor": {
+    "total_resources": 158600,
+    "employed": 118800,
+    "unemployment_count": 3546,
+    "unemployment_pct": 2.6,
+    "unemployment_note": "UCHTA REGIONNING ENG YAXSHISI! 2021: 13,100 → 2025: 3,546 — 73% qisqarish",
+    "unemployment_trend": "13.1 → 11.3 → 8.3 → 6.9 → 3.5 ming kishi",
+    "target_2026_pct": 2.5,
+    "poverty_families": 3025,
+    "poverty_pct": 3.9,
+    "poverty_trend": "9,100 (2020) → 8,120 → 8,100 → 5,600 → 3,500 → 3,025 (2025) — 67% qisqarish",
+    "difficult_mahallas": [
+      {"name": "Mustaqillik", "unemployed": 94, "pct": 6.6},
+      {"name": "Xalqobod", "unemployed": 86, "pct": 6.3},
+      {"name": "Guliston", "unemployed": 82, "pct": 6.7},
+      {"name": "Rostgo'y", "unemployed": 84, "pct": 5.9},
+      {"name": "Qo'rg'on", "unemployed": 70, "pct": 6.3}
+    ],
+    "difficult_total_unemployed": 416,
+    "micro_projects_difficult": 138,
+    "micro_projects_sum_bln": 5.67,
+    "youth_program_2026": {
+      "total": 2721,
+      "entrepreneurship": 2135,
+      "employment": 247,
+      "credit": 180,
+      "retraining": 159,
+      "note": "78% yoshlar — tadbirkorlikka yo'naltirilgan. Kuchli ustunlik."
+    },
+    "women_program_2026": {
+      "total": 6594,
+      "self_employment": 3740,
+      "employment": 1224,
+      "entrepreneurship": 612,
+      "retraining": 569,
+      "credit": 449,
+      "credit_total_bln_sum": 221,
+      "note": "6,594 ayol — uchta regionda eng katta ko'rsatkich. 57% o'z-o'zini band qilish orqali"
+    }
+  },
+
+  "mahalla_economy": {
+    "total": 70,
+    "by_type": {
+      "livestock": 32,
+      "farming": 21,
+      "trade_service": 12,
+      "small_production": 4,
+      "gardening": 1
+    },
+    "ceramics_note": "Kulolchilik — alohida iqtisodiy klaster: 200+ hunarmand usta, eksport Yevropa/AQSh/Yaponiya"
+  },
+
+  "banking_programs": {
+    "micro_projects_2026": {
+      "total_projects": 700,
+      "total_jobs": 1400,
+      "total_bln_sum": 70,
+      "bank_credit_bln_sum": 49,
+      "bank_credit_share_pct": 70,
+      "mahalla_bankers": 18,
+      "mahalla_bankers_women": 6,
+      "banks": {
+        "SQB": 190,
+        "Milliy_bank": 130,
+        "Agro_bank": 100,
+        "Hamkor_bank": 80,
+        "Xalq_bank": 70,
+        "Infin_bank": 60,
+        "Mikrokreditbank": 70
+      }
+    },
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "best_for": ["kulolchilik", "tikuvchilik", "uzum qayta ishlash", "bolalar bog'chasi", "sut mahsulotlari"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "best_for": ["fermerchilik", "mehmonxona", "restoran", "qayta ishlash"]
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "UNESCO kulolchilik maktabi",
+      "detail": "2009 yildan UNESCO ro'yxatida. Narzullaev oilasi — 7 avlod. 200+ ornament, 80+ shakl. Yevropa, AQSh, Yaponiya bozorida $20-45/dona. O'zbekistonning 3 asosiy kulolchilik markazidan biri."
+    },
+    {
+      "title": "Rekord turizm o'sishi",
+      "detail": "673k sayyoh (2025), 36.8 mln $ eksport — 2021 dan 4.3 barobar o'sdi. 2026 da 780k rejasi. Buxoro Ipak yo'li tranzitida."
+    },
+    {
+      "title": "Gijduvon mayizi — 16,300 ha uzum",
+      "detail": "O'zbekistonda eng katta uzum maydonlaridan. Gijduvon mayizi xalqaro brend. Rossiya, Yevropa, Osiyo eksporti."
+    },
+    {
+      "title": "Buxoroga 51 km — strategik joylashuv",
+      "detail": "Buxoro-Samarkand Ipak yo'li tranzitida. Barcha Buxoro sayyohlari G'ijduvondan o'tadi yoki o'tishi mumkin."
+    },
+    {
+      "title": "Ishsizlik 2.6% — eng past",
+      "detail": "3 regionning eng yaxshi ko'rsatkichi. 2021 da 9.1% edi — 73% qisqarish. Iqtisodiy barqarorlik yuqori."
+    },
+    {
+      "title": "Xizmatlar sektor jadal (+121.9% 5 yilda)",
+      "detail": "Savdo, transport, moliya xizmatlari kuchli o'sishda. Qurilish ham +23.8% — shahar rivojlanmoqda."
+    },
+    {
+      "title": "Katta er fondi",
+      "detail": "384,068 ha — uchta regionda eng katta. Sanoat va agro uchun yer resursi yetarli."
+    },
+    {
+      "title": "Gastronomiiya brendi",
+      "detail": "G'ijduvon shashligi va suyaksiz baliqi — butun O'zbekistonda nusxa ko'riladi. Gastro-turizm uchun tabiiy brend."
+    },
+    {
+      "title": "Sog'liqni saqlash infratuzilmasi",
+      "detail": "34 tibbiy tashkilot, 589 shifokor, 606 o'rin — uchta regionda tibbiy infratuzilma ma'lumoti mavjud yagona."
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Mehmonxona o'rinlari juda kam",
+      "severity": "KRITIK",
+      "data": "673k sayyoh, faqat 440 o'rin (20 mehmonxona). Koeffitsient: 0.00065 — eng past nisbat",
+      "opportunity": "Mini-mehmonxona, boutique hotel, hostel, mehmon uyi (B&B), glamping uzum bog'larida",
+      "investment_range_mln_sum": "100-600",
+      "suitable_for": ["mulk egasi", "kapital bor", "mehmondo'stlik sohasida tajriba"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB biznes kredit",
+      "risk": "Mevsuimiylik (yoz cho'qqi)"
+    },
+    {
+      "gap": "Kulolchilik — san'at, lekin biznes emas",
+      "severity": "YUQORI",
+      "data": "Narzullaev oilasi monopol. 200+ usta bor lekin online eksport yo'q. $20-45/dona narx bor lekin kanallar cheklangan.",
+      "opportunity": "Kulolchilik o'quv markazi (masterclass turizm), online do'kon, B2B eksport agent, suvenir ishlab chiqarish",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["kulolchilik bilimi", "IT va marketing", "yoshlar"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Narzullaev oilasi monopoli"
+    },
+    {
+      "gap": "16,300 ha uzum — lekin qayta ishlash minimal",
+      "severity": "KRITIK",
+      "data": "G'ijduvon mayizi brendi bor. Uzum — 4-darajali: tok-sharbat-vino/mayiz-eksport. Hozir faqat birinchi daraja.",
+      "opportunity": "Mayiz zavodi, uzum sharbati, sirko, kon'yak/vino (ruxsat bilan), organik eksport",
+      "investment_range_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "suitable_for": ["fermer", "kapital bor", "eksport tajribasi"],
+      "bank_product": "Agro bank imtiyozli yoki Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik; vino uchun ruxsatnoma"
+    },
+    {
+      "gap": "32 mahalla chorvachilik — lekin qayta ishlash past",
+      "severity": "YUQORI",
+      "data": "Charvachi 32 mahalla (46%) — go'sht va sut xom-ashyosi tayyor. Qayta ishlash past.",
+      "opportunity": "Pishloq, qatiq, sariyog', qaymoq ishlab chiqarish. Go'sht zavodchasi. Gijduvon go'sht brendini yaratish.",
+      "investment_range_mln_sum": "50-400",
+      "monthly_income_estimate_mln_sum": "10-80",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi bor"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; veterinariya nazorati"
+    },
+    {
+      "gap": "Gastro-turizm infratuzilmasi rivojlanmagan",
+      "severity": "YUQORI",
+      "data": "G'ijduvon shashligi va baliqi milliy brend. 673k sayyoh. Lekin restoran va oziq-ovqat maydoni kichik.",
+      "opportunity": "Premium restoran, 'G'ijduvon oshxonasi' zanjiri, cooking class turizm, food delivery",
+      "investment_range_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "15-70",
+      "suitable_for": ["oshpazlik mahorati", "biznes tajribasi"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik; raqobat"
+    },
+    {
+      "gap": "Icki yo'llar 16% tamirlangan",
+      "severity": "YUQORI",
+      "data": "984.7 mlrd so'm qurilish (+23.8%) bor, lekin yo'llar 16% tamirlangan. Logistika qiyin.",
+      "opportunity": "Yo'l qurilish materiallar: beton, asfalt, qurilish qorishmasi. Qurilish brigadalari.",
+      "investment_range_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "suitable_for": ["qurilish tajribasi", "kapital bor"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Davlat tenderiga bog'liqlik"
+    },
+    {
+      "gap": "Sug'orish tizimi 35-40% suv yo'qotish",
+      "severity": "O'RTA-YUQORI",
+      "data": "341,727 ha Q/x yeri bor. 35-40% suv yo'qotish = katta iqtisodiy zarar",
+      "opportunity": "Tomchilatib sug'orish jihozlari importi va o'rnatish. Agro-texnika xizmati. Sug'orish konsalting.",
+      "investment_range_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "suitable_for": ["agronomiya bilimi bor", "texnik malaka"],
+      "bank_product": "Agro bank imtiyozli",
+      "risk": "Davlat subsidiyalariga bog'liqlik"
+    },
+    {
+      "gap": "Xususiy tibbiyot minimal (63 o'rin, 10.4%)",
+      "severity": "O'RTA",
+      "data": "34 tibbiy tashkilot bor, 589 shifokor. Lekin xususiy atigi 63 o'rin. 331k aholi uchun kam.",
+      "opportunity": "Xususiy klinika, stomatologiya, diagnostika markazi, tez yordam",
+      "investment_range_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "15-60",
+      "suitable_for": ["tibbiy ta'lim bor", "katta kapital"],
+      "bank_product": "SQB yoki Har bir oila tadbirkor",
+      "risk": "Ruxsatnomalar ko'p; kadrlar"
+    },
+    {
+      "gap": "Quyosh energiyasi ishlatilmayapti",
+      "severity": "O'RTA",
+      "data": "300+ quyoshli kun/yil. Elektr uzilish 2.3/oy (3 ta orasida eng ko'p). Sanoat va turizm ob'ektlari uchun energiya to'sqinliq.",
+      "opportunity": "Quyosh panellari o'rnatish va texnik xizmat. Mehmonxona va restoranlarga solar yechim.",
+      "investment_range_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "suitable_for": ["texnik bilim bor"],
+      "bank_product": "SQB ekologik kreditlar",
+      "risk": "Tarmoqqa ulash; texnik xodimlar"
+    },
+    {
+      "gap": "Bog'cha — 14.8% qamrov yo'q",
+      "severity": "O'RTA",
+      "data": "27,154 boladan 4,017 tasi bog'chaga bormaydi. 361 ta oilaviy MTT bor — bu model ishlaydi.",
+      "opportunity": "Mini-bog'cha, oilaviy MTT, montessori markazi",
+      "investment_range_mln_sum": "20-100",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "suitable_for": ["ayollar", "pedagogik ta'lim"],
+      "bank_product": "HAMROH",
+      "risk": "Ruxsatnomalar"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Turizm joylashuvi",
+      "type": "Mini-mehmonxona / boutique hotel / B&B / uzum bog'ida glamping",
+      "why_gijduvon": "673k sayyoh, faqat 440 o'rin. 2026 da 780k reja. Buxoro-Samarkand yo'lida tranzit. UNESCO kulolchilik — xorijiy sayyohlar keladi. Narxlar Yevroda beriladi.",
+      "investment_mln_sum": "100-600",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "3-5",
+      "suitable_for": ["mulk egasi", "kapital bor", "mehmondo'stlik"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB",
+      "risk": "Mevsuimiylik; raqobat Buxoro bilan"
+    },
+    {
+      "rank": 2,
+      "sector": "Uzum va meva qayta ishlash",
+      "type": "Mayiz zavodi / Uzum sharbati / Meva quritish / Organik eksport",
+      "why_gijduvon": "16,300 ha uzum — G'ijduvon mayizi xalqaro brend. 7,380 tonna sovutgich bor (ishlatilmayapti to'liq). Rossiya va Yevropa bozori talab katta.",
+      "investment_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer yoki fermer oila", "kapital bor"],
+      "bank_product": "Agro bank imtiyozli yoki Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik; eksport logistika"
+    },
+    {
+      "rank": 3,
+      "sector": "Gastro-turizm va restoran",
+      "type": "Premium restoran / G'ijduvon oshxona zanjiri / Cooking masterclass",
+      "why_gijduvon": "G'ijduvon shashligi va suyaksiz baliqi milliy brend. 673k sayyoh — hamma eydi. Yaxshi restoran yo'q. Xorijiy sayyohlar uchun premium klass ajoyib.",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "15-70",
+      "payback_years": "2-3",
+      "suitable_for": ["oshpazlik mahorati", "biznes ruhi"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik; oshpazlar topish"
+    },
+    {
+      "rank": 4,
+      "sector": "Kulolchilik va hunarmandchilik",
+      "type": "Kulolchilik o'quv markazi / Masterclass turizm / Online do'kon / UNESCO sertifikatli kurslar",
+      "why_gijduvon": "UNESCO maqomi — global brend tayyor. Xorijiy sayyohlar masterclass uchun pul to'laydi. Online eksport kanallar yo'q — imkoniyat katta.",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "1-3",
+      "suitable_for": ["kulolchilik bilimi", "turizm tajribasi", "IT bilimlari"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Narzullaev oilasi monopoli; original sifatni saqlash"
+    },
+    {
+      "rank": 5,
+      "sector": "Sut va go'sht mahsulotlari",
+      "type": "Fermer pishloqxonasi / Qatiq va sariyog' / Gijduvon go'shti brendi",
+      "why_gijduvon": "32 mahalla (46%) chorvachilikka ixtisoslashgan — xom-ashyo tayyor. Sut va go'sht qayta ishlash minimal. 331k aholi uchun mahalliy bozor katta.",
+      "investment_mln_sum": "50-400",
+      "monthly_income_estimate_mln_sum": "10-80",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; sifat nazorati"
+    },
+    {
+      "rank": 6,
+      "sector": "Qurilish materiallari",
+      "type": "G'isht, beton blok, qorishmalar, qurilish jihozlari ijarasi",
+      "why_gijduvon": "Qurilish +23.8% jadal o'smoqda. Yo'llar 16% tamirlangan — davlat tenderlar bo'ladi. 384k ha yer, ko'p qurilish kerak.",
+      "investment_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "3-5",
+      "suitable_for": ["kapital bor", "qurilish tajribasi"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Davlat tenderiga bog'liqlik"
+    },
+    {
+      "rank": 7,
+      "sector": "Agro-turizm",
+      "type": "Uzum bog'i turlari / Fermer dam olish / Etnografik qishloq",
+      "why_gijduvon": "16,300 ha uzum bog'i — noyob manzara. Buxoro sayyohlari yaqin (51 km). UNESCO bilan qo'shib paket yaratish mumkin.",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-40",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer yer egasi", "mehmondo'stlik sohasida tajriba"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik (kuz terim); infratuzilma kam"
+    },
+    {
+      "rank": 8,
+      "sector": "Quyosh energiyasi",
+      "type": "Solar panel o'rnatish / Mehmonxona va restoran uchun yechim",
+      "why_gijduvon": "300+ quyoshli kun/yil. 2.3 marta/oy elektr uzilish — mehmonxona va restoranlar uchun muammo. Turizm sektori solar energy uchun tayyor to'lovchi.",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["texnik bilim bor"],
+      "bank_product": "SQB ekologik kredit",
+      "risk": "Texnik xodimlar topish"
+    },
+    {
+      "rank": 9,
+      "sector": "Ta'lim va bolalar xizmatlari",
+      "type": "Xususiy bog'cha / Til kurslari / Kulolchilik bolalar maktabi",
+      "why_gijduvon": "14.8% bog'cha bo'shlig'i (4,017 bola). 78% yoshlar tadbirkorlikka yo'naltirilmoqda — til va kasb kurslari kerak. Sayyohlar uchun ingliz tili o'qituvchilari talab bor.",
+      "investment_mln_sum": "20-100",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-3",
+      "suitable_for": ["ayollar", "pedagogik ta'lim"],
+      "bank_product": "HAMROH",
+      "risk": "Ruxsatnomalar"
+    },
+    {
+      "rank": 10,
+      "sector": "Raqamli xizmatlar va e-commerce",
+      "type": "Hunarmandchilik online do'koni / Turizm bronlash / SMM va marketing",
+      "why_gijduvon": "Google Trends 50/100 (+11%) — o'smoqda. UNESCO kulolchilik eksport kanallar yo'q. 673k sayyoh — onlayn bronlash kerak. Narxlar Yevroda — dollar biznes mumkin.",
+      "investment_mln_sum": "5-50",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "1-2",
+      "suitable_for": ["yoshlar", "IT bilimlari", "ingliz tili bor"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Ingliz tili kerak; logistika"
+    }
+  ],
+
+  "ai_prompt_context_uz": "G'ijduvon tumani (Buxoro viloyati) — 331 ming aholi, Buxoro viloyatining ikkinchi yirik tumani. ASOSIY FARQI: UNESCO kulolchilik maktabi (Narzullaev oilasi, 2009), Gijduvon mayizi (16,300 ha uzum), 673k sayyoh/yil (36.8 mln $ eksport — 4.3 barobar o'sdi). Buxoroga 51 km — Ipak yo'li tranzit nuqtasi. KUCHLI TOMONLARI: (1) UNESCO kulolchilik — Yevropa, AQSh, Yaponiya bozorida $20-45/dona; (2) 673k sayyoh/yil — Qo'qondan ham ko'p; (3) Ishsizlik 2.6% — uchta regionning eng yaxshisi; (4) 16,300 ha uzum — G'ijduvon mayizi brendi; (5) 32 mahalla chorvachilik; (6) 384,068 ha yer — katta resurs; (7) G'ijduvon shashligi va baliqi milliy brend — gastro turizm uchun tayyor. KRITIK BO'SHLIQLAR va IMKONIYATLAR: (1) Mehmonxona o'rinlari juda kam (440 ta, 673k sayyoh uchun) — mini-mehmonxona/B&B/glamping uchun KATTA imkoniyat; (2) Uzum qayta ishlash minimal — mayiz zavodi, sharbat, organik eksport; (3) Chorvachilik bazasi kuchli, lekin sut va go'sht qayta ishlash past; (4) Gastro-turizm — G'ijduvon oshxona brendi bor, lekin restoran infratuzilmasi kichik; (5) Kulolchilik online eksport yo'q — B2B va e-commerce imkoniyati; (6) Yo'llar 16% tamirlangan — qurilish materiallari talab katta; (7) Bog'cha 14.8% bo'sh — oilaviy MTT imkoniyati. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), Agro bank imtiyozli kreditlar.",
+
+  "ai_prompt_context_ru": "Гиждуванский район (Бухарская область) — 331 тыс. жителей, второй по величине район Бухарской области. ГЛАВНАЯ ОСОБЕННОСТЬ: Школа керамики UNESCO (семья Нарзуллаевых, 2009), Гиждуванский изюм (16,300 га виноградников), 673k туристов/год (экспорт 36.8 млн $ — рост в 4.3 раза). До Бухары 51 км — транзитная точка Шёлкового пути. СИЛЬНЫЕ СТОРОНЫ: (1) UNESCO керамика — рынки Европы, США, Японии ($20-45/шт.); (2) 673k туристов/год — больше чем Коканд; (3) Безработица 2.6% — лучший показатель из трёх регионов; (4) 16,300 га виноградников — бренд Гиждуванского изюма; (5) 32 махалли специализированы на животноводстве; (6) Гиждуванский шашлык и рыба — национальный бренд для гастро-туризма. ПРОБЕЛЫ и ВОЗМОЖНОСТИ: (1) Мест в гостиницах мало (440 мест на 673k туристов) — мини-отели/B&B/глэмпинг; (2) Переработка винограда минимальна — завод изюма, сок, органический экспорт; (3) Сильная база животноводства, но переработка молока и мяса слабая; (4) Гастро-туризм — бренд есть, ресторанная инфраструктура мала; (5) Онлайн-экспорт керамики отсутствует — e-commerce возможность; (6) Дороги 16% отремонтированы — спрос на строительные материалы; (7) Детсады: 14.8% незаполненных. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога до 100 млн), Каждая семья — предприниматель (300 млн, 18%, 3 года), льготные кредиты Агробанка."
+}

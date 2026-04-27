@@ -1,0 +1,783 @@
+{
+  "id": "forish",
+  "name_uz": "Фориш тумани",
+  "name_ru": "Фаришский район",
+  "name_latin": "Forish tumani",
+  "viloyat": "Jizzax",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "jizzaxstat.uz", "stat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "O'zatom", "Wikipedia", "gazeta.uz", "spot.uz", "tripadvisor.com", "uzbekcoal.uz", "central-asia.guide"],
+
+  "demographics": {
+    "population": 96500,
+    "population_official_2025_apr": 100000,
+    "population_density_per_km2": 10,
+    "area_km2": 9530,
+    "area_ha": 956000,
+    "mahallas": 24,
+    "families": 17500,
+    "households": 15800,
+    "settlements": {
+      "center": "Bog'don shaharcha",
+      "mosques": 8,
+      "main_villages": ["Bog'don", "Uchma", "Uxum", "Oybek", "Nurak", "Eski Forish", "Sentob (chegara)", "Asmansay"]
+    },
+    "ethnic_groups": ["o'zbeklar", "qozoqlar", "qirg'izlar", "tojiklar", "ruslar"],
+    "established_year": 1973,
+    "borders": {
+      "north": "Qozog'iston Respublikasi (Aydar-Arnasoy ko'l tizimi orqali)",
+      "south": "Bog'don, G'allaorol tumanlari",
+      "east": "Sh.Rashidov, Zomin tumanlari",
+      "west": "Navoi viloyati (Nurota tumani)"
+    },
+    "note": "Jizzax viloyatining ENG KATTA tumani. Aholi zichligi 10 kishi/km² — Sh.Rashidov tumanidan (525 kishi/km²) 24 baravar past. Nurata tog'lari va Aydarko'l asosida joylashgan."
+  },
+
+  "geography": {
+    "terrain": "cho'l-dasht + tog'-vodiy",
+    "main_mountain_ranges": ["Nurota tog'lari (2169 m)", "Qoratov tizmasi"],
+    "main_lakes": ["Aydar ko'li (Aydar-Arnasoy tizimining bir qismi, 4000 km² jami)", "Tuzkon ko'li"],
+    "climate": {
+      "type": "Quruq subtropik (cho'l-dasht)",
+      "sunny_days_per_year": "280-300",
+      "key_advantage": "Quyosh energetikasi uchun ideal sharoit"
+    },
+    "distance_to_jizzax_city_km": 70,
+    "distance_to_railway_km": 75,
+    "distance_to_samarkand_km": 250,
+    "distance_to_bukhara_km": 250,
+    "key_geographic_features": [
+      "Aydarko'l (Aydar-Arnasoy ko'l tizimi)",
+      "Nurota tog'lari (eko-turizm zonasi)",
+      "Qizilqum cho'li",
+      "Eski Forish — petroglif yodgorliklar (3000+ rasmlar)",
+      "Sariqamish va Iskandar (Aleksandr Makedonskiy) qal'a qoldiqlari",
+      "Sangzar daryosi (sharqdan)"
+    ],
+    "natural_advantage": "Mamlakatdagi eng kam aholi zichligi va eng katta tumanlardan biri — yirik miqyosli sanoat, energetika va eko-turizm loyihalari uchun ideal"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 1618.7,
+    "industry_growth_5y_multiplier": 6.3,
+    "industry_growth_pct_2025": 13.5,
+    "industry_dynamics": {
+      "2021": 256.3,
+      "2022": 322.3,
+      "2023": 656.0,
+      "2024": 1004.0,
+      "2025": 1618.7,
+      "unit": "mlrd so'm"
+    },
+    "industry_structure_2025": {
+      "large_enterprises_share_bln_sum": 1035.1,
+      "small_enterprises_share_bln_sum": 583.6,
+      "note": "Yirik korxonalar 5 yilda 5.9x o'sgan (176.6 → 1 035.1) — qurilish materiallari sektori ishga tushishi sababli"
+    },
+    "services_volume_bln_sum": 685.9,
+    "services_growth_index_2025": 115.0,
+    "sector_shares": {
+      "agriculture_pct": 30.4,
+      "industry_pct": 28.6,
+      "services_pct": 41.0
+    },
+    "yhm_vs_national_avg_pct": 64.5,
+    "yhm_note": "Tuman ahali jonboshiga YHM mamlakat o'rtachasidan 35.5% past — ulkan o'sish zaxirasi mavjud",
+    "new_enterprises_2025": 548,
+    "closed_enterprises_2025": 279,
+    "net_enterprise_growth_2025": 269,
+    "google_trends_score": null,
+    "google_trends_note": "Tuman daraжasida hisoblanmagan — Markaziy aналитика gruppасидан so'rab olish kerak",
+    "import_2025_usd_mln": 183.2,
+    "export_2025_usd_mln": 18.8,
+    "trade_deficit_ratio": "10:1",
+    "trade_deficit_note": "Import eksportdan 10 baravar yuqori — mahalliylashtirish va eksport diversifikatsiyasi keskin zarur",
+    "priority_sectors": [
+      "qurilish materiallari (bazalt, sement, oxak — 25% salohiyat ishlatilgan)",
+      "qishloq xo'jaligi va qayta ishlash (chorvachilik, bog'dorchilik)",
+      "eko-turizm (Aydarko'l, Nurota tog'lari)",
+      "atom energetikasi va undan keyingi sanoat (AES qurilishi)",
+      "qayta tiklanuvchi energetika (quyosh)"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": null,
+      "national_mln_sum_2025": 5.98,
+      "source": "Tuman bo'yicha alohida ma'lumot yo'q; SQB bo'limidan so'ralmoqda"
+    }
+  },
+
+  "credits": {
+    "by_year_bln_sum": null,
+    "npl_pct_dynamics": {
+      "2021": 4.0,
+      "2022": 3.8,
+      "2023": 4.2,
+      "2024": 3.3,
+      "2025": 2.9
+    },
+    "npl_risk_level": "PAST (yaxshilanmoqda)",
+    "npl_note": "NPL 4.0% (2021) dan 2.9% (2025) ga tushdi — kreditlash xavfsizligi yuqori, yangi kredit mahsulotlari uchun qulay muhit"
+  },
+
+  "natural_resources": {
+    "uniqueness": "Respublikadagi eng boy mineral xomashyo bazalaridan biri — fojdalanilish atigi 25%",
+    "deposits_count": 8,
+    "cement_raw_material": {
+      "mines": 3,
+      "reserves_thousand_tons": 131333,
+      "potential": "O'zbekistondagi yirik konlardan biri",
+      "current_use": "minimal — sement zavodi yo'q, faqat xom sotuv",
+      "investment_potential_usd_mln": "20-50 har kon uchun"
+    },
+    "basalt": {
+      "mines": 3,
+      "reserves_mln_tons": 22.2,
+      "potential": "bazalt tola, qurilish armaturasi",
+      "key_companies": ["Karbonat", "Devon", "Forteks"]
+    },
+    "barite": {
+      "reserves_mln_tons": 11.9,
+      "uses": "neft-gaz qudug' burg'ulash, kimyo sanoati",
+      "export_potential": "yuqori"
+    },
+    "lime": {
+      "mines": 2,
+      "reserves_thousand_tons": 531
+    },
+    "building_stones": {
+      "reserves_thousand_m3": 13245
+    },
+    "natural_facing_stones": {
+      "reserves_thousand_m3": 853,
+      "note": "marmarlashgan qora ohaktosh — premium qurilish materiali"
+    },
+    "sand_gravel": {
+      "reserves_thousand_m3": 5070
+    },
+    "wollastonite": {
+      "note": "Q'oytosh shaharchasida o'zbek-rus QK ishlamoqda (Jizzax viloyati bo'yicha umumiy ma'lumot)"
+    },
+    "other_minerals": ["oltin", "kumush", "volfram", "qo'rg'oshin", "rux", "temir", "molibden", "marmar", "korund"],
+    "uchquloch_kon": "Faol kon — Forish hududida",
+    "current_production": {
+      "construction_materials_cluster_enterprises": 1,
+      "annual_volume_bln_sum": 50,
+      "note": "Faqat 1 ta korxona ishlamoqda — salohiyat ulkan, lekin ishlatilmagan"
+    },
+    "strategic_opportunity": "AES qurilishi maqallij sement, bazalt, qurilish toshlari uchun katta ichki bozor ochadi — DXSh asosida 2-3 ta yirik kon va qayta ishlash zavodini ishga tushirish lozim"
+  },
+
+  "nuclear_power_plant": {
+    "name": "Jizzax AES (O'zbekistondagi birinchi atom elektr stansiyasi)",
+    "location": "Forish tumani, Bog'don shaharchasi atrofi (Aydarko'l yaqinida)",
+    "configuration": {
+      "small_reactors": 2,
+      "small_reactor_type": "RITM-200N",
+      "small_reactor_capacity_mw_each": 55,
+      "large_reactors": 2,
+      "large_reactor_type": "VVER-1000 (avlod 3+)",
+      "large_reactor_capacity_gw_each": 1,
+      "total_capacity_mw": 2110
+    },
+    "annual_generation_target_bln_kwh": "16-17",
+    "share_of_uz_energy_pct": "12-15",
+    "service_life_years": 60,
+    "general_contractor": "Atomstroyeksport (Rosatom)",
+    "subcontractor": "Enter Engineering (mahalliy)",
+    "construction_jobs_total": 13000,
+    "construction_jobs_max": 20000,
+    "operation_jobs_permanent": 2000,
+    "local_workforce_target_pct": 70,
+    "timeline": {
+      "first_concrete_planned": "2026 mart",
+      "main_construction_starts": "2026 iyul",
+      "operations_start": "2029-2035 (bosqichma-bosqich)"
+    },
+    "cost_estimate": {
+      "small_aes_first_phase_usd_bln": 1,
+      "total_with_large_aes_usd_bln": "5-10 (taxmin)"
+    },
+    "supply_chain_localization": "kamida 70% — mahalliy ishlab chiqaruvchilarga qurilish materiallari, elektrotexnika talabi katta",
+    "social_infrastructure_planned": [
+      "ishchilar yotoqxonasi va vaxtaviy turar joy",
+      "yangi maktablar va MTT",
+      "tibbiy punkt va shifoxona",
+      "savdo va xizmat ko'rsatish majmualari",
+      "Aydarko'l sohilida turistik infratuzilma"
+    ],
+    "regional_impact": "Forish va Jizzax viloyatining iqtisodiy 'genepatsiya o'zgarishi' — energiyaga, kadrlar tayyorlashga va sanoat-servis sektorlariga uzoq muddatli impuls",
+    "public_hearings_held": "23.12.2025, Bog'donda — 75-77% mahalliy aholi qo'llab-quvvatladi",
+    "key_decree": "PQ-2024.05.27 — Putin tashrifi davomida shartnoma imzolangan"
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 62.53,
+    "water_supply_dynamics": {
+      "2023": 60.55,
+      "2024": 61.53,
+      "2025": 62.53
+    },
+    "water_supply_note": "Respublika o'rtachasi (95%+) dan jiddiy past; yillik o'sish atigi ~1 п.п.",
+    "sewerage_pct": 2,
+    "sewerage_note": "FAVQULODDA past — epidemiologik xavf",
+    "roads_total_km": 1456,
+    "roads_asphalted_pct": 39,
+    "roads_asphalt_dynamics": {
+      "2021": 32,
+      "2022": 35,
+      "2023": 37,
+      "2024": 38,
+      "2025": 39
+    },
+    "roads_note": "Respublika o'rtachasi (70%+) dan jiddiy past; yillik o'sish 1 п.п. — 70%ga chiqishga 30 yil kerak",
+    "annual_passenger_volume_thousand": 5879.4,
+    "annual_cargo_volume_thousand_tons": 999.3,
+    "railway_total_km": 71,
+    "railway_station_distance_km": 75,
+    "electricity": {
+      "outages_per_month_avg_2025": 2,
+      "outages_dynamics": {
+        "2021": 9, "2022": 8, "2023": 4, "2024": 3, "2025": 2
+      },
+      "old_transformers_pct": 30,
+      "lines_need_modernization_pct": 25,
+      "improvement_5y": "9 → 2 marta/oy (4.5x yaxshilanish) — eng yaxshi tendentsiyalardan biri",
+      "risk_level": "O'RTA"
+    },
+    "gas_supply_pct": 44,
+    "gas_dynamics": {"2021": 42, "2025": 44},
+    "gas_note": "5 yilda amalda o'zgarmagan (42 → 44%); aholining 56% i tabiiy gazsiz",
+    "land": {
+      "total_ha": 956000,
+      "irrigated_ha": 766,
+      "irrigated_pct": 0.08,
+      "canal_concretization_pct": 0.15,
+      "pasture_fund_ha": 505200,
+      "pasture_pct_of_total": 53,
+      "forest_ha": 80000,
+      "saksovul_ha": 2000,
+      "walnut_ha": 130,
+      "irrigation_note": "Sug'oriladigan ER atigi 0.08% — cho'l-adir tabiati, lekin tomchilatib sug'orish va dam tizimlari uchun katta imkoniyat"
+    },
+    "solar_potential_sunny_days_per_year": 290,
+    "warehouses_status": "Hozirgi paytda fаktик yo'q — qishloq xo'jaligi mahsulotlarini saqlash-qayta ishlashda chеklov"
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 81.5,
+      "trend": "DECLINING — 87.4% (2021) → 86.1% (2022) → 82.3% (2023) → 80.5% (2024) → 81.5% (2025)",
+      "change_5y_pp": -5.9,
+      "gap_pct": 18.5,
+      "opportunity": "Pasayish tendentsiyasi — xususiy MTT va bola rivojlantirish markazlari uchun bo'sh bozor"
+    },
+    "schools": {
+      "total": 67,
+      "single_shift": 12,
+      "two_shift": 55,
+      "two_shift_pct": 82.1,
+      "note": "82% maktab 2 smenada — infratuzilma yetishmovchiligi katta. AES bilan ishchilar oilalari kelishi natijasida talab kеskin oshadi"
+    },
+    "higher_education": {
+      "otm_in_district": 0,
+      "note": "Tumanda OTM yo'q. AES uchun yadro energetikasi, geologik qidiruv, qurilish materiallari bo'yicha mutaxassislar tayyorlash markazini ochish — strategik vazifa"
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand": 51.942,
+    "total_resources_dynamics": {
+      "2021": 50.315,
+      "2022": 50.409,
+      "2023": 50.527,
+      "2024": 50.906,
+      "2025": 51.942
+    },
+    "employed_2025": 40471,
+    "employed_growth_pct_2025": 12.6,
+    "informal_sector_2021": 19045,
+    "abroad_migrants_dynamics": {
+      "2021": 2133, "2022": 3363, "2023": 3558, "2024": 934, "2025": 2219
+    },
+    "returned_migrants_2025": 259,
+    "returned_migrants_note": "Sariosiyodan (12,745) 49 baravar kam, Qo'qondan (2,570) 10 baravar kam",
+    "unemployment_pct_2025": 5.5,
+    "unemployment_dynamics_pct": {
+      "2021": 10.5, "2022": 9.4, "2023": 7.9, "2024": 6.4, "2025": 5.5
+    },
+    "unemployed_count_2025": 2438,
+    "youth_unemployed_16_30": 588,
+    "unemployed_women": 855,
+    "unemployment_target_2027_pct": 2.2,
+    "poverty_pct_2025": 6.3,
+    "poverty_dynamics_pct": {
+      "2023": 11.4, "2024": 9.6, "2025": 6.3
+    },
+    "poor_families": 1545,
+    "poverty_change_2y": "3,400 → 1,545 (-54.6%)",
+    "low_income_families": 3584,
+    "youth_program_2026": {
+      "total_youth": 498,
+      "permanent_employment": 157,
+      "credit_for_business": 40,
+      "vocational_training": 219,
+      "ordered_migration": 23,
+      "self_employed": 36
+    },
+    "women_employment_plan_2026": {
+      "total": 3135,
+      "permanent_employment": 610,
+      "entrepreneur": 612,
+      "credit_total": 552,
+      "retraining": 1116,
+      "self_employed": 245,
+      "silk_worm_seasonal": 3352,
+      "silk_mahallas": ["Uchma", "Uxum", "Oybek", "Nurak"]
+    },
+    "difficult_mahallas": [
+      {"name": "Amir Temur", "category": "og'ir"},
+      {"name": "Oqtepa", "category": "og'ir"},
+      {"name": "Qizilqum", "category": "og'ir"},
+      {"name": "Ilonli", "category": "og'ir"},
+      {"name": "Mustaqillik", "category": "og'ir"}
+    ],
+    "mahalla_categories": {
+      "heavy_ogir": 5,
+      "medium_orta": 19,
+      "total": 24
+    },
+    "low_returnees_significance": "AES ва kon-sanoat lojihalarida ishlash uchun mahalliy kadrlar yetishmaydi — boshqa tumanlardan jalb qilish yoki qisqa muddatli kadrlar tayyorlash zarur"
+  },
+
+  "tourism": {
+    "key_attractions": {
+      "aydarko'l": {
+        "type": "yirik sun'iy ko'l (Aydar-Arnasoy tizimi)",
+        "system_total_km2": 4000,
+        "location": "Forish tumani shimolida",
+        "activities": ["cho'milish", "baliq ovi", "kemada sayr", "qum-kulmoch", "qush kuzatish"],
+        "access": "Asmansay qishlog'i orqali (4P36 yo'li)",
+        "tour_origins": ["Buxoro 250 km", "Samarqand 250 km"]
+      },
+      "nurota_mountains": {
+        "max_height_m": 2169,
+        "activities": ["trekking", "ot tur", "gomestay", "qishloqlarni sayr qilish", "petrogliflar"],
+        "key_villages_for_tourism": ["Sentob (Navoi)", "Eski Forish (Forish)", "Hayat (Navoi)", "Uxum (Forish)"],
+        "wildlife_reserve": "Nurataw Kyzylkum biosfera qo'riqxonasi (Severtsov yovvoyi qo'ylari ~2000 nafar)",
+        "trekking_routes": [
+          "Sayyod Camp → tog' platoga (6-15 km)",
+          "Asraf → Hayat qishlog'i (12 km)",
+          "Sentob → Kadvan vodiysi (15 km)",
+          "Sentob → Fazilman ko'li (22 km — qiyin)"
+        ]
+      },
+      "petroglyphs": {
+        "location": "Eski Forish qishlog'i atrofi",
+        "estimated_count": "3000+",
+        "subject": "qadimgi chorvador-ovchilar (Sarmysh tizmasi modeli)",
+        "uniqueness": "Markaziy Osiyoda eng yirik petroglif kolleksiyalaridan biri"
+      },
+      "tuzkon_lake": {
+        "location": "Forish tumanida",
+        "type": "Aydar-Arnasoy tizimining bir qismi"
+      },
+      "alexander_fortress": {
+        "location": "Nurota atrofi (asosan Navoiyda)",
+        "history": "Aleksandr Makedonskiy davriga oid harbiy istehkom (er.av. IV asr)"
+      }
+    },
+    "existing_infrastructure": {
+      "yurt_camps": ["Sayyod Yurt Camp (English-speaking guides, basseyn, WiFi)"],
+      "homestays": "Eski Forish, Uxum, Sentob qishloqlarida",
+      "main_origins_for_tours": "Buxoro / Samarqand — 4-5 soatlik 2-kunlik turlar"
+    },
+    "tourism_share_in_economy": "potensial katta lekin hozirda hisobga olinmagan; Aydarko'l-Nurota turzonasi bir mintaqa sifatida brendlanmasi zarur",
+    "key_gap": "Aydarko'l sohilida zamonaviy mehmonxona/glamping kompleksi yo'q — sayyohlar Sentobdagi yurt-lager va Buxoro/Samarqanddan kelishi bilan cheklanadi",
+    "opportunity": "Halqaro daraжadagi 1-2 ta eko-rezort + 5-10 ta gestxauz tarmog'i; Samarqand-Buxoro turistik oqimining 5-10% Aydarko'lga (yiliga 50-100k sayyoh)",
+    "investment_range_usd_mln": "10-30 yirik komplex uchun"
+  },
+
+  "trade": {
+    "import_dependency_high": true,
+    "import_export_ratio": "10:1",
+    "shops_markets": "ma'lumot yo'q (so'ralmoqda)",
+    "key_advantage": "AES qurilishi 13-20k ishchini taminlaydi — savdo va xizmat ko'rsatish uchun ulkan bozor ochiladi"
+  },
+
+  "mahalla_economy": {
+    "total": 24,
+    "by_specialization": {
+      "livestock_chorvachilik": 10,
+      "horticulture_bog_dorchilik": 9,
+      "trade_service_savdo_xizmat": 4,
+      "small_industry_kichik_ishlab_chiqarish": 1
+    },
+    "livestock_breakdown_2024": {
+      "cattle": 22200,
+      "sheep_goats": 31000,
+      "poultry": 34500,
+      "horses": 3600
+    },
+    "horticulture_breakdown": {
+      "vineyards_ha": 1583,
+      "vineyard_yield_tons": 4654,
+      "vineyards_processing_pct": 35,
+      "gardens_ha": 609
+    },
+    "agriculture_processing_pct": 0,
+    "agriculture_processing_note": "Hozirda fаktик 0% qayta ishlanadi — bu chuqur o'sish imkoniyati. 30%ga oshirish — yiliga 200+ mlrd so'mlik qo'shimcha qiymat",
+    "silk_mahallas": ["Uchma", "Uxum", "Oybek", "Nurak"],
+    "silk_seasonal_workers": 3352,
+    "key_advantage": "Pasture fond 505,200 ga (53%) — Sariosiyo yoki Qo'qondan farqli o'laroq massiv chorvачilik salohiyati"
+  },
+
+  "banking_programs": {
+    "sqb_branch_status": "TUMANDA SQB FILIALI YO'Q (strategik muammo)",
+    "existing_banks": {
+      "agrobank": {"branches": 1},
+      "halqbank": {"bxm": 1},
+      "trustbank": {"bxm": 1}
+    },
+    "total_bank_staff": 65,
+    "mahalla_bankirs_total": 7,
+    "mahalla_bankirs_for_24_mahallas": "1 banker 3.4 mahallaga",
+    "mahalla_bankirs_gender": {"women": 1, "men": 6},
+    "mahalla_bankirs_gap": "1 ayol bankir 24 mahalla uchun — keng kengaytirishi va ayol bankirlar ulushini oshirish kerak",
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for": ["pillachilik va ipakchilik", "tikuvchilik kooperativlari", "bog'dorchilik", "savdo", "MTT"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "participating_banks": ["Halq banki", "Mikrokreditbank"],
+      "best_for": ["chorvachilik", "bog'dorchilik", "fermerlik", "yo'l bo'yi xizmatlar"]
+    },
+    "micro_projects_2025": {
+      "total_projects": 1010,
+      "total_jobs": 2046,
+      "total_bln_sum": 46.7,
+      "by_sector": {
+        "agriculture_projects": 759,
+        "agriculture_bln_sum": 34.7,
+        "industry_projects": 106,
+        "industry_bln_sum": 4.7,
+        "service_projects": 145,
+        "service_bln_sum": 7.3
+      }
+    },
+    "micro_projects_2026_plan": {
+      "projects": 240,
+      "jobs": 480,
+      "note": "2025dan keskin kam — yirik AES va kon loyihalari hisobiga ko'paytirilishi kerak"
+    },
+    "investment_plan_2026_2031": {
+      "total_bln_sum": 8525,
+      "by_year": {
+        "2026": 1012.5,
+        "2027": 1262.5,
+        "2028": 1375,
+        "2029": 1500,
+        "2030": 1625,
+        "2031": 1750
+      },
+      "annual_growth_pct": 12,
+      "recommended_structure": "30% davlat, 70% xususiy + ХIH"
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "AES qurilishi — generatsiyaviy iqtisodiy impuls",
+      "detail": "O'zbekistonning birinchi atom elektr stansiyasi: 2 ta RITM-200N + 2 ta VVER-1000 = 2,110 MW, 2110 MVt, 13-20 ming qurilish ishchisi, 2000 doimiy iш ўрни, 60 yillik xizmat muddati"
+    },
+    {
+      "title": "Eng boy mineral xomashyo bazalaridan biri",
+      "detail": "131 mln tonna sement, 22.2 mln tonna bazalt, 11.9 mln tonna barit, 13 mln m³ qurilish toshlari — atigi 25% ishlatilgan; AES qurilishi mahalliy bozorni ochadi"
+    },
+    {
+      "title": "Aydarko'l + Nurota tog'lari",
+      "detail": "4,000 km² ko'l tizimi va 2,169 m gacha tog'lar; Markaziy Osiyodagi eng yirik petroglif kolleksiyasi (3000+); Severtsov yovvoyi qo'yi qo'riqxonasi (~2000 nafar); Buxoro va Samarqand turistik oqimi yaqinida"
+    },
+    {
+      "title": "Saнoat 5 yilda 6.3x o'sgan",
+      "detail": "256.3 → 1,618.7 mlrd so'm (2021-2025); yirik korxonalar 5.9x o'sgan — qurilish materiallari sektori jadal rivojlanmoqda"
+    },
+    {
+      "title": "Massiv pasture fondi",
+      "detail": "505,200 ga yaylov (umumiy yer fondining 53%) — yirik chorvачilik kompleksi va go'sht-sut zavodlari uchun ideal sharoit"
+    },
+    {
+      "title": "Quyosh energetikasi salohiyati",
+      "detail": "280-300 quyoshli kun/yil, 956,000 ga maydon, aholi zichligi past — yirik fotovoltaik parklar va ESCO modelidagi loyihalar uchun ideal"
+    },
+    {
+      "title": "Ishsizlik va kambag'allik tez kamayyapti",
+      "detail": "Ishsizlik 10.5% (2021) → 5.5% (2025); kambag'allik 11.4% → 6.3% (3 yilda); kambag'al oilalar 3,400 → 1,545 (-54.6%)"
+    },
+    {
+      "title": "NPL barcha viloyatlardan yaxshi",
+      "detail": "Muammoli kreditlar 4.0% (2021) → 2.9% (2025) — Qo'qondan (32%) 11x past; kreditlash xavfsiz"
+    },
+    {
+      "title": "Subtropik bog'dorchilik va uzumchilik salohiyati",
+      "detail": "1,583 ga uzumzor, 4,654 t hosil; qayta ishlash atigi 35% (boshqa boshqa tumanlardan yaxshiroq); 'Forish kishmishi' brendi imkoni mavjud"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "AES atrofidagi servis va logistika infratuzilmasi",
+      "severity": "YUQORI (FURSAT)",
+      "data": "AES qurilishi 13-20k ishchini taminlaydi; 2026 iyul boshlanadi. Hozir tumanda zamonaviy ishchi yotoqxonasi, oshxona, tibbiy punkt yo'q",
+      "opportunity": "Ishchilar uchun yotoqxona kompleksi, oshxona-restoran, kir yuvish/tikuvchilik xizmatlari, transport (vaxta avtobus), AES yetkazib beruvchilarining mahalliy ofislari",
+      "investment_range_mln_sum": "100-2000",
+      "suitable_for": ["tajribali tadbirkor", "katta kapital bor", "qaytgan migrantlar (qurilish tajribasi)"]
+    },
+    {
+      "gap": "Qurilish materiallari salohiyati 75% ishlatilmagan",
+      "severity": "YUQORI",
+      "data": "131 mln t sement, 22.2 mln t bazalt, 11.9 mln t barit zaxiralari — faqat 1 korxona (50 mlrd so'm/yil); AES qurilishi mahalliy bozorni ochadi",
+      "opportunity": "Sement zavodi, bazalt tola ishlab chiqarish, barit qayta ishlash, qurilish toshlari karyer va saralash; AES uchun import o'rnini bosish",
+      "investment_range_usd_mln": "20-50 har kon uchun",
+      "suitable_for": ["yirik investor", "xorijiy hamkor (Xitoy/Turk)"]
+    },
+    {
+      "gap": "Aydarko'l turizmi infratuzilmasiz",
+      "severity": "YUQORI",
+      "data": "4,000 km² ko'l tizimi, lekin Forish tomonida zamonaviy mehmonxona/eko-rezort yo'q; sayyohlar Sentob (Navoi)dan keladi",
+      "opportunity": "Xalqaro daraжаdagi eco-resort, glamping, yurt-camp, baliq ovi va kema sayri xizmatlari; maqsad: yiliga 50-100k sayyoh",
+      "investment_range_usd_mln": "10-30",
+      "suitable_for": ["turizm tajribasi bor", "kapital bor", "qaytgan migrantlar (chet tili biluvchilar)"]
+    },
+    {
+      "gap": "Qishloq xo'jaligi qayta ishlash 0%",
+      "severity": "YUQORI",
+      "data": "10 chorvачilik MFY, 9 bog'dorchilik MFY, 22.2k qoramol, 31k qo'y — lekin go'sht qayta ishlash fаktик 0%, bog' qayta ishlash 35%",
+      "opportunity": "5-10 t/kun go'sht qayta ishlash zavodi, mini-qassobxonalar tarmog'i, mева/uzum quritish va paqovka, 'Forish kishmishi' brendi (HACCP/halal sertifikat) — Qozog'iston/Rossiya/Xitoy bozoriga eksport",
+      "investment_range_mln_sum": "50-300",
+      "suitable_for": ["fermerlar", "qishloq xo'jaligi tajribasi bor", "chorvador oilalar"]
+    },
+    {
+      "gap": "Pillachilikni doimiy bandlikka aylantirish",
+      "severity": "O'RTA-YUQORI",
+      "data": "3,352 nafar mavsumiy ayol pilla boqishda band; 4 MFY (Uchma, Uxum, Oybek, Nurak); ipak gavlama va tikuvchilik bo'g'ini yo'q",
+      "opportunity": "Kichik gavlama sexi + 2-3 tikuvchilik kooperativi — 1000+ ayolni doimiy bandlikka o'tkazish",
+      "investment_range_mln_sum": "5-50 (sex), 50-200 (yirik klaster)",
+      "suitable_for": ["ayollar", "oilaviy biznes", "to'qimachilik tajribasi bor"]
+    },
+    {
+      "gap": "Quyosh energiyasi salohiyati ishlatilmagan",
+      "severity": "O'RTA-YUQORI",
+      "data": "280-300 quyoshli kun/yil, 956,000 ha maydon, bo'sh ER ulkan; AES bilan gibrid model — kunduzgi pikga quyosh, kechki bazaga AES",
+      "opportunity": "2-5 MW pilot SES + sanoat korxonalari uchun rooftop quyosh tizimlari + quyosh paneli yig'ish zavodi",
+      "investment_range_usd_mln": "8-30 har lojiha",
+      "suitable_for": ["texnik bilim bor", "katta kapital", "ESCO modeli"]
+    },
+    {
+      "gap": "Suv ta'minoti 62.5% va kanalizatsiya 2%",
+      "severity": "YUQORI",
+      "data": "Respublika o'rtachasi (95%+) dan jiddiy past, kanalizatsiya amalda yo'q (2%) — epidemiologik xavf; 5 yilda atigi +2 п.п.",
+      "opportunity": "DXSh suv-kanalizatsiya tarmog'i loyihalari, lokal sub-suv stansiyalari (qudug' + filtr), bioozonatsiya ekotехnologiya",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["texnik kompaniya", "DXSh tajribasi"]
+    },
+    {
+      "gap": "Yo'llarning 61% asfaltlanmagan",
+      "severity": "O'RTA-YUQORI",
+      "data": "1,456 km umumiy, atigi 39% asfaltlangan; yillik o'sish 1 п.п.; AES uchun magistral yo'l keskin zarur",
+      "opportunity": "Mahalliy asfalt va qurilish materiallari ishlab chiqarish (kon-saneatga ulangan); yo'l bo'yi xizmat (oshxona, AYAQSh, tunash)",
+      "investment_range_mln_sum": "30-500",
+      "suitable_for": ["transport biznesi", "qurilish kompaniyasi"]
+    },
+    {
+      "gap": "Maktabgacha qamrov pasayyapti (87.4 → 81.5%)",
+      "severity": "O'RTA",
+      "data": "Tendentsiya salbiy; 82.1% maktab 2 smenada; AES bilan 13-20k ishchi oilalari kelishi natijasida talab keskin oshadi",
+      "opportunity": "Xususiy MTT, mini-bog'cha, bola rivojlantirish markazi — ayniqsa Bog'donda va AES atrofida",
+      "investment_range_mln_sum": "50-200",
+      "suitable_for": ["ayollar", "pedagogik ma'lumot bor"]
+    },
+    {
+      "gap": "5 ta og'ir mahalla",
+      "severity": "YUQORI",
+      "data": "Amir Temur, Oqtepa, Qizilqum, Ilonli, Mustaqillik — 855 ishsiz ayol, 588 yosh ishsiz; 25 mlrd so'm ajratilgan, ammo samarasiz ishlatilyapti",
+      "opportunity": "'Bir mahalla — bir drayver' modeli: chorvачilik (Amir Temur), bog'dorchilik (Mustaqillik), pillachilik (Oqtepa), turizm xizmati (Qizilqum), qurilish (Ilonli)",
+      "investment_range_mln_sum": "5-50 har lojiha",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar"]
+    },
+    {
+      "gap": "SQB filiali yo'q",
+      "severity": "YUQORI",
+      "data": "24 mahalla uchun 7 mahalla bankiri (1 ayol); SQB filiali umuman yo'q — AES kontekstida strategik muammo",
+      "opportunity": "SQB filialini ochish + ayol bankirlar sonini 12-15 ga oshirish; SQB AI Advisor platformasini barcha 24 MFY ga jo'natish",
+      "note": "Bu bank ichi qaror — tadbirkor uchun emas, lekin biznes uchun katta ahamiyat"
+    },
+    {
+      "gap": "Qaytgan migrantlar atigi 259 nafar",
+      "severity": "PAST-O'RTA",
+      "data": "Sariosiyo (12,745) dan 49x kam; AES uchun mahalliy malakali kadrlar yetishmaydi",
+      "opportunity": "Boshqa tumanlardan kadrlar jalb qilish, qisqa muddatli (3-6 oy) kasb-hunar kurslari, dual ta'lim AES bilan birga",
+      "investment_range_mln_sum": "50-300",
+      "suitable_for": ["o'qitish kompaniyalari", "kadrlar agentliklari"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "AES atrofi servis va yotoqxona",
+      "type": "Ishchilar yotoqxona kompleksi / oshxona-kafe / kir yuvish-tikuvchilik / vaxta transport",
+      "why_forish": "AES qurilishi 2026 iyulda boshlanadi — 13-20k ishchi keladi. Hozir tumanda zamonaviy yotoqxona/oshxona/kir yuvish yo'q. 70% mahalliy ishchi maqsadi belgilangan. Birinchi keluvchilar uzoq muddatli shartnoma oladi",
+      "investment_mln_sum": "100-2000",
+      "monthly_income_estimate_mln_sum": "20-200",
+      "payback_years": "2-5",
+      "suitable_for": ["tajribali tadbirkor", "katta kapital bor", "qurilish/mehmondo'stlik tajribasi"],
+      "bank_product": "SQB biznes kreditlari yoki yirik investitsiya liniyasi",
+      "risk": "Loyiha vaqti AES grafigiga bog'liq; faza tugagandan keyin talab keskin pasayadi"
+    },
+    {
+      "rank": 2,
+      "sector": "Qurilish materiallari ishlab chiqarish",
+      "type": "Sement zavodi / bazalt qayta ishlash / qurilish toshlari karyer / barit qayta ishlash",
+      "why_forish": "131 mln t sement, 22.2 mln t bazalt, 11.9 mln t barit — faqat 25% ishlatilgan. AES qurilishi mahalliy bozor (2110 MVt stansiya uchun ulkan miqdorda sement va bazalt kerak). Import bo'yicha mustaqillik = valyuta tejash",
+      "investment_mln_sum": "500-3000 (USD 20-50 mln har lojiha)",
+      "monthly_income_estimate_mln_sum": "50-500",
+      "payback_years": "3-7",
+      "suitable_for": ["yirik investor", "xorijiy hamkor (Xitoy/Turk)", "DXSh sherigi"],
+      "bank_product": "SQB sanoat kreditlari yoki ХIH (Jaxon banki, AБP, EBRR)",
+      "risk": "Logistika murakkabligi (75 km tеmir yo'lgача); ekologik standartlar"
+    },
+    {
+      "rank": 3,
+      "sector": "Eko-turizm Aydarko'l-Nurota",
+      "type": "Eco-resort / glamping / yurt-camp / fishing tour / petroglyph tour",
+      "why_forish": "4,000 km² ko'l + 2169 m tog'lar + 3000+ petroglif — Markaziy Osiyodagi eng yaxshi eko-turizm zonalaridan. Buxoro va Samarqand 250 km da. Hozir Forish tomonida infratuzilma yo'q — bo'sh raqobat. Maqsad: yiliga 50-100k sayyoh",
+      "investment_mln_sum": "100-1500",
+      "monthly_income_estimate_mln_sum": "10-100",
+      "payback_years": "3-7",
+      "suitable_for": ["turizm tajribasi", "qaytgan migrantlar (chet tili)", "mehmondo'stlik tajribasi"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB turizm kreditlari",
+      "risk": "Mavsumiylik (yoz/baxor yuqori, qish past); chiqindi ko'l ekologiyasi"
+    },
+    {
+      "rank": 4,
+      "sector": "Go'sht qayta ishlash va sut zavodi",
+      "type": "5-10 t/kun gosht qayta ishlash zavodi / mini-qassobxonalar tarmog'i / sut zavodi",
+      "why_forish": "10 ta MFY chorvачiликка ixtisoslashgan, 22.2k qoramol + 31k qo'y/echki + 3.6k yilqi; lekin qayta ishlash fаktик 0%! Bozor butunlay bo'sh. AES qurilishi 13-20k ishchi — ulkan iste'mol bozori",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["chorvачi oilalar", "qishloq xo'jaligi tajribasi", "fermerlar"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Veterinar talablar; shamol/issiq ob-havo (sovutgich xarajatlar)"
+    },
+    {
+      "rank": 5,
+      "sector": "Pilla-ipak-tikuvchilik klasteri",
+      "type": "Ipak gavlama sexi / tikuvchilik kooperativi / brend kiyim",
+      "why_forish": "3,352 ayol mavsumiy pilla boqadi (4 MFY); ipak gavlama va tikuvchilik bo'g'ini yo'q. HAMROH 100 mln so'm garovsiz — ayollar uchun ideal. Maqsad: 1000+ ayol doimiy bandlikka",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "oilaviy biznes", "to'qimachilik tajribasi"],
+      "bank_product": "HAMROH (garovsiz 100 mln) yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik (pilla); ekspert kadrlar yetishmovchiligi"
+    },
+    {
+      "rank": 6,
+      "sector": "Bog'dorchilik mahsulotlarini qayta ishlash",
+      "type": "Quritilgan meva (kishmish, mayiz) / sok va shinni / paqovka / shok-muzlatish",
+      "why_forish": "1,583 ha uzumzor, 4,654 t hosil; qayta ishlash 35% — 70%ga ko'tarish potensiali. 'Forish kishmishi' brendini yaratish va HACCP/halal sertifikati orqali Qozog'iston-Rossiya-Xitoy bozoriga eksport. Maqsad: yiliga 8-10k tonna",
+      "investment_usd_mln": "5-12",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer-bog'bonlar", "qishloq xo'jaligi tajribasi"],
+      "bank_product": "Agro bank yoki SQB eksport kreditlari",
+      "risk": "Hosil mavsumiyligi; sertifikatlash xarajatlari (HACCP)"
+    },
+    {
+      "rank": 7,
+      "sector": "Quyosh energetikasi va ESCO",
+      "type": "Pilot SES (2-5 MW) / rooftop quyosh tizimlari sanoat uchun / quyosh paneli yig'ish zavodi",
+      "why_forish": "280-300 quyoshli kun/yil + bo'sh ER ulkan + AES bilan gibrid model imkoniyati. Sanoat o'sayotgan (6.3x), elektr talabi keskin oshmoqda. ESCO modeli — boshlang'ich kapitalsiz biznes",
+      "investment_usd_mln": "8-30",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "payback_years": "4-7",
+      "suitable_for": ["texnik bilim bor", "katta kapital", "tajribali tadbirkor"],
+      "bank_product": "SQB biznes kreditlari yoki ХIH (АБР yashil energiya)",
+      "risk": "Texnik mutaxassislar topish qiyin; AES bilan tarif raqobati"
+    },
+    {
+      "rank": 8,
+      "sector": "Mahalliy asfalt va qurilish kompaniyasi",
+      "type": "Asfalt zavodi / qurilish brigadasi / yo'l bo'yi servis (oshxona, AYAQSh, tunash)",
+      "why_forish": "1,456 km yo'l, 39% asfalt; AES uchun magistral yo'l keskin zarur — hukumat investitsiyasi keladi. Mahalliy bazalt va qurilish toshlari mavjud — asfalt ishlab chiqarish lokalizatsiya qilinishi mumkin",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "15-60",
+      "payback_years": "3-5",
+      "suitable_for": ["qurilish tajribasi", "transport biznesi"],
+      "bank_product": "SQB biznes kreditlari yoki davlat tender",
+      "risk": "Davlat buyurtmasi muddatlariga bog'liq; texnika sotib olish"
+    },
+    {
+      "rank": 9,
+      "sector": "Xususiy bog'cha va o'quv markazi",
+      "type": "Xususiy MTT / mini-bog'cha / kasb-hunar markazi (AES uchun)",
+      "why_forish": "Maktabgacha qamrov 81.5% va PASAYYOTGAN; 82% maktab 2 smenada — infratuzilma yetishmaydi. AES bilan 13-20k oila keladi → talab keskin oshadi. Hozir SQB AES uchun texnik kollej taklif qilmoqda",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumot bor ayollar", "AES texnik mutaxassisi"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Litsenziya jarayoni uzoq; AES jadvalga bog'liq talab"
+    },
+    {
+      "rank": 10,
+      "sector": "Cho'l-dasht qishloq xo'jaligi (drip irrigation)",
+      "type": "Tomchilatib sug'orish bilan poliz/sabzavot / issiqxona / dorivor o'simlik",
+      "why_forish": "Sug'oriladigan ER atigi 766 ga (0.08% jami); 956,000 ha maydon — buz cho'l-adir. Tomchilatib sug'orish + quyosh nasos texnologiyasi orqali samardor mahsulot olish; dorivor o'simliklar (ravоч, sariqchoy) — eksport potensialli",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer", "qishloq xo'jaligi tajribasi", "texnik mahorat bor"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Suv cheklovlari; iqlim o'zgarishi"
+    },
+    {
+      "rank": 11,
+      "sector": "Logistika va omborxona",
+      "type": "Sovutgich omborxona / mahsulot qadoqlash markazi / AES yetkazib beruvchilarining ofisi",
+      "why_forish": "Tumanda omborxona infratuzilmasi fаktик yo'q. AES qurilishi va qurilish materiallari sektori bilan transport-omborxona talabi 5-10x oshadi. Q/x mahsulotlarini saqlash ham keskin zarur",
+      "investment_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "15-70",
+      "payback_years": "3-5",
+      "suitable_for": ["logistika tajribasi", "kapital bor"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Yo'l infratuzilmasi rivojlanish suratiga bog'liq"
+    },
+    {
+      "rank": 12,
+      "sector": "Petroglif va madaniy turizm",
+      "type": "Gid xizmati / petroglif tur / madaniy ekspedisiya / xalqaro arxeologik tur",
+      "why_forish": "Eski Forish atrofida 3000+ qadimgi rasmlar — Markaziy Osiyodagi eng yirik kolleksiyalardan. Buxoro-Samarqand turistik oqimi yaqinida. Hozir hech kim sotmaydi — bo'sh raqobat. UNESCO ro'yxatiga kirish potensiali",
+      "investment_mln_sum": "10-50",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-3",
+      "suitable_for": ["arxeologik bilim bor", "chet tili biluvchilar", "qaytgan migrantlar"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Sayyohlar oqimi mavsumiy va sekin o'sadi"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Forish tumani (Jizzax viloyati) — 96.5 ming aholi, 24 mahalla, Jizzax viloyatining ENG KATTA tumani (956,000 ha). Aholi zichligi 10 kishi/km² — respublikadagi eng past. KUCHLI TOMONLARI: (1) AES QURILISHI! O'zbekistondagi birinchi atom elektr stansiyasi — 2 ta RITM-200N (55 MVt) + 2 ta VVER-1000 (1 GVt) = 2110 MVt jami; 13-20 ming qurilish ish o'rni; 2026 iyulda boshlanadi; (2) Yagona darajadagi mineral xomashyo bazasi: 131 mln tonna sement, 22.2 mln tonna bazalt, 11.9 mln tonna barit — atigi 25% ishlatilgan; (3) Aydarko'l (4000 km²) + Nurota tog'lari (2169m) + 3000+ petroglif — eko-turizm potensiali ulkan; (4) Sanoat 5 yilda 6.3x o'sgan (256.3 → 1618.7 mlrd so'm); (5) 505,200 ha yaylov (53%) — chorvачilik uchun massiv salohiyat; (6) 280-300 quyoshli kun — quyosh energetikasi. BO'SHLIQLAR va IMKONIYATLAR: (1) AES atrofi servis-yotoqxona infratuzilmasi yo'q — yirik biznes imkoniyati; (2) Qishloq xo'jaligi qayta ishlash 0% (chorva), 35% (bog'); (3) Aydarko'l Forish tomonida zamonaviy mehmonxona/eco-resort yo'q; (4) Pillachilik 3352 mavsumiy ayolni doimiy bandlikka aylantirish; (5) SQB filiali yo'q (strategik muammo); (6) Yo'llar 39% asfalt, suv 62.5%, kanalizatsiya 2% — infratuzilma muammoli; (7) 5 og'ir mahalla (Amir Temur, Oqtepa, Qizilqum, Ilonli, Mustaqillik). BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), 1010 mikrolojiha 2025da. KREDIT XAVFI ENG PAST: NPL 2.9% (Qo'qonda 32%, Sariosiyoda 4.2%) — kreditlash xavfsiz. ASOSIY DRAYVERLAR: AES qurilishi va undan keyingi servis, qurilish materiallari sanoati, eko-turizm, chorvачilik klasteri.",
+
+  "ai_prompt_context_ru": "Фаришский район (Жиззахская область) — 96.5 тыс. жителей, 24 махалли, САМЫЙ КРУПНЫЙ район Джизака (956,000 га). Плотность населения 10 чел/км² — самая низкая в стране. СИЛЬНЫЕ СТОРОНЫ: (1) СТРОИТЕЛЬСТВО АЭС! Первая атомная электростанция Узбекистана — 2 малых реактора RITM-200N (55 МВт) + 2 больших VVER-1000 (1 ГВт) = 2110 МВт; 13-20 тыс. рабочих мест на стройке; начало июль 2026; (2) Уникальная минерально-сырьевая база: 131 млн т цемента, 22.2 млн т базальта, 11.9 млн т барита — использовано лишь 25%; (3) Айдаркуль (4000 км²) + Нуратинские горы (2169м) + 3000+ петроглифов — огромный потенциал эко-туризма; (4) Промышленность выросла 6.3× за 5 лет (256.3 → 1618.7 млрд сум); (5) 505,200 га пастбищ (53%) — масштабный потенциал животноводства; (6) 280-300 солнечных дней — солнечная энергетика. ПРОБЕЛЫ и ВОЗМОЖНОСТИ: (1) Нет инфраструктуры сервиса/общежитий вокруг АЭС — крупная бизнес-возможность; (2) Переработка с/х 0% (мясо), 35% (сады); (3) Со стороны Фариша на Айдаркуле нет современного отеля/эко-резорта; (4) 3,352 сезонные женщины в шелководстве — потенциал перевода в постоянную занятость; (5) Нет филиала SQB (стратегическая проблема); (6) Дороги 39% асфальт, вода 62.5%, канализация 2% — инфраструктура слабая; (7) 5 тяжёлых махаллей (Amir Temur, Oqtepa, Qizilqum, Ilonli, Mustaqillik). БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн), 'Каждая семья — предприниматель' (до 300 млн, 18%, 3 года), 1010 микропроектов в 2025. САМЫЙ НИЗКИЙ КРЕДИТНЫЙ РИСК: NPL 2.9% (в Коканде 32%, в Сариасии 4.2%) — кредитование безопасно. КЛЮЧЕВЫЕ ДРАЙВЕРЫ: строительство АЭС и связанный сервис, индустрия стройматериалов, эко-туризм, кластер животноводства."
+}
