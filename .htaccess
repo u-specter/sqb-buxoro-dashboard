@@ -1,0 +1,12 @@
+# Deny access to .env and other dotfiles via web
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Extra safety — deny by exact name
+<Files ".env">
+    Require all denied
+</Files>
+<Files ".env.example">
+    Require all denied
+</Files>

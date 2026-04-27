@@ -2772,11 +2772,12 @@
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const API_KEY = '';
-    const OPENAI_DIRECT = 'https://api.openai.com/v1/chat/completions';
+    // OpenAI proxy — Cloudflare Worker (API key Worker'да Secret сифатида сақланади)
+    // Worker деплой қилгач, бу URL'ни ўз worker URL'ингиз билан алмаштиринг:
+    const OPENAI_DIRECT = '/proxy.php';
 
     function smartFetch(body, signal) {
-      return fetch(OPENAI_DIRECT, {signal:signal, method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY}, body:JSON.stringify(body)});
+      return fetch(OPENAI_DIRECT, {signal:signal, method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
     }
 
     let map, marker;
