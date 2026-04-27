@@ -112,6 +112,28 @@
 }
 @keyframes sqb-dots{ 0%,100%{opacity:.3} 50%{opacity:1} }
 
+/* STREAMING — initial "searching" status + blinking caret */
+.sqb-msg.bot.streaming{ position:relative }
+.sqb-msg.bot .sqb-status{
+  color:var(--sqb-chat-muted); font-style:italic; font-size:13px;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.sqb-msg.bot .sqb-status::before{
+  content:''; width:14px; height:14px;
+  border:2px solid var(--sqb-chat-line);
+  border-top-color:var(--sqb-chat-primary-2);
+  border-radius:50%; flex-shrink:0;
+  animation:sqb-spin .9s linear infinite;
+}
+@keyframes sqb-spin{ to{ transform:rotate(360deg) } }
+.sqb-cursor{
+  display:inline-block; width:2px; height:1em;
+  background:var(--sqb-chat-primary-2);
+  vertical-align:-2px; margin-left:2px; border-radius:1px;
+  animation:sqb-blink 1s steps(2) infinite;
+}
+@keyframes sqb-blink{ 50%{ opacity:0 } }
+
 /* MARKDOWN INSIDE BOT */
 .sqb-msg.bot p{ margin:0 0 8px }
 .sqb-msg.bot p:last-child{ margin-bottom:0 }

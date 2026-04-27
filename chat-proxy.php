@@ -49,6 +49,7 @@ if (!$vectorStoreId) {
 $body = json_decode(file_get_contents('php://input'), true) ?: [];
 $messages = $body['messages'] ?? [];
 $tuman    = isset($body['tuman']) ? trim((string)$body['tuman']) : '';
+$stream   = !empty($body['stream']);
 
 if (!is_array($messages) || count($messages) === 0) {
     http_response_code(400);
@@ -63,7 +64,10 @@ $systemText =
     "ochiq aytib qo'ying: \"Bu ma'lumot manbalarda topilmadi.\" ".
     "Tarjima qilmang — foydalanuvchi qaysi tilda yozsa, shu tilda javob bering ".
     "(o'zbek lotin, o'zbek kirill, rus yoki ingliz). ".
-    "Raqamlarni aniq ko'chiring, taxmin qilmang. Javoblar qisqa va aniq bo'lsin.";
+    "Raqamlarni aniq ko'chiring, taxmin qilmang. Javoblar qisqa va aniq bo'lsin. ".
+    "MUHIM: javobingizda HECH QACHON manba fayl nomlari (boysun.json, qoqon_data.json va h.k.), ".
+    "'Manba:', 'Source:', 'Источник:', 'Манба:', 'file_search', JSON yoki vector store haqida eslatmang. ".
+    "Iqtibos belgilari (【...】, [1†...]) ham yozmang. Faqat sof javobni bering.";
 if ($tuman !== '') {
     $systemText .= " Hozirgi kontekst: foydalanuvchi \"$tuman\" tumani sahifasida — ".
                    "agar savol noaniq bo'lsa, shu tuman ma'lumotlariga ustunlik bering.";
@@ -86,6 +90,48 @@ $payload = [
     ]],
     'temperature' => 0.3,
 ];
+
+// ── STREAMING MODE: SSE pass-through to the browser ────────────
+if ($stream) {
+    header('Content-Type: text/event-stream; charset=utf-8');
+    header('Cache-Control: no-cache, no-transform');
+    header('Connection: keep-alive');
+    header('X-Accel-Buffering: no');           // nginx
+    header('Content-Encoding: identity');      // disable gzip
+    if (function_exists('apache_setenv')) {
+        @apache_setenv('no-gzip', '1');
+        @apache_setenv('dont-vary', '1');
+    }
+    @ini_set('zlib.output_compression', '0');
+    @ini_set('output_buffering', '0');
+    @ini_set('implicit_flush', '1');
+    while (ob_get_level() > 0) { @ob_end_flush(); }
+    ob_implicit_flush(true);
+
+    $payload['stream'] = true;
+
+    $ch = curl_init('https://api.openai.com/v1/responses');
+    curl_setopt_array($ch, [
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => json_encode($payload, JSON_UNESCAPED_UNICODE),
+        CURLOPT_HTTPHEADER     => [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $apiKey,
+            'Accept: text/event-stream',
+        ],
+        CURLOPT_TIMEOUT        => 180,
+        CURLOPT_CONNECTTIMEOUT => 15,
+        CURLOPT_WRITEFUNCTION  => function ($curl, $chunk) {
+            echo $chunk;
+            @ob_flush();
+            @flush();
+            return strlen($chunk);
+        },
+    ]);
+    curl_exec($ch);
+    curl_close($ch);
+    exit;
+}
 
 $ch = curl_init('https://api.openai.com/v1/responses');
 curl_setopt_array($ch, [
@@ -144,6 +190,18 @@ if (!empty($resp['output']) && is_array($resp['output'])) {
 // Strip inline citation markers like 【4:0†source】 the model sometimes injects
 $text = preg_replace('/【[^】]*】/u', '', $text);
 $text = preg_replace('/\[\d+(?::\d+)?(?:†[^\]]*)?\]/u', '', $text);
+
+// Strip any line that mentions a source filename / "Манба:"-style attribution
+// (📄 Манба: boysun.json, Source: qoqon_data.json, Источник: ..., Manba: ...)
+$text = preg_replace(
+    '/^\s*(?:[\x{1F4C4}\x{1F4D6}\x{1F4DC}\x{1F4D1}]\s*)?(?:Манба|Manba|Source|Sources|Источник|Источники|Reference|References)\s*[:：].*$/miu',
+    '',
+    $text
+);
+// Strip any standalone .json filename mentions
+$text = preg_replace('/[\w\-]+_data\.json|boysun\.json/iu', '', $text);
+
+$text = preg_replace("/\n{3,}/u", "\n\n", $text);
 $text = trim(preg_replace('/[ \t]+\n/u', "\n", $text));
 
 echo json_encode([

@@ -142,13 +142,24 @@
     return el;
   }
 
-  function appendTyping() {
+  function appendTyping(label) {
     const el = document.createElement('div');
     el.className = 'sqb-msg bot typing';
-    el.textContent = 'Ёзмоқда…';
+    el.textContent = label || 'Ёзмоқда…';
     $body.appendChild(el);
     $body.scrollTop = $body.scrollHeight;
     return el;
+  }
+
+  // Final scrub mirroring server-side cleanup (citation markers, source mentions)
+  function scrubText(t) {
+    return t
+      .replace(/【[^】]*】/g, '')
+      .replace(/\[\d+(?::\d+)?(?:†[^\]]*)?\]/g, '')
+      .replace(/^\s*(?:[\u{1F4C4}\u{1F4D6}\u{1F4DC}\u{1F4D1}]\s*)?(?:Манба|Manba|Source|Sources|Источник|Источники|Reference|References)\s*[:：].*$/gimu, '')
+      .replace(/[\w-]+_data\.json|boysun\.json/gi, '')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
   }
 
   async function send(text) {
@@ -158,28 +169,78 @@
 
     appendMsg('user', text);
     state.messages.push({ role: 'user', content: text });
-    const typing = appendTyping();
+
+    // Empty bot bubble with status placeholder; will fill as deltas arrive.
+    const empty = $body.querySelector('.sqb-chat-empty');
+    if (empty) empty.remove();
+    const bubble = document.createElement('div');
+    bubble.className = 'sqb-msg bot streaming';
+    bubble.innerHTML = '<span class="sqb-status">Маълумотлар қидирилмоқда…</span><span class="sqb-cursor"></span>';
+    $body.appendChild(bubble);
+    $body.scrollTop = $body.scrollHeight;
+
+    let acc = '';
+    const renderLive = () => {
+      bubble.innerHTML = mdToHtml(scrubText(acc)) + '<span class="sqb-cursor"></span>';
+      $body.scrollTop = $body.scrollHeight;
+    };
 
     try {
       const res = await fetch(ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: state.messages, tuman: currentTuman() }),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'text/event-stream' },
+        body: JSON.stringify({ messages: state.messages, tuman: currentTuman(), stream: true }),
       });
-      const data = await res.json().catch(() => ({}));
-      typing.remove();
 
-      if (!res.ok) {
-        const msg = data.error || ('HTTP ' + res.status);
-        appendMsg('assistant', '⚠️ Хато: ' + msg);
+      if (!res.ok || !res.body) {
+        // Non-stream error response — try to read JSON for a useful message.
+        let msg = 'HTTP ' + res.status;
+        try { const j = await res.json(); if (j.error) msg = j.error; } catch (e) {}
+        bubble.classList.remove('streaming');
+        bubble.innerHTML = mdToHtml('⚠️ Хато: ' + msg);
         return;
       }
-      const answer = (data.text || '').trim() || 'Маълумот топилмади.';
-      appendMsg('assistant', answer);
-      state.messages.push({ role: 'assistant', content: answer });
+
+      const reader  = res.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buf = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+
+        // SSE events are separated by a blank line. Pull whole events out of buf.
+        let sep;
+        while ((sep = buf.indexOf('\n\n')) !== -1) {
+          const evt = buf.slice(0, sep);
+          buf = buf.slice(sep + 2);
+          for (const line of evt.split('\n')) {
+            if (!line.startsWith('data:')) continue;
+            const json = line.slice(5).trim();
+            if (!json || json === '[DONE]') continue;
+            let d;
+            try { d = JSON.parse(json); } catch (e) { continue; }
+            const t = d.type;
+            if (t === 'response.output_text.delta' && typeof d.delta === 'string') {
+              acc += d.delta;
+              renderLive();
+            } else if (t === 'response.error' || t === 'error') {
+              acc += '\n⚠️ ' + (d.error?.message || d.message || 'Streaming error');
+              renderLive();
+            }
+          }
+        }
+      }
+
+      // Finalize: drop cursor, lock in scrubbed markdown
+      const final = scrubText(acc).trim() || 'Маълумот топилмади.';
+      bubble.classList.remove('streaming');
+      bubble.innerHTML = mdToHtml(final);
+      state.messages.push({ role: 'assistant', content: final });
     } catch (err) {
-      typing.remove();
-      appendMsg('assistant', '⚠️ Тармоқ хатоси: ' + err.message);
+      bubble.classList.remove('streaming');
+      bubble.innerHTML = mdToHtml('⚠️ Тармоқ хатоси: ' + err.message);
     } finally {
       state.busy = false;
       $send.disabled = false;
