@@ -212,6 +212,36 @@
   transform:translateY(-1px); box-shadow:0 6px 14px rgba(5,144,201,.28);
 }
 
+/* AI-DRIVEN HIGHLIGHT — pulsed glow on target slide + sidebar item */
+.sqb-highlight{
+  animation:sqb-highlight-pulse 2.6s cubic-bezier(.22,1,.36,1);
+  position:relative;
+}
+.sqb-highlight::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  border-radius:inherit;
+  box-shadow:inset 0 0 0 3px var(--sqb-chat-primary-2,#0590C9), 0 0 36px rgba(5,144,201,.35);
+  animation:sqb-highlight-fade 2.6s ease-out forwards;
+}
+@keyframes sqb-highlight-pulse{
+  0%   { background-color:rgba(5,144,201,.10); }
+  35%  { background-color:rgba(5,144,201,.18); }
+  100% { background-color:transparent; }
+}
+@keyframes sqb-highlight-fade{
+  0%   { opacity:1 }
+  60%  { opacity:.7 }
+  100% { opacity:0 }
+}
+.sqb-side-pulse{
+  animation:sqb-side-flash 2.4s cubic-bezier(.22,1,.36,1);
+  position:relative; z-index:1;
+}
+@keyframes sqb-side-flash{
+  0%, 30%   { background-color:rgba(5,144,201,.22); box-shadow:inset 3px 0 0 var(--sqb-chat-primary-2,#0590C9); }
+  100%      { background-color:transparent; box-shadow:none; }
+}
+
 /* MOBILE */
 @media (max-width:540px){
   .sqb-chat-panel{ right:10px; left:10px; bottom:88px; width:auto; height:74vh; border-radius:18px }

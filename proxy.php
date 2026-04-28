@@ -54,6 +54,9 @@ if (!$apiKey) {
     exit;
 }
 
+$orgId     = $env['OPENAI_ORG_ID']     ?? getenv('OPENAI_ORG_ID')     ?: '';
+$projectId = $env['OPENAI_PROJECT_ID'] ?? getenv('OPENAI_PROJECT_ID') ?: '';
+
 // ─────────────────────────────────────────────────────────────
 // Forward request body to OpenAI
 // ─────────────────────────────────────────────────────────────
@@ -64,10 +67,14 @@ curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POST           => true,
     CURLOPT_POSTFIELDS     => $body,
-    CURLOPT_HTTPHEADER     => [
-        'Content-Type: application/json',
-        'Authorization: Bearer ' . $apiKey,
-    ],
+    CURLOPT_HTTPHEADER     => array_merge(
+        [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $apiKey,
+        ],
+        $orgId     !== '' ? ['OpenAI-Organization: ' . $orgId] : [],
+        $projectId !== '' ? ['OpenAI-Project: ' . $projectId]  : []
+    ),
     CURLOPT_TIMEOUT        => 120,
     CURLOPT_CONNECTTIMEOUT => 15,
 ]);

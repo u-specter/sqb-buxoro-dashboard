@@ -1,23 +1,4 @@
 {
-  "vector_store_id": "vs_69ef48fd9b4881919c31c7dae3ebdaeb",
-  "name": "sqb-tumanlar-knowledge",
-  "file_ids": [
-    "file-G9qAiXdx9Ew2ND9A2bieDh",
-    "file-L3ffAxd98RwuJdarUNhf2h",
-    "file-3SDNJfX9UYREidcEWe48Js",
-    "file-KztVH8jMhGMWcuUnY57jBB",
-    "file-MEmMCrohbtGB2Bbze8Ywrt",
-    "file-BCkE2PG51wkhyzivEr3aw6",
-    "file-A3evgp9eP84MwNUXSoBfE9",
-    "file-1npEo39dT5JjwnYDKUYDwN",
-    "file-GVZXBCtWgJn4PzSAbk59Xq",
-    "file-6di9YFkQRTrHp9q4bTHVSq",
-    "file-WdBRur3SHwipY4g49xw6ZL",
-    "file-QL9Y47nr7XeGTNCmQ35Vs2",
-    "file-Q2QVyKHzb7UsV1VpkpU1ev",
-    "file-VNSLiN1is9mPqZe1z6EvGv",
-    "file-GJxqABLAbBX7k2FZpeZtxX",
-    "file-MckMoY2vx7MtzWev1cZrUe",
-    "file-DQidvDF3rfYy43DNqgJLJP"
-  ]
+  "vector_store_id": "vs_69f04a2360c08191b0df315e2cddae7f",
+  "name": "regions-intelligence"
 }
