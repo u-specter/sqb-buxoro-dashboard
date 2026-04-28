@@ -334,192 +334,36 @@ Object.defineProperty(DISTRICT_LABEL, 'boysun',    {get:function(){return distri
 // VALUE PARSER — classifies indicator.value into a typed object
 // Types: timeseries | breakdown | single_metric | list | text | empty
 // ============================================================
+// parseValue — thin dispatcher; grammar-specific logic lives in assets/js/parsers.js
+// Each tryX() returns null when its grammar doesn't match; first non-null wins.
 function parseValue(raw, ctx){
   ctx = ctx || {};
   if(raw==null || raw==="") return {type:"empty"};
-  // === Pre-typed object (rich data) ===
-  if(typeof raw === "object" && raw.type){
-    return raw; // pass through — caller handles known types
-  }
-  const str = String(raw).trim();
+  if(typeof raw === "object" && raw.type) return raw;        // pre-typed pass-through
 
+  var str = String(raw).trim();
   // Strip leading "[Tag]" prefix and capture as label
-  let label = "";
-  const tagM = str.match(/^\[([^\]]+)\]\s*/);
-  const body = tagM ? str.slice(tagM[0].length) : str;
-  if(tagM) label = tagM[1];
+  var tagM = str.match(/^\[([^\]]+)\]\s*/);
+  var body  = tagM ? str.slice(tagM[0].length) : str;
+  var label = tagM ? tagM[1] : "";
 
-  // ---- Metric + delta detection (e.g. "43.1 млн $ | ўсиш: +108.5% (тахминий)") ----
-  // Requires the literal "ўсиш:" keyword so it only fires for explicitly tagged metrics.
-  if(/ўсиш\s*:/i.test(body) && !/^\s*(?:19|20)\d{2}\s*[:\-]/.test(body)){
-    const md = body.match(/^\s*(-?\d[\d\s\u00A0]{0,14}(?:[\.,]\d+)?)\s*([^\|]*?)\s*\|\s*ўсиш\s*:\s*([+\-]?\d{1,4}(?:[\.,]\d+)?)\s*%\s*(?:\(([^)]*)\))?\s*$/i);
-    if(md){
-      const value = parseFloat(md[1].replace(/[\s\u00A0]/g,"").replace(",","."));
-      const unit = (md[2]||"").trim();
-      const deltaPct = parseFloat(md[3].replace(",","."));
-      const note = (md[4]||"").trim();
-      if(!isNaN(value) && !isNaN(deltaPct)){
-        return {type:"metric_delta", label:label, value:value, unit:unit, deltaPct:deltaPct, note:note};
-      }
-    }
+  var P = window.SQB_Parsers;
+  if(!P){
+    console.error("SQB_Parsers not loaded — falling back to text");
+    return {type:"text", label:label, text:body};
   }
 
-  // ---- Hero + facts detection: leading "Жами: ..." segment ----
-  {
-    const hfSegs = body.split(/\s*\|\s*/).map(function(s){return s.trim();}).filter(Boolean);
-    if(hfSegs.length>=2){
-      const heroM = hfSegs[0].match(/^Жами\s*:\s*(.+)$/i);
-      if(heroM){
-        const facts = [];
-        for(let i=1;i<hfSegs.length;i++){
-          const fm = hfSegs[i].match(/^([^:]{2,60}):\s*([\s\S]+)$/);
-          if(fm) facts.push({name:fm[1].trim(), value:fm[2].trim()});
-        }
-        if(facts.length>=1){
-          return {type:"hero_facts", label:label, hero:heroM[1].trim(), facts:facts};
-        }
-      }
-    }
-  }
+  // Try each grammar in priority order; first non-null wins
+  var result =
+       P.tryMetricDelta(body, label)
+    || P.tryHeroFacts(body, label)
+    || P.tryLabeledBreakdown(body, label)
+    || P.tryEstimatedTrend(body, label, detectUnit)
+    || P.tryExplicitYearTimeseries(body, label, detectUnit, finalizeTimeseries)
+    || P.tryBulletList(body, label)
+    || P.tryNumericFallback(body, label, ctx, detectUnit, finalizeTimeseries);
 
-  // ---- Labeled breakdown detection (e.g. "Юридик шахслар: 1 854 та | Кичик бизнес: 194 та") ----
-  // Split on |, ;, or ". " — each segment must look like "Label: number unit"
-  const segs = body.split(/\s*[\|;]\s*|\.\s+(?=[А-ЯЎҒҲҚЁA-Z])/).map(function(s){return s.trim();}).filter(Boolean);
-  if(segs.length>=2 && segs.length<=6){
-    const labeled = segs.filter(function(s){
-      // No leading year, has a colon, and contains a digit after the colon
-      if(/^(?:19|20)\d{2}\b/.test(s)) return false;
-      const m = s.match(/^([^:]{2,40}):\s*(.+)$/);
-      if(!m) return false;
-      return /\d/.test(m[2]);
-    });
-    if(labeled.length===segs.length){
-      return {type:"breakdown", label:label, items:segs.slice(0,6)};
-    }
-  }
-
-  // ---- Estimated trend detection (YYYY: N ±M) ----
-  const estPairs = [];
-  const seenEstY = {};
-  const ep = /((?:19|20)\d{2})\s*:?\s*(-?\d{1,7}(?:[\.,]\d+)?)\s*[±\+\-]\s*(\d{1,7}(?:[\.,]\d+)?)/g;
-  // Use explicit ± character only to avoid false positives
-  const ep2 = /((?:19|20)\d{2})\s*:?\s*(-?\d{1,7}(?:[\.,]\d+)?)\s*±\s*(\d{1,7}(?:[\.,]\d+)?)/g;
-  let mep;
-  while((mep = ep2.exec(body))!==null){
-    const y = parseInt(mep[1]);
-    const v = parseFloat(mep[2].replace(",","."));
-    const er = parseFloat(mep[3].replace(",","."));
-    if(y>=2010 && y<=2035 && !isNaN(v) && !isNaN(er) && !seenEstY[y]){
-      seenEstY[y]=1; estPairs.push({year:y, value:v, error:er});
-    }
-  }
-  if(estPairs.length>=1){
-    estPairs.sort(function(a,b){return a.year-b.year;});
-    const vals = estPairs.map(function(p){return p.value;});
-    const last = vals[vals.length-1];
-    const prev = vals.length>=2 ? vals[vals.length-2] : null;
-    const yoy = (prev!=null && prev!==0) ? ((last-prev)/Math.abs(prev))*100 : null;
-    const yoyAbs = (prev!=null) ? (last-prev) : null;
-    const unit = detectUnit(label, body);
-    const insight = "🤖 Баҳоланган қиймат — расмий манба йўқлиги сабабли вилоят улуши асосида ҳисобланган, ишончлилик оралиғи ±"+estPairs[estPairs.length-1].error+" "+unit+".";
-    return {
-      type:"estimated_trend", label:label, series:estPairs,
-      unit:unit, last:last, prev:prev, yoy:yoy, yoyAbs:yoyAbs,
-      insight:insight,
-    };
-  }
-
-  // ---- Explicit year-value pair detection ----
-  // Examples: "2021: 123,4", "2021й - 123", "2021 — 45.2", "2021/123", "(2021) 123"
-  const yearPairs = [];
-  const seenYears = {};
-  const yp = /(?:^|[\s\(\|;,])((?:19|20)\d{2})\s*(?:й(?:ил)?)?\s*[\-\u2014:\/=]\s*(-?\d{1,7}(?:[\.,]\d+)?)/g;
-  let mp;
-  while((mp = yp.exec(body))!==null){
-    const y = parseInt(mp[1]);
-    const v = parseFloat(mp[2].replace(",","."));
-    if(y>=2010 && y<=2035 && !isNaN(v) && !seenYears[y]){ seenYears[y]=1; yearPairs.push({year:y, value:v}); }
-  }
-  if(yearPairs.length>=2){
-    yearPairs.sort(function(a,b){return a.year-b.year;});
-    return finalizeTimeseries(label, yearPairs, detectUnit(label, body), "");
-  }
-
-  // Bullet list detection
-  if(/^[\u2022\-\*]\s/m.test(body) || body.split(/\n|;/).filter(function(x){return x.trim().length;}).length>=4 && /:/.test(body)){
-    const items = body.split(/\n|;|\|\|/).map(function(x){return x.trim();}).filter(Boolean);
-    if(items.length>=3 && items.length<=12 && !looksNumeric(body)){
-      return {type:"list", label:label, items:items};
-    }
-  }
-
-  // Extract clean numbers (skip year-like 4-digit and identifier-like long ints)
-  const tokens = body.split(/[|;]+|\s{2,}/).map(function(t){return t.trim();}).filter(Boolean);
-  const allNums = [];
-  tokens.forEach(function(t){
-    // strip trailing % and currency hints, then test
-    const stripped = t.replace(/%$/,"").trim();
-    const m = stripped.match(/^-?\d{1,7}([\.,]\d+)?$/);
-    if(m){
-      const n = parseFloat(stripped.replace(",","."));
-      if(!isNaN(n)) allNums.push(n);
-    }
-  });
-
-  // Filter: drop obvious year tokens (2018-2030) and drop integers >100000 (likely IDs)
-  const cleaned = allNums.filter(function(n){
-    if(n>=2018 && n<=2030 && Number.isInteger(n)) return false;
-    if(n>100000) return false;
-    return true;
-  });
-
-  // Find textual breadcrumb tokens (non-numeric)
-  const textTokens = tokens.filter(function(t){
-    return !/^-?\d/.test(t) && t!=="х" && t.length>1 && t.length<60;
-  });
-
-  // Detect unit
-  const unit = detectUnit(label, body);
-
-  if(cleaned.length>=3){
-    // Try to infer year labels from ctx.name + ctx.desc + body — find a YYYY-YYYY range
-    const hayAll = (ctx.name||"")+" "+(ctx.desc||"")+" "+body;
-    const rangeM = hayAll.match(/(20\d{2})\s*[\-\u2013\u2014]\s*(20\d{2})/);
-    let series;
-    const vals = cleaned.slice(0,8);
-    if(rangeM){
-      const y1 = parseInt(rangeM[1]); const y2 = parseInt(rangeM[2]);
-      if(y2>=y1 && (y2-y1+1)===vals.length){
-        series = vals.map(function(v,i){return {year:y1+i, value:v};});
-      } else if(y2>=y1){
-        // Align to the end so latest value = y2
-        const start = y2 - vals.length + 1;
-        series = vals.map(function(v,i){return {year:start+i, value:v};});
-      }
-    }
-    if(!series){
-      // Fall back: assume series ends at current data year (2025)
-      const endY = 2025;
-      const start = endY - vals.length + 1;
-      series = vals.map(function(v,i){return {year:start+i, value:v};});
-    }
-    return finalizeTimeseries(label, series, unit, textTokens.slice(-1)[0]||"");
-  }
-  if(cleaned.length===2){
-    const [a,b] = cleaned;
-    const delta = a!==0 ? ((b-a)/Math.abs(a))*100 : null;
-    return {type:"single_metric", label:label, value:b, prev:a, delta:delta, unit:unit, context:textTokens.slice(-1)[0]||""};
-  }
-  if(cleaned.length===1){
-    return {type:"single_metric", label:label, value:cleaned[0], prev:null, delta:null, unit:unit, context:textTokens.slice(-1)[0]||""};
-  }
-
-  // Multi-token textual content with separators -> breakdown of categories
-  if(textTokens.length>=3){
-    return {type:"breakdown", label:label, items:textTokens.slice(0,6)};
-  }
-
-  return {type:"text", label:label, text:body};
+  return result || {type:"text", label:label, text:body};
 }
 
 function looksNumeric(s){return /\d/.test(s);}
@@ -876,7 +720,12 @@ function destroyAllCharts(){
     try{STATE.charts[k].destroy();}catch(e){}
     delete STATE.charts[k];
   });
+  // Also clear pending chart jobs to prevent ghost charts after district switch
+  STATE.pending = [];
 }
+
+// AbortController for in-flight fetches — cancelled when user switches districts rapidly
+var _activeFetch = null;
 
 function flushPendingCharts(){
   STATE.pending.forEach(function(job){
@@ -1171,12 +1020,12 @@ function flushPendingCharts(){
 }
 
 
-async function loadDistrictData(districtId){
+async function loadDistrictData(districtId, signal){
   if(STATE.data[districtId]) return STATE.data[districtId];
   var info = getDistrictAny(districtId);
   if(!info || !info.district.hasData) return null;
   try{
-    var res = await fetch("assets/data/"+info.district.file);
+    var res = await fetch("assets/data/"+info.district.file, signal ? {signal:signal} : {});
     if(!res.ok) return null;
     var data = await res.json();
     STATE.data[districtId] = data;
@@ -1190,15 +1039,15 @@ async function loadDistrictData(districtId){
 var HERO_BG_MAP = {
   shofirkon: "img/shofirkon.jpg",
   gijduvon: "img/gijduvon.jpg",
-  qoqon: "img/qoqon.png",
+  qoqon: "img/qoqon_opt.jpg",
   qoshtepa: "img/qoshtepa.jpg",
   boysun: "img/boysun.jpg",
-  qongirot: "img/kongirat_opt.jpg",
-  qonlikol: "img/konlikol.jpg",
+  qongirot: "img/qongirot_opt.jpg",
+  qonlikol: "img/qonlikol_opt.jpg",
   toxiatosh: "img/taxiatash_opt.jpg",
-  sariosiyo: "img/sariosiyo.png",
-  termiz: "img/termiz.png",
-  surkhandarya_vil: "img/surxondaryo.png"
+  sariosiyo: "img/sariosiyo_opt.jpg",
+  termiz: "img/termiz_opt.jpg",
+  surkhandarya_vil: "img/surxondaryo_opt.jpg"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");
@@ -1216,10 +1065,19 @@ function updateHeroBg(districtId){
 }
 
 async function switchDistrict(regionId, districtId){
+  // Cancel any in-flight fetch from a previous rapid switch
+  if (_activeFetch) { try { _activeFetch.abort(); } catch (e) {} }
+  _activeFetch = (typeof AbortController !== "undefined") ? new AbortController() : null;
+  // Tear down old charts BEFORE building new pages — prevents memory leaks on rapid switches
+  destroyAllCharts();
   STATE.region = regionId;
   STATE.district = districtId;
-  // Load data if not cached
-  await loadDistrictData(districtId);
+  try {
+    await loadDistrictData(districtId, _activeFetch ? _activeFetch.signal : undefined);
+  } catch (e) {
+    if (e && e.name === "AbortError") return; // user switched again, abandon this render
+    console.warn("loadDistrictData failed:", e);
+  }
   updateSelectorUI();
   updateHeroBg(districtId);
   buildSlidePages();
