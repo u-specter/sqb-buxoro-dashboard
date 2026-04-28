@@ -1,0 +1,710 @@
+{
+  "id": "uchtepa",
+  "name_uz": "Учтепа тумани",
+  "name_ru": "Учтепинский район",
+  "name_latin": "Uchtepa tumani",
+  "viloyat": "Toshkent shahri",
+  "type": "shahar tumani (urban)",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "stat.uz", "gov.uz/oz/uchtepa", "Markaziy bank", "Wikipedia (Uchtepa tumani)", "shosh.uz", "toshkent.mehnat.uz", "SQB", "uzswlu.uz", "lex.uz", "goldenpages.uz"],
+
+  "data_quality_note": "🚨 KRITIK: Hokimiyat fayli 2 anomaly bilan keldi: (1) Universitetlar va texnikumlar bo'limlari (19, 20) BO'SH — 2 ta yirik universitet (UzGU MIY va Davlat soliq akademiyasi) tumanda mавjudligini hisobga olganda jiddiy yetishmaslik; web qaytishlash orqali to'ldirilgan; (2) Saneat 2024→2025 da 2.2x SAKRAGAN (6,293 → 13,760 mlrd so'm) — yirik korxonalar 3.2x oshgan deb qайd etilgan, bu g'ayriodda; verifikatsiya zarur. Yana shubhalar: (a) Yo'lovchi airlanmasi 5 yilda 52% pasaygan (236M → 113M) — bu qаttiq tushib ketish; (b) Mehnat resurslari 12.8% kamaygan (168.8 → 147.2 ming); admin chegara o'zgarishi yoki klassifikatsiya o'zgarishi sababi bo'lishi mumkin.",
+
+  "tashkent_2026_strategy_context": {
+    "presidential_decree": "PQ — Toshkent shahar 'Tezkor rivojlanish yili' (16.12.2025 da imzolangan, 2026 ga oid)",
+    "investment_plan_bln_usd_2026": 9,
+    "key_focus_areas": ["Smart City texnologiyalar", "yashil hududlarni kengaytirish", "transport optimizatsiya", "raqamli davlat xizmatlari"],
+    "uchtepa_alignment": "Hokimiyat fayli rejasi (44-indikator: 'Aqlli tuman' kontseptsiyasi) — Toshkent 2026 strategiyasi bilan to'liq mos"
+  },
+
+  "comparison_with_mirzo_ulugbek": {
+    "purpose": "Boshqa Toshkent tumani (Mirzo Ulug'bek) bilan sistemali taqqoslash — ikkalasi 60 mahalla, 305-337 ming aholi, lekin xilma-xil tipologiya",
+    "industry_2025_bln_sum": {"uchtepa": 13760.4, "mirzo_ulugbek": 12319, "winner": "Uchtepa (13,760)"},
+    "services_2025_bln_sum": {"uchtepa": 18866.5, "mirzo_ulugbek": 35931, "winner": "Mirzo Ulug'bek (35,931 — 1.9x ko'p)"},
+    "density_per_km2": {"uchtepa": 1083, "mirzo_ulugbek": 6864, "winner": "Mirzo Ulug'bek (6,864 — 6.3x ko'p)"},
+    "area_km2": {"uchtepa": 28.08, "mirzo_ulugbek": 49.11, "winner": "Mirzo Ulug'bek (kengroq)"},
+    "npl_pct_2025": {"uchtepa": 6.8, "mirzo_ulugbek": 3.6, "winner": "Mirzo Ulug'bek (yaxshiroq) 🥇"},
+    "unemployment_count_2025": {"uchtepa": 13118, "mirzo_ulugbek": 101, "winner": "Mirzo Ulug'bek 🥇 — keskin farq!"},
+    "heavy_mahallas": {"uchtepa": 4, "mirzo_ulugbek": 0, "winner": "Mirzo Ulug'bek 🥇"},
+    "preschool_pct_2025": {"uchtepa": 65.1, "mirzo_ulugbek": 65.1, "winner": "TENG"},
+    "atms": {"uchtepa": 8, "mirzo_ulugbek": "ko'p", "winner": "Mirzo Ulug'bek"},
+    "industrial_zone_use_pct": {"uchtepa": 70.2, "mirzo_ulugbek": 90, "winner": "Mirzo Ulug'bek (to'liqroq)"},
+    "key_distinction": "Uchtepa = 'ko'k yoqali' shahar tumani (savdo-xizmat 87%, ishsizlik 13k, ayollar 74.7%); Mirzo Ulug'bek = 'oq yoqali' shahar tumani (ta'lim, IT, tizimli ishsizlik past); ikkalasi NPL o'sayapti, lekin Uchtepa keskinroq"
+  },
+
+  "demographics": {
+    "population": 305800,
+    "population_density_per_km2": 1083,
+    "area_km2": 28.08,
+    "area_ha": 2808,
+    "mahallas": 60,
+    "families": 63678,
+    "households": 57547,
+    "settlements": {
+      "type": "Toshkent shahar tumani (urban)",
+      "established_date": "1977-09-15",
+      "former_name": "Akmal Ikromov tumani (2005-05-06 gacha)",
+      "creation_context": "Chilonzor va Oktyabr (hozirgi Shayxontohur) tumanlarini ixchamlashtirish maqsadida tashkil etilgan",
+      "viloyat_capital_proximity": "Toshkent shahar markazi — 9.2 km",
+      "construction_started": 1966,
+      "key_addresses": "Hokimiyat: Farxod ko'chasi, 21 (100126); telefon: 71-274-01-54, 71-274-20-77"
+    },
+    "ethnic_groups": ["o'zbeklar (asosij)", "ruslar", "tatarlar", "qozoqlar", "qirg'izlar", "uyg'urlar", "10+ millat"],
+    "borders": {
+      "south_southeast": "Chilonzor tumani (Zargarlik va Guliston ko'chalari)",
+      "west_northwest": "Toshkent viloyati Zangiota tumani (Toshkent halqa yo'li orqali)",
+      "north": "Olmazor tumani / Shayxontohur tumani",
+      "canals": "Bo'zsuv, Qoraqamish, Jararik, Kokча — tuman hududidan o'tadi"
+    },
+    "etymology": "'Uchtepa' = 'uch tepa' (3 tepalik) — geografik xususiyatlardan",
+    "hokim": "Abdullaev Farxod Ravshanovich (2021-05-21 dan)",
+    "ranking_in_tashkent": "Toshkent 12 tumandan biri",
+    "main_streets": ["Lutfij", "Mannon Uyg'ur", "Farxod", "Istirohat", "Foziltepa", "Nazarbek", "Beshqayrag'och", "Kichik Halqa Yo'li"],
+    "main_residential_areas": ["Chilonzor 9a, 11-15, 21-26 kvartallari", "Karvon bozori massivи", "O'rikzor", "Guliston"],
+    "total_streets": 481
+  },
+
+  "economy": {
+    "industry_volume_bln_sum_2025": 13760.4,
+    "industry_growth_pct_2025": 148.2,
+    "industry_growth_5y_multiplier": 2.9,
+    "industry_dynamics_bln_sum": {
+      "2021": 4743.6,
+      "2022": 5430.0,
+      "2023": 4953.3,
+      "2024": 6293.3,
+      "2025": 13760.4
+    },
+    "industry_dynamics_index_pct": {
+      "2021": 105.1, "2022": 105.6, "2023": 108.8, "2024": 110.4, "2025": 148.2
+    },
+    "industry_growth_alert": "🚨 2024→2025 da SAKRAB OSHGAN 2.2x — yirik korxonalar 3.2x oshgan deb qайd etilgan; bu g'ayriodda — verifikatsiya zarur",
+    "industry_breakdown_2025": {
+      "large_enterprises_bln_sum": 8708,
+      "large_enterprises_pct": 63,
+      "small_business_bln_sum": 5052.4,
+      "small_business_pct": 37,
+      "small_business_growth_pct": "+40 (kichik biznes barqaror o'sib bormoqda)"
+    },
+    "services_volume_bln_sum_2025": 18866.5,
+    "services_dynamics_index_pct": 102.4,
+    "retail_trade_bln_sum_2025": 7523.6,
+    "export_volume_usd_thousand_2025": 242,
+    "import_volume_usd_thousand_2025": 533.8,
+    "import_export_ratio": "1:2.2 (impor 2.2x ortiq) — IMPORT bog'liqlik 7.8 baravar oshgan",
+    "import_export_alert": "🚨 1:2.2 ratio — eksport sust, importga jiddiy bog'liqlik; impotrt o'rnini bосиш strategiyasi shoshilinch zarur",
+    "google_trends_score": null,
+    "google_trends_note": "Aholi va biznes kutishlari 5 yilda 52% → 68% (+16 b.p. ijobij); lekin ishsizlikni xalq 6.9% deb baholaydi (rasmij 4.3% dan yuqori)",
+    "economy_drivers_4": [
+      "Chakana savdo: 7,523.6 mlrd so'm",
+      "Bozor xizmatlari: 18,866.5 mlrd so'm",
+      "Saneat: 13,760.4 mlrd so'm (yirik 8,708 + kichik 5,052)",
+      "Mikro-tadbirkorlik: 3,000 lojiha, 6,000 ish ўрни, 120 mlrd so'm"
+    ],
+    "drivers_alert": "🚨 4 drайverdan 3 taси iste'molga yo'naltirilgan — ichki talabga jiddiy bog'liq; saneat klасterи zarur",
+    "specialization_pct": "60%+ xizmatlar sohasiga (savdo + servis); shahar tumani uchun tabiij — lekin diversifikatsiya zarur",
+    "priority_sectors": [
+      "🏆 Uchtepa City mega-loyihasi ($250 mln, 2027-2030) — modern uy-joy + biznes mаjmuаlari",
+      "Yengil saneat va qurilish materiallari (saneat 148% o'sgan асосий drайveri)",
+      "Importing o'rnini bosish (oziq-ovqat, maishij texnika)",
+      "Gastronomik Uchtepa va tunda iqtisodiyot (24/7 Food Street — Lutfij + Farxod)",
+      "Foziltepa madaniyat-meros turizmi (V-X asrlar)",
+      "Smart City texnologiyalar (Toshkent 2026 strategiyasi)",
+      "Online savdo platformalar (mahalla 87% savdo-xizmat)"
+    ],
+    "local_budget_dynamics_bln_sum": {
+      "2021": 157.4, "2022": 163.3, "2023": 169.8, "2024": 189.3, "2025": 182.3
+    },
+    "local_budget_alert": "🚨 2024→2025 da PASAYGAN (189.3 → 182.3 = -3.7%) — kontingent byudjet o'sayotgan paytda (1,367 → 1,420 mlrd) — solig' ishlash mexanizmida muammoni ko'rsatadi",
+    "tax_forecast_bln_sum": {
+      "2021": 53.1, "2022": 59.3, "2023": 65.3, "2024": 72.9, "2025": 82.0
+    },
+    "tax_growth_5y_pct": 54.4,
+    "wage_fund_2025_bln_sum": 325,
+    "wage_fund_growth_pct": 78,
+    "informal_sector_2021": 9633,
+    "informal_tax_loss_bln_sum": 12.6
+  },
+
+  "uchtepa_city_megaproject": {
+    "name": "Uchtepa City",
+    "investment_usd_mln": 250,
+    "timeline": "2027-2030",
+    "concept": "Zamonavij turar-joy + biznes mаjmuаlari + 'A klass' savdo markazlari + yuqori texnologiyali ofis maydonlari",
+    "scope": "Tuman markaziy qismini renovatsiya",
+    "investor_target": "Xorijij va mahalliy TTI (To'g'ridan-to'g'ri investitsiya)",
+    "current_status_2025": "Loyiha-smeta hujjatlari yakunlanyapti; infratuzilma (elektr, yo'l) tayorlash 2025 yil oxirigacha",
+    "expected_outcomes": [
+      "Investitsiya oqimini 3 baravar oshirish (FDI 1.4M → 4-5M$ kutilmoqda)",
+      "Yuqori daromadli iш ўрни yaratish",
+      "Tuman qiyofasini o'zgartirish (chakana savdo bog'liqlikdan ozod qilish)",
+      "Strategiк infratuzilma rejasi: integrirovannaya elektr, yo'l, transport"
+    ],
+    "key_advantage": "🆕 Toshkent 12 tumandan — eng yirik renovatsiya mega-loyihasi 2027-2030 ramkasida"
+  },
+
+  "credits": {
+    "total_credits_bln_sum_2025": 699.6,
+    "credits_dynamics_bln_sum": {
+      "2021": 642.8, "2022": 651.6, "2023": 668.9, "2024": 674.5, "2025": 699.6
+    },
+    "credit_growth_5y_pct": 8.8,
+    "credit_growth_alert": "🚨 ATIGI +8.8% 5 yilda — saneat 190% oshgan paytda kredit deyarli o'smaган; bank-iqtisodiyot disconnect",
+    "small_business_credit_bln_sum_2025": 380.9,
+    "small_business_credit_dynamics_bln_sum": {
+      "2021": 286.6, "2022": 290.9, "2023": 321.5, "2024": 365.0, "2025": 380.9
+    },
+    "small_business_credit_growth_5y_pct": 32.9,
+    "npl_dynamics_pct": {
+      "2021": 4.3, "2022": 4.8, "2023": 5.2, "2024": 6.1, "2025": 6.8
+    },
+    "npl_alert": "🚨🚨 NPL 5 yilda +58.1% O'SAGAN (4.3 → 6.8%) — kreditlar kalitati pasaymoqda; 9 tumanlar ichida Mirzo Ulug'bek (3.6%) dan jiddiy yomon, Termiz (6.7%) bilan teng",
+    "fdi_2025_usd_mln": 1.4,
+    "fdi_growth_5y_multiplier": 3.1,
+    "credit_plan_2026_bln_sum": 300,
+    "credit_plan_2026_pct_of_2025_portfolio": 43,
+    "loyiha_fabrikasi": {
+      "active_microprojects_2025": 3000,
+      "jobs_2025": 6000,
+      "value_2025_bln_sum": 120,
+      "growth_2024_2025_pct": 66.7,
+      "agro_food_projects": 15,
+      "agro_food_value_bln_sum": 30
+    }
+  },
+
+  "infrastructure": {
+    "water_supply_pct_2025": 100,
+    "water_supply_dynamics_pct": {
+      "2021": 98.0, "2022": 99.2, "2023": 99.7, "2024": 99.3, "2025": 100.0
+    },
+    "water_supply_advantage": "🥇 100% qoplam 2025 da; Toshkent 2 tumanidan biri (Mirzo Ulug'bek bilan teng)",
+    "sewerage_pct": 95,
+    "sewerage_alert": "Qolgan 5% (asosан 4 ta og'ir mahalla — Qumqayroq, Mustaqillik, Markaz va boshqa) — manzilli loyiha zarur",
+    "irrigation_canal_concrete_pct": 80,
+    "irrigated_land_ha": 300,
+    "roads_total_km": "180-300",
+    "roads_asphalted_pct": 100,
+    "roads_advantage": "🥇 100% asfalt 5 yil davomida (Toshkent shahar standarti)",
+    "roads_alert": "Tirbandlik SWOT taхдид; ko'cha kengaytirish va alternativ marshrutlar zarur",
+    "annual_passenger_thousand_dynamics": {
+      "2021": 236028.1,
+      "2022": 158208.4,
+      "2023": 136938.6,
+      "2024": 152235.6,
+      "2025": 113268.0
+    },
+    "passenger_alert": "🚨🚨 5 yilda -52% pasaygan! 236M → 113M; shaxsij avtomobil ortishi va transport infratuzilma eskirishi sababli; metro/BRT laingenglarini kengaytirish zudlik bilan zarur",
+    "distance_to_railway_km": 8,
+    "distance_to_viloyat_center_km": 9.2,
+    "highway_a378": "mавjud emas (a-378 magistral tumandan o'tmaydi)",
+    "electricity": {
+      "outages_per_month_avg": 1,
+      "outages_advantage": "🥇 1 marta/oy — Toshkent standarti, eng yaxshi 9 tumanlar ichida",
+      "old_transformers_pct": 25,
+      "lines_need_replacement_pct": 40,
+      "lines_alert": "🚨 40% liniya modernizatsiya kerak — saneat 2.2x oshgan paytda 2-3 yil ichida muammo bo'lishi mumkin",
+      "internet_coverage_pct": "yuqori (Toshkent shahar standarti)",
+      "gas_supply_pct": 100,
+      "gas_advantage": "🥇 100% gaz qoplam — Toshkent standarti"
+    },
+    "land": {
+      "total_ha": 2808,
+      "industrial_zone_use_pct": 70.2,
+      "industrial_zone_empty_pct": 29.8,
+      "industrial_zone_empty_ha_estimate": 250,
+      "industrial_zone_advantage": "29.8% bo'sh joy (taхминан 250 ga) — 4-5 ta yangi korxona va 1,500-2,000 ish ўрни potensiali",
+      "current_industrial_zone": "1 saneat zona, 2 korxona, 700 ish ўрни (boshqa Toshkent tumanlardan past)",
+      "obodanlashtirish_ha": 486,
+      "obodanlashtirish_pct": 20,
+      "agricultural_land": "MAVJUD EMAS (shaxar tipidagi tuman)"
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct_2025": 65.1,
+      "coverage_dynamics_pct": {
+        "2021": 52.0, "2022": 55.5, "2023": 56.6, "2024": 60.5, "2025": 65.1
+      },
+      "coverage_growth_5y_pp": 13.1,
+      "coverage_alert": "🚨 65.1% qamrov — shahar tumani uchun PAST (Mirzo Ulug'bek 65.1%, Karmana 95.5%, Termiz 91.1% bilan farqli); 34.9% qamrov tashqarisida; Resp maqsadi 100% (2030)",
+      "state_mtt": 50,
+      "schools": {
+        "general": 32,
+        "specialized_foreign_languages": 1,
+        "private": 1,
+        "barkamol_avlod": 1,
+        "two_shift_schools": 25,
+        "one_shift_schools": 40,
+        "total_capacity": 65,
+        "alert": "🚨 25 ta 2-сменali maktab — sig'im muammo; 60 mahalla aholiya 305k uchun yetishmaydi"
+      },
+      "child_benefit_families": 2499
+    },
+    "higher_education": {
+      "universities_in_district": 3,
+      "universities_list": [
+        "O'zbekiston Davlat Jahon Tillari Universiteti (UzGU MIY) — Zakovat 4",
+        "Davlat Soliq Akademiyasi",
+        "Fiskal Instituti"
+      ],
+      "advantage": "3 ta универsitет — Toshkent shahar 12 tumandan o'rtacha mavqe (Mirzo Ulug'bek 4 ta universitet bilan farqli)",
+      "professional_colleges": 5,
+      "key_college": "Toshkent yuridik kolleji",
+      "alert": "Hokimiyat fayli 19-20 indikatorлari BO'SH — universitet ma'lumotlari yo'qotilgan; Wikipedia orqali to'ldirilgan"
+    }
+  },
+
+  "labor": {
+    "total_resources_dynamics_thousand": {
+      "2021": 168.863, "2022": 164.120, "2023": 156.483, "2024": 158.120, "2025": 147.200
+    },
+    "total_resources_change_5y_pct": -12.8,
+    "total_resources_alert": "🚨 5 yilda 21,663 nafar KAMAYGAN — bu tushuntirish kerak: aholi qarish, migratsiya, yoki klassifikatsiya o'zgarishi; Toshkent shahar tumani uchun g'ayriodda",
+    "employed_2025": 98600,
+    "employed_change_yoy_pct": -4.7,
+    "informal_employment_2021": 9633,
+    "returned_migrants_2025": 2875,
+    "returned_migrants_growth_pct": 8.3,
+    "unemployment_pct_2025": 4.3,
+    "unemployment_dynamics_pct": {
+      "2021": 6.3, "2022": 5.8, "2023": 5.3, "2024": 4.5, "2025": 4.3
+    },
+    "unemployment_count_2025": 13118,
+    "unemployment_target_2027_pct": 2.0,
+    "unemployment_decline_5y_pp": -2.0,
+    "unemployment_alert": "🚨 13,118 nafar ishsiz — 9 tumanlar ichida ENG KO'P (Mirzo Ulug'bek atigi 101!); rasmij 4.3% lekin xalq idroki 6.9% — coomunication gap",
+    "youth_unemployed_16_30": 1504,
+    "unemployed_women": 9798,
+    "women_unemployed_pct_of_total": 74.7,
+    "women_unemployment_alert": "🚨🚨 AYOLLAR ISHSIZLIGI 74.7% (9,798/13,118) — 9 tumanlar ichida ENG OG'IR; HAMROH dasturi prioritet #1",
+    "men_unemployed_pct": 13.8,
+    "poverty_pct_2025": 1.9,
+    "poverty_dynamics_pct": {
+      "2021": 8.3, "2022": 8.1, "2023": 7.8, "2024": 7.4, "2025": 1.9
+    },
+    "poverty_decline_5y_pp": -6.4,
+    "poverty_advantage": "🏆 8.3% → 1.9% (5 yilda 4.4x kamaygan); Mirzo Ulug'bek bilan teng — 5,057 oilaga tushgan",
+    "poor_families_2025": 5057,
+    "low_income_families": 5057,
+    "mahalla_categories": {
+      "heavy_ogir": 4,
+      "medium_orta": 24,
+      "easy_yengil": 30,
+      "good_yaxshi": 0,
+      "total": 58,
+      "remainder_unaccounted": 2,
+      "alert": "🚨 4 ta og'ir mahalla — Mirzo Ulug'bek (0 og'ir) dan jiddiy farqli; Sariosiyo (13) dan yaxshi"
+    }
+  },
+
+  "tourism_and_culture": {
+    "type": "Madaniy meros + tarixiy yodgorliklar (V-XII asrlar)",
+    "key_attractions": [
+      {
+        "name": "Foziltepa arxeologik yodgorligi",
+        "period": "V-X asrlar",
+        "status": "Respublika ahamiyatidagi me'morij yodgorlik",
+        "potential": "Ochiq osmon ostidagi muzey + arxeologik park",
+        "current_status": "Renovatsiya va ободонлашtirish зaрур",
+        "key_advantage": "Toshkent ichidagi UCHASTOK arxeologik turistik mahsulot — yangi niche"
+      },
+      {
+        "name": "Cho'pon ota majmuаsi",
+        "period": "XVII asr",
+        "status": "Respublika ahamiyatidagi me'morij yodgorlik"
+      },
+      {
+        "name": "Saidvaqqos masjidi",
+        "period": "Tarixiy",
+        "status": "Mahaliy madaniy meros ob'ekti"
+      }
+    ],
+    "cultural_facilities": {
+      "kinoteatr": "Vatan",
+      "park": "Bog'ishamol madaniyat va istirohat bog'i",
+      "madaniyat_uylari": 2,
+      "tennis_korti": 2,
+      "swimming_pools": 10,
+      "sport_zali": 58,
+      "sport_maydoncha": 183
+    },
+    "key_markets": ["Karvon bozori", "Farxod dehqon bozori"],
+    "gastronomic_uchtepa_concept": {
+      "streets": ["Lutfij ko'chasi", "Farxod ko'chasi"],
+      "concept": "24/7 Food Street + bren do'konlar",
+      "expected_services_growth_pct": "15-20",
+      "key_advantage": "'Yotoqxона tumani' dan keluvchi tadbirkorlikсиз joyga aylantirib, daromad oqimini ushlab qolish"
+    }
+  },
+
+  "trade": {
+    "main_drivers": "Chakana savdo (7,523 mlrd) + bozor xizmatlari (18,866 mlrd) — 60%+ iqtisodiyot",
+    "key_markets": ["Karvon bozori (asosij)", "Farxod dehqon bozori"],
+    "import_substitution_priority": "🚨 Import 1:2.2 ratio — eksport sust; 5 deficit товар (oziq-ovqat polуfabrikat, maishij texnika, qurilish materiallari) — 'Loyiha fabrikasi' 15 lojiha 30 mlrd so'm",
+    "online_commerce_concept": "60+ MFY savdo-xizmatga ixtisoslashgan — online platformalar potensiali katta"
+  },
+
+  "mahalla_economy": {
+    "total": 60,
+    "advantage": "Mirzo Ulug'bek bilan teng (60); o'rtacha shahar tumani uchun",
+    "by_specialization": {
+      "trade_service_savdo_xizmat": {"count": 52, "pct": 87, "alert": "🚨 87% savdo-xizmat — eng yuqori konsentratsiya 9 tumanlar ichida; saneat va ishlab chiqarish kam"},
+      "industry_ishlab_chiqarish": {"count": 8, "pct": 13}
+    },
+    "by_category": {
+      "heavy_ogir": 4,
+      "medium_orta": 24,
+      "easy_yengil": 30,
+      "good_yaxshi": 0
+    },
+    "drivers_main": "1 ta drайver sektor — savdo va xizmat ko'rsatish",
+    "drivers_alert": "🚨 Faqat 1 ta drайver — diversifikatsiya zaрур; saneat 8 ta MFY potensiali jonlantirish"
+  },
+
+  "banking_programs": {
+    "sqb_branches": 2,
+    "atms": 8,
+    "atms_alert": "🚨 Atigi 8 ATM 305.8k aholi uchun — 9 tumanlar ichida eng past (Termiz 22 dan ham past!); raqamli infratuzilma sust",
+    "other_banks": 5,
+    "bank_staff_total": 72,
+    "mahalla_bankirs": 30,
+    "mahalla_bankirs_growth_2024_2025": "16 → 30 (+87.5%)",
+    "mahalla_bankirs_for_60_mahallas": "1 bankir 2 mahallaga — Karmana (1/1) dan past, lekin yaxshi ko'rsatkich (Termiz 1/5)",
+    "mahalla_bankirs_gender": {"women": 40, "men": 32},
+    "women_bankirs_pct": 55.6,
+    "women_bankirs_advantage": "🥇 55.6% ayol bankir — 9 tumanlar ichida eng yuqori! Karmana 21%, Shahrixon 30%, Termiz 30% bilan farqli",
+    "women_bankirs_data_anomaly": "40+32=72 (jami bank ходimlari soni!) — 30 ta mahalla bankiri ichida 40 nafar ayol bo'lib bo'lmaydi; verifikatsiya kerak. Ehtimol jami 72 ходимда 40 ayol+32 erkak.",
+    "hamroh_priority": {
+      "max_amount_mln_sum": 100,
+      "guarantee_pct": 70,
+      "key_target": "9,798 ayol ishsiz (74.7%) — HAMROH ENG USTUVOR vosita",
+      "best_for": ["online savdo", "kафe-restoран (24/7 Food Street)", "premium MTT", "tikuvchilik", "go'zallik salon"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "current_npl_pct": 6.8,
+      "npl_alert": "🚨 6.8% — Mirzo Ulug'bek (3.6%) dan jiddiy yomon"
+    },
+    "micro_projects_2025": {
+      "total_projects": 3000,
+      "jobs": 6000,
+      "value_bln_sum": 120,
+      "growth_pct_yoy": 66.7,
+      "advantage": "9 tumanlar ichida ENG KATTA mikrolojiha portfeli (Shahrixon 790, Termiz 300)"
+    },
+    "credit_products": [
+      "Mikrokredit",
+      "Oilavij tadbirkorlik (Har bir oila)",
+      "Davlat subsidiyaси",
+      "Avtokrredit",
+      "Ipoteka (Uchtepa City uchun)",
+      "Biznesga birinchi qadam",
+      "HAMROH (ayollar uchun)"
+    ]
+  },
+
+  "strengths": [
+    {
+      "title": "🏆 Saneat 5 yilda 2.9x oshgan (eng katta absolut)",
+      "detail": "4,743 → 13,760 mlrd so'm (yaxshilanish); 9 tumanlar ichida ENG KATTA absolut saneat hajmi (Mirzo Ulug'bek 12,319 dan ham yuqori)"
+    },
+    {
+      "title": "🆕 'UCHTEPA CITY' MEGA-LOYIHASI $250 mln",
+      "detail": "2027-2030 tasdiqlangan; Toshkent 12 tumandan eng yirik renovatsiya; FDI 3x oshish kutilmoqda; yuqori daromadli iш ўрni potensiali"
+    },
+    {
+      "title": "🥇 Suv 100% va asfalt 100% (Toshkent standart)",
+      "detail": "Toshkent shahar yashash sifati eng yuqori — Mirzo Ulug'bek bilan teng; yashash uchun qulay"
+    },
+    {
+      "title": "🥇 Elektr узилишi 1 marta/oy + Gaz 100%",
+      "detail": "9 tumanlar ichida eng yaxshi infratuzilma; saneat va xizmat uchun barqaror"
+    },
+    {
+      "title": "🥇 55.6% ayol bankirlar (eng yuqori)",
+      "detail": "9 tumanlar ichida ENG ko'p ayol bankir (Karmana 21%, Shahrixon 30%, Termiz 30%); HAMROH dasturi uchun kuchli baza"
+    },
+    {
+      "title": "Kambag'allik 5 yilda 4.4x kamaygan",
+      "detail": "8.3% → 1.9% (5,057 oilaga tushgan); Mirzo Ulug'bek bilan teng kuchli pasayyon trend"
+    },
+    {
+      "title": "3,000 mikrolojiha 2025 (eng katta portfel)",
+      "detail": "9 tumanlar ichida ENG KATTA portfel (Shahrixon 790, Termiz 300); +66.7% YoY o'sish; 6,000 ish ўрnи"
+    },
+    {
+      "title": "3 ta universitet tumanda",
+      "detail": "UzGU MIY (Jaxon Tillari), Davlat Soliq Akademiyasi, Fiskal Instituti — premium kadr potensiali"
+    },
+    {
+      "title": "Toshkent shahar markaziga 9.2 km",
+      "detail": "Logistika qulay; Toshkent shahar 12 tumandan birі — Toshkent 2026 strategiyasi (PQ 16.12.2025 — $9 mlrd)"
+    },
+    {
+      "title": "Foziltepa V-X asr arxeologik yodgorlik",
+      "detail": "Toshkent ichida unique arxeologik turistik mahsulot; ochiq osmon ostidagi muzey potensiali"
+    },
+    {
+      "title": "Mahalla bankirlari 16 → 30 (+87.5% YoY)",
+      "detail": "Toshkent 12 tumandan eng tez o'sayotgan mahalla bankir tarmog'i"
+    },
+    {
+      "title": "Saneat zonasi 29.8% bo'sh joy (250 ga)",
+      "detail": "4-5 yangi korxona + 1,500-2,000 iш ўрni potensiali; Mirzo Ulug'bek (10%) bilan farqli — fursat katta"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "🚨🚨 NPL 5 yilda +58.1% (4.3 → 6.8%)",
+      "severity": "YUQORI",
+      "data": "Saneat 190% oshgan paytda kredit deyarli o'smaган (+8.8%); NPL keskin o'sayapti — kredit sifati pasaymoqda",
+      "opportunity": "AI Credit Scoring + 'Mahalla bankir' biznes-trener sektor; NPL mониторинг markazi",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["IT/AI tajribasi", "moliya tajribasi", "biznes konsulting"]
+    },
+    {
+      "gap": "🚨🚨 AYOLLAR ISHSIZLIGI 74.7% (9,798)",
+      "severity": "YUQORI",
+      "data": "9 tumanlar ichida ENG OG'IR ayol ishsizlik konsentratsiyasi; 4 og'ir mahallada eng yomon",
+      "opportunity": "HAMROH 100 mln so'm garovsiz; tikuvchilik klасteri, online savdo, Foziltepa hunarmandchilik, premium MTT, restoран-kафе",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["aёllar (HAMROH)", "to'qimачилik tajribasi", "premium xizmat"]
+    },
+    {
+      "gap": "🚨🚨 Yo'lovchi tashish -52% 5 yilda (236M → 113M)",
+      "severity": "YUQORI",
+      "data": "Jamoat transporti rakushiv pasaygan — shaxsij avtomobil ortadi, infratuzilma eskirayapti, tirbandlik оrtmoqda",
+      "opportunity": "BRT (Bus Rapid Transit) lojiha; electrobus tarmog'i; bike-sharing; ride-sharing maxsus zona",
+      "investment_range_mln_sum": "100-3000",
+      "suitable_for": ["transport tajribasi", "yirik investor", "DXSh sherigi"]
+    },
+    {
+      "gap": "🚨 IMPORT/EKSPORT ratio 1:2.2",
+      "severity": "YUQORI",
+      "data": "Importing 7.8x oshgan; eksport sust ($242k); 5 deficit товар (oziq-ovqat, texnika)",
+      "opportunity": "Importing o'rnini bосиш — agro-saneat (15 lojiha 30 mlrd so'm 'Loyiha fabrikasi'); maishij texnika YIG'ISH (BYD, Avantage Russia)",
+      "investment_range_mln_sum": "100-2000",
+      "suitable_for": ["saneat tajribasi", "halqaro hamkor", "agro biznes"]
+    },
+    {
+      "gap": "🚨 4 ta og'ir mahalla (eng ko'p Toshkentda)",
+      "severity": "YUQORI",
+      "data": "Mirzo Ulug'bek (0 og'ir) dan jiddiy farqli; ishsizlik 4 mahallada to'plangan; ayollar 74.7%",
+      "opportunity": "'Bir mahalla bir drайver' modeli; har og'ir MFY ga 2 ta yakorь loyiha (HAMROH + premium MTT)",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["maxalliy aholi", "ayollar", "jaмiyat tashkilotlari"]
+    },
+    {
+      "gap": "🚨 Pre-school qamrov 65.1% — Toshkent 2030 ga 100% reж",
+      "severity": "O'RTA-YUQORI",
+      "data": "Mirzo Ulug'bek bilan teng past; Karmana (95.5%) dan keskin past; 25 ta 2-сменali maktab",
+      "opportunity": "Premium MTT, mini-bog'cha, kasb-mахсus o'qitish (тил, STEM, IT bolalar uchun)",
+      "investment_range_mln_sum": "100-500",
+      "suitable_for": ["pedagogik ma'lumot", "premium xizmat", "ayollar (HAMROH)"]
+    },
+    {
+      "gap": "🚨 Saneat zonasi 29.8% bo'sh — kapasitета past",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "Atigi 1 ta zone, 2 korxona, 700 iш ўрни — Mirzo Ulug'bek (90% to'lgan, 42 korxona) dan keskin past",
+      "opportunity": "Vertical Industry (kop qavatli zavod), yengil saneat, qurilish materiallari, mavlash texnika yig'ish",
+      "investment_usd_mln": "5-50",
+      "suitable_for": ["yirik investor", "halqaro hamkor", "saneat tajribasi"]
+    },
+    {
+      "gap": "🚨 Mahalliy byudjet 2024→2025 PASAYGAN",
+      "severity": "O'RTA",
+      "data": "189.3 → 182.3 mlrd (-3.7%); kontingent byudjet o'sayotgan paytda — solig' yig'ish past",
+      "opportunity": "Buxgalteriya autsorсing, soliq optimizatsiya, raqamli soliq xizmati",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "huquqshunоs"]
+    },
+    {
+      "gap": "Foziltepa V-X asr restorace zaрур",
+      "severity": "O'RTA (FURSAT)",
+      "data": "Respublika ahamiyatidagi yodgorlik — lekin renovatsiya va ободонлашtirish kutmoqda; turist potensiali ишлатилmagan",
+      "opportunity": "Ochiq osmon ostidagi muzey + arxeologik park; meхmonxona-ot kompleksi; gastrотурmagik yo'l",
+      "investment_mln_sum": "50-500",
+      "suitable_for": ["turizm tajribasi", "restavratsiya tajribasi", "DXSh"]
+    },
+    {
+      "gap": "Norasmij sektor 9,633 nafar (12.6 mlrd so'm soliq yo'qotish)",
+      "severity": "O'RTA",
+      "data": "60+ MFY savdo-xizmatga ixtisoslashgan — kichik biznes ko'p, lekin rasmiyлаштириш sust",
+      "opportunity": "ChP/MChJ konsulting, soliq xizmati, raqamli soliq plat forma",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/buxgalteriya tajribasi"]
+    },
+    {
+      "gap": "ATM atigi 8 ta (eng past 9 tumanlar ichida)",
+      "severity": "O'RTA",
+      "data": "305.8k aholi uchun 8 ATM — 38,000 kishi/ATM nisbati (Termiz 22 ATM bilan ham yomon); raqamli infratuzilma sust",
+      "opportunity": "ATM tarmoq kengaytirish (DXSh), Cash-in/Cash-out terminallar, ko'k yoqali xizmat fintech",
+      "investment_mln_sum": "50-500",
+      "suitable_for": ["bank biznes", "fintech operator"]
+    },
+    {
+      "gap": "Aholi kutishlari ijobij 68%, lekin ishsizlik idroki 6.9% (rasmiy 4.3% dan past)",
+      "severity": "O'RTA",
+      "data": "Kommunikatsiya gap — real ютуqlar aholiga yetganda; 13,118 ishsiz idroki 6.9% ni tasdiqlaydi",
+      "opportunity": "PR-kompaniya, кommunication strategy, yangiликlar markazi",
+      "investment_range_mln_sum": "20-100",
+      "suitable_for": ["PR/marketing", "ijtimoiy media tajribasi"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Uchtepa City rezident biznes ($250M mega-loyiha)",
+      "type": "Premium uy-joy / 'A klass' biznes-markaz / yuqori tex офис maydoни / lyuks savdo / fintech kompaniya",
+      "why_uchtepa": "🆕 Davlat dasturi tasdiqlangan 2027-2030; FDI 3x oshish kutilmoqda; Toshkent 12 tumandan eng yirik renovatsiya; infratuzilma (elektr, yo'l) 2025 oxirigacha tayor; halqaro investorlar diqqati",
+      "investment_usd_mln": "1-50",
+      "monthly_income_estimate_mln_sum": "50-500",
+      "payback_years": "5-7",
+      "suitable_for": ["yirik investor", "halqaro hamkor", "real estate tajribasi"],
+      "bank_product": "SQB Ipoteka yoki XIH (FDI)",
+      "risk": "Boshlang'ich kapital katta; 2027-2030 muddat uzoq"
+    },
+    {
+      "rank": 2,
+      "sector": "Aёllar uchun online biznes va premium xizmat (HAMROH)",
+      "type": "Online tikuv platforma / premium MTT / kафе-restoран / go'zallik salon / Foziltepa hunarmand brendи",
+      "why_uchtepa": "🚨 9,798 ayol ishsiz (74.7% — 9 tumanlar ichida ENG OG'IR); HAMROH 100 mln so'm garovsiz; 55.6% ayol bankir (eng yuqori) — qo'llab tarmog'i kuchli; Karvon va Farxod bozorlar yaqinida",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "1-3",
+      "suitable_for": ["aёllar", "tikuvchilik tajribasi", "premium xizmat"],
+      "bank_product": "HAMROH (eng qulay)",
+      "risk": "Bozor raqobat; online platforma raqobat"
+    },
+    {
+      "rank": 3,
+      "sector": "Gastronomik Uchtepa va 24/7 tunda iqtisodiyot",
+      "type": "Food Street kафе-restoран (Lutfij + Farxod) / brending do'kon / 24/7 servis / fast-food network",
+      "why_uchtepa": "Hokimiyat strategik dasturi tasdiqlangan; aholi zichligi 1,083/km² — 'qaynоq nuqta'; xizmatlar +15-20% o'sish maqsad; mahalla 87% savdo-xizmat; 2 ta yirik bozor (Karvon, Farxod)",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["restoран tajribasi", "francaйз operator", "ayollar (HAMROH)"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Raqobat; ijara qimmat"
+    },
+    {
+      "rank": 4,
+      "sector": "Vertical Industry (kop qavatli zavod) saneat zonasiда",
+      "type": "3-5 qavatli yengil saneat (tikuvchilik / elektronika yig'ish / qurilish materiallari)",
+      "why_uchtepa": "Saneat zonasi 29.8% bo'sh (250 ga); saneat 148.2% oshgan — bo'sh joy уchun talab katta; Toshkent 2026 PQ ramkasida $9 mlrd; saneat 2024→2025 da 2.2x sakragan",
+      "investment_usd_mln": "5-30",
+      "monthly_income_estimate_mln_sum": "100-500",
+      "payback_years": "5-7",
+      "suitable_for": ["yirik investor", "halqaro hamkor", "saneat tajribasi"],
+      "bank_product": "SQB sanoat kreditlari yoki XIH",
+      "risk": "Texnik investitsiya katta"
+    },
+    {
+      "rank": 5,
+      "sector": "Importing o'rnini bосиш — agro-oziq-ovqat polуfabrikat",
+      "type": "Yarim tayer mahsulotlar (полуfabrikat) / muzlash zavod / qadoqlash markazi / brending mahsulotlar",
+      "why_uchtepa": "🚨 Importing 1:2.2 ratio; 5 deficit товар; Karvon va Farxod bozorlar yaqin; 63k oila (305k aholi) iste'mol bozori; Loyiha fabrikasi 15 lojiha 30 mlrd so'm",
+      "investment_mln_sum": "200-1500",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "3-5",
+      "suitable_for": ["agro tajribasi", "saneat tajribasi", "B2B savdo"],
+      "bank_product": "Loyiha fabrikasi yoki Agro bank",
+      "risk": "HACCP sertifikat; raqobat"
+    },
+    {
+      "rank": 6,
+      "sector": "AI Credit Scoring va biznes-trener (NPL 6.8%)",
+      "type": "AI credit scoring platforma / biznes-akselerator / mahalla bankir IT yordamchi",
+      "why_uchtepa": "🚨 NPL 6.8% va o'sayapti — AI scoring eng kerak; 30 ta mahalla bankiri qo'llab; saneat 2.2x oshgan — kredit talab ham oshyapti; Mahalla bankir 87.5% YoY — bozor o'sayapti",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["IT/AI tajribasi", "moliya tajribasi", "biznes konsulting"],
+      "bank_product": "Yoshlar biznesda yoki SQB biznes kreditlari",
+      "risk": "Bozor formирование sekin"
+    },
+    {
+      "rank": 7,
+      "sector": "Foziltepa madaniyat-meros turizmi va arxeologiya",
+      "type": "Ochiq osmon ostidagi muzey / arxeologik park / meхmonxона-ot kompleksi / gastrотурmagik yo'l",
+      "why_uchtepa": "Foziltepa V-X asr (Respublika ahamiyatidagi); Toshkent ichida ENG yagona arxeologik turistik mahsulot; renovatsiya kerak; Cho'pon ota XVII asr + Saidvaqqos masjidi qo'shni",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "3-5",
+      "suitable_for": ["turizm tajribasi", "restavratsiya tajribasi", "DXSh sherigi"],
+      "bank_product": "SQB biznes kreditlari yoki davlat dasturi",
+      "risk": "Litsenziyalar; mavsumiylik"
+    },
+    {
+      "rank": 8,
+      "sector": "Smart Transport — BRT, electrobus, bike-sharing",
+      "type": "BRT pilot maрshrut / electrobus tarmog'i / bike-sharing / ride-sharing maxsus zona",
+      "why_uchtepa": "🚨 Yo'lovchi tashish -52% 5 yilda — falokat; Toshkent 2026 strategiyasida 'transport optimizatsiyasi' birinchi prioritet; Uchtepa City Smart City komponеnti",
+      "investment_mln_sum": "100-3000",
+      "monthly_income_estimate_mln_sum": "10-100",
+      "payback_years": "5-7",
+      "suitable_for": ["transport tajribasi", "yirik investor", "DXSh sherigi"],
+      "bank_product": "SQB biznes kreditlari yoki DXSh dasturi",
+      "risk": "Tarif tartibga solish; davlat siyosati"
+    },
+    {
+      "rank": 9,
+      "sector": "Premium MTT va xususij maktab",
+      "type": "Premium MTT / mini-bog'cha / тил-STEM-IT markazi / kasb mахсus",
+      "why_uchtepa": "🚨 Pre-school 65.1% past (Toshkent 2030 ga 100%); 25 ta 2-сменали maktab; 63,678 oila iste'mol bozor; HAMROH 100 mln (ayollar uchun)",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumot", "premium xizmat"],
+      "bank_product": "HAMROH (ayollar) yoki Har bir oila tadbirkor",
+      "risk": "Litsenziya jarayoni; kadrlar"
+    },
+    {
+      "rank": 10,
+      "sector": "Premium retail va lyuks brand",
+      "type": "Lyuks dukan / branded shop / premium beauty saloni / boutique hotel",
+      "why_uchtepa": "Aholi zichligi 1,083/km²; 'Yotoq tumani' tanqidi — premium servis sust; Karvon va Farxod bozorlar yaqin; Uchtepa City keluvchi boy aholi",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["chakana savdo tajribasi", "francaйз operator"],
+      "bank_product": "Har bir oila tadbirkor yoki Biznesga birinchi qadam",
+      "risk": "Raqobat; ijara qimmat"
+    },
+    {
+      "rank": 11,
+      "sector": "ATM va fintech tarmoqi (rakamli infratuzilma)",
+      "type": "ATM tarmoq kengaytirish / Cash-in terminal / mobil tо'lov terminal / fintech servis",
+      "why_uchtepa": "🚨 Atigi 8 ATM 305.8k aholi uchun (eng past); 30 ta mahalla bankiri (87.5% o'sgan); raqamli xizmat aspiratsiyasi yuqori; SQB Mobile + AI Advisor platformalari fаоl",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "5-7",
+      "suitable_for": ["bank biznes", "fintech operator"],
+      "bank_product": "SQB biznes kreditlari yoki bank sherigi",
+      "risk": "Litsenziya; raqobat"
+    },
+    {
+      "rank": 12,
+      "sector": "Buxgalteriya va konsalting (norasmiy → rasmiy)",
+      "type": "Buxgalteriya autsorsing / ChP/MChJ konsulting / soliq xizmati / digital ledger",
+      "why_uchtepa": "Norasmij sektor 9,633 nafar = 12.6 mlrd so'm soliq yo'qotish; mahalla 87% savdo-xizmat — ko'p kichik biznes; mahalliy byudjet pasaygan — solig' yig'ish prioritet",
+      "investment_mln_sum": "5-50",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "huquqshunоs"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Past barаr boshlang'ich"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Uchtepa tumani (Toshkent shahri) — 305.8 ming aholi, 60 mahalla (Mirzo Ulug'bek bilan teng), 63,678 oila, 28.08 km² maydon, aholi zichligi 1,083 kishi/km² (Mirzo Ulug'bek 6,864/km² dan 6.3x past), Toshkent shahar markaziga 9.2 km, temir yo'l 8 km. Tumani 1977-09-15 da Akmal Ikromov tumani sifatida tashkil etilgan, 2005-05-06 da Uchtepa nomini olgan. Hokim — Abdullaev Farxod Ravshanovich. KUCHLI TOMONLARI: (1) 🏆 SANEAT 5 yilda 2.9x oshgan (4,743→13,760 mlrd so'm) — 9 tumanlar ichida ENG KATTA absolut hajm; (2) 🆕 'UCHTEPA CITY' MEGA-LOYIHASI $250 mln (2027-2030); (3) 🥇 Suv 100% va asfalt 100% (Toshkent standart); (4) 🥇 Elektr узилишi 1 marta/oy + Gaz 100%; (5) 🥇 55.6% ayol bankirlar (eng yuqori 9 tumanlar ichida); (6) Kambag'allik 5 yilda 4.4x kamaygan (8.3%→1.9%); (7) 3,000 mikrolojiha 2025 (eng katta portfel, +66.7% YoY); (8) 3 ta universitet (UzGU MIY, Soliq akademiyasi, Fiskal instituti); (9) Foziltepa V-X asr arxeologik yodgorlik; (10) Mahalla bankirlari 16→30 (+87.5% YoY); (11) Saneat zonasi 29.8% bo'sh joy (250 ga); (12) Toshkent 2026 PQ 16.12.2025 ramkasi ($9 mlrd). PROBLEMALAR va IMKONIYATLAR: (1) 🚨🚨 NPL 5 yilda +58.1% (4.3→6.8%) — Mirzo Ulug'bek (3.6%) dan jiddiy yomon; (2) 🚨🚨 AYOLLAR ISHSIZLIGI 74.7% (9,798/13,118) — 9 tumanlar ichida ENG OG'IR; (3) 🚨🚨 YO'LOVCHI TASHISH -52% 5 yilda (236M→113M) — falokat trend; (4) 🚨 IMPORT/EKSPORT 1:2.2 — eksport sust; (5) 🚨 4 og'ir mahalla (Mirzo Ulug'bek 0 dan keskin farqli); (6) 🚨 Pre-school qamrov 65.1% past; (7) 🚨 ATM atigi 8 ta — eng past 9 tumanlar ichida; (8) Norasmiy sektor 9,633 nafar; (9) Mahalliy byudjet pasaygan 2024→2025; (10) Foziltepa restavratsiya kerak; (11) Ish ishsizlikni xalq 6.9% deb baholaydi (rasmij 4.3%); (12) Mehnat resurslari 12.8% kamaygan. BANK MAHSULOTLARI: HAMROH (ayollar uchun ENG USTUVOR — 9,798 ayol ishsiz uchun!), Har bir oila tadbirkor (300 mln, 18%, NPL 6.8% — kritik!), 'Loyiha fabrikasi' 3,000 mikrolojiha 120 mlrd so'm, 2026 kredit reжa 300 mlrd. ASOSIY DRAYVERLAR: Uchtepa City rezident biznes, ayollar uchun online biznes/HAMROH, gastronomik Uchtepa 24/7, Vertical Industry, importing o'rnini bосиш agro-oziq-ovqat, AI Credit Scoring, Foziltepa turizm, Smart Transport BRT/electrobus, premium MTT.",
+
+  "ai_prompt_context_ru": "Учтепинский район (Ташкент) — 305.8 тыс. жителей, 60 махаллей (как Мирзо Улугбек), 63,678 семей, 28.08 км² площадь, плотность 1,083 чел/км² (в 6.3x ниже чем у Мирзо Улугбека 6,864/км²), до центра Ташкента 9.2 км, до ЖД 8 км. Район создан 15.09.1977 как Акмал Икрамова, переименован 06.05.2005. Хоким — Абдуллаев Фарход Равшанович. СИЛЬНЫЕ СТОРОНЫ: (1) 🏆 ПРОМЫШЛЕННОСТЬ ВЫРОСЛА В 2.9x за 5 лет (4,743→13,760 млрд сум) — САМЫЙ БОЛЬШОЙ абсолютный объём из 9 районов; (2) 🆕 'UCHTEPA CITY' МЕГА-ПРОЕКТ $250 млн (2027-2030); (3) 🥇 Вода 100% и асфальт 100% (стандарт Ташкента); (4) 🥇 Отключения электричества 1 раз/мес + Газ 100%; (5) 🥇 55.6% женщин-банкиров (самый высокий из 9 районов); (6) Бедность снизилась в 4.4x за 5 лет (8.3%→1.9%); (7) 3,000 микропроектов 2025 (самый большой портфель, +66.7% YoY); (8) 3 университета (УзГУМЯ, Налоговая академия, Фискальный институт); (9) Foziltepa V-X век археологический памятник; (10) Махалля-банкиры 16→30 (+87.5% YoY); (11) Промзона 29.8% свободна (250 га); (12) Ташкент 2026 ПК 16.12.2025 ($9 млрд). ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) 🚨🚨 NPL за 5 лет +58.1% (4.3→6.8%) — серьёзно хуже чем у Мирзо Улугбека (3.6%); (2) 🚨🚨 БЕЗРАБОТИЦА ЖЕНЩИН 74.7% (9,798/13,118) — САМАЯ ТЯЖЁЛАЯ из 9 районов; (3) 🚨🚨 ПАССАЖИРОПОТОК -52% за 5 лет (236M→113M) — катастрофическая тенденция; (4) 🚨 ИМПОРТ/ЭКСПОРТ 1:2.2 — экспорт слаб; (5) 🚨 4 тяжёлые махалли (vs 0 у Мирзо Улугбека); (6) 🚨 Дошкольный охват 65.1% низкий; (7) 🚨 ATM всего 8 шт — самый низкий показатель из 9 районов; (8) Неформальный сектор 9,633 чел; (9) Местный бюджет снизился 2024→2025; (10) Foziltepa нуждается в реставрации; (11) Население воспринимает безработицу как 6.9% (официально 4.3%); (12) Трудовые ресурсы снизились на 12.8%. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин ПРИОРИТЕТ #1 — для 9,798 безработных женщин!), 'Каждая семья — предприниматель' (300 млн, 18%, NPL 6.8% — критично!), 'Фабрика проектов' 3,000 микропроектов 120 млрд сум, план кредитов 2026 = 300 млрд. КЛЮЧЕВЫЕ ДРАЙВЕРЫ: Бизнес-резидент Uchtepa City, онлайн-бизнес для женщин/HAMROH, гастрономический Учтепа 24/7, Vertical Industry, замещение импорта agro-food, AI Credit Scoring, туризм Foziltepa, Smart Transport BRT/электробус, премиум МТТ."
+}
