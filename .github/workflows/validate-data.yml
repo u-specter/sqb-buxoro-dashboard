@@ -1,0 +1,45 @@
+name: Validate district JSON data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/data/**.json"
+      - "schemas/**"
+      - "scripts/validate_data.py"
+      - ".github/workflows/validate-data.yml"
+  pull_request:
+    paths:
+      - "assets/data/**.json"
+      - "schemas/**"
+      - "scripts/validate_data.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Schema + semantic checks
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run validator
+        run: python3 scripts/validate_data.py
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Validation summary"
+            echo '```'
+            python3 scripts/validate_data.py 2>&1 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
