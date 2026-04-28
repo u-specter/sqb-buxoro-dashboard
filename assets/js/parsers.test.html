@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="uz-Cyrl">
+<head>
+  <meta charset="utf-8">
+  <title>SQB Parsers — Unit tests</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 920px; margin: 24px auto; padding: 0 16px; }
+    h1 { color: #003164; }
+    .case { padding: 8px 12px; margin: 6px 0; border-left: 3px solid #ccc; background: #f8f9fb; }
+    .pass { border-color: #16a34a; }
+    .fail { border-color: #dc2626; background: #fee; }
+    .summary { padding: 12px 16px; margin: 16px 0; border-radius: 6px; font-weight: 600; }
+    .ok { background: #d1fae5; color: #065f46; }
+    .err { background: #fee2e2; color: #991b1b; }
+    pre { font-size: 12px; background: #fff; padding: 8px; border-radius: 4px; overflow-x: auto; }
+    .label { font-family: monospace; font-size: 11px; color: #888; }
+  </style>
+</head>
+<body>
+  <h1>SQB Parsers — unit tests</h1>
+  <p>Validates that <code>parsers.js</code> handles every grammar that the legacy parseValue() did, plus regression cases reported in past sessions.</p>
+  <div id="summary"></div>
+  <div id="cases"></div>
+
+<script src="parsers.js"></script>
+<script>
+  // ---- minimal test framework (DOM-only, no innerHTML) ----
+  var passed = 0, failed = 0;
+  var summaryEl = document.getElementById('summary');
+  var casesEl = document.getElementById('cases');
+
+  function appendCase(ok, name, expected, actual) {
+    var div = document.createElement('div');
+    div.className = 'case ' + (ok ? 'pass' : 'fail');
+    var b = document.createElement('b');
+    b.textContent = (ok ? '✓ ' : '✗ ') + name;
+    div.appendChild(b);
+    if (!ok) {
+      var pre = document.createElement('pre');
+      pre.textContent = 'expected: ' + JSON.stringify(expected, null, 2) +
+                        '\nactual:   ' + JSON.stringify(actual, null, 2);
+      div.appendChild(pre);
+    }
+    casesEl.appendChild(div);
+    if (ok) passed++; else failed++;
+  }
+
+  function assertEq(actual, expected, name) {
+    appendCase(JSON.stringify(actual) === JSON.stringify(expected), name, expected, actual);
+  }
+  function assertType(actual, expectedType, name) {
+    var ok = !!(actual && actual.type === expectedType);
+    appendCase(ok, name + ' (got ' + (actual ? actual.type : 'null') + ')',
+               { type: expectedType }, actual);
+  }
+
+  var P = window.SQB_Parsers;
+  if (!P) {
+    summaryEl.className = 'summary err';
+    summaryEl.textContent = 'FAIL: SQB_Parsers not loaded — check parsers.js path';
+  } else {
+    var detectUnit = function(label, body){ if(/%/.test(body)) return "%"; if(/минг/.test(body)) return "минг"; return ""; };
+    var finalize = function(label, series, unit, ctx){ return {type:"timeseries", label:label, series:series, unit:unit}; };
+
+    // 1. Hero facts
+    var r = P.tryHeroFacts("Жами: 4 та устувор соҳа | Қ/х: 43,2% | Саноат: 33,7%", "");
+    assertType(r, "hero_facts", "tryHeroFacts: Жами + 2 facts");
+    assertEq(r && r.facts.length, 2, "tryHeroFacts: parsed 2 facts");
+
+    // 2. Metric + delta
+    r = P.tryMetricDelta("43.1 млн $ | ўсиш: +108.5% (тахминий)", "");
+    assertType(r, "metric_delta", "tryMetricDelta: млн $ with +%");
+    assertEq(r && r.deltaPct, 108.5, "tryMetricDelta: deltaPct=108.5");
+
+    r = P.tryMetricDelta("2024: 100 | 2025: 110", "");
+    assertEq(r, null, "tryMetricDelta: rejects pure timeseries");
+
+    // 3. Labeled breakdown
+    r = P.tryLabeledBreakdown("Юридик: 1 854 та | Кичик: 194 та | Жами: 2048 та", "");
+    assertType(r, "breakdown", "tryLabeledBreakdown: 3 labeled segments");
+
+    // 4. Estimated trend (±)
+    r = P.tryEstimatedTrend("2023: 100 ±5 | 2024: 110 ±3", "", detectUnit);
+    assertType(r, "estimated_trend", "tryEstimatedTrend: 2 pairs with ±");
+    assertEq(r && r.series.length, 2, "tryEstimatedTrend: 2 series points");
+
+    // 5. Explicit year timeseries
+    r = P.tryExplicitYearTimeseries("2021: 5,2 | 2022: 6,0 | 2023: 6,6 | 2024: 8,6 | 2025: 11,3", "", detectUnit, finalize);
+    assertType(r, "timeseries", "tryExplicitYearTimeseries: 5 years");
+    assertEq(r && r.series.length, 5, "tryExplicitYearTimeseries: 5 points");
+    assertEq(r && r.series[0].year, 2021, "tryExplicitYearTimeseries: starts 2021");
+    assertEq(r && r.series[4].value, 11.3, "tryExplicitYearTimeseries: comma-decimal (11,3 → 11.3)");
+
+    // ===== Regression: "27,3 минг" must NOT become 27.3% =====
+    r = P.tryExplicitYearTimeseries("Камбағал оилалар (минг): 2021: 59,7 | 2022: 61,2 | 2023: 47,4 | 2024: 41,6 | 2025: 27,3", "", detectUnit, finalize);
+    assertType(r, "timeseries", "regression: '27,3 минг' parses as timeseries");
+    assertEq(r && r.unit !== "%", true, "regression: unit is NOT %");
+
+    // ===== Regression: end-of-year uses runtime year, NOT hardcoded 2025 =====
+    var thisYear = new Date().getFullYear();
+    var expected = thisYear < 2025 ? 2025 : (thisYear > 2035 ? 2035 : thisYear);
+    assertEq(P.currentDataYear(), expected, "currentDataYear: runtime, not hardcoded 2025");
+
+    // 6. Bullet list
+    r = P.tryBulletList("• Биринчи қадам\n• Иккинчи қадам\n• Учинчи қадам", "");
+    assertType(r, "list", "tryBulletList: 3 bullets");
+
+    // 7. Numeric fallback
+    r = P.tryNumericFallback("100 | 200 | 300", "", {}, detectUnit, finalize);
+    assertType(r, "timeseries", "tryNumericFallback: 3 numbers → timeseries");
+
+    // Summary
+    summaryEl.className = 'summary ' + (failed === 0 ? 'ok' : 'err');
+    summaryEl.textContent = (failed === 0 ? '✓ ' : '✗ ') + 'PASSED ' + passed + ' / FAILED ' + failed;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sqb-dashboard.pages.dev/schemas/district.schema.json",
+  "title": "SQB Dashboard — District JSON",
+  "description": "Schema for any file under assets/data/<district>.json. Validated in CI to prevent silent schema drift.",
+  "type": "object",
+  "required": ["district", "district_name", "region", "year", "total", "hero_kpis", "indicators"],
+  "additionalProperties": true,
+  "properties": {
+    "district": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{1,40}$",
+      "description": "URL-safe identifier; must match the entry in app.js REGIONS[].districts[].id."
+    },
+    "district_name": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Full Uzbek-Cyrillic name shown in UI (e.g. 'Бойсун тумани')."
+    },
+    "region": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Parent region in Uzbek-Cyrillic (e.g. 'Сурхондарё вилояти')."
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 2024,
+      "maximum": 2035,
+      "description": "Reporting year of the snapshot."
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Must equal len(indicators). Validator cross-checks this."
+    },
+    "hero_kpis": {
+      "type": "object",
+      "required": ["Аҳоли", "Маҳалла", "Оила", "Хонадон"],
+      "additionalProperties": false,
+      "properties": {
+        "Аҳоли":  { "$ref": "#/definitions/kpiMetric" },
+        "Маҳалла":{ "$ref": "#/definitions/kpiMetric" },
+        "Оила":   { "$ref": "#/definitions/kpiMetric" },
+        "Хонадон":{ "$ref": "#/definitions/kpiMetric" }
+      },
+      "description": "Landing-tile KPI metrics. Keys must be Uzbek-Cyrillic and exactly these four."
+    },
+    "indicators": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/indicator" },
+      "description": "Card-level indicators (~30–50 per district)."
+    }
+  },
+  "definitions": {
+    "kpiMetric": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "number" },
+        "unit":  { "type": "string", "minLength": 1 }
+      }
+    },
+    "indicator": {
+      "type": "object",
+      "required": ["no", "slide", "name", "value", "found"],
+      "additionalProperties": false,
+      "properties": {
+        "no":          { "type": "integer", "minimum": 1, "description": "Card number within the district (1..N)." },
+        "slide":       { "type": "integer", "minimum": 1, "maximum": 6, "description": "Section: 1=Iqtisodiy faollik, 2=Infratuzilma, 3=Aholi va bandlik, 4=Mahalla tadbirkorligi va bank, 5=Imkoniyatlar, 6=Xulosa va reja." },
+        "slide_no":    { "type": "string", "description": "Stringified slide number; kept for compatibility." },
+        "name":        { "type": "string", "minLength": 3 },
+        "desc":        { "type": "string" },
+        "value":       {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "object", "properties": { "type": { "type": "string" } }, "required": ["type"] }
+          ],
+          "description": "Pipe-separated facts string parsed by parsers.js, OR a pre-typed object."
+        },
+        "found":       { "type": "boolean" },
+        "source_org":  { "type": "string", "description": "Uzbek source organization name. Validator can normalize against schemas/sources.json." },
+        "ai_insight":  { "type": "string" },
+        "kpi_count":   { "type": "number", "description": "Optional landing-hero KPI count (e.g. unemployed people)." },
+        "kpi_pct":     { "type": "number", "description": "Optional matching percentage." },
+        "no_forecast": { "type": "boolean", "description": "Suppresses the dashed forecast extension on the chart." },
+        "hidden":      { "type": "boolean", "description": "Hides the card from the UI without removing data." },
+        "note":        { "type": "string" }
+      }
+    }
+  }
+}

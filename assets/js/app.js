@@ -335,15 +335,14 @@ Object.defineProperty(DISTRICT_LABEL, 'boysun',    {get:function(){return distri
 // VALUE PARSER — classifies indicator.value into a typed object
 // Types: timeseries | breakdown | single_metric | list | text | empty
 // ============================================================
+// parseValue — thin dispatcher; grammar-specific logic lives in assets/js/parsers.js
+// Each tryX() returns null when its grammar doesn't match; first non-null wins.
 function parseValue(raw, ctx){
   ctx = ctx || {};
   if(raw==null || raw==="") return {type:"empty"};
-  // === Pre-typed object (rich data) ===
-  if(typeof raw === "object" && raw.type){
-    return raw; // pass through — caller handles known types
-  }
-  const str = String(raw).trim();
+  if(typeof raw === "object" && raw.type) return raw;        // pre-typed pass-through
 
+  var str = String(raw).trim();
   // Strip leading "[Tag]" prefix and capture as label
   let label = "";
   const tagM = str.match(/^\[([^\]]+)\]\s*/);
@@ -473,73 +472,17 @@ function parseValue(raw, ctx){
     }
   }
 
-  // Extract clean numbers (skip year-like 4-digit and identifier-like long ints)
-  const tokens = body.split(/[|;]+|\s{2,}/).map(function(t){return t.trim();}).filter(Boolean);
-  const allNums = [];
-  tokens.forEach(function(t){
-    // strip trailing % and currency hints, then test
-    const stripped = t.replace(/%$/,"").trim();
-    const m = stripped.match(/^-?\d{1,7}([\.,]\d+)?$/);
-    if(m){
-      const n = parseFloat(stripped.replace(",","."));
-      if(!isNaN(n)) allNums.push(n);
-    }
-  });
+  // Try each grammar in priority order; first non-null wins
+  var result =
+       P.tryMetricDelta(body, label)
+    || P.tryHeroFacts(body, label)
+    || P.tryLabeledBreakdown(body, label)
+    || P.tryEstimatedTrend(body, label, detectUnit)
+    || P.tryExplicitYearTimeseries(body, label, detectUnit, finalizeTimeseries)
+    || P.tryBulletList(body, label)
+    || P.tryNumericFallback(body, label, ctx, detectUnit, finalizeTimeseries);
 
-  // Filter: drop obvious year tokens (2018-2030) and drop integers >100000 (likely IDs)
-  const cleaned = allNums.filter(function(n){
-    if(n>=2018 && n<=2030 && Number.isInteger(n)) return false;
-    if(n>100000) return false;
-    return true;
-  });
-
-  // Find textual breadcrumb tokens (non-numeric)
-  const textTokens = tokens.filter(function(t){
-    return !/^-?\d/.test(t) && t!=="х" && t.length>1 && t.length<60;
-  });
-
-  // Detect unit
-  const unit = detectUnit(label, body);
-
-  if(cleaned.length>=3){
-    // Try to infer year labels from ctx.name + ctx.desc + body — find a YYYY-YYYY range
-    const hayAll = (ctx.name||"")+" "+(ctx.desc||"")+" "+body;
-    const rangeM = hayAll.match(/(20\d{2})\s*[\-\u2013\u2014]\s*(20\d{2})/);
-    let series;
-    const vals = cleaned.slice(0,8);
-    if(rangeM){
-      const y1 = parseInt(rangeM[1]); const y2 = parseInt(rangeM[2]);
-      if(y2>=y1 && (y2-y1+1)===vals.length){
-        series = vals.map(function(v,i){return {year:y1+i, value:v};});
-      } else if(y2>=y1){
-        // Align to the end so latest value = y2
-        const start = y2 - vals.length + 1;
-        series = vals.map(function(v,i){return {year:start+i, value:v};});
-      }
-    }
-    if(!series){
-      // Fall back: assume series ends at current data year (2025)
-      const endY = 2025;
-      const start = endY - vals.length + 1;
-      series = vals.map(function(v,i){return {year:start+i, value:v};});
-    }
-    return finalizeTimeseries(label, series, unit, textTokens.slice(-1)[0]||"");
-  }
-  if(cleaned.length===2){
-    const [a,b] = cleaned;
-    const delta = a!==0 ? ((b-a)/Math.abs(a))*100 : null;
-    return {type:"single_metric", label:label, value:b, prev:a, delta:delta, unit:unit, context:textTokens.slice(-1)[0]||""};
-  }
-  if(cleaned.length===1){
-    return {type:"single_metric", label:label, value:cleaned[0], prev:null, delta:null, unit:unit, context:textTokens.slice(-1)[0]||""};
-  }
-
-  // Multi-token textual content with separators -> breakdown of categories
-  if(textTokens.length>=3){
-    return {type:"breakdown", label:label, items:textTokens.slice(0,6)};
-  }
-
-  return {type:"text", label:label, text:body};
+  return result || {type:"text", label:label, text:body};
 }
 
 function parseLabeledFacts(body){
@@ -1000,7 +943,12 @@ function destroyAllCharts(){
     try{STATE.charts[k].destroy();}catch(e){}
     delete STATE.charts[k];
   });
+  // Also clear pending chart jobs to prevent ghost charts after district switch
+  STATE.pending = [];
 }
+
+// AbortController for in-flight fetches — cancelled when user switches districts rapidly
+var _activeFetch = null;
 
 function flushPendingCharts(){
   STATE.pending.forEach(function(job){
@@ -1295,12 +1243,12 @@ function flushPendingCharts(){
 }
 
 
-async function loadDistrictData(districtId){
+async function loadDistrictData(districtId, signal){
   if(STATE.data[districtId]) return STATE.data[districtId];
   var info = getDistrictAny(districtId);
   if(!info || !info.district.hasData) return null;
   try{
-    var res = await fetch("assets/data/"+info.district.file);
+    var res = await fetch("assets/data/"+info.district.file, signal ? {signal:signal} : {});
     if(!res.ok) return null;
     var data = await res.json();
     STATE.data[districtId] = data;
@@ -1314,15 +1262,15 @@ async function loadDistrictData(districtId){
 var HERO_BG_MAP = {
   shofirkon: "img/shofirkon.jpg",
   gijduvon: "img/gijduvon.jpg",
-  qoqon: "img/qoqon.png",
+  qoqon: "img/qoqon_opt.jpg",
   qoshtepa: "img/qoshtepa.jpg",
   boysun: "img/boysun.jpg",
-  qongirot: "img/kongirat_opt.jpg",
-  qonlikol: "img/konlikol.jpg",
+  qongirot: "img/qongirot_opt.jpg",
+  qonlikol: "img/qonlikol_opt.jpg",
   toxiatosh: "img/taxiatash_opt.jpg",
-  sariosiyo: "img/sariosiyo.png",
-  termiz: "img/termiz.png",
-  surkhandarya_vil: "img/surxondaryo.png"
+  sariosiyo: "img/sariosiyo_opt.jpg",
+  termiz: "img/termiz_opt.jpg",
+  surkhandarya_vil: "img/surxondaryo_opt.jpg"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");
@@ -1340,10 +1288,19 @@ function updateHeroBg(districtId){
 }
 
 async function switchDistrict(regionId, districtId){
+  // Cancel any in-flight fetch from a previous rapid switch
+  if (_activeFetch) { try { _activeFetch.abort(); } catch (e) {} }
+  _activeFetch = (typeof AbortController !== "undefined") ? new AbortController() : null;
+  // Tear down old charts BEFORE building new pages — prevents memory leaks on rapid switches
+  destroyAllCharts();
   STATE.region = regionId;
   STATE.district = districtId;
-  // Load data if not cached
-  await loadDistrictData(districtId);
+  try {
+    await loadDistrictData(districtId, _activeFetch ? _activeFetch.signal : undefined);
+  } catch (e) {
+    if (e && e.name === "AbortError") return; // user switched again, abandon this render
+    console.warn("loadDistrictData failed:", e);
+  }
   updateSelectorUI();
   updateHeroBg(districtId);
   buildSlidePages();
