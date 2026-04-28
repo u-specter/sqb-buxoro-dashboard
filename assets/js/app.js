@@ -278,6 +278,7 @@ const REGIONS = [
     districts: [
       {id:"payariq", name:{uz:"Пайариқ", ru:"Пайарык", en:"Payariq"}, file:"payariq.json", hasData:true},
       {id:"jomboy",  name:{uz:"Жомбой",  ru:"Джомбой",  en:"Jomboy"},  file:"jomboy.json",  hasData:true},
+      {id:"oqdaryo", name:{uz:"Оқдарё",  ru:"Акдарья",   en:"Oqdaryo"}, file:"oqdaryo.json", hasData:true},
     ]
   },
   {
