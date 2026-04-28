@@ -243,6 +243,30 @@ with open('assets/data/yangi.json', 'w', encoding='utf-8') as f:
 | Blue | `#0590C9` | Акцент, тугмалар, чарт |
 | White | `#FFFFFF` | Матн |
 
+## Маълумот валидацияси (CI)
+
+JSON туман файллари `schemas/district.schema.json`га қатъий мос келиши шарт. Янги туман қўшилганда схемадан четлашиш аввал GitHub Actions'да тутилади (PR merge'дан олдин), кейин эса локал тестда.
+
+### Локал текшириш
+
+```bash
+python3 scripts/validate_data.py            # барча файлларни текширади
+python3 scripts/validate_data.py --strict   # warning'ларни ҳам error деб ҳисоблайди
+```
+
+### Текширилиши
+
+- ✅ Top-level: `district`, `district_name`, `region`, `year`, `total`, `hero_kpis`, `indicators`
+- ✅ `hero_kpis` 4 та аниқ калит: `Аҳоли`, `Маҳалла`, `Оила`, `Хонадон` + `{value, unit}`
+- ✅ Ҳар бир `indicator` мажбурий: `no`, `slide` (1-6), `name`, `value`, `found`
+- ✅ `total` = `len(indicators)` (cross-check)
+- ✅ Туман slug'и app.js REGIONS массивидан топилади
+- ⚠ Warning: hero_kpis = 0, source_org йўқ visible card'да
+
+### CI
+
+`.github/workflows/validate-data.yml` — ҳар бир PR ва main'га push'да ишлайди. Маълумот файли ёки schema ўзгарганда автоматик чақирилади.
+
 ## Технологиялар
 
 - HTML5 + CSS3 (Bootstrap 5.3.3)
