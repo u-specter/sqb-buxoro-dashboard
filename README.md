@@ -254,6 +254,17 @@ python3 scripts/validate_data.py            # барча файлларни те
 python3 scripts/validate_data.py --strict   # warning'ларни ҳам error деб ҳисоблайди
 ```
 
+### Манба ташкилотлар (`source_org`) нормализацияси
+
+Канонcкий рўйхат: `schemas/sources.json` — ҳамма расмий манба номлари ва типографик алиаслар. Янги туман қўшганда:
+
+```bash
+python3 scripts/normalize_sources.py --dry-run   # қанча ўзгариш бўлишини кўрсатади
+python3 scripts/normalize_sources.py             # автоматик алмаштиради
+```
+
+Скрипт `Хокимият → Ҳокимият`, `Кадастр → Кадастр агентлиги` каби типографик хатоларни тузатади. Янги манба учун `schemas/sources.json` га: типографик хато бўлса `aliases` га, янги расмий манба бўлса `canonical` массивига қўшилади. Валидатор канонcкий рўйхатдан четлашган ҳар қандай атомни warning сифатида чиқаради.
+
 ### Текширилиши
 
 - ✅ Top-level: `district`, `district_name`, `region`, `year`, `total`, `hero_kpis`, `indicators`

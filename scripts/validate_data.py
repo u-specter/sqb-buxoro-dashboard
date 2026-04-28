@@ -19,10 +19,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "assets" / "data"
 SCHEMA_PATH = ROOT / "schemas" / "district.schema.json"
+SOURCES_PATH = ROOT / "schemas" / "sources.json"
 APP_JS = ROOT / "assets" / "js" / "app.js"
 
 # Files that aren't district records (skip)
 NON_DISTRICT = {"i18n_indicators.json", "master.json"}
+
+# Source-org composite splitter — must match scripts/normalize_sources.py
+SOURCE_SPLIT_RX = re.compile(r"\s+/\s+|\s+\|\s+|\s+\+\s+")
 
 
 # ---- ANSI colors (auto-disabled when piped) ----
@@ -112,7 +116,7 @@ def _json_type(v):
 # ===========================================================================
 # Semantic cross-checks (beyond what JSON Schema can express)
 # ===========================================================================
-def semantic_checks(file, data, errors, warnings):
+def semantic_checks(file, data, errors, warnings, canonical_sources=None):
     """Cross-checks that JSON Schema can't capture."""
 
     # 1. total must equal len(indicators)
@@ -150,6 +154,18 @@ def semantic_checks(file, data, errors, warnings):
     for c in data.get("indicators", []):
         if c.get("found") is True and not c.get("source_org"):
             warnings.append((f"#{c.get('no')}", "missing source_org on visible card"))
+
+    # 7. source_org atoms must be canonical (per schemas/sources.json)
+    if canonical_sources:
+        for c in data.get("indicators", []):
+            s = c.get("source_org")
+            if not isinstance(s, str) or not s:
+                continue
+            for atom in SOURCE_SPLIT_RX.split(s):
+                atom = atom.strip()
+                if atom and atom not in canonical_sources:
+                    warnings.append((f"#{c.get('no')}",
+                                     f"non-canonical source_org atom '{atom}' (run scripts/normalize_sources.py)"))
 
 
 # ===========================================================================
@@ -195,6 +211,15 @@ def main():
 
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 
+    # Optional: load canonical source registry for source_org atom checking
+    canonical_sources = None
+    if SOURCES_PATH.exists():
+        try:
+            sources = json.loads(SOURCES_PATH.read_text(encoding="utf-8"))
+            canonical_sources = {e["name"] for e in sources.get("canonical", []) if "name" in e}
+        except Exception as e:
+            print(YEL(f"⚠ could not load sources.json: {e}"))
+
     all_data = {}
     total_errors = 0
     total_warnings = 0
@@ -214,7 +239,7 @@ def main():
         errors, warnings = [], []
 
         _validate(data, schema, "$", schema, errors)
-        semantic_checks(fp, data, errors, warnings)
+        semantic_checks(fp, data, errors, warnings, canonical_sources)
 
         status = GREEN("✓") if not errors else RED("✗")
         warn_tag = f" {YEL('(' + str(len(warnings)) + ' warn)')}" if warnings else ""
