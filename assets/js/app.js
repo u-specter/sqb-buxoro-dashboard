@@ -276,7 +276,8 @@ const REGIONS = [
     id: "samarqand",
     name: {uz:"Самарқанд вилояти", ru:"Самаркандская область", en:"Samarkand Region"},
     districts: [
-      {id:"payariq", name:{uz:"Пайариқ", ru:"Пайарык", en:"Payariq"}, file:"payariq.json", hasData:true}
+      {id:"payariq", name:{uz:"Пайариқ", ru:"Пайарык", en:"Payariq"}, file:"payariq.json", hasData:true},
+      {id:"jomboy",  name:{uz:"Жомбой",  ru:"Джомбой",  en:"Jomboy"},  file:"jomboy.json",  hasData:true},
     ]
   },
   {
@@ -348,6 +349,25 @@ function parseValue(raw, ctx){
   const tagM = str.match(/^\[([^\]]+)\]\s*/);
   const body = tagM ? str.slice(tagM[0].length) : str;
   if(tagM) label = tagM[1];
+
+  // ---- Special card polish: "Иқтисодий фаоллик" as hero facts ----
+  if(/иқтисодий фаоллик/i.test(ctx.name||"")){
+    const facts = parseLabeledFacts(body);
+    if(facts.length >= 3){
+      return {
+        type:"hero_facts",
+        label:label,
+        hero:facts.length+" та асосий кўрсаткич",
+        facts:facts
+      };
+    }
+  }
+
+  // ---- Special card polish: "Саноат ... динамикаси" as multi-line trend ----
+  if(/саноат маҳсулотлари ишлаб чиқариш динамикаси/i.test(ctx.name||"")){
+    const multi = parseMultiSeriesFromLabeledYears(body, ctx);
+    if(multi) return multi;
+  }
 
   // ---- Metric + delta detection (e.g. "43.1 млн $ | ўсиш: +108.5% (тахминий)") ----
   // Requires the literal "ўсиш:" keyword so it only fires for explicitly tagged metrics.
@@ -520,6 +540,81 @@ function parseValue(raw, ctx){
   }
 
   return {type:"text", label:label, text:body};
+}
+
+function parseLabeledFacts(body){
+  return body
+    .split(/\s*\|\s*/)
+    .map(function(s){ return s.trim(); })
+    .filter(Boolean)
+    .map(function(seg){
+      const m = seg.match(/^([^:]{2,90}):\s*(.+)$/);
+      if(!m) return null;
+      return {name:m[1].trim(), value:m[2].trim()};
+    })
+    .filter(Boolean);
+}
+
+function parseMultiSeriesFromLabeledYears(body, ctx){
+  const parts = body.split(/\s*\|\s*/).map(function(s){return s.trim();}).filter(Boolean);
+  if(parts.length < 6) return null;
+
+  const seriesList = [];
+  let current = null;
+  const yearValRe = /^((?:19|20)\d{2})\s*[:\-]\s*(-?\d{1,9}(?:[\.,]\d+)?)/;
+
+  parts.forEach(function(part){
+    const head = part.match(/^([^:]{2,90}):\s*(.+)$/);
+    if(head){
+      const candidate = head[2].trim();
+      const yv = candidate.match(yearValRe);
+      if(yv){
+        current = {name:head[1].trim(), pairs:[]};
+        seriesList.push(current);
+        current.pairs.push({year:parseInt(yv[1],10), value:parseFloat(yv[2].replace(",", "."))});
+        return;
+      }
+    }
+    if(current){
+      const yv = part.match(yearValRe);
+      if(yv){
+        current.pairs.push({year:parseInt(yv[1],10), value:parseFloat(yv[2].replace(",", "."))});
+      }
+    }
+  });
+
+  const valid = seriesList.filter(function(s){return s.pairs.length >= 3;});
+  if(valid.length < 2) return null;
+
+  const years = valid[0].pairs.map(function(p){return p.year;});
+  if(years.length < 3) return null;
+
+  const colors = ["#06A0AB","#C25E3C","#7C3AED","#D97706","#059669"];
+  const sectors = valid.slice(0,5).map(function(s, i){
+    const byYear = {};
+    s.pairs.forEach(function(p){byYear[p.year]=p.value;});
+    const data = years.map(function(y){return Object.prototype.hasOwnProperty.call(byYear, y) ? byYear[y] : null;});
+    const first = data.find(function(v){return typeof v==="number" && !isNaN(v);});
+    const last = data.slice().reverse().find(function(v){return typeof v==="number" && !isNaN(v);});
+    const growth = (typeof first==="number" && typeof last==="number" && first!==0)
+      ? (((last-first)/Math.abs(first))*100).toFixed(1).replace(".", ",")+"%"
+      : "—";
+    return {
+      name:s.name,
+      data:data,
+      growth:growth,
+      color:colors[i % colors.length]
+    };
+  });
+
+  return {
+    type:"multi_series_forecast",
+    title:(ctx.name||"Кўрсаткич динамикаси"),
+    subtitle:(ctx.desc||"Йиллар кесимида таҳлил"),
+    years:years,
+    sectors:sectors,
+    fact_until:Math.max.apply(null, years)
+  };
 }
 
 function looksNumeric(s){return /\d/.test(s);}
@@ -838,6 +933,10 @@ function renderValue(ind, canvasId){
       '</div></div>';
   }
 
+  if(isXonobodMode() && (p.type==="breakdown" || p.type==="list" || p.type==="text")){
+    return renderUnifiedTextValue(p);
+  }
+
   if(p.type==="breakdown"){
     STATE.pending.push({id:canvasId, kind:"bars", data:p.items.map(function(_,i){return p.items.length-i;})});
     return '<div class="ic-value rich">'+
@@ -869,6 +968,31 @@ function deltaHTML(d){
   const up = d>=0;
   const arrow = up?"▲":"▼";
   return '<span class="metric-delta '+(up?'up':'down')+'">'+arrow+' '+(up?'+':'')+d.toFixed(1)+'%</span>';
+}
+
+function isXonobodMode(){
+  return STATE && STATE.district === "xonobod";
+}
+
+function renderUnifiedTextValue(p){
+  var items = [];
+  if(p.type==="breakdown" || p.type==="list"){
+    items = (p.items||[]).map(function(s){return String(s).trim();}).filter(Boolean).slice(0,6);
+  } else {
+    items = String(p.text||"")
+      .split(/\s*\|\s*|;\s*|\n+/)
+      .map(function(s){return s.trim();})
+      .filter(Boolean)
+      .slice(0,6);
+  }
+  if(!items.length) items = ["Маълумот мавжуд эмас"];
+  return '<div class="ic-value rich unified-text-card">'+
+    '<div class="ic-value-head"><div class="ic-value-label">'+T("label_value")+'</div>'+
+    (p.label?'<span class="val-tag">'+escapeHTML(p.label)+'</span>':'')+'</div>'+
+    '<ul class="unified-text-list">'+
+      items.map(function(t){return '<li>'+escapeHTML(t)+'</li>';}).join("")+
+    '</ul>'+
+  '</div>';
 }
 
 function destroyAllCharts(){
@@ -1511,6 +1635,10 @@ function handleHash(){
 function render(){
   const data = STATE.data[STATE.district];
   const label = districtLabel(STATE.district);
+  Array.from(document.body.classList).forEach(function(c){
+    if(c.indexOf("district-")===0) document.body.classList.remove(c);
+  });
+  if(STATE.district) document.body.classList.add("district-"+STATE.district);
 
   document.getElementById("heroDistrict").textContent = label;
 
