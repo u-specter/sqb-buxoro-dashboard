@@ -1,7 +1,28 @@
 {
-  "tuman": "Шофиркон",
-  "total": 74,
+  "district": "shofirkon",
+  "district_name": "Шофиркон тумани",
+  "region": "Бухоро вилояти",
+  "year": 2026,
+  "total": 47,
   "found": 74,
+  "hero_kpis": {
+    "Аҳоли": {
+      "value": 189.8,
+      "unit": "минг киши"
+    },
+    "Маҳалла": {
+      "value": 50,
+      "unit": "та"
+    },
+    "Оила": {
+      "value": 43000,
+      "unit": "та"
+    },
+    "Хонадон": {
+      "value": 36300,
+      "unit": "та"
+    }
+  },
   "indicators": [
     {
       "no": 1,

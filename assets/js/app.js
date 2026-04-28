@@ -876,7 +876,12 @@ function destroyAllCharts(){
     try{STATE.charts[k].destroy();}catch(e){}
     delete STATE.charts[k];
   });
+  // Also clear pending chart jobs to prevent ghost charts after district switch
+  STATE.pending = [];
 }
+
+// AbortController for in-flight fetches — cancelled when user switches districts rapidly
+var _activeFetch = null;
 
 function flushPendingCharts(){
   STATE.pending.forEach(function(job){
@@ -1171,12 +1176,12 @@ function flushPendingCharts(){
 }
 
 
-async function loadDistrictData(districtId){
+async function loadDistrictData(districtId, signal){
   if(STATE.data[districtId]) return STATE.data[districtId];
   var info = getDistrictAny(districtId);
   if(!info || !info.district.hasData) return null;
   try{
-    var res = await fetch("assets/data/"+info.district.file);
+    var res = await fetch("assets/data/"+info.district.file, signal ? {signal:signal} : {});
     if(!res.ok) return null;
     var data = await res.json();
     STATE.data[districtId] = data;
@@ -1190,15 +1195,15 @@ async function loadDistrictData(districtId){
 var HERO_BG_MAP = {
   shofirkon: "img/shofirkon.jpg",
   gijduvon: "img/gijduvon.jpg",
-  qoqon: "img/qoqon.png",
+  qoqon: "img/qoqon_opt.jpg",
   qoshtepa: "img/qoshtepa.jpg",
   boysun: "img/boysun.jpg",
-  qongirot: "img/kongirat_opt.jpg",
-  qonlikol: "img/konlikol.jpg",
+  qongirot: "img/qongirot_opt.jpg",
+  qonlikol: "img/qonlikol_opt.jpg",
   toxiatosh: "img/taxiatash_opt.jpg",
-  sariosiyo: "img/sariosiyo.png",
-  termiz: "img/termiz.png",
-  surkhandarya_vil: "img/surxondaryo.png"
+  sariosiyo: "img/sariosiyo_opt.jpg",
+  termiz: "img/termiz_opt.jpg",
+  surkhandarya_vil: "img/surxondaryo_opt.jpg"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");
@@ -1216,10 +1221,19 @@ function updateHeroBg(districtId){
 }
 
 async function switchDistrict(regionId, districtId){
+  // Cancel any in-flight fetch from a previous rapid switch
+  if (_activeFetch) { try { _activeFetch.abort(); } catch (e) {} }
+  _activeFetch = (typeof AbortController !== "undefined") ? new AbortController() : null;
+  // Tear down old charts BEFORE building new pages — prevents memory leaks on rapid switches
+  destroyAllCharts();
   STATE.region = regionId;
   STATE.district = districtId;
-  // Load data if not cached
-  await loadDistrictData(districtId);
+  try {
+    await loadDistrictData(districtId, _activeFetch ? _activeFetch.signal : undefined);
+  } catch (e) {
+    if (e && e.name === "AbortError") return; // user switched again, abandon this render
+    console.warn("loadDistrictData failed:", e);
+  }
   updateSelectorUI();
   updateHeroBg(districtId);
   buildSlidePages();

@@ -7,11 +7,15 @@
   <title>SQB Bank • Таҳлилий дашборд</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Inter font: only weights actually used (300/400/500/600/700) — saves ~60KB -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/SQB Logo Main short 1.png">
 </head>
 
 <body>
@@ -135,11 +139,37 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="assets/js/map-bg.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+
+  <!-- Three.js + 3D map background — loaded only when landing is visible (saves ~600KB FCP) -->
+  <script>
+    (function loadMapBgWhenIdle() {
+      function load() {
+        var s1 = document.createElement('script');
+        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = 'assets/js/map-bg.js';
+          document.body.appendChild(s2);
+        };
+        document.body.appendChild(s1);
+      }
+      // Fire only when landing section is visible AND browser is idle
+      function maybeLoad() {
+        var landing = document.getElementById('landing');
+        if (!landing || !landing.classList.contains('active')) return;
+        if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 2000 });
+        else setTimeout(load, 800);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', maybeLoad);
+      } else {
+        maybeLoad();
+      }
+    })();
+  </script>
 </body>
 
 </html>

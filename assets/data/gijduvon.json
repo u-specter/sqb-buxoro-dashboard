@@ -1,7 +1,28 @@
 {
-  "tuman": "Ғиждувон",
-  "total": 73,
+  "district": "gijduvon",
+  "district_name": "Ғиждувон тумани",
+  "region": "Бухоро вилояти",
+  "year": 2026,
+  "total": 42,
   "found": 73,
+  "hero_kpis": {
+    "Аҳоли": {
+      "value": 331.5,
+      "unit": "минг киши"
+    },
+    "Маҳалла": {
+      "value": 70,
+      "unit": "та"
+    },
+    "Оила": {
+      "value": 95100,
+      "unit": "та"
+    },
+    "Хонадон": {
+      "value": 69800,
+      "unit": "та"
+    }
+  },
   "indicators": [
     {
       "no": 1,
