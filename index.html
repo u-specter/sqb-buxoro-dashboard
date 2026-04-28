@@ -141,6 +141,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <!-- parsers.js MUST load before app.js — it exposes window.SQB_Parsers used by parseValue() -->
+  <script src="assets/js/parsers.js" defer></script>
   <script src="assets/js/app.js" defer></script>
 
   <!-- Three.js + 3D map background — loaded only when landing is visible (saves ~600KB FCP) -->
