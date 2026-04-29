@@ -349,8 +349,16 @@ function parseValue(raw, ctx){
   const body = tagM ? str.slice(tagM[0].length) : str;
   if(tagM) label = tagM[1];
 
+  var P = window.SQB_Parsers;
+  if(!P){
+    console.error("SQB_Parsers not loaded — falling back to text");
+    return {type:"text", label:label, text:body};
+  }
+
   // ---- Special card polish: "Иқтисодий фаоллик" as hero facts ----
-  if(/иқтисодий фаоллик/i.test(ctx.name||"")){
+  // Skip if body starts with explicit "Жами:" — let the standard hero_facts
+  // detection below pick up the hero value from that segment instead.
+  if(/иқтисодий фаоллик/i.test(ctx.name||"") && !/^\s*Жами\s*:/i.test(body)){
     const facts = parseLabeledFacts(body);
     if(facts.length >= 3){
       return {
