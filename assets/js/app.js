@@ -288,6 +288,13 @@ const REGIONS = [
       {id:"karmana", name:{uz:"Кармана", ru:"Кармана", en:"Karmana"}, file:"karmana.json", hasData:true}
     ]
   },
+  {
+    id: "qashqadaryo",
+    name: {uz:"Қашқадарё вилояти", ru:"Кашкадарьинская область", en:"Qashqadaryo Region"},
+    districts: [
+      {id:"shahrisabz", name:{uz:"Шаҳрисабз", ru:"Шахрисабз", en:"Shahrisabz"}, file:"shahrisabz.json", hasData:true}
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
