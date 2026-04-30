@@ -295,6 +295,13 @@ const REGIONS = [
       {id:"shahrisabz", name:{uz:"Шаҳрисабз", ru:"Шахрисабз", en:"Shahrisabz"}, file:"shahrisabz.json", hasData:true}
     ]
   },
+  {
+    id: "khorazm",
+    name: {uz:"Хоразм вилояти", ru:"Хорезмская область", en:"Khorazm Region"},
+    districts: [
+      {id:"urganch", name:{uz:"Урганч", ru:"Ургенч", en:"Urganch"}, file:"urganch.json", hasData:true, type:"tuman"}
+    ]
+  },
 ];
 
 function getRegion(regionId){ return REGIONS.find(function(r){return r.id===regionId;}); }
