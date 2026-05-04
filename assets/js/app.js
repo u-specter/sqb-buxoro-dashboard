@@ -262,7 +262,8 @@ const REGIONS = [
     id: "namangan",
     name: {uz:"Наманган вилояти", ru:"Наманганская область", en:"Namangan Region"},
     districts: [
-      {id:"yangiqorgon", name:{uz:"Янгиқўрғон", ru:"Янгикурган", en:"Yangiqorgon"}, file:"yangiqorgon.json", hasData:true}
+      {id:"yangiqorgon", name:{uz:"Янгиқўрғон", ru:"Янгикурган", en:"Yangiqorgon"}, file:"yangiqorgon.json", hasData:true},
+      {id:"yangi_namangan", name:{uz:"Янги Наманган", ru:"Янги Наманган", en:"Yangi Namangan"}, file:"yangi_namangan.json", hasData:true}
     ]
   },
   {
