@@ -250,6 +250,13 @@ const REGIONS = [
     ]
   },
   {
+    id: "tashkent_vil",
+    name: {uz:"Тошкент вилояти", ru:"Ташкентская область", en:"Tashkent Region"},
+    districts: [
+      {id:"chirchiq", name:{uz:"Чирчиқ", ru:"Чирчик", en:"Chirchiq"}, file:"chirchiq.json", hasData:true, type:"shahar"},
+    ]
+  },
+  {
     id: "andijan",
     name: {uz:"Андижон вилояти", ru:"Андижанская область", en:"Andijan Region"},
     districts: [
