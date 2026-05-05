@@ -1,0 +1,559 @@
+{
+  "id": "qoqon",
+  "name_uz": "Қўқон шаҳри",
+  "name_ru": "город Коканд",
+  "name_latin": "Qo'qon shahri",
+  "viloyat": "Farg'ona",
+  "type": "shahar",
+  "data_year": 2025,
+  "sources": ["Xokimiyat", "stat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "Britannica", "gazeta.uz"],
+
+  "demographics": {
+    "population": 319600,
+    "population_density_per_km2": 3733,
+    "mahallas": 68,
+    "families": 87141,
+    "households": 69085,
+    "women_leadership_pct": 38,
+    "girls_in_higher_edu_pct": 55,
+    "note": "O'zbekistonning 4-yirik shahri; respublikadagi eng yuqori aholi zichliklaridan biri"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 9410.4,
+    "industry_growth_pct": 24.2,
+    "industry_dynamics": {
+      "2021": 5145,
+      "2022": 5602.6,
+      "2023": 5886.6,
+      "2024": 7577.8,
+      "2025": 9410.4,
+      "unit": "mlrd so'm"
+    },
+    "market_services_bln_sum": 6371,
+    "services_growth_pct": 18.4,
+    "sector_shares": {
+      "agriculture_pct": 9.5,
+      "industry_pct": 21.5,
+      "services_pct": 69
+    },
+    "new_enterprises_2025": 619,
+    "closed_enterprises_2025": 140,
+    "net_enterprise_growth": 479,
+    "google_trends_score": 65,
+    "google_trends_note": "65/100 yuqori faollik; 2024 o'rtacha 58 → 2025 o'rtacha 65 (+12%); eng faol oy: Aprel 2025 — 82 ball",
+    "priority_sectors": [
+      "savdo va logistika",
+      "engil sanoat va to'qimachilik",
+      "turizm va hunarmandchilik",
+      "moliyaviy va transport xizmatlari"
+    ],
+    "avg_salary": {
+      "city_mln_sum": null,
+      "viloyat_mln_sum_2024": 4.6,
+      "viloyat_mln_sum_2025_est": 5.0,
+      "national_mln_sum_2025": 5.98,
+      "source": "Qo'qon shahri bo'yicha alohida ma'lumot yo'q; Farg'ona viloyati o'rtachasi va milliy ko'rsatkichlar asosida baholash"
+    }
+  },
+
+  "credits": {
+    "by_year_bln_sum": {
+      "2021": 1107,
+      "2022": 637,
+      "2023": 1062,
+      "2024": 1149,
+      "2025": 3169
+    },
+    "total_2021_2025_bln_sum": 7124,
+    "sharp_growth_2025_note": "2025 yilda kreditlar 2024 ga nisbatan 2.76 marta o'sdi — rekord",
+    "npl_family_entrepreneurship_pct": 32,
+    "npl_risk_level": "YUQORI",
+    "npl_note": "Oilaviy tadbirkorlikda muammoli kreditlar 32% — biznes-reja va moliyaviy savodxonlik zarur"
+  },
+
+  "special_economic_zone": {
+    "name": "Qo'qon Erkin Iqtisodiy Zona (EIZ)",
+    "decree": "23.12.2024 №846-son",
+    "location": "Uchko'prik tumani (Qo'qon shahrining statistikasida emas)",
+    "enterprises": 117,
+    "relocated_from_kokand": 80,
+    "key_companies": ["Great Kokand", "Beton Plita", "Euro Cable Industry", "Quantity Glass", "Glorius Business"],
+    "expected_investment_usd_bln": 2.5,
+    "expected_jobs": 10000,
+    "status": "faol — investitsiya muhiti kuchaymoqda",
+    "issue": "Ko'rsatkichlar Uchko'prik statistikasida aks etmoqda; Qo'qon zahirasiga o'tkazish taklifi mavjud"
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 99.3,
+    "road_repair_pct": 100,
+    "public_transport_coverage_pct": 100,
+    "electricity": {
+      "outages_per_month_avg": 1.05,
+      "old_transformers_pct": 35,
+      "lines_need_replacement_pct": 25,
+      "risk_level": "O'RTA",
+      "note": "Sanoat va xizmat sohalariga uzluksiz elektr kerak — energiya muqobil manbalari zarur"
+    },
+    "land": {
+      "total_ha": 1198,
+      "historical_cultural_ha": 76,
+      "forest_ha": 27,
+      "agricultural_ha": 1095,
+      "industrial_zone_pct": 0.8,
+      "note": "Yangi sanoat obyektlari uchun yer kam — vertikal qurilish va industrial loftlar kerak"
+    },
+    "roads_total_km": 683,
+    "railway_station_distance_km": 1.1,
+    "solar_potential_sunny_days_per_year": 290,
+    "strategic_position": "Farg'ona vodiysiga kirish yo'llarining kesishmasida — transport markaz"
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 87.9,
+      "trend": "83.9% (2021) → 84.6% (2022) → 86.0% (2023) → 87.1% (2024) → 87.9% (2025)",
+      "gap_pct": 12.1,
+      "opportunity": "Xususiy bog'cha, mini-bog'cha, bolalar rivojlantirish markazi — 12.1% bozor bo'sh"
+    },
+    "higher_education": {
+      "otm_count": 2,
+      "total_students": 29499,
+      "total_capacity": 15360,
+      "overload_ratio": 1.92,
+      "institutions": [
+        {
+          "name": "Qo'qon davlat universiteti",
+          "students": 16918,
+          "capacity": 9360,
+          "load_pct": 181
+        },
+        {
+          "name": "Qo'qon universiteti",
+          "students": 12581,
+          "capacity": 6000,
+          "load_pct": 210
+        }
+      ],
+      "opportunity": "Katta talabalar bazasi — IT, raqamli xizmatlar, ta'lim texnologiyalari uchun tayyor auditoriya"
+    },
+    "vocational": {
+      "technical_schools_count": 8,
+      "total_students": 8202,
+      "total_capacity": 7120,
+      "overloaded_schools": ["4-son texnikum (212%)", "2-son texnikum (142%)", "1-son texnikum (178%)"],
+      "digital_tech_school_load_pct": 54,
+      "opportunity": "Raqamli texnologiyalar texnikumi atigi 54% band — IT yo'nalishda kengaytirish imkoni bor"
+    }
+  },
+
+  "labor": {
+    "total_resources": 165800,
+    "employed": 108500,
+    "employed_growth_pct": 3.1,
+    "returned_migrants": 2570,
+    "returned_migrants_growth_pct": 33.3,
+    "informal_sector": 41183,
+    "unemployment_pct": 4.5,
+    "unemployed_count": 5165,
+    "target_unemployment_pct": 2.9,
+    "poverty_pct": 4.2,
+    "poor_families": 2978,
+    "target_poverty_pct": 1.0,
+    "youth_program_2026": {
+      "total_youth": 1489,
+      "employment": 596,
+      "entrepreneur": 205,
+      "credit": 102,
+      "retraining": 586
+    },
+    "women_employment_plan_2026": {
+      "jobs": 4500,
+      "training": 850
+    },
+    "difficult_mahallas": [
+      {
+        "name": "Yangi Cho'rsu",
+        "unemployed": 60,
+        "unemployment_pct": 6.5,
+        "composition": "ayollar 15, erkaklar 40, yoshlar 5",
+        "micro_projects": 71,
+        "micro_projects_sum_bln": 2.4,
+        "recommended_direction": "gastroturizm, milliy taomlar, kichik turizm xizmatlari"
+      },
+      {
+        "name": "Mo'yimuborak",
+        "unemployed": 85,
+        "unemployment_pct": 6.2,
+        "composition": "ayollar 70, erkaklar 12, yoshlar 3",
+        "micro_projects": 71,
+        "micro_projects_sum_bln": 2.4,
+        "recommended_direction": "tikuvchilik, hunarmandchilik, kichik ishlab chiqarish sexlari"
+      }
+    ]
+  },
+
+  "tourism": {
+    "annual_tourists": 442000,
+    "foreign_tourists": 117000,
+    "domestic_tourists": 325000,
+    "tourism_export_usd_mln": 40.3,
+    "hotels": 15,
+    "hotel_rooms": 386,
+    "hotel_beds": 804,
+    "beds_per_tourist": 0.0018,
+    "world_craft_city": {
+      "status": true,
+      "since_year": 2019,
+      "note": "Markaziy Osiyoda birinchi World Craft City — xalqaro brend tayyor"
+    },
+    "key_attractions": [
+      "Xudoyorxon o'rdasi (1871 yil, 19 xona ochiq)",
+      "Juma masjidi (1812-1818, 98 ustunli iyon, 22m minora)",
+      "Hunarmandlar bozori",
+      "Tarixiy-madaniy yer: 76 ga"
+    ],
+    "planned_routes_2027_2028": [
+      "Tarixiy-me'moriy meros (Xudoyorxon o'rdasi)",
+      "Hunarmandchilik (yog'och o'ymakorligi, pichoqchilik)",
+      "Ishbilarmonilik turizmi — MICE"
+    ],
+    "state_investment_2027_bln_sum": 42,
+    "key_gap": "804 mehmonxona o'rni 442k sayyoh uchun yetarli emas — katta bo'shliq",
+    "opportunity": "Mini-mehmonxona, hostel, boutique hotel, glamping, touristik xizmatlar"
+  },
+
+  "trade": {
+    "markets_count": 10,
+    "shops_count": 7000,
+    "planned_2026": {
+      "new_trade_points": 850,
+      "new_jobs": 950,
+      "projects": [
+        {
+          "name": "Ixtisoslashgan MFY do'konlari",
+          "shops": 350,
+          "jobs": 350,
+          "coverage": "35 ixtisoslashgan MFY"
+        },
+        {
+          "name": "Kokand Maroqand Mall Centre",
+          "location": "Yalangocho'ta MFY",
+          "shops": 300,
+          "jobs": 300
+        },
+        {
+          "name": "Retina Med zargarlik majmuasi",
+          "location": "Hunarmandlar shaharchasi",
+          "shops": 200,
+          "jobs": 300
+        }
+      ]
+    }
+  },
+
+  "mahalla_economy": {
+    "total": 68,
+    "by_type": {
+      "trade_service": 37,
+      "industrial_production": 20,
+      "livestock_poultry": 4,
+      "tourism_handicraft": 7,
+      "difficult": 2
+    },
+    "note": "Qo'qonda mahalla ixtisoslashuvi aniq shakllangan — kuchli ustunlik"
+  },
+
+  "banking_programs": {
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for": ["tikuvchilik", "hunarmandchilik", "savdo", "ta'lim xizmatlari", "bolalar bog'chasi"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "participating_banks": ["Xalq banki", "Mikrokreditbank"],
+      "best_for": ["restoran", "kichik ishlab chiqarish", "fermerlik", "xizmat ko'rsatish"]
+    },
+    "micro_projects_2026": {
+      "total_projects": 680,
+      "sqb_projects": 180,
+      "total_jobs": 2350,
+      "total_bln_sum": 58,
+      "bank_credit_bln_sum": 29.4,
+      "banks_distribution": {
+        "SQB": 180,
+        "Milliy bank": 120,
+        "Agro bank": 90,
+        "Hamkor bank": 80,
+        "Mikrokreditbank": 80,
+        "Xalq banki": 70,
+        "Infinbank": 60
+      }
+    },
+    "sqb_ai_projects_portfolio": {
+      "total_projects": 152,
+      "total_bln_sum": 127,
+      "total_jobs": 1584,
+      "industrial": {
+        "projects": 49,
+        "bln_sum": 82.5,
+        "jobs": 415
+      },
+      "trade_service": {
+        "projects": 103,
+        "bln_sum": 44.5,
+        "jobs": 1169
+      }
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Transport markazi",
+      "detail": "Farg'ona vodiysiga kirish yo'llarining kesishmasida; temir yo'l 1.1 km, 683 km yo'l; logistika salohiyati yuqori"
+    },
+    {
+      "title": "World Craft City brendi",
+      "detail": "2019 yildan Markaziy Osiyoda birinchi World Craft City — yog'och o'ymakorligi, pichoqchilik; xalqaro brend tayyor"
+    },
+    {
+      "title": "Sanoat o'sishi",
+      "detail": "2025 yilda +24.2% — respublikada eng yuqori o'sish sur'atlaridan; 2021-2025 deyarli 2 barobar o'sdi"
+    },
+    {
+      "title": "Savdo va bozor infratuzilmasi",
+      "detail": "10 bozor + 7000+ do'kon; 2026 da yana 850 yangi savdo nuqtasi"
+    },
+    {
+      "title": "Qo'qon EIZ",
+      "detail": "117 korxona, kutilayotgan investitsiya 2.5 mlrd $, 10,000+ ish o'rni"
+    },
+    {
+      "title": "Turizm salohiyati",
+      "detail": "442k sayyoh/yil, 40.3 mln $ eksport, Xudoyorxon o'rdasi, 3 yangi marshrut (2027-2028)"
+    },
+    {
+      "title": "Yosh aholi va ta'lim bazasi",
+      "detail": "29,499 talaba (2 OTM), 8,202 texnikum o'quvchisi — kadrlar bazasi katta"
+    },
+    {
+      "title": "Quyosh energiyasi",
+      "detail": "290 quyoshli kun/yil — energiya tejash va quyosh paneli biznes uchun ideal"
+    },
+    {
+      "title": "Kreditlar o'sishi",
+      "detail": "2025 yilda kredit hajmi 3,169 mlrd — rekord, avvalgi yilga nisbatan 2.76 marta o'sdi"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Mehmonxona o'rinlari taqchilligi",
+      "severity": "YUQORI",
+      "data": "442k sayyoh/yil, faqat 804 o'rin (15 mehmonxona)",
+      "opportunity": "Mini-mehmonxona, hostel, boutique hotel, glamping, kunlik ijaraga uy",
+      "investment_range_mln_sum": "100-600",
+      "suitable_for": ["kapital bor tadbirkor", "mulk egasi"]
+    },
+    {
+      "gap": "Elektr infratuzilmasi eskirgan",
+      "severity": "O'RTA-YUQORI",
+      "data": "35% transformatorlar, 25% liniyalar almashtirish kerak; 1 marta/oy uzilish",
+      "opportunity": "Quyosh panellari o'rnatish xizmati, solar park, energiya monitoring",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["texnik bilimi bor", "kapital bor"]
+    },
+    {
+      "gap": "Maktabgacha ta'lim bo'shlig'i",
+      "severity": "O'RTA",
+      "data": "87.9% qamrov — 12.1% (taxminan 10,000+ bola) bog'chaga bormaydi",
+      "opportunity": "Xususiy bog'cha, mini-bog'cha, bolalar rivojlantirish markazi",
+      "investment_range_mln_sum": "50-200",
+      "suitable_for": ["ayollar", "pedagogik ma'lumotli"]
+    },
+    {
+      "gap": "OTM quvvati oshib ketgan",
+      "severity": "O'RTA",
+      "data": "29,499 talaba, 15,360 o'rin — 1.9 barobar to'lib ketgan",
+      "opportunity": "Xususiy kurslar, repetitorlik markazi, kasbiy tayyorlov, online ta'lim",
+      "investment_range_mln_sum": "20-150",
+      "suitable_for": ["yoshlar", "malakali mutaxassis"]
+    },
+    {
+      "gap": "Hunarmandchilik mahsulotlari eksporti past",
+      "severity": "O'RTA",
+      "data": "7 hunarmandchilik mahallasi, World Craft City maqomi bor, lekin online eksport yo'q",
+      "opportunity": "Online hunarmandchilik do'koni, B2B eksport platformasi, suvenir ishlab chiqarish",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["yoshlar", "IT bilimlari bor", "hunarmand oilalar"]
+    },
+    {
+      "gap": "NPL 32% oilaviy tadbirkorlikda",
+      "severity": "YUQORI",
+      "data": "Oilaviy kreditlarda muammoli qarzlar ko'p — moliyaviy savodxonlik past",
+      "opportunity": "Buxgalteriya/moliyaviy maslahat xizmati, biznes-trener, kreditga tayyorlash kurslari",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya bilimlari bor", "tajribali"]
+    },
+    {
+      "gap": "IT va raqamli xizmatlar kam rivojlangan",
+      "severity": "O'RTA",
+      "data": "Google Trends 65/100 va o'smoqda; raqamli texnologiyalar texnikumi 54% band",
+      "opportunity": "SMM agentlik, web-dizayn, e-commerce, IT ta'lim kurslari, raqamli marketing",
+      "investment_range_mln_sum": "3-50",
+      "suitable_for": ["yoshlar", "IT bilimlari bor"]
+    },
+    {
+      "gap": "Sanoat uchun yer taqchilligi",
+      "severity": "O'RTA",
+      "data": "0.8% sanoat zonasi — aholi zichligi 3,733/km²",
+      "opportunity": "Ko'p qavatli industrial loft, coworking, shared manufacturing space",
+      "investment_range_mln_sum": "500-3000",
+      "suitable_for": ["yirik investor"]
+    },
+    {
+      "gap": "Og'ir mahallalar: Yangi Cho'rsu va Mo'yimuborak",
+      "severity": "YUQORI",
+      "data": "Yangi Cho'rsu: 60 ishsiz (6.5%), Mo'yimuborak: 85 ishsiz (6.2% — 70% ayollar)",
+      "opportunity": "Yangi Cho'rsu: gastroturizm, milliy taomlar. Mo'yimuborak: tikuvchilik, hunarmandchilik",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["mahalliy aholi", "ayollar", "boshlang'ich tadbirkor"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Turizm xizmatlari",
+      "type": "Mini-mehmonxona / hostel / boutique hotel",
+      "why_kokand": "442k sayyoh/yil — faqat 804 o'rin. World Craft City brendi xorijiy sayyohlarni jalb qilmoqda. 2027 da 3 yangi marshrut ochilyapti.",
+      "investment_mln_sum": "150-600",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "3-5",
+      "suitable_for": ["kapital bor", "mulk egasi", "mehmondo'stlik sohasida tajriba"],
+      "bank_product": "Har bir oila tadbirkor yoki biznes kredit",
+      "risk": "Mevsuimiylik (bahor-yoz yuqori, qish past)"
+    },
+    {
+      "rank": 2,
+      "sector": "Hunarmandchilik va eksport",
+      "type": "Hunarmandchilik ustaxonasi / online do'kon / suvenir",
+      "why_kokand": "World Craft City — global brend tayyor. Yog'och o'ymakorligi, pichoqchilik — xalqaro bozorda talab bor. 7 ixtisoslashgan mahalla.",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "1-3",
+      "suitable_for": ["hunarmand oila", "yoshlar", "ayollar"],
+      "bank_product": "HAMROH (garovsiz 100 mln)",
+      "risk": "Eksport logistikasi murakkab bo'lishi mumkin"
+    },
+    {
+      "rank": 3,
+      "sector": "To'qimachilik va tikuvchilik",
+      "type": "Kichik tikuvchilik sexi / brend kiyim / forma tikish",
+      "why_kokand": "Engil sanoat — shahar ustuvur yo'nalishi (+24.2%). Mo'yimuborak mahallasida 70% ayollar ishsiz — kadrlar tayyor. OTM talabalar uchun kiyim bozori.",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "oilaviy biznes", "texnik malaka bor"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Raqobat ko'p; sifat va brend muhim"
+    },
+    {
+      "rank": 4,
+      "sector": "Umumiy ovqatlanish / Gastroturizm",
+      "type": "Restoran / milliy taomlar / food delivery / kafe",
+      "why_kokand": "442k sayyoh + 29.5k talaba = katta bozor. Yangi Cho'rsu mahallasi gastroturizm uchun belgilangan. Qo'qon taomlar brendi — nonga, norin.",
+      "investment_mln_sum": "50-250",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-3",
+      "suitable_for": ["oilaviy biznes", "boshlang'ich tadbirkor", "pishirish mahorati bor"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik (bahor-yoz); raqobat yuqori"
+    },
+    {
+      "rank": 5,
+      "sector": "Ta'lim xizmatlari",
+      "type": "Xususiy bog'cha / o'quv markazi / til kurslari / kasb kurslari",
+      "why_kokand": "Maktabgacha qamrov 87.9% — 12.1% bo'sh bozor. OTM 1.9 barobar to'lib ketgan. Raqamli texnologiyalar texnikumi 54% band — IT kurslar uchun joy bor.",
+      "investment_mln_sum": "40-200",
+      "monthly_income_estimate_mln_sum": "8-40",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "pedagogik ma'lumotli", "IT mutaxassis"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Ruxsatnomalar olish vaqt talab qiladi"
+    },
+    {
+      "rank": 6,
+      "sector": "Quyosh energiyasi",
+      "type": "Quyosh panellari o'rnatish va texnik xizmat",
+      "why_kokand": "290 quyoshli kun/yil. Elektr tarmog'i eskirgan (35% transformator). Sanoat korporatsiyalari energiya tejashni xohlamoqda. EIZ korxonalari uchun talab katta.",
+      "investment_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "3-6",
+      "suitable_for": ["texnik bilimi bor", "kapital bor", "tajribali tadbirkor"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "Texnik xodimlar topish qiyin; dastlabki investitsiya katta"
+    },
+    {
+      "rank": 7,
+      "sector": "Logistika va transport",
+      "type": "Yuk tashish / omborxona / last-mile delivery",
+      "why_kokand": "Farg'ona vodiysining transport markazi. Temir yo'l 1.1 km. 683 km yo'l. EIZ 117 korxona — logistika talab katta. 'Quruq port' kontseptsiyasi rivojlanmoqda.",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "3-7",
+      "suitable_for": ["tajribali tadbirkor", "katta kapital bor"],
+      "bank_product": "SQB biznes kreditlari yoki JICA liniyasi",
+      "risk": "Raqobat (boshqa logistika kompaniyalar); yoqilg'i narxi"
+    },
+    {
+      "rank": 8,
+      "sector": "IT va raqamli xizmatlar",
+      "type": "SMM agentlik / web-dizayn / e-commerce / raqamli marketing",
+      "why_kokand": "Google Trends 65/100 va o'smoqda. 29.5k talaba — tayyor bozor. SQB AI platformasi tatbiq etilmoqda — raqamli xizmatlar talabi o'sadi.",
+      "investment_mln_sum": "3-50",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "1-2",
+      "suitable_for": ["yoshlar", "IT bilimlari bor", "boshlang'ich tadbirkor"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Raqobat o'sib bormoqda; doimiy o'qib borish kerak"
+    },
+    {
+      "rank": 9,
+      "sector": "Moliyaviy maslahat",
+      "type": "Buxgalteriya / soliq / biznes-reja xizmati",
+      "why_kokand": "NPL 32% — moliyaviy savodxonlik past. 619 yangi korxona 2025 da. 680 mikroloyiha 2026 da — hammaga biznes-reja kerak.",
+      "investment_mln_sum": "5-30",
+      "monthly_income_estimate_mln_sum": "5-20",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya / iqtisodiyot ta'limi bor", "tajribali"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Past boshlang'ich; raqobat o'sib boradi"
+    },
+    {
+      "rank": 10,
+      "sector": "Agro va oziq-ovqat",
+      "type": "Organik qishloq xo'jaligi / qayta ishlash / fermer bozori",
+      "why_kokand": "1,095 ga qishloq xo'jaligi yeri. Qishloq xo'jaligi ulushi 9.5% — o'sish imkoni bor. Sayyohlar uchun organik mahsulot va agro-turizm talab kuchaymoqda.",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["qishloq hududi yaqinida", "yer egasi", "oilaviy biznes"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Ob-havo; bozorga yetkazish logistikasi"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Qo'qon shahri (Farg'ona viloyati) — 320 ming aholi, O'zbekistonning 4-yirik shahri. KUCHLI TOMONLARI: (1) Farg'ona vodiysining transport markazi (temir yo'l 1.1 km, 683 km yo'l); (2) World Craft City maqomi (2019) — yog'och o'ymakorligi, pichoqchilik; (3) Sanoat +24.2% o'smoqda (9,410 mlrd so'm); (4) 442k sayyoh/yil, 40.3 mln $ turizm eksporti; (5) Qo'qon EIZ — 2.5 mlrd $ investitsiya salohiyati; (6) 29,499 talaba — yosh kadrlar bazasi; (7) 10 bozor + 7000 do'kon — savdo infratuzilmasi kuchli. BO'SHLIQLAR va IMKONIYATLAR: (1) Mehmonxona o'rinlari kam (804 ta, 442k sayyoh uchun) — mini-mehmonxona/hostel biznes uchun katta imkoniyat; (2) Maktabgacha ta'lim 87.9% — 12.1% bozor bo'sh, xususiy bog'cha uchun joy bor; (3) Elektr infratuzilmasi eskirgan (35%) — quyosh energiyasi talab katta; (4) NPL 32% — moliyaviy konsalting talab katta; (5) OTM 1.9 barobar to'lib ketgan — ta'lim xizmatlari uchun bozor katta; (6) IT sektor rivojlanmagan — digital xizmatlar uchun imkoniyat. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), SQB mikroloyihalar (2026 da 180 loyiha).",
+
+  "ai_prompt_context_ru": "Коканд (Ферганская область) — 320 тыс. жителей, 4-й по величине город Узбекистана. СИЛЬНЫЕ СТОРОНЫ: (1) Транспортный узел Ферганской долины (ж/д 1.1 км, 683 км дорог); (2) Статус World Craft City (2019) — резьба по дереву, ножевые изделия; (3) Промышленность +24.2% (9,410 млрд сум); (4) 442 тыс. туристов/год, туристический экспорт 40.3 млн $; (5) Кокандская СЭЗ — потенциал инвестиций 2.5 млрд $; (6) 29,499 студентов — база молодых кадров; (7) 10 рынков + 7000 магазинов. ПРОБЕЛЫ и ВОЗМОЖНОСТИ: (1) Нехватка мест в гостиницах (804 места на 442k туристов) — большие возможности для мини-отелей/хостелов; (2) Охват дошкольным образованием 87.9% — 12.1% рынка свободно для частных детсадов; (3) Устаревшая электросеть (35%) — высокий спрос на солнечную энергетику; (4) NPL 32% в семейном предпринимательстве — спрос на финансовый консалтинг; (5) Вузы перегружены в 1.9 раза — рынок образовательных услуг большой; (6) IT-сектор слабо развит — возможности для цифровых сервисов. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн), Каждая семья — предприниматель (до 300 млн, 18%, 3 года), микропроекты SQB (180 проектов в 2026)."
+}

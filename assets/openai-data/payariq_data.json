@@ -1,0 +1,731 @@
+{
+  "id": "payariq",
+  "name_uz": "Пайариқ тумани",
+  "name_ru": "Пайарикский район",
+  "name_latin": "Payariq tumani",
+  "viloyat": "Samarqand",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "stat.uz", "samarkand.uz", "Markaziy bank", "Mehnat.uz", "SQB", "sampayarik.uz", "kengash.gov.uz", "tizim.sammahalla.uz", "spot.uz"],
+
+  "data_quality_note": "Hokimiyat ma'lumotlarida 5 ta jiddiy aномалия aniqlangan: (1) Tarmoqlar ulushi yig'indisi: Q/x 8.7% + Sanoat 1.3% + Xizmatlar 2.4% = 12.4% (100% emas) — metodologik xato; (2) Sanoat 2025da -10.1% qisqargan (805.8 → 724.5 mlrd so'm), lekin o'sish indeksi 104.1% (musbat) — qarama-qarshilik; (3) NPL 2024da 4.1% → 2025da 78.5% — texnik xato (realistik baho ~5-6%); (4) Sug'oriladigan ER 42,100 ga > umumiy maydon 41,204 ga — fizik mumkin emas; (5) Yirik korxonalar 2023da 230 mlrd → 2024da 12.7 mlrd so'm — yirik korxona yopilishi yoki ro'yxatdan o'tish o'zgarishi ehtimoli. Hokimiyatga verifikatsiya yuborilgan.",
+
+  "boundary_change_2026_alert": "Samarqand shahar 2026 yanvarda Samarqand tumanini yutib, atrof tumanlarning ham 17,500 ga maydonini olishi rejalashtirilgan. Pajariq tumanining bir qismi Samarqand shahar tarkibiga o'tishi mumkin. Tuman aholisi va maydoni 2026 yil davomida o'zgarishi ehtimoli.",
+
+  "demographics": {
+    "population": 280000,
+    "population_official_2024_jan": 273336,
+    "population_breakdown_2024": {"men": 141594, "women": 131742},
+    "population_density_per_km2": 221.4,
+    "area_km2": 412.04,
+    "area_ha": 41204,
+    "area_alert": "Hokimiyat ma'lumotida sug'oriladigan ER 42,100 ga umumiy maydondan katta — kadastr verifikatsiyasi zarur",
+    "mahallas": 65,
+    "mahallas_breakdown": {
+      "city_mahallas": 11,
+      "rural_mahalla_councils": 11,
+      "rural_settlements": 210,
+      "total_mfy_councils": 22
+    },
+    "families": 50000,
+    "households": 45000,
+    "settlements": {
+      "tuman_center": "Payariq shahri (avval 1991 ga qadar Narimonovka posyolkasi — 1880da rus ko'chmanlari qishloq tashkil etgan)",
+      "cities": ["Payariq", "Chelak"],
+      "shaharchalar": ["Tomoyrot", "Qorasuv", "Ko'ksaroy", "G'ujumsoy", "Xo'ja Ismoil", "To'polos", "Oqqo'rg'on", "Do'stlarobod", "Shodlik"],
+      "rural_villages_count": 210,
+      "rural_mfy_councils": ["Birlashgan", "Guliston", "Ko'lto'sin", "Ko'kdala", "Qorasuv", "Oqqo'rg'on", "Oytamg'ali", "Sanoat", "Chaparashli", "Choshtepa", "O'rtasaydov"]
+    },
+    "ethnic_groups": ["o'zbeklar", "tojiklar", "ruslar", "tatarlar"],
+    "borders": {
+      "north": "Jizzax viloyati",
+      "north_west": "Oqdaryo tumani",
+      "west": "Ishtixon tumani",
+      "south_west": "Jomboy tumani",
+      "south_east": "Qo'shrabot tumani"
+    },
+    "hokim": "Xudoyberdiyev Shunqor Farmonovich (yoki I.Jabborov)",
+    "hokimiyat_address": "141300, Payariq shahri, Samarqand ko'chasi, 29-uy",
+    "hokimiyat_website": "sampayarik.uz",
+    "etymology": "Tuman hududidan o'tgan 'Pay arig'i' nomidan olingan (O'zbekiston Milliy Ensiklopediyasi, 643-bet)",
+    "annual_growth_estimate": "+1-2% — barqaror; lekin 2026 boundary o'zgarishi ta'sirlanishi mumkin"
+  },
+
+  "geography": {
+    "terrain": "tekislik (Zarafshon vodiysi)",
+    "climate": "Quruq kontinental — Samarqand viloyatida 280-310 quyoshli kun/yil",
+    "main_rivers": ["Pay arig'i (kanal)"],
+    "distance_to_samarkand_city_km": 45,
+    "distance_to_railway_km": 38,
+    "distance_to_jizzax_km": "yaqin (chegaradosh viloyat)",
+    "key_advantage": "Samarqand turistik markaziga (yiliga 4+ mln sayyoh) atigi 45 km — agroturizm tranziti uchun ideal",
+    "key_disadvantage": "Temir yo'l stansiyasiga 38 km — logistik чeklov, avtomobil yo'liga bog'liqlik"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum_2025": 724.5,
+    "industry_volume_bln_sum_2024": 805.8,
+    "industry_alert": "DIQQAT: Sanoat 2025da -10.1% qisqargan (805.8 → 724.5 mlrd so'm) — yirik korxona yopilgani sababli ehtimoli (yirik korxonalar 230 → 12.7 mlrd so'm 2023-2024); kichik biznes 700.1 mlrd so'm bilan to'ldirayapti",
+    "industry_dynamics": {
+      "2021": 487.6,
+      "2022": 619.9,
+      "2023": 668.0,
+      "2024": 805.8,
+      "2025": 724.5,
+      "unit": "mlrd so'm",
+      "trend": "2021-2024 +65.2% o'sgan, lekin 2025 -10.1% pasayyon"
+    },
+    "industry_breakdown_2025": {
+      "small_business_bln_sum": 700.1,
+      "large_enterprises_bln_sum": "verification needed",
+      "small_business_advantage": "Kichik biznes (700.1 mlrd) sanoat asosi — yirik korxona yopilishini qoplayapti"
+    },
+    "services_volume_bln_sum_2025": 1894.5,
+    "services_growth_pct_2025": 30.6,
+    "services_growth_5y_multiplier": 2.9,
+    "services_dynamics": {
+      "2021": 654.7,
+      "2025": 1894.5,
+      "note": "5 yilda 2.9x o'sgan — tumanning asosij drayveri"
+    },
+    "sector_shares_file": {
+      "agriculture_pct": 8.7,
+      "industry_pct": 1.3,
+      "services_pct": 2.4,
+      "total_pct": 12.4,
+      "alert": "Yig'indi 100% emas — metodologik xato; verifikatsiya zarur"
+    },
+    "sector_shares_realistic_estimate": {
+      "agriculture_pct": 35,
+      "industry_pct": 15,
+      "services_pct": 50,
+      "note": "Realistik bah — uzumchilik (8200 ga) va savdo dominanti"
+    },
+    "google_trends_score": null,
+    "google_trends_note": "Markaziy gruppa hisoblaydi; tuman daraжasida hisoblanmagan",
+    "passenger_turnover_thousand": 6622.8,
+    "industrial_zone": {
+      "name": "'Tadbirkorlik saneat zonasi'",
+      "active_projects": 13,
+      "jobs": 202,
+      "land_use_pct": 0.6,
+      "land_use_alert": "Atigi 0.6% — Qo'qon EIZdan 50x kam; ulkan zaxira",
+      "qurilish_materiallar_klaster": "hozirda yo'q — strategik fursat"
+    },
+    "priority_sectors": [
+      "Uzumchilik va qayta ishlash (8,200 ga uzumzor, 69,141 t hosil)",
+      "Pistachilik (13,000 ga yangi plantatsiya — strategik)",
+      "Chorvachilik va go'sht-sut qayta ishlash (12 MFY)",
+      "Savdo va xizmat (35 MFY — eng katta tarmoq)",
+      "Agroturizm (Samarqand 45 km — ulkan tranzit)",
+      "Yengil saneat (tikuvchilik, hunarmandchilik)",
+      "Qurilish materiallari (qum, shag'al)"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": null,
+      "samarqand_viloyat_estimate_thousand_sum": 4500,
+      "national_mln_sum_2025": 5.98,
+      "source": "Tuman bo'yicha alohida ma'lumot yo'q; Samarqand viloyati o'rtachasidan baho"
+    }
+  },
+
+  "credits": {
+    "credits_dynamics_bln_sum": {
+      "2021": 1107,
+      "2022": 637,
+      "2023": 1062,
+      "2024": 1149,
+      "2025": 1186.8,
+      "growth_5y_pct": 7.2
+    },
+    "credits_alert": "Kredit hajmi 5 yilda atigi +7.2% o'sgan — boshqa tumanlardan past dinamika (Qoqon yiliga +20-30% o'sayapti); kredit konversiyasini oshirish ustuvor",
+    "npl_pct_dynamics_file": {
+      "2024": 4.1,
+      "2025": 78.5
+    },
+    "npl_alert": "TEXNIK XATO: 78.5% NPL — realistik emas; ehtimol metodologiya o'zgarishi yoki vаrшоtoz xato; realistik baho ~5-7%; verifikatsiya shart",
+    "family_business_credit_bln_sum_2026": 1186,
+    "family_business_npl_pct": 6.6,
+    "family_business_npl_target_2026": 1.8,
+    "credit_plan_2026_bln_sum": 2696,
+    "credit_plan_2026_breakdown_bln_sum": {
+      "small_business": 600,
+      "services": 250,
+      "industry": 450,
+      "microcredit_existing": 1227,
+      "family_entrepreneurship": 1186
+    },
+    "fdi_dynamics_thousand_usd": {
+      "2021": 988,
+      "2025": 4111
+    },
+    "fdi_growth_5y_multiplier": 4.16,
+    "fdi_advantage": "TTI 4x o'sgan — Samarqand viloyatida turkik investitsiya $4 mlrd va yapon $12 mlrd kontekstida potensial yuqori"
+  },
+
+  "infrastructure": {
+    "water_supply_pct_2025": 68.9,
+    "water_supply_dynamics_pct": {
+      "2021": 65.3, "2022": 65.3, "2023": 65.3, "2024": 65.3, "2025": 68.9
+    },
+    "water_supply_alert": "4 yil davomida QO'TIB QOLGAN (65.3%); 2025da +3.6 п.п. faol; respublika o'rtachasi 95%+ dan jiddiy past — har 3-xonadondan 1 ta tarmaq darrejaslangan emas",
+    "sewerage_pct": 87,
+    "sewerage_advantage": "87% — boshqa rural tumanlardan yaxshi (Forish 2%, Karmana —)",
+    "irrigation_canal_concrete_pct": 32.3,
+    "roads_total_km": 2246,
+    "roads_asphalted_pct": 32.8,
+    "roads_alert": "67.2% asfaltlanmagan — Qo'qon (100%) dan 5-7 yil ortda; turizm va savdo drayverlarini cheklayotgan omil",
+    "annual_passenger_volume_thousand": 6622.8,
+    "railway_distance_km": 38,
+    "viloyat_center_distance_km": 45,
+    "electricity": {
+      "outages_per_month_avg_2025": "1-1.2",
+      "old_transformers_pct": 3.3,
+      "lines_need_replacement_pct": 8.8,
+      "internet_coverage_estimate_pct": "ma'lumot yo'q",
+      "advantage": "Eskirgan tarmoq atigi 3.3% — kutilmagan yaxshi ko'rsatkich"
+    },
+    "gas_supply_pct": 40.7,
+    "gas_alert": "Gaz 40.7% — past; aholining 60% gazsiz; qishda elektr yuklamasi oshadi",
+    "land": {
+      "total_ha_file": 41204,
+      "total_alert": "Hokimiyat fadyu fakt: sug'oriladigan ER 42,100 ga = umumiy maydondan katta (41,204) — fizik mumkin emas",
+      "irrigated_ha_estimate": "30000-35000 (realistik baho)",
+      "tourism_culture_ha": 76,
+      "forest_fund_ha": 27,
+      "agricultural_ha": 1095,
+      "tourism_total_ha": 1198
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct_2025": 87.9,
+      "coverage_dynamics_pct": {
+        "2021": 83.9, "2022": 84.6, "2023": 86.0, "2024": 87.1, "2025": 87.9
+      },
+      "growth_5y_pp": 4.0,
+      "advantage": "87.9% — Qoqondagi (87.9%) bilan teng; barqaror o'sayapti"
+    },
+    "schools": {
+      "total": 58,
+      "single_shift": 30,
+      "two_shift": 28,
+      "two_shift_pct": 48.3,
+      "alert": "28 maktab 2-смenada — infratuzilma juda zo'rga; lekin Forish (82%) dan yaxshiroq"
+    },
+    "higher_education": {
+      "universities_in_district": 0,
+      "note": "Tumanda OTM yo'q; Samarqand shahri 45 km — talabalar borib qaytadi yoki yotoqxonada turadi",
+      "samarqand_universitatlar": "Samarqand davlat universiteti, Samarqand iqtisodiyot va xizmat universiteti, Samarqand davlat tibbiyot universiteti, va boshqalar"
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand_2025": 165.8,
+    "total_resources_dynamics_thousand": {
+      "2021": 143.7, "2022": 148.3, "2023": 154.6, "2024": 160.5, "2025": 165.8
+    },
+    "total_resources_growth_5y_pct": 15.4,
+    "employed_2025": 108453,
+    "employed_growth_pct_2025": 3.1,
+    "informal_sector_2021": 41183,
+    "informal_sector_advantage_or_alert": "41,183 nafar norasmiy band — yiliga ~20+ mlrd so'm soliq potensiali; rasmiyлаштириш fursati",
+    "abroad_migrants_dynamics": {
+      "2021": 4912, "2022": 4510, "2023": 4430, "2024": 4265, "2025": 2854
+    },
+    "abroad_migrants_change_2025_pct": -33.1,
+    "abroad_migrants_advantage": "Xorijga ketish kеskin kamaygan (-33.1% 2025) — ekonomika rivojlanishini ko'rsatadi",
+    "returned_migrants_2025": 2570,
+    "returned_migrants_change_2025_pct": 33.3,
+    "returned_migrants_advantage": "Qaytgan migrantlar +33.3% (2,570 nafar) — Forish (259) dan 10x ko'p; Qo'qon bilan teng (2,570); xorijiy tajriba imkoniyati",
+    "unemployment_pct_2025": 5.8,
+    "unemployment_dynamics_pct": {
+      "2021": 10.1, "2022": 9.7, "2023": 7.2, "2024": 6.0, "2025": 5.8
+    },
+    "unemployed_count_2025": 5497,
+    "unemployment_target_2027_pct": 2.4,
+    "youth_unemployed_16_30": 1489,
+    "unemployed_women": 3426,
+    "unemployed_women_pct_of_total": 62,
+    "unemployed_women_alert": "AYOLLAR ENG KO'P: 3,426 nafar (umumning 62%) — 4 ta tumanlar ichida ENG YUQORI ayol ishsizlik fofor; HAMROH dasturi ustuvor",
+    "poverty_pct_2025": 4.2,
+    "poverty_dynamics_pct": {
+      "2021": 10.1, "2022": 8.7, "2023": 7.2, "2024": 6.6, "2025": 4.2
+    },
+    "poor_families_2025": 2978,
+    "poor_families_change_pct_2025": -36.1,
+    "poverty_advantage": "5 yilda 2.4x kambag'allik kamayyon — yaxshi natija",
+    "low_income_families": 2017,
+    "difficult_mahallas_named": [
+      "Yangiobod", "Beshqo'rg'on", "Polvonariq", "Boshcho'rosh", "Fitrat",
+      "Javshar ota", "Birlashuv", "Turkibola", "Ilg'or", "Boshqo'rg'on", "Fidokor"
+    ],
+    "mahalla_categories": {
+      "heavy_ogir": 11,
+      "medium_orta": 6,
+      "easy_yengil": 35,
+      "good_yaxshi": 11,
+      "total": 63,
+      "note": "11 og'ir mahallalar — Sariosiyo (13) dan keyin 2-o'rin ko'p; lekin 35 ta yengil va 11 ta yaxshi infratuzilmaning kuchli taraflari"
+    },
+    "jobs_plan_2026": {
+      "total_potential": 9539,
+      "via_formalization": 7024,
+      "industry": 839,
+      "tourism_2026": 327,
+      "tourism_2027": 420,
+      "official_kpi_new_jobs": 2364,
+      "new_entrepreneurs_kpi": 700
+    }
+  },
+
+  "tourism": {
+    "current_state": "Modest, lekin Samarqand tranziti uchun ulkan potensial — 45 km masofada yiliga 4+ mln sayyoh",
+    "tourism_land_total_ha": 1198,
+    "tourism_land_breakdown": {
+      "historical_cultural_ha": 76,
+      "forest_fund_ha": 27,
+      "agricultural_ha": 1095
+    },
+    "tourism_jobs_plan": {
+      "2026": 327,
+      "2027": 420
+    },
+    "key_attractions": {
+      "ziyaratgohlar": {
+        "type": "7 ta shayx ziyaratgoh",
+        "status": "2024-2025da obodonlashtirilmoqda",
+        "potential": "Ziyorat-turizm va religiously-cultural tourism"
+      },
+      "uzumzorlar": {
+        "type": "Agroturizm — uzum sayri (vineyard tour)",
+        "area_ha": 8200,
+        "concept": "1 kunlik 'Узум-сайр + tandir taom' — Samarqand sayyohlari uchun"
+      },
+      "agroturizm": {
+        "concept": "'Fermer xojaligi + uzumzor + milliy taomlar' modeli",
+        "potential_per_year": "Samarqandga keladigan xorijiy sayyohlarning 8-10% ini 1 kunga jalb qilish"
+      }
+    },
+    "key_advantage": "Samarqandga 45 km — yiliga 4+ mln sayyoh kerak; Yaponiya $12 mlrd va Turkiya $4 mlrd Samarqand sektoriga investitsiya kontekstida turistik infratuzilma rivojlanyapti",
+    "investment_opportunity": {
+      "model": "Yirik mehmonxonalar emas, 30-40 ta oilavij gestxauz va degustatsiya uyi",
+      "investment_per_unit_mln_sum": "20-100",
+      "expected_jobs_per_unit": "5-15"
+    }
+  },
+
+  "trade": {
+    "main_drivers": "Savdo va xizmat — 35 MFY (54%) ixtisoslashgan",
+    "services_volume_bln_sum_2025": 1894.5,
+    "key_advantage": "Savdo айланmasi 5 yilda 2.9x o'sgan — tumanning asosij iqtisodiy drайveri"
+  },
+
+  "agriculture": {
+    "vineyards_uzumchilik": {
+      "area_ha": 8200,
+      "annual_yield_tons": 69141,
+      "processing_pct_now": 34,
+      "processing_target_pct": 60,
+      "potential_products": ["qurutilgan uzum (kishmish)", "shar batlar", "vinotovar", "shinni"],
+      "investment_per_factory_usd_mln": "5-15",
+      "key_locations_for_processing": ["Do'stlik MFY", "Nakurt MFY"]
+    },
+    "pistachio_pistakorlik": {
+      "area_ha_planned": 13000,
+      "locations": ["Do'stlik", "Ko'lto'sin", "G'allakor", "Nakurt"],
+      "harvest_starts_year": "4-5 yil keyin",
+      "export_price_usd_per_kg": "6-10",
+      "potential_revenue_usd_mln_per_year": "50-80 (to'liq hosildan)",
+      "global_demand_growth_pct_per_year": "6-8",
+      "strategic_recommendation": "'Payariq Pistachio' brendini hozirdan ro'yxatdan o'tkazish + GI (geografik ko'rsatkich) olishga tayyorlanish"
+    },
+    "livestock": {
+      "specialized_mahallas": 12,
+      "products": "go'sht-sut",
+      "processing_pct": 21,
+      "deficit_priority": "Go'sht-sut Imp ўрнини босиш ustuvorlik #1"
+    },
+    "silk_pillachilik": {
+      "specialized_mahallas": 7,
+      "type": "Ayollar uchun anъanaviy yo'nalish (HAMROH ideal)"
+    },
+    "vegetables": {
+      "processing_pct": 28,
+      "deficit_potential": "Sabzavot qayta ishlash kengaytirishi importni 15-20% kamaytiradi"
+    }
+  },
+
+  "mahalla_economy": {
+    "total": 65,
+    "advantage": "ENG KO'P (4 tumanlar ichida) — Sariosiyo 61, Forish 24, Guliston 24, Karmana 39",
+    "by_specialization": {
+      "trade_service_savdo_xizmat": {"count": 35, "pct": 54},
+      "livestock_chorvachilik": {"count": 12, "pct": 18},
+      "industry_ishlab_chiqarish": {"count": 10, "pct": 15},
+      "farming_dehqonchilik": {"count": 8, "pct": 12},
+      "silk_pillachilik": {"count": 7, "note": "qo'shimcha yo'nalish"}
+    },
+    "by_typology": {
+      "heavy_ogir": 11,
+      "medium_orta": 6,
+      "easy_yengil": 35,
+      "good_yaxshi": 11
+    },
+    "drivers": ["Savdo", "Yengil sanoat (tikuvchilik, hunarmandchilik)", "Chorvachilik", "Turizm"],
+    "agriculture_processing_alert": "Q/x qayta ishlash hali ham past — go'sht 21%, sabzavot 28%, uzum 34%"
+  },
+
+  "banking_programs": {
+    "sqb_status": "Tumanda 1 SQB filiali",
+    "total_banks": 13,
+    "atms": 170,
+    "atms_advantage": "170 banKAT — 4 ta rural tumanlar ichida ENG YUQORI (Karmana 80, Forish/Guliston/Sariosiyo —) — kam aholi nisbatda yaxshi pokrытиeri",
+    "mahalla_bankirs_total": 3,
+    "mahalla_bankirs_for_65_mahallas": "1 bankir 22 mahallaga — 4 tumanlar ichida ENG YOMON nisbat (Karmana 1/1, Sariosiyo —)",
+    "mahalla_bankirs_gender": {"women": 0, "men": 3},
+    "mahalla_bankirs_alert": "0 nafar AYOL bankir 65 mahalla uchun — kritik kemchilik (HAMROH dasturi uchun)",
+    "mahalla_bankirs_target": "12-15 (40% ayol)",
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "best_for": ["pillachilik (7 MFY)", "tikuvchilik kooperativlari", "uzum qadoqlash", "agroturizm gestxauz", "milliy taomlar restoran"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "credit_volume_in_payariq_bln_sum": 1186,
+      "current_npl_pct": 6.6,
+      "best_for": ["chorvachilik", "uzumchilik", "go'sht-sut qayta ishlash", "qurilish materiallari"]
+    },
+    "micro_projects_2025": {
+      "total_projects": 680,
+      "total_jobs": 1210,
+      "total_bln_sum": 29.4
+    },
+    "micro_projects_2026_plan": {
+      "industry_projects": 36,
+      "industry_bln_sum": 455.9,
+      "industry_jobs": 839,
+      "service_projects": 23,
+      "service_bln_sum": 223.1,
+      "service_jobs": 315,
+      "total_projects": 59,
+      "total_bln_sum": 679.2,
+      "total_jobs": 1154
+    },
+    "sez_count": 3,
+    "sez_status": "3 ta erkin iqtisodiy zona; 100+ loyiha rejada (1-3 yil)",
+    "investment_plan_2026_2031": {
+      "total_bln_sum": 3095,
+      "by_year_bln_sum": {
+        "2026": 415, "2027": 430, "2028": 450, "2029": 500, "2030": 600, "2031": 700
+      },
+      "growth_6y_pct": 68
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Eng katta uzumchilik kластери (8,200 ga)",
+      "detail": "69,141 t hosil/yil; vodiydagi yetakchi ko'rsatkichlardan; qayta ishlash 34% (60% ga ko'tarish potensiali)"
+    },
+    {
+      "title": "13,000 ga yangi pistachilik plantatsiyasi",
+      "detail": "4-5 yil ichida $50-80 mln/yil eksport potensiali; 'Payariq Pistachio' brendi va GI imkoniyati"
+    },
+    {
+      "title": "Eng ko'p mahallalar (65 ta)",
+      "detail": "4 rural tumanlardan ENG KO'P (Sariosiyo 61, Karmana 39); 35 ta yengil + 11 yaxshi = 46 ta sog'lom MFY (71%)"
+    },
+    {
+      "title": "Samarqandga 45 km — turizm tranziti",
+      "detail": "Yiliga 4+ mln sayyoh oqimi; Yaponiya $12 mlrd + Turkiya $4 mlrd 2025 investitsiyasi kontekstida turizm sektori rivojlanmoqda"
+    },
+    {
+      "title": "Xizmatlar 5 yilda 2.9x o'sgan",
+      "detail": "654.7 → 1,894.5 mlrd so'm; tumanning asosij drайveri; +30.6% 2025da"
+    },
+    {
+      "title": "Kambag'allik 5 yilda 2.4x kamaygan",
+      "detail": "10.1% (2021) → 4.2% (2025); kambag'al oilalar 36% pasaygan; ijtimoiy yutuq"
+    },
+    {
+      "title": "Xorijga ketish keskin kamaygan (-33%)",
+      "detail": "4,912 (2021) → 2,854 (2025); qaytgan migrantlar +33% (2,570) — ekonomika tortilyapti"
+    },
+    {
+      "title": "TTI 5 yilda 4x o'sgan",
+      "detail": "$988K (2021) → $4,111K (2025); xorijiy investorlar diqqat etmoqda"
+    },
+    {
+      "title": "Maktabgacha qamrov 87.9%",
+      "detail": "Qoqondagi (87.9%) bilan teng; barqaror o'sayapti +4 п.п. 5 yilda"
+    },
+    {
+      "title": "ATM tarmog'i 170 ta",
+      "detail": "4 rural tumanlardan eng yuqori; 13 banк mavjud; raqamli infratuzilma kuchli"
+    },
+    {
+      "title": "Boshqaruvga ko'rsatma 11 og'ir mahalla nomma-nom",
+      "detail": "Yangiobod, Beshqo'rg'on, Polvonariq, Boshcho'rosh, Fitrat, Javshar ota, Birlashuv, Turkibola, Ilg'or, Boshqo'rg'on, Fidokor — manzilli ish uchun aniq ro'yxat"
+    },
+    {
+      "title": "Sаrkashlарning 7 ziyoratgohi",
+      "detail": "Diniy-madaniy turizm uchun nodir resurs; 2024-2025da obodonlashtirilmoqda"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Sаноат 2025da -10.1% qisqargan",
+      "severity": "YUQORI",
+      "data": "805.8 → 724.5 mlrd so'm; yirik korxona yopilishi ehtimoli; 2026 kredit reж 450 mlrd (sanoat) bilan qoplash kerak",
+      "opportunity": "Tadbirkorlik saneat zonasini kengaytirish (hozirgi land use 0.6%); 13 ta loyiha + qurilish materiallari klasteri qo'shish",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["yirik investor", "saneat tajribasi"]
+    },
+    {
+      "gap": "Aёllar ishsizligi 62% (eng yuqori)",
+      "severity": "YUQORI",
+      "data": "3,426 nafar ayol ishsiz — umumning 62%; HAMROH ideal lekin 0 ayol bankir!",
+      "opportunity": "Pillachilik kengaytirish (7 MFY), tikuvchilik kooperativlar, uzum qadoqlash sexlari, agroturizm gestxauz, online savdo",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["ayollar (HAMROH garovsiz 100 mln)", "to'qimачилik tajribasi"]
+    },
+    {
+      "gap": "Suv ta'minoti 4 yil davomida QO'TIB QOLGAN (65.3%)",
+      "severity": "YUQORI",
+      "data": "65.3% (2021-2024) → 68.9% (2025); resp o'rtacha 95% dan 26 п.п. past; har 3-xonadondan 1 tarmaqsiz",
+      "opportunity": "DXSh suv tarmog'i loyihalari, lokal sub-suv stansiyalari, bioozonatsiya texnologiya",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["texnik kompaniya", "DXSh tajribasi"]
+    },
+    {
+      "gap": "Yo'llar 67.2% asfaltlanmagan",
+      "severity": "YUQORI",
+      "data": "2,246 km umumiy, atigi 32.8% asfalt; turizm va savdo drайverlari uchun chеklov",
+      "opportunity": "800-1,000 km 'iqtisodiy yo'llar' (uzumchilik va saneat zonasi yo'nalishi); yo'l bo'yi servis (oshxona, AYAQSh)",
+      "investment_range_mln_sum": "30-500",
+      "suitable_for": ["transport biznesi", "qurilish kompaniyasi"]
+    },
+    {
+      "gap": "Mahalla bankirlari atigi 3 nafar (eng yomon)",
+      "severity": "YUQORI",
+      "data": "65 MFY uchun 3 bankir (1 bankir 22 mahallaga); 0 ayol — kritik HAMROH uchun",
+      "opportunity": "12-15 ta bankir, 40% ayol; SQB AI Advisor platformasi кенгайtirish",
+      "note": "Bu SQB ichi qaror — biznesimkonyat emas, lekin tadbirkorlar uchun ahamiyat katta"
+    },
+    {
+      "gap": "Uzum qayta ishlash atigi 34%",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "8,200 ga uzumzor + 69,141 t hosil/yil; xom-ashyo katta, lekin tayor mahsulot ulushi past",
+      "opportunity": "2-3 ta o'rta qayta ishlash zavodi (qurutish, kontsentrat, sharbat); Do'stlik va Nakurt MFYlarida joylashtirish; eksport bozori (Qozog'iston, Rossiya, Xitoy)",
+      "investment_range_usd_mln": "5-15 har zavod",
+      "suitable_for": ["fermer-bog'bon", "agro tajribasi", "eksport tajribasi"]
+    },
+    {
+      "gap": "Pistachilik plantatsiyasi 4-5 yil hosildan oldin",
+      "severity": "O'RTA (FURSAT)",
+      "data": "13,000 ga ekilmoqda; hosildan oldin fermerlar oraliq daromad kerak; jaxon bozorida pista talabi yiliga +6-8% o'sayapti",
+      "opportunity": "Oraliq ekinlar (mosh, dukkakli); pista tozalash-qadoqlash sexi; 'Payariq Pistachio' brand",
+      "investment_range_mln_sum": "30-200",
+      "suitable_for": ["fermerlar", "yer egasi", "uzoq muddatli investor"]
+    },
+    {
+      "gap": "3 SEZ rejada lekin 100+ loyiha sochilgan",
+      "severity": "O'RTA",
+      "data": "3 ta SEZ + 100+ loyiha — fokus yo'q; 2026 portfeli 679 mlrd so'm (59 loyiha)",
+      "opportunity": "2 ixtisoslashuvga (uzum-meva qayta ishlash + yengil saneat-tikuvchilik) konsentratsiya; 'tayyor pakеtlar' inwesторlarga",
+      "investment_range_mln_sum": "100-3000",
+      "suitable_for": ["yirik investor", "DXSh sherigi"]
+    },
+    {
+      "gap": "Agroturizm rivojlanmagan",
+      "severity": "O'RTA (FURSAT)",
+      "data": "1,198 ga turizm-agro yer; 2026 turizm 327 ish ўрни atigi; Samarqandga 45 km — ulkan tranzit",
+      "opportunity": "30-40 oilavij gestxauz, degustatsiya uylari, '1 kun-uzum sayri + tandir' tur paketlari",
+      "investment_range_mln_sum": "20-100 har gestxauz",
+      "suitable_for": ["fermer oilalar", "ayollar (HAMROH)", "qaytgan migrantlar"]
+    },
+    {
+      "gap": "Norasmiy sektor 41,183 nafar",
+      "severity": "O'RTA-YUQORI",
+      "data": "41,183 nafar norasmiy band (2021); resmiyлashtirish orqali 7,024 ish ўрни 2026 maqsadi; yiliga 20+ mlrd so'm soliq",
+      "opportunity": "Ramziy chap soliqi imtiyozli pakеtlari, online ro'yxatdan o'tish, buxgalteriya konsalting",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/iqtisodiyot ma'lumot", "huquqshunоs"]
+    },
+    {
+      "gap": "Gaz ta'minoti 40.7% — qishda muammo",
+      "severity": "O'RTA",
+      "data": "Aholining 60% gazsiz; qishda elektr yuklamasi keskin oshadi; sanoat uchun risk",
+      "opportunity": "Quyosh + biogaz hibrid sistema; 5-10 MW SES (PPA model); EIZ uchun 'arzon yashil elektr'",
+      "investment_range_usd_mln": "8-25 har lojiha",
+      "suitable_for": ["texnik bilim bor", "ESCO operator"]
+    },
+    {
+      "gap": "11 og'ir mahalla nomma-nom listed",
+      "severity": "YUQORI",
+      "data": "Yangiobod, Beshqo'rg'on, Polvonariq, Boshcho'rosh, Fitrat, Javshar ota, Birlashuv, Turkibola, Ilg'or, Boshqo'rg'on, Fidokor",
+      "opportunity": "Har og'ir MFY ga 2 ta yakorь lojiha (uzum qайта ишлаш, тикувчилик kooperativ); 100-kunlik intensiv pakеt (mikrokredit + kadr + 1 яkorь lojiha)",
+      "investment_range_mln_sum": "5-50 har MFY",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Uzum qayta ishlash zavodi",
+      "type": "Qurutish (kishmish) / sok va kontsentrat / shar bat / vinotovar",
+      "why_payariq": "8,200 ga uzumzor + 69,141 t hosil/yil — vodiydagi yetakchi ko'rsatkichlardan; qayta ishlash 34% (60%ga оshirish potensial); eksport (Qozog'iston, Rossiya, Xitoy); HAMROH va Har bir oila tadbirkor mosh kelyapti",
+      "investment_usd_mln": "5-15",
+      "monthly_income_estimate_mln_sum": "30-150",
+      "payback_years": "3-5",
+      "suitable_for": ["fermer-bog'bonlar", "agro tajribasi", "eksport tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik (sentyabr-oktyabr); HACCP sertifikat"
+    },
+    {
+      "rank": 2,
+      "sector": "Pistachilik plantatsiyasi va qayta ishlash",
+      "type": "Yangi pista bog' (50-200 ga) / pista tozalash-qadoqlash sexi / 'Payariq Pistachio' brand B2B eksport",
+      "why_payariq": "13,000 ga davlat strategik plantatsiyasi (Do'stlik, Ko'lto'sin, G'allakor, Nakurt); jahon bozorida pista talabi +6-8%/yil; eksport narxi $6-10/kg; potensial $50-80 mln/yil",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-30 (3-4 yildan keyin)",
+      "payback_years": "5-8",
+      "suitable_for": ["yer egasi", "fermer", "eksport tajribasi", "uzoq muddatli investor"],
+      "bank_product": "Agro bank uzoq muddatli kreditlari",
+      "risk": "3-4 yil hosildan oldin daromad yo'q; iqlim o'zgarishi"
+    },
+    {
+      "rank": 3,
+      "sector": "Agroturizm va Samarqand tranziti",
+      "type": "Oilavij gestxauz / degustatsiya uyi / fermer ekskursiya / milliy taomlar restoran / tandirxona",
+      "why_payariq": "Samarqandga 45 km — yiliga 4+ mln sayyoh; 1,198 ga turizm-agro ER; 'fermer xojaligi + uzumzor + milliy taomlar' modeli; 8-10% Samarqand sayyohlarini 1 kunga jalb qilish (300-400k sayyoh/yil potensiali); Yaponiya $12 mlrd + Turkiya $4 mlrd Samarqandga investitsiya kontekstida",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oilalar", "ayollar (HAMROH)", "qaytgan migrantlar (chet tili)"],
+      "bank_product": "HAMROH (garovsiz 100 mln) yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik; sayyohlar oqimi mavsum o'sadi"
+    },
+    {
+      "rank": 4,
+      "sector": "Go'sht va sut qayta ishlash",
+      "type": "5-10 t/kun go'sht zavodi / mini-qassobxonalar tarmog'i / sut zavodi / halal sertifikat",
+      "why_payariq": "12 chorvachilik MFY; go'sht qayta ishlash atigi 21%; deficit товарлар rо'yhatida go'sht-sut #1; 700 yangi tadbirkor 2026 maqsadi; oilavij tadbirkorlik kredit hajmi 1,186 mlrd so'm",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["chorvador oilalar", "agro tajribasi", "fermerlar"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Veterinar talablar; halal sertifikat"
+    },
+    {
+      "rank": 5,
+      "sector": "Pillachilik va to'la sikl ipak ishlab chiqarish",
+      "type": "Pilla boqish kengaytirish / ipak gavlama sexi / tikuvchilik kooperativi / 'Payariq Silk' brand",
+      "why_payariq": "7 ta MFY pillачиликка ixtisoslashgan; aёllar ishsizligi 3,426 nafar (62%) — eng yuqori; HAMROH 100 mln so'm garovsiz; SQB ayol bankirlar yo'q (kritik kemchilik)",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "to'qimачилik tajribasi", "oilaviy biznes"],
+      "bank_product": "HAMROH (eng qulay)",
+      "risk": "Pilla mавsumiyligi; ekspert kadrlar"
+    },
+    {
+      "rank": 6,
+      "sector": "Qurilish materiallari klasteri",
+      "type": "Qum-shag'al karyer / asfalt zavodi / blok ishlab chiqarish / pardoz materiallari",
+      "why_payariq": "Tadbirkorlik saneat zonasida qurilish materiallari klasteri MAVJUD EMAS — bo'sh fursat; mahalliy xom-ashyo (qum, shag'al); yo'llar 67.2% asfaltlanmagan — ichki bozor; Samarqand viloyati Yaponiya/Turkiya investitsiyasi paytida qurilish bumi",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "20-80",
+      "payback_years": "3-5",
+      "suitable_for": ["saneat tajribasi", "qurilish biznesi", "yirik investor"],
+      "bank_product": "SQB sanoat kreditlari",
+      "risk": "Texnika sotib olish; ekologik standartlar"
+    },
+    {
+      "rank": 7,
+      "sector": "Sabzavot konservatsiyasi va qadoqlash",
+      "type": "Konserva zavodi / muzlatish-qadoqlash / online savdo eksport",
+      "why_payariq": "Sabzavot qayta ishlash 28% (43% rezerv); 8 dehqonchilik MFY; deficit товарлар; 7,024 nafar formalizatsiya 2026 maqsad; xorij eksport (Qozog'iston, Rossiya)",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer-bog'bonlar", "agro tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Hosil mavsumiyligi; sertifikat"
+    },
+    {
+      "rank": 8,
+      "sector": "Ziyorat-turizm xizmati",
+      "type": "Gid xizmati / minibus tur / restoran ziyorat marshruti / hotel-do'kon-suvenir",
+      "why_payariq": "7 ta shayx ziyoratgoh 2024-2025da obodonlashtirilmoqda; Buxoro-Samarqand religious tourism yo'lida; mahalliy va xorijiy ziyoratchilar (yiliga 200-300k tahmin)",
+      "investment_mln_sum": "20-100",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "2-4",
+      "suitable_for": ["mahalliy mehmon ko'rsatuvchilar", "tatil tajribasi", "qaytgan migrantlar"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik; rasmiy litsenziya"
+    },
+    {
+      "rank": 9,
+      "sector": "Quyosh elektr stansiyasi (PPA model)",
+      "type": "5-10 MW SES yonida saneat zonasi / rooftop solar fermer xojaligida / EV zaryadlash",
+      "why_payariq": "300+ quyoshli kun; gaz ta'minoti 40.7% (qishda elektr yuk oshadi); EIZ uchun 'arzon yashil elektr' inwestor jalb qilish uchun reklama",
+      "investment_usd_mln": "8-25",
+      "monthly_income_estimate_mln_sum": "20-80",
+      "payback_years": "5-7",
+      "suitable_for": ["texnik bilim bor", "katta kapital", "ESCO operator"],
+      "bank_product": "SQB biznes kreditlari yoki XIH (АБR yashil energiya)",
+      "risk": "Tarif tartibga solish; texnik mutaxassis kam"
+    },
+    {
+      "rank": 10,
+      "sector": "Buxgalteriya va konsalting (norasmiy → rasmiy)",
+      "type": "Buxgalteriya autsorsing / ChP/MChJ konsalting / soliq optimizatsiya",
+      "why_payariq": "41,183 nafar norasmiy ishchi; 7,024 formalizatsiya 2026 maqsad; 700 yangi tadbirkor — biznes-tayorlash bozor talabkor; NPL oilavij biznes 6.6%",
+      "investment_mln_sum": "5-50",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "huquq", "qaytgan migrantlar"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Past barаr boshlang'ich; raqobat o'sayapti"
+    },
+    {
+      "rank": 11,
+      "sector": "Hunarmandchilik va milliy mahsulot eksport",
+      "type": "Tikuvchilik / kashtanchilik / sopol-keramika / online marketplace",
+      "why_payariq": "Aёllar ishsizligi 3,426 (62%); HAMROH garovsiz 100 mln; Samarqand 45 km — sayyohlar uchun suvenir bozori; e-commerce o'sayapti",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-3",
+      "suitable_for": ["ayollar", "hunarmand", "to'qimачилик tajribasi"],
+      "bank_product": "HAMROH (garovsiz 100 mln, 70% kafillik)",
+      "risk": "Online marketing va platformalar"
+    },
+    {
+      "rank": 12,
+      "sector": "11 og'ir mahalla — 'Bir mahalla bir drайver' biznesi",
+      "type": "Yangiobod / Beshqo'rg'on / Polvonariq / Fitrat va boshqalar uchun maxsus mikrolojihalar",
+      "why_payariq": "11 ta og'ir mahalla nomma-nom listed; 5,497 ishsiz; manzilli yordam dasturi tasdiqlangan; 'tezkor 3 oylik tsikl' modeli",
+      "investment_mln_sum": "5-50 har lojiha",
+      "monthly_income_estimate_mln_sum": "1-10",
+      "payback_years": "1-3",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar"],
+      "bank_product": "Mikrokredit yoki HAMROH",
+      "risk": "Boshlang'ich kapital cheklov"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Payariq tumani (Samarqand viloyati) — 280 ming aholi (officially 273k 2024 yanvarda), 65 mahalla (4 rural tumanlar ichida ENG KO'P), 11 ta og'ir mahalla nomma-nom listed (Yangiobod, Beshqo'rg'on, Polvonariq, Boshcho'rosh, Fitrat, Javshar ota, Birlashuv, Turkibola, Ilg'or, Boshqo'rg'on, Fidokor), Samarqandga 45 km. KUCHLI TOMONLARI: (1) ENG KATTA UZUMCHILIK 8,200 ga, 69,141 t/yil — vodiydagi yetakchi; (2) 13,000 ga PISTACHILIK plantatsiyasi (4-5 yildan eksport $50-80 mln/yil); (3) Xizmatlar 5 yilda 2.9x o'sgan (655→1,895 mlrd so'm); (4) Kambag'allik 5 yilda 2.4x kamaygan (10.1%→4.2%); (5) Xorijga ketish -33% (4,912→2,854); (6) Qaytgan migrantlar +33% (2,570 nafar); (7) TTI 4x o'sgan ($988K→$4,111K); (8) 7 shayx ziyoratgoh; (9) 170 ATM (eng yuqori 4 rural tumanlar ichida); (10) Maktabgacha qamrov 87.9%; (11) 11 ta yaxshi MFY + 35 yengil = 46 sog'lom (71%); (12) 3 ta SEZ rejada. PROBLEMALAR va IMKONIYATLAR: (1) SANOAT 2025da -10.1% qisqargan! (805.8→724.5 mlrd so'm) — yirik korxona yopilishi; (2) Aёllar ishsizligi 3,426 nafar (62% — ENG YUQORI); (3) Mahalla bankirlari 3 (1/22 — eng yomon), 0 ayol — kritik HAMROH uchun; (4) Suv ta'minoti 4 yil qotib qolgan (65.3%→68.9%); (5) Yo'llar 67.2% asfaltlanmagan; (6) Uzum qayta ishlash atigi 34%; (7) Norasmiy 41,183; (8) Gaz 40.7% past; (9) Tadbirkorlik saneat zonasi 0.6% land use — ulkan zaxira; (10) Agroturizm rivojlanmagan — Samarqand 4 mln sayyohi tranziti potensiali; (11) NPL oilavij biznes 6.6%; (12) DATA QUALITY ISSUES: NPL fildaki 78.5% — texnik xato (realistic 5-7%); sektor ulushi 12.4% (100% emas) — metodologiya; sug'oriladigan ER > umumiy maydon — kadastr xato. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, NPL 6.6%), 680 mikrolojiha 2025 (1,210 ish ўрни); 2026 reж 59 lojiha (679 mlrd so'm, 1,154 ish ўрни). SAMARQAND BOUNDARY 2026 ALERT: Pajariq tumanining bir qismi Samarqand shaharga o'tishi mumkin (17,500 ga umumiy). ASOSIY DRAYVERLAR: Uzum-meva qayta ishlash zavodlari, pistachilik klasteri, agroturizm tranziti, go'sht-sut deficit, pillachilik (HAMROH), qurilish materiallari klasteri.",
+
+  "ai_prompt_context_ru": "Пайарикский район (Самаркандская область) — 280 тыс. жителей (официально 273k на янв 2024), 65 махаллей (САМОЕ БОЛЬШОЕ количество в наших 4 rural районах), 11 тяжёлых махаллей пофамильно (Янгиобод, Бешкургон, Полвонарик, Бошчорош, Фитрат, Жавшар ота, Бирлашув, Туркибола, Илгор, Бошкургон, Фидокор), до Самарканда 45 км. СИЛЬНЫЕ СТОРОНЫ: (1) КРУПНЕЙШЕЕ ВИНОГРАДАРСТВО 8,200 га, 69,141 т/год; (2) 13,000 га новых ФИСТАШЕК (через 4-5 лет $50-80 млн/год экспорта); (3) Услуги выросли в 2.9x за 5 лет (655→1,895 млрд сум); (4) Бедность снизилась в 2.4x (10.1%→4.2%); (5) Эмиграция -33% (4,912→2,854); (6) Возврат мигрантов +33% (2,570); (7) ПИИ выросли в 4x ($988K→$4,111K); (8) 7 зиёратгох (святыни шейхов); (9) 170 банкоматов (самое высокое из 4 rural); (10) Дошкольный охват 87.9%; (11) 11 хороших + 35 лёгких махаллей = 46 здоровых (71%); (12) 3 СЭЗ в плане. ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) ПРОМЫШЛЕННОСТЬ В 2025 СОКРАТИЛАСЬ -10.1%! (805.8→724.5 млрд сум) — закрытие крупного предприятия; (2) Безработица женщин 3,426 чел (62% — САМАЯ ВЫСОКАЯ); (3) Махаллинских банкиров 3 (1/22 — худшее), 0 женщин — критично для HAMROH; (4) Вода застряла на 65.3% 4 года; (5) Дороги 67.2% не асфальтированы; (6) Переработка винограда всего 34%; (7) Неформал 41,183; (8) Газ 40.7% низкий; (9) Промзона 0.6% использования — огромный резерв; (10) Агротуризм не развит — потенциал транзита 4 млн самаркандских туристов; (11) NPL семейного бизнеса 6.6%; (12) ПРОБЛЕМЫ КАЧЕСТВА ДАННЫХ: NPL в файле 78.5% — техническая ошибка (реально 5-7%); сектора 12.4% (не 100%) — методология; орошаемая земля > общая площадь — ошибка кадастра. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн), 'Каждая семья — предприниматель' (300 млн, NPL 6.6%), 680 микропроектов в 2025 (1,210 рабочих мест); план 2026: 59 проектов (679 млрд сум, 1,154 рабочих мест). АЛЕРТ ПО ГРАНИЦАМ САМАРКАНДА 2026: часть Пайарикского района может перейти в город Самарканд (всего 17,500 га). КЛЮЧЕВЫЕ ДРАЙВЕРЫ: Заводы переработки винограда-фруктов, фисташковый кластер, агротуристический транзит, дефицит мяса-молока, шёлководство (HAMROH), кластер стройматериалов."
+}

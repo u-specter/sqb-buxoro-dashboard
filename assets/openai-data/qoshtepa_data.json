@@ -1,0 +1,533 @@
+{
+  "id": "qoshtepa",
+  "name_uz": "Қўштепа тумани",
+  "name_ru": "Куштепинский район",
+  "name_latin": "Qo'shtepa tumani",
+  "viloyat": "Farg'ona",
+  "type": "tuman",
+  "data_year": 2025,
+  "sources": ["stat.uz", "farstat.uz", "Xokimiyat", "SQB", "Bandlik markazi", "Markaziy bank", "Jahon banki"],
+  "character_note": "Qo'shtepa — qishloq xo'jaligi asosida yuksalayotgan sanoat tumani. Keskin transformatsiya bosqichi: 2021-2025 sanoat +301%, lekin gaz 10.1%, kanalizatsiya 2.5% — kritik infratuzilma bo'shliqlari. Dastlabki investorlar uchun eng qulay vaqt.",
+
+  "demographics": {
+    "population": 217800,
+    "population_density_per_km2": 586,
+    "mahallas": 49,
+    "families": 60586,
+    "households": 40306,
+    "district_center_exists": false,
+    "district_center_note": "Tuman markazi hali shakllanmagan — 3-5 yil ichida 200+ korxona va 3,000+ ish o'rni bilan rivojlantirish rejalashtirilgan",
+    "schools_1shift_classrooms": 852,
+    "schools_2shift_classrooms": 490
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 3074,
+    "industry_growth_5yr_pct": 301,
+    "industry_growth_note": "2021-2025 da sanoat 3 martadan ko'p o'sdi — respublikada rekord o'sish sur'atlaridan biri",
+    "market_services_bln_sum": 1494.2,
+    "services_growth_5yr_pct": 237,
+    "local_budget_bln_sum": 154.3,
+    "local_budget_growth_pct": 66.1,
+    "local_budget_5yr_growth": "37.2 mlrd (2021) → 154.3 mlrd (2025) — 4 barobar",
+    "contingent_budget_bln_sum": 228.5,
+    "export_usd_thousand": 88900,
+    "export_trend": "105,800 → 88,900 (-16%) — PASAYMOQDA, muhim muammo",
+    "sector_shares": {
+      "agriculture_pct": 41.2,
+      "industry_pct": 33.9,
+      "services_pct": 14.8
+    },
+    "industry_structure": {
+      "large_enterprises_bln_sum": 2236.5,
+      "large_enterprises_growth": "395.4 (2021) → 2236.5 (2025) — 5.7 barobar",
+      "small_business_bln_sum": 837.2,
+      "small_business_share_pct": 38
+    },
+    "new_enterprises_2025": 234,
+    "closed_enterprises_2025": 152,
+    "google_trends_score": 27.3,
+    "google_trends_growth_pct": 25,
+    "google_trends_note": "Raqamli faollik past (27.3/100), lekin o'sish sur'ati yuqori (+25%) — foydalanilmagan raqamli imkoniyat",
+    "population_sentiment_positive_pct": 71,
+    "population_sentiment_negative_pct": 14,
+    "avg_salary_viloyat_2024_mln": 5.36,
+    "avg_salary_note": "Farg'ona viloyati o'rtacha (tuman bo'yicha alohida ma'lumot yo'q)"
+  },
+
+  "agriculture": {
+    "total_volume_bln_sum_2025": 3736.2,
+    "growth_5yr_pct": 49.5,
+    "grape_area_ha": 288,
+    "grape_yield_tons": 461,
+    "grain_area_ha": 7800,
+    "farmer_clusters": 457,
+    "vegetable_processing_pct": 15,
+    "meat_processing_pct": 12,
+    "processing_gap_note": "Xom-ashyoning 85%+ i qayta ishlanmay tuman chegarasidan chiqib ketmoqda — eng katta yo'qotish",
+    "deficit_goods": ["go'sht mahsulotlari", "sut mahsulotlari", "qurilish materiallari", "dori-darmon"],
+    "export_targets": ["Rossiya", "Qozog'iston"],
+    "mahalla_specialization": {
+      "viticulture_gardening": 38,
+      "farming": 6,
+      "small_production": 5
+    }
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 84,
+    "water_supply_trend": "42.5% (2021) → 48.3 → 51.6 → 83.1 → 84.0% (2025) — katta sakrash",
+    "road_total_km": 981,
+    "road_asphalt_pct": 82,
+    "regional_center_distance_km": 24.9,
+    "railway_distance_km": 16,
+    "electricity": {
+      "outages_per_month_avg": 1.15,
+      "old_transformers_pct": 30,
+      "lines_need_replacement_pct": 21,
+      "risk_level": "O'RTA"
+    },
+    "gas": {
+      "coverage_pct": 10.1,
+      "risk_level": "KRITIK",
+      "industrial_zones_connected": 0,
+      "note": "Farg'ona viloyatida eng past ko'rsatkich! 49.9 ga sanoat zonasida gaz yo'q — asosiy investitsiya to'sig'i. 0-12 oy ichida hal qilish — USTUVOR"
+    },
+    "sewage": {
+      "coverage_pct": 2.5,
+      "risk_level": "KRITIK",
+      "note": "Tumannnig eng kritik infratuzilma bo'shlig'i"
+    },
+    "internet": {
+      "coverage_pct": 100,
+      "speed_mbps": 128,
+      "status": "YAXSHI"
+    },
+    "land": {
+      "total_ha": 37000,
+      "irrigated_ha": 32652,
+      "irrigated_pct": 88,
+      "industrial_zone_utilization_pct": 77
+    },
+    "cargo_turnover_thousand_tons": 1662,
+    "passenger_turnover_thousand": 12807.3
+  },
+
+  "industrial_zones": {
+    "total_ha": 49.9,
+    "ksz_ha": 25.5,
+    "eiz_ha": 24.4,
+    "active_projects": 11,
+    "active_area_ha": 6.1,
+    "jobs_created": 1380,
+    "budget_contribution_bln_sum": 24,
+    "working_zones": 5,
+    "gas_connected": false,
+    "gas_note": "Gaz ulanmaganligi — investorlar uchun asosiy to'siq",
+    "key_model": "Oqtepa KSZ: bitta korxona orqali 1,700 ish o'rni — miqyos modeli",
+    "planned_ksz": "Charm-poyabzal KSZ (1-3 yil ichida ишга тушириш)",
+    "npl_pct": 1.5,
+    "npl_trend": "5.4% (2021) → 1.5% (2025) — juda yaxshi dinamika"
+  },
+
+  "labor": {
+    "total_resources": 111700,
+    "employed_agriculture": 8600,
+    "employed_services": 5200,
+    "employed_industry": 3400,
+    "informal_sector": 36746,
+    "informal_tax_loss_bln_sum_per_year": 0.7,
+    "unemployment_pct": 5.1,
+    "unemployed_count": 4341,
+    "unemployment_trend": "10.3% (2021) → 9.5 → 7.2 → 6.0 → 5.1% (2025)",
+    "youth_unemployed_16_30": 1302,
+    "women_unemployed": 1519,
+    "disabled_not_working": 3728,
+    "poverty_pct": 5.2,
+    "poor_families": 3319,
+    "difficult_mahallas": [
+      {
+        "name": "Kichik Beshkapa",
+        "poverty_pct": 13.3,
+        "category": "og'ir (10%+)"
+      },
+      {
+        "name": "Qoraqushchi",
+        "poverty_pct": 10.8,
+        "category": "og'ir (10%+)"
+      },
+      {
+        "name": "Namuna",
+        "category": "og'ir"
+      }
+    ],
+    "light_mahallas_count": 6,
+    "youth_program_2026": {
+      "total": 2221,
+      "employment": 1366,
+      "entrepreneur": 327,
+      "credit": 297,
+      "retraining": 231
+    },
+    "women_program_2026": {
+      "total": 2120,
+      "employment": 949,
+      "entrepreneur": 230,
+      "credit": 350,
+      "retraining": 591
+    }
+  },
+
+  "investment_plan": {
+    "by_year_mln_usd": {
+      "2026": 180,
+      "2027": 210,
+      "2028": 235,
+      "2029": 265,
+      "2030": 300,
+      "2031": 340
+    },
+    "historical_execution_pct": "72.9-113% (2021-2024 oralig'ida)",
+    "action_plan": {
+      "phase_1_0_12_months": [
+        "Sanoat zonalariga gaz ulash — USTUVOR #1",
+        "17 ta XMI loyihani rasmiylashtirish",
+        "5 ta og'ir mahallada tezkor dastur"
+      ],
+      "phase_2_1_3_years": [
+        "4 ta KSZ to'liq quvvatda ishlashi",
+        "Charm-poyabzal KSZ ishga tushirish",
+        "E-auktsion orqali yer chiqarish"
+      ],
+      "phase_3_3_5_years": [
+        "Tuman markazi (200+ korxona, 3,000+ ish o'rni)",
+        "Qayta ishlash klasterlari — eksportga yo'naltirish"
+      ]
+    },
+    "world_bank_projects": {
+      "approved_count": 8,
+      "approved_mln_usd": 11.545,
+      "submitted_count": 25,
+      "submitted_mln_usd": 20.143,
+      "total_plan_count": 36,
+      "waiting_count": 17,
+      "waiting_mln_usd": 8.598,
+      "note": "Hali 17 ta loyiha hujjat kutmoqda — tezlashtirish kerak"
+    },
+    "jobs_program_2026": {
+      "total_new_jobs": 2605,
+      "industry_2026": 2826,
+      "industry_2027": 3200,
+      "tourism_15_projects": 241
+    }
+  },
+
+  "banking_programs": {
+    "micro_projects_2026": {
+      "total_projects": 490,
+      "total_jobs": 940,
+      "total_bln_sum": 58.8,
+      "bank_credit_bln_sum": 17.8,
+      "sqb_projects": 31,
+      "agro_bank_projects": 9,
+      "xalq_bank_projects": 9
+    },
+    "sqb_ai_portfolio": {
+      "total_projects": 91,
+      "total_bln_sum": 100.5,
+      "total_jobs": 425,
+      "large_projects": {
+        "count": 13,
+        "bln_sum": 98,
+        "jobs": 290
+      },
+      "micro_projects": {
+        "count": 78,
+        "bln_sum": 2.5,
+        "jobs": 135
+      },
+      "agriculture_grape": {
+        "count": 78,
+        "bln_sum": 7.5,
+        "jobs": 135
+      }
+    },
+    "ai_training": {
+      "certified_ai_leaders": 11000,
+      "plan_2026": 25000,
+      "mahalla_teams_trained": 350,
+      "mahallas": 49,
+      "ai_business_plans_ready": 100
+    },
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "best_for": ["tikuvchilik", "uzum qayta ishlash", "sut mahsulotlari", "bolalar bog'chasi"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "best_for": ["fermertchilik", "qayta ishlash", "savdo", "xizmat ko'rsatish"]
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Sanoat portlashi",
+      "detail": "+301% o'sish (2021-2025) — respublikada rekord. Asosi hozir qurilmoqda, dastlabki investorlar eng ko'p foyda ko'radi"
+    },
+    {
+      "title": "Ulkan qishloq xo'jaligi bazasi",
+      "detail": "3,736 mlrd so'm Q/x (2025), 457 fermer klasteri, 38 mahalla uzumchilikka ixtisoslashgan — xom-ashyo tayyor"
+    },
+    {
+      "title": "Gaz yo'q = Quyosh energiyasi uchun ideal",
+      "detail": "10.1% gaz — bu muammo emas, imkoniyat: quyosh panellari va elektr energiyasiga asoslangan sanoat uchun perfect sharoit"
+    },
+    {
+      "title": "49.9 ga sanoat zonasi tayyor",
+      "detail": "KSZ va EIZ yer ajratilgan, faqat gaz kerak. Shu yil gaz ulansa — investorlar bilan shartnomalar boshlanadi"
+    },
+    {
+      "title": "NPL 1.5% — kredit salomatligi yuqori",
+      "detail": "2021 da 5.4% edi, 2025 da 1.5% — kreditlash uchun sog'lom muhit"
+    },
+    {
+      "title": "100% internet (128 Mbps)",
+      "detail": "Raqamli infratuzilma ajoyib — agrar tuman uchun kutilmagan ustunlik"
+    },
+    {
+      "title": "Jahon banki moliyalashishi",
+      "detail": "8 loyiha tasdiqlandi ($11.5 mln), jami 36 loyiha rejalashtirilgan — xalqaro moliya kirmoqda"
+    },
+    {
+      "title": "71% aholi ijobiy kutish",
+      "detail": "Aholining 71% iqtisodiy o'sishga ishonadi — investitsiya muhiti yaxshi"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Qishloq xo'jaligi mahsulotlarini qayta ishlash juda past",
+      "severity": "KRITIK",
+      "data": "Sabzavot qayta ishlash 15%, go'sht 12% — xom-ashyoning 85%+ tuman chegarasidan chiqib ketmoqda",
+      "opportunity": "Uzum: maysiz (raisin), sharbat, vino. Go'sht/sut: kichik zavodlar. Sabzavot: konserva, quritish, muzlatish",
+      "investment_range_mln_sum": "100-500",
+      "suitable_for": ["kapital bor", "fermer", "texnik bilim bor"],
+      "bank_product": "Agro bank imtiyozli kreditlar yoki Har bir oila tadbirkor"
+    },
+    {
+      "gap": "Deficit mahsulotlar import qilinmoqda",
+      "severity": "YUQORI",
+      "data": "Deficit: go'sht mahsulotlari, sut mahsulotlari, qurilish materiallari, dori-darmon",
+      "opportunity": "Import o'rnini bosuvchi ishlab chiqarish — tayyorimi bozor mavjud",
+      "investment_range_mln_sum": "50-800",
+      "suitable_for": ["har qanday tadbirkor"],
+      "bank_product": "SQB yoki Agro bank"
+    },
+    {
+      "gap": "Sovuq saqlash inshootlari yo'q",
+      "severity": "YUQORI",
+      "data": "288 ga uzum + 7,800 ga don + katta Q/x — sovutgich va saqlash kerak",
+      "opportunity": "Cold storage, muzxona, frigorifik transport — eksport uchun ham zarur",
+      "investment_range_mln_sum": "200-1000",
+      "suitable_for": ["kapital bor", "tajribali tadbirkor"],
+      "bank_product": "SQB yoki XMI liniyalari"
+    },
+    {
+      "gap": "Gaz infratuzilmasi kritik past (10.1%)",
+      "severity": "KRITIK",
+      "data": "Farg'ona viloyatida eng past. 49.9 ga sanoat zonasida 0 ta gaz ulangan",
+      "opportunity": "Quyosh panellari, biogas, elektr energiyasiga asoslangan ishlab chiqarish — gaz yo'q joyda ham ishlaydi",
+      "investment_range_mln_sum": "30-300",
+      "suitable_for": ["texnik bilim bor"],
+      "bank_product": "SQB ekologik kreditlar"
+    },
+    {
+      "gap": "Tuman markazi yo'q",
+      "severity": "O'RTA-YUQORI",
+      "data": "Tuman markazini qurish rejalashtirilgan — 200+ korxona, 3,000+ ish o'rni (3-5 yil)",
+      "opportunity": "Uy-joy qurilishi, savdo infrastruktura, restoran, xizmat ko'rsatish — hamma narsa sifirdan",
+      "investment_range_mln_sum": "200-5000",
+      "suitable_for": ["developer", "katta investor"],
+      "bank_product": "SQB yoki xalqaro moliya"
+    },
+    {
+      "gap": "Eksport pasaymoqda (-16%)",
+      "severity": "O'RTA-YUQORI",
+      "data": "Sanoat o'sdi, lekin eksport kamaydi — bozor va logistika muammosi",
+      "opportunity": "Eksport packaging, marketing, e-commerce va logistika konsalting",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["marketing bilimlari bor", "til biladi"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor"
+    },
+    {
+      "gap": "36,746 kishi norasmiy sektorda",
+      "severity": "O'RTA",
+      "data": "Soliq yo'qotish 0.7 mlrd so'm/yil. Rasmiylashtirish uchun kasbiy yordam kerak",
+      "opportunity": "Buxgalteriya, huquqiy maslahat, tadbirkorlik ro'yxatga olish xizmatlari",
+      "investment_range_mln_sum": "5-30",
+      "suitable_for": ["moliya yoki huquq bilimlari"],
+      "bank_product": "HAMROH"
+    },
+    {
+      "gap": "Charm-poyabzal KSZ qurilmoqda — kadrlar tayyorlanmagan",
+      "severity": "O'RTA",
+      "data": "Yangi KSZ ish kuchi talab qiladi — malakali tikuvchi, charm ustasi kam",
+      "opportunity": "Charm-poyabzal ustasi kursi, tikuvchilik ta'lim markazi",
+      "investment_range_mln_sum": "20-100",
+      "suitable_for": ["pedagogik tajriba bor", "sanoat bilimi bor"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor"
+    },
+    {
+      "gap": "Agro-turizm rivojlanmagan",
+      "severity": "O'RTA",
+      "data": "38 mahalla uzum bog'i, lekin turistik infratuzilma yo'q",
+      "opportunity": "Agro-turizm, uzum terim mavsumi turlari, ko'ylak bug'doy xirmonlari, etnografik dam olish",
+      "investment_range_mln_sum": "30-200",
+      "suitable_for": ["fermer oila", "mehmondo'stlik sohasida tajriba"],
+      "bank_product": "Har bir oila tadbirkor"
+    },
+    {
+      "gap": "Google Trends 27.3 — raqamli mavjudlik past",
+      "severity": "PAST",
+      "data": "Tuman internet ma'lumotlarda deyarli ko'rinmaydi, lekin o'smoqda (+25%)",
+      "opportunity": "SMM, web-sayt, mahalliy e-commerce, onlayn savdo xizmatlari",
+      "investment_range_mln_sum": "3-30",
+      "suitable_for": ["yoshlar", "IT bilimlari bor"],
+      "bank_product": "Yoshlar biznesda"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Qishloq xo'jaligi mahsulotlarini qayta ishlash",
+      "type": "Uzum quritish, sharbat, maysiz / Sabzavot konservasi / Go'sht-sut sexi",
+      "why_qoshtepa": "457 fermer klasteri, 3,736 mlrd so'm Q/x — xom-ashyo tayyor. Qayta ishlash atigi 12-15%. Xom-ashyoning 85% qayta ishlanmay chiqib ketmoqda — bu PUL ketmoqda.",
+      "investment_mln_sum": "80-500",
+      "monthly_income_estimate_mln_sum": "15-100",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oila", "kapital bor", "texnik bilim bor"],
+      "bank_product": "Agro bank imtiyozli yoki Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik (yoz-kuz); sovutgich infratuzilmasi zarur"
+    },
+    {
+      "rank": 2,
+      "sector": "Charm-poyabzal ishlab chiqarish",
+      "type": "Charm mahsulotlari / Poyabzal / Sumkalar",
+      "why_qoshtepa": "Charm-poyabzal KSZ qurilmoqda — 1-3 yil ichida ish o'rinlari. Qo'qon va Farg'ona shahri yaqin — xom-ashyo va bozor tayyor. KSZ imtiyozlari bor.",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["texnik malaka bor", "oilaviy biznes"],
+      "bank_product": "HAMROH (garovsiz 100 mln) yoki Har bir oila tadbirkor",
+      "risk": "Gaz yo'q — elektr asosida ishlash kerak"
+    },
+    {
+      "rank": 3,
+      "sector": "Tikuvchilik va to'qimachilik",
+      "type": "Kichik tikuvchilik sexi / Forma / Maishiy to'qimachilik",
+      "why_qoshtepa": "2,826 sanoat ish o'rni yaratiladi (2026) — tikuvchilika ixtisos kuchli. 2,120 ayolga bandlik rejalashtirilgan — HAMROH orqali moliya bor.",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "8-40",
+      "payback_years": "2-3",
+      "suitable_for": ["ayollar", "oilaviy biznes"],
+      "bank_product": "HAMROH (garovsiz 100 mln)",
+      "risk": "Raqobat; sifat va buyurtma topish"
+    },
+    {
+      "rank": 4,
+      "sector": "Qurilish materiallari ishlab chiqarish",
+      "type": "G'isht, beton, taxta, metal konstruktsiya",
+      "why_qoshtepa": "DEFICIT ro'yxatida #1. Tuman markazi qurilishi boshlanmoqda — ichki talab katta. 37,000 ga yer — qurish uchun joy bor.",
+      "investment_mln_sum": "150-1000",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "payback_years": "3-5",
+      "suitable_for": ["kapital bor", "tajribali tadbirkor"],
+      "bank_product": "SQB biznes kreditlari yoki XMI liniyalari",
+      "risk": "Gaz yo'q muammosi; elektr yoki quyosh asosida ishlash kerak"
+    },
+    {
+      "rank": 5,
+      "sector": "Sovuq saqlash va logistika",
+      "type": "Muzxona, cold storage, frigorifik transport",
+      "why_qoshtepa": "288 ha uzum, 7,800 ha don, 457 fermer — saqlamaslik eksport imkoniyatini yo'qotadi. 1,662k t yuk aylanmasi — logistika talab katta.",
+      "investment_mln_sum": "200-800",
+      "monthly_income_estimate_mln_sum": "20-80",
+      "payback_years": "3-5",
+      "suitable_for": ["kapital bor", "logistika tajribasi"],
+      "bank_product": "SQB yoki Agro bank",
+      "risk": "Katta dastlabki investitsiya; elektr narxi"
+    },
+    {
+      "rank": 6,
+      "sector": "Quyosh energiyasi",
+      "type": "Solar panel o'rnatish, mini-SES, samovar-solar",
+      "why_qoshtepa": "Gaz 10.1% — eng past viloyatda. 49.9 ha sanoat zonasi gaz yo'q = quyosh asosida ishlash majburiy. Farg'ona vodiysi — yetarli quyosh.",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "3-6",
+      "suitable_for": ["texnik bilim bor", "kapital bor"],
+      "bank_product": "SQB yoki ekologik kreditlar",
+      "risk": "Texnik xodimlar; tarmoqqa ulash"
+    },
+    {
+      "rank": 7,
+      "sector": "Agro-turizm",
+      "type": "Uzum bog'i turlari / Fermer dam olish maskani / Etnografik uy",
+      "why_qoshtepa": "38 mahalla uzumchilik ixtisosi — noyob landshaft. Qo'qon shahri yaqin (sayyohlar oqimi 442k). Hali hech kim qilmagan — first mover advantage.",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer oila", "uy-joy bor"],
+      "bank_product": "Har bir oila tadbirkor",
+      "risk": "Mevsuimiylik kuchli (kuz terim — cho'qqi); infratuzilma kam"
+    },
+    {
+      "rank": 8,
+      "sector": "Oziq-ovqat deficit mahsulotlari",
+      "type": "Sut mahsulotlari (pishloq, qatiq, sariyog') / Go'sht mahsulotlari",
+      "why_qoshtepa": "Deficit ro'yxatida sut va go'sht mahsulotlari. Qishloq xo'jaligi bazasi bor, qayta ishlash kichik. Mahalliy bozor tayyor.",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["fermer", "oziq-ovqat tajribasi bor"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; sifat nazorati"
+    },
+    {
+      "rank": 9,
+      "sector": "Ta'lim xizmatlari",
+      "type": "Kasb-hunar kurslari / Charm-tikuvchilik maktabi / Repetitorlik",
+      "why_qoshtepa": "852 sinf (1 smena) + 490 sinf (2 smena) — ta'lim talab katta. Charm-poyabzal KSZ uchun malakali kadrlar zarur. 2,221 yoshga qayta o'qitish rejalashtirilgan.",
+      "investment_mln_sum": "20-100",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "1-3",
+      "suitable_for": ["pedagogik tajriba", "sanoat bilimi bor"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Talabalar jalb qilish; o'qituvchilar topish"
+    },
+    {
+      "rank": 10,
+      "sector": "Raqamli va moliyaviy xizmatlar",
+      "type": "Buxgalteriya / Huquqiy maslahat / Onlayn savdo",
+      "why_qoshtepa": "36,746 norasmiy sektorda — rasmiylashtirish uchun yordam kerak. 234 yangi korxona — hamma buxgalter kerak. Internet 100% / 128 Mbps — raqamli xizmat uchun zamin bor.",
+      "investment_mln_sum": "5-40",
+      "monthly_income_estimate_mln_sum": "4-20",
+      "payback_years": "1-2",
+      "suitable_for": ["yoshlar", "moliya yoki huquq bilimlari"],
+      "bank_product": "HAMROH yoki Yoshlar biznesda",
+      "risk": "Past boshlang'ich; raqobat o'smoqda"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Qo'shtepa tumani (Farg'ona viloyati) — 218 ming aholi, TRANSFORMATSIYA bosqichidagi qishloq-sanoat tumani. ASOSIY XUSUSIYAT: Sanoat 5 yilda +301% o'sdi — respublikada rekord. Lekin infratuzilma hali qolib ketgan. KUCHLI TOMONLARI: (1) 3,736 mlrd so'm Q/x — 38 mahalla uzumchilik, 457 fermer klasteri; (2) 49.9 ga sanoat zonasi tayyor (KSZ + EIZ); (3) 100% internet 128 Mbps; (4) NPL 1.5% — kredit sog'lom; (5) Jahon banki 8 loyiha ($11.5 mln) tasdiqladi; (6) 71% aholi ijobiy kayfiyatda. KRITIK BO'SHLIQLAR va IMKONIYATLAR: (1) Q/x qayta ishlash faqat 12-15% — xom-ashyoning 85% chiqib ketmoqda — UZUM, GO'SHT, SABZAVOT qayta ishlash biznes uchun KATTA imkoniyat; (2) Deficit: go'sht mahsulotlari, sut, qurilish materiallari, dori-darmon — import o'rnini bosish; (3) Gaz 10.1% KRITIK — sanoat zonasida gaz yo'q, quyosh energiyasi muhim imkoniyat; (4) Kanalizatsiya 2.5% KRITIK; (5) Tuman markazi yo'q — qurilish va xizmat uchun nol bozor ochilmoqda; (6) Charm-poyabzal KSZ qurilmoqda — kadrlar va yetkazib beruvchilar kerak. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), Agro bank imtiyozli kreditlar.",
+
+  "ai_prompt_context_ru": "Куштепинский район (Ферганская область) — 218 тыс. жителей, сельско-промышленный район в стадии трансформации. ГЛАВНАЯ ОСОБЕННОСТЬ: Промышленность выросла на +301% за 5 лет — рекорд в республике. Но инфраструктура отстаёт. СИЛЬНЫЕ СТОРОНЫ: (1) 3,736 млрд сум с/х — 38 махаллей специализированы на виноградарстве, 457 фермерских кластеров; (2) 49.9 га промзон готово (КСЗ+ЭИЗ); (3) 100% интернет 128 Мбит/с; (4) NPL 1.5% — здоровый кредитный портфель; (5) Мировой банк: 8 проектов одобрено ($11.5 млн); (6) 71% населения настроены позитивно. КРИТИЧЕСКИЕ ПРОБЕЛЫ и ВОЗМОЖНОСТИ: (1) Переработка с/х лишь 12-15% — 85% сырья уходит без добавленной стоимости — ВИНОГРАД, МЯСО, ОВОЩИ — огромные возможности для переработки; (2) Дефицит: мясопродукты, молочка, стройматериалы, лекарства — замещение импорта; (3) Газ 10.1% КРИТИЧНО — в промзонах газа нет, солнечная энергия — важная возможность; (4) Канализация 2.5% КРИТИЧНО; (5) Нет центра района — рынок для строительства и услуг открывается с нуля; (6) Строится КСЗ для кожобуви — нужны кадры и поставщики. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога до 100 млн), Каждая семья — предприниматель (300 млн, 18%, 3 года), льготные кредиты Агробанка."
+}

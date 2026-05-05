@@ -1,0 +1,772 @@
+{
+  "id": "sariosiyo",
+  "name_uz": "Сариосиё тумани",
+  "name_ru": "Сариасийский район",
+  "name_latin": "Sariosiyo tumani",
+  "viloyat": "Surxondaryo",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "surxonstat.uz", "stat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "gov.uz", "uzbekistan.travel", "gazeta.uz", "spot.uz", "daryo.uz", "uzbekcoal.uz"],
+
+  "demographics": {
+    "population": 239100,
+    "population_official_2026": 237966,
+    "population_density_per_km2": 62,
+    "area_km2": 3820,
+    "mahallas": 61,
+    "families": 56635,
+    "households": 43872,
+    "urbanization_pct": 19.1,
+    "urban_population": 44672,
+    "rural_population": 189212,
+    "settlements": {
+      "city": 1,
+      "city_name": "Sharg'un",
+      "town": 1,
+      "town_name": "Sariosiyo (markaz)",
+      "villages": 10,
+      "total_settlements": 117
+    },
+    "ethnic_groups": ["o'zbeklar", "tojiklar", "ruslar", "tatarlar"],
+    "ethnic_count": 18,
+    "established_year": 1926,
+    "borders": {
+      "north_east": "Tojikiston Respublikasi",
+      "north_west_west": "Qashqadaryo viloyati",
+      "south_west": "Boysun tumani",
+      "south": "Denov, Qumqo'rg'on tumanlari",
+      "south_east": "Uzun tumani"
+    },
+    "note": "Surxondaryoning shimoliy tumani; eng past urbanizatsiya darajasidagi tumanlardan (19.1%); aholisi tez o'sayotgan tumanlardan biri"
+  },
+
+  "geography": {
+    "terrain": "tog'li-vodiy",
+    "main_mountain_ranges": ["Hisor (eng baland)", "Bobotog'", "Boysuntog'"],
+    "highest_peak_m": 4303,
+    "highest_peak_name": "Xo'japiryax tog'i (O'zbekistondagi eng baland nuqta)",
+    "main_rivers": ["To'polondaryo", "Surxondaryo", "Sangardak", "Obizarang"],
+    "topolong_reservoir_note": "Surxondaryo viloyatining 10 ta tumanini suv bilan ta'minlaydi",
+    "climate": {
+      "type": "Quruq subtropik",
+      "january_avg_c": 2.5,
+      "july_avg_c": 28,
+      "max_recorded_c": 44,
+      "vegetation_days": 275,
+      "annual_precipitation_mm": "200-300 (tekislik), 790 (tog'lar)",
+      "afgan_wind_note": "Janubi-g'arbdan esuvchi quruq, changbo'ronli shamol salbiy ta'sir ko'rsatadi"
+    },
+    "distance_to_termiz_km": 170,
+    "distance_to_railway_km": 8,
+    "key_advantage": "Subtropik mikroiqlim — O'zbekistonning kam tumanlarida bor (xurmo, anor, limon yetishtirish imkoniyati)",
+    "natural_advantage": "Toshkent–Dushanbe poyezdi va Uzun–Sharg'un poyezdi tuman orqali o'tadi; Sariosiyo aerporti Surxondaryodagi 2 ta aeroport biridir"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 1208.2,
+    "industry_growth_5y_multiplier": 4.5,
+    "industry_dynamics": {
+      "2021": 266.2,
+      "2022": 783.2,
+      "2023": 460.1,
+      "2024": 953.9,
+      "2025": 1208.2,
+      "unit": "mlrd so'm"
+    },
+    "services_volume_bln_sum": 1441.4,
+    "services_dynamics": {
+      "2021": 554.4,
+      "2022": 771.7,
+      "2023": 930.6,
+      "2024": 1104.3,
+      "2025": 1441.4,
+      "unit": "mlrd so'm"
+    },
+    "export_volume_thousand_usd": 13826.5,
+    "export_dynamics_thousand_usd": {
+      "2021": 18.2,
+      "2022": 17278.9,
+      "2023": 11959.1,
+      "2024": 10262.0,
+      "2025": 13826.5
+    },
+    "sector_shares": {
+      "agriculture_pct": 43.6,
+      "services_pct": 22.5,
+      "industry_pct": 18.6,
+      "construction_pct": 15.4
+    },
+    "industrial_production_index_2025_pct": 109.3,
+    "closed_enterprises_5y": 356,
+    "google_trends_score": 62,
+    "google_trends_note": "62/100 barqaror o'sish faolligi; 2024 o'rtacha 54 → 2025 o'rtacha 62 (+15%); eng faol davr Mart-Aprel 2025 — 78 ball; baxor va kuz mavsumiy",
+    "cargo_turnover_mln_tons": 14.9,
+    "priority_sectors": [
+      "tog'-kon sanoati (ko'mir, polimetal)",
+      "subtropik bog'dorchilik va qayta ishlash",
+      "tog'li/eko turizm (Sangardak)",
+      "transit savdo va logistika (Tojikiston chegarasi)",
+      "gidroenergetika"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": 4289,
+      "tuman_thousand_sum_dynamics": {
+        "2021": 2286,
+        "2022": 2776,
+        "2023": 3255,
+        "2024": 3849,
+        "2025": 4289
+      },
+      "growth_5y_pct": 87,
+      "national_mln_sum_2025": 5.98,
+      "source": "Sariosiyo tumani statistika bo'limi"
+    },
+    "local_budget_bln_sum_2025": 137.0,
+    "local_budget_dynamics": {
+      "2021": 92.0,
+      "2022": 107.7,
+      "2023": 109.5,
+      "2024": 103.3,
+      "2025": 137.0,
+      "unit": "mlrd so'm"
+    },
+    "contingent_budget_bln_sum_2025": 59.2
+  },
+
+  "credits": {
+    "by_year_bln_sum": {
+      "2021": 102.4,
+      "2022": 125.6,
+      "2023": 147.9,
+      "2024": 175.3,
+      "2025": 250.7
+    },
+    "growth_5y_multiplier": 2.4,
+    "npl_pct_2025": 4.2,
+    "npl_pct_2022": 6.2,
+    "npl_risk_level": "PAST",
+    "npl_note": "NPL 6.2% (2022) dan 4.2% (2025) ga tushdi — sog'lom tendentsiya. Qo'qondan farqli (32%) — bu yerda kreditlash xavfsizroq"
+  },
+
+  "natural_resources": {
+    "shargun_coal": {
+      "name": "Sharg'un ko'mir koni",
+      "uniqueness": "O'zbekistondagi yagona kokslanuvchi ko'mir koni",
+      "reserves_mln_tons": 160,
+      "annual_extraction_target_thousand_tons": 900,
+      "planned_jobs": 2000,
+      "innovation_potential": "Ko'mirni boyitish va briketlash; kimyoviy klaster yaratish (qo'shilgan qiymat 3-4 barobarga oshadi)",
+      "operator": "Shargunko'mir AJ"
+    },
+    "khondiza_polymetal": {
+      "name": "Xondiza polimetal koni",
+      "type": "rux, qo'rg'oshin va boshqa ranglik metallar",
+      "status": "faoliyat ko'rsatuvchi"
+    },
+    "subtropical_agriculture": {
+      "garden_area_ha": "2500+",
+      "main_crops": ["xurmo (Sharq xurmosi)", "anor", "limon", "olma", "anjir", "yong'oq", "bodom", "pista"],
+      "uniqueness": "Sariosiyo mikroiqlimi — O'zbekistonda kam joyda mavjud bo'lgan subtropik kultivatsiya zonasi",
+      "current_processing_pct": "10-12",
+      "export_markets_potential": ["Xitoy", "BAA", "Yevropa", "MDH"],
+      "note": "Xurmo daraxti 1 tupdan 250 kg gacha hosil beradi; eksport potensiali $12 mln/yil",
+      "regional_processing_gap": "Surxondaryo umuman olganda meva-uzum qayta ishlash sanoatini rivojlantirishga muhtoj"
+    },
+    "honey": {
+      "type": "tog' asali",
+      "advantage": "Bobotog' pistasi va ko'pgina dorivor o'simliklardan terib olingan organik tog' asali",
+      "export_potential_pct_increase_with_certification": 100
+    },
+    "hydropower": {
+      "topolong_hpp_mw": 175,
+      "potential": "Yangi kichik va mikro GES qurish; saqlangan energiya quvvati saqlangan",
+      "investment_range_usd_mln": "15-40",
+      "advantage": "Yashil energiya bilan ta'minlangan sanoat zonalari yaratish imkoniyati"
+    },
+    "mineral_water_springs": {
+      "status": "shifobaxsh buloqlar mavjud",
+      "potential": "Sanatoriy va sog'lomlashtirish markazlari, nafas yo'llarini davolash markazlari",
+      "investment_range_usd_mln": "5-15"
+    },
+    "other": ["qurilish materiallari (oxaktosh, gips, marmar)", "neft", "gaz", "fosfor"]
+  },
+
+  "border_and_transit": {
+    "tajikistan_border": "shimoliy va sharqiy chegara",
+    "border_crossing_name": "Sariosiyo (xalqaro temir yo'l va avtomobil nazorat-o'tkazish punkti)",
+    "annual_cargo_turnover_mln_tons": 1.5,
+    "tajikistan_trade_volume_with_uz_2024_usd": "1 mlrd",
+    "trade_target_2030_usd": "2 mlrd",
+    "opportunities": [
+      "Quruq port va bojxona terminali",
+      "Ulgurji savdo majmuasi",
+      "Logistika markazlari (Oybek-Fotihobod modeliga o'xshash)",
+      "Yuk tashish va omborxona xizmatlari"
+    ],
+    "key_advantage": "Surxondaryoda Tojikiston bilan asosiy chegara hududlaridan; Tojikistondan O'zbekiston eksporti tashishda asosiy yo'nalishlardan",
+    "infrastructure_modernization_in_progress": true
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 66.7,
+    "water_supply_dynamics": {
+      "2021": 61.0,
+      "2022": 61.8,
+      "2023": 61.9,
+      "2024": 64.4,
+      "2025": 66.7
+    },
+    "water_supply_5y_increase_pct": 4.1,
+    "roads_total_km": 1252,
+    "roads_asphalted_pct": 58.3,
+    "roads_unpaved_pct": 41.7,
+    "annual_passenger_volume_mln": 17.5,
+    "railway_station_distance_km": 8,
+    "railway_lines": ["Toshkent-Dushanbe", "Uzun-Sharg'un"],
+    "airport_status": "Sariosiyoda Surxondaryodagi 2 ta aeroportdan biri bor",
+    "electricity": {
+      "outages_per_month_avg": 4,
+      "old_transformers_pct": 29,
+      "lines_need_replacement_pct": 35,
+      "risk_level": "YUQORI",
+      "note": "Qo'qondan 4 marta yomonroq (Qo'qonda 1.05 marta/oy uzilish); sanoat o'sishiga to'siq bo'lishi mumkin"
+    },
+    "gas_supply_pct": 100,
+    "land": {
+      "total_ha": 384638,
+      "irrigated_ha": 13867,
+      "anorzor_industrial_zone": {
+        "enterprises": 17,
+        "land_utilization_pct": 98.2,
+        "note": "Yer foydalanish darajasi yuqori; yangi loyihalar uchun yer kam"
+      },
+      "note": "Tuman katta hududga ega lekin asosan tog'li; suv bilan ta'minlangan ekin maydonlari kam (3.6%)"
+    },
+    "solar_potential": "Yuqori — quyoshli kunlar ko'p, lekin tog'li mintaqalarda intensivligi pasayishi mumkin"
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct": 70.3,
+      "children_3_7_yo": 22400,
+      "covered": 15750,
+      "gap_count": 6650,
+      "institutions_total": 233,
+      "government": 37,
+      "family_mtt": 186,
+      "dxsh": 10,
+      "private_mtt": 0,
+      "opportunity": "0 ta xususiy MTT! Bozor butunlay bo'sh — xususiy bog'cha biznes uchun ulkan imkoniyat (ayniqsa Qo'qon 87.9% qamrov bilan solishtirganda — Sariosiyoda yana ko'proq joy)",
+      "note": "Oilaviy MTTlar (186 ta) ustun — ammo sifatli xususiy variantga talab katta"
+    },
+    "general_education": {
+      "schools_count": 71,
+      "students": 31000,
+      "gymnasiums": 2,
+      "boarding_schools": 3
+    },
+    "vocational": {
+      "technical_schools_count": 4,
+      "total_students": 1470,
+      "total_capacity": 1365,
+      "load_pct": 107.7,
+      "schools": [
+        {"name": "1-son texnikum", "students": 670, "capacity": 450, "load_pct": 148.9},
+        {"name": "2-son texnikum", "students": 800, "capacity": 765, "load_pct": 104.6},
+        {"name": "3-son texnikum", "students": 147, "capacity": 150, "load_pct": 98},
+        {"name": "Abu Ali ibn Sino jamoat salomatlik texnikumi", "students": 843, "capacity": 575, "load_pct": 146.6}
+      ],
+      "opportunity": "3-son texnikum bo'sh turibdi — uni tog'-kon va turizm mutaxassislarini tayyorlash markaziga aylantirish kerak. Qurilish va tog'-kon ishlari bo'yicha qisqa muddatli kurslar talab katta"
+    },
+    "higher_education": {
+      "otm_in_district": 0,
+      "note": "Tumanda OTM yo'q — talabalar Termiz, Toshkent va boshqa shaharlarga ketadi"
+    }
+  },
+
+  "healthcare": {
+    "institutions_count": 17,
+    "total_beds": 430,
+    "budget_beds": 385,
+    "private_beds": 45,
+    "private_pct": 10.4,
+    "total_staff": 2027,
+    "doctors": 267,
+    "mid_level_staff": 1382,
+    "lower_staff": 454,
+    "doctor_to_population_ratio": "1 vrach: 895 kishi (vrach ko'p emas)",
+    "opportunity": "Xususiy tibbiyot 10.4% — kengaytirish kerak (stomatologiya, pediatriya, diagnostika, qishloq shifokori dasturlari)",
+    "note": "Mineral suv manbalari va tog' havosi davolash turizmi uchun katta salohiyat (sanatoriy, nafas yo'llari klinikalari)"
+  },
+
+  "labor": {
+    "total_resources": 113600,
+    "total_resources_dynamics": {
+      "2021": 111800,
+      "2022": 112900,
+      "2023": 113100,
+      "2024": 113400,
+      "2025": 113600
+    },
+    "officially_employed": 79200,
+    "informal_sector": 28109,
+    "disabled_total": 10024,
+    "disabled_employed": 1952,
+    "disabled_unemployed": 8072,
+    "unemployment_pct": 5.3,
+    "unemployment_dynamics_pct": {
+      "2021": 11.3,
+      "2022": 9.4,
+      "2023": 7.7,
+      "2024": 6.2,
+      "2025": 5.3
+    },
+    "unemployed_count": 4389,
+    "poverty_pct": 3.9,
+    "poverty_dynamics_pct": {
+      "2021": 18.6,
+      "2022": 17.1,
+      "2023": 12.4,
+      "2024": 10.7,
+      "2025": 3.9
+    },
+    "poor_families": 1894,
+    "youth_unemployed_official": 628,
+    "abroad_migrants_2025": 8900,
+    "returned_migrants_2025": 12745,
+    "returned_migrants_advantage": "Qo'qonga nisbatan 5 baravar ko'p (12,745 vs 2,570) — xorijiy tajriba ulkan resurs",
+    "unemployed_women": 1875,
+    "child_benefit_families": 2400,
+    "low_income_families": 2420,
+    "social_aid_total_families": 4820,
+    "high_unemployment_mahallas": [
+      {"name": "A.Navoiy"},
+      {"name": "Bog'isamarqand"},
+      {"name": "Daragitston"},
+      {"name": "Lochin"},
+      {"name": "Marjona"},
+      {"name": "Niholzor"},
+      {"name": "Nodirabegim"},
+      {"name": "Nurbuloq"},
+      {"name": "Kelajak sari"},
+      {"name": "Bog'iston"},
+      {"name": "Chosh"},
+      {"name": "Sharafobod"},
+      {"name": "Xurshid"}
+    ],
+    "high_unemployment_mahallas_count": 13,
+    "high_unemployment_recommended_directions": [
+      "ipakchilik (30 ta mahalla salohiyati)",
+      "kartoshka/karam yetishtirish (20 ta mahalla)",
+      "qishloq xo'jaligini qayta ishlash",
+      "drayver soha tarmoqlariga bog'lash"
+    ]
+  },
+
+  "tourism": {
+    "annual_tourists_current": 70000,
+    "annual_tourists_target_2027": 265000,
+    "permanent_visitors_target": 130000,
+    "peak_daily_visitors_season": 800,
+    "tourism_export_potential_usd_mln": 12,
+    "current_infrastructure": {
+      "modern_hotels": 3,
+      "family_guesthouses": 26,
+      "total_accommodations": 29
+    },
+    "sangardak_waterfall": {
+      "status": "O'zbekistondagi eng baland sharsharalardan",
+      "height_m": 20,
+      "water_source": "karst daryolari va g'orlar",
+      "main_springs": ["Sangardakbuloq", "Shirinbuloq", "Qorabuloq", "Siryoybuloq"],
+      "best_season": "yoz (sharshara suvi ko'p)",
+      "winter_note": "qisman muzlaydi — qishki turizm uchun yangi imkoniyat",
+      "religious_sites_nearby": ["Xo'jailg'or ziyoratgohi", "Sharsharamozor ziyoratgohi"]
+    },
+    "sangardak_tourism_center_2025_2028": {
+      "investment_bln_sum": 913.3,
+      "investment_usd_mln": 70,
+      "area_ha": 615,
+      "planned_objects": {
+        "5_star_hotels": 2,
+        "3_star_hotels": 4,
+        "guest_houses": 10,
+        "restaurants_cafes_bars": 21,
+        "retail_outlets": 296,
+        "cableway_km": 1.6,
+        "zipline": true,
+        "sanatorium": true,
+        "cultural_center": true,
+        "picnic_zones": true
+      },
+      "implementation": "Davlat-xususiy sheriklik; 10 yil muddatda bo'lib-bo'lib to'lash sharti bilan investorlarga yer beriladi",
+      "key_decree": "PQ-238 (27.07.2023)",
+      "tourism_village_status": ["Sangardak qishlog'i (rasman)", "Nilu mahallasi (rejada)"]
+    },
+    "other_attractions": [
+      "Xondiza dam olish majmui",
+      "Hisor tog' tizmasi (alpinizm)",
+      "Xo'japiryax tog'i — O'zbekistondagi eng baland nuqta",
+      "Mineral suv buloqlari",
+      "Telpakchinordagi Oq Ostona bobo maqbarasi (X-XI asrlar)",
+      "Bobotog' va Boysuntog' tizmalari"
+    ],
+    "regional_context_surxondaryo_2023": {
+      "local_tourists_mln": 1.12,
+      "foreign_tourists_thousand": 600,
+      "total_accommodations_in_region": 197,
+      "hotels_in_region": 51,
+      "hostels_in_region": 14,
+      "guest_houses_in_region": 132
+    },
+    "key_gap": "Hozirgi 29 ta joylashtirish vositasi — peak mavsumda 800/kun mehmon uchun yetarli emas. Sangardak markazi qurilishi bilan keskin ko'paytirish kerak",
+    "opportunity": "Kichik-o'rta mehmonxonalar, oilaviy mehmon uylari, kafelar, transport va gid xizmatlari, ot va piyoda ekskursiyalar, zip-line, kemping, glamping",
+    "tourism_quality_gap": "Maxalliy aholini gidlik va mehmonxona xizmati bo'yicha o'qitish zarur (chet tillari ham — ingliz, rus, tojik)"
+  },
+
+  "trade": {
+    "anorzor_ksz_enterprises": 17,
+    "border_trade_potential": "Tojikiston bilan 1.5 mln tonna/yil yuk aylanmasi — chegara savdosi infratuzilmasi sust rivojlangan",
+    "key_advantage": "Sariosiyo Tojikiston eksporti uchun strategik chegara nuqtasi — chegara savdo markazlarini barpo etish rejada",
+    "opportunity": "Ulgurji savdo majmuasi, dog'ujang savdosi, transit do'konlari"
+  },
+
+  "mahalla_economy": {
+    "total": 61,
+    "by_specialization": {
+      "livestock_chorvachilik": 26,
+      "agriculture_dehqonchilik": 17,
+      "horticulture_bog_dorchilik": 10,
+      "trade_service_savdo_xizmat": 7,
+      "uncategorized": 1
+    },
+    "by_difficulty_category": {
+      "easy_yengil": 31,
+      "medium_orta": 28,
+      "heavy_ogir": 1,
+      "uncategorized": 1
+    },
+    "high_unemployment_count": 13,
+    "note": "Asosiy qism (43 ta) chorvachilik va dehqonchilikka ixtisoslashgan; faqat 7 ta xizmat-savdo mahallasi (Sangardak salohiyatidan unumli foydalanish kerak); shahar/qishloq fuqarolari yig'ini: 1 shahar (Sharg'un), 1 shaharcha (Sariosiyo), 9 qishloq (Bo'ston, Dashnobod, Navro'z, Sangardak, Sariosiyo, So'fiyon, Toqchiyon, Xufar, O'zbekiston)"
+  },
+
+  "banking_programs": {
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for": ["tikuvchilik", "hunarmandchilik", "ipakchilik", "oziq-ovqat tayyorlash", "mehmon uy yuritish", "xususiy bog'cha"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank"],
+      "best_for": ["chorvachilik", "bog'dorchilik", "fermerlik", "kichik ishlab chiqarish", "mehmon uy", "oziq-ovqat qayta ishlash"]
+    },
+    "micro_projects_2026": {
+      "total_projects": 610,
+      "total_jobs": 1210,
+      "100_day_plan": {"projects": 83, "jobs": 4400},
+      "main_directions": ["bog'dorchilik (105 ga yangi bog')", "xizmat ko'rsatish", "kichik sanoat"]
+    },
+    "sangardak_investment_2025_2028_bln_sum": 913.3,
+    "foreign_investment_target_2025_2027_usd_mln": 150,
+    "sqb_ai_advisor_status": "Joriy etish jarayonida — barcha 61 mahallada 2026 yil yakunigacha",
+    "shargun_mining_jobs_planned": 2000,
+    "youth_returnees_credit_program": "Reintegratsiya kreditlari 12,745 nafar qaytgan migrantlar uchun (taklif)"
+  },
+
+  "strengths": [
+    {
+      "title": "Subtropik mikroiqlim — O'zbekistonda noyob",
+      "detail": "2,500+ ga subtropik bog'lar (xurmo, anor, limon, anjir); vegetatsiya 270-280 kun; hosildorlik vilooyat bo'yicha eng yuqori"
+    },
+    {
+      "title": "Yagona kokslanuvchi ko'mir koni",
+      "detail": "Sharg'un — O'zbekistondagi yagona koks ko'mir manbai (160 mln tonna zaxira, 900 ming tonna/yil reja, 2000 yangi ish o'rni)"
+    },
+    {
+      "title": "Sangardak — yirik turistik klaster qurilmoqda",
+      "detail": "913.3 mlrd so'mlik 615 ga investitsiya: 6 mehmonxona, 21 restoran, 296 do'kon, kanat yo'l, zip-line, sanatoriy"
+    },
+    {
+      "title": "Tojikiston bilan strategik chegara",
+      "detail": "1.5 mln tonna/yil yuk aylanmasi; xalqaro temir yo'l va avtomobil KPP; tovar aylanmasi 2030 ga $2 mlrdga yetkazish maqsadi"
+    },
+    {
+      "title": "Gidroenergetika salohiyati",
+      "detail": "175 MW To'palong GES + kichik GES qurish imkoniyati; investitsiya $15-40 mln; saqlangan energiyaga ega sanoat zonalari yaratish mumkin"
+    },
+    {
+      "title": "Qaytgan migrantlar — ulkan resurs",
+      "detail": "12,745 nafar 2025 da qaytgan (Qo'qondan 5 baravar ko'p); xorijiy tajriba va malakalar; ularni tadbirkorlikka yo'naltirish biznes-imkoniyatlari ulkan"
+    },
+    {
+      "title": "Ishsizlik 2 baravarga kamaygan",
+      "detail": "11.3% (2021) → 5.3% (2025); kamhag'allik 18.6% → 3.9%; ijtimoiy islohotlar samara bermoqda"
+    },
+    {
+      "title": "Tog'li tabiat va minerallar",
+      "detail": "Hisor tog'lari (4303m), Bobotog', Boysuntog'; mineral suv buloqlari; davolash turizmi salohiyati"
+    },
+    {
+      "title": "Strategik logistika joylashuv",
+      "detail": "Toshkent-Dushanbe poyezdi va Uzun-Sharg'un poyezdi tuman orqali o'tadi; 2 ta aeroportdan biri Sariosiyoda"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Turizm joylashtirish vositalari taqchilligi (KESKIN)",
+      "severity": "YUQORI",
+      "data": "Hozirgi 70k turist/yil + peak 800 mehmon/kun — faqat 3 ta zamonaviy mehmonxona + 26 ta oilaviy mehmon uyi. 2027 ga 265k turist kutilmoqda — 4 baravar ortish",
+      "opportunity": "Mini-mehmonxona, oilaviy mehmon uy, kemping, glamping, eko-turistik uy. Sangardak markaziga yaqin yer uchastkalari onlayn auksionda 10 yil bo'lib-bo'lib to'lov asosida",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["mahalliy uy egasi", "oilaviy biznes", "qaytgan migrantlar", "boshlang'ich tadbirkor"]
+    },
+    {
+      "gap": "0 ta xususiy bog'cha (TUMAN BO'YICHA)",
+      "severity": "YUQORI",
+      "data": "Maktabgacha qamrov 70.3% — 6650 bola qamrovsiz; 233 ta MTTdan 0 tasi xususiy (37 davlat + 186 oilaviy + 10 DXSh)",
+      "opportunity": "Xususiy bog'cha, mini-bog'cha, bolalar rivojlantirish markazi — bozor butunlay bo'sh",
+      "investment_range_mln_sum": "50-200",
+      "suitable_for": ["pedagogik ma'lumotli ayollar", "oilaviy biznes"]
+    },
+    {
+      "gap": "Subtropik mevalarni qayta ishlash juda past",
+      "severity": "YUQORI",
+      "data": "2,500+ ga bog'lar; faqat 10-12% qayta ishlanadi; eksport ko'p qismi xom ashyo holatida",
+      "opportunity": "Kichik konservatsiya sexlari, muzlatgich omborxonalar, quritish (xurmo, anor), murabbo/sharbat ishlab chiqarish, vakuum qadoqlash",
+      "investment_range_mln_sum": "30-300",
+      "suitable_for": ["fermerlar", "qishloq xo'jaligi tajribasi bor", "oilaviy biznes"]
+    },
+    {
+      "gap": "Tojikiston chegara savdosi infratuzilmasi sust",
+      "severity": "O'RTA-YUQORI",
+      "data": "1.5 mln tonna/yil yuk aylanmasi, lekin chegara yaqinida ulgurji savdo markazi yo'q; bojxona xizmatlari cheklangan",
+      "opportunity": "Ulgurji savdo majmuasi, omborxonalar, bojxona broker xizmatlari, yuk haydovchilar uchun kafe/oshxona, tunash joyi",
+      "investment_range_mln_sum": "100-2000",
+      "suitable_for": ["tajribali tadbirkor", "katta kapital bor", "logistika tajribasi"]
+    },
+    {
+      "gap": "Elektr tarmog'i eskirgan",
+      "severity": "YUQORI",
+      "data": "29% transformatorlar, 35% liniyalar almashtirish kerak; 4 marta/oy uzilish (Qo'qonda 1.05) — sanoat o'sishiga to'siq",
+      "opportunity": "Quyosh panellari va kichik GES o'rnatish xizmati; alternative energiya konsalting; ijtimoiy obyektlarni quyosh energiyasiga o'tkazish",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["texnik bilim bor", "kapital bor"]
+    },
+    {
+      "gap": "Tibbiy xizmat: xususiy ulush 10.4%",
+      "severity": "O'RTA",
+      "data": "17 ta tibbiy muassasa, 430 ta o'rin (385 byudjet + 45 xususiy); 1 vrachga 895 kishi to'g'ri keladi",
+      "opportunity": "Xususiy stomatologiya, pediatriya, diagnostika klinikalari, sanatoriy (mineral suv buloqlari asosida), tibbiy turizm",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["tibbiy ma'lumot", "kapital bor"]
+    },
+    {
+      "gap": "Yo'llarning yarmidan ko'pi (41.7%) asfalt emas",
+      "severity": "O'RTA",
+      "data": "1252 km umumiy yo'l; 58.3% asfaltlangan; tog'li hududlarda transport zaif",
+      "opportunity": "Tog' transport biznes (4WD taksi, mikroavtobus, jip-tur xizmati), yuk tashish kichik kompaniyalar",
+      "investment_range_mln_sum": "30-200",
+      "suitable_for": ["transport biznesi tajribasi", "haydovchi"]
+    },
+    {
+      "gap": "Hunarmandchilik va eko-mahsulotlar eksporti past",
+      "severity": "O'RTA",
+      "data": "Tog' asali, dorivor o'simliklar, pista, bodom mavjud — lekin sertifikatlash va brendlash sust",
+      "opportunity": "'Sariosiyo organik' brendi, tog' asali eksporti, dorivor o'simlik chayi, sertifikatlangan eko-mahsulotlar",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["fermerlar", "qaytgan migrantlar", "oilaviy biznes"]
+    },
+    {
+      "gap": "12,745 qaytgan migrant — integratsiya dasturi yetarli emas",
+      "severity": "O'RTA-YUQORI",
+      "data": "2025 da 12,745 nafar qaytdi (2025 yilda); xorijdagi (Rossiya, Koreya, Turkiya) tajribasini biznesga aylantirish dasturi yo'q",
+      "opportunity": "Reintegratsiya kreditlari, biznes-trening dasturlari; qurilish/zavod/tikuvchilik tajribasi bor mutaxassislarni o'z biznesiga yo'naltirish",
+      "investment_range_mln_sum": "20-300",
+      "suitable_for": ["xorijda ishlagan", "qurilish/tikuvchilik tajribasi bor"]
+    },
+    {
+      "gap": "Og'ir/yarim-og'ir mahallalar (13 ta)",
+      "severity": "YUQORI",
+      "data": "A.Navoiy, Bog'isamarqand, Daragitston, Lochin, Marjona, Niholzor, Nodirabegim, Nurbuloq, Kelajak sari, Bog'iston, Chosh, Sharafobod, Xurshid",
+      "opportunity": "Mahallabay yo'l xaritasi: ipakchilik (30 mahalla salohiyati), kartoshka/karam (20 mahalla), drayver sohalarga bog'lash (Sangardak, Sharg'un, chegara savdosi)",
+      "investment_range_mln_sum": "5-100",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar", "boshlang'ich tadbirkor"]
+    },
+    {
+      "gap": "3-son texnikum bo'sh (147/150)",
+      "severity": "PAST-O'RTA",
+      "data": "Boshqa 3 ta texnikum 105-149% to'lib ketgan, 3-son atigi 98% (147 talaba)",
+      "opportunity": "Tog'-kon va turizm mutaxassislarini tayyorlash markazi; mehmonxona xizmati va tog' gidi kurslari",
+      "investment_range_mln_sum": "50-200",
+      "suitable_for": ["pedagogik tajriba", "tog'-kon yoki turizm tajribasi"]
+    },
+    {
+      "gap": "Norasmiy bandlik 28,109 kishi",
+      "severity": "O'RTA",
+      "data": "Norasmiy sektorda 28k kishi; 8,072 nafar ishlamaydigan nogironlik bo'lgan shaxs",
+      "opportunity": "Kasanachilik markazlari, ijtimoiy tadbirkorlik, uy mehnati (tikuvchilik, hunarmandchilik), online sotuv",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["ayollar", "nogironlar", "uydan ishlovchilar"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Turizm joylashtirish",
+      "type": "Oilaviy mehmon uy / mini-mehmonxona / glamping (Sangardak)",
+      "why_sariosiyo": "Sangardak markazi 2025-2028 da 913.3 mlrd so'mlik investitsiya bilan qurilmoqda. Hozir 70k turist/yil → 2027 ga 265k. Faqat 29 ta joylashtirish vositasi — keskin yetishmaslik. Davlat 615 ga maydonda yer auksionda 10 yil bo'lib-bo'lib to'lov bilan beradi",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "8-50",
+      "payback_years": "3-6",
+      "suitable_for": ["mulk egasi", "qaytgan migrantlar", "oilaviy biznes", "kapital bor tadbirkor"],
+      "bank_product": "HAMROH (ayollar) yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik (yoz/baxor yuqori, qish past) — qishki turizmni rivojlantirish kerak; transport masalasi"
+    },
+    {
+      "rank": 2,
+      "sector": "Subtropik mevalar qayta ishlash",
+      "type": "Quritish/konservatsiya sexi / muzlatgich omborxonasi (xurmo, anor, limon)",
+      "why_sariosiyo": "2,500+ ga subtropik bog'lar — O'zbekistonda noyob. Faqat 10-12% mahalliy qayta ishlanadi — bo'shliq juda katta. Eksport bozori (Xitoy, BAA, Yevropa) tayyor. 'Sariosiyo xurmosi' geografik brendi sifatida ro'yxatdan o'tkazish mumkin",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "5-40",
+      "payback_years": "2-5",
+      "suitable_for": ["fermerlar", "qishloq xo'jaligi tajribasi bor", "oilaviy biznes"],
+      "bank_product": "Agro bank kreditlari yoki Har bir oila tadbirkor",
+      "risk": "Hosil mavsumiyligi; sertifikatlash xarajatlari; eksport logistikasi"
+    },
+    {
+      "rank": 3,
+      "sector": "Tog'li/eko-turizm xizmatlari",
+      "type": "Gid xizmati / jip-tur / kemping / piyoda ekskursiya / ot-tur",
+      "why_sariosiyo": "Sangardak sharsharasi + Hisor tog'lari + Xo'japiryax (eng baland) — alpinizm, eko-turizm, sayohatchi xorijliklar uchun ulkan jozibadorlik. 'Sariosiyo Guide' mobil iloova rejada. Mahalliy aholi gid bo'lib ishlash uchun o'qitilishi mumkin",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "3-25",
+      "payback_years": "1-3",
+      "suitable_for": ["yoshlar", "tog' bilimi bor", "qaytgan migrantlar (chet tili biluvchilar)"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik; xavfsizlik talablari; sertifikatlash"
+    },
+    {
+      "rank": 4,
+      "sector": "Tog' asali va eko-mahsulotlar",
+      "type": "Tog' asali ishlab chiqarish va qadoqlash / dorivor o'simlik chayi / pista-bodom qadoqlash",
+      "why_sariosiyo": "Bobotog' pistasi va ko'pgina dorivor o'simliklar mavjud; toza tog' havosi va yarim-yovvoyi sharoit organik sertifikatlash uchun ideal. 'Sariosiyo organik' brendi orqali eksport narxi 2 baravar oshishi mumkin",
+      "investment_mln_sum": "10-80",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "2-4",
+      "suitable_for": ["fermerlar", "qishloq aholisi", "ayollar", "oilaviy biznes"],
+      "bank_product": "HAMROH (ayollar) yoki Agro bank",
+      "risk": "Sertifikatlash murakkabligi; eksport bozoriga kirish"
+    },
+    {
+      "rank": 5,
+      "sector": "Xususiy bog'cha",
+      "type": "Xususiy MTT / mini-bog'cha / bolalar rivojlantirish markazi",
+      "why_sariosiyo": "0 ta xususiy MTT — bozor butunlay bo'sh! 233 ta MTTdan 0 tasi xususiy. Qamrov 70.3% — 6650 bola qamrovsiz. Qo'qondan ham yaxshiroq imkoniyat (Qo'qonda 87.9% qamrov)",
+      "investment_mln_sum": "50-200",
+      "monthly_income_estimate_mln_sum": "8-30",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumotli ayollar", "oilaviy biznes"],
+      "bank_product": "HAMROH (garovsiz 100 mln so'm)",
+      "risk": "Ruxsatnomalar olish vaqt talab qiladi; sifatli kadr topish"
+    },
+    {
+      "rank": 6,
+      "sector": "Chegara savdosi va logistika",
+      "type": "Omborxona / bojxona broker xizmati / ulgurji savdo nuqtasi / yuk haydovchilar uchun servis",
+      "why_sariosiyo": "Tojikiston bilan 1.5 mln tonna/yil yuk aylanmasi. O'zbekiston-Tojikiston savdo $1 mlrd → 2030 ga $2 mlrd maqsadi. Chegara savdo markazlarini barpo etish davlat tomonidan rejada — birinchi keluvchilar afzallik oladi",
+      "investment_mln_sum": "100-2000",
+      "monthly_income_estimate_mln_sum": "20-150",
+      "payback_years": "3-7",
+      "suitable_for": ["tajribali tadbirkor", "katta kapital bor", "logistika tajribasi"],
+      "bank_product": "SQB biznes kreditlari yoki JICA liniyasi",
+      "risk": "Bojxona qoidalari o'zgaruvchanligi; chegara siyosati"
+    },
+    {
+      "rank": 7,
+      "sector": "Chorvachilik mahsulotlarini qayta ishlash",
+      "type": "Sut zavodi / pishloq sexi / go'sht qayta ishlash / qorako'l klaster",
+      "why_sariosiyo": "26 ta mahalla chorvachilikka ixtisoslashgan (eng katta ulush). Hisor qo'ylari (yirik vaznli) tumanda mashhur. Mahalliy bozorda qayta ishlangan mahsulotlar yetishmaydi",
+      "investment_mln_sum": "50-300",
+      "monthly_income_estimate_mln_sum": "10-40",
+      "payback_years": "2-5",
+      "suitable_for": ["chorvachilik tajribasi bor", "qishloq aholisi", "fermerlar"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sut/go'sht narxi tebranishi; veterinar talablar"
+    },
+    {
+      "rank": 8,
+      "sector": "Davolash turizmi va sanatoriy",
+      "type": "Mini-sanatoriy / nafas yo'llari klinikasi / mineral suv markazi",
+      "why_sariosiyo": "Tog' havosi, mineral suv buloqlari, Xondiza dam olish majmui — davolash turizmi uchun barcha resurslar mavjud. Tojikiston va boshqa qo'shni davlatlardan tibbiy sayyohlar oqimi yaratish mumkin",
+      "investment_mln_sum": "200-1500",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "4-8",
+      "suitable_for": ["tibbiy ma'lumot", "katta kapital bor", "tajribali"],
+      "bank_product": "SQB biznes kreditlari yoki xorijiy sarmoyaviy partnyorlik",
+      "risk": "Litsenziya jarayoni uzoq; texnik xodimlar topish qiyin"
+    },
+    {
+      "rank": 9,
+      "sector": "Quyosh energiyasi va kichik GES",
+      "type": "Quyosh paneli o'rnatish xizmati / mikro-GES qurish (xususiy)",
+      "why_sariosiyo": "Elektr tarmog'i eskirgan (35% liniya, 29% transformator), 4 marta/oy uzilish — sanoat juda muhtoj. Tumanda 175 MW To'palong GES + kichik GES qurish salohiyati mavjud. Investitsiya $15-40 mln",
+      "investment_mln_sum": "100-3000",
+      "monthly_income_estimate_mln_sum": "15-200",
+      "payback_years": "4-8",
+      "suitable_for": ["texnik bilimi bor", "katta kapital", "tajribali tadbirkor"],
+      "bank_product": "SQB biznes kreditlari yoki ESCO modelidagi shartnoma",
+      "risk": "Texnik xodimlar yetishmovchiligi; ruxsatnomalar uzoq olinadi"
+    },
+    {
+      "rank": 10,
+      "sector": "Ipakchilik va to'qimachilik",
+      "type": "Ipakchilik fermer xo'jaligi / kichik to'qimachilik / tikuvchilik sexi",
+      "why_sariosiyo": "30 ta mahallada ipakchilik salohiyati mavjud (mahallabay tahlil). 1875 ishsiz ayol — kasanachilik markazlari uchun tayyor kadr. Sariosiyo to'qimachilik (trikotaj, tikuvchilik) bo'yicha tarixiy rivojlangan",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "oilaviy biznes", "qishloq aholisi"],
+      "bank_product": "HAMROH (garovsiz 100 mln) yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik (ipakchilik); raqobat (boshqa tumanlar)"
+    },
+    {
+      "rank": 11,
+      "sector": "Qaytgan migrantlar uchun reintegratsiya biznesi",
+      "type": "Qurilish brigadasi / mexanik servis / tikuvchilik / oziq-ovqat (xorijiy oshxona)",
+      "why_sariosiyo": "12,745 nafar 2025 da qaytdi — Qo'qondan 5x ko'p! Ularning Rossiyada (qurilish), Koreyada (zavod), Turkiyada (tikuvchilik) orttirgan tajribalari nodir. Reintegratsiya kreditlari taklif etilmoqda",
+      "investment_mln_sum": "20-300",
+      "monthly_income_estimate_mln_sum": "5-50",
+      "payback_years": "1-4",
+      "suitable_for": ["xorijda ishlagan", "qurilish/tikuvchilik/zavod tajribasi", "yoshlar"],
+      "bank_product": "Yoshlar biznesda yoki Har bir oila tadbirkor",
+      "risk": "Mahalliy bozorga moslashish; til/madaniy farqlar"
+    },
+    {
+      "rank": 12,
+      "sector": "Hunarmandchilik va suvenirlar",
+      "type": "Suvenir do'koni / mahalliy hunarmandchilik ustaxonasi / online sotuv",
+      "why_sariosiyo": "Sangardakka 2027 ga 265k turist kutilmoqda — suvenir bozori juda kichik hozir. Tog' hunarmandchiligi (yog'ochdan, charmdan), to'qimachilik (Sariosiyo trikotaji) — turistik mahsulotlar uchun ideal",
+      "investment_mln_sum": "5-50",
+      "monthly_income_estimate_mln_sum": "2-15",
+      "payback_years": "1-3",
+      "suitable_for": ["hunarmand oilalar", "ayollar", "yoshlar", "online savdo bilimi bor"],
+      "bank_product": "HAMROH (garovsiz)",
+      "risk": "Mavsumiylik; raqobat o'sib boradi"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Sariosiyo tumani (Surxondaryo viloyati) — 239 ming aholi, 61 mahalla, O'zbekistonning shimoliy chegara tumani (Tojikiston bilan). KUCHLI TOMONLARI: (1) Sangardak turistik markazi 2025-2028 da 913.3 mlrd so'mlik investitsiya bilan qurilmoqda — 6 mehmonxona, 21 restoran, 296 do'kon, kanat yo'l; (2) Subtropik mikroiqlim — 2,500+ ga xurmo/anor/limon bog'lari (O'zbekistonda noyob); (3) O'zbekistondagi yagona kokslanuvchi ko'mir koni Sharg'unda (160 mln tonna zaxira); (4) 175 MW To'palong GES — yashil energiya markazi imkoniyati; (5) Tojikiston bilan strategik chegara — 1.5 mln tonna/yil yuk aylanmasi; (6) 12,745 qaytgan migrant 2025 da (Qo'qondan 5x ko'p) — xorijiy tajriba katta resurs. BO'SHLIQLAR va IMKONIYATLAR: (1) Turizm joylashtirish — faqat 3 mehmonxona + 26 mehmon uy 70k turist/yil uchun, 2027 ga 265k kutilmoqda — KESKIN bo'shliq; (2) 0 ta xususiy bog'cha (qamrov 70.3%) — bozor butunlay bo'sh; (3) Subtropik mevalar qayta ishlash atigi 10-12% — qadoqlash, quritish, jam/sharbat sexlari uchun ulkan imkoniyat; (4) Chegara savdosi infratuzilmasi sust — ulgurji savdo, omborxonalar, bojxona xizmatlari kerak; (5) Elektr tarmog'i eskirgan (4 uzilish/oy) — quyosh va kichik GES talab katta; (6) Xususiy tibbiyot atigi 10.4% — sanatoriy va davolash turizmi imkoniyati; (7) 13 ta yuqori ishsizlik mahallasi (A.Navoiy, Bog'isamarqand, Lochin, Marjona va b.). BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), 610 ta mikrolojiha 2026 rejada. KREDIT XAVFI PAST: NPL atigi 4.2% (Qo'qonda 32%) — kreditlash xavfsizroq. ASOSIY DRAYVERLAR: tog'-kon, subtropik bog'dorchilik, eko-turizm, chegara savdosi, gidroenergetika.",
+
+  "ai_prompt_context_ru": "Сариасийский район (Сурхандарьинская область) — 239 тыс. жителей, 61 махалля, северный приграничный район Узбекистана (граница с Таджикистаном). СИЛЬНЫЕ СТОРОНЫ: (1) Туристический центр 'Сангардак' строится в 2025-2028 с инвестициями 913.3 млрд сум — 6 отелей, 21 ресторан, 296 магазинов, канатная дорога; (2) Уникальный субтропический микроклимат — 2,500+ га садов (хурма, гранат, лимон) — редкость для Узбекистана; (3) Единственное в стране месторождение коксующегося угля в Шаргуне (запас 160 млн тонн); (4) ГЭС 'Топалонг' 175 МВт — потенциал зелёной энергетической столицы; (5) Стратегическая граница с Таджикистаном — 1.5 млн тонн/год грузооборот; (6) 12,745 вернувшихся мигрантов в 2025 году (в 5 раз больше Коканда) — огромный ресурс зарубежного опыта. ПРОБЕЛЫ и ВОЗМОЖНОСТИ: (1) Туристическое размещение — всего 3 отеля + 26 гостевых домов на 70 тыс. туристов/год, к 2027 ожидается 265 тыс. — КРИТИЧЕСКИЙ дефицит; (2) 0 частных детских садов (охват 70.3%) — рынок полностью свободен; (3) Переработка субтропических фруктов всего 10-12% — гигантская возможность для сушильных, упаковочных, варочных цехов; (4) Слабая инфраструктура приграничной торговли — нужны оптовые рынки, склады, таможенные брокеры; (5) Электросеть изношена (4 отключения/мес) — высокий спрос на солнечную энергию и микро-ГЭС; (6) Частная медицина всего 10.4% — потенциал для санаториев и медицинского туризма; (7) 13 махаллей с высокой безработицей (А.Навои, Богисамарканд, Лочин, Маржона и др.). БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн), 'Каждая семья — предприниматель' (до 300 млн, 18%, 3 года), 610 микропроектов в плане 2026. КРЕДИТНЫЙ РИСК НИЗКИЙ: NPL всего 4.2% (в Коканде 32%) — кредитование безопаснее. КЛЮЧЕВЫЕ ДРАЙВЕРЫ: горно-добывающая отрасль, субтропическое садоводство, эко-туризм, приграничная торговля, гидроэнергетика."
+}

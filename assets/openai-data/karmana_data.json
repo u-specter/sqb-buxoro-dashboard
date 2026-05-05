@@ -1,0 +1,731 @@
+{
+  "id": "karmana",
+  "name_uz": "Кармана тумани",
+  "name_ru": "Карманинский район",
+  "name_latin": "Karmana tumani",
+  "viloyat": "Navoiy",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "navstat.uz", "stat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "spot.uz", "yuz.uz", "sputniknews.uz", "Navoiy FEZ"],
+  "presidential_decree_2026": "PQ 16.02.2026 — Navoiy viloyatini barqaror ijtimoiy-iqtisodiy rivojlantirish to'g'risida qaror; Karmana tumani uchun maxsus 'Qadimiy Karmana' madaniyat va turizm markazi loyihasi tasdiqlandi",
+
+  "demographics": {
+    "population": 144700,
+    "population_density_per_km2": 152,
+    "area_km2": 952,
+    "area_ha": 95200,
+    "mahallas": 39,
+    "families": 28000,
+    "households": 25500,
+    "settlements": {
+      "center": "Karmana shahri (tumandan tashqarida — viloyat poytaxti Navoiy shahriga 6 km)",
+      "main_villages_mahallas": ["Kumushkon", "Ko'hna Qo'rg'on", "Ziyokor", "Shibzon"]
+    },
+    "ethnic_groups": ["o'zbeklar", "tojiklar", "qozoqlar", "ruslar", "tatarlar"],
+    "borders": {
+      "north": "Konimex tumani",
+      "south": "Navoiy shahri (6 km) / Xatirchi tumani",
+      "east": "Navbahor tumani",
+      "west": "Qiziltepa tumani"
+    },
+    "note": "Navoiy viloyatining markazi — viloyat poytaxti Navoiy shahriga atigi 6 km da; M-37 xalqaro magistrali tugunida; Buxoro–Toshkent yo'lining markaziy nuqtasi"
+  },
+
+  "geography": {
+    "terrain": "tekislik (cho'l-dasht-yaylov)",
+    "climate": {
+      "type": "Quruq kontinental cho'l iqlimi",
+      "key_advantage": "Tuyachilik va saxroviy q/x uchun ideal sharoit; 2026-2027 yillarda zotli tuya va otlar olib kelinishi rejada"
+    },
+    "distance_to_navoiy_city_km": 6,
+    "distance_to_railway_km": 8,
+    "distance_to_bukhara_km": 100,
+    "distance_to_tashkent_km": 460,
+    "key_advantage": "M-37 xalqaro magistrali (Toshkent–Buxoro–Xorazm va Qozog'iston yo'nalishi) tugunida; Navoiy xalqaro aeroporti yaqinida (TIS logistika hubi)"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 13580.5,
+    "industry_share_in_viloyat_pct": 11.9,
+    "industry_growth_5y_multiplier": 1.84,
+    "industry_growth_pct_2025": 3.2,
+    "industry_dynamics": {
+      "2021": 7364.6,
+      "2025": 13580.5,
+      "unit": "mlrd so'm"
+    },
+    "industry_breakdown_2025": {
+      "large_enterprises_bln_sum": 9728.1,
+      "small_business_bln_sum": 18559.7,
+      "small_business_vs_large_multiplier": 1.91,
+      "note": "UNIKAL: kichik biznes ishlab chiqarishi yirik korxonalardan 1.9x katta — boshqa tumanlardan kekin farqli"
+    },
+    "industry_share_in_economy_pct": 84.1,
+    "monoculture_alert": "IQTISODIY MONOSTRUKTURA RISKI: 84.1% sanoatdan iborat — global tebranishlarga juda zaif. Diversifikatsiya (xizmat, turizm, q/x qayta ishlash) — 'Karmana 2030' strategiyasining asosiy maqsadi",
+    "services_volume_bln_sum": 3071.9,
+    "services_growth_index_2025": 114.0,
+    "agriculture_volume_bln_sum": 3003,
+    "agriculture_growth_5y_pct": 57,
+    "export_volume_usd_mln": 83.3,
+    "import_volume_usd_mln": 143,
+    "fdi_2025_usd": 730000,
+    "fdi_alert": "TTI atigi $730 ming — investitsiya hajmi katta ($735 mln), lekin xorijiy investor improvi minimal. Halqaro inveistorlarni jalb qilish ustuvor vazifa",
+    "sector_shares": {
+      "industry_pct": 84.1,
+      "services_pct": 14.5,
+      "agriculture_pct": 1.4,
+      "note": "Sаноат улуш katta'q paitta — boshqa tumanlardan farqli"
+    },
+    "new_enterprises_2025": 408,
+    "closed_enterprises_2025": 209,
+    "net_enterprise_growth_2025": 199,
+    "enterprises_scaling_up": 17,
+    "scaling_program": "'Karmana-Skeyl' dasturi — 17 ta KO'K (kichik-o'rta korxona) ni yirik bizenes toifasiga o'tkazish",
+    "google_trends_score": null,
+    "google_trends_note": "Tuman daraжasida rasmiy hisoblanmagan; lekin yuk aylanmasi 93,424 ming tonna",
+    "cargo_turnover_thousand_tons": 93424,
+    "cargo_turnover_alert": "Yuk aylanmasi 93,424 ming tonna — 4 tumanlar ichida ENG YUQORI; Forishdan (999) 93x ko'p, Gulistondan (7,281) 13x ko'p — 'Sukoy port' uchun ideal",
+    "priority_sectors": [
+      "saneat — elektrotexnika va qurilish materiallari",
+      "qurilish materiallari (28 fojdali qazilma koni — 5 sement koni 375 mln tonna zaхira)",
+      "qishloq xo'jaligi va qayta ishlash (gosht, sut, sabzavot, anor)",
+      "logistika va 'Sukoy port' (M-37 + temir yo'l 8 km)",
+      "Navoiy ЭIZ qoshidagi 'sputnik kластерлар' (qadoqlash, R&D, lab)",
+      "ziyorat va madaniy turizm (Rabati Malik, Mir Sayid Bahrom)"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": null,
+      "viloyat_estimate_thousand_sum_2024": 5500,
+      "national_mln_sum_2025": 5.98,
+      "source": "Tuman bo'yicha alohida ma'lumot yo'q; Navoiy viloyati o'rtachasi yuqori (oltin va metallurgiya hisobiga)"
+    },
+    "local_budget_bln_sum_2025": 113.1,
+    "local_budget_dynamics": {
+      "2021": 43.4,
+      "2025": 113.1,
+      "growth_5y_multiplier": 2.6
+    },
+    "contingent_budget_bln_sum_2025": 535.1,
+    "informal_sector_workers": 7510,
+    "informal_sector_potential_tax_bln_sum": 11.2
+  },
+
+  "credits": {
+    "by_year_bln_sum": {
+      "2025": 1409
+    },
+    "npl_pct_dynamics": {
+      "2021": 4.1,
+      "2025": 2.2
+    },
+    "npl_risk_level": "PAST (yaxshilanmoqda)",
+    "npl_advantage": "NPL 2.2% — 4 tumanlar ichida ENG PAST (Guliston 5.5%, Sariosiyo 4.2%, Forish 2.9%); kreditlash xavfsiz",
+    "family_business_npl_pct": 6.2,
+    "family_business_npl_alert": "Oilaviy tadbirkorlik NPL 6.2% — umumiy NPL'dan 3x yuqori; bu sektor uchun maxsus monitoring va SQB AI Advisor skoringini joriy etish zarur",
+    "family_business_credit_volume_bln_sum": 279.3,
+    "microcredit_volume_bln_sum": 946.3,
+    "state_budget_credit_bln_sum": 245.6,
+    "positive_expectations_pct": 75
+  },
+
+  "natural_resources": {
+    "uniqueness": "Navoiy viloyatidagi qurilish materiallari boyligi — 28 ta fojdali qazilma koni, 5 turida; YIRIK ISHLAB CHIQARISH KLASTERI HALI YO'Q",
+    "deposits_count": 28,
+    "deposit_types": 5,
+    "cement": {
+      "mines": 5,
+      "reserves_thousand_tons": 375598,
+      "potential": "Yirik sement zavodi va eksport bazasi (Qozog'iston, Rossiya, Qirg'iziston)",
+      "current_status": "Ishlab chiqarish kластери hali shakllanmagan — bu ulkan imkoniyat",
+      "investment_potential_usd_mln": "30-100"
+    },
+    "building_stones": {
+      "mines": 18,
+      "reserves_thousand_m3": 39040,
+      "uses": "qurilish, sanoat, infratuzilma"
+    },
+    "lime": {
+      "mines": 2,
+      "reserves_thousand_m3": 1691
+    },
+    "sand_gravel": {
+      "mines": 2
+    },
+    "facing_stones": {
+      "mines": 1,
+      "uses": "premium qurilish va dekorativ panellar"
+    },
+    "strategic_opportunity": "'Karmanabudstroy' kластери — 3-5 ta yirik ishlab chiqaruvchi (sement, oxak, keramika plitalar, pardoz tosh kesish); $143 mln importni 25-30% kamaytirish; M-37 va Navoiy temir yo'l orqali eksport"
+  },
+
+  "navoiy_fez_proximity": {
+    "name": "Navoiy Erkin Iqtisodiy Zonasi (FEZ) — Karmana tumaniga ulashgan",
+    "active_projects": 22,
+    "fez_jobs": 3261,
+    "fez_investment_2025_usd_mln": 735,
+    "fez_investment_2021_usd_mln": 300,
+    "fez_investment_growth_5y_multiplier": 2.45,
+    "fez_industry_focus": ["kimyo", "metallurgiya", "qurilish materiallari", "elektrotexnika", "to'qimachilik"],
+    "satellite_cluster_opportunity": "FEZ atrofida 'sputnik-kластерлар': qadoqlash, laboratoriya, R&D, metrologiya, yuk-logistika xizmatlari — 22 amaliyotdagi loyiha quvvatli ichki bozor yaratadi",
+    "future_residents_target": "2027 yilgacha yana 10-12 ta xorijiy reziдент (kimyo, metallurgiya, qurilish materiallari)"
+  },
+
+  "trade_and_logistics": {
+    "cargo_turnover_thousand_tons": 93424,
+    "cargo_turnover_advantage": "4 tumanlar ichida ENG YUQORI: Forish 999 → Guliston 7,281 → Karmana 93,424 (Forishdan 93x ko'p)",
+    "m37_advantage": "M-37 xalqaro magistrali tugunida — Toshkent-Buxoro-Xorazm-Qozog'iston yo'nalishi",
+    "navoiy_airport_proximity": "Navoiy xalqaro aeroporti (TIS logistika hubi) yaqin — 2026 da 150 ming yo'lovchi va 45 ming tonna yuk maqsadi",
+    "dry_port_potential": "OG'IZDA YUQORI",
+    "dry_port_concept": "M-37 yo'li bo'yidagi xizmat zonasi: yuk terminali, ягона bojxona, yoqilg'i va dam olish majmuasi",
+    "dry_port_jobs_estimate": "350-400 yangi iш ўрни",
+    "warehouses_status": "Hozirda yetarli emas — kengaytirish zarur"
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 99.8,
+    "water_supply_dynamics": {
+      "2021": 98.0, "2022": 99.0, "2023": 99.2, "2024": 99.5, "2025": 99.8
+    },
+    "water_supply_advantage": "4 tumanlar ichida ENG YUQORI suv ta'minoti (Guliston 97.9%, Sariosiyo 66.7%, Forish 62.5%)",
+    "roads_total_km": 1058,
+    "roads_asphalted_pct": 68.4,
+    "roads_note": "68.4% asfalt — boshqa tumanlardan o'rtacha (Guliston 82%, Forish 39%); yaxshilash uchun joy bor",
+    "irrigation_canals_concrete_pct": 35,
+    "annual_cargo_volume_thousand_tons": 93424,
+    "railway_distance_km": 8,
+    "electricity": {
+      "outages_per_month_avg_2025": 1,
+      "old_transformers_pct": 14,
+      "lines_need_replacement_pct": 10,
+      "internet_coverage_pct": 100,
+      "internet_coverage_advantage": "100% qoplam — 4 tumanlar ichida ENG YUQORI; Smart Grid va raqamli iqtisodiyot uchun ideal",
+      "risk_level": "PAST"
+    },
+    "land": {
+      "total_ha": 95200,
+      "irrigated_ha": 560,
+      "irrigated_pct": 0.6,
+      "irrigated_alert": "Sug'oriladigan ER atigi 560 ga (0.6%) — Navoiy o'lkasidagi cho'l-yaylov tabiati natijasi; томчилатиб су'orish + dam tizimlari kengaytirilishi zarur",
+      "industrial_zone_use_pct": 80,
+      "agricultural_land_ha": 24390,
+      "pasture_fund_ha": 62250,
+      "pasture_pct_of_total": 65,
+      "pasture_advantage": "62,250 ga yaylov — chorvачилик va tuyaчилик uchun massive resurs (boshqa tumanlardan eng ko'p qishloq xo'jaligi yer fondining bir qismi sifatida)",
+      "forest_fund_ha": 8560
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct_2025": 95.5,
+      "coverage_pct_2021": 75.0,
+      "coverage_advantage": "4 tumanlar ichida ENG YUQORI maktabgacha qamrov (Guliston 87.1%, Forish 81.5%); ayollar bandligini qulaylashtiradi",
+      "data_gap": "2022-2024 dinamikasi rasmiy ma'lumot yo'q — statistika tizimini tiklash zarur"
+    },
+    "schools": {
+      "total": 33,
+      "single_shift": 28,
+      "two_shift": 5,
+      "two_shift_pct": 15.2,
+      "advantage": "2-smenali maktablar atigi 15.2% — 4 tumanlar ichida ENG YENGIL yuk (Forish 82.1%)"
+    },
+    "higher_education": {
+      "universities": 1,
+      "university_name": "Innovatsiyalar instituti (Navoi Innovation University)",
+      "technicums": 2,
+      "advantage": "Tumanda 1 ta OTM va 2 ta texnikum — kadrlar tayyorlash salohiyati boshqa tumanlardan yaxshi",
+      "navoi_fez_link": "Innovatsiyalar institutida AES (kelajakda), ЭIZ va logistika yo'nalishlarida maxsus fakultetlar ochish — strategik vazifa"
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand": 63.1,
+    "total_resources_dynamics": {
+      "2021": 52.0, "2022": 54.0, "2023": 58.1, "2024": 60.5, "2025": 63.1,
+      "growth_5y_pct": 21.2
+    },
+    "employed_2025": 33710,
+    "employed_growth_pct_2025": 8.0,
+    "informal_sector_2021": 7510,
+    "abroad_migrants_dynamics": {
+      "2021": 1450, "2022": 1580, "2023": 1320, "2024": 1565, "2025": 1440
+    },
+    "abroad_migrants_growth_pct_2025": -8.0,
+    "abroad_migrants_status": "Stabil — kamayish tendentsiyasi, Gulistondan (11500) 8x kam",
+    "returned_migrants_2025": 203,
+    "returned_migrants_growth_pct_2025": -28.8,
+    "returned_migrants_alert": "Atigi 203 nafar — 4 tumanlar ichida ENG KAM (Guliston 5000, Sariosiyo 12745, Forish 259); xorijiy tajriba imkoniyati cheklangan",
+    "unemployment_pct_2025": 4.5,
+    "unemployment_dynamics_pct": {
+      "2021": 7.2, "2022": 6.8, "2023": 6.2, "2024": 5.3, "2025": 4.5
+    },
+    "unemployed_count_2025": 2157,
+    "unemployment_target_2027_pct": 3.5,
+    "youth_unemployed_16_30": 410,
+    "unemployed_women": 1170,
+    "unemployed_women_pct_of_total": 54,
+    "poverty_pct_2025": 4.2,
+    "poverty_dynamics_pct": {
+      "2021": 4.7, "2022": 9.2, "2023": 7.6, "2024": 5.7, "2025": 4.2
+    },
+    "poor_families": 1265,
+    "poverty_change_3y": "9.2% (2022) → 4.2% (2025) — 54% pasayish",
+    "low_income_families": 1265,
+    "child_benefit_families": 904,
+    "difficult_mahallas": [
+      {"name": "Kumushkon", "category": "og'ir"},
+      {"name": "Ko'hna Qo'rg'on", "category": "og'ir"}
+    ],
+    "mahalla_categories": {
+      "heavy_ogir": 2,
+      "medium_orta": 7,
+      "easy_yengil": 8,
+      "good_yaxshi": 22,
+      "total": 39,
+      "advantage": "Atigi 2 ta og'ir mahalla — 4 tumanlar ichida ENG YAXSHI tafovut (Sariosiyo 13, Forish 5, Guliston 8); 22 ta yaxshi MFY infratuzilmaning kuchli taraflari"
+    },
+    "training_plan_2026": {
+      "viloyat_total_persons": 4500,
+      "tuman_estimate_persons": 600,
+      "focus": ["sanoat texnik kadrlar", "logistika", "qurilish materiallari", "AI va raqamli kasblar"]
+    }
+  },
+
+  "tourism": {
+    "current_state": "Modest — 16 mlrd so'm investitsiya rejada (Qo'qondan 42 mlrd 2.6x kam)",
+    "investment_plan_2027_2028_bln_sum": 16,
+    "planned_routes": 3,
+    "qadimiy_karmana_project": {
+      "status": "TASDIQLANGAN — 2026 yil prezident qarori (16.02.2026)",
+      "components": [
+        "Qosim Shayx Xonaqohi restavratsiyasi",
+        "Mirsaid Bahrom ziyoratgohi restavratsiyasi",
+        "Qosim Shayx va Mirsaid Bahrom o'zaro bog'lash",
+        "'Yangi avlod' istirohat bog'i bilan integratsiya",
+        "'Karmana dehqon bozori' bilan yagona kompleks",
+        "Karmana ko'chasi renovatsiyasi (milliy uslubda)"
+      ],
+      "type": "Madaniyat va turizm markazi"
+    },
+    "key_attractions": {
+      "rabati_malik_caravanserai": {
+        "type": "Tarixiy yodgorlik (Buyuk Ipak yo'lida)",
+        "period": "XI asr (Karaxoniylar davri)",
+        "uniqueness": "Markaziy Osiyodagi eng yaxshi saqlangan karvonsaroy qoldiqlaridan"
+      },
+      "mir_sayid_bakhrom_mausoleum": {
+        "type": "Ziyorat — sufiy avliyo maqbarasi",
+        "period": "X-XI asr",
+        "uniqueness": "Buxoro va Samarqand ziyoratchilari oqimida"
+      },
+      "qosim_shayx_xonaqohi": {
+        "type": "Sufiy xonaqoh — 2026da restavratsiya rejada"
+      },
+      "yangi_avlod_park": "Zamonaviy istirohat bog'i — 'Qadimiy Karmana' kompleksining bir qismi"
+    },
+    "viloyat_2026_target": "Navoiy viloyatida 600 ming xorijiy + 3 mln mahalliy sayyoh; Karmana 'Qadimiy Karmana' loyihasi orqali 100-200k yo'lovchi ushlab qolishi mumkin",
+    "key_advantage": "Buxoroga 100 km — Buxoro turistik oqimi (yiliga 1.5+ mln) tranziti uchun ideal",
+    "industrial_tourism_concept": "SaneTour — Navoiy ЭIZ va Karmana konlari ekskursiyasi (B2B sayyohlar uchun)",
+    "investment_jobs_estimate": "78-200 iш ўрни yaratish reжаsi 2027 ga"
+  },
+
+  "trade": {
+    "main_market": "'Karmana dehqon bozori' — viloyat poytaxti yaqinida joylashgan eng faol q/x bozorlardan",
+    "shops_markets_estimate": "ko'p (saneat-savdo zonalarida)",
+    "key_advantage": "Navoiy shahri (94+ ming aholi, viloyat poytaxti) — 6 km da; iste'mol bozori katta"
+  },
+
+  "mahalla_economy": {
+    "total": 39,
+    "by_specialization": {
+      "agriculture_qishloq_xojaligi": 23,
+      "agriculture_pct": 59,
+      "trade_service_savdo_xizmat": 10,
+      "trade_pct": 26,
+      "livestock_chorvachilik": 5,
+      "livestock_pct": 13,
+      "pomegranate_anorchilik": 1,
+      "pomegranate_pct": 3,
+      "pomegranate_uniqueness": "1 maxsus anor MFY — Navoiy anor brendlash uchun nodir niche"
+    },
+    "drivers_target_2026": {
+      "industry_projects": 26,
+      "industry_bln_sum": 1741,
+      "industry_jobs": 1035,
+      "service_projects": 51,
+      "service_bln_sum": 264.2,
+      "service_jobs": 361,
+      "total_projects_2026": 95,
+      "total_bln_sum_2026": 2167.1,
+      "total_jobs_2026": 1533
+    },
+    "agriculture_processing_pct": {
+      "meat": 15,
+      "vegetables": 18
+    },
+    "agriculture_processing_alert": "Go'sht (15%) va sabzavot (18%) qayta ishlash hali ham past — kластери rivojlanish potensiali katta",
+    "key_advantage": "Atigi 2 ta og'ir mahalla — 4 tumanlar ichida ENG YAXSHI; 22 ta 'yaxshi' tab kuchli infratuzilma; 'Yangi O'zbekiston qiyofasidagi mahalla' dasturi"
+  },
+
+  "banking_programs": {
+    "sqb_status": "Tumanda mavjud (filial)",
+    "total_banks": 4,
+    "atms": 80,
+    "atms_advantage": "80 banKAT — 4 tumanlar ichida ENG YUQORI (Guliston 7); raqamli infratuzilma kuchli",
+    "mahalla_bankirs_total": 39,
+    "mahalla_bankirs_for_39_mahallas": "1 bankir 1 mahallaga — IDEAL nisbat (boshqa tumanlardan 4-6x yaxshi)",
+    "mahalla_bankirs_gender": {"women": 8, "men": 31},
+    "women_bankirs_pct": 21,
+    "women_bankirs_target_pct": "30-40",
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for": ["tikuvchilik kooperativlari", "anor qadoqlash va eksport", "ZIyorat turizm xizmati", "MTT"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "credit_volume_in_karmana_bln_sum": 279.3,
+      "current_npl_pct": 6.2,
+      "participating_banks": ["Xalq banki", "Mikrokreditbank"],
+      "best_for": ["chorvачilik va tuyaчilik", "anor", "yo'l bo'yi xizmat M-37da", "FEZ-yetkazib beruvchi"]
+    },
+    "micro_projects_2025": {
+      "total_projects": 1560,
+      "total_jobs": 3250,
+      "total_bln_sum": 10.3
+    },
+    "micro_projects_2026_plan": {
+      "industry_projects": 26,
+      "industry_bln_sum": 1741,
+      "industry_jobs": 1035,
+      "service_projects": 51,
+      "service_bln_sum": 264.2,
+      "service_jobs": 361,
+      "total_projects": 95,
+      "total_bln_sum": 2167.1,
+      "total_jobs": 1533
+    },
+    "investment_plan_2026_2031": {
+      "total_bln_sum": 5145,
+      "by_year_bln_sum": {
+        "2026": 735,
+        "2027": 780,
+        "2028": 815,
+        "2029": 890,
+        "2030": 925,
+        "2031": 1000
+      },
+      "annual_growth_pct": 6.3
+    },
+    "navoiy_2026_total_investment_usd_bln": 4.2,
+    "navoiy_2026_investment_note": "2026 yilda Navoiy viloyatiga $4.2 mlrd jalb qilinadi; Karmana — bu oqimning markazlaridan biri"
+  },
+
+  "strengths": [
+    {
+      "title": "Eng past NPL 4 tumanlar ichida (2.2%)",
+      "detail": "NPL 4.1% (2021) → 2.2% (2025) — Guliston (5.5%), Sariosiyo (4.2%), Forish (2.9%) dan past; kreditlash xavfsiz, banк-fабрика ishi sifatli"
+    },
+    {
+      "title": "Sаноат улуш VILOYAT bo'yicha 11.9%",
+      "detail": "13,580.5 mlrd so'm sanoat ishlab chiqarish — Navoiy viloyatining qariyb 12 foizini ta'minlovchi strategik tuman; 5 yilda 1.84x o'sgan"
+    },
+    {
+      "title": "Kichik biznes — yirik korxonadan 1.9x katta",
+      "detail": "Kichik biznes 18,560 mlrd vs yirik 9,728 mlrd; klasterli tizim samarali; 17 ta KO'K toifa o'tish jarayonida — 'Karmana-Skeyl' dasturi"
+    },
+    {
+      "title": "Navoiy ЭIZ ulashgan",
+      "detail": "22 ta loyiha, 3,261 iш ўрни, $735 mln investitsiya 2025 (+145% 2021dan); kimyo, metallurgiya, qurilish materiallari focus"
+    },
+    {
+      "title": "M-37 logistika tugunida",
+      "detail": "Toshkent-Buxoro-Xorazm-Qozog'iston yo'nalishi; tеmir yo'l 8 km; Navoiy aeroporti yaqin; yuk aylanmasi 93,424 ming tonna — 4 tumanlar ichida ENG YUQORI"
+    },
+    {
+      "title": "Eng boy mineral bazalardan biri (28 kon)",
+      "detail": "375 mln tonna sement, 39 mln m³ qurilish toshlari, oxak, qum-shag'al — lekin yirik klaster hali yo'q (FURSAT!)"
+    },
+    {
+      "title": "Eng yaxshi suv ta'minoti (99.8%)",
+      "detail": "4 tumanlar ichida ENG YUQORI suv ko'rsatkichi; tumanchilik bilan barobar; sanitar va sanoat uchun ideal"
+    },
+    {
+      "title": "100% internet qoplami",
+      "detail": "ENG YUQORI ko'rsatkich; 70-120 Mbit/s tezlik; raqamli iqtisodiyot va remote ish uchun tayyor"
+    },
+    {
+      "title": "Maktabgacha qamrov 95.5%",
+      "detail": "4 tumanlar ichida ENG YUQORI; ayollar bandligini qulaylashtiradi (oilalar ishga chiqishi mumkin)"
+    },
+    {
+      "title": "1 bankir 1 mahallaga (39/39)",
+      "detail": "Ideal nisbat — Forishda 1/3.4, Gulistonda 1/6 ga qarshi; mahalla agentlik tizimi to'liq qoplab olingan"
+    },
+    {
+      "title": "Atigi 2 ta og'ir mahalla",
+      "detail": "Kumushkon va Ko'hna Qo'rg'on; 22 ta 'yaxshi' tab — 4 tumanlar ichida ENG YAXSHI mahalla tofusi"
+    },
+    {
+      "title": "Prezident qarori 2026 — 'Qadimiy Karmana' loyihasi",
+      "detail": "16.02.2026 PQ — Karmana ko'chasi renovatsiyasi, Qosim Shayx Xonaqohi va Mirsaid Bahrom restavratsiyasi, 'Yangi avlod' bog'i bilan birga turizm markazi; davlat investitsiyasi tasdiqlangan"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Iqtisodiy monostructure — sanoat 84.1%",
+      "severity": "YUQORI (TIZIMLI RISK)",
+      "data": "Sanoat ulushi 84.1% — yagona deyarli sanoat tumani; xizmatlar atigi 14.5%, q/x 1.4%; global tebranishlarga zaif",
+      "opportunity": "Diversifikatsiya: q/x qayta ishlash, ziyorat-turizm, BPO/IT, savdo va xizmat — 'Karmana 2030' strategiyasi",
+      "investment_range_mln_sum": "50-1000",
+      "suitable_for": ["xizmat sektor tadbirkorlar", "mehmondo'stlik biznesi", "turizm tajribasi"]
+    },
+    {
+      "gap": "Qurilish materiallari klasteri yo'q",
+      "severity": "YUQORI (FURSAT)",
+      "data": "28 ta kon (5 tur), 375 mln tonna sement, 39 mln m³ qurilish toshlari — lekin tayor mahsulot ishlab chiqarish minimal; impor $143 mln",
+      "opportunity": "'Karmanabudstroy' kластери: sement zavodi, kerimika plitalar, pardoz tosh kesish; M-37 va temir yo'l orqali Qozog'iston/Rossiya/Qirg'iziston eksport",
+      "investment_range_usd_mln": "30-100",
+      "suitable_for": ["yirik investor", "xorijiy hamkor", "DXSh sherigi"]
+    },
+    {
+      "gap": "TTI deyarli yo'q ($730 ming)",
+      "severity": "YUQORI",
+      "data": "Investitsiya hajmi katta ($735 mln 2025), lekin xorijiy ulush minimal; 26 saneat loyihasi ichidan halqaro investorlar uchun ochilgani yo'q",
+      "opportunity": "'Investment Pack Karmana' — 5-7 yirik loyihani halqaro investor-konsorsiumlarga ochiq qo'yish; ЕБРР, АБР, Xitoy fondlari memorandum; halqaro konferensiyalar (Шанxай, Istanbul, Дубай)",
+      "investment_range_usd_mln": "30-50 har lojiha",
+      "suitable_for": ["xorijiy investor", "investment broker", "halqaro konsalting"]
+    },
+    {
+      "gap": "Oilaviy tadbirkorlik NPL 6.2% (yuqori)",
+      "severity": "O'RTA",
+      "data": "Umumiy NPL 2.2% lekin oilaviy biznes 6.2% — 3x yuqori; 279.3 mlrd so'm credit hajmi ostida",
+      "opportunity": "Kreditga tayorlash xizmati, biznes-trener, buxgalteriya outsource, SQB AI Advisor skoring',",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "tajribali tadbirkor"]
+    },
+    {
+      "gap": "Yaylov 62,250 ga ishlatilmagan",
+      "severity": "YUQORI (FURSAT)",
+      "data": "65% tuman maydoni yaylov; q/x 3,003 mlrd so'm (+57%), lekin go'sht qayta ishlash 15%; 2026-27 — zotli tuya va ot olib kelish PQda",
+      "opportunity": "'Karmana Mit' kластери: 3-4 ta gosht qayta ishlash + halal sertifikat; tuyaчilik (sut, gosht); intensiv chorva mавmualari (1000+ bош qoy/echki)",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["chorvador oilalar", "agro tajribasi", "fermerlar"]
+    },
+    {
+      "gap": "Suv tanqisligi — sug'oriladigan ER 0.6%",
+      "severity": "O'RTA-YUQORI",
+      "data": "560 ga atigi (jami 95,200 ha dan); kanal bеtonlash 35%; q/x potensiali cheklangan",
+      "opportunity": "Tomchilatib sug'orish 2,000 ga gacha kengaytirish; kanal bеtonlash 35→65%; tuyaчilik (suvga muxtoj emas)",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["agro tajribasi", "DXSh sherigi"]
+    },
+    {
+      "gap": "Turizm investitsiyasi past (16 mlrd so'm)",
+      "severity": "O'RTA (FURSAT)",
+      "data": "Qo'qondan (42 mlrd) 2.6x kam; iш режа 78-85 atigi; 'Qadimiy Karmana' loyihasi yangi tasdiqlandi",
+      "opportunity": "PQ ramkасида 'Qadimiy Karmana' ekosystema biznesi: gestxauz, restoran, milliy hunarmand do'kon, gid xizmati, Buxoro tranziti kafe; SaneTour (FEZ va konlar ekskursiyasi)",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["turizm tajribasi", "mehmondo'stlik tajribasi", "qaytgan migrantlar"]
+    },
+    {
+      "gap": "M-37 yo'l bo'yi xizmat zonasi yo'q",
+      "severity": "O'RTA (FURSAT)",
+      "data": "Yuk aylanmasi 93,424 ming tonna; M-37 magistral; lekin tashkil etilgan yuk terminal/dam zona/yagona bojxona yo'q",
+      "opportunity": "Logistika parki: yuk terminal + dam-restoran + AYAQSh + bojxона + omborlik — 350-400 iш ўрни",
+      "investment_range_mln_sum": "200-2000",
+      "suitable_for": ["yirik investor", "logistika tajribasi", "DXSh"]
+    },
+    {
+      "gap": "Sputnik klasterlar Navoiy ЭIZ atrofida yo'q",
+      "severity": "O'RTA",
+      "data": "22 ta ЭIZ loyihasi; FAQAT asosiy ishlab chiqarish — qadoqlash, R&D, lab xizmatlari mahalliy emas",
+      "opportunity": "ЭIZ rezидентlari uchun: qadoqlash xizmati, metrologiya, R&D markazi, professional servis (HR, audit, IT)",
+      "investment_range_mln_sum": "30-300",
+      "suitable_for": ["B2B servis", "texnik bilim bor", "FEZ aloqalari bor"]
+    },
+    {
+      "gap": "Qaytgan migrantlar atigi 203 nafar",
+      "severity": "PAST-O'RTA",
+      "data": "4 tumanlar ichida ENG KAM (Guliston 5000); xorijiy biznes tajribasi cheklangan",
+      "opportunity": "Toshkent yoki Buxoro malakali kadrlarini Karmanaga jalb qilish (ish haqi, infratuzilma); reintegratsiya akselatori",
+      "investment_range_mln_sum": "30-200",
+      "suitable_for": ["kadrlar agentligi", "xorijiy biznes tajribasi"]
+    },
+    {
+      "gap": "Norasmiy sektorda 7,510 nafar",
+      "severity": "O'RTA",
+      "data": "7,510 nafar norasmiy band — yiliga ~11.2 mlrd so'm soliq yo'qotish",
+      "opportunity": "Recmiyлаштириш xizmati: buxgalteriya outsource, MChJ ochish konsalting, soliq optimizatsiya",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya tajribasi", "huquq ma'lumoti"]
+    },
+    {
+      "gap": "2 ta og'ir mahalla (Kumushkon, Ko'hna Qo'rg'on)",
+      "severity": "PAST-O'RTA",
+      "data": "Atigi 2 ta — 4 tumanlar ichida eng kam, lekin individual lojiha portfeli zarur; aёllar 54%, yoshlar 19% ishsiz",
+      "opportunity": "'Bir mahalla — bir drayver': Kumushkonga q/x qayta ishlash, Ko'hna Qo'rg'onga qurilish materiallari",
+      "investment_range_mln_sum": "5-30 har lojiha",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "M-37 logistika va 'Sukoy port'",
+      "type": "Yuk terminali / sovutgich omborlar / yo'l bo'yi xizmat zonasi / yagona bojxona broker",
+      "why_karmana": "Yuk aylanmasi 93,424 ming tonna (4 tumanlar ichida ENG YUQORI); M-37 xalqaro magistralida; tеmир yo'l 8 km; Navoiy aeroporti yaqin (TIS hubi). Hozirda yo'l bo'yi xizmat zonasi tashkil etilmagan",
+      "investment_mln_sum": "500-3000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "3-6",
+      "suitable_for": ["yirik investor", "logistika tajribasi", "DXSh sherigi"],
+      "bank_product": "SQB sanoat kreditlari yoki ХIH (АБР, ЕБРР)",
+      "risk": "Boshlang'ich kapital katta; davlat infratuzilmasiga bog'liqlik"
+    },
+    {
+      "rank": 2,
+      "sector": "Qurilish materiallari klasteri",
+      "type": "Sement zavodi / oxak qayta ishlash / kerimika plitalar / pardoz tosh kesish",
+      "why_karmana": "28 ta fojdali qazilma koni, 375 mln tonna sement, 39 mln m³ qurilish toshlari — lekin yirik klaster hali yo'q. Navoiy ЭIZ va $4.2 mlrd 2026 investitsiyasi mahalliy bozor; M-37 + temir yo'l orqali eksport (Qozog'iston, Rossiya, Qirg'iziston)",
+      "investment_usd_mln": "30-100",
+      "monthly_income_estimate_mln_sum": "100-500",
+      "payback_years": "4-7",
+      "suitable_for": ["yirik investor", "xorijiy hamkor (Xitoy, Turk)", "DXSh sherigi"],
+      "bank_product": "SQB sanoat kreditlari yoki ХIH (Jaxon banki, АБР)",
+      "risk": "Logistika murakkabligi; ekologik standartlar"
+    },
+    {
+      "rank": 3,
+      "sector": "Qishloq xo'jaligi qayta ishlash kластери",
+      "type": "Go'sht zavodi (5-10 t/kun) / sut zavodi / 'Karmana Mit' brendi / sabzavot konservasi",
+      "why_karmana": "62,250 ga yaylov; 23 q/x MFY; q/x 3,003 mlrd so'm (+57% 5 yilda); go'sht qayta ishlash atigi 15%; 'Yangi O'zbekiston qiyofasidagi mahalla' dasturi 16 MFY uchun investitsiya keladi",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "2-4",
+      "suitable_for": ["fermerlar", "chorvador oilalar", "agro tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor (300 mln gacha)",
+      "risk": "Veterinar talablar; halal sertifikatlash"
+    },
+    {
+      "rank": 4,
+      "sector": "Tuyachilik va zotli chorva",
+      "type": "Tuya farmasi (sut, gosht) / yilqi farma / qoy-echki intensiv majmua",
+      "why_karmana": "Cho'l-yaylov tabiati ideal; PQ 2026 — xorijdan zotli tuya va otlar olib kelish rejasida; deficit товарлар rо'yhatida go'sht va sut #1 va #2 ўринда; 5 ta chorvачilik MFY",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["chorvador oilalar", "agro tajribasi", "yer egasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Klimat (issiq cho'l); zotli mol qimmat"
+    },
+    {
+      "rank": 5,
+      "sector": "'Qadimiy Karmana' madaniy-turizm biznesi",
+      "type": "Gestxauz / restoran milliy taom / hunarmand do'kon / gid xizmati / fotostudiya",
+      "why_karmana": "PQ 16.02.2026 tasdiqlangan 'Qadimiy Karmana' kompleksi: Qosim Shayx Xonaqohi + Mirsaid Bahrom + 'Yangi avlod' bog'i + dehqon bozori; Navoiy viloyati 2026 maqsadi 600k xorijiy + 3M mahalliy sayyoh; Buxoroga 100 km",
+      "investment_mln_sum": "30-500",
+      "monthly_income_estimate_mln_sum": "5-50",
+      "payback_years": "2-4",
+      "suitable_for": ["turizm/mehmondo'stlik tajribasi", "qaytgan migrantlar (chet tili)", "ayollar (HAMROH)"],
+      "bank_product": "HAMROH (garovsiz 100 mln) yoki Har bir oila tadbirkor",
+      "risk": "Loyiha bajarilish muddati 2026-2027; sayyohlar oqimi sekin oshadi"
+    },
+    {
+      "rank": 6,
+      "sector": "Navoiy ЭIZ 'sputnik klас터lari'",
+      "type": "Qadoqlash / metrologiya / R&D lab / professional servis (HR, audit, IT) / texnik konsulting",
+      "why_karmana": "Navoiy ЭIZ 22 amaliyotdagi loyiha + 2027ga 10-12 yangi rezident; FAQAT asosiy ishlab chiqarish; servis lar mahalliy emas — bo'sh bozor",
+      "investment_mln_sum": "30-300",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["B2B tajribasi", "texnik mahorat", "FEZ bilan aloqа"],
+      "bank_product": "SQB biznes kreditlari",
+      "risk": "ЭIZ rezидент tariflarining xilma-xilligi"
+    },
+    {
+      "rank": 7,
+      "sector": "FEZ-yetkazib beruvchi (subcontractor)",
+      "type": "Mahalliy yetkazib beruvchi / kichik komponent ishlab chiqarish / xom ashyo qayta ishlash",
+      "why_karmana": "ЭIZ 22 loyiha + 26 yangi sanoat lojiha 2026; 17 KO'K toifa o'tish jarayonida ('Karmana-Skeyl'); kichik biznes 18,560 mlrd so'm — yirikdan 1.9x katta; sablique sektor kuchli",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-3",
+      "suitable_for": ["sanoat tajribasi", "kichik korxona", "tajribali tadbirkor"],
+      "bank_product": "SQB biznes kreditlari yoki Har bir oila tadbirkor",
+      "risk": "Yirik kompaniyaga bog'liqlik"
+    },
+    {
+      "rank": 8,
+      "sector": "Anor (pomegranate) klасtери",
+      "type": "Anor sok / qadoqlash / quritilgan / kosmetik mahsulot / sertifikatlash markazi",
+      "why_karmana": "1 maxsus anor MFY — niche kelajakli; Navoiy anorbrendlash uchun nodir hudud; eksport potensiali Qozog'iston, Россия, EU",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "2-4",
+      "suitable_for": ["fermerlar", "agro-eksport tajribasi", "ayollar (HAMROH)"],
+      "bank_product": "Agro bank yoki HAMROH",
+      "risk": "Mavsumiylik; sertifikat (HACCP/organic)"
+    },
+    {
+      "rank": 9,
+      "sector": "BPO/IT va remote ish markazi",
+      "type": "Call-center / accounting outsource / IT support / online ta'lim",
+      "why_karmana": "100% internet qoplam (eng yuqori); 70-120 Mbit/s; Innovatsiyalar instituti (1 OTM) + 2 texnikum kadrlar; 410 yosh ishsiz; Toshkent kompaniyalari uchun arzon hudud",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-3",
+      "suitable_for": ["IT/menedjmenta tajribasi", "qaytgan migrantlar", "yoshlar (chet tili)"],
+      "bank_product": "Yoshlar biznesda yoki SQB biznes kreditlari",
+      "risk": "Kadrlar tayyorlash uzoq; Toshkent raqobat"
+    },
+    {
+      "rank": 10,
+      "sector": "Aёллар pekinikuvchilik kooperativi",
+      "type": "Tikuvchilik / hunarmand / kashtanchilik / mahsulot online savdo",
+      "why_karmana": "1170 ishsiz ayol (umumiy 54%); 39 ta MFYda 8 ayol bankir (HAMROH dasturi joriy); 'Yangi O'zbekiston qiyofasidagi mahalla' 16 MFYda zamonaviy shahar muhiti — talab katta",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "3-20",
+      "payback_years": "1-3",
+      "suitable_for": ["ayollar", "to'qimachilik tajribasi", "oilaviy biznes"],
+      "bank_product": "HAMROH (garovsiz 100 mln, 70% kafillik)",
+      "risk": "Bozor mavsumiyligi; kadrlar"
+    },
+    {
+      "rank": 11,
+      "sector": "Maktabgacha taraqqiy va xususiy MTT",
+      "type": "Xususiy MTT / mini-bog'cha / bola rivojlantirish markazi / til/STEM kurslari",
+      "why_karmana": "Maktabgacha qamrov 95.5% (eng yuqori, 4.5% gap); 'Yangi avlod' parki + 'Qadimiy Karmana' kompleksi — oilalar uchun talab oshadi; Navoiy shahri 6 km da — premium MTT bozori",
+      "investment_mln_sum": "50-200",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumot bor ayollar", "xorijiy ta'lim modellari tajribasi"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor",
+      "risk": "Litsenziya, kadrlar tayorlash"
+    },
+    {
+      "rank": 12,
+      "sector": "Buxoro tranziti — yo'l bo'yi servis",
+      "type": "Restoran-chorxona / mini-mehmonxona / AYAQSh + dam zonasi / suvenir do'kon",
+      "why_karmana": "Buxoroga 100 km — yiliga 1.5+ mln xorijiy sayyoh tranziti M-37 orqali o'tadi; sayyohlar atigi 1-2 soat to'xtaydi; 'Qadimiy Karmana' loyihasi shu oqimni ushlab qolishni ko'zlaydi",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "3-5",
+      "suitable_for": ["mehmondo'stlik tajribasi", "qaytgan migrantlar", "M-37 yo'l bo'yi yer egasi"],
+      "bank_product": "Har bir oila tadbirkor yoki SQB biznes kreditlari",
+      "risk": "Mavsumiylik; sayyohlar oqimi turbarqaror"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Karmana tumani (Navoiy viloyati) — 144.7 ming aholi, 39 mahalla, viloyat poytaxti Navoiyga 6 km, M-37 xalqaro magistrali tugunida. KUCHLI TOMONLARI: (1) Sanoat 13,580 mlrd so'm — viloyat sanoatining 11.9% (4 tumanlar ichida eng katta industriya); (2) Eng past NPL 2.2% (Forish 2.9%, Sariosiyo 4.2%, Guliston 5.5%); (3) Eng yaxshi suv 99.8% va internet 100%; (4) Maktabgacha qamrov 95.5% (eng yuqori); (5) 1 bankir 1 mahallaga (39/39 — ideal); (6) Atigi 2 ta og'ir mahalla (Kumushkon, Ko'hna Qo'rg'on); (7) Yuk aylanmasi 93,424 ming tonna (eng yuqori); (8) 28 ta fojdali qazilma koni — 375 mln tonna sement, 39 mln m³ qurilish toshlari; (9) Navoiy ЭIZ ulashgan: 22 loyiha, 3,261 ish ўрни, $735 mln (+145%); (10) 62,250 ga yaylov (65%); (11) Kichik biznes yirikdan 1.9x katta (18,560 vs 9,728 mlrd); (12) Prezident qarori 16.02.2026 — 'Qadimiy Karmana' madaniy-turizm markazi tasdiqlangan + Navoiy 2026da $4.2 mlrd investitsiya. PROBLEMALAR va IMKONIYATLAR: (1) MONOSTRUKTURA RISKI: sanoat 84.1% — diversifikatsiya zarur; (2) Qurilish materiallari klasteri YO'Q — 28 kon foydalanilmagan (FURSAT!); (3) TTI atigi $730 ming — xorijiy investorlar yo'q; (4) Oilaviy biznes NPL 6.2% (umumdan 3x yuqori); (5) Sug'oriladigan ER 0.6% — suv tanqis; (6) Qaytgan migrantlar 203 nafar (eng kam — Gulistondan 25x kam); (7) Turizm investitsiyasi 16 mlrd — Qo'qondan 2.6x kam; (8) M-37 yo'l bo'yi xizmat zonasi yo'q; (9) Sputnik klasterlar (qadoqlash, lab, R&D) FEZ atrofida yo'q; (10) Anor MFY 1 ta — niche brending uchun bo'sh; (11) Tuyachilik 2026 PQda — yangi sektor; (12) Norasmiy sektor 7,510 nafar — yiliga ~11.2 mlrd so'm soliq yo'qotish. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil, NPL 6.2% sektor), 1,560 mikrolojiha 2025 (3,250 ish ўрни), 95 lojiha 2026 (2,167 mlrd so'm), kredit reжаси 1,409 mlrd. INVESTITSIYA REJASI 2026-2031: 5,145 mlrd so'm. ASOSIY DRAYVERLAR: M-37 logistika 'Sukoy port', qurilish materiallari klasteri, q/x qayta ishlash + tuyaчilik, 'Qadimiy Karmana' madaniy-turizm, Navoiy ЭIZ sputnik klasterlari, anor brendi.",
+
+  "ai_prompt_context_ru": "Карманинский район (Навоийская область) — 144.7 тыс. жителей, 39 махаллей, в 6 км от областного центра Навои, на узле международной магистрали М-37. СИЛЬНЫЕ СТОРОНЫ: (1) Промышленность 13,580 млрд сум — 11.9% всей промышленности области (самая крупная индустрия из 4 районов); (2) Самый низкий NPL 2.2% (Фориш 2.9%, Сариасия 4.2%, Гулистон 5.5%); (3) Лучшая вода 99.8% и интернет 100%; (4) Дошкольное образование 95.5% (самое высокое); (5) 1 банкир на 1 махаллю (39/39 — идеал); (6) Только 2 тяжёлые махалли (Кумушкон, Кохна Кургон); (7) Грузооборот 93,424 тыс. тонн (самый высокий); (8) 28 месторождений полезных ископаемых — 375 млн тонн цемента, 39 млн м³ строительных камней; (9) Прилегающая Навоийская СЭЗ: 22 проекта, 3,261 рабочее место, $735 млн (+145%); (10) 62,250 га пастбищ (65%); (11) Малый бизнес в 1.9x больше крупных предприятий (18,560 vs 9,728 млрд); (12) Указ Президента 16.02.2026 — утверждён культурно-туристический центр 'Кадимий Кармана' + $4.2 млрд инвестиций в Навои в 2026. ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) РИСК МОНОСТРУКТУРЫ: промышленность 84.1% — нужна диверсификация; (2) Кластера стройматериалов НЕТ — 28 месторождений не используются (ВОЗМОЖНОСТЬ!); (3) ПИИ всего $730 тыс. — иностранных инвесторов нет; (4) NPL семейного бизнеса 6.2% (в 3 раза выше общего); (5) Орошаемая земля 0.6% — дефицит воды; (6) Вернувшихся мигрантов 203 (самое мало — в 25 раз меньше Гулистона); (7) Туристические инвестиции 16 млрд — в 2.6x меньше Коканда; (8) Зоны придорожного сервиса на М-37 нет; (9) Спутниковых кластеров вокруг СЭЗ (упаковка, лаб, R&D) нет; (10) Гранатовая махалля 1 — пустая ниша для брендинга; (11) Верблюдоводство в Указе Президента 2026 — новый сектор; (12) Неформальный сектор 7,510 чел — потеря ~11.2 млрд сум налогов в год. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (для женщин, без залога до 100 млн), 'Каждая семья — предприниматель' (до 300 млн, 18%, 3 года, NPL сектора 6.2%), 1,560 микропроектов в 2025 (3,250 рабочих мест), 95 проектов в 2026 (2,167 млрд сум), кредитный план 1,409 млрд. ПЛАН ИНВЕСТИЦИЙ 2026-2031: 5,145 млрд сум. КЛЮЧЕВЫЕ ДРАЙВЕРЫ: М-37 логистика и 'Сухой порт', кластер стройматериалов, переработка с/х + верблюдоводство, культурно-туристический проект 'Кадимий Кармана', спутниковые кластеры Навоийской СЭЗ, гранатовый бренд."
+}

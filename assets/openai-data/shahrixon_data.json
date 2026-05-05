@@ -1,0 +1,695 @@
+{
+  "id": "shahrixon",
+  "name_uz": "Шаҳрихон тумани",
+  "name_ru": "Шахриханский район",
+  "name_latin": "Shahrixon tumani",
+  "viloyat": "Andijon",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "stat.uz", "andstat.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "lex.uz", "andijon.mehnat.uz"],
+
+  "data_quality_note": "Hokimiyat ma'lumotlarida 4 ta anomaly: (1) Mehnat resurslari 165.8 ming va band aholi 108,453 — Payariq ma'lumoti bilan IDENTIK (shablon duplikati ehtimoli, verifikatsiya zarur); (2) Xorijga ketgan migrantlar 2,854 (-33.1%) ham Payariq bilan IDENTIK; (3) ATM 170 ta — Payariq bilan teng (mumkin lekin shubhali); (4) Yo'llar uzunligi atigi 68 km 28,827 ga maydonga — kichik (Forish 1,456 km / 956k ga ga nisbatan 13x kam) — 'asosiy yo'llar' deb ko'rsatilgan, lekin ichki yo'llar to'liq emas; verifikatsiya zarur.",
+
+  "presidential_decrees_history": {
+    "pq_679_2021_11_15": "Andijon viloyati Shahrixon tumanini kompleks ijtimoiy-iqtisodiy rivojlantirish chora-tadbirlari (2021-2023) — kichik va oilaviy tadbirkorlik, xotin-qizlar, yoshlar, kam ta'minlanganlar bandligi, sanoat va q/x tadbirkorlar uchun shart-sharoit yaratish",
+    "pq_78_2023_02_23": "Charm-poyabzal va hunarmandchilik mahsulotlari ishlab chiqarishni kengaytirish, kasanachilikni rivojlantirish — Shahrixon hunarmandchilik brendini saneatlashtirish dasturi",
+    "new_aholi_bandligi_center_2025_01_14": "Yangi 'Aholi bandligiga ko'maklashish markazi' ma'muriy binosi foydalanishga topshirildi"
+  },
+
+  "demographics": {
+    "population": 337300,
+    "population_2024_estimate": 320000,
+    "population_2004_wikipedia": 215300,
+    "population_growth_22y_pct": 56.7,
+    "population_density_per_km2": 1170,
+    "population_density_advantage": "1,170 kishi/km² — yarim-shahar zichligi (4 rural tumanlar ichida ENG YUQORI: Forish 10, Guliston 224, Karmana 152, Payariq 221); 'qaynoq nuqta' xizmat sektor uchun",
+    "area_km2": 288.27,
+    "area_ha": 28827,
+    "area_2004_wikipedia_km2": 330,
+    "mahallas": 79,
+    "mahallas_advantage": "ENG KO'P 5 rural tumanlar ichida (Sariosiyo 61, Payariq 65, Karmana 39, Guliston 24, Forish 24)",
+    "families": 91907,
+    "households": 72851,
+    "settlements": {
+      "tuman_center": "Shahrixon shahri (aholisi 100.5 ming kishi 2024)",
+      "city_count": 1,
+      "rural_council_count": 12,
+      "rural_councils": ["Abdubiy", "Guliston", "Nazarmahram", "Naynova", "Paxtaobod", "Toshtepa", "Cho'ja", "Yuqori Shahrixon", "Yangiyo'l", "O'zbekiston", "O'rta Shahrixon", "Haqiqat"],
+      "established_year": 1926,
+      "established_date": "1926-09-29"
+    },
+    "ethnic_groups": ["o'zbeklar (asosij)", "ruslar", "tatarlar", "qirg'izlar", "tojiklar", "uyg'urlar", "qozoqlar"],
+    "borders": {
+      "west": "Bo'z tumani",
+      "north": "Baliqchi tumani / Oltinko'l tumani",
+      "east": "Asaka tumani",
+      "south": "Farg'ona viloyati Quva tumani"
+    },
+    "etymology": "'Shahrixon' = 'shahar + xon' = 'Xon shahri' (Qoqon xoni Umarxon davrida 1817 da kanal va aholi punkti qurilishi boshlangan; nom Qoqon xonlari sharafiga atalgan)",
+    "famous_people": [
+      "Tanzila Norboyeva — O'zbekiston Respublikasi Oliy Majlisi Senati raisi",
+      "Ozodbek Nazarbekov — O'zbekiston xalq artisti",
+      "Sodiqjon Abdurasulov — O'zbekiston Qahramoni (1996)"
+    ],
+    "hokim_bandlik_markazi": "Xomidov Olimjon Rustamjonovich (Aholi bandligiga ko'maklashish markazi rahbari)",
+    "ranking_in_andijon": "19 hududdan 2-o'rin — viloyatdagi 2-yetakchi tumantipidagi hudud"
+  },
+
+  "geography": {
+    "terrain": "tekislik (Shahrixonsoyning keng yoyilmasida; Quva-Andijon adirlari va Qoradaryo o'rtasidagi tekislik)",
+    "elevation_m": "400-680",
+    "climate": {
+      "type": "kontinental — qishi yumshoq, yozi issiq",
+      "january_avg_c": "-2.5 to -3.2",
+      "july_avg_c": "27-29",
+      "extreme_min_c": -26,
+      "extreme_max_c": 45,
+      "annual_rainfall_mm": "300-350",
+      "vegetation_period_days": "212-216"
+    },
+    "soils": ["bo'z", "o'tloqi botqoq", "o'tloqi bo'z", "qumloq sho'rxok"],
+    "main_rivers": ["Shahrixonsoy (1887 da qurilgan magistral kanal)", "Katta Farg'ona kanali"],
+    "distance_to_andijon_city_km": 30,
+    "distance_to_railway_km": 4,
+    "railway_advantage": "ENG YAQIN railway — 4 km! Karmana 8 km, Guliston 2 km bilan teng eng yaxshilardan; 'Sukoy port' uchun ideal",
+    "key_advantage": "Toshkent-O'sh avtomobil yo'li tumandan o'tadi; Shahrixon temir yo'l stansiyasi — viloyatning yana tumanlari (Quva, Asaka) yuklarini ham ushlay olishi mumkin"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum_2025": 3152.8,
+    "industry_growth_5y_multiplier": 2.98,
+    "industry_growth_pct_2025": 60,
+    "industry_dynamics_bln_sum": {
+      "2021": 1059.5,
+      "2022": 1387.2,
+      "2023": 1423.2,
+      "2024": 1973.7,
+      "2025": 3152.8,
+      "2026_forecast": 3850
+    },
+    "industry_growth_advantage": "5 yilda 3x o'sgan! 2025 da +60% — 7 tumanlar ichida ENG TEZ saneat o'sishi (Karmana 1.84x, Mirzo Ulug'bek 2.4x, Payariq 1.49x)",
+    "services_volume_bln_sum_2025": 2005.8,
+    "services_growth_5y_multiplier": 2.35,
+    "services_dynamics_bln_sum": {
+      "2021": 854.6,
+      "2022": 958.4,
+      "2023": 1176.2,
+      "2024": 1401.8,
+      "2025": 2005.8
+    },
+    "export_volume_usd_mln_2025": 115.7,
+    "export_dynamics_usd_mln": {
+      "2021": 36.1, "2022": 67.5, "2023": 36.9, "2024": 114.6, "2025": 115.7
+    },
+    "export_growth_5y_multiplier": 3.2,
+    "export_target_2026_usd_mln": 150,
+    "new_enterprises_2025": 282,
+    "sector_shares_pct": {
+      "agriculture": 48.4,
+      "industry": 31.5,
+      "services": 20.1,
+      "note": "Yig'indi 100% — boshqa tumanlardan farqli to'g'ri metodologiya"
+    },
+    "agriculture_focus": ["meva-sabzavot", "g'allachilik", "paxtachilik (an'anaviy)", "pillачилик"],
+    "industry_focus": ["to'qimачилик", "trikotaj", "charm-poyabzal", "pichoqchilik (an'anaviy hunar)", "avtomobil moy filtrlari (eski ipak kombinati negizida)"],
+    "key_joint_ventures": [
+      "'Senas Textile' (O'zbekiston-Janubiy Koreya)",
+      "'Kosmo Elektroniks KOLTD' (O'zbekiston-Koreya)",
+      "'Rivoj-Tyanjin' (O'zbekiston-Xitoy)",
+      "'Rivoj-Norind' (O'zbekiston-Hindiston)",
+      "'Interteks' (O'zbekiston-Germaniya)",
+      "'Anteks' (O'zbekiston-Rossiya)"
+    ],
+    "joint_ventures_advantage": "5 ta xorijiy davlat bilan QK — boshqa tumanlardan ENG XILMA-XIL hamkorlik bazasi",
+    "small_enterprises_count": "640+",
+    "google_trends_score": null,
+    "google_trends_note": "Hunarmandchilik va savdo bo'yicha qidiruv yuqori",
+    "cargo_turnover_thousand_tons": 2118.4,
+    "passenger_volume_thousand": 25209.3,
+    "priority_sectors": [
+      "Charm-poyabzal va pichoqchilik klасteri (PQ 78/2023 ramkasida saneatlашtirish)",
+      "Mева-sabzavot qайта ишlash + agrologistika",
+      "Trikotaj va to'qimachilik (Senas, Kosmo Elektroniks)",
+      "Sukoy port (railway 4 km)",
+      "Defitsit товарлар (parranda gosht, sut, qurilish materiallari, antibiotik)",
+      "Service Economy (1170/km² zichlikda)",
+      "Avtomobil komponеntlar (avtomobil moy filtrlari kоrxonasi)"
+    ],
+    "avg_salary": {
+      "tuman_thousand_sum_2025": null,
+      "andijon_viloyat_estimate_thousand_sum": 4500,
+      "national_mln_sum_2025": 5.98,
+      "source": "Tuman bo'yicha alohida ma'lumot yo'q"
+    },
+    "local_budget_dynamics_bln_sum": {
+      "2021": 30.2,
+      "2022": 38.1,
+      "2023": 67.1,
+      "2024": 82.6,
+      "2025": 169.3,
+      "2026_forecast": 190
+    },
+    "local_budget_growth_5y_multiplier": 5.6,
+    "local_budget_advantage": "Mahalliy byudjet 5 yilda 5.6x oshgan! — Karmana (2.6x), Forish (1.9x) dan tezroq; soliq intizomi yaxshilangan"
+  },
+
+  "credits": {
+    "total_credits_bln_sum_2025": 1622.4,
+    "credit_breakdown_2025_bln_sum": {
+      "state_budget": 285.4,
+      "microcredit": 1227,
+      "family_entrepreneurship": 37
+    },
+    "family_business_npl_pct": 32,
+    "family_business_npl_alert": "🚨 32% — 7 tumanlar ichida ENG YUQORI (Qoqon level kritik); hozir 'Loyiha fabrikasi' 16 ta lojiha (133.7 mlrd so'm) tasdiqlangan — yangi kreditlash 'tayyor uskuna + bozor kafolati' modelida bo'lishi shart",
+    "loyiha_fabrikasi_2026": {
+      "priority_projects_count": 16,
+      "total_value_bln_sum": 133.7,
+      "expected_jobs": 1374,
+      "focus_deficit_areas": ["parrandachilik fabrikalari", "sut qayta ishlash", "qurilish materiallari", "antibiotiklar"]
+    },
+    "fdi_status": "Joint venture orqali 5 davlatdan investitsiya — Janubiy Koreya, Xitoy, Hindiston, Germaniya, Rossiya",
+    "credit_target_2026": "16 ustuvor lojiha + 790 mikrolojiha = 133.7 mlrd so'm jami"
+  },
+
+  "infrastructure": {
+    "water_supply_pct_2025": 84,
+    "water_supply_dynamics_pct": {
+      "2021": 65, "2022": 75, "2023": 76, "2024": 80, "2025": 84,
+      "2026_forecast": 88
+    },
+    "water_supply_growth_5y_pp": 19,
+    "water_supply_advantage": "5 yilda +19 п.п. — barqaror o'sish; Forish (62.5%) va Sariosiyo (66.7%) dan yaxshi, lekin Karmana (99.8%) gacha zaxira",
+    "irrigation_canal_concrete_pct": 35.1,
+    "roads_total_km": 68,
+    "roads_asphalted_pct": 6.2,
+    "roads_alert": "🚨 ENG PAST asfalt — 6.2% (Forish 39%, Payariq 32.8%, Karmana 68.4%); shubhali ma'lumot — 68 km 'asosiy yo'llar' deb ko'rsatilgan, ichki yo'llar uzunligi to'liq emas; 'Tashabbusli byudjet' va davlat dasturlari orqali 3-4x jadallashtirish strategik vazifa",
+    "annual_cargo_thousand_tons": 2118.4,
+    "annual_passenger_thousand": 25209.3,
+    "passenger_advantage": "25,209 ming yo'lovchi — 7 tumanlar ichida 2-o'rin (Mirzo Ulug'bek 521,268 dan keyin)",
+    "railway_distance_km": 4,
+    "railway_advantage": "ENG YAQIN — 4 km; Andijon 30 km; Toshkent-O'sh yo'li tumandan o'tadi",
+    "electricity": {
+      "outages_per_month_avg_2025": 2.2,
+      "old_transformers_pct": 35,
+      "old_transformers_alert": "35% transformatorlar eskirgan — 7 tumanlar ichida ENG KO'P (Karmana 14%, Mirzo Ulug'bek <14%); saneat 122% o'sishini cheklash riski",
+      "lines_need_replacement_pct": 25,
+      "internet_coverage_pct": 100,
+      "internet_speed_mbps": 128,
+      "internet_speed_advantage": "🥇 128 Mbit/s — 7 tumanlar ichida ENG TEZ (Mirzo Ulug'bek 50, Forish ma'lumot yo'q); raqamli iqtisodiyot uchun ideal"
+    },
+    "land": {
+      "total_ha": 28827,
+      "irrigated_ha": 16065,
+      "irrigated_pct": 55.7,
+      "industrial_zone_use_pct": 100,
+      "industrial_zone_alert": "100% to'lgan — boshqa tumanlardan farqli (Mirzo Ulug'bek 90%, Karmana 80%, Payariq 0.6%); kengayish uchun joy YO'Q — 'Vertical Industry' (kop qavatli zavod) zarur",
+      "ksz_projects": 59,
+      "youth_ksz_projects": 37,
+      "ksz_advantage": "59 KSZ + 37 yoshlar KSZ = 96 ta loyiha — boshqa tumanlardan ENG KO'P; lekin 100% land use bilan kengayish blokirovkalangan"
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct_2025": 78.5,
+      "coverage_dynamics_pct": {
+        "2023": 79.7, "2024": 79.1, "2025": 78.5, "2026_forecast": 82.0
+      },
+      "alert": "MTT qamrov 3 yil PASAYIB ketgan (79.7% → 78.5%) — aholi o'sishi MTT qurilishidan tezroq; xususij MTT zarur"
+    },
+    "schools_2004": {
+      "general_schools": 63,
+      "lyceums": 4,
+      "students": 54300,
+      "professional_colleges": 5,
+      "college_students": 5000
+    },
+    "higher_education": {
+      "universities_in_district": 0,
+      "professional_colleges_2004": 5,
+      "training_centers": ["Shahrixon tumani Kasb-hunarga o'qitish markazi", "Aholi bandligiga ko'maklashish markazi (yangi 14.01.2025)"],
+      "andijon_universities_30km": ["Andijon davlat universiteti", "Andijon mashinasozlik instituti", "Andijon davlat tibbiyot instituti"]
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand_2025": 165.8,
+    "total_resources_dynamics_thousand": {
+      "2021": 143.7, "2022": 148.3, "2023": 154.6, "2024": 160.5, "2025": 165.8
+    },
+    "data_alert_labor_resources": "Bu raqamlar Payariq tumani bilan AYNAN BIR XIL — shablon duplikati ehtimoli; 337k aholiga 165.8k mehnat resursi mantiqiy, lekin verifikatsiya zarur",
+    "employed_2025": 108453,
+    "employed_growth_pct_2025": 3.1,
+    "data_alert_employed": "108,453 ham Payariq bilan IDENTIK — verifikatsiya shart",
+    "informal_sector_2021": 41183,
+    "abroad_migrants_2025": 2854,
+    "abroad_migrants_change_pct": -33.1,
+    "data_alert_migrants": "Xorijga ketgan -33.1% va 2,854 nafar Payariq bilan IDENTIK — shubhali shablon duplikati",
+    "unemployment_pct_2025": 4.8,
+    "unemployment_dynamics_pct": {
+      "2021": 9.7, "2022": 9.0, "2023": 6.8, "2024": 5.3, "2025": 4.8
+    },
+    "unemployed_count_2025": 6533,
+    "unemployment_target_2027_pct": 2.0,
+    "unemployment_decline_5y": "9.7% → 4.8% — yarim baravar tushgan",
+    "youth_unemployed_16_30": 1489,
+    "unemployed_women": 3426,
+    "data_alert_demographics": "Yoshlar 1,489 va ayollar 3,426 — Payariq bilan IDENTIK; verifikatsiya zarur",
+    "poverty_pct_2025": 2.9,
+    "poverty_dynamics_count": {
+      "2024": 7847,
+      "2025": 2220,
+      "change_pct": -71.7
+    },
+    "poverty_advantage": "🥇 7,847 → 2,220 — 1 yilda 3.5x kamaygan! 7 tumanlar ichida ENG YUQORI tezlikdagi kambag'allik kamayishi",
+    "low_income_families": 2017,
+    "difficult_mahallas_named": ["Qumqayroq", "Mustaqillik", "Markaz"],
+    "mahalla_categories": {
+      "heavy_ogir": 3,
+      "medium_orta": 7,
+      "easy_yengil": 39,
+      "good_yaxshi": 20,
+      "subtotal": 69,
+      "remainder_unaccounted": 10,
+      "total": 79,
+      "advantage": "Atigi 3 ta og'ir mahalla — 7 tumanlar ichida 2-eng yaxshi (Karmana 2 og'ir); 39 yengil + 20 yaxshi = 59 sog'lom MFY (75%)"
+    },
+    "jobs_plan_2026": {
+      "youth_income_plan": 580,
+      "youth_permanent_jobs": 450,
+      "youth_entrepreneur": 40,
+      "youth_credit_based": 40,
+      "youth_retraining": 50,
+      "women_income_plan": 2012,
+      "women_permanent_jobs": 341,
+      "women_entrepreneur": 749,
+      "women_credit_amount_bln_sum": 3,
+      "women_retraining": 100,
+      "women_self_employed": 69
+    }
+  },
+
+  "tourism_and_culture": {
+    "type": "Hunarmandchilik markazi (an'anaviy)",
+    "key_brand": "Shahrixon — pichoqchilik, beshikchilik, kosibchilik, do'ppido'zlik, misgarlik markazi sifatida tarixiy mashhur",
+    "historical_monuments": [
+      "Kamoltepa arxeologik joyi (1-4 asrlar kulolchilik shaharchasi — 1982 da kashf etilgan)",
+      "O'rda masjidi va minoralar (XIX asr)",
+      "Shahrixonsoy magistral kanali (1887)",
+      "Katta Farg'ona kanali (1939)"
+    ],
+    "annual_visitors_estimate": "Asosan ichki — Andijon viloyati va Farg'ona vodiysi sayyohlari",
+    "cultural_potential": "Hunarmandchilik markazi sifatida 'Shahrixon Crafts Tour' brendi yaratish potensiali; PQ 78/2023 doirasida industrialization"
+  },
+
+  "trade": {
+    "passenger_volume_thousand_per_year": 25209.3,
+    "key_advantage": "Yo'lovchi airlannmasi 25.2 mln/yil — 7 tumanlar ichida 2-o'rin (Mirzo Ulug'bek 521 mln dan keyin); 1,170 kishi/km² zichligi savdo va xizmat uchun ideal",
+    "import_substitution_priorities": [
+      "Parranda go'shti (deficit #1)",
+      "Sut mahsulotlari (deficit #2)",
+      "Qurilish materiallari (deficit #3)",
+      "Antibiotiklar va базавий dorilar (deficit #4)",
+      "Kimyovij mahsulotlar (deficit #5)"
+    ],
+    "service_economy_concept": "Aholi zichligi 1,170/km² — kop qavatli savdo-koнgilochar majmuаlari, IT-марkazlar, 24/7 servis ko'chalari uchun ideal"
+  },
+
+  "agriculture": {
+    "key_crops": ["paxta", "g'alla", "meva-sabzavot", "pillaчилик"],
+    "irrigated_land_ha": 16065,
+    "shirkat_count_2004": 16,
+    "fermers_2004": "580+",
+    "training_farms": 2,
+    "private_livestock_farms_2004": 15,
+    "processing_status": "Past — meva-sabzavot etishtirish ko'p, lekin qайта ишlash daraжasi past",
+    "agro_logistics_concept": "Zamonavij agro-logistika hubi + 3-4 ta shok muzlash va qadoqlash korxonasi orqali daromad 3x oshish potensiali",
+    "key_advantage": "Asosij 4 drайveridan 1-чи (48.4% iqtisodiyot)"
+  },
+
+  "mahalla_economy": {
+    "total": 79,
+    "advantage": "🥇 ENG KO'P 5 rural tumanlar ichida (Sariosiyo 61, Payariq 65, Karmana 39)",
+    "by_specialization": {
+      "trade_service_savdo_xizmat": {"count": 41, "pct": 52},
+      "industry_ishlab_chiqarish": {"count": 23, "pct": 29},
+      "livestock_chorvachilik": {"count": 3, "pct": 4},
+      "poultry_parrandachilik": {"count": 1, "pct": 1, "uniqueness": "1 maxsus parranda MFY — defitsit товар #1 yaqin niche brendlash uchun"}
+    },
+    "by_typology": {
+      "heavy_ogir": 3,
+      "medium_orta": 7,
+      "easy_yengil": 39,
+      "good_yaxshi": 20
+    },
+    "drivers": ["Savdo va xizmat ko'rsatish", "Hunarmandchilik (charm-poyabzal, pichoqchilik)", "Dehqon xojaligi", "Chorvachilik"],
+    "11_easy_mahallas_advantage": "39 ta yengil + 20 ta yaxshi = 59 sog'lom MFY (75%); kuchli infratuzilma asos"
+  },
+
+  "banking_programs": {
+    "sqb_status": "1 SQB filiali",
+    "total_banks": 13,
+    "atms": 170,
+    "atms_advantage": "170 ATM (Karmana 80, boshqa rural tumanlar — kam) — yaxshi raqamli infratuzilma",
+    "atms_alert": "Payariq bilan IDENTIK 170 raqami — verifikatsiya kerak",
+    "bank_staff": 104,
+    "mahalla_bankirs_total": 20,
+    "mahalla_bankirs_for_79_mahallas": "1 bankir 4 mahallaga — Karmana (1/1) dan past, lekin Payariq (1/22) dan ko'p yaxshi",
+    "mahalla_bankirs_gender": {"women": 6, "men": 14},
+    "women_bankirs_pct": 30,
+    "women_bankirs_advantage": "30% ayol bankir — Karmana (21%) dan yaxshi, Payariq (0%) dan keskin yaxshi",
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "guarantee_pct": 70,
+      "participating_banks": ["SQB", "Xalq banki", "Mikrokreditbank", "Agro bank"],
+      "best_for": ["hunarmandchilik (an'anaviy bren)", "tikuvchilik", "online savdo", "agro-qadoqlash"],
+      "women_credit_2026_target": "749 nafar ayol tadbirkor / 3 mlrd so'm kredit"
+    },
+    "har_bir_oila_tadbirkor": {
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "current_npl_pct": 32,
+      "npl_alert": "🚨 32% — Qoqon level kritik; yangi kreditlash 'Loyiha fabrikasi' 16 ustuvor lojiha asosida bo'lishi shart"
+    },
+    "micro_projects_2026_plan": {
+      "total_projects": 790,
+      "total_jobs": 1374,
+      "total_bln_sum": 133.7,
+      "industry_projects": 9,
+      "industry_bln_sum": 88.7,
+      "industry_jobs": 850,
+      "service_projects": 5,
+      "service_bln_sum": 32.9,
+      "service_jobs": 503,
+      "priority_loyihalar": 16
+    },
+    "bandlik_markazi_address": "Shahrixon shox ko'cha 12-uy",
+    "bandlik_markazi_rahbari": "Xomidov Olimjon Rustamjonovich",
+    "bandlik_markazi_phone": "(93)-417-50-30"
+  },
+
+  "strengths": [
+    {
+      "title": "🥇 ENG TEZ saneat o'sishi (3x 5 yilda)",
+      "detail": "1,059 → 3,153 mlrd so'm; 2025 da +60%; 2026 reж 3,850 mlrd (122% o'sish); 7 tumanlar ichida ENG dinamik"
+    },
+    {
+      "title": "🥇 ENG TEZ internet (128 Mbit/s)",
+      "detail": "100% qoplam — 7 tumanlar ichida ENG TEZ (Mirzo Ulug'bek 50 Mbit/s); raqamli iqtisodiyot va saneat IoT uchun ideal"
+    },
+    {
+      "title": "🥇 ENG TEZ kambag'allikni qisqartirish (3.5x 1 yilda)",
+      "detail": "7,847 → 2,220 oila — mutlaq rekord; 2025 da -71.7%; 'Mahaliy bankir' modelining samarasi"
+    },
+    {
+      "title": "🥇 ENG KO'P mahalla (79 ta)",
+      "detail": "5 rural tumanlar ichida ENG KO'P (Sariosiyo 61, Payariq 65, Karmana 39); 39 yengil + 20 yaxshi = 75% sog'lom"
+    },
+    {
+      "title": "Andijon viloyatida 2-o'rin (19 hududdan)",
+      "detail": "Mustahkam 2-pozitsiya; 1-o'ringa chiqish strategiyasi 2026-2027 mаsterplan da"
+    },
+    {
+      "title": "Tarixij hunarmandchilik brendi (PQ 78/2023)",
+      "detail": "Pichoqchilik, charm-poyabzal, beshikchilik, kosibchilik, misgarlik — 'Made in Shahrixon' brand potensiali; davlat dasturi tasdiqlangan"
+    },
+    {
+      "title": "5 davlat bilan joint venture",
+      "detail": "Janubiy Koreya (Senas, Kosmo), Xitoy (Tyanjin), Hindiston (Norind), Germaniya (Interteks), Rossiya (Anteks) — boshqa rural tumanlardan ENG XILMA-XIL"
+    },
+    {
+      "title": "Eksport 5 yilda 3.2x oshgan",
+      "detail": "$36.1 → $115.7 mln (2021-2025); 2026 reж $150 mln+; eksportbop saneat o'sayapti"
+    },
+    {
+      "title": "Mahalliy byudjet 5.6x oshgan",
+      "detail": "30.2 → 169.3 mlrd so'm 5 yilda — barchadan tezroq (Karmana 2.6x, Forish 1.9x)"
+    },
+    {
+      "title": "Atigi 3 og'ir mahalla nomma-nom",
+      "detail": "Qumqayroq, Mustaqillik, Markaz — Karmana (2) dan keyin 2-eng yaxshi; manzilli yordam aniq"
+    },
+    {
+      "title": "Railway 4 km — eng yaqin railway",
+      "detail": "'Sukoy port' uchun ideal — 28,827 ga maydonlik ham qo'shni tumanlar (Quva, Asaka, Bo'z) ham xizmat"
+    },
+    {
+      "title": "Aholi zichligi 1,170/km² — Service Economy potensiali",
+      "detail": "Yarim-shahar zichligi (rural tumanlardan eng yuqori); xizmat va savdo uchun 'qaynoq nuqta'; 24/7 retail kontseptsiyasi"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "🚨 Oilaviy biznes NPL 32% — Qoqon level",
+      "severity": "YUQORI",
+      "data": "Oilaviy kredit NPL 32% — 7 tumanlar ichida ENG YOMON (Karmana 6.2%, Payariq 6.6%); 'shunchaki kredit berish' modeli ishlamayapti",
+      "opportunity": "'Tayyor uskuna + bozor kafolati' modelida 16 ustuvor lojiha (133.7 mlrd so'm); SQB AI Advisor скоринг + biznes-trener sektor",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["IT/AI tajribasi", "biznes-konsalting", "moliya tajribasi"]
+    },
+    {
+      "gap": "🚨 Saneat zonasi 100% to'lgan",
+      "severity": "YUQORI (FURSAT)",
+      "data": "Saneat zonasi land use 100% — kengayish uchun joy YO'Q; 59 KSZ + 37 yoshlar KSZ = 96 lojiha sig'imi to'lgan; saneat 122% o'sib davom etmoqda",
+      "opportunity": "'Vertical Industry' (3-5 qavatli zavod) + qo'shimcha er ajratish; PQ 78 ramkasida charm-poyabzal kластери",
+      "investment_range_mln_sum": "500-5000",
+      "suitable_for": ["yirik investor", "halqaro hamkor (Italya, Turkiya — charm uchun)", "DXSh sherigi"]
+    },
+    {
+      "gap": "🚨 Eskirgan transformatorlar 35% — saneat ўsishini cheklashi mumkin",
+      "severity": "YUQORI",
+      "data": "Transformatorlar 35% eskirgan — 7 tumanlar ichida ENG YOMON; saneat 122% o'sayotgan paytda — riski katta",
+      "opportunity": "Quyosh stansiyalari (rooftop solar) saneat zonasida; Smart Grid pilot; Energy Service kompaniya (ESCO)",
+      "investment_range_usd_mln": "5-30",
+      "suitable_for": ["texnik bilim bor", "ESCO operator", "B2B savdo"]
+    },
+    {
+      "gap": "🚨 Yo'llar 6.2% asfalt — eng past",
+      "severity": "YUQORI",
+      "data": "68 km 'asosij yo'llar' atigi 6.2% asfalt; logistika va mahalla bog'lanishi cheklov; ich yo'llar uzunligi rasmiy emas",
+      "opportunity": "'Tashabbusli byudjet' + DXSh + Loyiha fabrikasi; yo'l qurilish kompaniyalari uchun fursat",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["qurilish kompaniyasi", "DXSh tajribasi"]
+    },
+    {
+      "gap": "🚨 MTT qamrov 3 yil PASAYIB ketgan",
+      "severity": "O'RTA-YUQORI",
+      "data": "79.7% (2023) → 78.5% (2025) — MTT qurilishdan tezroq aholi o'sayapti; 91,907 oila uchun 78.5% atigi",
+      "opportunity": "Xususij MTT (premium), nodavlat MTT tarmog'i, бола rivojlantirish markazi",
+      "investment_range_mln_sum": "100-500",
+      "suitable_for": ["pedagogik ma'lumot bor ayollar", "DXSh tajribasi"]
+    },
+    {
+      "gap": "Charm-poyabzal va pichoqchilik tarqoq",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "PQ 78/2023 — kasanachilik orqali ishlab chiqarish; lekin yagona kластер yo'q, online savdo cheklangan; Markaziy Osiyo bozorlariga eksport potensiali",
+      "opportunity": "'Made in Shahrixon' brand + maxsus KSZ; Italya/Turkiya texnologiya import; B2B eksport kanallari (Qozog'iston, Rossiya, Qirg'iziston)",
+      "investment_range_usd_mln": "1-10",
+      "suitable_for": ["hunarmand oilalar", "to'qimачилik tajribasi", "eksport tajribasi"]
+    },
+    {
+      "gap": "5 ta defitsit товар (parranda, sut, qurilish, antibiotik, kimyo)",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "Ichki bozor katta (337k aholi + 1,170/km²); 5 ta deficit товар — 'tayyor lojiha' bilan importing 30% qisqartirish maqsadi",
+      "opportunity": "Parrandachilik fabrikasi, sut zavodi, qurilish materiallari, fаrmasevtika cеxi — 'Loyiha fabrikasi' 16 ustuvor",
+      "investment_range_mln_sum": "100-3000",
+      "suitable_for": ["fermer", "agro tajribasi", "yirik investor"]
+    },
+    {
+      "gap": "Mева-sabzavot qайта ишлash daraжasi past",
+      "severity": "O'RTA (FURSAT)",
+      "data": "Q/x 48.4% iqtisodiyot, lekin qayta ishlash minimal; xom shaklda sotiladi (qo'shimcha qiymat yo'q)",
+      "opportunity": "3-4 ta shok muzlash + qadoqlash kоrxonalari; 'Agro-logistika hub'; eksport (Rossiya, Qozog'iston)",
+      "investment_range_mln_sum": "200-1500",
+      "suitable_for": ["fermer-bog'bon", "agro-eksport tajribasi"]
+    },
+    {
+      "gap": "Sukoy port modeli amalga oshirilmagan",
+      "severity": "O'RTA (FURSAT)",
+      "data": "Railway 4 km, Toshkent-O'sh yo'li tumandan o'tadi; lekin yirik omborxonalar va bojxona terminali yo'q",
+      "opportunity": "Sukoy port kompleksi; viloyatdagi qo'shni tumanlar (Quva, Asaka, Bo'z) yuklarini ushlash",
+      "investment_range_mln_sum": "500-3000",
+      "suitable_for": ["logistika tajribasi", "yirik investor", "DXSh"]
+    },
+    {
+      "gap": "Norasmiy sektor 41,183 nafar",
+      "severity": "O'RTA",
+      "data": "Norasmij band 41k+ — yiliga 20+ mlrd so'm soliq yo'qotish; rasmiyлаштириш orqali konvertatsiya KPI",
+      "opportunity": "Buxgalteriya autsorsing, ChP/MChJ konsalting, soliq xizmati",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "huquqshunоs"]
+    },
+    {
+      "gap": "Aёllar ishsizligi 3,426 (62%)",
+      "severity": "O'RTA",
+      "data": "Aёllar ishsizligi katta — Payariq bilan IDENTIK ko'rsatkich (verifikatsiya kerak); HAMROH joriy (749 ayol tadbirkor 2026 maqsad)",
+      "opportunity": "Pillачилик, hunarmandchilik (do'ppido'zlik, kashtanchilik, tikuvchilik), online savdo, charm-poyabzal kasanachilik",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["aёllar (HAMROH 100 mln garovsiz)", "to'qimачилik tajribasi"]
+    },
+    {
+      "gap": "3 og'ir mahalla manzilli ish",
+      "severity": "O'RTA",
+      "data": "Qumqayroq, Mustaqillik, Markaz — 6,533 ishsiz (1,489 yosh + 3,426 ayol); 'bir mahalla bir drайver' modeli",
+      "opportunity": "Har og'ir MFY ga 2 yakorь loyiha (charm-poyabzal yoki agro-qайта ишлash)",
+      "investment_range_mln_sum": "5-30",
+      "suitable_for": ["mahalliy aholi", "ayollar", "yoshlar"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Charm-poyabzal va hunarmandchilik klасteri ('Made in Shahrixon' brand)",
+      "type": "Modern poyabzal fabrika / pichoq ishlab chiqarish (an'anaviy + zamonaviy) / B2B eksport / Italyan/Turk texnologiya importi",
+      "why_shahrixon": "PQ 78/2023 — davlat dasturi tasdiqlangan; tarixij hunarmandchilik markazi (pichoqchilik, charm-poyabzal, beshikchilik, do'ppido'zlik); 5 davlat bilan QK tajribasi; eksport 5 yilda 3.2x oshgan; railway 4 km — Markaziy Osiyo bozoriga oson",
+      "investment_usd_mln": "1-10",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "2-4",
+      "suitable_for": ["hunarmand oilalar", "to'qimачилик tajribasi", "eksport tajribasi"],
+      "bank_product": "PQ 78 davlat dasturi yoki SQB sanoat kreditlari yoki HAMROH (kasanachilik уchun)",
+      "risk": "Halqaro raqobat (Xitoy, Hindiston); brand bunyod"
+    },
+    {
+      "rank": 2,
+      "sector": "Mева-sabzavot qайта ишlash va Agro-логистика",
+      "type": "Shok muzlash / qadoqlash / konserva / qurutish / online eksport",
+      "why_shahrixon": "Q/x 48.4% iqtisodiyot; xomashyo bazasi keng; railway 4 km — eksportga oson; Rossiya va Qozog'iston bozorlari yaqin; agrologistika hub kontseptsiyasi tasdiqlangan",
+      "investment_mln_sum": "200-1500",
+      "monthly_income_estimate_mln_sum": "30-150",
+      "payback_years": "3-5",
+      "suitable_for": ["fermer-bog'bon", "agro-eksport tajribasi", "yirik investor"],
+      "bank_product": "Agro bank yoki SQB sanoat kreditlari",
+      "risk": "Mavsumiylik; HACCP sertifikat"
+    },
+    {
+      "rank": 3,
+      "sector": "Parrandachilik fabrikasi (deficit товар #1)",
+      "type": "Tovuq go'shti fabrikasi (5-20 t/kun) / tuxum ishlab chiqarish / inkubator / parranda yem zavodi",
+      "why_shahrixon": "1 maxsus parranda MFY mavjud; deficit товар #1; 'Loyiha fabrikasi' 16 ustuvor lojiha asosida; 337k iste'mol bozori yaqinda; Andijon shahar 30 km",
+      "investment_mln_sum": "300-2000",
+      "monthly_income_estimate_mln_sum": "50-200",
+      "payback_years": "3-5",
+      "suitable_for": ["agro tajribasi", "fermer", "yirik investor"],
+      "bank_product": "Loyiha fabrikasi yoki Agro bank",
+      "risk": "Veterinar talablar; ozuqalar narxi"
+    },
+    {
+      "rank": 4,
+      "sector": "Sukoy port va 'Quruq port' (railway 4 km)",
+      "type": "Yuk terminali / omborxona kompleksi / bojxona broker / agromuzlash markazi",
+      "why_shahrixon": "Railway 4 km — eng yaqin; Toshkent-O'sh yo'li tumandan; Andijon 30 km; viloyat boshqa tumanlar (Quva, Asaka, Bo'z) ham xizmat ola olar; saneat 3x oshganda yuk oqimi katta",
+      "investment_mln_sum": "500-3000",
+      "monthly_income_estimate_mln_sum": "30-150",
+      "payback_years": "4-6",
+      "suitable_for": ["logistika tajribasi", "yirik investor", "DXSh sherigi"],
+      "bank_product": "SQB biznes kreditlari yoki XIH",
+      "risk": "Boshlang'ich kapital katta; davlat infratuzilmasiga bog'liqlik"
+    },
+    {
+      "rank": 5,
+      "sector": "Vertical Industry (kop qavatli zavod)",
+      "type": "3-5 qavatli ishlab chiqarish kompleksi (to'qimачилik / elektronika / chiroqlar / mebellar)",
+      "why_shahrixon": "Saneat zonasi 100% to'lgan — gorizontal yo'l yo'q; saneat 122% o'sayapti; 5 davlat QK ekosystemasi tayyor (Korea, Xitoy, Hindiston, Germaniya, Rossiya)",
+      "investment_usd_mln": "5-30",
+      "monthly_income_estimate_mln_sum": "100-500",
+      "payback_years": "5-7",
+      "suitable_for": ["yirik investor", "halqaro hamkor", "DXSh sherigi"],
+      "bank_product": "SQB sanoat kreditlari yoki XIH",
+      "risk": "Texnik investitsiya katta; texnologiya import"
+    },
+    {
+      "rank": 6,
+      "sector": "Sut va sut mahsulotlari qайта ишlash (deficit #2)",
+      "type": "Sut zavodi (3-10 t/kun) / pishloq / yog' / yogurt / mol-zooveterinar tarmog'i",
+      "why_shahrixon": "3 chorvachilik MFY; deficit товар #2; 'Loyiha fabrikasi' tayer model; 337k iste'mol bozori",
+      "investment_mln_sum": "150-1000",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "3-5",
+      "suitable_for": ["chorvador oilalar", "agro tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor (300 mln)",
+      "risk": "Veterinar talablar; mol mavsumiyligi"
+    },
+    {
+      "rank": 7,
+      "sector": "Service Economy (1,170/km² zichlik)",
+      "type": "24/7 retail / kафe-restoran / fitness / go'zallik salon / kinoteatr / shopping mall",
+      "why_shahrixon": "Aholi zichligi 1,170 kishi/km² — rural tumanlardan ENG YUQORI; xizmatlar 5 yilda 2.35x; mahalliy iste'mol bozori 337k; PQ 679/2021 da xizmat sektori prioritеt",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "2-4",
+      "suitable_for": ["chakana savdo tajribasi", "kafe-restoran", "франchаiз operator"],
+      "bank_product": "Biznesga birinchi qadam yoki Har bir oila tadbirkor",
+      "risk": "Raqobat o'sayapti; ijara qimmat"
+    },
+    {
+      "rank": 8,
+      "sector": "Premium MTT va xususij maktab",
+      "type": "Premium MTT / mini-bog'cha / til/STEM markazi / kasb maxsus o'qitish",
+      "why_shahrixon": "MTT qamrov 78.5% va PASAYAYAPTI (3 yil); 91,907 oila — bozor katta; Andijon viloyat 2-pozitsiyasi — premium oilalar bor; PQ 679 ramkasida MTT prioritet",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "3-5",
+      "suitable_for": ["pedagogik ma'lumot", "premium xizmat"],
+      "bank_product": "HAMROH (ayollar) yoki Har bir oila tadbirkor",
+      "risk": "Litsenziya; kadrlar"
+    },
+    {
+      "rank": 9,
+      "sector": "Qurilish materiallari klasteri (deficit #3)",
+      "type": "Blok ishlab chiqarish / sement aralashma / pardoz materiallari / pich qum",
+      "why_shahrixon": "Deficit товар #3 'Loyiha fabrikasi' da; 122% saneat o'sishi qurilishni kuchaytiradi; viloyatdagi 2-pozitsiya — qo'shni tumanlar bozori",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["saneat tajribasi", "qurilish biznesi"],
+      "bank_product": "SQB sanoat kreditlari",
+      "risk": "Xom ashyo importi; ekologik standartlar"
+    },
+    {
+      "rank": 10,
+      "sector": "Aёllar uchun online biznes va hunarmandchilik",
+      "type": "E-commerce platforma / kashtanchilik / do'ppido'zlik / Shahrixon brendлар online savdo",
+      "why_shahrixon": "Aёllar ishsizligi 3,426; HAMROH 100 mln so'm garovsiz; 749 ayol tadbirkor maqsadi 2026; an'anaviy hunarmand brendi кучли; internet 100%/128 Mbit/s",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "3-20",
+      "payback_years": "1-3",
+      "suitable_for": ["aёllar", "hunarmand", "to'qimачилik tajribasi"],
+      "bank_product": "HAMROH (eng qulay)",
+      "risk": "Online marketing; platforma raqobat"
+    },
+    {
+      "rank": 11,
+      "sector": "ESCO va Smart Grid (35% transformatorlar eskirgan)",
+      "type": "Rooftop solar saneat zonasida / Smart Grid pilot / energetika audit",
+      "why_shahrixon": "35% transformatorlar eskirgan — 7 tumanlar ichida eng yomon; saneat 122% o'sayapti — energiya yetishmaslik xавfi; 100% land use — vertikal yechim",
+      "investment_usd_mln": "3-15",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "5-7",
+      "suitable_for": ["texnik bilim bor", "ESCO operator", "B2B savdo"],
+      "bank_product": "SQB biznes kreditlari yoki XIH yashil energiya",
+      "risk": "Tarif tartibga solish"
+    },
+    {
+      "rank": 12,
+      "sector": "Antibiotik va dorivor moddalar (deficit #4)",
+      "type": "Mini-фармасевтика sеxi / generik antibiotik / dori vositalari ishlab chiqarish",
+      "why_shahrixon": "Deficit товар #4 'Loyiha fabrikasi' da; jaxon farма bozori o'sayapti; 5 davlat QK tajribasi; eksport potensiali (MDH bozorlari)",
+      "investment_usd_mln": "2-10",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "5-8",
+      "suitable_for": ["farма tajribasi", "yuqori malakali kadr", "halqaro hamkor (Hindiston)"],
+      "bank_product": "SQB sanoat kreditlari yoki XIH",
+      "risk": "Litsenziya jarayoni; sertifikat"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Shahrixon tumani (Andijon viloyati) — 337.3 ming aholi (Mirzo Ulug'bek bilan teng), 79 mahalla (5 rural tumanlar ichida ENG KO'P), aholi zichligi 1,170 kishi/km² (yarim-shahar), 91,907 oila, 28,827 ga maydon, Andijon shahriga 30 km, temir yo'l stansiyasiga 4 km. KUCHLI TOMONLARI: (1) 🥇 SANOAT 5 yilda 3x o'sgan (1,059→3,153 mlrd so'm) — eng tez ko'rsatkich; (2) 🥇 INTERNET 128 Mbit/s 100% qoplam (eng tez); (3) 🥇 KAMBAG'ALLIK 1 yilda 3.5x kamaygan (7,847→2,220 oila); (4) 🥇 79 ta mahalla (eng ko'p rural); (5) Andijon viloyatida 2-o'rin (19 hududdan); (6) Tarixij hunarmandchilik brendi (PQ 78/2023): pichoqchilik, charm-poyabzal, beshikchilik, do'ppido'zlik, misgarlik; (7) 5 davlat bilan joint venture (Korea, Xitoy, Hindiston, Germaniya, Rossiya); (8) Eksport 5 yilda 3.2x ($36.1→$115.7 mln); (9) Mahalliy byudjet 5.6x oshgan (30→169 mlrd so'm); (10) Atigi 3 og'ir mahalla (Qumqayroq, Mustaqillik, Markaz); (11) Railway 4 km — eng yaqin; (12) 30% ayol bankir (Karmana 21%, Payariq 0% dan yaxshi); (13) PQ 679/2021 + PQ 78/2023 + yangi Bandlik markazi 14.01.2025 — davlat e'tibor markazida; (14) Tanzila Norboyeva — Senati raisi shu tumandan. PROBLEMALAR va IMKONIYATLAR: (1) 🚨 OILAVIY KREDIT NPL 32% — Qoqon level kritik; (2) 🚨 SANEAT ZONASI 100% to'lgan — kengayish uchun joy yo'q; (3) 🚨 35% transformatorlar eskirgan — 7 tumanlar ichida eng yomon, saneat o'sishini cheklash riski; (4) 🚨 Yo'llar atigi 6.2% asfalt; (5) 🚨 MTT qamrov 3 yil PASAYIB ketgan (79.7→78.5%); (6) Charm-poyabzal va pichoqchilik tarqoq — kластери yo'q; (7) 5 deficit товар (parranda, sut, qurilish, antibiotik, kimyo); (8) Mева-sabzavot qайта ишlash past; (9) Sukoy port modeli amalga oshirilmagan; (10) Norasmij sektor 41,183 nafar; (11) Aёllar ishsizligi 3,426; (12) DATA QUALITY: Mehnat resurslari, band aholi, xorijga ketgan migrantlar va ATM 170 — Payariq bilan IDENTIK (shablon duplikati ehtimoli, verifikatsiya zarur). BANK MAHSULOTLARI: HAMROH (749 ayol tadbirkor 2026 maqsad, 3 mlrd so'm), Har bir oila tadbirkor (300 mln, NPL 32% — kritik!), 'Loyiha fabrikasi' 16 ustuvor lojiha 133.7 mlrd so'm, 790 mikrolojiha 2026 (1,374 ish ўрни). ASOSIY DRAYVERLAR: 'Made in Shahrixon' charm-poyabzal va pichoqchilik klасteri, mева-sabzavot qайта ишlash + agrologistika, parrandachilik (deficit #1), Sukoy port, Vertical Industry, Service Economy 1,170/km² zichlikda.",
+
+  "ai_prompt_context_ru": "Шахриханский район (Андижанская область) — 337.3 тыс. жителей (как Мирзо Улугбек), 79 махаллей (САМОЕ БОЛЬШОЕ среди 5 сельских), плотность 1,170 чел/км² (полу-городская), 91,907 семей, 28,827 га площади, до Андижана 30 км, до железной дороги 4 км. СИЛЬНЫЕ СТОРОНЫ: (1) 🥇 ПРОМЫШЛЕННОСТЬ ВЫРОСЛА В 3x за 5 лет (1,059→3,153 млрд сум) — самый быстрый показатель; (2) 🥇 ИНТЕРНЕТ 128 Мбит/с 100% покрытие (самый быстрый); (3) 🥇 БЕДНОСТЬ снизилась в 3.5x за 1 год (7,847→2,220 семей); (4) 🥇 79 махаллей (больше всех из сельских); (5) В Андижанской области 2-е место (из 19); (6) Историческое ремесленное брендирование (ПК 78/2023): ножи, кожа-обувь, колыбели, тюбетейки, медь; (7) Совместные предприятия с 5 странами (Корея, Китай, Индия, Германия, Россия); (8) Экспорт за 5 лет вырос в 3.2x ($36.1→$115.7 млн); (9) Местный бюджет вырос в 5.6x (30→169 млрд сум); (10) Только 3 тяжёлые махалли (Кумкайрок, Мустакиллик, Марказ); (11) ЖД всего в 4 км — ближе всех; (12) 30% женщин-банкиров (лучше Карманы 21%, Пайарика 0%); (13) ПК 679/2021 + ПК 78/2023 + новый Центр занятости 14.01.2025 — район в фокусе госвнимания; (14) Танзила Норбоева — председатель Сената родом отсюда. ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) 🚨 СЕМЕЙНЫЕ КРЕДИТЫ NPL 32% — критический Qоqон-уровень; (2) 🚨 ПРОМЗОНА 100% занята — нет места для расширения; (3) 🚨 35% трансформаторов изношены — худший среди 7 районов, риск ограничения роста промышленности; (4) 🚨 Дороги всего 6.2% асфальт; (5) 🚨 Дошкольный охват СНИЖАЕТСЯ 3 года (79.7→78.5%); (6) Кожа-обувь и ножи разрозненны — нет кластера; (7) 5 дефицитных товаров (птица, молоко, стройматериалы, антибиотики, химия); (8) Переработка фруктов-овощей низкая; (9) 'Сухой порт' не реализован; (10) Неформальный сектор 41,183 чел; (11) Безработица женщин 3,426; (12) КАЧЕСТВО ДАННЫХ: трудресурсы, занятые, эмигранты и ATM 170 — ИДЕНТИЧНЫ Пайарику (вероятен шаблонный дубликат, нужна верификация). БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (цель 749 жен-предпринимателей 2026, 3 млрд сум), 'Каждая семья — предприниматель' (300 млн, NPL 32% — критично!), 'Фабрика проектов' 16 приоритетных проектов 133.7 млрд сум, 790 микропроектов 2026 (1,374 рабочих места). КЛЮЧЕВЫЕ ДРАЙВЕРЫ: 'Made in Shahrixon' кластер кожи-обуви и ножей, переработка фруктов-овощей + агрологистика, птицеводство (дефицит #1), Сухой порт, Vertical Industry, Service Economy при плотности 1,170/км²."
+}

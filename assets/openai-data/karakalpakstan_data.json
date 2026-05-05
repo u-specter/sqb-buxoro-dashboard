@@ -1,0 +1,517 @@
+{
+  "id": "karakalpakstan",
+  "name_uz": "Қорақалпоғистон Республикаси",
+  "name_ru": "Республика Каракалпакстан",
+  "name_latin": "Qoraqalpog'iston Respublikasi",
+  "viloyat": "Qoraqalpog'iston (avtonom respublika)",
+  "type": "respublika",
+  "capital": "Nukus",
+  "data_year": 2025,
+  "sources": ["stat.uz", "SQB", "Xokimiyat", "Mehnat.uz", "Markaziy bank", "UNEP", "Google"],
+  "scale_note": "DIQQAT: Bu tuman emas — Qoraqalpog'iston Respublikasi (2.02 mln aholi, 452 mahalla). Boshqa 4 region bilan solishtirish uchun masshtab farqini hisobga olish zarur.",
+  "character_note": "Qoraqalpog'iston — Oʻzbekistonning avtonom respublikasi. Asosiy xususiyat: Orol dengizi ekologik falokatining markazi (UNEP 1-guruh), ulkan hudud (6.2 mln ga), tranzit koridori (Qozog'iston/Rossiya chegarasi), Savitskiy muzeyi va Muynoq eko-turizmi. Iqtisodiyot o'smoqda, lekin infratuzilma keksa, yopilgan korxonalar ochilganlardan ko'p.",
+
+  "demographics": {
+    "population": 2020000,
+    "population_density_per_km2": 12.3,
+    "mahallas": 452,
+    "families": 499417,
+    "households": 363147,
+    "territory_km2": 166590,
+    "capital": "Nukus",
+    "density_note": "12.3 kishi/km² — O'zbekistonning eng siyrak joylashgan hududlaridan biri"
+  },
+
+  "economy": {
+    "industry_volume_trln_sum": 29.1,
+    "industry_large_enterprises_trln": 22.6,
+    "industry_small_business_trln": 31.5,
+    "services_volume_trln_sum": 35.2,
+    "services_growth_5yr": "4 barobar o'sdi",
+    "export_usd_mln": 435.2,
+    "import_usd_mln": 375.6,
+    "trade_surplus_usd_mln": 59.5,
+    "local_budget_trln_sum": 3.3,
+    "contingent_budget_trln_sum": 3.4,
+    "credits_trln_sum": 11.1,
+    "credits_trend": {
+      "2021": 4.8, "2022": 5.3, "2023": 7.9, "2024": 8.5, "2025": 11.1,
+      "unit": "trln so'm"
+    },
+    "enterprises_opened_2025": 3602,
+    "enterprises_closed_2025": 6194,
+    "net_enterprise": -2592,
+    "enterprise_note": "MUAMMO: yopilgan (6,194) ochilganlardan (3,602) 1.72 marta ko'p — SME muhiti qiyin",
+    "npl_pct": 5.2,
+    "npl_note": "5.2% — 5 ta regionning eng yuqori NPL. Moliyaviy savodxonlik dasturlari zarur.",
+    "google_trends_score": 32.4,
+    "google_trends_trend": "18.5 (2021) → 20.1 → 22.8 → 26.5 → 32.4 (2025) — sekin lekin barqaror o'sish",
+    "priority_sectors": [
+      "Agro-sanoat klasterlari (sabzavot/chorva qayta ishlash)",
+      "Eko-turizm (Orol dengizi, Muynoq, Savitskiy)",
+      "Qayta tiklanuvchi energiya (shamol + quyosh)",
+      "Usturt mineral resurslari (kimyo, qurilish materiallari)",
+      "Logistika va tranzit koridori (Qozog'iston/Rossiya)"
+    ]
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 70.9,
+    "water_trend": "66.4% (2023) → 68.6% (2024) → 70.9% (2025)",
+    "water_gap_pct": 29.1,
+    "roads_total_km": 4172,
+    "roads_asphalt_pct": 98.1,
+    "roads_note": "Asfalтlanish 98.1% — juda yaxshi. Lekin past aholi zichligi (12.3/km²) yo'llarni saqlash qimmat.",
+    "electricity": {
+      "outages_per_month": 13,
+      "outages_trend": "26 (2021) → 22 → 19 → 16 → 13 (2025) — yaxshilanmoqda",
+      "transformers_old_pct": 42,
+      "lines_old_pct": 62,
+      "note": "Liniyalar 62% keksa — KRITIK. Smart Grid tizimi zarur. 13 uzilish/oy hali ko'p."
+    },
+    "gas_supply_pct": 75,
+    "internet_coverage_pct": 97.4,
+    "land_total_mln_ha": 6.2,
+    "land_note": "6.2 mln ha — ulkan. GIS orqali investorlarga tayyor paket sifatida taklif qilish imkoniyati.",
+    "transport": {
+      "total_vehicles": 582,
+      "damaas": 189,
+      "buses": 105,
+      "taxi_other": 288,
+      "annual_passengers_mln": 170.4,
+      "note": "Avtobuslar 105 ta — 200+ ga oshirish kerak. Elektrobuslar imkoniyati bor."
+    },
+    "wind_energy_potential": "Usturt tekisligida barqaror shamol oqimi — yirik ВЭС loyihalari uchun ideal",
+    "solar_potential_days": 300,
+    "renewable_note": "Qoraqalpog'iston — O'zbekistonda shamol energiyasi uchun eng yaxshi hudud. Liniyalar 62% keksa = qayta tiklanuvchi energiya ayniqsa zarur."
+  },
+
+  "education": {
+    "preschool_coverage_pct": 84,
+    "preschool_trend": "76.1% (2021) → 78.5 → 80.2 → 82.1 → 84.0% (2025)",
+    "preschool_gap_pct": 16,
+    "schools_total": 735,
+    "schools_1shift": 126,
+    "schools_2shift": 609,
+    "schools_2shift_pct": 82.9,
+    "schools_note": "2-smenali maktablar 82.9% — KRITIK. 4 ta regionda eng yomoni. Yangi maktablar qurilishi zarur.",
+    "higher_education": {
+      "otm_count": 9,
+      "students": 73500
+    },
+    "vocational": {
+      "technical_schools": 49,
+      "students": 90600
+    }
+  },
+
+  "labor": {
+    "total_resources": 1140000,
+    "employed": 805800,
+    "employed_trend": "702,700 (2021) → 728,400 → 756,100 → 781,300 → 805,800 (2025)",
+    "avg_salary_mln_sum": 5.0,
+    "informal_sector": 229500,
+    "unemployment_pct": 5.0,
+    "unemployed_count": 42400,
+    "unemployment_trend": "10.1% (2021) → 9.1 → 7.1 → 5.8 → 5.0% (2025) — 2 barobar kamaydi",
+    "target_2026_pct": 4.2,
+    "youth_unemployed_16_30": 23000,
+    "women_unemployed": 19700,
+    "disabled_total": 59304,
+    "disabled_working_pct": 14,
+    "disabled_not_working": 50863,
+    "migration_abroad": 15500,
+    "poverty_pct": 6.6,
+    "poverty_families": 43079,
+    "poverty_target_pct": 3.0,
+    "poor_families_remaining": 1574,
+    "poverty_trend": "21.2% (2021) → 20.5 → 19.9 → 13.6 → 6.6% (2025) — tez pasaymoqda",
+    "social_aid_families": 142309,
+    "child_benefit_families": 50797,
+    "red_mahallas": 90,
+    "yellow_mahallas": 32,
+    "green_mahallas": 330
+  },
+
+  "mahalla_economy": {
+    "total": 452,
+    "by_type": {
+      "farming_vegetables": 188,
+      "trade_service": 130,
+      "livestock": 94,
+      "poultry": 28,
+      "small_production": 8,
+      "gardening": 4
+    },
+    "farming_breakdown": {
+      "vegetables": 120,
+      "melon_gourd": 23,
+      "carrot": 16,
+      "legumes": 16,
+      "potato": 8,
+      "cabbage": 2,
+      "greens": 1,
+      "mung_bean": 1,
+      "broom": 1
+    },
+    "small_production_note": "KRITIK: Faqat 8 mahalla kichik ishlab chiqarishga ixtisoslashgan (1.8%) — kamida 30 taga yetkazish zarur",
+    "livestock_note": "94 mahalla (20.8%): qoramolchilik 76, qo'y/echki 18 — go'sht va sut qayta ishlash bo'shlig'i ulkan"
+  },
+
+  "banking": {
+    "bank_branches": 13,
+    "atms": 679,
+    "mahalla_bankers": 129,
+    "mahalla_bankers_women": 20,
+    "mahalla_bankers_men": 109,
+    "bankers_coverage_pct": 28.5,
+    "bankers_note": "129 banker 452 mahalla uchun — atigi 28.5% qoplam. Kamida 250 ga yetkazish zarur.",
+    "ai_coverage_mahallas": 320,
+    "ai_coverage_2026_plan": 452,
+    "credit_plan_2026_mlrd": 11900,
+    "micro_projects_count": 21252,
+    "micro_projects_jobs": 43184,
+    "micro_projects_sum_mlrd": 443251
+  },
+
+  "tourism": {
+    "tourists_trend": {
+      "2021": 12500, "2022": 18300, "2023": 25700, "2024": 34200, "2025": 45000
+    },
+    "growth_5yr": "3.6 barobar (12.5k → 45k) — lekin baza juda past",
+    "key_attractions": [
+      "Muynoq shahri va Kemalar qabristoni (Orol dengizi qurigan tubi)",
+      "Igor Savitskiy nomidagi Nukus davlat san'at muzeyi (dunyoning 2-yirik modernizm to'plami)",
+      "Usturt platosi va qoya manzaralari",
+      "Qo'y Qirilgan Qal'a (qadimiy qasr, 4-5 asr)",
+      "Toprak Qal'a (Xorazm arxeologik manzilgohi)",
+      "Amudaryo deltasi va Sudochye ko'li"
+    ],
+    "eco_tourism_note": "Orol dengizi falokatini 'dunyo tarixining eng katta ekologik fojia sahnasi'ga aylantirish — global brend. Har yili xorijiy jurnalistlar, tadqiqotchilar, sarguzasht sayyohlar keladi.",
+    "savitsky_note": "Savitskiy muzeyi — yer yuzidagi eng katta norasmiy avant-garde san'at to'plami. BBC, Guardian, NYT yozgan. Art lovers turizmi uchun ideal.",
+    "tourism_target": "2030 yilgача 200k sayyoh — Orol ekologiyasi va arxeologiya marshruti",
+    "accommodation_gap": "45k sayyoh uchun mehmonxona infratuzilmasi kritik kam — katta imkoniyat"
+  },
+
+  "natural_resources": {
+    "usturt_minerals": {
+      "types": ["kimyoviy xomashyo", "qurilish materiallari", "nodir metallar", "tuz konlari"],
+      "potential": "Eksportni $435 mln dan $600 mln + ga yetkazish imkoniyati",
+      "note": "Xomashyoni to'g'ridan oddiy eksport qilish o'rniga kichik sanoat zonalarida qayta ishlash — 3x qo'shimcha qiymat"
+    },
+    "aral_sea_bottom": {
+      "area_mln_ha": 4.5,
+      "plants_thousand_ha": 250,
+      "opportunity": "Saxsaul va boshqa tuzga chidamli o'simliklar — 1) ekologik tiklash 2) biodiesel 3) karbon kredit"
+    },
+    "renewable_energy": {
+      "wind_potential": "Usturt platosi — O'zbekistondagi eng yaxshi shamol resursi (barqaror 6-8 m/s)",
+      "solar_days": 300,
+      "investment_per_project_mln_usd": "15-50",
+      "current_status": "Liniyalar 62% keksa — qayta tiklanuvchi energiya integratsiyasi strategik zarur"
+    }
+  },
+
+  "logistics": {
+    "cargo_turnover_mln_tons": 46.3,
+    "cargo_trend": {
+      "2021": 28.4, "2022": 31.2, "2023": 35.8, "2024": 40.1, "2025": 46.3
+    },
+    "border_countries": ["Qozog'iston", "Turkmaniston"],
+    "russia_access": "Qozog'iston orqali Rossiyaga chiqish — 'Shimoliy darvoza' roli",
+    "transit_note": "Yuk aylanmasi 2021-2025 da 1.6 barobar o'sdi. Tranzit logistika, omborxona, yo'l bo'yi xizmat — yirik imkoniyat"
+  },
+
+  "climate_environment": {
+    "climate_zone": "Kontinental quruqchil",
+    "unep_category": 1,
+    "unep_note": "UNEP 1-guruh — dunyo bo'yicha eng zaif hududlardan biri",
+    "temperature_rise_forecast": "+1.8 - +2.5°C",
+    "precipitation_decrease": "10 barobar kamaygan (Orol qurigandan beri)",
+    "green_fund_opportunity": "Xalqaro iqlim fondlari (GCF, GEF, AF) bilan hamkorlik imkoniyati katta",
+    "carbon_credit_potential": "250k ga saxsaul o'rmon — karbon kredit bozorida sotish mumkin"
+  },
+
+  "strengths": [
+    {
+      "title": "Ulkan hududiy resurs (6.2 mln ga)",
+      "detail": "GIS orqali investorlarga tayyor paket sifatida taklif. Sanoat zonalari uchun yer tekin/arzon. Qishloq xo'jaligi klasterlari uchun joy cheksiz."
+    },
+    {
+      "title": "Tranzit koridori — 'Shimoliy darvoza'",
+      "detail": "Qozog'iston va Rossiya bilan chegara. Yuk aylanmasi 2021-2025 da 1.6x o'sdi (46.3 mln tonna). O'rta Osiyo-Rossiya-Yevropa yo'lida strategik nuqta."
+    },
+    {
+      "title": "Qayta tiklanuvchi energiya — Usturt shamoli",
+      "detail": "O'zbekistondagi eng yaxshi shamol resursi (6-8 m/s barqaror). 300+ quyoshli kun. Liniyalar 62% keksa — almashtirish zarur, lekin bu ham imkoniyat."
+    },
+    {
+      "title": "Eko-turizm global brend",
+      "detail": "Orol dengizi fojiali manzarasi — BBC, Guardian, NYT yozgan. Savitskiy muzeyi — dunyo avant-garde to'plami. 45k sayyoh (2025), 3.6x o'sish. Noyob yo'nalish."
+    },
+    {
+      "title": "Internet 97.4% + Digital Nomad potensiali",
+      "detail": "Yuqori internet qoplam + vast space + arzon turmush + Orol manzarasi = Digital Nomad zone uchun ideal. Hali hech kim qilmagan."
+    },
+    {
+      "title": "Eksport $435 mln — katta baza",
+      "detail": "Boshqa 4 regiondan $400+ mln ko'p. Savdo profitsiti +$59.5 mln. Mineral va agro eksport diversifikatsiya imkoniyati katta."
+    },
+    {
+      "title": "Katta yoshlar bazasi (23k ish qidiruvchi)",
+      "detail": "73.5k OTM talabasi, 90.6k texnikum o'quvchisi. IT va raqamli xizmatlarga qayta yo'naltirish orqali migratsiyani kamaytirish."
+    },
+    {
+      "title": "Karbon kredit va Yashil iqtisodiyot",
+      "detail": "250k ga o'rmonlashtirish (2025). GCF, GEF, AF kabi xalqaro iqlim fondlari bilan hamkorlik. Ekologik falokatdan qaytish — xalqaro moliya jalb qilish uchun kuchli argument."
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Eko-turizm infratuzilmasi deyarli yo'q",
+      "severity": "KRITIK",
+      "data": "45k sayyoh bor, lekin mehmonxona va xizmat infratuzilmasi minimali. Muynoq, Nukus, Savitskiy — global attraction, lekin joy yo'q.",
+      "opportunity": "Muynoq'da glamping/container hotel, Nukusda boutique hostel, Savitskiy yonida art-mehmonxona, Usturt safari camp",
+      "investment_range_mln_sum": "100-800",
+      "monthly_income_mln_sum": "15-80",
+      "payback_years": "3-6",
+      "suitable_for": ["kapital bor", "turizm tajribasi", "xalqaro marketing"],
+      "bank_product": "SQB yoki xalqaro moliya liniyalari"
+    },
+    {
+      "gap": "Kichik ishlab chiqarish atigi 8 mahalla (1.8%)",
+      "severity": "KRITIK",
+      "data": "94 chorva mahallasi bor — go'sht va sut qayta ishlash yo'q. 188 fermer mahallasi — konserva va quritish yo'q.",
+      "opportunity": "Go'sht, sut, konserva, quruq sabzavot/meva — xomashyo tayyor, ishlov berish yo'q",
+      "investment_range_mln_sum": "50-500",
+      "monthly_income_mln_sum": "15-100",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer yoki fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "HAMROH yoki Har bir oila tadbirkor"
+    },
+    {
+      "gap": "Yopilgan korxonalar ochilganlardan 1.72x ko'p",
+      "severity": "YUQORI",
+      "data": "3,602 ochildi, 6,194 yopildi (2025). Biznes muhiti qiyin. NPL 5.2% — moliyaviy savodxonlik past.",
+      "opportunity": "Biznes inkubator, bepul maslahat va buxgalteriya xizmati, korxona restrukturizatsiyasi",
+      "investment_range_mln_sum": "10-100",
+      "monthly_income_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["moliya yoki huquq bilimlari bor"],
+      "bank_product": "SQB"
+    },
+    {
+      "gap": "Elektr liniyalar 62% keksa, 13 uzilish/oy",
+      "severity": "YUQORI",
+      "data": "Sanoat uchun uzluksiz elektr kerak. Usturt shamoli va quyosh — hal qilish imkoniyati bor.",
+      "opportunity": "Solar va shamol panellari o'rnatish, 'Offline' sanoat zonalari, Smart Grid",
+      "investment_range_mln_sum": "100-2000",
+      "monthly_income_mln_sum": "30-300",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "xalqaro energetika kompaniyasi"],
+      "bank_product": "Xalqaro moliya (IFC, AIIB, ADB)"
+    },
+    {
+      "gap": "2-smenali maktablar 82.9%",
+      "severity": "YUQORI",
+      "data": "735 maktabdan 609 tasi 2 smenada. Sifatli ta'lim mumkin emas. Yosh aholi ko'p — talab katta.",
+      "opportunity": "Xususiy maktab, onlayn ta'lim platformasi, after-school markaz, til va IT kurslari",
+      "investment_range_mln_sum": "50-500",
+      "monthly_income_mln_sum": "10-60",
+      "payback_years": "3-7",
+      "suitable_for": ["ta'lim tajribasi", "kapital bor"],
+      "bank_product": "SQB yoki xalqaro ta'lim liniyalari"
+    },
+    {
+      "gap": "Nogironlar 86% ishsiz (50,863 kishi)",
+      "severity": "YUQORI",
+      "data": "59,304 nogironi bor, faqat 14% ishlamoqda. Masofaviy ish imkoni — ulkan jamiyat zaxirasi.",
+      "opportunity": "Masofaviy ish platformasi, uy-da ishlovchi hunarmandchilik, onlayn xizmatlar, kontakst markaz",
+      "investment_range_mln_sum": "10-100",
+      "monthly_income_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["IT bilimlari", "ijtimoiy biznes"],
+      "bank_product": "HAMROH yoki ijtimoiy kredit"
+    },
+    {
+      "gap": "Usturt mineral resurslari xomashyo shaklida eksport qilinmoqda",
+      "severity": "O'RTA-YUQORI",
+      "data": "Kimyo, qurilish materiallari, nodir metallar bor. Eksport $435 mln, lekin qo'shimcha qiymat past.",
+      "opportunity": "Shisha ishlab chiqarish, kimyoviy o'g'it, qurilish bloklar, mineral suv",
+      "investment_range_mln_sum": "500-5000",
+      "monthly_income_mln_sum": "100-1000",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "xalqaro kompaniya"],
+      "bank_product": "Xalqaro moliya (JICA, EBRD, ADB)"
+    },
+    {
+      "gap": "Yoshlar migratsiyasi (15,500 xorijda)",
+      "severity": "O'RTA",
+      "data": "23k yoshlar ish qidiryapti. 15.5k xorijga ketgan. IT va raqamli xizmatlar — migratsiyani kamaytiradi.",
+      "opportunity": "IT ta'lim markazi, freelance hub, remote work uchun coworking, startap inkubator",
+      "investment_range_mln_sum": "20-200",
+      "monthly_income_mln_sum": "8-50",
+      "payback_years": "2-5",
+      "suitable_for": ["IT tajribasi", "yoshlar bilan ishlash tajribasi"],
+      "bank_product": "SQB Yoshlar biznesda"
+    },
+    {
+      "gap": "Karbon kredit va iqlim fondlari foydalanilmayapti",
+      "severity": "O'RTA",
+      "data": "250k ga o'rmonlashtirish bor. UNEP 1-guruh. GCF, GEF, AF fondlari mablag' ajratadi.",
+      "opportunity": "Karbon kredit savdosi, iqlimga moslashtirish loyihalari, Green Bond",
+      "investment_range_mln_sum": "50-500",
+      "monthly_income_mln_sum": "10-80",
+      "payback_years": "3-8",
+      "suitable_for": ["ekologiya bilimlari", "xalqaro tajriba"],
+      "bank_product": "Xalqaro iqlim fondlari"
+    },
+    {
+      "gap": "Digital Nomad zona yo'q",
+      "severity": "PAST",
+      "data": "97.4% internet + ulkan bo'sh hududlar + Orol manzarasi + Savitskiy = dunyoda boshqa bunday joy yo'q.",
+      "opportunity": "Digital Nomad hub, coworking, uzoq muddatli vizalar, 'Work from Aral' brending",
+      "investment_range_mln_sum": "30-300",
+      "monthly_income_mln_sum": "10-60",
+      "payback_years": "2-5",
+      "suitable_for": ["IT bilimlari", "xalqaro marketing", "ingliz tili"],
+      "bank_product": "SQB yoki xalqaro investitsiya"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Eko-turizm va mehmonxona",
+      "type": "Glamping (Muynoq) / Art-mehmonxona (Nukus-Savitskiy) / Usturt safari camp",
+      "why_karakalpakstan": "45k sayyoh (3.6x o'sdi), lekin mehmonxona deyarli yo'q. Orol fojia — global media yozadi. Savitskiy — dunyo avant-garde to'plami. BBC, Guardian o'quvchilari keladi. Hech kim qilmagan.",
+      "investment_mln_sum": "100-800",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "3-6",
+      "suitable_for": ["kapital bor", "xalqaro marketing bilimlari", "turizm tajribasi"],
+      "bank_product": "SQB yoki xalqaro investitsiya liniyalari",
+      "risk": "Mev­suimiylik; infratuzilma kam; uzoq joylashuv"
+    },
+    {
+      "rank": 2,
+      "sector": "Go'sht va sut qayta ishlash",
+      "type": "Pishloq, qatiq, go'sht mahsulotlari, kolbasa",
+      "why_karakalpakstan": "94 mahalla chorvachilikka ixtisoslashgan — xomashyo tayyor. Kichik qayta ishlash atigi 8 mahalla. Katta ichki bozor (2 mln aholi). Eksportga Qozog'iston yaqin.",
+      "investment_mln_sum": "100-600",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "3-5",
+      "suitable_for": ["fermer yoki fermer oila", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Sovitgich zarur; veterinariya nazorati"
+    },
+    {
+      "rank": 3,
+      "sector": "Sabzavot va meva qayta ishlash",
+      "type": "Konserva, quritish, muzlatish, organik sertifikat",
+      "why_karakalpakstan": "188 mahalla sabzavotchilikka ixtisoslashgan. Katta tranzit yo'l — Qozog'iston/Rossiya bozori yaqin. Mavjud eksport $435 mln — kengaytirish imkoni bor.",
+      "investment_mln_sum": "80-500",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer", "eksport tajribasi"],
+      "bank_product": "Agro bank yoki SQB",
+      "risk": "Suv taqchilligi; iqlim ta'siri"
+    },
+    {
+      "rank": 4,
+      "sector": "Qayta tiklanuvchi energiya",
+      "type": "Quyosh panellari o'rnatish va texnik xizmat / Shamol turbinalari",
+      "why_karakalpakstan": "13 uzilish/oy, liniyalar 62% keksa. Usturt platosi — eng yaxshi shamol. 300+ quyoshli kun. Sanoat korxonalari elektr zarur.",
+      "investment_mln_sum": "200-5000",
+      "monthly_income_estimate_mln_sum": "50-500",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "xalqaro energetika kompaniyasi"],
+      "bank_product": "Xalqaro moliya (IFC, AIIB, ADB)",
+      "risk": "Tarmoqqa ulash; katta kapital"
+    },
+    {
+      "rank": 5,
+      "sector": "IT va raqamli xizmatlar",
+      "type": "IT ta'lim markazi / Freelance hub / Remote work coworking / App development",
+      "why_karakalpakstan": "Internet 97.4%. 23k ish qidiruvchi yosh. 9 OTM (73.5k talaba) + 49 texnikum. Migratsiyani kamaytirish zarur. Digital Nomad trend o'smoqda.",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "2-4",
+      "suitable_for": ["IT tajribasi", "yoshlar bilan ishlash"],
+      "bank_product": "SQB Yoshlar biznesda",
+      "risk": "Talent retention — yaxshi kelajaklar Toshkentga ketadi"
+    },
+    {
+      "rank": 6,
+      "sector": "Logistika va tranzit",
+      "type": "Omborxona, yuk tashish, yo'l bo'yi seryomlash/texnik xizmat, AZS",
+      "why_karakalpakstan": "Yuk aylanmasi 46.3 mln tonna (+63% 5 yilda). Qozog'iston/Rossiya tranziti. 4,172 km asfalтlangan yo'l. 'Shimoliy darvoza' roli.",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "3-7",
+      "suitable_for": ["logistika tajribasi", "kapital bor"],
+      "bank_product": "SQB yoki xalqaro moliya",
+      "risk": "Geopolitik o'zgarishlar; yoqilg'i narxi"
+    },
+    {
+      "rank": 7,
+      "sector": "Ta'lim xizmatlari",
+      "type": "Xususiy maktab / IT kurslari / Til maktabi / After-school markaz",
+      "why_karakalpakstan": "2-smenali maktablar 82.9% — ota-onalar sifatli ta'lim qidiryapti. 9 OTM, 73.5k talaba — repetitorlik talab katta. Yoshlar migratsiyasini kamaytirish uchun ko'nikmalar muhim.",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-60",
+      "payback_years": "3-7",
+      "suitable_for": ["ta'lim tajribasi", "kapital bor"],
+      "bank_product": "SQB yoki HAMROH",
+      "risk": "Kadrlar topish; ruxsatnomalar"
+    },
+    {
+      "rank": 8,
+      "sector": "Karbon kredit va ekoistiqsodiyot",
+      "type": "Saxsaul o'rmonlashtirish + karbon kredit / Ekologik tiklash loyihalari",
+      "why_karakalpakstan": "250k ga o'rmonlashtirish bor. UNEP 1-guruh = xalqaro fondlar mablag' ajratadi. GCF, GEF, AF — mavjud. Dunyo Orol muammosiga qiziqyapti.",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-80",
+      "payback_years": "3-8",
+      "suitable_for": ["ekologiya bilimlari", "xalqaro tajriba", "loyiha yozish ko'nikmasi"],
+      "bank_product": "Xalqaro iqlim fondlari (GCF, GEF, AF)",
+      "risk": "Murakkab xalqaro byurokratiya"
+    },
+    {
+      "rank": 9,
+      "sector": "Tikuvchilik va to'qimachilik",
+      "type": "Tikuvchilik sexi / Karakalpak milliy kiyimi / Brend export",
+      "why_karakalpakstan": "4 tikuvchilik mahallasi bor — base mavjud. Karakalpak milliy kiyimi va to'qimachiligi — noyob brend. HAMROH orqali ayollar uchun ideal.",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "5-40",
+      "payback_years": "2-4",
+      "suitable_for": ["ayollar", "hunarmandchilik bilimlari"],
+      "bank_product": "HAMROH (garovsiz 100 mln)",
+      "risk": "Bozor topish; sifat standartlari"
+    },
+    {
+      "rank": 10,
+      "sector": "Moliyaviy va biznes xizmatlari",
+      "type": "Buxgalteriya / Biznes konsalting / NPL restrukturizatsiya",
+      "why_karakalpakstan": "NPL 5.2% — eng yuqori. 6,194 korxona yopildi — yordam kerak edi. 142k muhtoj oila — moliyaviy savodxonlik zarur. 21,252 mikroloyiha — hamma buxgalter kerak.",
+      "investment_mln_sum": "10-80",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "1-3",
+      "suitable_for": ["moliya tajribasi", "ma'luмot"],
+      "bank_product": "SQB yoki Yoshlar biznesda",
+      "risk": "Xarid quvvati o'rtacha"
+    }
+  ],
+
+  "unique_factors": {
+    "aral_sea_brand": "Orol dengizi fojia — to'g'ri yondashuv bilan global brendga aylantirilishi mumkin. Muynoq + Savitskiy = dunyo mediasi e'tibori tayyor.",
+    "vast_empty_land": "6.2 mln ga yer + 12.3/km² zichlik = katta loyihalar uchun joy va ruxsat qiyin emas.",
+    "climate_opportunity": "UNEP 1-guruh = xalqaro iqlim fondlari mablag' ajratishga tayyor. Falokatni moliyaviy imkoniyatga aylantirish.",
+    "digital_nomad_potential": "97.4% internet + bo'sh landshaft + Orol manzarasi + Savitskiy san'at = dunyoda noyob 'Work from Aral' brending.",
+    "transit_position": "Qozog'iston va Rossiyaga bevosita yo'l — Markaziy Osiyo-Shimol yo'nalishida strategik logistika markazi."
+  },
+
+  "ai_prompt_context_uz": "Qoraqalpog'iston Respublikasi — O'zbekistonning avtonom respublikasi, 2.02 mln aholi, 452 mahalla, poytaxt Nukus. DIQQAT: Bu tuman emas — respublika darajasida ma'lumot. ASOSIY XUSUSIYATLARI: Orol dengizi ekologik falokatining markazi (UNEP 1-guruh), ulkan hudud (6.2 mln ga, 12.3 kishi/km²), tranzit koridori (Qozog'iston/Rossiya chegarasi), Savitskiy museyi (dunyo avant-garde to'plami), eksport $435 mln. KUCHLI TOMONLAR: (1) Internet 97.4% — raqamli xizmatlar uchun zamin; (2) Yuk aylanmasi 46.3 mln tonna — logistika kuchli; (3) Usturt shamoli — O'zbekistondagi eng yaxshi shamol energiyasi; (4) 45k sayyoh (+3.6x), Savitskiy va Muynoq — global media qiziqish; (5) 94 chorva mahallasi + 188 fermer mahallasi — xomashyo tayyor; (6) Karbon kredit (250k ga o'rmon); (7) Poverty 21.2% → 6.6% — tez pasaymoqda. KRITIK MUAMMOLAR: (1) Yopilgan korxonalar > ochilganlar (6,194 vs 3,602) — biznes muhiti qiyin; (2) NPL 5.2% — eng yuqori; (3) Elektr liniyalar 62% keksa, 13 uzilish/oy; (4) 2-smenali maktablar 82.9%; (5) Mehmonxona kam, 45k sayyoh uchun joylashuv yo'q. ISTIQBOLLI SOHALAR: Eko-turizm (first mover), go'sht/sut qayta ishlash, IT/raqamli xizmatlar, logistika/tranzit, qayta tiklanuvchi energiya, karbon kredit. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), SQB mikroloyihalar (21,252 loyiha rejalashtirilgan).",
+
+  "ai_prompt_context_ru": "Республика Каракалпакстан — автономная республика Узбекистана, 2.02 млн жителей, 452 махалли, столица Нукус. ВНИМАНИЕ: Это не район — данные республиканского уровня. ГЛАВНЫЕ ОСОБЕННОСТИ: Центр экологической катастрофы Аральского моря (ЮНЕП группа 1), огромная территория (6.2 млн га, 12.3 чел/км²), транзитный коридор (граница с Казахстаном/Россией), Музей Савицкого (мировая коллекция авангарда), экспорт $435 млн. СИЛЬНЫЕ СТОРОНЫ: (1) Интернет 97.4%; (2) Грузооборот 46.3 млн тонн; (3) Ветер Устюрта — лучший в Узбекистане; (4) 45k туристов (+3.6x), Савицкий и Муйнак — мировой медиаинтерес; (5) 94 животноводческих + 188 фермерских махаллей; (6) Углеродные кредиты (250k га леса); (7) Бедность 21.2% → 6.6%. КРИТИЧЕСКИЕ ПРОБЛЕМЫ: (1) Закрытых предприятий > открытых (6,194 vs 3,602); (2) NPL 5.2% — самый высокий; (3) Электролинии 62% устарели; (4) 2-сменные школы 82.9%; (5) Нет гостиниц для 45k туристов. ПЕРСПЕКТИВНЫЕ НАПРАВЛЕНИЯ: Эко-туризм (first mover), переработка мяса/молока, IT/цифровые услуги, логистика/транзит, ВИЭ, углеродные кредиты. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога до 100 млн), Каждая семья — предприниматель (300 млн, 18%, 3 года), микропроекты SQB."
+}

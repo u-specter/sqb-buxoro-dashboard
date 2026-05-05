@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/auth/gate.php'; ?>
 <!doctype html>
 <html lang="uz-Cyrl">
 
@@ -16,6 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/chatbot.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/SQB Logo Main short 1.png">
 </head>
 
@@ -144,6 +144,12 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/map-bg.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/chatbot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <!-- parsers.js MUST load before app.js — it exposes window.SQB_Parsers used by parseValue() -->

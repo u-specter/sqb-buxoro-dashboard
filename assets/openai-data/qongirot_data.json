@@ -1,0 +1,477 @@
+{
+  "id": "qongirot",
+  "name_uz": "Қўнғирот тумани",
+  "name_ru": "Кунградский район",
+  "name_latin": "Qo'ng'irot tumani",
+  "viloyat": "Qoraqalpog'iston",
+  "type": "tuman",
+  "data_year": 2025,
+  "sources": ["stat.uz", "SQB", "Xokimiyat", "Mehnat.uz", "Markaziy bank", "Google Trends", "Energetika vazirligi", "Geologiya qo'mitasi"],
+  "character_note": "Qo'ng'irot — Qoraqalpog'istonning sanoat va logistika markazi. Eksport 23 barobar o'sdi (5 yilda) — respublikada rekord. Neft-gaz + kimyo + Usturt shamoli + A-380 tranzit = 'Shimoliy sanoat qalqoni'. Google Trends 72/100 — 6 ta regionning ENG YUQORI ko'rsatkichi. Aholi kam (138k), lekin iqtisodiy salohiyat ulkan.",
+
+  "demographics": {
+    "population": 138400,
+    "mahallas": 39,
+    "families": 31972,
+    "households": 28987,
+    "territory_ha": 7599581,
+    "population_density_per_km2": 0.54,
+    "density_note": "0.54 kishi/km² — O'zbekistondagi eng past zichlik. Ulkan hududda katta sanoat loyihalari uchun ideal."
+  },
+
+  "economy": {
+    "industry_volume_bln_sum": 1679.9,
+    "industry_growth_5yr_pct": 216.2,
+    "industry_dynamics": {
+      "2021": 777.0, "2022": 921.2, "2023": 1245.5, "2024": 1359.1, "2025": 1679.9,
+      "unit": "mlrd so'm"
+    },
+    "industry_large_bln": 1100,
+    "industry_small_bln": 482,
+    "small_business_growth_note": "Kichik biznes 180 → 482 mlrd (2024-2025 da 3 barobar sakrash) — tadbirkorlik muhiti yaxshilanmoqda",
+    "services_volume_bln_sum": 2214.8,
+    "services_growth_5yr_pct": 186,
+    "services_employed": 10300,
+    "agriculture_volume_bln_sum": 1242.4,
+    "pasture_ha": 1700000,
+    "farmer_clusters": 2,
+    "export_usd_mln": 36.3,
+    "export_growth_5yr_pct": 2277,
+    "export_trend": {
+      "2021": 1.57, "2022": null, "2023": null, "2024": null, "2025": 36.3,
+      "unit": "mln $",
+      "note": "23 BAROBAR O'SISH — 6 ta regionning eksport o'sishi bo'yicha rekord!"
+    },
+    "local_budget_bln_sum": 90.5,
+    "local_budget_trend": "27.6 (2021) → 52.6 → 63.9 → 48.8 → 90.5 (2025) — 3+ barobar",
+    "contingent_budget_bln_sum": 80.2,
+    "budget_surplus_note": "90.5 > 80.2 — Prognozdan oshib ketdi, soliq tushumlari kuchli",
+    "credits_bln_sum": null,
+    "credits_note": "Ma'lumot to'planmoqda — yangilanadi",
+    "google_trends_score": 72,
+    "google_trends_growth": "+157.1% (5 yilda)",
+    "google_trends_note": "72/100 — 6 ta regionning ENG YUQORI Google Trends bali! Asosiy qidiruvlar: Qo'ng'irot sanoat, Investitsiya imkoniyatlari, Neft-gaz loyihalari, Qo'ng'irot logistika",
+    "priority_sectors": [
+      "Neft va gaz — strategik poydevor",
+      "Sanoat (34.1%) — yirik va kichik korxonalar",
+      "Chorvachilik — Q/x asosiy drayveri",
+      "Xizmat ko'rsatish (34.9%) — 10.3k kishi band"
+    ],
+    "kpi_2027": {
+      "gdp_growth_pct_annual": "12-15",
+      "new_jobs": 5000,
+      "fdi_mln_usd": 500
+    }
+  },
+
+  "strategic_assets": {
+    "oil_gas": {
+      "key_facility": "Usturt GKM (Surgil gaz-kimyo majmuasi)",
+      "proximity": "Tuман iqtisodiyotining strategik poydevori",
+      "opportunity": "Tayyor polimer va kimyoviy mahsulotlar klasterini qurish — xomashyodan qo'shimcha qiymat olish"
+    },
+    "chemistry": {
+      "key_facility": "Qo'ng'irot soda zavodi",
+      "products": ["Soda", "Polietilen"],
+      "cluster_potential": "Maishiy kimyo, plastik buyumlar, shisha mahsulotlari — $50-150 mln investitsiya",
+      "note": "Xomashyo tumanida — logistika xarajatlari minimal"
+    },
+    "minerals": {
+      "limestone_deposits": true,
+      "quartz_sand": true,
+      "mineral_salt_deposits": 18,
+      "building_cluster_area_ha": 10,
+      "products": ["Shisha", "Quruq qurilish aralashmalari", "Issiqlik saqlash plitalar"],
+      "note": "18 ta mineral tuz koni faqat 18% ishlatilmoqda — ulkan zaxira"
+    },
+    "transport": {
+      "railway_distance_m": 500,
+      "railway_note": "Temir yo'l stantsiyasi 500 METR — 6 ta regionning eng yaqin masofasi!",
+      "a380_highway": true,
+      "cargo_mln_tons": 3.4,
+      "passengers_mln": 7.9,
+      "dry_port_concept": "«Quruq port» va bojxona terminali loyihasi — Shimoliy darvoza",
+      "north_gate_role": "Qozog'iston orqali Rossiya va Yevropaga chiqish"
+    },
+    "energy": {
+      "wind_days_per_year": 320,
+      "solar_days_per_year": 320,
+      "wind_speed_m_s": "6-8",
+      "wind_note": "Usturt tekisligi — O'zbekistondagi eng yaxshi shamol resursi",
+      "investment_per_project_mln_usd": "100+",
+      "phase1_target": "2026 yilda korxonalarning 30% ni quyosh panellariga o'tkazish"
+    }
+  },
+
+  "infrastructure": {
+    "water_supply_pct": 95,
+    "water_trend": "85% (2021) → 87 → 90 → 93 → 95% (2025)",
+    "water_note": "95% — 6 ta regionning SUV TA'MINOTI BO'YICHA ENG YAXSHISI",
+    "roads_total_km": 1332.5,
+    "roads_asphalt_km": 746.1,
+    "roads_asphalt_pct": 56,
+    "internet_coverage_pct": 97.4,
+    "internet_speed_gbps": 1,
+    "internet_note": "1 Gbit/s — 6 ta regionning eng tez interneti! IT va logistika uchun ideal.",
+    "electricity": {
+      "outages_per_month": 1.8,
+      "outages_note": "1.8 uzilish/oy — Shofirkon (2.3), G'ijduvon (2.3) dan yaxshi",
+      "transformers_old_pct": 50,
+      "lines_old_pct": 58,
+      "note": "Uzilish kam, lekin tarmоq 50-58% keksa — sanoat o'sishi bilan muammo bo'lishi mumkin"
+    },
+    "irrigated_land_ha": 38675,
+    "canal_concrete_pct": 32.4,
+    "canal_note": "32.4% betonlangan — ko'paytirish zarur, 67.6% suv yo'qotilmoqda"
+  },
+
+  "education": {
+    "preschool_coverage_pct": 91.2,
+    "preschool_trend": "88.6% (2021) → 90.5 → 87.0 → 93.2 → 91.2% (2025)",
+    "preschool_note": "Barqaror 90%+ — yaxshi ko'rsatkich",
+    "vocational": {
+      "technical_schools": 2,
+      "students": 1760,
+      "youth_unemployed": 1661,
+      "match_note": "Texnikum o'quvchilari (1,760) ≈ Ish qidiruvchi yoshlar (1,661) — moslashuv imkoni yaxshi"
+    }
+  },
+
+  "labor": {
+    "total_resources_k": 74.8,
+    "formal_employed": 29441,
+    "informal_employed": 14116,
+    "informal_tax_loss_bln_sum": 13,
+    "avg_salary_mln_sum": 5.437,
+    "avg_salary_growth_5yr_pct": 68,
+    "avg_salary_2021_mln": 3.238,
+    "avg_salary_note": "5.437 mln — o'sish 68% (5 yilda). Neft-gaz sektori ta'siri.",
+    "unemployment_pct": 4.6,
+    "unemployed_count": 3064,
+    "unemployment_trend": "9.9% (2021) → 9.6 → 7.4 → 6.0 → 4.6% (2025) — 2 barobar kamaydi",
+    "youth_unemployed": 1661,
+    "women_unemployed": 1425,
+    "returned_migrants": 2435,
+    "returned_migrants_note": "2,435 kishi xorijdan qaytgan — qayta o'qitish va bandlik zarur",
+    "disability_employed": 8441,
+    "child_benefit_families": 3091,
+    "poverty_pct": 3.2,
+    "poor_families": 1086,
+    "poverty_trend": "18.2% (2021) → 16.3 → 13.5 → 9.1 → 3.2% (2025) — 5.7 barobar kamaydi!",
+    "difficult_mahallas": 7
+  },
+
+  "tourism": {
+    "key_attractions": [
+      "Orol dengizi qirg'oqlari va Muynoq (Kemalar qabristoni bilan birgalikda marshrutlar)",
+      "Usturt platosi kanyonlari — off-road va ekstrem turizm",
+      "Barsakelmes tabiiy qo'riqxonasi",
+      "Astrоturizm — 320+ quyoshli kun, yorug'lik iflosligi yo'q",
+      "Qo'ng'irot soda zavodi sanoat ekskursiyalari"
+    ],
+    "potential_annual_tourists": 50000,
+    "tourist_types": ["Off-road / 4x4 sarguzasht", "Ekologik turizm", "Astroturizm", "Sanoat turizmi"],
+    "integration": "Muynoq + Qo'ng'irot birgalikda 'Orol dengiziga yo'l' brendi — kuchli sinergiya",
+    "accommodation_gap": "50k potensial sayyoh uchun mehmonxona infratuzilmasi juda kam — first mover imkoniyati"
+  },
+
+  "banking_programs": {
+    "micro_projects_2026": {
+      "total_projects": 390,
+      "new_jobs_100day": 250,
+      "export_growth_target_pct": 10,
+      "mahalla_bankers": 3,
+      "bankers_women": 1,
+      "bankers_men": 2,
+      "note": "3 banker 390 loyiha uchun — AI Advisor avtomatizatsiyasi zarur"
+    },
+    "hamroh": {
+      "target": "Xotin-qizlar tadbirkorligi",
+      "max_amount_mln_sum": 100,
+      "collateral_required": false,
+      "best_for": ["hunarmandchilik", "kichik savdo", "sut mahsulotlari", "tuya suti"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "target": "Oilaviy biznes",
+      "max_amount_mln_sum": 300,
+      "rate_pct": 18,
+      "term_years": 3,
+      "best_for": ["chorvachilik", "qurilish materiallari", "transport xizmati", "logistika"]
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "Eksport 23 BAROBAR O'SDI",
+      "detail": "$1.57 mln (2021) → $36.3 mln (2025). 6 ta regionning eksport o'sishi bo'yicha mutlaq rekord. Neft-gaz va kimyo drayveri."
+    },
+    {
+      "title": "Google Trends 72/100 — ENG YUQORI",
+      "detail": "6 ta region orasida eng yuqori raqamli qiziqish. 'Qo'ng'irot sanoat', 'investitsiya imkoniyatlari', 'neft-gaz loyihalari' — xorijiy investorlar qidiryapti."
+    },
+    {
+      "title": "Temir yo'l 500 metr — noyob ustunlik",
+      "detail": "Tuман markaziga 500 metr. 6 ta regionning eng yaqin temir yo'li. Yuk tashish 3.4 mln tonna/yil. A-380 xalqaro trassa bilan kesishadi."
+    },
+    {
+      "title": "Internet 1 Gbit/s + 97.4% qoplam",
+      "detail": "6 ta regionning eng tez interneti. Sanoat Big Data, AI, IT-logistika uchun ideal texnologik asos."
+    },
+    {
+      "title": "Suv ta'minoti 95% — rekord",
+      "detail": "6 ta regionning eng yuqori suv ta'minoti. Qoraqalpog'iston uchun ulkan farq (umumiy 70.9% vs Qo'ng'irot 95%)."
+    },
+    {
+      "title": "Usturt shamoli 320+ kun — eng yaxshi shamol resursi",
+      "detail": "O'zbekistondagi eng barqaror shamol oqimi (6-8 m/s). Katta WES (shamol elektrostansiyalari) uchun ideal. 2027 maqsad: $500 mln FDI."
+    },
+    {
+      "title": "Kimyo klaster bazasi tayyor",
+      "detail": "Usturt GKM (Surgil) + Qo'ng'irot soda zavodi + 18 mineral tuz koni. Xomashyo arzon va yaqin — qayta ishlaш uchun baza tayyor."
+    },
+    {
+      "title": "Kambag'allik 5.7x kamaydi",
+      "detail": "18.2% (2021) → 3.2% (2025) — 6 ta regionda eng tez kamayish. Iqtisodiy o'sish real natija bermoqda."
+    },
+    {
+      "title": "7.6 mln ga yer (0.54 kishi/km²)",
+      "detail": "Yirik sanoat, shamol parki, kimyo klaster uchun yer cheksiz va tekin/arzon. Ekologik ekspertiza ham osonroq."
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "Kimyo xomashyosi qayta ishlanmayapti",
+      "severity": "KRITIK",
+      "data": "Surgil GKM + soda zavodi bor. Lekin tayyor mahsulot (plastik, maishiy kimyo, shisha) minimal. 18 mineral tuz koni faqat 18% ishlatilmoqda.",
+      "opportunity": "Polietilen qoplam, plastik idish, maishiy kimyo, shisha buyumlar, tuz mahsulotlari — xomashyo tumanida, logistika arzon",
+      "investment_range_mln_sum": "200-2000",
+      "monthly_income_mln_sum": "50-500",
+      "payback_years": "4-8",
+      "suitable_for": ["yirik investor", "kimyo tajribasi bor", "xalqaro kompaniya"],
+      "bank_product": "Xalqaro moliya (JICA, IFC, ADB) yoki SQB katta kredit"
+    },
+    {
+      "gap": "Tranzit infratuzilmasi rivojlanmagan",
+      "severity": "YUQORI",
+      "data": "A-380 + temir yo'l 500m bor. Lekin Truck Stop, bojxona terminali, zamonaviy omborxona yo'q. 3.4 mln tonna yuk o'tib ketmoqda — xizmat ko'rsatish yo'q.",
+      "opportunity": "Zamonaviy seryomlashtirish (Truck Stop), omborxona, «Quruq port» terminali, bojxona xizmati",
+      "investment_range_mln_sum": "500-5000",
+      "monthly_income_mln_sum": "100-1000",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "logistika tajribasi", "xalqaro tajriba"],
+      "bank_product": "Xalqaro moliya yoki SQB"
+    },
+    {
+      "gap": "Qurilish materiallari klaster yo'q",
+      "severity": "YUQORI",
+      "data": "Ohaktosh, kvarts qumi, mineral tuz — barchasi mavjud. Lekin shisha, quruq qurilish aralashmasi, termal panel — ishlab chiqarilmayapti.",
+      "opportunity": "10 ga maydonida 'Qurilish materiallari klasteri' — eksportga Qozog'iston/Rossiya",
+      "investment_range_mln_sum": "300-2000",
+      "monthly_income_mln_sum": "50-300",
+      "payback_years": "4-7",
+      "suitable_for": ["yirik investor", "qurilish sanoati tajribasi"],
+      "bank_product": "SQB yoki xalqaro moliya"
+    },
+    {
+      "gap": "Ekо-turizm va astroturizm nolga yaqin",
+      "severity": "O'RTA-YUQORI",
+      "data": "Usturt kanyonlari + Orol dengizi + 320 quyoshli kun + yorug'lik iflosligi yo'q = dunyo astroturizmida noyob joylashuv. Hech kim qilmagan.",
+      "opportunity": "Glamping, off-road tur, astroturizm observatoriya, Muynoq bilan birgalikda marshrut",
+      "investment_range_mln_sum": "50-500",
+      "monthly_income_mln_sum": "10-80",
+      "payback_years": "3-6",
+      "suitable_for": ["turizm tajribasi", "xalqaro marketing", "ingliz tili"],
+      "bank_product": "SQB yoki xalqaro investitsiya"
+    },
+    {
+      "gap": "Shamol energiyasi ishlatilmayapti",
+      "severity": "O'RTA-YUQORI",
+      "data": "Usturt 6-8 m/s barqaror shamol. Liniyalar 58% keksa. Korxonalar uchun arzon elektr zarur — sanoat o'smoqda.",
+      "opportunity": "WES (shamol elektrostansiyasi), quyosh panellari o'rnatish va texnik xizmat, energiya savdosi",
+      "investment_range_mln_sum": "500-10000",
+      "monthly_income_mln_sum": "100-2000",
+      "payback_years": "7-15",
+      "suitable_for": ["xalqaro energetika investori"],
+      "bank_product": "Xalqaro moliya (IFC, EBRD, ADB)"
+    },
+    {
+      "gap": "Norasmiy sektor 14,116 kishi — 13 mlrd so'm soliq yo'qotish",
+      "severity": "O'RTA",
+      "data": "Formal 29,441 vs norasmiy 14,116. Rasmiylashtirish orqali katta soliq bazasi.",
+      "opportunity": "Buxgalteriya va soliq konsalting, MChJ rasmiylashtirish xizmati",
+      "investment_range_mln_sum": "5-30",
+      "monthly_income_mln_sum": "3-15",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya tajribasi", "huquq bilimlari"],
+      "bank_product": "Yoshlar biznesda"
+    },
+    {
+      "gap": "Qaytgan migrantlar (2,435) qayta o'qitilmayapti",
+      "severity": "O'RTA",
+      "data": "2,435 xorijdan qaytgan — tajriba bor, lekin yo'nalish yo'q. Kimyo va logistika sektori kadrlar kerak.",
+      "opportunity": "Kimyo va logistika kasb-hunar kurslari, texnik qayta tayyorlash markazi",
+      "investment_range_mln_sum": "20-150",
+      "monthly_income_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["ta'lim tajribasi", "sanoat bilimlari bor"],
+      "bank_product": "SQB yoki HAMROH"
+    },
+    {
+      "gap": "Suv kanallar 67.6% betonlanmagan — isrof",
+      "severity": "O'RTA",
+      "data": "32.4% betonlangan. 38,675 ga sug'oriladigan yer — suv yo'qotish katta.",
+      "opportunity": "Tomchilatib sug'orish jihozlari importi va o'rnatish, agro-texnika xizmati",
+      "investment_range_mln_sum": "30-200",
+      "monthly_income_mln_sum": "8-40",
+      "payback_years": "2-4",
+      "suitable_for": ["agronomiya bilimi", "texnik malaka"],
+      "bank_product": "Agro bank imtiyozli"
+    },
+    {
+      "gap": "Tuya chorvachilik — ishlatilmayapti",
+      "severity": "PAST",
+      "data": "1.7 mln ga yaylov + cho'l sharoiti = tuya uchun ideal. Tuya suti ($8-15/litr dunyo bozorida), jun, teri — premium mahsulotlar.",
+      "opportunity": "Tuya ferma, tuya suti (qimiz), jun qayta ishlash, teri mahsulotlari, eko-turizm uchun tuya safari",
+      "investment_range_mln_sum": "30-200",
+      "monthly_income_mln_sum": "8-50",
+      "payback_years": "3-6",
+      "suitable_for": ["cho'l sharoitida yashaydi", "chorvachilik bilimlari"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor"
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Kimyo va soda mahsulotlari",
+      "type": "Maishiy kimyo, plastik buyumlar, soda mahsulotlari, shisha",
+      "why_qongirot": "Qo'ng'irot soda zavodi + Surgil GKM yaqin — xomashyo arzon. Temir yo'l 500m — eksport logistikasi arzon. Google Trends 72 — xorijiy investorlar qidiryapti. 2027 KPI: $500 mln FDI.",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "50-500",
+      "payback_years": "4-8",
+      "suitable_for": ["yirik investor", "kimyo tajribasi", "xalqaro kompaniya"],
+      "bank_product": "Xalqaro moliya (JICA, IFC) yoki SQB yirik kredit",
+      "risk": "Katta kapital; texnik kadrlar"
+    },
+    {
+      "rank": 2,
+      "sector": "Qurilish materiallari",
+      "type": "Shisha zavodi, quruq qurilish aralashmasi, termal panel, tuz mahsulotlari",
+      "why_qongirot": "18 mineral tuz koni + ohaktosh + kvarts qumi — hammasi tumanida. 10 ga klaster uchun yer bor. Qozog'iston/Rossiya bozori yaqin. Temir yo'l 500m.",
+      "investment_mln_sum": "300-2000",
+      "monthly_income_estimate_mln_sum": "50-300",
+      "payback_years": "4-7",
+      "suitable_for": ["yirik investor", "qurilish sanoati tajribasi"],
+      "bank_product": "SQB yoki xalqaro moliya",
+      "risk": "Energiya zarur; texnik kadrlar"
+    },
+    {
+      "rank": 3,
+      "sector": "Logistika va tranzit xizmatlari",
+      "type": "Truck stop, omborxona, «Quruq port», bojxona servisi",
+      "why_qongirot": "A-380 + temir yo'l 500m. 3.4 mln tonna yuk/yil — Qozog'iston/Rossiya tranziti. 'Shimoliy darvoza' roli. Hozir Truck Stop va zamonaviy servis yo'q — raqib yo'q.",
+      "investment_mln_sum": "500-5000",
+      "monthly_income_estimate_mln_sum": "100-1000",
+      "payback_years": "5-10",
+      "suitable_for": ["yirik investor", "logistika tajribasi"],
+      "bank_product": "Xalqaro moliya yoki SQB",
+      "risk": "Katta kapital; geopolitik o'zgarishlar"
+    },
+    {
+      "rank": 4,
+      "sector": "Qayta tiklanuvchi energiya",
+      "type": "Shamol elektrostansiyasi (WES), quyosh panellari o'rnatish va texnik xizmat",
+      "why_qongirot": "Usturt 6-8 m/s barqaror shamol + 320 quyoshli kun. O'zbekistondagi eng yaxshi shamol resursi. Liniyalar 58% keksa — almashtirish kerak. Sanoat o'sishi bilan elektr talab ortadi.",
+      "investment_mln_sum": "500-10000",
+      "monthly_income_estimate_mln_sum": "100-2000",
+      "payback_years": "7-15",
+      "suitable_for": ["xalqaro energetika investori"],
+      "bank_product": "Xalqaro moliya (IFC, EBRD, ADB)",
+      "risk": "Ulkan kapital; tarmoqqa ulash"
+    },
+    {
+      "rank": 5,
+      "sector": "Eko-turizm va astroturizm",
+      "type": "Glamping, off-road turlar, Usturt astroturizm observatoriyasi",
+      "why_qongirot": "Usturt kanyonlari + Orol dengizi + 320 quyoshli kun + 0 yorug'lik iflosligi = dunyo astroturizmida noyob. Muynoq bilan birgalikda marshrutlar. Google Trends 72 — qiziqish yuqori.",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-80",
+      "payback_years": "3-6",
+      "suitable_for": ["turizm tajribasi", "xalqaro marketing", "ingliz tili bor"],
+      "bank_product": "SQB yoki xalqaro investitsiya",
+      "risk": "Uzoq joylashuv; infratuzilma kam"
+    },
+    {
+      "rank": 6,
+      "sector": "Tuya chorvachilik va premium mahsulotlar",
+      "type": "Tuya fermasi, tuya suti (qimiz), jun va teri qayta ishlash",
+      "why_qongirot": "1.7 mln ga yaylov + cho'l iqlim = tuya uchun tabiat tayin etgan. Tuya suti dunyo bozorida $8-15/litr (sigir suti 3-4x qimmat). Eko-turizm bilan sinergiya (tuya safari).",
+      "investment_mln_sum": "30-200",
+      "monthly_income_estimate_mln_sum": "8-50",
+      "payback_years": "3-6",
+      "suitable_for": ["cho'l sharoitida yashaydi", "chorvachilik bilimlari"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor",
+      "risk": "Noyob soha; bozor topish kerak"
+    },
+    {
+      "rank": 7,
+      "sector": "IT va raqamli logistika",
+      "type": "AI-logistics, transport monitoring, cargo tracking, freight brokerage",
+      "why_qongirot": "1 Gbit/s internet + sanoat big data + 3.4 mln tonna yuk = raqamli logistika uchun ideal. Google Trends 72 — xorijiy buyurtmachi bor. 'Digital Qo'ng'irot' dasturi ishga tushmoqda.",
+      "investment_mln_sum": "20-200",
+      "monthly_income_estimate_mln_sum": "15-100",
+      "payback_years": "2-4",
+      "suitable_for": ["IT bilimlari", "logistika tajribasi", "ingliz tili"],
+      "bank_product": "SQB Yoshlar biznesda yoki xalqaro grant",
+      "risk": "Raqobat (katta IT kompaniyalar); kadrlar"
+    },
+    {
+      "rank": 8,
+      "sector": "Oziq-ovqat qayta ishlash",
+      "type": "Go'sht mahsulotlari, sut, qovoq va sabzavot konservalari",
+      "why_qongirot": "Chorvachilik asosiy Q/x drayveri. 1.7 mln ga yaylov — xomashyo tayyor. Qozog'iston/Rossiya bozori yaqin. Eksport allaqachon o'sgan — kengaytirish imkoni bor.",
+      "investment_mln_sum": "80-500",
+      "monthly_income_estimate_mln_sum": "15-80",
+      "payback_years": "2-5",
+      "suitable_for": ["fermer", "oziq-ovqat tajribasi"],
+      "bank_product": "Agro bank yoki SQB",
+      "risk": "Mev­suimiylik; sovitgich zarur"
+    },
+    {
+      "rank": 9,
+      "sector": "Kasb-hunar ta'limi",
+      "type": "Kimyo va logistika mutaxassislari tayyorlash markazi",
+      "why_qongirot": "2 texnikum (1,760 o'quvchi) ≈ 1,661 ish qidiruvchi yosh. 2,435 qaytgan migrant qayta o'qitish kerak. Kimyo va logistika sektori kadrlar deficit. 2026 rejasi: kadrlar markazi ochish.",
+      "investment_mln_sum": "20-150",
+      "monthly_income_estimate_mln_sum": "8-40",
+      "payback_years": "2-4",
+      "suitable_for": ["ta'lim tajribasi", "sanoat bilimlari"],
+      "bank_product": "SQB yoki HAMROH",
+      "risk": "O'qituvchilar topish"
+    },
+    {
+      "rank": 10,
+      "sector": "Moliyaviy va biznes xizmatlari",
+      "type": "Buxgalteriya, soliq, norasmiy rasmiylashtirish, biznes konsalting",
+      "why_qongirot": "14,116 norasmiy sektor = 13 mlrd so'm soliq yo'qotish. 390 mikroloyiha — hammaga yordam kerak. 3 banker faqat — yuklaма katta, yordam qimmat.",
+      "investment_mln_sum": "5-40",
+      "monthly_income_estimate_mln_sum": "5-25",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya tajribasi"],
+      "bank_product": "Yoshlar biznesda",
+      "risk": "Mijozlar bazasi qurish"
+    }
+  ],
+
+  "unique_position": {
+    "vs_karakalpakstan": "Qo'ng'irot — Qoraqalpog'istonning sanoat motori. Respublika umumiy eksporti $435 mln ichida Qo'ng'irot ulushi o'smoqda.",
+    "north_gate": "O'zbekiston-Qozog'iston-Rossiya-Yevropa tranzitida 'Shimoliy darvoza' — strategik geopolitik joylashuv.",
+    "industrial_hub_2030": "SQB strategik xulosasi: kimyo sanoati + tranzit = Qoraqalpog'istondagi yirik donor bo'lish imkoni.",
+    "digital_advantage": "Google Trends 72 + 1 Gbit/s internet = raqamli investitsiya jalb qilishda eng tayyor tuman."
+  },
+
+  "ai_prompt_context_uz": "Qo'ng'irot tumani (Qoraqalpog'iston Respublikasi) — 138 ming aholi, 39 mahalla. Qoraqalpog'istonning SANOAT VA LOGISTIKA MARKAZI. ASOSIY XUSUSIYATI: Eksport 23 BAROBAR O'SDI ($1.57M → $36.3M, 2021-2025) — 6 ta regionning eksport o'sishi bo'yicha mutlaq rekord. Google Trends 72/100 — 6 ta regionning eng yuqori bali. KUCHLI TOMONLAR: (1) Temir yo'l 500 METR — eng yaqin; (2) A-380 xalqaro trassa + 3.4 mln tonna yuk/yil; (3) Usturt GKM (Surgil) + Qo'ng'irot soda zavodi — kimyo xomashyosi; (4) 18 mineral tuz koni (faqat 18% ishlatilmoqda); (5) Internet 1 Gbit/s / 97.4%; (6) Suv ta'minoti 95% — eng yuqori; (7) Shamol 320+ kun (6-8 m/s) — O'zbekistondagi eng yaxshi; (8) Kambag'allik 18.2% → 3.2% — eng tez kamayish; (9) 2027 KPI: $500 mln FDI, 5,000 ish o'rni. KRITIK IMKONIYATLAR: (1) Kimyo xomashyosini qayta ishlash — plastik, maishiy kimyo, shisha ($50-150 mln klaster); (2) Tranzit infratuzilmasi — Truck stop, 'Quruq port', bojxona terminali; (3) Qurilish materiallari klasteri — ohaktosh, kvarts, tuz; (4) Shamol elektrostansiyasi; (5) Eko-turizm (Usturt kanyonlari, astroturizm); (6) Tuya chorvachilik va premium mahsulotlar. BANK MAHSULOTLARI: HAMROH (ayollar, garovsiz 100 mln), Har bir oila tadbirkor (300 mln, 18%, 3 yil), SQB yirik kredit, xalqaro moliya liniyalari.",
+
+  "ai_prompt_context_ru": "Кунградский район (Республика Каракалпакстан) — 138 тыс. жителей, 39 махаллей. ПРОМЫШЛЕННЫЙ И ЛОГИСТИЧЕСКИЙ ЦЕНТР Каракалпакстана. ГЛАВНАЯ ОСОБЕННОСТЬ: Экспорт вырос в 23 РАЗА ($1.57M → $36.3M, 2021-2025) — абсолютный рекорд роста среди 6 регионов. Google Trends 72/100 — наивысший балл из 6 регионов. СИЛЬНЫЕ СТОРОНЫ: (1) Ж/д станция 500 МЕТРОВ; (2) Трасса А-380 + 3.4 млн тонн грузооборот/год; (3) Устюртский ГХК (Surgil) + Кунградский содовый завод; (4) 18 месторождений минеральной соли (использует только 18%); (5) Интернет 1 Гбит/с; (6) Водоснабжение 95% — рекорд; (7) Ветер 320+ дней (6-8 м/с) — лучший ветроресурс Узбекистана; (8) Бедность 18.2% → 3.2%; (9) KPI 2027: $500 млн FDI. КРИТИЧЕСКИЕ ВОЗМОЖНОСТИ: (1) Переработка химсырья — пластик, бытовая химия, стекло; (2) Транзитная инфраструктура — Truck Stop, 'Сухой порт', таможня; (3) Кластер стройматериалов; (4) ВЭС; (5) Эко-туризм (каньоны Устюрта, астротуризм); (6) Верблюдоводство и премиум-продукты. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH (женщины, без залога до 100 млн), Каждая семья — предприниматель (300 млн, 18%, 3 года), крупные кредиты SQB, международные финансовые линии."
+}

@@ -1,0 +1,723 @@
+{
+  "id": "termiz",
+  "name_uz": "Термиз тумани",
+  "name_ru": "Термезский район",
+  "name_latin": "Termiz tumani",
+  "viloyat": "Surxondaryo",
+  "type": "tuman",
+  "data_year": 2026,
+  "sources": ["Xokimiyat", "stat.uz", "surxondaryo.uz", "Markaziy bank", "Mehnat.uz", "SQB", "Wikipedia", "kun.uz", "Sputnik"],
+
+  "data_quality_note": "Hokimiyat ma'lumotlarida 2 anomaly: (1) Mehnat resurslari 2021-2023da KAMAYIB ketgan (59→44 ming) — boshqa tumanlardan farqli; admin chegara o'zgarishi yoki klaссifikatsiya o'zgarishi sabab bo'lishi mumkin; (2) Band aholi ham kamayyon (42→29.6 ming) — verifikatsiya zarur, lekin ehtimoldan past ko'rinadi. Boshqa ma'lumotlar barqaror.",
+
+  "afghanistan_border_strategic_advantage": {
+    "border_total_km_viloyat": 143,
+    "ayritom_customs_post": {
+      "location": "Termiz tumani — 'Airitom Free Zone' hududida",
+      "distance_from_termiz_city_km": 15,
+      "distance_from_border_m": 700,
+      "established_year": 1991,
+      "established_date": "1991-10-26",
+      "digital_relaunch": "2021 yil iyun (raqamli texnologiyalar)",
+      "function": "O'zbekiston-Afg'oniston ягона chegara bojxona posti",
+      "daily_passenger_traffic_avg": "400-500 nafar"
+    },
+    "termiz_international_trade_center": {
+      "location": "Termiz tumanida joylashgan",
+      "name": "Termiz xalqaro savdo markazi",
+      "function": "Afg'oniston bilan o'zaro savdo-iqtisodiy aloqalar markazi"
+    },
+    "regional_partners_70plus": ["Germaniya", "Avstriya", "Xitoy", "Koreya", "Hindiston", "Rossiya", "Belorusiya", "Afg'oniston", "Tojikiston"],
+    "viloyat_hokim": "Ulug'bek Qosimov",
+    "key_advantage": "🏆 O'zbekistondan janub-osiyo bozoriga (Afg'oniston, Eron, Pokiston, Hindiston) ягона quruq yo'l darvozasi"
+  },
+
+  "demographics": {
+    "population": 89700,
+    "population_density_per_km2": 108.1,
+    "area_km2": 834.44,
+    "area_ha": 83444,
+    "mahallas": 30,
+    "families": 27044,
+    "households": 21469,
+    "population_dynamics_thousand": {
+      "2021": 80.3, "2022": 82.3, "2023": 84.7, "2024": 87.2, "2025": 89.7
+    },
+    "population_growth_5y_pct": 11.7,
+    "settlements": {
+      "type": "Termiz shahar atrofidagi qishloq tumani",
+      "viloyat_capital": "Termiz shahri (12 km uzoqlik)",
+      "ranking_in_viloyat": "14 tumandan 6-o'rin (maqsad: top-3 ga kirish)"
+    },
+    "ethnic_groups": ["o'zbeklar (asosij)", "afg'on muhojirlar (vilояtdа minglab)", "ruslar", "tojiklar"],
+    "borders": {
+      "south": "Afg'oniston (Amudaryo orqali, 143 km viloyat chegarasi)",
+      "north_east": "Sho'rchi tumani / Bandixon tumani",
+      "west": "Jarqo'rg'on tumani",
+      "viloyat_capital_proximity": "Termiz shahri (12 km)"
+    }
+  },
+
+  "geography": {
+    "terrain": "tekislik (Surxondaryo darasi)",
+    "climate": {
+      "type": "subtropik kontinental — eng issiq O'zbekiston janubida",
+      "sunny_days_per_year": "310+",
+      "key_advantage": "Quyosh energiyasi va eng erta hosil (hech bo'lmaganda 1 oy oldin boshqa hududlardan)"
+    },
+    "main_rivers": ["Amudaryo (chegara)", "Surxondaryo"],
+    "distance_to_termiz_city_km": 12,
+    "distance_to_railway_km": 1.2,
+    "railway_advantage": "🥇 ENG YAQIN railway 9 tumanlar ichida — 1.2 km! Shahrixon 4 km, Karmana 8 km",
+    "transit_corridors": ["4Р-206 magistral", "М-39А magistral"],
+    "amudarya_proximity": "Amudaryo bo'yida joylashgan — qishloq xojaligi va sanoat uchun keng suv resursi"
+  },
+
+  "economy": {
+    "industry_volume_bln_sum_2025": 1715.0,
+    "industry_growth_5y_multiplier": 6.12,
+    "industry_growth_pct_2025": 126.4,
+    "industry_real_index_2025": 109.3,
+    "industry_dynamics_bln_sum": {
+      "2021": 280.3,
+      "2022": 387.5,
+      "2023": 491.4,
+      "2024": 757.6,
+      "2025": 1715.0
+    },
+    "industry_growth_advantage": "🥇 5 yilda 6.1x! 9 tumanlar ichida ENG TEZ saneat o'sishi (Shahrixon 3x, Karmana 1.84x); 2025 +126.4% — fenomeal!",
+    "industry_breakdown_2025": {
+      "large_enterprises_bln_sum": 1260.1,
+      "large_enterprises_pct": 73.5,
+      "small_business_bln_sum": 454.9,
+      "small_business_pct": 26.5,
+      "concentration_alert": "🚨 Yirik korxonalar 73.5% — yagona subyekt qaroriga juda bog'liq; konsentratsiya хави"
+    },
+    "services_volume_bln_sum_2025": 1180.3,
+    "services_growth_pct_2025": 28.2,
+    "agriculture_volume_bln_sum_2025": 2198.1,
+    "agriculture_growth_pct_2025": 16.5,
+    "agriculture_alert": "Q/x dominanti (43.2% iqtisodiyot), lekin go'sht va sabzavot qайта ишlash 0% — ulkan fursat!",
+    "sector_shares_pct": {
+      "agriculture": 43.2,
+      "industry": 33.7,
+      "services": 23.2,
+      "note": "Yig'indi 100% — toza metodologiya (Payariq 12.4% bilan farqli)"
+    },
+    "export_volume_usd_mln_2025": 121.2,
+    "import_volume_usd_mln_2025": 57.6,
+    "trade_balance_usd_mln_2025": 63.6,
+    "export_growth_5y_pct": 489,
+    "trade_balance_advantage": "🏆 NET MUSBAT $63.6 mln — 9 tumanlar ichida ENG YAXSHI eksport-import balansi; Afg'oniston bozori",
+    "google_trends_score": null,
+    "google_trends_note": "Markaziy gruppa hisoblaydi; populatsiya kutishlari +30 baланс (ijobij 55%, salbij 25%)",
+    "cargo_turnover_thousand_tons": 8769.7,
+    "passenger_turnover_thousand": 6602.7,
+    "informal_economy_pct": 27.3,
+    "informal_economy_alert": "🚨 27.3% norasmij iqtisodiyot — 9 tumanlar ichida ENG YUQORI; yiliga 15 mlrd so'm soliq yo'qotish",
+    "wage_fund_2025_bln_sum": 486.9,
+    "industrial_zone_use_pct": 69.7,
+    "industrial_zone_advantage": "30.3% bo'sh joy — kengayish uchun fursat; Aiyratom Free Zone va Nurafshon KSZ",
+    "priority_sectors": [
+      "Logistika va Sukoy port (railway 1.2 km, M-39А)",
+      "Afg'oniston eksporti (g'all, un, yog', mayiz)",
+      "Q/x qайта ишlash (gosht 0%, sabzavot 0%)",
+      "Qurilish materiallari (oxak 7.3 mln m³)",
+      "Ekoturizm (Uchqizil sub omborи + 'Termiz kurort shahri' loyihasi)",
+      "'Aiyratom' Free Zone (Afg'oniston bozori uchun)",
+      "Quyosh energiya (310+ kun)"
+    ],
+    "avg_salary_thousand_sum_2025": 4775,
+    "avg_salary_dynamics_thousand_sum": {
+      "2021": 2185, "2022": 2833, "2023": 3282, "2024": 3594, "2025": 4775
+    },
+    "avg_salary_growth_5y_pct": 118.5,
+    "salary_advantage": "Ish haqi 5 yilda 2.2x — boshqa rural tumanlardan tezroq",
+    "local_budget_dynamics_bln_sum": {
+      "2021": 41.2, "2022": 61.3, "2023": 69.4, "2024": 67.4, "2025": 99.1
+    },
+    "local_budget_alert": "2024da pasaygan (-2.9%), 2025da +46.9% sakragan — yagona sektor solig'iga bog'liqlikni kursatadi",
+    "tax_loss_informal_bln_sum": 15
+  },
+
+  "credits": {
+    "total_credits_bln_sum_2025": 1366.1,
+    "credits_dynamics_bln_sum": {
+      "2021": 1123.0, "2022": 1179.2, "2023": 1273.5, "2024": 1337.2, "2025": 1366.1
+    },
+    "credit_growth_5y_pct": 21.6,
+    "credit_growth_alert": "🚨 Atigi +21.6% 5 yilda — saneat 6x oshgan paytda kredit o'smaган; mismatchи katta",
+    "small_business_credit_2025_bln_sum": 475.0,
+    "small_business_credit_pct": 34.8,
+    "family_business_credit_bln_sum": 7.9,
+    "family_business_credit_pct": 0.6,
+    "family_business_credit_alert": "🚨 Atigi 0.6% portfeli — 9 tumanlar ichida ENG PAST oilavij tadbirkorlik kreditlash; mikromolija fursat",
+    "npl_pct_dynamics": {
+      "2021": 4.0, "2022": 4.8, "2023": 5.8, "2024": 6.3, "2025": 6.7
+    },
+    "npl_alert": "🚨 NPL O'SAYAPTI: 4.0% → 6.7% (5 yilda +67.5%); Karmana (2.2%), Forish (2.9%) dan jiddiy yomon",
+    "microcredit_plan_bln_sum": 467
+  },
+
+  "infrastructure": {
+    "water_supply_pct_2025": 69.5,
+    "water_supply_dynamics_pct": {
+      "2021": 54.8, "2022": 57.1, "2023": 62.4, "2024": 66.2, "2025": 69.5
+    },
+    "water_supply_growth_5y_pp": 14.7,
+    "water_supply_alert": "30.5% aholi (~27,400 nafar) toza suvdan узoq — kanalizatsiya bilan birlashtirilgan dastur zarur",
+    "sewerage_pct": 1.5,
+    "sewerage_alert": "🚨 ATIGI 1.5% — 9 tumanlar ichida ENG YOMON; Forish 2% bilan teng eng past; sanitar xавf yuqori",
+    "irrigation_canal_concrete_pct": 27,
+    "roads_total_km": 893,
+    "roads_asphalted_pct": 87,
+    "roads_asphalted_km": 786,
+    "roads_unasphalted_km": 107,
+    "roads_advantage": "🏆 87% asfalt — 9 tumanlar ichida 2-eng yaxshi (Mirzo Ulug'bek 100% dan keyin)",
+    "annual_cargo_thousand_tons": 8769.7,
+    "annual_passenger_thousand": 6602.7,
+    "open_warehouses_count": 17,
+    "open_warehouses_total_m2": 29090,
+    "railway_distance_km": 1.2,
+    "transit_arteries": ["4Р-206", "М-39А"],
+    "electricity": {
+      "outages_per_month_avg": 4,
+      "outages_alert": "🚨 4 marta/oy — 9 tumanlar ichida ENG YOMON (Karmana 1, Mirzo Ulug'bek 1, Shahrixon 2.2); saneat 6x o'sayotgan paytda 10-15 mlrd so'm yiliga yo'qotish riski",
+      "old_transformers_pct": 31.7,
+      "lines_need_replacement_pct": 31.3,
+      "internet_coverage_pct": 100,
+      "internet_speed_mbps": 40
+    },
+    "gas_supply_pct": 30,
+    "liquefied_gas_supply_pct": 70,
+    "gas_alert": "🚨 Gaz atigi 30% (suyultirilgan 70%) — qishda muammo; quyosh energiya bilan kompensatsiya zarur",
+    "land": {
+      "total_ha": 83444,
+      "agricultural_ha": 83443,
+      "pasture_ha": 10977,
+      "irrigated_ha": 9021.6,
+      "irrigated_pct_of_agri": 10.8,
+      "grain_area_ha": 2900,
+      "industrial_zone_use_pct": 69.7,
+      "land_alert": "Sug'oriladigan ER atigi 10.8% — sub tанqislik SWOT №1; tomchilatib sug'orish pilot zarur"
+    }
+  },
+
+  "education": {
+    "preschool": {
+      "coverage_pct_2025": 91.1,
+      "children_3_7_count": 8050,
+      "covered_count": 7330,
+      "total_mtt": 113,
+      "state_mtt": 18,
+      "dxsh_mtt": 10,
+      "private_mtt": 1,
+      "family_mtt": 84,
+      "advantage": "91.1% qamrov — 9 tumanlar ichida 2-eng yuqori (Karmana 95.5% dan keyin); 113 ta MTT — boshqa tumanlardan ko'p"
+    },
+    "schools": {
+      "two_shift_count": 11,
+      "alert": "11 ta 2-смenali maktab — aholi o'sishi (5 yilda +11.7%) bilan kuchayadigan muammo"
+    },
+    "higher_education": {
+      "universities_in_district": 1,
+      "university_name": "Termiz davlat pedagogika instituti",
+      "capacity": 5080,
+      "students": 10840,
+      "load_pct": 213.4,
+      "alert": "🚨 INSTITUT 2.1x ortiqcha yuk — 5,080 o'ringa 10,840 talaba; ta'lim sifati pasayyon riski; yangi kampus ёки masofa ta'lim zarur",
+      "tashkent_medical_branch": "Toshkent tibbiyot akademiyasi Termiz filiali — 1,500 talaba sig'imi (Termiz shahriga, lekin tuman aholisi ham foydalanadi)"
+    },
+    "technicums": {
+      "count": 1,
+      "name": "Surxondaryo ilg'or kasbij maxorat texnikumi",
+      "capacity": 554,
+      "students": 554,
+      "load_pct": 100,
+      "alert": "🚨 Atigi 1 ta texnikum 100% to'lgan — 909 yosh ishsiz va 835 qaytgan migrant kontekstida yetarli emas; 2-chi texnikum yoki kengaytirish zarur"
+    }
+  },
+
+  "labor": {
+    "total_resources_thousand_dynamics": {
+      "2021": 59.0, "2022": 54.1, "2023": 44.0, "2024": 44.8, "2025": 47.2
+    },
+    "total_resources_anomaly_alert": "🚨 5 yilda KAMAYGAN (59→47.2 ming) — boshqa tumanlardan farqli; admin chegara o'zgarishi yoki klassifikatsiya o'zgarishi sabab; verifikatsiya zarur",
+    "employed_thousand_dynamics": {
+      "2021": 42.0, "2022": 39.0, "2023": 30.5, "2024": 30.7, "2025": 29.6
+    },
+    "employed_anomaly_alert": "🚨 Band aholi ham KAMAYGAN (42→29.6 ming) — saneat 6x oshgan paytda mantiqsiz; verifikatsiya shart",
+    "informal_employment": 3384,
+    "informal_alert": "Mehnat ma'lumotlari va informal sektor kontekstida 3,384 nafar — yiliga 15 mlrd so'm soliq yo'qotish",
+    "returned_migrants_dynamics": {
+      "2021": 642, "2022": 687, "2023": 931, "2024": 767, "2025": 835
+    },
+    "returned_migrants_advantage": "Qaytgan migrantlar 5 yilda +30% (642→835) — barqaror tendentsiya; Afg'on biznes tajriba bor migrantlar kelmoqda",
+    "unemployment_pct_2025": 5.6,
+    "unemployment_dynamics_pct": {
+      "2021": 10.1, "2022": 9.1, "2023": 8.1, "2024": 6.4, "2025": 5.6
+    },
+    "unemployed_count_2025": 1749,
+    "unemployment_target_2027_pct": 5.3,
+    "unemployment_decline_5y": "10.1% → 5.6% — yarim baravar tushgan",
+    "youth_unemployed_16_30": 909.5,
+    "unemployed_women": 839.5,
+    "poverty_pct_2025": 6.4,
+    "poverty_dynamics_pct": {
+      "2021": 9.2, "2022": 8.4, "2023": 7.8, "2024": 7.7, "2025": 6.4
+    },
+    "poor_families_dynamics": {
+      "2021": 1632, "2022": 1360, "2023": 1133, "2024": 944, "2025": 787
+    },
+    "poverty_decline_5y_pct": -51.8,
+    "low_income_families": 2265,
+    "child_benefit_families": 2237,
+    "difficult_mahallas_named": ["Gulbahor", "Halqobod", "Yangihayot"],
+    "difficult_mahallas_breakdown": {
+      "Gulbahor": {"unemployed": 83, "rate_pct": 5.5, "women": 35, "men": 30, "youth": 18},
+      "Halqobod": {"unemployed": 80, "rate_pct": 5.7, "women": 32, "men": 33, "youth": 15},
+      "Yangihayot": {"unemployed": 77, "rate_pct": 5.6, "women": 30, "men": 28, "youth": 19},
+      "total_unemployed": 240,
+      "women_pct": 40,
+      "men_pct": 38,
+      "youth_pct": 22
+    },
+    "mahalla_categories": {
+      "heavy_ogir": 0,
+      "medium_orta": 12,
+      "easy_yengil": 18,
+      "good_yaxshi": 0,
+      "total": 30,
+      "advantage": "🏆 0 ta og'ir mahalla — 9 tumanlar ichida ENG YAXSHI! Karmana (2 og'ir) dan ham yaxshi; lekin 12 ta o'rta — kengaytirish bo'sh joyi bor"
+    },
+    "training_plan_2026": "265 yangi tog'-kon iш ўрни 2027 ga"
+  },
+
+  "tourism": {
+    "current_state": "Modest, lekin 'Termiz kurort shahri' lojiha ishlab chiqilgan",
+    "main_attraction": {
+      "name": "Uchqizil sub omborи",
+      "current_visitors_per_year": 5000,
+      "target_visitors_per_year": 8000,
+      "type": "Sub bo'yi rekreatsion zona"
+    },
+    "termiz_kurort_shahri_project": {
+      "status": "Loyiha 2026-2028",
+      "budget_bln_sum": 50,
+      "concept": "'Termiz курort shahri' brendi — meхmon uylari, eko-kemping, sub sport"
+    },
+    "viloyat_tourism_context": "Surxondaryo viloyati — tarixiy obidalar markazi (Buddist Termiz, Karaxoniylar)",
+    "investment_opportunity": {
+      "model": "Eko-кemping + meхmon uylari + sub sport",
+      "investment_per_unit_mln_sum": "30-300"
+    }
+  },
+
+  "trade": {
+    "main_drivers": "Afg'oniston eksporti + ichki savdo + transit",
+    "key_trade_center": "Termiz xalqaro savdo markazi (tumanida)",
+    "afghanistan_export_products": ["g'all", "un", "yog'", "mayiz (qurutilgan uzum)", "qurilish materiallari"],
+    "afghanistan_import_products": ["kartoshka", "shakar", "dori-darmon", "turshak", "danak"],
+    "key_advantage": "🏆 Yagona O'zbekiston-Afg'oniston quruq yo'l darvozasi — tuman ichidagi 'Ayritom' post"
+  },
+
+  "agriculture": {
+    "key_crops": ["meva-sabzavot", "olma (529 ga yangi bog')", "g'allachilik", "chorvachilik"],
+    "vegetable_mfy_count": 8,
+    "vegetable_specialization": "Kartoshka va karam",
+    "apple_orchards_new_ha": 529,
+    "irrigated_land_ha": 9021.6,
+    "irrigated_pct_of_agri": 10.8,
+    "alert": "Sug'orish atigi 10.8% — sub tanqis SWOT №1; tomchilatib sug'orish pilot 500-1000 ga 2026da",
+    "processing_status": {
+      "meat": "0% — 9 tumanlar ichida ENG PAST",
+      "vegetables": "0% — 9 tumanlar ichida ENG PAST",
+      "alert": "🚨 Q/x 43.2% iqtisodiyot, lekin qайта ишlash 0% — fursat ENG katta!"
+    },
+    "agro_logistics_concept": "'Termiz Agro-Logistika hub': shok muzlash + qadoqlash + Afg'oniston eksport",
+    "afghanistan_export_potential": "Kartoshka, shakar, un, yog', mayiz — Afg'oniston bozori 100 km radius (Mozori Sharif)"
+  },
+
+  "natural_resources": {
+    "limestone": {
+      "reserves_thousand_m3": 7313.9,
+      "potential": "Qurilish kластери — yuqori qo'shilgan qiymatli pardozlash materiallari",
+      "investment_target_jobs": 265
+    },
+    "sand_gravel": {
+      "reserves_thousand_tons": 25.1,
+      "uses": "qurilish"
+    },
+    "key_advantage": "Tog'-kon hомashyo — 2027 ga 265 yangi iш ўрни режa"
+  },
+
+  "mahalla_economy": {
+    "total": 30,
+    "advantage": "0 og'ir mahalla — 9 tumanlar ichida ENG YAXSHI",
+    "by_category": {
+      "easy_yengil": 18,
+      "medium_orta": 12,
+      "heavy_ogir": 0,
+      "good_yaxshi": 0
+    },
+    "by_specialization": {
+      "vegetable_kartoshka_karam": {"count": 8, "pct": 27},
+      "drivers": ["Bog'dorchilik", "Dehqonchilik", "Parrandachilik", "Chorvachilik"]
+    }
+  },
+
+  "banking_programs": {
+    "bank_branches": 6,
+    "atms": 22,
+    "atms_alert": "Atigi 22 ATM — 9 tumanlar ichida ENG PAST (Payariq 170, Karmana 80); raqamli infratuzilma sust",
+    "mahalla_bankirs": 6,
+    "mahalla_bankirs_for_30_mahallas": "1 bankir 5 mahallaga — Karmana (1/1) dan past, lekin Payariq (1/22) dan yaxshi",
+    "hamroh": {
+      "rate_pct": 1,
+      "rate_advantage": "🏆 Atigi 1% stavka! Boshqa tumanlardan har bir oila tadbirkor 18% bilan farqli — eng past stavka",
+      "max_amount_mln_sum": 300,
+      "term_years": 3,
+      "grace_period_months": "3-6",
+      "best_for": ["hunarmandchilik", "tikuvchilik", "agro-qadoqlash", "Afg'oniston eksport"]
+    },
+    "har_bir_oila_tadbirkor": {
+      "rate_pct": 1,
+      "rate_advantage": "🏆 1% — boshqa tumanlardan jiddiy past stavka (Mirzo Ulug'bek/Karmana 18%)",
+      "max_amount_mln_sum": 300,
+      "term_years": 3
+    },
+    "micro_projects_2025": {
+      "total_projects": 300,
+      "total_jobs": 700,
+      "total_bln_sum": 0.6,
+      "by_bank": {
+        "Trastbank": 140,
+        "Agrobank": 90,
+        "SQB": 40,
+        "BRD": 20,
+        "Xalq_banki": 10
+      }
+    },
+    "loyiha_fabrikasi": {
+      "projects_count": 17,
+      "total_value_bln_sum": 1703,
+      "expected_jobs": 1709
+    },
+    "free_economic_zones": {
+      "airitom_fez": {
+        "name": "'Airitom Free Zone'",
+        "active_enterprises": 4,
+        "jobs": 182,
+        "specialization": "Saneat va ишlаб chиqарiш",
+        "key_advantage": "Afg'oniston bozori uchun strategik"
+      },
+      "nurafshon_bunyodkor_ksz": {
+        "name": "'Nurafshon va Bunyodkor' KSZ",
+        "active_enterprises": 9,
+        "jobs": 122
+      },
+      "total_zones_jobs": 304
+    }
+  },
+
+  "strengths": [
+    {
+      "title": "🥇 ENG TEZ saneat o'sishi 5 yilda (6.1x)",
+      "detail": "280→1,715 mlrd so'm; 2025 +126.4%; 9 tumanlar ichida ENG dinamik (Shahrixon 3x, Karmana 1.84x)"
+    },
+    {
+      "title": "🏆 NET MUSBAT savdo balansi $63.6 mln",
+      "detail": "Eksport $121.2 mln, импорт $57.6 mln; eksport 5 yilda +489% — ENG yuqori o'sish"
+    },
+    {
+      "title": "🏆 AFG'ONISTON CHEGARASIDA — yagona pas't",
+      "detail": "'Ayritom' bojxона postи tumanda; Termiz xalqaro savdo markazi shu yerda; janub-osiyo bozoriga (Afg'oniston, Eron, Pokiston, Hindiston) ягона quruq yo'l"
+    },
+    {
+      "title": "🥇 Railway ENG YAQIN (1.2 km)",
+      "detail": "9 tumanlar ichida eng yaqin (Shahrixon 4 km, Karmana 8 km); Sukoy port uchun ideal"
+    },
+    {
+      "title": "🏆 0 og'ir mahalla",
+      "detail": "30 mahalla: 18 yengil + 12 o'rta + 0 og'ir; 9 tumanlar ichida ENG YAXSHI tafsilot (Karmana 2, Sariosiyo 13)"
+    },
+    {
+      "title": "🥇 KREDIT STAVKASI 1% (HAMROH va Har bir oila)",
+      "detail": "Boshqa tumanlardan 18% bilan farqli — strategik chegaradosh hudud sifatida maxsus stavka; biznes uchun fursat"
+    },
+    {
+      "title": "Yo'llar 87% asfalt",
+      "detail": "893 km dan 786 km asfalt (Mirzo Ulug'bek 100% dan keyin 2-yaxshi); M-39А va 4Р-206 magistralari"
+    },
+    {
+      "title": "Internet 100% / 40 Mbit/s",
+      "detail": "100% qoplam; raqamli iqtisodiyot uchun zamin tayyor"
+    },
+    {
+      "title": "MTT qamrov 91.1%",
+      "detail": "9 tumanlar ichida 2-eng yuqori (Karmana 95.5% dan keyin); 113 MTT (84 oilavий)"
+    },
+    {
+      "title": "Ish haqi 5 yilda 2.2x oshgan",
+      "detail": "2,185 → 4,775 ming so'm; +118.5% (boshqa rural tumanlardan tezroq)"
+    },
+    {
+      "title": "Kambag'allik 5 yilda 51.8% kamaygan",
+      "detail": "1,632 → 787 oila; barqaror tushish trendi"
+    },
+    {
+      "title": "310+ quyoshli kun — quyosh energiya potensiali",
+      "detail": "9 tumanlar ichida ENG YUQORI quyosh resurs (Surxondaryo janubiy iqlim); ESCO va PPA uchun ideal"
+    }
+  ],
+
+  "gaps_and_opportunities": [
+    {
+      "gap": "🚨 Q/x qайта ишlash 0% (gosht va sabzavot)",
+      "severity": "YUQORI (FURSAT ENG KATTA)",
+      "data": "Q/x 43.2% iqtisodiyot (2,198 mlrd so'm), lekin tayor mahsulot ishlab chiqarish 0%; 8 ta sabzavot MFY xom shaklda sotadi",
+      "opportunity": "Termiz Agro-Logistika hub: 3-4 ta shok muzlash + qadoqlash + konserva; Afg'oniston bozori (100 km radius); Mозори Шарiф eksport markazi",
+      "investment_range_mln_sum": "200-2000",
+      "suitable_for": ["fermer-bog'bonlar", "agro-eksport tajribasi", "Afg'on biznes aloqalari bor"]
+    },
+    {
+      "gap": "🚨 Kanalizatsiya atigi 1.5% — sanitar xавf",
+      "severity": "YUQORI",
+      "data": "9 tumanlar ichida ENG YOMON (Forish 2% bilan teng); ёр ости suv ifloslantirish riski; aholiga 89.7k uchun sanitar dastur zarur",
+      "opportunity": "DXSh kanalizatsiya tarmog'i; lokal bioozonatsiya; sanitar xizmati bizneщи",
+      "investment_range_mln_sum": "100-1000",
+      "suitable_for": ["DXSh tajribasi", "texnik kompaniya"]
+    },
+    {
+      "gap": "🚨 Elektr узилишлari 4 marta/oy — eng yomon",
+      "severity": "YUQORI",
+      "data": "31.7% transformatorlar va 31.3% liniyalar eskirgan; saneat 6x o'sib davom etmoqda — yiliga 10-15 mlrd so'm yo'qotish riski",
+      "opportunity": "Quyosh energiya stansiyalari (310+ quyoshli kun); 'Green Industrial Zone' kontseptsiyasi 'Aiyratom' Free Zone uchun",
+      "investment_range_usd_mln": "5-30",
+      "suitable_for": ["texnik bilim bor", "ESCO operator", "B2B savdo"]
+    },
+    {
+      "gap": "🚨 Norasmij iqtisodiyot 27.3% (eng yuqori)",
+      "severity": "YUQORI",
+      "data": "Yiliga 15 mlrd so'm soliq yo'qotish; 3,384 nafar norasmij band; 9 tumanlar ichida ENG ko'p",
+      "opportunity": "Buxgalteriya autsorsing, ChP/MChJ konsalting, soliq xizmati (1% kredit stavka — qulay imtiyoz!)",
+      "investment_range_mln_sum": "5-50",
+      "suitable_for": ["moliya/buxgalteriya", "huquqshunоs"]
+    },
+    {
+      "gap": "🚨 Oilavij tadbirkorlik kreditи atigi 0.6% portfeli",
+      "severity": "O'RTA-YUQORI (FURSAT)",
+      "data": "Atigi 7.9 mlrd so'm; jami portfel 1,366 mlrd; 1% stavka qulay — lekin foydalanish past",
+      "opportunity": "Mahalla bankirlari kengaytirilishi (hozir 6, kerak 10-12); biznes-trener kompaniyalar; AI скоring",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["IT/AI tajribasi", "biznes konsulting"]
+    },
+    {
+      "gap": "🚨 NPL O'SAYAPTI 4 → 6.7%",
+      "severity": "O'RTA-YUQORI",
+      "data": "5 yilda +67.5%; saneat tez o'sayapti, lekin kredit sifati pasaymoqda",
+      "opportunity": "Kreditga tayorlash (biznes-trener), AI скоring, mониторинг markazi",
+      "investment_range_mln_sum": "20-200",
+      "suitable_for": ["IT/AI tajribasi", "moliya tajribasi"]
+    },
+    {
+      "gap": "🚨 Universitet 2.1x ortiqcha yuk (10,840/5,080)",
+      "severity": "O'RTA-YUQORI",
+      "data": "Termiz davlat pedagogika instituti — kapasitetdan 5,760 ko'p; ta'lim sifati riski",
+      "opportunity": "Yangi kampus qurilishи (DXSh); masofa ta'lim platforma; xususij коlлеж",
+      "investment_range_mln_sum": "200-2000",
+      "suitable_for": ["pedagogik ma'lumot bor", "DXSh tajribasi", "texnologiya tajribasi"]
+    },
+    {
+      "gap": "Texnikum atigi 1 ta (100% to'lgan)",
+      "severity": "O'RTA",
+      "data": "554 ўрин 100% band; 909 yosh ishsiz va 835 qaytgan migrant",
+      "opportunity": "2-chi texnikum yoki kengaytirish; tog'-kon, logistika, qurilish bo'yicha qisqa kursi; 'Aiyratom' EIZ bilan дуал ta'lim",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["pedagogik tajriba", "saneat ekspert"]
+    },
+    {
+      "gap": "Sub omborи Uchqizil — atigi 5,000 sayyoh",
+      "severity": "O'RTA (FURSAT)",
+      "data": "'Termiz kurort shahri' loyihasi 2026-2028 (50 mlrd so'm); 5,000 → 8,000 sayyoh maqsad",
+      "opportunity": "Eko-кemping, meхmon uylari, sub sport, qayiq sayri, restoranlar",
+      "investment_range_mln_sum": "30-500",
+      "suitable_for": ["turizm tajribasi", "qaytgan migrantlar"]
+    },
+    {
+      "gap": "Saneat zona 30.3% bo'sh joy",
+      "severity": "O'RTA (FURSAT)",
+      "data": "'Aiyratom' EIZ 4 korxona/182 ish + 'Nurafshon' KSZ 9/122 = 13 korxona/304 ish",
+      "opportunity": "Afg'oniston bozori uchun qurilish materiallari, tayor ozuq-ovkat, dori-darmon",
+      "investment_range_mln_sum": "200-2000",
+      "suitable_for": ["yirik investor", "70+ halqaro hamkor (Germaniya, Korea, Xitoy, Hindiston bilan)"]
+    },
+    {
+      "gap": "Sug'oriladigan ER atigi 10.8%",
+      "severity": "O'RTA-YUQORI",
+      "data": "9,022 ga sug'oriladi 83,443 dan; sub tanqislik SWOT №1; kanal beton 27%",
+      "opportunity": "Tomchilatib sug'orish 500-1000 ga pilot; kanal beton 27→60%; sub iste'moli 20-30% tejaш",
+      "investment_range_mln_sum": "50-500",
+      "suitable_for": ["agro tajribasi", "DXSh sherigi"]
+    },
+    {
+      "gap": "Aёllar ishsizligi 839 nafar",
+      "severity": "O'RTA",
+      "data": "839 ayol ishsiz; HAMROH 1% stavka (qulay); kasanачilik dasturi mавjud",
+      "opportunity": "Tikuvchilik, hunarmandchilik, online savdo Afg'oniston'ga, mayiz qadoqlash",
+      "investment_range_mln_sum": "10-100",
+      "suitable_for": ["aёllar (HAMROH 100 mln)", "tikuvchilik tajribasi"]
+    }
+  ],
+
+  "top_business_recommendations": [
+    {
+      "rank": 1,
+      "sector": "Termiz Agro-Logistika hub (Afg'oniston eksport)",
+      "type": "Shok muzlash zavod / qadoqlash kompleksi / konserva zavodi / Afg'oniston eksport markazi",
+      "why_termiz": "Q/x 43.2% (2,198 mlrd so'm), lekin qайта ишlash 0% — eng katta fursat; railway 1.2 km; Ayritom post tumanda; 100 km radius'da Mozori Sharif (Afg'oniston) bozori; 1% kredit stavka",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "30-150",
+      "payback_years": "3-5",
+      "suitable_for": ["fermer-bog'bonlar", "agro-eksport tajribasi", "Afg'on biznes aloqalari bor"],
+      "bank_product": "Har bir oila tadbirkor (1% stavka!) yoki Agro bank",
+      "risk": "Afg'oniston bozori volatil; HACCP sertifikat"
+    },
+    {
+      "rank": 2,
+      "sector": "'Sukoy port' va Afg'oniston eksport hub",
+      "type": "Yuk terminali / sовутgich omborlar / bojxона broker / kontеynеr maydon / yuk-mashina park",
+      "why_termiz": "Railway 1.2 km — eng yaqin; M-39А va 4Р-206 magistralari; Ayritom post tumanda; 8,770 ming tonna yuk aylanmasi; Termiz xalqaro savdo markazi; 70+ halqaro hamkor",
+      "investment_mln_sum": "500-3000",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "4-6",
+      "suitable_for": ["logistika tajribasi", "yirik investor", "DXSh sherigi"],
+      "bank_product": "SQB biznes kreditlari yoki XIH",
+      "risk": "Boshlang'ich kapital katta; davlat infratuzilmasiga bog'liqlik"
+    },
+    {
+      "rank": 3,
+      "sector": "'Aiyratom' Free Zone rezидент biznesi",
+      "type": "Qurilish materiallari fabrika / tayor ozuq-ovqat / dori-darmon / mebel — Afg'oniston eksport",
+      "why_termiz": "FEZ 30.3% bo'sh joy; faqat 4 korxona/182 ish hozir; 70+ halqaro hamkor (Germaniya, Korea, Xitoy, Hindiston) bilan biznes-yarmarka; Afg'oniston ungun ozm bozori",
+      "investment_usd_mln": "1-15",
+      "monthly_income_estimate_mln_sum": "30-200",
+      "payback_years": "3-6",
+      "suitable_for": ["yirik investor", "halqaro hamkor", "saneat tajribasi"],
+      "bank_product": "SQB sanoat kreditlari",
+      "risk": "Texnik investitsiya katta"
+    },
+    {
+      "rank": 4,
+      "sector": "Qurilish materiallari (oxak 7.3 mln m³)",
+      "type": "Oxak qайта ишlash / pardoz materiallar / blok / qurilish qoришmалari — Afg'oniston eksport",
+      "why_termiz": "Oxak zaxiralari 7,313.9 ming m³; 2027 ga 265 yangi ish reжa; Afg'oniston qurilish bumi (post-konflикт qайta tiklanish); transport 1.2 km railway",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "20-80",
+      "payback_years": "3-5",
+      "suitable_for": ["saneat tajribasi", "qurilish biznesi"],
+      "bank_product": "SQB sanoat kreditlari",
+      "risk": "Texnika sotib olish; ekologik standartlar"
+    },
+    {
+      "rank": 5,
+      "sector": "Quyosh energiya stansiyasi (PPA model)",
+      "type": "5-10 MW SES / rooftop solar 'Aiyratom' Free Zoneда / EV zaryadlash / 'Green Industrial Zone'",
+      "why_termiz": "🥇 310+ quyoshli kun — eng yuqori O'zbekiston janubida; transformatorlar 31.7% eskirgan; gaz 30% past — qurғoq mavsumda elektr risk; saneat 6x oshayapti — energiya yetishmovligi",
+      "investment_usd_mln": "5-25",
+      "monthly_income_estimate_mln_sum": "20-100",
+      "payback_years": "5-7",
+      "suitable_for": ["texnik bilim bor", "katta kapital", "ESCO operator"],
+      "bank_product": "SQB biznes kreditlari yoki XIH yashil energiya",
+      "risk": "Tarif tartibga solish"
+    },
+    {
+      "rank": 6,
+      "sector": "'Termiz kurort shahri' rekreatsion biznesi",
+      "type": "Eko-кemping / meхmonxona / sub sport / restoran / qayiq sayri / fishing",
+      "why_termiz": "Davlat dasturi 50 mlrd so'm 2026-2028 tasdiqlangan; Uchqizil sub omborи; 5,000 → 8,000 sayyoh maqsad; subtropik iqlim — yil bo'yi mavsum",
+      "investment_mln_sum": "30-500",
+      "monthly_income_estimate_mln_sum": "5-30",
+      "payback_years": "2-4",
+      "suitable_for": ["turizm tajribasi", "qaytgan migrantlar (chet tili)", "ayollar (HAMROH)"],
+      "bank_product": "HAMROH (1% stavka!) yoki Har bir oila tadbirkor",
+      "risk": "Mavsumiylik; sayyohlar oqimi sekin oshadi"
+    },
+    {
+      "rank": 7,
+      "sector": "Ko'p qavatli universitet kampus va xususij kollej",
+      "type": "Yangi pedagogik kampus / xususij коlлеж / online ta'lim platforma / dual ta'lim 'Aiyratom' bilan",
+      "why_termiz": "Termiz Pedagogika instituti 2.1x ortiqcha yuk (10,840/5,080); texnikum 100% to'lgan; 909 yosh ishsiz; Toshkent tibbiyot akademiyasi Termiz filiali — 1,500 talaba",
+      "investment_mln_sum": "200-2000",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "5-7",
+      "suitable_for": ["pedagogik ma'lumot bor", "DXSh tajribasi", "texnologiya tajribasi"],
+      "bank_product": "SQB biznes kreditlari yoki XIH",
+      "risk": "Litsenziya jarayoni; o'qituvchilar"
+    },
+    {
+      "rank": 8,
+      "sector": "Aёllar uchun Afg'oniston-yo'naltirilgan online biznes",
+      "type": "Mayiz qadoqlash / kashtanchilik / tikuvchilik / online savdo Afg'on bozoriga",
+      "why_termiz": "839 aёllar ishsiz; HAMROH 1% stavka (eng past); Afg'oniston bilan eksport (mayiz, turshak, tikim mahsulotlari); 'Mahalla dafтаri' dasturi",
+      "investment_mln_sum": "10-100",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-3",
+      "suitable_for": ["aёllar", "to'qimачилик tajribasi", "Afg'on tili biluvchi"],
+      "bank_product": "HAMROH (1% stavka!)",
+      "risk": "Bozor volatil; sertifikat"
+    },
+    {
+      "rank": 9,
+      "sector": "Sanitar tarmog'i va sub xizmatlari (canalizatsiya 1.5%)",
+      "type": "Lokal kanalizatsiya / bioozonatsiya / sub tozalash xizmatlari / kanal qурiлiш",
+      "why_termiz": "Kanalizatsiya 1.5% — anti-rekord; 89.7k aholiga kerak; sanitar xавf yuqori; davlat dasturi kelishi mumkin",
+      "investment_mln_sum": "100-1000",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "5-7",
+      "suitable_for": ["DXSh tajribasi", "texnik kompaniya"],
+      "bank_product": "SQB biznes kreditlari yoki XIH",
+      "risk": "Davlat tartibi; muhandis kadrlar"
+    },
+    {
+      "rank": 10,
+      "sector": "Buxgalteriya va konsalting (norasmiy → rasmiy)",
+      "type": "Buxgalteriya autsorsing / ChP/MChJ konsalting / soliq xizmati",
+      "why_termiz": "🚨 Norasmij iqtisodiyot 27.3% — eng yuqori; 3,384 nafar norasmij; 1% kredit stavka qulay imtiyoz; 15 mlrd so'm yiliga soliq yo'qotish",
+      "investment_mln_sum": "5-50",
+      "monthly_income_estimate_mln_sum": "3-15",
+      "payback_years": "1-2",
+      "suitable_for": ["moliya/buxgalteriya tajribasi", "huquqshunоs"],
+      "bank_product": "Yoshlar biznesda yoki HAMROH",
+      "risk": "Past barаr boshlang'ich"
+    },
+    {
+      "rank": 11,
+      "sector": "Tomchilatib sug'orish va modern q/x",
+      "type": "Sug'orish tizimlari / iccaxonalar / hidroponika / smart agro",
+      "why_termiz": "Sug'oriladigan ER 10.8% (eng past); 310+ quyoshli kun (issiqxona ideal); 529 ga olma yangi bog' — texnologik q/x bumi",
+      "investment_mln_sum": "50-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["agro tajribasi", "DXSh sherigi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor (1% stavka!)",
+      "risk": "Texnika sotib olish; suv kvotasi"
+    },
+    {
+      "rank": 12,
+      "sector": "Olma qайта ишlash (529 ga yangi bog')",
+      "type": "Olma шirasi zavod / qurutma / konserva / online savdo",
+      "why_termiz": "529 ga yangi olma bog'i; 4-5 yildan to'liq hosil; q/x 43.2% iqtisodiyot; qайта ишlash 0% niche bo'sh; 1% kredit stavka",
+      "investment_mln_sum": "100-500",
+      "monthly_income_estimate_mln_sum": "10-50",
+      "payback_years": "3-5",
+      "suitable_for": ["fermer-bog'bonlar", "agro-eksport tajribasi"],
+      "bank_product": "Agro bank yoki Har bir oila tadbirkor (1%!)",
+      "risk": "Mavsumiylik; sertifikat"
+    }
+  ],
+
+  "ai_prompt_context_uz": "Termiz tumani (Surxondaryo viloyati) — 89.7 ming aholi, 30 mahalla, 27,044 oila, Termiz shahriga 12 km, AFGʻONISTON CHEGARASIDAGI YAGONA TUMAN, 'Ayritom' bojxона postи tumanda joylashgan. KUCHLI TOMONLARI: (1) 🥇 SANEAT 5 yilda 6.1x oshgan (280→1,715 mlrd so'm) — 9 tumanlar ichida ENG TEZ; (2) 🏆 EKSPORT 5 yilda +489% ($21→$121 mln); soft trade balance +$63.6 mln; (3) 🏆 AFG'ONISTON CHEGARA — yagona quruq yo'l darvozasi (Ayritom posti, Termiz xalqaro savdo markazi); (4) 🥇 RAILWAY 1.2 km — eng yaqin 9 tumanlar ichida; (5) 🏆 0 og'ir mahalla — 9 tumanlar ichida ENG YAXSHI; (6) 🥇 KREDIT STAVKASI 1% (HAMROH va Har bir oila — boshqa tumanlardan 18% bilan farqli — strategik chegaradosh imtiyoz!); (7) Yo'llar 87% asfalt; (8) MTT qamrov 91.1%; (9) Ish haqi 5 yilda 2.2x; (10) Kambag'allik 5 yilda -51.8%; (11) 70+ halqaro hamkor (Germaniya, Korea, Xitoy, Hindiston, Russia); (12) 310+ quyoshli kun. PROBLEMALAR va IMKONIYATLAR: (1) 🚨 Q/x QAYTA ISHLASH 0% (gosht va sabzavot) — q/x 43.2%, lekin tayer mahsulot yo'q; ENG katta fursat; (2) 🚨 KANALIZATSIYA atigi 1.5% — sanitar xавf; (3) 🚨 ELEKTR uzilishlari 4 marta/oy — eng yomon; 31.7% transformatorlar eskirgan; (4) 🚨 NORASMIJ IQTISODIYOT 27.3% — yiliga 15 mlrd so'm soliq yo'qotish; (5) 🚨 OILAVIY KREDIT atigi 0.6% portfeli (7.9 mlrd / 1,366 mlrd jami); (6) 🚨 NPL O'SAYAPTI 4 → 6.7%; (7) 🚨 UNIVERSITET 2.1x ortiqcha yuk (10,840/5,080); (8) Texnikum 1 ta 100% to'lgan; (9) Saneat zonasi 30.3% bo'sh; (10) Sug'oriladigan ER atigi 10.8%; (11) Termiz kurort shahri loyihasi 50 mlrd so'm 2026-2028; (12) Aёllar ishsizligi 839 nafar. BANK MAHSULOTLARI: HAMROH va Har bir oila tadbirkor 1% stavka (eng past!), 100-300 mln so'm; 300 mikrolojiha 2025 (700 ish ўрни); 'Loyiha fabrikasi' 17 ustuvor lojiha 1,703 mlrd so'm (1,709 ish ўрни). FREE ECONOMIC ZONES: 'Aiyratom' Free Zone 4 kоrxона/182 ish + 'Nurafshon va Bunyodkor' KSZ 9/122 = 13 kоrxона/304 ish. ASOSIY DRAYVERLAR: Termiz Agro-Logistika hub (Afg'oniston eksport), Sukoy port, Aiyratom Free Zone biznesи, qurilish materiallari (oxak 7.3 mln m³), quyosh energiya, Termiz kurort shahri turizm, sanitar/kanalizatsiya, online biznes Afg'oniston bozoriga.",
+
+  "ai_prompt_context_ru": "Термезский район (Сурхандарьинская область) — 89.7 тыс. жителей, 30 махаллей, 27,044 семьи, до Термиз шахар 12 км, ЕДИНСТВЕННЫЙ РАЙОН НА АФГАНСКОЙ ГРАНИЦЕ, 'Айритом' таможенный пост находится в этом районе. СИЛЬНЫЕ СТОРОНЫ: (1) 🥇 ПРОМЫШЛЕННОСТЬ ВЫРОСЛА В 6.1x за 5 лет (280→1,715 млрд сум) — САМЫЙ БЫСТРЫЙ из 9 районов; (2) 🏆 ЭКСПОРТ +489% за 5 лет ($21→$121 млн); чистый положительный баланс +$63.6 млн; (3) 🏆 АФГАНСКАЯ ГРАНИЦА — единственные сухопутные ворота (пост Айритом, Термезский международный торговый центр); (4) 🥇 ЖЕЛЕЗНАЯ ДОРОГА 1.2 км — ближайшая из 9 районов; (5) 🏆 0 тяжёлых махаллей — лучший показатель из 9 районов; (6) 🥇 СТАВКА КРЕДИТА 1% (HAMROH и Каждая семья — в отличие от 18% в других районах — стратегическая приграничная льгота!); (7) Дороги 87% асфальт; (8) Дошкольный охват 91.1%; (9) Зарплата выросла в 2.2x за 5 лет; (10) Бедность снизилась на 51.8%; (11) 70+ международных партнёров (Германия, Корея, Китай, Индия, Россия); (12) 310+ солнечных дней. ПРОБЛЕМЫ и ВОЗМОЖНОСТИ: (1) 🚨 ПЕРЕРАБОТКА С/Х 0% (мясо и овощи) — с/х 43.2%, но готовой продукции нет; САМАЯ БОЛЬШАЯ ВОЗМОЖНОСТЬ; (2) 🚨 КАНАЛИЗАЦИЯ всего 1.5% — санитарный риск; (3) 🚨 ОТКЛЮЧЕНИЯ ЭЛЕКТРИЧЕСТВА 4 раза/мес — худший показатель; 31.7% трансформаторов изношены; (4) 🚨 НЕФОРМАЛЬНАЯ ЭКОНОМИКА 27.3% — потеря 15 млрд сум налогов в год; (5) 🚨 СЕМЕЙНЫЕ КРЕДИТЫ всего 0.6% портфеля (7.9 млрд / 1,366 млрд общий); (6) 🚨 NPL РАСТЁТ 4 → 6.7%; (7) 🚨 УНИВЕРСИТЕТ 2.1x перегрузка (10,840/5,080); (8) Техникум 1 шт 100% занят; (9) Промзона 30.3% свободна; (10) Орошаемые земли всего 10.8%; (11) Проект 'Термез курортный город' 50 млрд сум 2026-2028; (12) Безработица женщин 839 чел. БАНКОВСКИЕ ПРОДУКТЫ: HAMROH и 'Каждая семья — предприниматель' СТАВКА 1% (самая низкая!), 100-300 млн сум; 300 микропроектов в 2025 (700 рабочих мест); 'Фабрика проектов' 17 приоритетных проектов 1,703 млрд сум (1,709 рабочих мест). СВОБОДНЫЕ ЭКОНОМИЧЕСКИЕ ЗОНЫ: 'Айритом' Free Zone 4 предприятия/182 рабочих места + 'Нурафшон и Бунёдкор' КСЗ 9/122 = 13 предприятий/304 рабочих места. КЛЮЧЕВЫЕ ДРАЙВЕРЫ: Термезский агрологистический хаб (экспорт в Афганистан), Сухой порт, бизнес в Айритом FEZ, стройматериалы (известняк 7.3 млн м³), солнечная энергия, туризм 'Термез курортный город', санитария/канализация, онлайн-бизнес для афганского рынка."
+}
