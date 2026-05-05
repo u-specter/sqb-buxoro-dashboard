@@ -358,7 +358,7 @@
       const togglePwIcon = document.getElementById('togglePwIcon');
 
       const params = new URLSearchParams(location.search);
-      const next = params.get('next') || '/index.html';
+      const next = params.get('next') || '/index.php';
 
       // Cyrillic Uzbek error messages
       const ERRORS = {
@@ -400,7 +400,7 @@
           const data = await res.json().catch(() => ({}));
           if (res.ok && data.ok) {
             // Only allow same-origin paths in `next` to prevent open-redirect.
-            const safe = (next.startsWith('/') && !next.startsWith('//')) ? next : '/index.html';
+            const safe = (next.startsWith('/') && !next.startsWith('//')) ? next : '/index.php';
             location.href = safe;
             return;
           }

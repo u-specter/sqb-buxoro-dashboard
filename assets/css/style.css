@@ -114,7 +114,23 @@ body{
   border-right:1px solid var(--line);
   padding:22px 14px;position:sticky;top:86px;height:calc(100vh - 86px);
   overflow-y:auto;
+  display:flex;flex-direction:column;
 }
+.side-user-block{
+  border-top:1px solid var(--line);padding:14px 8px 6px;margin-top:8px;
+}
+.side-user-info{
+  display:flex;align-items:center;gap:8px;padding:6px 12px;
+  font-size:13px;font-weight:600;color:var(--navy);
+}
+.side-user-info i{font-size:18px;color:var(--accent)}
+.side-user-role{
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  background:var(--accent-soft,#e0f2fe);color:var(--accent,#0590c9);
+  padding:2px 8px;border-radius:99px;margin-left:auto;
+}
+.side-logout{color:var(--muted) !important}
+.side-logout:hover{color:#dc2626 !important;background:rgba(220,38,38,.06) !important}
 .side-title{
   font-size:11px;letter-spacing:.18em;font-weight:800;color:var(--muted);
   padding:0 12px 10px;text-transform:uppercase;
