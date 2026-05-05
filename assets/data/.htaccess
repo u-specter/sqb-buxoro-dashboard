@@ -1,0 +1,13 @@
+# Route every direct .json request through the auth gate.
+# The serve-static.php script verifies the session before sending the file.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^([A-Za-z0-9_\-]+\.json)$ /auth/serve-static.php?path=assets/data/$1 [L,QSA]
+</IfModule>
+
+# If mod_rewrite is unavailable, deny direct access entirely (fail closed).
+<IfModule !mod_rewrite.c>
+    Require all denied
+</IfModule>

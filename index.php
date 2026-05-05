@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/auth/gate.php'; ?>
 <!doctype html>
 <html lang="uz-Cyrl">
 
@@ -67,12 +68,16 @@
       <a class="side-item" href="#slide-5" data-slide="5"><i class="bi bi-stars"></i><span data-slide-title="5">5. Имкониятлар</span></a>
       <a class="side-item" href="#slide-6" data-slide="6"><i class="bi bi-flag-fill"></i><span data-slide-title="6">6. Хулоса ва режа</span></a>
 
-      <a class="side-item side-advisor" href="advisor.html" target="_blank" rel="noopener">
+      <a class="side-item side-advisor" href="advisor.php" target="_blank" rel="noopener">
         <i class="bi bi-robot"></i><span data-i18n="advisor">SQB AI Advisor</span>
         <i class="bi bi-box-arrow-up-right ms-auto small"></i>
       </a>
       <a class="side-item side-advisor" href="https://fincontrol.uz" target="_blank" rel="noopener">
         <i class="bi bi-shield-check"></i><span>Fincontrol.uz</span>
+        <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+      </a>
+      <a class="side-item side-advisor" href="/auth/osnova-sso.php" target="_blank" rel="noopener">
+        <i class="bi bi-mortarboard-fill"></i><span>SQB Osnova Edu</span>
         <i class="bi bi-box-arrow-up-right ms-auto small"></i>
       </a>
 

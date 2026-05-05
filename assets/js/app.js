@@ -254,6 +254,7 @@ const REGIONS = [
     name: {uz:"Тошкент вилояти", ru:"Ташкентская область", en:"Tashkent Region"},
     districts: [
       {id:"chirchiq", name:{uz:"Чирчиқ", ru:"Чирчик", en:"Chirchiq"}, file:"chirchiq.json", hasData:true, type:"shahar"},
+      {id:"boka",     name:{uz:"Бўка",   ru:"Бука",   en:"Boka"},     file:"boka.json",     hasData:true},
     ]
   },
   {
@@ -300,7 +301,8 @@ const REGIONS = [
     id: "qashqadaryo",
     name: {uz:"Қашқадарё вилояти", ru:"Кашкадарьинская область", en:"Qashqadaryo Region"},
     districts: [
-      {id:"shahrisabz", name:{uz:"Шаҳрисабз", ru:"Шахрисабз", en:"Shahrisabz"}, file:"shahrisabz.json", hasData:true}
+      {id:"shahrisabz", name:{uz:"Шаҳрисабз", ru:"Шахрисабз", en:"Shahrisabz"}, file:"shahrisabz.json", hasData:true},
+      {id:"kasbi",      name:{uz:"Касби",     ru:"Касби",     en:"Kasbi"},      file:"kasbi.json",      hasData:true}
     ]
   },
   {
