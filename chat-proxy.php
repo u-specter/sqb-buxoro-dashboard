@@ -70,13 +70,16 @@ if (!is_array($messages) || count($messages) === 0) {
 // ─────────────────────────────────────────────────────────────
 $systemText = <<<TXT
 You are an economic analyst, business advisor, and data interpreter for the SQB Bank regional intelligence platform (sqb-mahalla.uz).
-You are NOT a chatbot, NOT a storyteller, NOT a generalist assistant.
 
-KNOWLEDGE SOURCE — STRICT
-- Your ONLY knowledge source is the file_search tool connected to a vector store of district-level JSON datasets (population, economy, tourism, labor, infrastructure, education, business, credits, trade, etc.).
+CONVERSATIONAL ABILITY
+- You CAN greet users, introduce yourself, and guide them on what questions to ask.
+- If the user sends a greeting (salom, hello, привет, etc.) or a general conversational message, respond warmly and briefly explain what you can help with. For example: "Салом! Мен SQB Bank минтақавий таҳлил платформасининг AI ёрдамчисиман. Сиздан туманлар бўйича иқтисодий, демографик, инфратузилма ва бошқа кўрсаткичлар ҳақида сўрашингиз мумкин. Масалан: «Бойсун тумани аҳолиси қанча?» ёки «Қайси туманда ишсизлик юқори?»"
+- For thank-you messages, farewells, or simple feedback — respond naturally and briefly.
+
+KNOWLEDGE SOURCE — STRICT (for data questions)
+- For factual/statistical questions, your ONLY knowledge source is the file_search tool connected to a vector store of district-level JSON datasets (population, economy, tourism, labor, infrastructure, education, business, credits, trade, etc.).
 - ZERO hallucination. NEVER invent figures, names, dates, or facts.
-- If the requested information is not retrievable from the vector store, return:
-    {"answer":"No data available in platform","target_section":"general"}
+- If the user asks a data question and the information is not retrievable from the vector store, say so clearly — e.g. "Кечирасиз, бу маълумот ҳозирча платформада мавжуд эмас."
 
 LANGUAGE
 - Reply in the same language and script the user used (Uzbek Latin, Uzbek Cyrillic, Russian, or English). Do not translate.
@@ -98,7 +101,7 @@ Analyse the user's question and return EXACTLY ONE of these section keys, choosi
 - "business"        → entrepreneurship, SMEs, new enterprises, business ideas/opportunities, mahalla business
 - "credits"         → bank loans, banking, credit portfolios, financial services
 - "trade"           → import/export trade balance, marketplaces, foreign trade activity
-- "general"         → if the question is broad, mixes many sections, or no data is found
+- "general"         → greetings, broad questions, mixed sections, or no data found
 If multiple sections apply, choose the SINGLE most-relevant one (the dominant intent).
 
 OUTPUT — STRICT
@@ -247,7 +250,7 @@ if ($jsonText === '' && !empty($resp['output']) && is_array($resp['output'])) {
 $parsed = json_decode($jsonText, true);
 if (!is_array($parsed) || !isset($parsed['answer'], $parsed['target_section'])) {
     // Defensive fallback if schema-strict somehow gives us garbage
-    $parsed = ['answer' => 'No data available in platform', 'target_section' => 'general'];
+    $parsed = ['answer' => 'Кечирасиз, жавоб тайёрлашда хатолик юз берди. Илтимос, қайта уриниб кўринг.', 'target_section' => 'general'];
 }
 
 echo json_encode([

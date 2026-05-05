@@ -333,7 +333,7 @@
       } catch (e) {
         answer = lastAnswer;
       }
-      answer = scrubText(answer).trim() || 'No data available in platform';
+      answer = scrubText(answer).trim() || 'Кечирасиз, жавоб олишда хатолик юз берди. Қайта уриниб кўринг.';
 
       bubble.classList.remove('streaming');
       bubble.innerHTML = mdToHtml(answer);
