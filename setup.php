@@ -27,6 +27,7 @@ if (!$already && $_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
             $error = $msgs[$r['error']] ?? ('Хатолик: ' . $r['error']);
         } else {
+            sqb_audit_log('SETUP_INITIAL_ADMIN', ['user' => $r['username']]);
             $success = true;
         }
     }

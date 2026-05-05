@@ -59,6 +59,11 @@ if ($method === 'POST') {
             'message' => $messages[$result['error']] ?? 'Could not create user',
         ], 400);
     }
+    sqb_audit_log('USER_CREATED', [
+        'user' => $result['username'],
+        'role' => $result['role'],
+        'by'   => $is_admin ? $current['username'] : 'api_key',
+    ]);
     sqb_json_response(['ok' => true, 'user' => [
         'username' => $result['username'],
         'role'     => $result['role'],
@@ -89,6 +94,10 @@ if ($method === 'DELETE') {
     if (!sqb_users_save($data)) {
         sqb_json_response(['ok' => false, 'error' => 'storage_failure'], 500);
     }
+    sqb_audit_log('USER_DELETED', [
+        'user' => $username,
+        'by'   => $is_admin ? $current['username'] : 'api_key',
+    ]);
     sqb_json_response(['ok' => true, 'deleted' => $username]);
 }
 

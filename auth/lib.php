@@ -10,6 +10,7 @@ define('SQB_AUTH_LIB', 1);
 
 const SQB_USERS_FILE     = __DIR__ . '/users.json';
 const SQB_ATTEMPTS_FILE  = __DIR__ . '/login_attempts.json';
+const SQB_AUDIT_LOG      = __DIR__ . '/audit.log';
 const SQB_LOGIN_PAGE     = '/login.html';
 const SQB_HOME_PAGE      = '/index.php';
 const SQB_MAX_ATTEMPTS   = 5;
@@ -264,4 +265,62 @@ function sqb_read_json_body(): array {
     if (!$raw) return [];
     $data = json_decode($raw, true);
     return is_array($data) ? $data : [];
+}
+
+// ─────────────────────────────────────────────────────────────
+// Audit log — appends one line per security event to auth/audit.log
+// Format: [YYYY-MM-DD HH:MM:SS] EVENT_NAME       key=value key=value ua="…"
+// File is denied via auth/.htaccess (matches *.log).
+// ─────────────────────────────────────────────────────────────
+function sqb_audit_log(string $event, array $fields = []): void {
+    $parts   = [];
+    $parts[] = '[' . date('Y-m-d H:i:s') . ']';
+    $parts[] = str_pad($event, 18);
+
+    $fields = array_merge(['ip' => sqb_client_ip()], $fields);
+
+    foreach ($fields as $k => $v) {
+        if ($v === null || $v === '') continue;
+        $v = (string)$v;
+        $v = str_replace(["\n", "\r", "\t"], ' ', $v);
+        if (strlen($v) > 200) $v = substr($v, 0, 197) . '...';
+        if (preg_match('/[\s"]/', $v)) {
+            $v = '"' . str_replace('"', '\\"', $v) . '"';
+        }
+        $parts[] = $k . '=' . $v;
+    }
+
+    $ua = (string)($_SERVER['HTTP_USER_AGENT'] ?? '');
+    $ua = substr(str_replace(["\n", "\r", "\t"], ' ', $ua), 0, 200);
+    $parts[] = 'ua="' . str_replace('"', '\\"', $ua) . '"';
+
+    $line = implode(' ', $parts) . "\n";
+    @file_put_contents(SQB_AUDIT_LOG, $line, FILE_APPEND | LOCK_EX);
+    @chmod(SQB_AUDIT_LOG, 0600);
+}
+
+// Read the last N lines of the audit log (newest first). Returns array of strings.
+function sqb_audit_tail(int $n = 100): array {
+    if (!file_exists(SQB_AUDIT_LOG)) return [];
+    $size = filesize(SQB_AUDIT_LOG);
+    if ($size === 0) return [];
+    $fp = @fopen(SQB_AUDIT_LOG, 'r');
+    if (!$fp) return [];
+
+    $chunk    = 8192;
+    $pos      = $size;
+    $buffer   = '';
+    $newlines = 0;
+    while ($pos > 0 && $newlines <= $n) {
+        $read = min($chunk, $pos);
+        $pos -= $read;
+        fseek($fp, $pos);
+        $buffer = fread($fp, $read) . $buffer;
+        $newlines = substr_count($buffer, "\n");
+    }
+    fclose($fp);
+
+    $lines = preg_split('/\r?\n/', rtrim($buffer, "\r\n"));
+    if (count($lines) > $n) $lines = array_slice($lines, -$n);
+    return array_reverse($lines);
 }
