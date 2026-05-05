@@ -2,7 +2,10 @@
 // ─────────────────────────────────────────────────────────────
 // OpenAI proxy — calls api.openai.com using API key from .env
 // Place this file at site root: https://sqb-mahalla.uz/proxy.php
+// Requires an authenticated session (see /auth/lib.php).
 // ─────────────────────────────────────────────────────────────
+
+require_once __DIR__ . '/auth/lib.php';
 
 // CORS — allow only your own domain
 header('Access-Control-Allow-Origin: https://sqb-mahalla.uz');
@@ -19,6 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['error' => 'Method not allowed']);
+    exit;
+}
+
+// Require authenticated session — prevents anonymous abuse of the OpenAI key
+sqb_start_session();
+if (!sqb_current_user()) {
+    http_response_code(401);
+    echo json_encode(['error' => 'unauthenticated']);
     exit;
 }
 
