@@ -232,6 +232,17 @@ function sqb_require_admin(): void {
     }
 }
 
+// Page-level admin guard — redirects non-admins to home page.
+// Use on UI pages (vs sqb_require_admin which returns JSON 403 for APIs).
+function sqb_require_admin_page(): void {
+    sqb_require_auth();
+    $u = sqb_current_user();
+    if (($u['role'] ?? '') !== 'admin') {
+        header('Location: ' . SQB_HOME_PAGE);
+        exit;
+    }
+}
+
 // API key auth — for headless calls to user-management API
 function sqb_api_key_valid(): bool {
     $expected = sqb_env('AUTH_API_KEY');
