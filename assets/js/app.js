@@ -300,7 +300,8 @@ const REGIONS = [
     id: "qashqadaryo",
     name: {uz:"Қашқадарё вилояти", ru:"Кашкадарьинская область", en:"Qashqadaryo Region"},
     districts: [
-      {id:"shahrisabz", name:{uz:"Шаҳрисабз", ru:"Шахрисабз", en:"Shahrisabz"}, file:"shahrisabz.json", hasData:true}
+      {id:"shahrisabz", name:{uz:"Шаҳрисабз", ru:"Шахрисабз", en:"Shahrisabz"}, file:"shahrisabz.json", hasData:true},
+      {id:"kasbi",      name:{uz:"Касби",     ru:"Касби",     en:"Kasbi"},      file:"kasbi.json",      hasData:true}
     ]
   },
   {
