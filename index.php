@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="uz-Cyrl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SQB Bank • Таҳлилий дашборд</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Inter font: only weights actually used (300/400/500/600/700) — saves ~60KB -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/chatbot.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/SQB Logo Main short 1.png">
+</head>
+
+<body>
+
+  <!-- TOP NAVBAR -->
+  <nav class="navbar navbar-expand-lg sqb-navbar sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-3" href="#landing">
+        <img src="img/SQB Logo Main short 1.png" alt="SQB Bank" class="brand-logo">
+      </a>
+
+      <button class="hamburger d-lg-none" id="sidebarToggle" aria-label="Menu"><i class="bi bi-list"></i></button>
+
+      <!-- Region → District cascading selector -->
+      <div class="region-selector ms-lg-4" id="regionSelector">
+        <div class="rs-current" id="rsCurrent" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span class="rs-region-name" id="rsRegionName">Бухоро вилояти</span>
+          <i class="bi bi-chevron-right rs-sep"></i>
+          <span class="rs-district-name" id="rsDistrictName">Ғиждувон</span>
+          <i class="bi bi-chevron-down rs-arrow"></i>
+        </div>
+        <div class="rs-dropdown" id="rsDropdown">
+          <!-- Level 1: Regions -->
+          <div class="rs-panel rs-regions" id="rsRegions"></div>
+          <!-- Level 2: Districts (shown after region click) -->
+          <div class="rs-panel rs-districts" id="rsDistricts" style="display:none"></div>
+        </div>
+      </div>
+
+      <div class="ms-auto d-flex align-items-center gap-3 flex-grow-1 flex-lg-grow-0 mt-3 mt-lg-0"
+        style="max-width:520px;">
+        <div class="year-pill"><i class="bi bi-calendar3"></i><span data-i18n="year">2026 йил</span></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="side-title" data-i18n="sidebar_title">Слайдлар</div>
+      <a class="side-item active" href="#home" data-slide="0">
+        <i class="bi bi-house-door-fill"></i><span data-i18n="home">Бош саҳифа</span>
+      </a>
+      <a class="side-item" href="#slide-1" data-slide="1"><i class="bi bi-graph-up-arrow"></i><span data-slide-title="1">1. Иқтисодий фаоллик</span></a>
+      <a class="side-item" href="#slide-2" data-slide="2"><i class="bi bi-buildings"></i><span data-slide-title="2">2. Инфратузилма</span></a>
+      <a class="side-item" href="#slide-3" data-slide="3"><i class="bi bi-people-fill"></i><span data-slide-title="3">3. Аҳоли ва бандлик</span></a>
+      <a class="side-item" href="#slide-4" data-slide="4"><i class="bi bi-bank2"></i><span data-slide-title="4">4. Маҳалла тадбиркорлиги ва банк</span></a>
+      <a class="side-item" href="#slide-5" data-slide="5"><i class="bi bi-stars"></i><span data-slide-title="5">5. Имкониятлар</span></a>
+      <a class="side-item" href="#slide-6" data-slide="6"><i class="bi bi-flag-fill"></i><span data-slide-title="6">6. Хулоса ва режа</span></a>
+
+      <a class="side-item side-advisor" href="advisor.php" target="_blank" rel="noopener">
+        <i class="bi bi-robot"></i><span data-i18n="advisor">SQB AI Advisor</span>
+        <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+      </a>
+      <a class="side-item side-advisor" href="https://fincontrol.uz" target="_blank" rel="noopener">
+        <i class="bi bi-shield-check"></i><span>Fincontrol.uz</span>
+        <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+      </a>
+      <a class="side-item side-advisor" href="/auth/osnova-sso.php" target="_blank" rel="noopener">
+        <i class="bi bi-mortarboard-fill"></i><span>SQB Osnova Edu</span>
+        <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+      </a>
+
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- LANDING -->
+      <section id="landing" class="page active">
+        <div id="map-bg-container" class="landing-bg-3d"></div>
+        <div class="landing-content">
+          <div class="landing-hero">
+            <div class="landing-badge"><i class="bi bi-shield-check"></i> SQB Bank — Расмий платформа</div>
+            <h1 class="landing-title">Минтақавий <span>таҳлил</span> тизими</h1>
+            <p class="landing-sub">Ўзсаноатқурилишбанкка бириктирилган вилоятлар ва туманлар бўйича иқтисодий кўрсаткичлар, сунъий интеллект таҳлили ва стратегик тавсиялар</p>
+            <div class="landing-stats" id="landingStats"></div>
+          </div>
+          <div class="landing-section-title" id="landingSectionTitle">ВИЛОЯТНИ ТАНЛАНГ</div>
+          <div class="landing-regions" id="landingRegions"></div>
+          <div class="rg-detail" id="rgDetail"></div>
+          <div class="landing-footer">
+            <i class="bi bi-bank2"></i> SQB Bank — Ўзсаноатқурилишбанк • Минтақавий таҳлил тизими • 2026
+          </div>
+        </div>
+      </section>
+
+      <!-- HOME -->
+      <section id="home" class="page">
+        <div class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-content">
+            <div class="eyebrow"><i class="bi bi-geo-alt-fill"></i> <span data-i18n="region">Бухоро вилояти</span> • <span id="heroDistrict">Ғиждувон тумани</span></div>
+            <h1 class="hero-title" data-i18n="hero_title">Туманнинг умумий ҳолати</h1>
+
+            <div class="region-kpis" id="regionKpis"></div>
+
+            <div class="ai-panel" id="aiPanel">
+              <div class="ai-panel-head">
+                <div class="ai-ic"><i class="bi bi-robot"></i></div>
+                <div>
+                  <div class="ai-title" data-i18n="ai_title">Сунъий интеллект таҳлили</div>
+                  <div class="ai-sub" data-i18n="ai_sub">Кўрсаткичлар динамикаси асосида автоматик хулосалар</div>
+                </div>
+              </div>
+              <ul class="ai-bullets" id="aiBullets"></ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- DYNAMIC SLIDE PAGES -->
+      <div id="slidePages"></div>
+
+    </main>
+  </div>
+
+  <footer class="sqb-footer">
+    <div class="container-fluid px-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div><i class="bi bi-bank2"></i> SQB Bank • <span data-i18n="region">Бухоро вилояти</span> • 2026</div>
+      <div class="opacity-75"><span data-i18n="footer_sources">Расмий манбалар:</span> stat.uz • Марказий банк • Солиқ қўмитаси • Кадастр • Хокимият</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/map-bg.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <!-- parsers.js MUST load before app.js — it exposes window.SQB_Parsers used by parseValue() -->
+  <script src="assets/js/parsers.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+
+  <!-- Three.js + 3D map background — loaded only when landing is visible (saves ~600KB FCP) -->
+  <script>
+    (function loadMapBgWhenIdle() {
+      function load() {
+        var s1 = document.createElement('script');
+        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = 'assets/js/map-bg.js';
+          document.body.appendChild(s2);
+        };
+        document.body.appendChild(s1);
+      }
+      // Fire only when landing section is visible AND browser is idle
+      function maybeLoad() {
+        var landing = document.getElementById('landing');
+        if (!landing || !landing.classList.contains('active')) return;
+        if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 2000 });
+        else setTimeout(load, 800);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', maybeLoad);
+      } else {
+        maybeLoad();
+      }
+    })();
+  </script>
+</body>
+
+</html>

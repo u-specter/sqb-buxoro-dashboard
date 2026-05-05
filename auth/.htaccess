@@ -1,0 +1,12 @@
+# Block direct access to sensitive files in /auth/
+<FilesMatch "\.(json|log|tmp)$">
+    Require all denied
+</FilesMatch>
+
+<Files "lib.php">
+    Require all denied
+</Files>
+
+<Files "gate.php">
+    Require all denied
+</Files>

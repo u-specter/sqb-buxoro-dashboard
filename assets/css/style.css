@@ -1716,6 +1716,59 @@ body{
 }
 canvas{max-width:100% !important}
 
+/* ============================================================
+   Xonobod: unified card sizing + standard text template
+   ============================================================ */
+body.district-xonobod .cards-grid .ind-card{
+  min-height: 660px;
+}
+body.district-xonobod .cards-grid .ic-value{
+  min-height: 250px;
+}
+body.district-xonobod .cards-grid .ic-value.rich{
+  display:flex;
+  flex-direction:column;
+}
+body.district-xonobod .cards-grid .value-chart-wrap{
+  min-height: 150px;
+}
+body.district-xonobod .cards-grid .value-chart-wrap.trend{
+  min-height: 180px;
+}
+body.district-xonobod .cards-grid .unified-text-card{
+  background:linear-gradient(180deg,#FBF9F4 0%,#F5F2EC 100%);
+  border-left:4px solid var(--accent-2);
+}
+body.district-xonobod .cards-grid .unified-text-list{
+  list-style:none;
+  padding:0;
+  margin:8px 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+body.district-xonobod .cards-grid .unified-text-list li{
+  position:relative;
+  padding:8px 10px 8px 20px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(0,126,136,.14);
+  border-radius:10px;
+  font-size:13px;
+  line-height:1.4;
+  color:var(--navy);
+  font-weight:600;
+}
+body.district-xonobod .cards-grid .unified-text-list li::before{
+  content:"";
+  position:absolute;
+  left:8px;
+  top:14px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--accent-2);
+}
+
 /* Fix: ensure hero and main content visible on mobile */
 @media(max-width:768px){
   .hero{overflow:visible}

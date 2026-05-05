@@ -1,3 +1,7 @@
+# ─────────────────────────────────────────────────────────────
+# SQB Mahalla — Apache config
+# ─────────────────────────────────────────────────────────────
+
 # Deny access to .env and other dotfiles via web
 <FilesMatch "^\.">
     Require all denied
@@ -10,3 +14,22 @@
 <Files ".env.example">
     Require all denied
 </Files>
+
+# Default landing — protected pages are now .php
+DirectoryIndex index.php index.html
+
+# Backward-compat: old /foo.html bookmarks transparently serve foo.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^index\.html$            /index.php            [L]
+    RewriteRule ^advisor\.html$          /advisor.php          [L]
+    RewriteRule ^sqb-mahalla-map\.html$  /sqb-mahalla-map.php  [L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options          "SAMEORIGIN"
+    Header always set X-Content-Type-Options   "nosniff"
+    Header always set Referrer-Policy          "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy       "geolocation=(), microphone=(), camera=()"
+</IfModule>
