@@ -101,27 +101,49 @@ function sqb_user_find(string $username): ?array {
     return null;
 }
 
-function sqb_user_create(string $username, string $password, string $role = 'user'): array {
+function sqb_user_create(string $username, string $password, string $role = 'user', array $extra = [], int $bcrypt_cost = 12): array {
     $username = strtolower(trim($username));
-    if (!preg_match('/^[a-z0-9._-]{3,32}$/', $username)) {
+
+    // Allow email-format usernames in addition to short alphanumeric ones
+    $is_email     = (bool)filter_var($username, FILTER_VALIDATE_EMAIL);
+    $is_simple    = (bool)preg_match('/^[a-z0-9._-]{3,32}$/', $username);
+    if (!$is_email && !$is_simple) {
         return ['ok' => false, 'error' => 'invalid_username'];
     }
-    if (strlen($password) < 8) {
+
+    // Allow short passwords ONLY when password equals an email-format username
+    // (this is the case for OSNOVA-imported users where password = email).
+    $min_pw_len = ($is_email && $password === $username) ? 6 : 8;
+    if (strlen($password) < $min_pw_len) {
         return ['ok' => false, 'error' => 'weak_password'];
     }
+
     if (!in_array($role, ['admin', 'user'], true)) {
         return ['ok' => false, 'error' => 'invalid_role'];
     }
     if (sqb_user_find($username)) {
         return ['ok' => false, 'error' => 'user_exists'];
     }
+
     $data = sqb_users_load();
-    $data['users'][] = [
+    $cost = max(8, min(14, $bcrypt_cost));
+    $record = [
         'username'   => $username,
-        'hash'       => password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]),
+        'hash'       => password_hash($password, PASSWORD_BCRYPT, ['cost' => $cost]),
         'role'       => $role,
         'created_at' => date('c'),
     ];
+
+    // Allowed metadata fields. Whitelist prevents arbitrary keys.
+    $allowed = ['osnova_synced', 'fio', 'region', 'department',
+                'position', 'bank', 'local_code'];
+    foreach ($allowed as $k) {
+        if (isset($extra[$k]) && $extra[$k] !== '') {
+            $record[$k] = is_string($extra[$k]) ? $extra[$k] : (bool)$extra[$k];
+        }
+    }
+
+    $data['users'][] = $record;
     if (!sqb_users_save($data)) {
         return ['ok' => false, 'error' => 'storage_failure'];
     }
