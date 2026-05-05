@@ -76,6 +76,10 @@
         <i class="bi bi-shield-check"></i><span>Fincontrol.uz</span>
         <i class="bi bi-box-arrow-up-right ms-auto small"></i>
       </a>
+      <a class="side-item side-advisor" href="https://sqb.osnovaedu.uz/" target="_blank" rel="noopener">
+        <i class="bi bi-mortarboard-fill"></i><span>SQB Osnova Edu</span>
+        <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+      </a>
 
     </aside>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
