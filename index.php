@@ -89,9 +89,6 @@
           <span id="sideUsername"><?= htmlspecialchars($__sqb_user['username'] ?? '') ?></span>
           <span class="side-user-role" id="sideUserRole"><?= htmlspecialchars($__sqb_user['role'] ?? '') ?></span>
         </div>
-        <a class="side-item side-logout" href="/auth/logout.php">
-          <i class="bi bi-box-arrow-left"></i><span data-i18n="logout">Чиқиш</span>
-        </a>
       </div>
 
     </aside>

@@ -225,9 +225,6 @@ header('Cache-Control: no-store, no-cache, must-revalidate, private');
       <a class="nav-pill" href="/index.php">
         <i class="bi bi-arrow-left"></i> Дашбордга қайтиш
       </a>
-      <a class="nav-pill danger" href="/auth/logout.php">
-        <i class="bi bi-box-arrow-right"></i> Чиқиш
-      </a>
     </div>
   </header>
 
