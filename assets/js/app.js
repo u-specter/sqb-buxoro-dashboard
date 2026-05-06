@@ -254,6 +254,7 @@ const REGIONS = [
     name: {uz:"Тошкент вилояти", ru:"Ташкентская область", en:"Tashkent Region"},
     districts: [
       {id:"chirchiq", name:{uz:"Чирчиқ", ru:"Чирчик", en:"Chirchiq"}, file:"chirchiq.json", hasData:true, type:"shahar"},
+      {id:"angren",   name:{uz:"Ангрен", ru:"Ангрен", en:"Angren"},   file:"angren.json",   hasData:true, type:"shahar"},
       {id:"boka",     name:{uz:"Бўка",   ru:"Бука",   en:"Boka"},     file:"boka.json",     hasData:true},
     ]
   },
