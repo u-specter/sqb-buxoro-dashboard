@@ -231,7 +231,7 @@ const REGIONS = [
       {id:"karakalpakstan_resp", name:{uz:"Қорақалпоғистон Республикаси", ru:"Республика Каракалпакстан", en:"Republic of Karakalpakstan"}, file:"karakalpakstan.json", hasData:true, type:"respublika"},
       {id:"qongirot",   name:{uz:"Қўнғирот",   ru:"Кунград",     en:"Qongirot"},   file:"qongirot.json",   hasData:true},
       {id:"qonlikol",   name:{uz:"Қонлиқўл",   ru:"Канлыкуль",   en:"Qonlikol"},   file:"qonlikol.json",   hasData:true},
-      {id:"toxiatosh",  name:{uz:"Тахиатош",   ru:"Тахиаташ",    en:"Taxiatosh"},  file:"toxiatosh.json",  hasData:false},
+      {id:"taxiatosh",  name:{uz:"Тахиатош",   ru:"Тахиаташ",    en:"Taxiatosh"},  file:"taxiatosh.json",  hasData:true},
     ]
   },
   {
@@ -1302,7 +1302,7 @@ var HERO_BG_MAP = {
   boysun: "img/boysun.jpg",
   qongirot: "img/qongirot_opt.jpg",
   qonlikol: "img/qonlikol_opt.jpg",
-  toxiatosh: "img/taxiatash_opt.jpg",
+  taxiatosh: "img/taxiatash_opt.jpg",
   sariosiyo: "img/sariosiyo_opt.jpg",
   termiz: "img/termiz_opt.jpg",
   surkhandarya_vil: "img/surxondaryo_opt.jpg"
