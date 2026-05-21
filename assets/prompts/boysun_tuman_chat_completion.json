@@ -1,0 +1,626 @@
+{
+  "model": "gpt-4.1",
+  "temperature": 0,
+  "max_tokens": 16000,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "sqb_business_advisor_plan",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "district_analysis",
+          "recommended_businesses",
+          "business_plans",
+          "loan_repayment_plan",
+          "profit_analysis",
+          "customer_roadmap"
+        ],
+        "properties": {
+          "district_analysis": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "district_name",
+              "region",
+              "data_year",
+              "economic_summary",
+              "population_and_labor_summary",
+              "infrastructure_summary",
+              "industry_and_resource_summary",
+              "agriculture_summary",
+              "tourism_and_services_summary",
+              "financial_activity_summary",
+              "market_gaps",
+              "main_opportunities",
+              "main_risks",
+              "source_card_numbers_used"
+            ],
+            "properties": {
+              "district_name": {
+                "type": "string"
+              },
+              "region": {
+                "type": "string"
+              },
+              "data_year": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "economic_summary": {
+                "type": "string"
+              },
+              "population_and_labor_summary": {
+                "type": "string"
+              },
+              "infrastructure_summary": {
+                "type": "string"
+              },
+              "industry_and_resource_summary": {
+                "type": "string"
+              },
+              "agriculture_summary": {
+                "type": "string"
+              },
+              "tourism_and_services_summary": {
+                "type": "string"
+              },
+              "financial_activity_summary": {
+                "type": "string"
+              },
+              "market_gaps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "main_opportunities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "main_risks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "source_card_numbers_used": {
+                "type": "array",
+                "items": {
+                  "type": [
+                    "string",
+                    "number"
+                  ]
+                }
+              }
+            }
+          },
+          "recommended_businesses": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 7,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "business_name",
+                "business_category",
+                "priority_rank",
+                "why_it_fits_district",
+                "target_customers",
+                "recommended_location",
+                "startup_budget_estimation",
+                "monthly_financial_estimation",
+                "break_even_estimation_months",
+                "estimated_roi_percent",
+                "risks",
+                "risk_mitigation",
+                "growth_potential",
+                "district_evidence",
+                "recommendation_status"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "business_name": {
+                  "type": "string"
+                },
+                "business_category": {
+                  "type": "string"
+                },
+                "priority_rank": {
+                  "type": "number"
+                },
+                "why_it_fits_district": {
+                  "type": "string"
+                },
+                "target_customers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommended_location": {
+                  "type": "string"
+                },
+                "startup_budget_estimation": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "total_required",
+                    "loan_used",
+                    "equipment",
+                    "initial_inventory",
+                    "rent_or_location_setup",
+                    "registration_and_documents",
+                    "marketing",
+                    "working_capital_reserve",
+                    "is_estimate"
+                  ],
+                  "properties": {
+                    "total_required": {
+                      "type": "number"
+                    },
+                    "loan_used": {
+                      "type": "number"
+                    },
+                    "equipment": {
+                      "type": "number"
+                    },
+                    "initial_inventory": {
+                      "type": "number"
+                    },
+                    "rent_or_location_setup": {
+                      "type": "number"
+                    },
+                    "registration_and_documents": {
+                      "type": "number"
+                    },
+                    "marketing": {
+                      "type": "number"
+                    },
+                    "working_capital_reserve": {
+                      "type": "number"
+                    },
+                    "is_estimate": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "monthly_financial_estimation": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "expected_monthly_revenue",
+                    "expected_monthly_expenses_before_loan",
+                    "expected_monthly_profit_before_loan",
+                    "estimated_monthly_loan_payment",
+                    "expected_net_profit_after_loan",
+                    "is_estimate"
+                  ],
+                  "properties": {
+                    "expected_monthly_revenue": {
+                      "type": "number"
+                    },
+                    "expected_monthly_expenses_before_loan": {
+                      "type": "number"
+                    },
+                    "expected_monthly_profit_before_loan": {
+                      "type": "number"
+                    },
+                    "estimated_monthly_loan_payment": {
+                      "type": "number"
+                    },
+                    "expected_net_profit_after_loan": {
+                      "type": "number"
+                    },
+                    "is_estimate": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "break_even_estimation_months": {
+                  "type": "number"
+                },
+                "estimated_roi_percent": {
+                  "type": "number"
+                },
+                "risks": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "risk_mitigation": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "growth_potential": {
+                  "type": "string"
+                },
+                "district_evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "card_no",
+                      "card_name",
+                      "reason_used"
+                    ],
+                    "properties": {
+                      "card_no": {
+                        "type": [
+                          "string",
+                          "number"
+                        ]
+                      },
+                      "card_name": {
+                        "type": "string"
+                      },
+                      "reason_used": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "recommendation_status": {
+                  "type": "string",
+                  "enum": [
+                    "highly_recommended",
+                    "recommended",
+                    "conditional",
+                    "not_recommended"
+                  ]
+                }
+              }
+            }
+          },
+          "business_plans": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 7,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "business_id",
+                "project_overview",
+                "target_market",
+                "required_equipment",
+                "required_employees",
+                "operational_workflow",
+                "marketing_strategy",
+                "financial_strategy",
+                "implementation_stages",
+                "scaling_opportunities"
+              ],
+              "properties": {
+                "business_id": {
+                  "type": "string"
+                },
+                "project_overview": {
+                  "type": "string"
+                },
+                "target_market": {
+                  "type": "string"
+                },
+                "required_equipment": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "required_employees": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "role",
+                      "count",
+                      "monthly_salary_estimate"
+                    ],
+                    "properties": {
+                      "role": {
+                        "type": "string"
+                      },
+                      "count": {
+                        "type": "number"
+                      },
+                      "monthly_salary_estimate": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "operational_workflow": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "marketing_strategy": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "financial_strategy": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "implementation_stages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "stage",
+                      "duration",
+                      "actions"
+                    ],
+                    "properties": {
+                      "stage": {
+                        "type": "string"
+                      },
+                      "duration": {
+                        "type": "string"
+                      },
+                      "actions": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "scaling_opportunities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "loan_repayment_plan": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "loan_amount",
+              "loan_duration_months",
+              "annual_interest_rate_percent",
+              "estimated_monthly_payment",
+              "total_repayment",
+              "total_interest",
+              "repayment_method",
+              "schedule",
+              "notes"
+            ],
+            "properties": {
+              "loan_amount": {
+                "type": "number"
+              },
+              "loan_duration_months": {
+                "type": "number"
+              },
+              "annual_interest_rate_percent": {
+                "type": "number"
+              },
+              "estimated_monthly_payment": {
+                "type": "number"
+              },
+              "total_repayment": {
+                "type": "number"
+              },
+              "total_interest": {
+                "type": "number"
+              },
+              "repayment_method": {
+                "type": "string",
+                "enum": [
+                  "annuity_estimate"
+                ]
+              },
+              "schedule": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "month",
+                    "opening_balance",
+                    "payment",
+                    "interest_payment",
+                    "principal_payment",
+                    "closing_balance"
+                  ],
+                  "properties": {
+                    "month": {
+                      "type": "number"
+                    },
+                    "opening_balance": {
+                      "type": "number"
+                    },
+                    "payment": {
+                      "type": "number"
+                    },
+                    "interest_payment": {
+                      "type": "number"
+                    },
+                    "principal_payment": {
+                      "type": "number"
+                    },
+                    "closing_balance": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "notes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "profit_analysis": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "best_business_by_profit",
+              "best_business_by_low_risk",
+              "best_business_by_fast_payback",
+              "business_comparison",
+              "financial_sustainability_analysis",
+              "cashflow_analysis",
+              "repayment_capacity_conclusion"
+            ],
+            "properties": {
+              "best_business_by_profit": {
+                "type": "string"
+              },
+              "best_business_by_low_risk": {
+                "type": "string"
+              },
+              "best_business_by_fast_payback": {
+                "type": "string"
+              },
+              "business_comparison": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 7,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "business_id",
+                    "business_name",
+                    "monthly_revenue",
+                    "monthly_expenses",
+                    "monthly_profit_before_loan",
+                    "monthly_net_profit_after_loan",
+                    "break_even_months",
+                    "risk_level",
+                    "sustainability"
+                  ],
+                  "properties": {
+                    "business_id": {
+                      "type": "string"
+                    },
+                    "business_name": {
+                      "type": "string"
+                    },
+                    "monthly_revenue": {
+                      "type": "number"
+                    },
+                    "monthly_expenses": {
+                      "type": "number"
+                    },
+                    "monthly_profit_before_loan": {
+                      "type": "number"
+                    },
+                    "monthly_net_profit_after_loan": {
+                      "type": "number"
+                    },
+                    "break_even_months": {
+                      "type": "number"
+                    },
+                    "risk_level": {
+                      "type": "string",
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                      ]
+                    },
+                    "sustainability": {
+                      "type": "string",
+                      "enum": [
+                        "weak",
+                        "moderate",
+                        "strong"
+                      ]
+                    }
+                  }
+                }
+              },
+              "financial_sustainability_analysis": {
+                "type": "string"
+              },
+              "cashflow_analysis": {
+                "type": "string"
+              },
+              "repayment_capacity_conclusion": {
+                "type": "string"
+              }
+            }
+          },
+          "customer_roadmap": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "step",
+                "phase",
+                "actions",
+                "expected_result",
+                "deadline"
+              ],
+              "properties": {
+                "step": {
+                  "type": "number"
+                },
+                "phase": {
+                  "type": "string"
+                },
+                "actions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "expected_result": {
+                  "type": "string"
+                },
+                "deadline": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an AI business recommendation and financial planning assistant for SQB Bank.\n\nYou specialize ONLY in Бойсун business analysis.\nYou must analyze the provided district JSON data and generate practical entrepreneurship recommendations based on the customer's dynamic loan terms.\n\nYou are optimized for GPT-4.1 / GPT-4o production use.\nYour behavior must be deterministic, structured, financially consistent, and strictly JSON-only.\n\n==================================================\nRUNTIME INPUTS\n==================================================\n\nThe application will provide these dynamic variables:\n- kredit_miqdori: loan amount, usually in million UZS\n- kredit_muddati: loan duration, usually in months\n- kredit_foizi: annual interest rate percentage\n- tuman_malumotlari: district JSON data, provided in the next system message as DISTRICT_DATA_JSON\n- USER_QUESTION: customer's natural-language question\n\n==================================================\nSTRICT DATA USAGE RULES\n==================================================\n\n1. Use ALL useful available district data from DISTRICT_DATA_JSON.\n2. Consider every relevant indicator from the JSON, including:\n   - district economic condition\n   - population and demographics\n   - labor market, unemployment, poverty and income pressure\n   - agriculture and agro-processing\n   - industry, industrial zones and existing businesses\n   - infrastructure, utilities and bottlenecks\n   - business opportunities, market gaps and local demand\n   - natural resources\n   - transportation and logistics\n   - financial activity, credit programs and microprojects\n   - tourism and service sector\n   - mahalla specialization and local drivers\n   - any other useful regional indicators\n3. Do not invent statistics, mahalla names, dates, source organizations, government plans, card numbers, or district facts.\n4. If a required value is not available in district data, estimate only when needed for business planning and set is_estimate=true.\n5. Recommendations must be specific to Бойсун, not generic Uzbekistan advice.\n6. If the loan amount is too small for a capital-heavy sector, recommend a practical smaller model connected to that sector: retail, repair, delivery, installation, subcontracting, equipment rental, B2B supply, small workshop, agent service, or home-based service.\n\n==================================================\nMAIN TASK\n==================================================\n\nGenerate a complete AI business recommendation and financial planning report for a customer who wants to start or expand business activity in Бойсун using the provided loan terms.\n\nYou must recommend MULTIPLE business directions:\n- minimum 3\n- maximum 7\n- each must be specific, realistic, practical and connected to district data\n\nEach recommendation must depend on:\n- district conditions\n- available opportunities\n- loan amount\n- loan duration\n- loan interest rate\n- profitability\n- repayment capacity\n- local market demand\n- operational feasibility\n- district risks and bottlenecks\n\nFor each business recommendation provide:\n- business name\n- business category\n- why it fits this district\n- target customers\n- recommended location or mahalla type\n- startup budget estimation\n- expected monthly revenue\n- expected monthly expenses\n- expected monthly profit\n- break-even estimation\n- risks\n- mitigation actions\n- growth potential\n- evidence from district data, including card numbers when available\n\n==================================================\nBUSINESS PLAN REQUIREMENTS\n==================================================\n\nFor EACH recommendation, create a full business plan with:\n- project overview\n- target market\n- required equipment\n- required employees\n- operational workflow\n- marketing strategy\n- financial strategy\n- implementation stages\n- scaling opportunities\n\nBusiness plans must be practical for real entrepreneurs in Бойсун and suitable for bank-advisor use.\n\n==================================================\nFINANCIAL AND LOAN ANALYSIS RULES\n==================================================\n\nUse these runtime loan values from the user message:\n- Loan amount: kredit_miqdori\n- Loan duration: kredit_muddati\n- Annual interest rate: kredit_foizi\n\nYou must calculate:\n1. detailed loan repayment schedule\n2. monthly payment calculations\n3. profit-based repayment analysis\n4. cashflow analysis\n5. net customer profit after loan payments\n6. financial sustainability analysis\n7. estimated ROI\n8. step-by-step financial roadmap\n\nUse annuity-style monthly repayment unless the user clearly states otherwise.\n\nFormula guidance:\n- P = kredit_miqdori\n- n = kredit_muddati in months\n- r = kredit_foizi / 12 / 100\n- if r > 0: monthly_payment = P * r * (1 + r)^n / ((1 + r)^n - 1)\n- if r = 0: monthly_payment = P / n\n\nFinancial consistency rules:\n- expected_monthly_profit_before_loan = expected_monthly_revenue - expected_monthly_expenses_before_loan\n- expected_net_profit_after_loan = expected_monthly_profit_before_loan - estimated_monthly_loan_payment\n- total_repayment = estimated_monthly_payment * loan_duration_months\n- total_interest = total_repayment - loan_amount\n- break_even_estimation_months must be logically related to startup budget and monthly profit\n- ROI must be logically related to profit and investment\n- Do not make all businesses unrealistically profitable\n- If net profit after loan is negative or too weak, mark recommendation_status as conditional or not_recommended\n\nWhen exact prices are unavailable, use Uzbekistan-oriented realistic estimates and set is_estimate=true.\n\n==================================================\nSTEP-BY-STEP ACTION PLAN REQUIREMENTS\n==================================================\n\nProvide a sequential customer roadmap:\n1. what the customer should do first\n2. business registration steps\n3. preparation phase\n4. location selection\n5. supplier search\n6. equipment purchasing\n7. hiring or family-labor setup\n8. launch process\n9. first sales\n10. monthly monitoring\n11. scaling process\n\nThe roadmap must be practical and ordered by time.\n\n==================================================\nOUTPUT LANGUAGE\n==================================================\n\nReturn JSON values in the same language/script as the user's question when possible.\nIf the user language is unclear, use Uzbek Latin.\nJSON keys must remain exactly as defined by the response schema.\n\n==================================================\nFINAL CHECK BEFORE ANSWERING\n==================================================\n\nBefore returning JSON, internally verify:\n- 3 to 7 businesses are recommended\n- every business has financial estimates\n- business IDs match between recommended_businesses, business_plans and profit_analysis.business_comparison\n- loan payment is consistent across all businesses\n- all numbers are logically consistent\n- recommendations are connected to district evidence\n- output matches the strict JSON schema\n- output is valid JSON only\n"
+    },
+    {
+      "role": "system",
+      "content": "DISTRICT_DATA_JSON:\n{\n  \"district_data_source\": \"assets/data/boysun_tuman.json\",\n  \"info_card_selection_source\": \"info/boysun_tuman.txt\",\n  \"district\": {\n    \"id\": \"boysun\",\n    \"name\": \"Бойсун\",\n    \"region\": \"Сурхондарё вилояти\",\n    \"year\": 2026\n  },\n  \"selected_card_numbers_from_info_txt\": [\n    1,\n    2,\n    10,\n    12,\n    24,\n    25,\n    26,\n    27,\n    33,\n    34,\n    35,\n    36,\n    37,\n    38,\n    39,\n    40\n  ],\n  \"selected_cards_from_info_txt\": [\n    {\n      \"no\": 1,\n      \"slide\": 1,\n      \"name\": \"Туманнинг макроиқтисодий кўрсаткичлари\",\n      \"desc\": \"Саноат, хизматлар ва экспортнинг ўсиш динамикаси\",\n      \"value\": \"Саноат ҳажми (млрд сўм): 2021: 100,6 | 2022: 108,7 | 2023: 150,7 | 2024: 223,7 | 2025: 300,6 | Хизматлар ҳажми (млрд сўм): 2021: 330,0 | 2022: 403,4 | 2023: 483,2 | 2024: 580,8 | 2025: 761,5 | Экспорт ҳажми (минг $): 2021: 5 611 | 2022: 8 981 | 2023: 7 059 | 2024: 9 175 | 2025: 16 339 | Маҳаллий бюджет (млрд сўм): 2021: 58,1 | 2022: 76,0 | 2023: 52,8 | 2024: 60,7 | 2025: 86,8\",\n      \"ai_insight\": \"Туман иқтисодиётида саноат ҳажми 5 йилда 3 баробар, хизматлар эса 2,3 баробар ўсган. Энг катта ютуқ экспортнинг 16 млн доллардан ошишидир. Стратегия: ЯҲМ республика ўртачасининг 23% ни ташкил этиши ҳудудда ҳали ишга солинмаган улкан имкониятлар борлигини англатади. Саноатда кичик бизнес улуши юқорилигини (92%) инобатга олиб, кластер тизимини ривожлантириш лозим.\",\n      \"source_org\": \"Статистика бўлими\"\n    },\n    {\n      \"no\": 2,\n      \"slide\": 1,\n      \"name\": \"Туман иқтисодиётининг 4 та драйвери\",\n      \"desc\": \"Туман иқтисодиётининг асосий ҳаракатлантирувчи кучлари\",\n      \"value\": \"Қишлоқ хўжалиги (64,9%): 2025 йилда 21,6 трлн сўм прогноз | Хизматлар ва савдо (25,1%): Юк айланмаси йилига 3,3 млн тоннадан ошган | Саноат ва қурилиш материаллари (10%): Кичик тадбиркорлик маҳсулоти 277,5 млрд сўм | Капитал қўйилмалар: 107 та янги корхона очилган\",\n      \"ai_insight\": \"Иқтисодиётнинг 65%и қишлоқ хўжалигига боғлиқлиги \\\"моно-драйвер\\\" хавфини туғдиради. Стратегия: Хизмат кўрсатиш ва саноат драйверларини СИ технологиялари (ақлли агро-сервис) ва қурилиш материаллари кластери орқали кучайтириш, драйверлар мувозанатини таъминлаш зарур.\",\n      \"source_org\": \"Туман ҳокимияти / Статистика бўлими\"\n    },\n    {\n      \"no\": 10,\n      \"slide\": 2,\n      \"name\": \"Ер тоифалари бўйича рўйхат (га)\",\n      \"desc\": \"Ҳудудий тақсимот ва ер ресурслари\",\n      \"value\": \"Туман умумий майдони: 320 577 гектар | Суғориладиган ер майдони: 4558 гектар (умумий майдоннинг 2%) | Каналларнинг бетонлашиш даражаси: 17% | Аҳоли зичлиги: 40,3 киши/км²\",\n      \"ai_insight\": \"Суғориладиган ерлар ҳажми жуда камлиги Бойсун иқтисодиётида нега чорвачилик ва тоғ-кон саноати муҳимлигини тушунтиради. Тавсия: Каналларнинг бетонлашиш даражаси (17%) жуда паст. Сув исрофини камайтириш учун бетонлаштириш даражасини камида 40-50% га чиқариш лозим, бу мавжуд 6,5 минг гектар ернинг маҳсулдорлигини оширади.\",\n      \"source_org\": \"Кадастр агентлиги\"\n    },\n    {\n      \"no\": 12,\n      \"slide\": 2,\n      \"name\": \"Мактабгача таълим қамрови\",\n      \"desc\": \"Болаларни боғчаларга қамраб олиш ҳолати ва инфратузилма\",\n      \"value\": \"Жами: МТТ таҳлили (2025) | 3–7 ёшли болалар: 12 050 нафар | Қамраб олинган: 8 375 нафар (69,5%) | Жами МТТ сони: 116 та | Давлат МТТ: 25 та | Давлат-хусусий шерикчилик: 12 та | Оилавий нодавлат МТТ: 79 та\",\n      \"ai_insight\": \"Бойсун туманида мактабгача таълим қамрови 69,5% ни ташкил этмоқда. Бу кўрсаткич шуни англатадики, тумандаги 3 675 нафар (30,5%) бола ҳали таълим билан қамраб олинмаган. Диққатга сазовор жиҳати — инфратузилманинг асосий қисми (68%) оилавий боғчалар ҳисобига тўғри келмоқда.\",\n      \"source_org\": \"Мактабгача ва мактаб таълими бўлими\"\n    },\n    {\n      \"no\": 24,\n      \"slide\": 4,\n      \"name\": \"Маҳалла драйвер секторлари\",\n      \"desc\": \"Ўсиш нуқталари ва иқтисодий локомотивлар\",\n      \"value\": \"Жами: 3 та асосий драйвер | Чорвачилик: яйлов ресурсларидан (18 300 га) фойдаланиш | Боғдорчилик: олма стратегияси (600 га янги боғлар) | Туризм: экотуризм, тоғ туризми ва маданий мерос йўналишлари\",\n      \"ai_insight\": \"Драйвер секторларга «Тоғ туризми»ни тўртинчи элемент сифатида қўшиш керак. Йиллик сайёҳлар сонини 300 мингга етказиш режаси чорвачилик ва ҳунармандчилик маҳсулотларига ички талабни автоматик оширади.\",\n      \"source_org\": \"SQB / МФЙ агентлиги\"\n    },\n    {\n      \"no\": 25,\n      \"slide\": 4,\n      \"name\": \"Маҳалла ихтисослашуви\",\n      \"desc\": \"Маҳаллалар тоифаси ва ихтисослашув йўналишлари\",\n      \"value\": \"Жами: 39 та маҳалла | Ихтисослашув: Чорвачилик, Томорқа деҳқончилиги, Сабзавот ва боғдорчилик | Ипакчилик маҳаллалари: 6 та | Картошка/карам маҳаллалари: 4 та | Оғир тоифа: 19 та | Ўрта тоифа: 16 та | Енгил тоифа: 4 та\",\n      \"ai_insight\": \"39 та МФЙдан 19 таси оғир тоифада — бу умумий МФЙларнинг 49%. Оғир маҳаллаларга манзилли бандлик дастурлари ва микролойиҳаларни йўналтириш устувор бўлиши лозим.\",\n      \"source_org\": \"МФЙ агентлиги / Бандлик маркази\"\n    },\n    {\n      \"no\": 26,\n      \"slide\": 4,\n      \"name\": \"Маҳалла драйвер секторлари\",\n      \"desc\": \"Маҳаллаларда ўсишни таъминлайдиган асосий тармоқлар\",\n      \"value\": \"Жами: 3 та драйвер сектор | 1-сектор: Чорвачилик | 2-сектор: Боғдорчилик | 3-сектор: Туризм\",\n      \"ai_insight\": \"Драйвер секторларни «чорвачилик + боғдорчилик + хизмат» занжирида боғлаш керак. Тайёр маҳсулотни бозорга чиқариш ва брендлаш орқали маҳалла даражасида қўшимча қиймат яратиш мумкин.\",\n      \"source_org\": \"МФЙ агентлиги / SQB\"\n    },\n    {\n      \"no\": 27,\n      \"slide\": 4,\n      \"name\": \"Микролойиҳалар сони ва иш ўринлари\",\n      \"desc\": \"Лойиҳалар ҳажми ва яратилган иш ўринлари\",\n      \"value\": \"Жами: Микролойиҳалар таҳлили | Лойиҳалар сони: 390 та | Иш ўринлари: 980 та | Лойиҳалар умумий қиймати: 13,6 млрд сўм\",\n      \"ai_insight\": \"390 та микролойиҳа орқали 780 та иш ўрни яратилган. Лойиҳалар сонини ошириш, айниқса 19 та оғир тоифали маҳаллага мақсадли молиялаштиришни йўналтириш тавсия этилади.\",\n      \"source_org\": \"Бандлик маркази / Марказий банк\"\n    },\n    {\n      \"no\": 33,\n      \"slide\": 5,\n      \"name\": \"Тоғ-кон ва қурилиш материаллари кластери\",\n      \"desc\": \"Гипс, цемент ва шиша хомашёсининг улкан захиралари\",\n      \"value\": \"Жами: Тоғ-кон захиралари | Цемент хомашёси: 158 973 минг тонна | Гипс ва ангидрит: 22 912 минг тонна | Шиша хомашёси: 109 162 минг тонна | Инвестиция салоҳияти: $50–100 млн\",\n      \"ai_insight\": \"Бойсунда хомашёни шунчаки қазиб олиш эмас, балки тайёр қурилиш материаллари (қуруқ қоришмалар, гипсокартон, шиша буюмлар) ишлаб чиқаришни йўлга қўйиш керак. Тумандаги дефицит товарлар рўйхатида қурилиш материаллари борлигини ҳисобга олсак, бу лойиҳалар ҳам ички, ҳам ташқи бозор (Афғонистон) учун истиқболлидир.\",\n      \"source_org\": \"Геология қўмитаси\"\n    },\n    {\n      \"no\": 34,\n      \"slide\": 5,\n      \"name\": \"Этно-туризм ва «Бойсун курорт шаҳри»\",\n      \"desc\": \"ЮНЕСКО маданий мероси ва тоғли ҳудуднинг туристик жозибадорлиги\",\n      \"value\": \"Жами: Туризм таҳлили | Сайёҳлар оқими: 180 минг (жорий) → 300 минг (режа) | Инвестиция (2026-2028): 350 млрд сўм | Машҳур масканлар: Омонхона, Хўжамайхона, Завбоши | Йўналиш: эко-туризм ва соғломлаштириш\",\n      \"ai_insight\": \"«Омонхона» шифобахш суви ва «Бойсун баҳори» брендидан фойдаланиб, туманни йил давомида ишлайдиган туристик марказга айлантириш лозим. Оилавий меҳмон уйларини рақамлаштириш ва хорижий сайёҳлар учун махсус «Ethno-Village» тур-пакетларини яратиш орқали сайёҳларнинг қолиш вақтини 3 кунгача узайтириш мумкин.\",\n      \"source_org\": \"Ҳокимият / UNESCO\"\n    },\n    {\n      \"no\": 35,\n      \"slide\": 5,\n      \"name\": \"Транзит ва логистика устунлиги\",\n      \"desc\": \"М-39 халқаро йўли ва темир йўл тизимининг мавжудлиги\",\n      \"value\": \"Жами: Логистика қуввати | М-39 ва 4Р-105 йўллари: туман ҳудудидан ўтган | Темир йўл станциясигача: 12 км | Юк айланмаси (2024): 3 109,7 минг тонна\",\n      \"ai_insight\": \"Бойсунни Сурхондарёнинг шимолий «логистика дарвозаси» сифатида ривожлантириш лозим. М-39 йўли бўйида замонавий сервис марказлари (кемпинг, хизмат кўрсатиш) ташкил этиш ва темир йўл яқинлигидан фойдаланиб, тоғ-кон маҳсулотларини экспорт қилиш учун йирик юк терминалини қуриш тавсия этилади.\",\n      \"source_org\": \"Транспорт вазирлиги\"\n    },\n    {\n      \"no\": 36,\n      \"slide\": 5,\n      \"name\": \"Чорвачилик ва гўштни қайта ишлаш\",\n      \"desc\": \"Тоғли яйловлар ва аҳоли ихтисослашуви\",\n      \"value\": \"Жами: Чорвачилик салоҳияти | Ихтисослашув: қорамолчилик ва қоракўлчилик | Дефицит товар №1: гўшт маҳсулотлари | Имконият: табиий тоғ гўшти бренди\",\n      \"ai_insight\": \"Туманда гўшт маҳсулотлари дефицит эканлиги аниқланган. Бу имкониятдан фойдаланиб, «Бойсун тоғ гўшти» бренди остида ярим тайёр маҳсулотлар ва консерва ишлаб чиқаришни ташкил этиш керак. Бу нафақат туман эҳтиёжини қоплайди, балки Термиз ва Тошкент бозорларига юқори қийматли маҳсулот чиқариш имконини беради.\",\n      \"source_org\": \"Қишлоқ хўжалиги бўлими\"\n    },\n    {\n      \"no\": 37,\n      \"slide\": 5,\n      \"name\": \"Муқобил энергия ва саноат харажатлари\",\n      \"desc\": \"Тоғли ҳудудларда қуёш ва шамол энергиясидан фойдаланиш\",\n      \"value\": \"Жами: Энергия салоҳияти | Қуёшли кунлар: 280–300 кун | Талаб: саноат ҳажми 223 млрд (2024) → 300 млрд (2025) | Тўсиқ: электр таннархининг юқорилиги\",\n      \"ai_insight\": \"Янги ташкил этилаётган қурилиш материаллари корхоналарига қуёш панеллари ўрнатиш мажбуриятини юклаш ва давлат субсидияларини шу йўналишга қаратиш керак. Бу саноат маҳсулотлари таннархини 15-20% гача камайтиришга ёрдам беради.\",\n      \"source_org\": \"Геология қўмитаси / Энергетика вазирлиги\"\n    },\n    {\n      \"no\": 38,\n      \"slide\": 6,\n      \"name\": \"Стратегик мақсад — 2027\",\n      \"desc\": \"Саноат ва туризм драйверига айланиш\",\n      \"value\": \"Жами: 2027 йил мақсадлари | Саноат ҳажми: 400+ млрд сўм | Янги иш ўринлари: 5 000+ (лойиҳалар ҳисобига) | Камбағалликни қисқартириш: оилалар сонини 1 950 тадан (2025) 1 000 тагача камайтириш\",\n      \"ai_insight\": \"Бойсун иқтисодиётини «Тоғ-кон + Туризм + Чорвачилик» триадаси асосида ривожлантириш лозим. 2025 йилда асосий эътиборни инфратузилмани (сув ва йўл) яхшилашга қаратиш, бу эса йирик инвесторларнинг туманга келиши учун кафолат бўлади.\",\n      \"source_org\": \"Туман ҳокимияти\"\n    },\n    {\n      \"no\": 39,\n      \"slide\": 6,\n      \"name\": \"Инвестиция портфели ва «Лойиҳа фабрикаси»\",\n      \"desc\": \"Устувор йўналишлар ва молиявий воситалар\",\n      \"value\": \"Жами: Инвестиция режаси | Микролойиҳалар: 390 та (780 иш ўрни) | Банк кредитлари: 219,5 млрд сўм (умумий портфел 2025) | Фокус: экспорт (30%) ва импорт ўрнини босиш (50%)\",\n      \"ai_insight\": \"«Лойиҳа фабрикаси» механизми орқали тумандаги дефицит 5 та товар (гўшт, қурилиш моллари, мебел, пластик, сут) бўйича тайёр бизнес-пакетларни тадбиркорларга таклиф қилиш лозим. Айниқса, хотин-қизлар ва ёшлар бандлиги учун кичик тикувчилик ва ҳунармандчилик цехларига имтиёзли лизинг бериш тизимини кучайтириш керак.\",\n      \"source_org\": \"SQB / Туман ҳокимияти\"\n    },\n    {\n      \"no\": 40,\n      \"slide\": 6,\n      \"name\": \"Инфратузилма ва ижтимоий ривожланиш\",\n      \"desc\": \"Яшаш шароитини яхшилаш — иқтисодий фаоллик гарови\",\n      \"value\": \"Жами: Инфратузилма чора-тадбирлари | Сув ва электр: тоғли қишлоқларни барқарор энергия билан таъминлаш | Йўллар: М-39 дан туристик зоналаргача 1 224 км йўлни босқичма-босқич таъмирлаш | Таълим: чорвачилик ва туризм хизматлари бўйича касб-ҳунарга ўқитиш марказларини кўпайтириш\",\n      \"ai_insight\": \"Аҳоли зичлиги паст (40 киши/км²) бўлган тоғли ҳудудларда «ихчам сервис марказлари»ни ташкил этиш лозим. Бунда маҳаллабай ишлаш тизими орқали ҳар бир оиланинг томорқасидан самарали фойдаланиш (ёнғоқ, доривор ўсимликлар етиштириш) бўйича консультациялар бериш керак.\",\n      \"source_org\": \"Туман ҳокимияти\"\n    }\n  ],\n  \"data_quality_notes\": [],\n  \"instruction\": \"Use the full source JSON below as the authoritative district knowledge. The selected cards are priority evidence, but all indicators are available and should be considered when useful.\",\n  \"source_json\": {\n    \"district\": \"boysun\",\n    \"district_name\": \"Бойсун\",\n    \"region\": \"Сурхондарё вилояти\",\n    \"year\": 2026,\n    \"total\": 40,\n    \"hero_kpis\": {\n      \"Аҳоли\": {\n        \"value\": 129.9,\n        \"unit\": \"минг киши\"\n      },\n      \"Маҳалла\": {\n        \"value\": 39,\n        \"unit\": \"та\"\n      },\n      \"Оила\": {\n        \"value\": 30776,\n        \"unit\": \"та\"\n      },\n      \"Хонадон\": {\n        \"value\": 23851,\n        \"unit\": \"та\"\n      }\n    },\n    \"indicators\": [\n      {\n        \"no\": 1,\n        \"slide\": 1,\n        \"slide_no\": \"1\",\n        \"name\": \"Туманнинг макроиқтисодий кўрсаткичлари\",\n        \"desc\": \"Саноат, хизматлар ва экспортнинг ўсиш динамикаси\",\n        \"value\": \"Саноат ҳажми (млрд сўм): 2021: 100,6 | 2022: 108,7 | 2023: 150,7 | 2024: 223,7 | 2025: 300,6 | Хизматлар ҳажми (млрд сўм): 2021: 330,0 | 2022: 403,4 | 2023: 483,2 | 2024: 580,8 | 2025: 761,5 | Экспорт ҳажми (минг $): 2021: 5 611 | 2022: 8 981 | 2023: 7 059 | 2024: 9 175 | 2025: 16 339 | Маҳаллий бюджет (млрд сўм): 2021: 58,1 | 2022: 76,0 | 2023: 52,8 | 2024: 60,7 | 2025: 86,8\",\n        \"found\": true,\n        \"source_org\": \"Статистика бўлими\",\n        \"ai_insight\": \"Туман иқтисодиётида саноат ҳажми 5 йилда 3 баробар, хизматлар эса 2,3 баробар ўсган. Энг катта ютуқ экспортнинг 16 млн доллардан ошишидир. Стратегия: ЯҲМ республика ўртачасининг 23% ни ташкил этиши ҳудудда ҳали ишга солинмаган улкан имкониятлар борлигини англатади. Саноатда кичик бизнес улуши юқорилигини (92%) инобатга олиб, кластер тизимини ривожлантириш лозим.\"\n      },\n      {\n        \"no\": 2,\n        \"slide\": 1,\n        \"slide_no\": \"1\",\n        \"name\": \"Туман иқтисодиётининг 4 та драйвери\",\n        \"desc\": \"Туман иқтисодиётининг асосий ҳаракатлантирувчи кучлари\",\n        \"value\": \"Қишлоқ хўжалиги (64,9%): 2025 йилда 21,6 трлн сўм прогноз | Хизматлар ва савдо (25,1%): Юк айланмаси йилига 3,3 млн тоннадан ошган | Саноат ва қурилиш материаллари (10%): Кичик тадбиркорлик маҳсулоти 277,5 млрд сўм | Капитал қўйилмалар: 107 та янги корхона очилган\",\n        \"found\": true,\n        \"source_org\": \"Туман ҳокимияти / Статистика бўлими\",\n        \"ai_insight\": \"Иқтисодиётнинг 65%и қишлоқ хўжалигига боғлиқлиги \\\"моно-драйвер\\\" хавфини туғдиради. Стратегия: Хизмат кўрсатиш ва саноат драйверларини СИ технологиялари (ақлли агро-сервис) ва қурилиш материаллари кластери орқали кучайтириш, драйверлар мувозанатини таъминлаш зарур.\"\n      },\n      {\n        \"no\": 3,\n        \"slide\": 1,\n        \"slide_no\": \"1\",\n        \"name\": \"Саноат маҳсулотлари ишлаб чиқариш динамикаси\",\n        \"desc\": \"Саноат ишлаб чиқариш индекси ва ҳажми\",\n        \"value\": \"2021: 100,6 млрд сўм (109,6%) | 2022: 108,7 млрд сўм (103,3%) | 2023: 150,7 млрд сўм (110,3%) | 2024: 223,7 млрд сўм (108,3%) | 2025: 300,6 млрд сўм (110,2%)\",\n        \"found\": true,\n        \"source_org\": \"Статистика бўлими\",\n        \"ai_insight\": \"Саноатда ўсиш суръати барқарор (ўртача 108-110%). Диққатга сазовор жиҳати — йирик корхоналар ишлаб чиқариши 2024 йилда 5,5 млрддан 20,1 млрдга (4 баробар) сакраган. Стратегия: Ушбу \\\"йирик саноат драйвери\\\"ни қўллаб-қувватлаш ва кичик корхоналарни (95 млрддан 277 млрдга ўсган) уларга кооперация асосида боғлаш керак.\"\n      },\n      {\n        \"no\": 4,\n        \"slide\": 1,\n        \"slide_no\": \"1\",\n        \"name\": \"Маҳаллий бюджет\",\n        \"desc\": \"Маҳаллий бюджет даромадлари динамикаси\",\n        \"value\": \"Даромадлар (млрд сўм): 2021: 58,1 | 2022: 76,0 | 2023: 72,4 | 2024: 60,7 | 2025: 86,8\",\n        \"found\": true,\n        \"source_org\": \"Туман молия бўлими\",\n        \"ai_insight\": \"Маҳаллий бюджет даромадлари 2025 йилда 86,8 млрд сўмга етиб, 2023 йилга нисбатан 64% га ўсиши прогноз қилинмоқда. Контингент бюджет режасининг 30,3 млрдгача оширилиши туманда солиқ базаси кенгаётганини кўрсатади. Тавсия: бюджет тушумларининг ошишини ижтимоий инфратузилма ва бизнес учун \\\"soft power\\\" лойиҳаларига йўналтириш лозим.\"\n      },\n      {\n        \"no\": 5,\n        \"slide\": 1,\n        \"slide_no\": \"1\",\n        \"name\": \"Ажратилган кредитлар\",\n        \"desc\": \"Кичик тадбиркорликка ажратилган кредитлар динамикаси (млрд сўм)\",\n        \"value\": \"2021: 67,4 | 2022: 92,6 | 2023: 117,9 | 2024: 135,3 | 2025: 163,7 (млрд сўм)\",\n        \"found\": true,\n        \"source_org\": \"Марказий банк\",\n        \"ai_insight\": \"Кредитлаш ҳажмининг 67,4 млрддан 163,7 млрдгача ошиши ҳудудда тадбиркорлик субъектларининг молиявий ресурсларга бўлган талаби ортаётганини кўрсатади. Раҳбарият учун таклиф: кредитларнинг асосий қисмини тумандаги «драйвер» соҳалар — чорвачилик ва мева-сабзавотни қайта ишлаш лойиҳаларига йўналтириш орқали янги иш ўринлари сонини кўпайтириш ва бюджет тушумларини 2025 йилги прогноз (27,8 млрд сўм) даражасига чиқариш мумкин.\"\n      },\n      {\n        \"no\": 6,\n        \"slide\": 1,\n        \"slide_no\": \"1\",\n        \"name\": \"Google Trends иқтисодий фаоллик\",\n        \"desc\": \"Аҳоли ва бизнеснинг рақамли қизиқиши (0-100 шкаласи)\",\n        \"value\": \"Умумий балл: 48/100 (ўртача фаоллик) | 2024 йил ўртача: 42 балл | 2025 йил ўртача: 48 балл (+14% ўсиш) | Энг фаол ой: Май 2025 — 72 балл | Энг суст ой: Декабр 2024 — 28 балл | Мавсумийлик: Баҳор-Ёз юқори, Қиш суст\",\n        \"found\": true,\n        \"source_org\": \"Google Trends таҳлили\",\n        \"ai_insight\": \"Google Trends 48/100 балл — Бойсун учун ўсиш салоҳияти мавжудлигини англатади. Туманнинг 42% аҳоли ва бизнесида ижобий кутишлар мавжудлиги рақамли фаолликни оширишга замин яратади. Тавсия: \\\"Бойсун — экотуризм маркази\\\" брендини рақамли маконда тарғиб қилиш ва инвестиция лойиҳалари ҳақида интернетда маълумотларни кўпайтириш орқали индексни 60+ баллга чиқариш мумкин.\"\n      },\n      {\n        \"no\": 7,\n        \"slide\": 2,\n        \"slide_no\": \"2\",\n        \"name\": \"Ичимлик суви билан таъминланганлик (%)\",\n        \"desc\": \"Ичимлик суви таъминоти динамикаси (%)\",\n        \"value\": \"2021: 62.3 | 2022: 62.8 | 2023: 63.5 | 2024: 64.2 | 2025: 72.1 (%)\",\n        \"found\": true,\n        \"source_org\": \"Сув хўжалиги бўлими\",\n        \"ai_insight\": \"Сув таъминотида барқарор ўсиш кузатилмоқда (5 йилда +4,8%). Бироқ, аҳолининг 32% дан ортиғи ҳали ҳам тоза ичимлик суви билан таъминланмаган. Стратегия: Қурилиш материаллари саноатидан тушадиган маҳаллий бюджет даромадларини сув қувурларини ётқизиш лойиҳаларига йўналтириш орқали қамровни тезлаштириш мумкин.\",\n        \"no_forecast\": true\n      },\n      {\n        \"no\": 8,\n        \"slide\": 2,\n        \"slide_no\": \"2\",\n        \"name\": \"Ички йўллар таъмирланиш даражаси (%)\",\n        \"desc\": \"Йўл инфратузилмаси ҳолати\",\n        \"value\": \"Умумий йўллар узунлиги: 1 224 км | Асфальтланган йўллар улуши: 71,1% | Вилоят марказигача масофа: 145 км | Темир йўл станциясигача масофа: 12 км\",\n        \"found\": true,\n        \"source_org\": \"Йўл хўжалиги бўлими\",\n        \"ai_insight\": \"Туман йўлларининг 71 фоизи асфальтлангани логистика учун ижобий кўрсаткич. Лекин Бойсуннинг тоғли ҳудуд эканини инобатга олсак, йўлларнинг сифати юк ташиш ҳажмига (йилига 3,3 млн тонна) тўғри келиши керак. Тавсия: \\\"Мустақиллик\\\" КСЗ атрофидаги йўлларни биринчи навбатда модернизация қилиш юк айланмаси ва инвестиция жозибадорлигини оширади.\"\n      },\n      {\n        \"no\": 9,\n        \"slide\": 2,\n        \"slide_no\": \"2\",\n        \"name\": \"Электр таъминоти сифат даражаси (%)\",\n        \"desc\": \"Электр тармоқлари ҳолати ва муаммолар\",\n        \"value\": \"Электр узилишлари: Ойига ўртача 4,2 марта | Трансформаторлар ҳолати: 38% модернизацияга муҳтож (эскирган) | Линиялар ҳолати: 35% қисмини алмаштириш зарур\",\n        \"found\": true,\n        \"source_org\": \"Электр тармоқлари корхонаси\",\n        \"ai_insight\": \"Трансформаторларнинг деярли учдан бир қисми эскиргани саноат ўсиши (йиллик 110%) учун асосий тўсиқдир. Тавсия: Саноат зонасида ердан фойдаланиш 79% га етганини ҳисобга олиб, ушбу ҳудудда алоҳида \\\"Ақлли тармоқ\\\" (Smart Grid) тизимини жорий этиш ва трансформаторларни янгилаш бўйича мақсадли дастур ишлаб чиқиш зарур.\"\n      },\n      {\n        \"no\": 10,\n        \"slide\": 2,\n        \"slide_no\": \"2\",\n        \"name\": \"Ер тоифалари бўйича рўйхат (га)\",\n        \"desc\": \"Ҳудудий тақсимот ва ер ресурслари\",\n        \"value\": \"Туман умумий майдони: 320 577 гектар | Суғориладиган ер майдони: 4558 гектар (умумий майдоннинг 2%) | Каналларнинг бетонлашиш даражаси: 17% | Аҳоли зичлиги: 40,3 киши/км²\",\n        \"found\": true,\n        \"source_org\": \"Кадастр агентлиги\",\n        \"ai_insight\": \"Суғориладиган ерлар ҳажми жуда камлиги Бойсун иқтисодиётида нега чорвачилик ва тоғ-кон саноати муҳимлигини тушунтиради. Тавсия: Каналларнинг бетонлашиш даражаси (17%) жуда паст. Сув исрофини камайтириш учун бетонлаштириш даражасини камида 40-50% га чиқариш лозим, бу мавжуд 6,5 минг гектар ернинг маҳсулдорлигини оширади.\"\n      },\n      {\n        \"no\": 11,\n        \"slide\": 2,\n        \"slide_no\": \"2\",\n        \"name\": \"Жамоат транспортидан фойдаланиш (%)\",\n        \"desc\": \"Мобиллик кўрсаткичлари ва динамика\",\n        \"value\": \"Йўловчи ташиш ҳажми (2025 прогноз): 5 782,4 минг киши/йил | Юк ташиш ҳажми: 3 357 минг тонна | Динамика: 2021 йилга (4,6 млн) нисбатан 25% га ошган\",\n        \"found\": true,\n        \"source_org\": \"Туман статистика бўлими\",\n        \"ai_insight\": \"Йўловчи оқимининг йиллик 5,7 млн кишига етиши жамоат транспортига бўлган талаб юқорилигини кўрсатади. Тавсия: Вилоят марказигача бўлган 145 км масофани инобатга олиб, шаҳарлараро транспорт йўналишларини кўпайтириш ва рақамли йўналиш хариталарини (GPS мониторинг) жорий этиш лозим.\"\n      },\n      {\n        \"no\": 12,\n        \"slide\": 2,\n        \"slide_no\": \"2\",\n        \"name\": \"Мактабгача таълим қамрови\",\n        \"desc\": \"Болаларни боғчаларга қамраб олиш ҳолати ва инфратузилма\",\n        \"value\": \"Жами: МТТ таҳлили (2025) | 3–7 ёшли болалар: 12 050 нафар | Қамраб олинган: 8 375 нафар (69,5%) | Жами МТТ сони: 116 та | Давлат МТТ: 25 та | Давлат-хусусий шерикчилик: 12 та | Оилавий нодавлат МТТ: 79 та\",\n        \"found\": true,\n        \"source_org\": \"Мактабгача ва мактаб таълими бўлими\",\n        \"ai_insight\": \"Бойсун туманида мактабгача таълим қамрови 69,5% ни ташкил этмоқда. Бу кўрсаткич шуни англатадики, тумандаги 3 675 нафар (30,5%) бола ҳали таълим билан қамраб олинмаган. Диққатга сазовор жиҳати — инфратузилманинг асосий қисми (68%) оилавий боғчалар ҳисобига тўғри келмоқда.\"\n      },\n      {\n        \"no\": 13,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"Меҳнат ресурслари\",\n        \"desc\": \"Меҳнат ресурсларининг 5 йиллик динамикаси\",\n        \"value\": \"2021: 61432 | 2022: 62712 | 2023: 63645 | 2024: 64825 | 2025: 65596 (киши)\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази\",\n        \"ai_insight\": \"Меҳнат ресурслари барқарор ўсиб бормоқда. Аммо ўсиш суръати секин (йилига ~1,2%). Янги иш ўринлари яратишни, айниқса ёшлар ва аёлларни расмий бандликка жалб қилишни кучайтириш зарур.\"\n      },\n      {\n        \"no\": 14,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"Бандликни ошириш имкониятлари\",\n        \"desc\": \"Меҳнат бозори резервлари ва миграция таҳлили\",\n        \"value\": \"Жами: Меҳнат бозори резервлари | Банд аҳоли (2025): 44 365 киши (+1,9%) | Норасмий секторда банд: 19 241 киши | Хорижга кетганлар (2025): 2 618 киши | Қайтган мигрантлар (2025): 4 952 киши\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази / ИИВ миграция\",\n        \"ai_insight\": \"2025 йилда 4 952 та мигрант қайтиши кескин ошган. Қайтган кадрларнинг кўникмаларини маҳаллий иқтисодиётга йўналтириш ва норасмий секторни (19 241 киши) расмийлаштириш орқали бандликни сезиларли ошириш мумкин.\"\n      },\n      {\n        \"no\": 15,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"Ишсизлик кўрсаткичлари\",\n        \"desc\": \"2 607 нафар ишсиз (2025 йил)\",\n        \"value\": \"2021: 6741 | 2022: 5923 | 2023: 4584 | 2024: 3892 | 2025: 2607 (киши)\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази\",\n        \"kpi_count\": 2607,\n        \"kpi_pct\": 5.6,\n        \"ai_insight\": \"Ишсизлик 9,7% дан 5,6% га тушган, ишсизлар сони 6 741 дан 2 607 га камайган — 5 йилда 2,6 баробар қисқарган. 2027 йилгача 3% мақсадига эришиш учун ёшлар ва аёлларга йўналтирилган касб-ҳунар курслари ва микролойиҳалар учун имтиёзли кредитларни кучайтириш зарур.\"\n      },\n      {\n        \"no\": 16,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"Камбағаллик кўрсаткичлари\",\n        \"desc\": \"3 024 нафар камбағал оила (2025 йил)\",\n        \"value\": \"2021: 16,4 | 2022: 15,7 | 2023: 14,5 | 2024: 12,8 | 2025: 5,7 (%)\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази / МФЙ / Статистика бўлими\",\n        \"kpi_pct\": 5.7,\n        \"kpi_count\": 3024,\n        \"ai_insight\": \"Камбағаллик 5 йилда 16,4% дан 5,7% га тушган — жуда кучли натижа. 2026 йил охиригача 3% гача тушириш учун 23 851 та хонадон кесимида ҳар бир камбағал оилага (жами 954 нафар) мақсадли микрокредит ва субсидия пакети шакллантирилиши лозим. Ижтимоий ёрдамни нафақа билан эмас, иш ўрни яратиш ва микрокредит пакетлари билан боғлаш орқали доимий даромад манбаи шакллантириш тавсия этилади.\"\n      },\n      {\n        \"no\": 17,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"«Барқарор келажак» — ёшлар даромадини ошириш\",\n        \"desc\": \"Ёшлар ишсизлиги, маош динамикаси ва миграция\",\n        \"value\": \"Жами: Ёшлар бандлиги | Ёшлар ишсизлиги (16-30): 437 киши | Ўртача маош (2025): 4 351 минг сўм (+29,2%) | Хорижга кетганлар (2025): 2 618 киши | Қайтган мигрантлар (2025): 4 952 киши\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази / ИИВ миграция\",\n        \"ai_insight\": \"2025 йилда қайтган мигрантлар (4 952) кетганлардан (2 618) икки баробар кўп. Бу кадрларни ёшларга мўлжалланган дуал таълим ва касбий қайта тайёрлаш дастурлари орқали маҳаллий иқтисодиётга жалб қилиш зарур.\"\n      },\n      {\n        \"no\": 18,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"Аёллар бандлиги ва даромадини ошириш\",\n        \"desc\": \"Аёллар ишсизлиги ва ижтимоий ҳимоя\",\n        \"value\": \"Жами: Аёллар бандлиги | Аёллар ишсизлиги: 1 342 киши | Маҳалла банкирлари (аёл): 1 нафар | Ўртача маош (2025): 4 351 минг сўм (+29,2%)\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази / Ижтимоий ҳимоя\",\n        \"ai_insight\": \"1 342 ишсиз аёлга қарши атиги 1 та аёл маҳалла банкири мавжуд. Аёл банкирлар сонини кўпайтириш, маҳалла кесимида касбга йўналтириш дастурлари ва имтиёзли молиялаштиришни кенгайтириш зарур.\"\n      },\n      {\n        \"no\": 19,\n        \"slide\": 3,\n        \"slide_no\": \"3\",\n        \"name\": \"Бойсун туманидаги техникумлар\",\n        \"desc\": \"Профессионал таълим муассасалари ва қувватдан фойдаланиш\",\n        \"value\": \"Жами: 3 та техникум, 1 338 нафар ўқувчи | Умумий қувват: 2 085 ўрин | Бўш ўринлар: 747 та | 1-сон: 488 ўқувчи (қувват 600, 81% банд) | 2-сон: 409 ўқувчи (қувват 900, 45% банд) | 3-сон: 441 ўқувчи (қувват 585, 75% банд)\",\n        \"found\": true,\n        \"source_org\": \"Олий таълим, фан ва инновациялар бўлими\",\n        \"ai_insight\": \"Бойсун туманидаги техникумлар ҳозирда 64% қувват билан ишламоқда, бу эса мавжуд таълим инфратузилмасининг 36% (747 та ўрин) бекор турганини англатади. Айниқса, 2-сон техникумнинг потенциалидан фойдаланиш даражаси жуда паст (45%). Бу ҳолат туманнинг ишсизлик кўрсаткичлари ва миграция оқими билан мутаносиб эмас.\"\n      },\n      {\n        \"no\": 20,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Сунъий интеллект куни ва ходимлар малакасини ошириш\",\n        \"desc\": \"Банкда СИ кўникмаларини мунтазам ошириш дастури\",\n        \"value\": \"Жами: СИ малака ошириш дастури | СҚБ Бойсун филиали ходимлари учун | «Сунъий интеллект куни»: Ҳар чоршанба — амалий кейслар таҳлили | Онлайн таълим: Ходимларнинг 90% дан ортиғи СИ модулларини якунлади | Маҳалла банкирлари: СИ асбобларидан (chatbot, data analysis) фойдаланиш кўникмаси шакллантирилди\",\n        \"found\": true,\n        \"source_org\": \"SQB\",\n        \"ai_insight\": \"Бойсун каби тоғли ва чекка ҳудудларда банк хизматларини тезлаштиришда СИ муҳим рол ўйнайди. Ходимларнинг СИ саводхонлиги мижозларга хизмат кўрсатиш вақтини 30% га қисқартириш имконини беради. Тавсия: СҚБ мобил иловаси орқали масофавий хизматларни кенгайтиришда ходимларнинг СИ бўйича эгаллаган билимларини амалиётда қўллаш.\"\n      },\n      {\n        \"no\": 21,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Раҳбарлар, МФЙ раислари ва банкирларни СИ га ўқитиш\",\n        \"desc\": \"Ҳоким ёрдамчилари, МФЙ раислари ва банкирлар учун 4 босқичли СИ ўқитиш дастури\",\n        \"value\": \"Жами: 4 босқичли СИ ўқитиш | 1-босқич: Туман ҳокими ва ёрдамчилари — Бойсунни ривожлантиришда СИ ва Big Data (туризм ва чорвачилик таҳлили) | 2-босқич: Банк филиал раҳбарлари — Кредит скоринги ва иқлим рискларини прогноз қилиш | 3-босқич: Маҳалла банкирлари — СИ платформаси орқали маҳаллабай хизмат кўрсатиш | 4-босқич: МФЙ раислари — Маҳалланинг «рақамли паспорти», аҳоли эҳтиёжлари таҳлили ва маҳалла ривожланиш режасини СИ ёрдамида тузиш\",\n        \"found\": true,\n        \"source_org\": \"SQB\",\n        \"ai_insight\": \"Ҳоким ёрдамчилари туман стратегиясини СИ асосида шакллантиради, МФЙ раислари эса маҳалла даражасида амалий қарорлар қабул қилишда СИ дан фойдаланади. Тавсия: МФЙ раисларига «рақамли паспорт» тизимини ўргатиш — ҳар бир маҳалланинг кучли ва заиф томонларини аниқлаб, мақсадли лойиҳалар режалаштиришга имкон беради. Ҳоким ёрдамчилари эса ушбу маълумотларни туман миқёсида умумлаштириб, ресурсларни тўғри тақсимлайди.\"\n      },\n      {\n        \"no\": 22,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Аҳолини СИ орқали тадбиркорликка ўқитиш\",\n        \"desc\": \"Фуқароларни СИ платформаси орқали касб танлаш ва тадбиркорликка тайёрлаш\",\n        \"value\": \"Жами: 2026 йил режаси | Қамров: 1 450 нафар Бойсунлик ёшлар ва аёллар СИ платформасида ўқитилади | СИ таҳлили: Аҳолининг ҳунармандчилик (каштачилик) ва тоғ туризми бўйича кўникмаларини баҳолаш | Индивидуал дастур: СИ-ментор ёрдамида шахсий бизнес-трек яратиш | Натижа: Тайёр бизнес-режа ва банкдан имтиёзли кредит таклифи\",\n        \"found\": true,\n        \"source_org\": \"SQB\",\n        \"ai_insight\": \"Бойсуннинг «Бойсун баҳори» каби туризм салоҳиятидан фойдаланган ҳолда аҳолини хизмат кўрсатиш соҳасига СИ орқали ўқитиш самаралидир. Тавсия: Платформа иштирокчиларининг камида 75% ини туризм ва қўшимча қийматли қишлоқ хўжалиги маҳсулотлари етиштиришга йўналтириш.\"\n      },\n      {\n        \"no\": 23,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"«SQB AI Advisor» — ақлли ёрдамчи платформа\",\n        \"desc\": \"Маҳалла банкирлари ва Бойсун тадбиркорларига СИ ёрдами берувчи тизим\",\n        \"value\": \"Жами: SQB AI Advisor функциялари | СИ Маслаҳатчи: Бойсунда туризм ва чорвачиликни ривожлантириш бўйича ҳуқуқий-молиявий маслаҳатлар | Бизнес-режа генератори: Меҳмон уйлари ва иссиқхоналар учун автоматик бизнес-лойиҳалар | KPI мониторинг: Бойсундаги 40 та маҳалла банкирларининг фаоллигини онлайн кузатиш | Прогноз: Мавсумий туризм оқими ва яйловлар ҳолати бўйича тавсиялар\",\n        \"found\": true,\n        \"source_org\": \"SQB\",\n        \"ai_insight\": \"«SQB AI Advisor» Бойсундаги тадбиркорлар учун 24/7 маслаҳатчи бўла олади. Тавсия: Платформани маҳаллий лаҳжа ва атамаларни тушунадиган даражада соддалаштириш ва 2026 йил якунига қадар барча маҳаллаларда тўлиқ жорий этиш.\"\n      },\n      {\n        \"no\": 24,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Маҳалла драйвер секторлари\",\n        \"desc\": \"Ўсиш нуқталари ва иқтисодий локомотивлар\",\n        \"value\": \"Жами: 3 та асосий драйвер | Чорвачилик: яйлов ресурсларидан (18 300 га) фойдаланиш | Боғдорчилик: олма стратегияси (600 га янги боғлар) | Туризм: экотуризм, тоғ туризми ва маданий мерос йўналишлари\",\n        \"found\": true,\n        \"source_org\": \"SQB / МФЙ агентлиги\",\n        \"ai_insight\": \"Драйвер секторларга «Тоғ туризми»ни тўртинчи элемент сифатида қўшиш керак. Йиллик сайёҳлар сонини 300 мингга етказиш режаси чорвачилик ва ҳунармандчилик маҳсулотларига ички талабни автоматик оширади.\"\n      },\n      {\n        \"no\": 25,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Маҳалла ихтисослашуви\",\n        \"desc\": \"Маҳаллалар тоифаси ва ихтисослашув йўналишлари\",\n        \"value\": \"Жами: 39 та маҳалла | Ихтисослашув: Чорвачилик, Томорқа деҳқончилиги, Сабзавот ва боғдорчилик | Ипакчилик маҳаллалари: 6 та | Картошка/карам маҳаллалари: 4 та | Оғир тоифа: 19 та | Ўрта тоифа: 16 та | Енгил тоифа: 4 та\",\n        \"found\": true,\n        \"source_org\": \"МФЙ агентлиги / Бандлик маркази\",\n        \"ai_insight\": \"39 та МФЙдан 19 таси оғир тоифада — бу умумий МФЙларнинг 49%. Оғир маҳаллаларга манзилли бандлик дастурлари ва микролойиҳаларни йўналтириш устувор бўлиши лозим.\"\n      },\n      {\n        \"no\": 26,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Маҳалла драйвер секторлари\",\n        \"desc\": \"Маҳаллаларда ўсишни таъминлайдиган асосий тармоқлар\",\n        \"value\": \"Жами: 3 та драйвер сектор | 1-сектор: Чорвачилик | 2-сектор: Боғдорчилик | 3-сектор: Туризм\",\n        \"found\": true,\n        \"source_org\": \"МФЙ агентлиги / SQB\",\n        \"ai_insight\": \"Драйвер секторларни «чорвачилик + боғдорчилик + хизмат» занжирида боғлаш керак. Тайёр маҳсулотни бозорга чиқариш ва брендлаш орқали маҳалла даражасида қўшимча қиймат яратиш мумкин.\"\n      },\n      {\n        \"no\": 27,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Микролойиҳалар сони ва иш ўринлари\",\n        \"desc\": \"Лойиҳалар ҳажми ва яратилган иш ўринлари\",\n        \"value\": \"Жами: Микролойиҳалар таҳлили | Лойиҳалар сони: 390 та | Иш ўринлари: 980 та | Лойиҳалар умумий қиймати: 13,6 млрд сўм\",\n        \"found\": true,\n        \"source_org\": \"Бандлик маркази / Марказий банк\",\n        \"ai_insight\": \"390 та микролойиҳа орқали 780 та иш ўрни яратилган. Лойиҳалар сонини ошириш, айниқса 19 та оғир тоифали маҳаллага мақсадли молиялаштиришни йўналтириш тавсия этилади.\"\n      },\n      {\n        \"no\": 28,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Ишсизлик юқори маҳаллалар\",\n        \"desc\": \"Қизил тоифадаги маҳаллалар бўйича манзилли иш режаси\",\n        \"value\": \"Жами: 39 та МФЙ | Қизил тоифа: 19 та МФЙ | Сариқ тоифа: 16 та МФЙ | Яшил тоифа: 4 та МФЙ\",\n        \"found\": true,\n        \"source_org\": \"МФЙ агентлиги / Бандлик маркази\",\n        \"ai_insight\": \"Қизил тоифадаги 19 та маҳаллада «бир маҳалла — бир драйвер йўналиш» тамойили асосида тезкор бандлик режаси ишга туширилиши керак. 3 ойлик қисқа циклда ишга жойлаштириш ва микролойиҳаларга улаш механизмлари қўлланиши лозим.\"\n      },\n      {\n        \"no\": 29,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"SQB рақамли хизматлари\",\n        \"desc\": \"SQB банкнинг рақамли ва мобил молиявий хизматлар экотизими\",\n        \"value\": \"Жами: 3 та рақамли платформа | SQB Mobile: жисмоний шахслар учун мобил банк — тўловлар, ўтказмалар, онлайн кредит | SQB Business: юридик шахслар учун онлайн бухгалтерия, тўлов, ҳисоб-китоб | SQB AI Advisor: сунъий интеллект асосидаги молиявий маслаҳатчи — кредит скоринг, инвестиция таҳлили\",\n        \"found\": true,\n        \"source_org\": \"SQB\",\n        \"ai_insight\": \"Сунъий интеллектга асосланган «AI Advisor» мавжудлиги сабабли, кредит скоринги ва инвестиция таҳлилини тўлиқ автоматлаштириш керак. Масофавий молиявий амалиётларни кенгайтириш учун мижозларни «Mobile» ва «Business» платформаларига фаол ўтказиш лозим.\"\n      },\n      {\n        \"no\": 30,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"«Ҳар бир оила — тадбиркор» дастури\",\n        \"desc\": \"Оилавий тадбиркорлик учун имтиёзли кредит\",\n        \"value\": \"Жами: Оилавий тадбиркорлик дастури | Иштирокчи банклар: SQB ва бошқа тижорат банклари (Халқ банки, Микрокредит банк, Агро банк, Ҳамкор банк) | Фоиз ставкаси: 12% | Максимал сумма: 300 млн сўм | Муддат: 3 йилгача | Имтиёзли давр: 3–6 ой\",\n        \"found\": true,\n        \"source_org\": \"Марказий банк\",\n        \"ai_insight\": \"Дастурда SQB етакчи банк сифатида кредит скоринги ва СИ платформасини таъминлайди. Халқ банки ва Микрокредит банк оилавий тадбиркорлик кредитларини ажратади, Агро банк қишлоқ хўжалиги йўналишидаги лойиҳаларни молиялаштиради, Ҳамкор банк эса кичик бизнес сегментида иштирок этади. Маҳалла банкирлари ҳар бир оилани мос банк ва кредит маҳсулотига йўналтириш вазифасини бажаради.\"\n      },\n      {\n        \"no\": 31,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"«HAMROH» хотин-қизлар тадбиркорлиги\",\n        \"desc\": \"Хотин-қизлар учун махсус молиявий дастур\",\n        \"value\": \"Жами: Хотин-қизлар учун махсус молиявий дастур | Иштирокчи банклар: SQB, Халқ банки, Микрокредит банк, Агро банк | Гаровсиз кредит: 100 млн сўмгача | Компания кафиллиги: 70%\",\n        \"found\": true,\n        \"source_org\": \"Марказий банк\",\n        \"ai_insight\": \"HAMROH — хотин-қизлар тадбиркорлигини қўллаб-қувватлашнинг энг катта давлат дастури. Бойсунда аёллар тадбиркорлиги потенциали юқори (каштачилик, зардўзлик, меҳмон уйлари, боғдорчилик). Тавсия: маҳалла банкирлари орқали аёлларни актив жалб қилиш, бизнес тренинглар ташкил этиш ва муваффақиятли намуналарни кенг оммавий таништириш.\"\n      },\n      {\n        \"no\": 32,\n        \"slide\": 4,\n        \"slide_no\": \"4\",\n        \"name\": \"Ишсизлик юқори маҳаллаларни ҳоли ҳудудга айлантириш режаси\",\n        \"desc\": \"Оғир тоифадаги маҳаллалар учун манзилли бандлик ва кредит дастурлари\",\n        \"value\": \"Жами: 19 та маҳалла, оғир тоифа | Ишсизлар (2025): 2 607 киши | Ёшлар (16-30): 437 киши | Аёллар: 1 342 киши | Кредит маҳсулотлари: Ёшлар бизнесда, Ҳамроҳ (аёллар), Маҳалла лойиҳаси | Мақсад: 2027 йилгача 3% га тушириш\",\n        \"found\": true,\n        \"source_org\": \"SQB / МФЙ агентлиги / Бандлик маркази\",\n        \"ai_insight\": \"19 та оғир маҳаллада «бир маҳалла — бир драйвер йўналиш» модели жорий қилиниши мақсадга мувофиқ. Ишсиз аҳолини сегментация қилиб, 2-3 ойлик тезкор цикл орқали микролойиҳаларга жалб қилиш ва 2027 йилгача ишсизликни 3% га тушириш мумкин.\"\n      },\n      {\n        \"no\": 33,\n        \"slide\": 5,\n        \"slide_no\": \"5\",\n        \"name\": \"Тоғ-кон ва қурилиш материаллари кластери\",\n        \"desc\": \"Гипс, цемент ва шиша хомашёсининг улкан захиралари\",\n        \"value\": \"Жами: Тоғ-кон захиралари | Цемент хомашёси: 158 973 минг тонна | Гипс ва ангидрит: 22 912 минг тонна | Шиша хомашёси: 109 162 минг тонна | Инвестиция салоҳияти: $50–100 млн\",\n        \"found\": true,\n        \"source_org\": \"Геология қўмитаси\",\n        \"ai_insight\": \"Бойсунда хомашёни шунчаки қазиб олиш эмас, балки тайёр қурилиш материаллари (қуруқ қоришмалар, гипсокартон, шиша буюмлар) ишлаб чиқаришни йўлга қўйиш керак. Тумандаги дефицит товарлар рўйхатида қурилиш материаллари борлигини ҳисобга олсак, бу лойиҳалар ҳам ички, ҳам ташқи бозор (Афғонистон) учун истиқболлидир.\"\n      },\n      {\n        \"no\": 34,\n        \"slide\": 5,\n        \"slide_no\": \"5\",\n        \"name\": \"Этно-туризм ва «Бойсун курорт шаҳри»\",\n        \"desc\": \"ЮНЕСКО маданий мероси ва тоғли ҳудуднинг туристик жозибадорлиги\",\n        \"value\": \"Жами: Туризм таҳлили | Сайёҳлар оқими: 180 минг (жорий) → 300 минг (режа) | Инвестиция (2026-2028): 350 млрд сўм | Машҳур масканлар: Омонхона, Хўжамайхона, Завбоши | Йўналиш: эко-туризм ва соғломлаштириш\",\n        \"found\": true,\n        \"source_org\": \"Ҳокимият / UNESCO\",\n        \"ai_insight\": \"«Омонхона» шифобахш суви ва «Бойсун баҳори» брендидан фойдаланиб, туманни йил давомида ишлайдиган туристик марказга айлантириш лозим. Оилавий меҳмон уйларини рақамлаштириш ва хорижий сайёҳлар учун махсус «Ethno-Village» тур-пакетларини яратиш орқали сайёҳларнинг қолиш вақтини 3 кунгача узайтириш мумкин.\"\n      },\n      {\n        \"no\": 35,\n        \"slide\": 5,\n        \"slide_no\": \"5\",\n        \"name\": \"Транзит ва логистика устунлиги\",\n        \"desc\": \"М-39 халқаро йўли ва темир йўл тизимининг мавжудлиги\",\n        \"value\": \"Жами: Логистика қуввати | М-39 ва 4Р-105 йўллари: туман ҳудудидан ўтган | Темир йўл станциясигача: 12 км | Юк айланмаси (2024): 3 109,7 минг тонна\",\n        \"found\": true,\n        \"source_org\": \"Транспорт вазирлиги\",\n        \"ai_insight\": \"Бойсунни Сурхондарёнинг шимолий «логистика дарвозаси» сифатида ривожлантириш лозим. М-39 йўли бўйида замонавий сервис марказлари (кемпинг, хизмат кўрсатиш) ташкил этиш ва темир йўл яқинлигидан фойдаланиб, тоғ-кон маҳсулотларини экспорт қилиш учун йирик юк терминалини қуриш тавсия этилади.\"\n      },\n      {\n        \"no\": 36,\n        \"slide\": 5,\n        \"slide_no\": \"5\",\n        \"name\": \"Чорвачилик ва гўштни қайта ишлаш\",\n        \"desc\": \"Тоғли яйловлар ва аҳоли ихтисослашуви\",\n        \"value\": \"Жами: Чорвачилик салоҳияти | Ихтисослашув: қорамолчилик ва қоракўлчилик | Дефицит товар №1: гўшт маҳсулотлари | Имконият: табиий тоғ гўшти бренди\",\n        \"found\": true,\n        \"source_org\": \"Қишлоқ хўжалиги бўлими\",\n        \"ai_insight\": \"Туманда гўшт маҳсулотлари дефицит эканлиги аниқланган. Бу имкониятдан фойдаланиб, «Бойсун тоғ гўшти» бренди остида ярим тайёр маҳсулотлар ва консерва ишлаб чиқаришни ташкил этиш керак. Бу нафақат туман эҳтиёжини қоплайди, балки Термиз ва Тошкент бозорларига юқори қийматли маҳсулот чиқариш имконини беради.\"\n      },\n      {\n        \"no\": 37,\n        \"slide\": 5,\n        \"slide_no\": \"5\",\n        \"name\": \"Муқобил энергия ва саноат харажатлари\",\n        \"desc\": \"Тоғли ҳудудларда қуёш ва шамол энергиясидан фойдаланиш\",\n        \"value\": \"Жами: Энергия салоҳияти | Қуёшли кунлар: 280–300 кун | Талаб: саноат ҳажми 223 млрд (2024) → 300 млрд (2025) | Тўсиқ: электр таннархининг юқорилиги\",\n        \"found\": true,\n        \"source_org\": \"Геология қўмитаси / Энергетика вазирлиги\",\n        \"ai_insight\": \"Янги ташкил этилаётган қурилиш материаллари корхоналарига қуёш панеллари ўрнатиш мажбуриятини юклаш ва давлат субсидияларини шу йўналишга қаратиш керак. Бу саноат маҳсулотлари таннархини 15-20% гача камайтиришга ёрдам беради.\"\n      },\n      {\n        \"no\": 38,\n        \"slide\": 6,\n        \"slide_no\": \"6\",\n        \"name\": \"Стратегик мақсад — 2027\",\n        \"desc\": \"Саноат ва туризм драйверига айланиш\",\n        \"value\": \"Жами: 2027 йил мақсадлари | Саноат ҳажми: 400+ млрд сўм | Янги иш ўринлари: 5 000+ (лойиҳалар ҳисобига) | Камбағалликни қисқартириш: оилалар сонини 1 950 тадан (2025) 1 000 тагача камайтириш\",\n        \"found\": true,\n        \"source_org\": \"Туман ҳокимияти\",\n        \"ai_insight\": \"Бойсун иқтисодиётини «Тоғ-кон + Туризм + Чорвачилик» триадаси асосида ривожлантириш лозим. 2025 йилда асосий эътиборни инфратузилмани (сув ва йўл) яхшилашга қаратиш, бу эса йирик инвесторларнинг туманга келиши учун кафолат бўлади.\"\n      },\n      {\n        \"no\": 39,\n        \"slide\": 6,\n        \"slide_no\": \"6\",\n        \"name\": \"Инвестиция портфели ва «Лойиҳа фабрикаси»\",\n        \"desc\": \"Устувор йўналишлар ва молиявий воситалар\",\n        \"value\": \"Жами: Инвестиция режаси | Микролойиҳалар: 390 та (780 иш ўрни) | Банк кредитлари: 219,5 млрд сўм (умумий портфел 2025) | Фокус: экспорт (30%) ва импорт ўрнини босиш (50%)\",\n        \"found\": true,\n        \"source_org\": \"SQB / Туман ҳокимияти\",\n        \"ai_insight\": \"«Лойиҳа фабрикаси» механизми орқали тумандаги дефицит 5 та товар (гўшт, қурилиш моллари, мебел, пластик, сут) бўйича тайёр бизнес-пакетларни тадбиркорларга таклиф қилиш лозим. Айниқса, хотин-қизлар ва ёшлар бандлиги учун кичик тикувчилик ва ҳунармандчилик цехларига имтиёзли лизинг бериш тизимини кучайтириш керак.\"\n      },\n      {\n        \"no\": 40,\n        \"slide\": 6,\n        \"slide_no\": \"6\",\n        \"name\": \"Инфратузилма ва ижтимоий ривожланиш\",\n        \"desc\": \"Яшаш шароитини яхшилаш — иқтисодий фаоллик гарови\",\n        \"value\": \"Жами: Инфратузилма чора-тадбирлари | Сув ва электр: тоғли қишлоқларни барқарор энергия билан таъминлаш | Йўллар: М-39 дан туристик зоналаргача 1 224 км йўлни босқичма-босқич таъмирлаш | Таълим: чорвачилик ва туризм хизматлари бўйича касб-ҳунарга ўқитиш марказларини кўпайтириш\",\n        \"found\": true,\n        \"source_org\": \"Туман ҳокимияти\",\n        \"ai_insight\": \"Аҳоли зичлиги паст (40 киши/км²) бўлган тоғли ҳудудларда «ихчам сервис марказлари»ни ташкил этиш лозим. Бунда маҳаллабай ишлаш тизими орқали ҳар бир оиланинг томорқасидан самарали фойдаланиш (ёнғоқ, доривор ўсимликлар етиштириш) бўйича консультациялар бериш керак.\"\n      }\n    ]\n  }\n}"
+    },
+    {
+      "role": "user",
+      "content": "kredit_miqdori: {{kredit_miqdori}}\nkredit_muddati: {{kredit_muddati}}\nkredit_foizi: {{kredit_foizi}}\n\nuser_question: {{USER_QUESTION}}\n\nGenerate district-specific business recommendations and financial planning JSON using the system instructions and DISTRICT_DATA_JSON."
+    }
+  ]
+}

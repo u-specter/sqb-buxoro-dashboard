@@ -491,6 +491,10 @@
       grid-template-columns: repeat(2, 1fr)
     }
 
+    .form-grid-3 {
+      grid-template-columns: repeat(3, 1fr)
+    }
+
     .field {
       display: flex;
       flex-direction: column;
@@ -1350,6 +1354,342 @@
       }
     }
 
+    /* ──────────────────────────────────────────────────────────
+       NEW PLAN — structured AI completion result (s4 redesign)
+       ────────────────────────────────────────────────────────── */
+    .plan-wrap { display: flex; flex-direction: column; gap: 24px; margin-top: 8px; }
+
+    .plan-section {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(15, 31, 68, .06);
+    }
+
+    .plan-section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .plan-section-head .plan-num {
+      flex-shrink: 0;
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--surface-2);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 16px;
+    }
+    .plan-section-head.head-blue   { background: linear-gradient(135deg,#eff6ff,#dbeafe); border-color:#bfdbfe; }
+    .plan-section-head.head-green  { background: linear-gradient(135deg,#ecfdf5,#d1fae5); border-color:#a7f3d0; }
+    .plan-section-head.head-amber  { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-color:#fde68a; }
+    .plan-section-head.head-purple { background: linear-gradient(135deg,#f5f3ff,#ede9fe); border-color:#c4b5fd; }
+    .plan-section-head.head-cyan   { background: linear-gradient(135deg,#ecfeff,#cffafe); border-color:#a5f3fc; }
+    .plan-section-head.head-rose   { background: linear-gradient(135deg,#fff1f2,#ffe4e6); border-color:#fecdd3; }
+    .plan-section-head .plan-num   { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+    .head-blue   .plan-num { color: #1e3a5f; }
+    .head-green  .plan-num { color: #065f46; }
+    .head-amber  .plan-num { color: #92400e; }
+    .head-purple .plan-num { color: #5b21b6; }
+    .head-cyan   .plan-num { color: #155e75; }
+    .head-rose   .plan-num { color: #9f1239; }
+
+    .plan-section-head .plan-eyebrow {
+      font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .08em;
+      opacity: .7;
+    }
+    .plan-section-head .plan-title { font-size: 17px; font-weight: 800; margin-top: 2px; }
+    .plan-section-head .plan-sub   { font-size: 12px; opacity: .85; margin-top: 3px; }
+    .head-blue   .plan-eyebrow, .head-blue   .plan-title, .head-blue   .plan-sub { color: #1e3a5f; }
+    .head-green  .plan-eyebrow, .head-green  .plan-title, .head-green  .plan-sub { color: #065f46; }
+    .head-amber  .plan-eyebrow, .head-amber  .plan-title, .head-amber  .plan-sub { color: #92400e; }
+    .head-purple .plan-eyebrow, .head-purple .plan-title, .head-purple .plan-sub { color: #5b21b6; }
+    .head-cyan   .plan-eyebrow, .head-cyan   .plan-title, .head-cyan   .plan-sub { color: #155e75; }
+    .head-rose   .plan-eyebrow, .head-rose   .plan-title, .head-rose   .plan-sub { color: #9f1239; }
+
+    .plan-section-body { padding: 22px 24px; }
+
+    /* Hero chips for loan terms summary */
+    .plan-hero {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      padding: 18px 22px;
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8c);
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(30,58,95,.18);
+    }
+    .plan-hero-item { flex: 1; min-width: 150px; }
+    .plan-hero-lbl { font-size: 11px; opacity: .8; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+    .plan-hero-val { font-size: 22px; font-weight: 800; margin-top: 4px; }
+    .plan-hero-unit { font-size: 13px; font-weight: 600; opacity: .85; margin-left: 4px; }
+
+    /* Summary callout */
+    .plan-summary {
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-left: 3px solid var(--primary-bright);
+      border-radius: 8px;
+      font-size: 13px; line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .plan-summary.green { background: #f0fdf4; border-left-color: #10b981; }
+    .plan-summary.amber { background: #fffbeb; border-left-color: #f59e0b; }
+    .plan-summary.rose  { background: #fff1f2; border-left-color: #ef4444; }
+
+    /* Three-column key/value lists */
+    .plan-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .plan-col {
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-radius: 10px;
+      border: 1px solid var(--line-soft);
+    }
+    .plan-col-title {
+      font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--muted); margin-bottom: 10px;
+    }
+    .plan-col-list { list-style: none; padding: 0; margin: 0; }
+    .plan-col-list li {
+      font-size: 13px; line-height: 1.5; color: var(--ink);
+      padding: 7px 0;
+      border-top: 1px solid var(--line-soft);
+    }
+    .plan-col-list li:first-child { border-top: 0; padding-top: 0; }
+    @media(max-width: 900px) { .plan-cols { grid-template-columns: 1fr; } }
+
+    /* Business cards (recommended_businesses) */
+    .biz-grid { display: grid; gap: 14px; }
+    .biz-card-n {
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--primary-bright);
+      border-radius: 12px;
+      transition: box-shadow .2s var(--ease-out);
+    }
+    .biz-card-n:hover { box-shadow: 0 6px 18px rgba(15,31,68,.08); }
+    .biz-card-n.rank-1 { border-left-color: #10b981; }
+    .biz-card-n.rank-2 { border-left-color: #3b82c4; }
+    .biz-card-n.rank-3 { border-left-color: #8b5cf6; }
+
+    .biz-card-head {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+    }
+    .biz-card-name {
+      font-size: 16px; font-weight: 800; color: var(--ink); flex: 1; min-width: 200px;
+    }
+    .biz-card-rank {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 800;
+      background: #fef3c7; color: #92400e; border: 1px solid #fde68a;
+    }
+    .biz-card-rank.rank-1 { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+
+    .biz-card-cat {
+      display: inline-block; padding: 4px 11px; border-radius: 6px;
+      font-size: 11px; font-weight: 700;
+      background: #eff6ff; color: #0369a1; border: 1px solid #bfdbfe;
+      margin-right: 6px;
+    }
+
+    .biz-card-fit {
+      font-size: 13px; line-height: 1.6; color: var(--body);
+      margin: 8px 0 12px;
+    }
+    .biz-card-fit b { color: #059669; }
+
+    .biz-metrics {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+      margin: 12px 0;
+    }
+    .biz-metric {
+      padding: 10px 12px;
+      background: var(--surface-2);
+      border-radius: 8px;
+      text-align: left;
+    }
+    .biz-metric-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+    .biz-metric-val { font-size: 15px; font-weight: 800; color: var(--ink); margin-top: 4px; }
+    .biz-metric-val.green { color: #059669; }
+    .biz-metric-val.amber { color: #d97706; }
+    @media(max-width: 720px) { .biz-metrics { grid-template-columns: repeat(2, 1fr); } }
+
+    .biz-budget {
+      margin: 10px 0;
+      padding: 12px 14px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      font-size: 12.5px; line-height: 1.6;
+    }
+    .biz-budget-row { display: flex; justify-content: space-between; padding: 3px 0; }
+    .biz-budget-row b { color: var(--ink); }
+
+    .biz-risks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .biz-risks-side { padding: 10px 12px; border-radius: 8px; font-size: 12px; line-height: 1.55; }
+    .biz-risks-side.risk { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+    .biz-risks-side.mit  { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+    .biz-risks-side ul { list-style: none; padding: 0; margin: 6px 0 0; }
+    .biz-risks-side li { padding: 3px 0; }
+    .biz-risks-side h6 {
+      font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em;
+      margin: 0 0 4px;
+    }
+    @media(max-width: 720px) { .biz-risks { grid-template-columns: 1fr; } }
+
+    /* Business plan accordion (business_plans) */
+    .biz-plan {
+      margin-top: 12px;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .biz-plan-toggle {
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--surface-2);
+      border: 0;
+      text-align: left;
+      font-size: 12.5px; font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .biz-plan-toggle .arrow { transition: transform .2s; }
+    .biz-plan.open .biz-plan-toggle .arrow { transform: rotate(90deg); }
+    .biz-plan-body { display: none; padding: 14px 16px; font-size: 13px; line-height: 1.6; }
+    .biz-plan.open .biz-plan-body { display: block; }
+    .biz-plan-body h6 {
+      font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
+      color: var(--muted); margin: 10px 0 5px;
+    }
+    .biz-plan-body p { margin: 0 0 8px; color: var(--body); }
+    .biz-plan-body ul { margin: 0 0 8px 18px; color: var(--body); }
+    .biz-plan-body li { padding: 2px 0; }
+
+    /* Loan repayment plan */
+    .loan-summary {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin-bottom: 16px;
+    }
+    .loan-cell {
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-radius: 10px;
+      border: 1px solid var(--line-soft);
+    }
+    .loan-cell-lbl { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+    .loan-cell-val { font-size: 18px; font-weight: 800; color: var(--ink); margin-top: 4px; }
+    .loan-cell-val .unit { font-size: 12px; font-weight: 600; opacity: .7; margin-left: 3px; }
+    .loan-cell.accent { background: linear-gradient(135deg,#ecfdf5,#d1fae5); border-color:#a7f3d0; }
+    .loan-cell.accent .loan-cell-val { color: #065f46; }
+    @media(max-width: 720px) { .loan-summary { grid-template-columns: repeat(2, 1fr); } }
+
+    .loan-table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--line-soft); }
+    table.loan-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    table.loan-table th, table.loan-table td {
+      padding: 9px 12px; text-align: right; border-bottom: 1px solid var(--line-soft);
+      white-space: nowrap;
+    }
+    table.loan-table th {
+      background: var(--surface-2); font-weight: 800;
+      color: var(--muted); text-transform: uppercase;
+      font-size: 10.5px; letter-spacing: .05em;
+      text-align: right;
+    }
+    table.loan-table th:first-child, table.loan-table td:first-child { text-align: center; font-weight: 800; color: var(--primary); }
+    table.loan-table tbody tr:hover { background: #fafafd; }
+    table.loan-table tbody tr:last-child td { border-bottom: 0; }
+
+    /* Comparison table (profit_analysis) */
+    .cmp-table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--line-soft); }
+    table.cmp-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px;
+    }
+    table.cmp-table th, table.cmp-table td {
+      padding: 11px 13px; text-align: left; border-bottom: 1px solid var(--line-soft); vertical-align: top;
+    }
+    table.cmp-table th {
+      background: var(--surface-2); font-weight: 800;
+      color: var(--muted); text-transform: uppercase;
+      font-size: 10.5px; letter-spacing: .05em;
+    }
+    table.cmp-table tbody tr:last-child td { border-bottom: 0; }
+    table.cmp-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .pill { display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:800; }
+    .pill.low  { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; }
+    .pill.mid  { background:#fef3c7; color:#92400e; border:1px solid #fde68a; }
+    .pill.high { background:#fee2e2; color:#991b1b; border:1px solid #fecaca; }
+
+    .best-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+    .best-pick {
+      padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line-soft);
+      background: #fff;
+    }
+    .best-pick.profit  { background:#f0fdf4; border-color:#bbf7d0; }
+    .best-pick.lowrisk { background:#eff6ff; border-color:#bfdbfe; }
+    .best-pick.fast    { background:#fffbeb; border-color:#fde68a; }
+    .best-pick-lbl { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+    .best-pick-val { font-size: 15px; font-weight: 800; color: var(--ink); margin-top: 4px; line-height: 1.4; }
+    @media(max-width: 720px) { .best-row { grid-template-columns: 1fr; } }
+
+    /* Customer roadmap timeline */
+    .road-list { display: flex; flex-direction: column; gap: 14px; }
+    .road-item {
+      display: grid; grid-template-columns: 60px 1fr; gap: 14px;
+      padding: 14px 16px; background: var(--surface-2); border-radius: 12px;
+      border-left: 4px solid var(--primary-bright);
+    }
+    .road-step {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 800; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,.06);
+    }
+    .road-phase { font-size: 14px; font-weight: 800; color: var(--ink); }
+    .road-actions { list-style: none; padding: 0; margin: 8px 0 6px; }
+    .road-actions li {
+      font-size: 12.5px; line-height: 1.55; color: var(--body);
+      padding: 3px 0 3px 18px; position: relative;
+    }
+    .road-actions li::before { content: '→'; position: absolute; left: 0; color: var(--primary-bright); font-weight: 800; }
+    .road-result { font-size: 12px; color: #065f46; background: #f0fdf4; padding: 6px 10px; border-radius: 6px; margin-top: 6px; }
+    .road-deadline {
+      display: inline-block; margin-top: 6px;
+      font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 999px;
+      background: #fef3c7; color: #92400e; border: 1px solid #fde68a;
+    }
+
+    /* Loading placeholder */
+    .plan-loading {
+      padding: 60px 24px; text-align: center;
+      background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    }
+    .plan-loading .spinner { margin: 0 auto 16px; }
+    .plan-loading-text { font-size: 14px; color: var(--muted); font-weight: 600; }
+
+    /* Error state */
+    .plan-error {
+      padding: 28px 24px;
+      background: #fff1f2; border: 1px solid #fecdd3; border-radius: 14px;
+      color: #9f1239; font-size: 14px; line-height: 1.6;
+    }
+
     .alt-card {
       border: 1px solid var(--line);
       background: var(--surface);
@@ -1681,6 +2021,10 @@
       }
 
       .form-grid-2 {
+        grid-template-columns: 1fr
+      }
+
+      .form-grid-3 {
         grid-template-columns: 1fr
       }
 
@@ -2455,6 +2799,28 @@
           <div id="planUpload" style="display:none;margin-top:14px"><label class="label-s" for="planFile">Файл
               юклаш</label><input class="input-s" id="planFile" type="file" accept=".pdf,.docx,.txt"></div>
         </div>
+        <!-- ═══ Loan terms card (powers the prompt-based AI completion) ═══ -->
+        <div class="card-s" id="loanTermsCard">
+          <h4 data-i18n="loanTermsTitle">💳 Кредит шартлари</h4>
+          <p class="hint-s" style="margin:0 0 14px" data-i18n="loanTermsHint">
+            Қуйидаги майдонлар бўш қолса, тавсия учун стандарт қийматлардан фойдаланилади:
+            100 млн сўм, 36 ой, 25% йиллик ставка.
+          </p>
+          <div class="form-grid form-grid-3">
+            <div class="field"><label class="label-s" for="kreditMiqdori" data-i18n="loanAmountLabel">Кредит миқдори (млн сўм)</label>
+              <input class="input-s" id="kreditMiqdori" type="number" min="1" max="100000" step="1" value="100" inputmode="numeric" placeholder="100">
+              <div class="hint-s" data-i18n="loanAmountHint">Талаб этилаётган қарз ҳажми, млн сўмда.</div>
+            </div>
+            <div class="field"><label class="label-s" for="kreditMuddati" data-i18n="loanDurationLabel">Кредит муддати (ой)</label>
+              <input class="input-s" id="kreditMuddati" type="number" min="1" max="360" step="1" value="36" inputmode="numeric" placeholder="36">
+              <div class="hint-s" data-i18n="loanDurationHint">Қарз қанча муддатга олинади.</div>
+            </div>
+            <div class="field"><label class="label-s" for="kreditFoizi" data-i18n="loanRateLabel">Йиллик фоиз ставкаси (%)</label>
+              <input class="input-s" id="kreditFoizi" type="number" min="0" max="100" step="0.1" value="25" inputmode="decimal" placeholder="25">
+              <div class="hint-s" data-i18n="loanRateHint">Йиллик ставка, фоизда.</div>
+            </div>
+          </div>
+        </div>
         <div class="btn-row"><button type="button" class="btn-ghost" onclick="go(1)" data-i18n="back">←
             Орқага</button><button type="button" class="btn-green" onclick="analyze()" data-i18n="startAI">AI таҳлилни
             бошлаш</button></div>
@@ -2712,51 +3078,58 @@
       </div>
       <div class="screen" id="s4"><span class="step-kicker" data-i18n="stepKicker4">Қадам 4 / 4</span>
         <h2 class="screen-title" data-i18n="s4Title">Таҳлил натижаси</h2>
-        <p class="screen-desc" data-i18n="s4Desc">Пастда — AI таҳлили жавоби: умумий баҳо, асосий сонлар ва кейин тавсия
-          этилган бизнес.</p>
-        <div class="result-snapshot">
-          <div class="result-snapshot-head"><span class="result-snapshot-badge">AI таҳлил жавоби</span><span
-              class="result-snapshot-hint">Бир қарашда: балл, молиявий сонлар — кейин батафсил тавсия пастда.</span>
-          </div>
-          <div class="result-snapshot-body">
-            <div class="dash">
-              <div class="score-card">
-                <div class="score-card-label">Умумий баҳо</div>
-                <div class="score-ring high" id="scoreRing"><span class="score-num" id="scoreVal">—</span><span
-                    class="score-lbl">/100</span></div>
-                <div class="score-txt" id="scoreLbl">Баҳоланмоқда</div>
-                <div class="score-desc-t" id="scoreDesc"></div>
-                <div class="score-expl" id="scoreExplain">—</div>
-                <div class="score-scale">
-                  <div class="score-fill" id="scoreFill"></div>
+        <p class="screen-desc" data-i18n="s4Desc">Туман маълумотлари ва киритилган кредит шартлари асосида СИ томонидан тузилган тўлиқ бизнес режа.</p>
+
+        <!-- ═══ NEW STRUCTURED PLAN (prompt-based completion) ═══ -->
+        <div id="s4Plan" class="plan-wrap"></div>
+
+        <!-- ═══ LEGACY blocks (kept hidden for backward-compat hooks) ═══ -->
+        <div id="s4Legacy" style="display:none">
+          <div class="result-snapshot">
+            <div class="result-snapshot-head"><span class="result-snapshot-badge">AI таҳлил жавоби</span><span
+                class="result-snapshot-hint">Бир қарашда: балл, молиявий сонлар — кейин батафсил тавсия пастда.</span>
+            </div>
+            <div class="result-snapshot-body">
+              <div class="dash">
+                <div class="score-card">
+                  <div class="score-card-label">Умумий баҳо</div>
+                  <div class="score-ring high" id="scoreRing"><span class="score-num" id="scoreVal">—</span><span
+                      class="score-lbl">/100</span></div>
+                  <div class="score-txt" id="scoreLbl">Баҳоланмоқда</div>
+                  <div class="score-desc-t" id="scoreDesc"></div>
+                  <div class="score-expl" id="scoreExplain">—</div>
+                  <div class="score-scale">
+                    <div class="score-fill" id="scoreFill"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="metrics-wrap">
-                <p class="metrics-caption">Асосий кўрсаткичлар</p>
-                <div class="metrics">
-                  <div class="m-box bl">
-                    <div class="m-lbl">Бошланғич сармоя</div>
-                    <div class="m-val" id="mInvest">—</div>
-                  </div>
-                  <div class="m-box gr">
-                    <div class="m-lbl">Кутилаётган ойлик фойда</div>
-                    <div class="m-val" id="mProfit">—</div>
-                  </div>
-                  <div class="m-box or">
-                    <div class="m-lbl">Қоплаш муддати</div>
-                    <div class="m-val" id="mPayback">—</div>
-                  </div>
-                  <div class="m-box dk">
-                    <div class="m-lbl">Янги иш ўринлари</div>
-                    <div class="m-val" id="mJobs">—</div>
+                <div class="metrics-wrap">
+                  <p class="metrics-caption">Асосий кўрсаткичлар</p>
+                  <div class="metrics">
+                    <div class="m-box bl">
+                      <div class="m-lbl">Бошланғич сармоя</div>
+                      <div class="m-val" id="mInvest">—</div>
+                    </div>
+                    <div class="m-box gr">
+                      <div class="m-lbl">Кутилаётган ойлик фойда</div>
+                      <div class="m-val" id="mProfit">—</div>
+                    </div>
+                    <div class="m-box or">
+                      <div class="m-lbl">Қоплаш муддати</div>
+                      <div class="m-val" id="mPayback">—</div>
+                    </div>
+                    <div class="m-box dk">
+                      <div class="m-lbl">Янги иш ўринлари</div>
+                      <div class="m-val" id="mJobs">—</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div id="aiResult"></div>
+          <div id="altResult"></div>
         </div>
-        <div id="aiResult"></div>
-        <div id="altResult"></div>
+
         <div class="btn-row" style="margin-top:28px;margin-bottom:40px"><button type="button" class="btn-ghost"
             onclick="restartFromScratch()" data-i18n="newAnalysis">Янги таҳлил</button><button type="button"
             class="btn-green" onclick="applyBank()" data-i18n="applyBank">Банкка ариза юбориш</button></div>
@@ -3219,6 +3592,56 @@
       'Қашқадарё вилояти': ['Касби тумани', 'Шаҳрисабз тумани'],
       'Қорақалпоғистон Республикаси': ['Конғирот тумани', 'Қонликўл тумани', 'Тахиатош тумани']
     };
+    // Map UI district name → slug used in assets/prompts/{slug}_chat_completion.json
+    // and assets/data/{slug}.json
+    var DISTRICT_SLUG = {
+      'Хонобод шаҳри': 'xonobod',
+      'Шаҳрихон тумани': 'shahrixon',
+      'Ғиждувон': 'gijduvon',
+      'Шофиркон': 'shofirkon',
+      'Фориш тумани': 'forish',
+      'Янги Наманган тумани': 'yangi_namangan',
+      'Янгиқўрғон тумани': 'yangiqorgon',
+      'Кармана тумани': 'karmana',
+      'Жомбой тумани': 'jomboy',
+      'Оқдарё тумани': 'oqdaryo',
+      'Пайариқ тумани': 'payariq',
+      'Гулистон шаҳри': 'guliston',
+      'Бойсун тумани': 'boysun_tuman',
+      'Сариосиё тумани': 'sariosiyo',
+      'Термиз тумани': 'termiz',
+      'Мирзо Улуғбек тумани': 'mirzoulgbek',
+      'Учтепа тумани': 'uchtepa',
+      'Ангрен шаҳри': 'angren',
+      'Бўка тумани': 'boka',
+      'Чирчиқ шаҳри': 'chirchiq',
+      'Қўқон шаҳри': 'qoqon',
+      'Қўштепа тумани': 'qoshtepa',
+      'Урганч тумани': 'urganch',
+      'Шовот тумани': 'shovot',
+      'Касби тумани': 'kasbi',
+      'Шаҳрисабз тумани': 'shahrisabz',
+      'Конғирот тумани': 'qongirot',
+      'Қонликўл тумани': 'qonlikol',
+      'Тахиатош тумани': 'taxiatosh'
+    };
+    function getDistrictSlug() {
+      var name = (document.getElementById('userDistrict') || {}).value || '';
+      return DISTRICT_SLUG[name] || '';
+    }
+    function getLoanTerms() {
+      function num(id, fallback) {
+        var el = document.getElementById(id);
+        if (!el) return fallback;
+        var v = parseFloat((el.value || '').replace(',', '.'));
+        return (isNaN(v) || v <= 0) ? fallback : v;
+      }
+      return {
+        kredit_miqdori: num('kreditMiqdori', 100),
+        kredit_muddati: Math.round(num('kreditMuddati', 36)),
+        kredit_foizi:   num('kreditFoizi', 25)
+      };
+    }
     var MAHALLA_LIST = {
       'Шофиркон': ['Ғуломте', 'Жўйнав', 'Искогаре', 'Қалмақон', 'Қуйи Чуқурак', 'Қўрғони Вардонзе', 'Талисафед', 'Чуқурак', 'Шароф Рашидов', 'Янгиқишлоқ', 'Арабхона', 'Бобоато', 'Бобур', 'Боғиафзал', 'Жилвон', 'Жўшўра', 'Мирзоқул', 'М.Чандир', 'Пашмон', 'Читкарон', 'Шодлик', 'Денов', 'Доригар', 'Дўрман', 'Жуйрабод', 'Зарчабек', 'Калон', 'Кўришкент', 'Қайрағоч', 'Маҳаллақози', 'Мингчинор', 'Навбаҳор', 'Неккиши', 'Паттахон', 'Султонобод', 'Темирчи', 'Хорин', 'Шибирғон', 'Алишер Навоий', 'Бобоҳайдар', 'Гулистон', 'Котиён', 'Нурафшон', 'Пахтаобод', 'Саврак', 'Талсангобод', 'Тезгузар', 'Тинчлик', 'Хожа Ориф'],
       'Ғиждувон': ['Абдулла Қаҳҳор', 'А.Ғиждувоний', 'Айиртом', 'Амиробод', 'Армечан', 'Баққоллар', 'Барака', 'Бештуво', 'Биёсин', 'Бобур', 'Буктарой', 'Бўлакиён', 'Вазиршоҳ', 'Гаждумак', 'Ғалаба', 'Ғишти', 'Ғовшун', 'Гулистон', 'Гулистонобод', 'Дегрезон', 'Денов', 'Додарак', 'Жовгари', 'Зарангари', 'Зарафшон', 'Заргарон', 'Калон', 'Кўкча', 'Кўлижаббор', 'Кўшк', 'Қарабоғ', 'Қарахони', 'Қассабон', 'Қумоқ', 'Қўрғон', 'Лабирўт', 'Мазраган', 'Маҳалламирзаён', 'Миракон', 'Мустақиллик', 'Нодирабегим', 'Обод', 'Оқгул', 'Оқработ', 'Пахтаобод', 'Позагари', 'Помўза', 'Ростгўй', 'Саидкент', 'Сарвари', 'Сармижон', 'Соктари', 'Соҳибиён', 'Тавариён', 'Тарханон', 'Тахтахон', 'Тодон', 'Тошлок', 'Ўзанон', 'Улфатбиби', 'Файзулло Хўжаев', 'Хавзак', 'Халқобод', 'Хатча', 'Чағдари', 'Чорсу', 'Чўғалон', 'Шарқ', 'Шўрча', 'Янгиобод'],
@@ -3384,13 +3807,397 @@
       canReturnToResults = false;
       analysisInProgress = true;
       resetLoaderUI();
+
+      var slug = getDistrictSlug();
+      if (!slug) {
+        alert('Илтимос, ҳудудни танланг.');
+        if (btn) { btn.disabled = false; btn.textContent = 'AI таҳлилни бошлаш' }
+        return;
+      }
+
       go(3);
-      // Skip 6-step animation — show preview instantly
       var analysisCard = document.querySelector('#s3 .loader-wrap');
       if (analysisCard) analysisCard.style.display = 'none';
       var preview = document.getElementById('s3Preview');
       if (preview) preview.style.display = 'block';
-      callAI();
+
+      callPromptCompletion(slug);
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  Prompt-based AI completion — new structured-plan flow
+    // ════════════════════════════════════════════════════════════
+    var planAbortController = null;
+
+    function callPromptCompletion(slug) {
+      if (planAbortController) { try { planAbortController.abort() } catch (e) { } }
+      planAbortController = new AbortController();
+
+      var planWrap = document.getElementById('s4Plan');
+      if (planWrap) {
+        planWrap.innerHTML =
+          '<div class="plan-loading">' +
+            '<div class="spinner" style="width:36px;height:36px;border:3px solid #e2e8f0;border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite"></div>' +
+            '<div class="plan-loading-text">СИ туман маълумотлари асосида комплекс режа тузмоқда…</div>' +
+          '</div>';
+      }
+
+      var loan = getLoanTerms();
+      var userQ = '';
+      try {
+        var rawName = (document.getElementById('userName') || {}).value || '';
+        var ageR = (document.getElementById('ageRange') || {}).value || '';
+        var stEl = document.getElementById('userStatus');
+        var status = stEl && stEl.selectedIndex >= 0 ? stEl.options[stEl.selectedIndex].text : '';
+        var bizType = (typeof getSel === 'function') ? (getSel('bizChips') || '') : '';
+        userQ = 'Фойдаланувчи: ' + (rawName || 'номаълум') +
+                ', ёш ' + (ageR || '—') +
+                ', ҳолат ' + (status || '—') +
+                (bizType ? ', қизиқиш йўналиши: ' + bizType : '') +
+                '. Шу профилга мос бизнес тавсияси ва тўлиқ молиявий режа тузиб бер.';
+      } catch (e) { userQ = ''; }
+
+      var payload = {
+        district_slug:  slug,
+        kredit_miqdori: loan.kredit_miqdori,
+        kredit_muddati: loan.kredit_muddati,
+        kredit_foizi:   loan.kredit_foizi,
+        user_question:  userQ
+      };
+
+      var timer = setTimeout(function () { if (planAbortController) planAbortController.abort() }, 180000);
+
+      fetch('/advisor-completion.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: planAbortController.signal
+      }).then(function (r) {
+        clearTimeout(timer);
+        return r.json().then(function (j) { return { ok: r.ok, status: r.status, data: j }; });
+      }).then(function (res) {
+        if (!res.ok || !res.data || res.data.error || !res.data.plan) {
+          var msg = (res.data && res.data.error) || ('HTTP ' + res.status);
+          renderPlanError(msg);
+        } else {
+          renderAdvisorPlan(res.data.plan, res.data.loan || loan);
+        }
+        analysisInProgress = false;
+        canReturnToResults = true;
+        var goBtn = document.getElementById('goToResultsBtn');
+        if (goBtn) goBtn.style.display = 'inline-block';
+        var sp = document.getElementById('s3PreviewSpinner'); if (sp) sp.style.display = 'none';
+        var sh = document.getElementById('s3PreviewHint'); if (sh) sh.style.display = 'none';
+        resetBtn();
+      }).catch(function (err) {
+        clearTimeout(timer);
+        renderPlanError(err && err.name === 'AbortError' ? 'Сўров вақт чегарасига етди (180с).' : (err.message || 'Тармоқ хатоси'));
+        analysisInProgress = false;
+        canReturnToResults = true;
+        var goBtn = document.getElementById('goToResultsBtn');
+        if (goBtn) goBtn.style.display = 'inline-block';
+        var sp = document.getElementById('s3PreviewSpinner'); if (sp) sp.style.display = 'none';
+        var sh = document.getElementById('s3PreviewHint'); if (sh) sh.style.display = 'none';
+        resetBtn();
+      });
+    }
+
+    function renderPlanError(msg) {
+      var w = document.getElementById('s4Plan');
+      if (!w) return;
+      w.innerHTML =
+        '<div class="plan-error">' +
+          '<strong>Тавсия яратишда хатолик:</strong> ' + escapeHTMLPlan(String(msg)) +
+          '<div style="margin-top:8px;font-size:12.5px;opacity:.85">Илтимос, "Янги таҳлил" тугмасини босиб қайта уриниб кўринг.</div>' +
+        '</div>';
+    }
+
+    function escapeHTMLPlan(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function fmtNumPlan(n) {
+      if (n == null || isNaN(n)) return '—';
+      var s = Math.round(n * 100) / 100;
+      return String(s).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    function fmtMln(n) {
+      if (n == null || isNaN(n)) return '—';
+      // n is in million UZS already
+      if (n >= 1000) return fmtNumPlan(n / 1000) + ' млрд';
+      return fmtNumPlan(n) + ' млн';
+    }
+
+    function fmtMlnSum(n) {
+      if (n == null || isNaN(n)) return '—';
+      return fmtMln(n) + ' сўм';
+    }
+
+    function listHTML(arr) {
+      if (!Array.isArray(arr) || !arr.length) return '<li style="color:var(--muted);font-style:italic">Маълумот йўқ</li>';
+      return arr.map(function (x) {
+        return '<li>' + escapeHTMLPlan(typeof x === 'string' ? x : JSON.stringify(x)) + '</li>';
+      }).join('');
+    }
+
+    function riskPillClass(level) {
+      var s = String(level || '').toLowerCase();
+      if (/low|past|паст|низк/.test(s)) return 'pill low';
+      if (/high|юқори|высок/.test(s))   return 'pill high';
+      return 'pill mid';
+    }
+
+    function renderAdvisorPlan(plan, loan) {
+      var w = document.getElementById('s4Plan');
+      if (!w) return;
+      var html = [];
+
+      // ── Hero: loan terms ─────────────────────────────────────
+      html.push(
+        '<div class="plan-hero">' +
+          '<div class="plan-hero-item"><div class="plan-hero-lbl">Кредит миқдори</div>' +
+            '<div class="plan-hero-val">' + fmtNumPlan(loan.kredit_miqdori) + '<span class="plan-hero-unit">млн сўм</span></div></div>' +
+          '<div class="plan-hero-item"><div class="plan-hero-lbl">Муддати</div>' +
+            '<div class="plan-hero-val">' + fmtNumPlan(loan.kredit_muddati) + '<span class="plan-hero-unit">ой</span></div></div>' +
+          '<div class="plan-hero-item"><div class="plan-hero-lbl">Йиллик ставка</div>' +
+            '<div class="plan-hero-val">' + fmtNumPlan(loan.kredit_foizi) + '<span class="plan-hero-unit">%</span></div></div>' +
+        '</div>'
+      );
+
+      // ── Section 1: District analysis ─────────────────────────
+      var da = plan.district_analysis || {};
+      html.push(
+        '<section class="plan-section">' +
+          '<div class="plan-section-head head-blue">' +
+            '<div class="plan-num">1</div>' +
+            '<div>' +
+              '<div class="plan-eyebrow">ҲУДУД ТАҲЛИЛИ</div>' +
+              '<div class="plan-title">' + escapeHTMLPlan(da.district_name || '—') + '</div>' +
+              '<div class="plan-sub">' + escapeHTMLPlan(da.region || '') + (da.data_year ? ' • ' + escapeHTMLPlan(da.data_year) + ' йил' : '') + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="plan-section-body">' +
+            (da.economic_summary ? '<div class="plan-summary">' + escapeHTMLPlan(da.economic_summary) + '</div>' : '') +
+            '<div class="plan-cols">' +
+              '<div class="plan-col"><div class="plan-col-title">🎯 Бозор бўшлиқлари</div><ul class="plan-col-list">' + listHTML(da.market_gaps) + '</ul></div>' +
+              '<div class="plan-col"><div class="plan-col-title">💡 Имкониятлар</div><ul class="plan-col-list">' + listHTML(da.main_opportunities) + '</ul></div>' +
+              '<div class="plan-col"><div class="plan-col-title">⚠️ Хавфлар</div><ul class="plan-col-list">' + listHTML(da.main_risks) + '</ul></div>' +
+            '</div>' +
+          '</div>' +
+        '</section>'
+      );
+
+      // ── Section 2: Recommended businesses ────────────────────
+      var biz = Array.isArray(plan.recommended_businesses) ? plan.recommended_businesses : [];
+      var plans = Array.isArray(plan.business_plans) ? plan.business_plans : [];
+      var planById = {};
+      plans.forEach(function (p) { if (p && p.business_id) planById[p.business_id] = p; });
+      var bizCards = biz.map(function (b, idx) {
+        var rank = b.priority_rank || (idx + 1);
+        var bp = planById[b.id] || null;
+        var sb = b.startup_budget_estimation || {};
+        var mf = b.monthly_financial_estimation || {};
+        var planHTML = bp ? (
+          '<div class="biz-plan" id="bp-' + escapeHTMLPlan(b.id || ('idx' + idx)) + '">' +
+            '<button type="button" class="biz-plan-toggle" onclick="toggleBizPlan(this)">' +
+              '<span class="arrow">▶</span> Тўлиқ бизнес режа' +
+            '</button>' +
+            '<div class="biz-plan-body">' +
+              (bp.project_overview ? '<h6>Лойиҳа умумий тавсифи</h6><p>' + escapeHTMLPlan(bp.project_overview) + '</p>' : '') +
+              (bp.target_market    ? '<h6>Мақсадли бозор</h6><p>'      + escapeHTMLPlan(bp.target_market) + '</p>' : '') +
+              (Array.isArray(bp.required_equipment) && bp.required_equipment.length ? '<h6>Керакли ускуналар</h6><ul>' + listHTML(bp.required_equipment) + '</ul>' : '') +
+              (Array.isArray(bp.required_employees) && bp.required_employees.length ? '<h6>Керакли ходимлар</h6><ul>'  + listHTML(bp.required_employees) + '</ul>' : '') +
+              (Array.isArray(bp.operational_workflow) && bp.operational_workflow.length ? '<h6>Иш жараёни</h6><ul>'    + listHTML(bp.operational_workflow) + '</ul>' : '') +
+              (Array.isArray(bp.marketing_strategy)   && bp.marketing_strategy.length   ? '<h6>Маркетинг стратегияси</h6><ul>' + listHTML(bp.marketing_strategy) + '</ul>' : '') +
+              (Array.isArray(bp.financial_strategy)   && bp.financial_strategy.length   ? '<h6>Молиявий стратегия</h6><ul>'   + listHTML(bp.financial_strategy) + '</ul>' : '') +
+              (Array.isArray(bp.implementation_stages) && bp.implementation_stages.length ? '<h6>Жорий этиш босқичлари</h6><ul>' + listHTML(bp.implementation_stages) + '</ul>' : '') +
+              (Array.isArray(bp.scaling_opportunities) && bp.scaling_opportunities.length ? '<h6>Кенгайтириш имкониятлари</h6><ul>' + listHTML(bp.scaling_opportunities) + '</ul>' : '') +
+            '</div>' +
+          '</div>'
+        ) : '';
+
+        return '<div class="biz-card-n rank-' + (rank <= 3 ? rank : 'x') + '">' +
+            '<div class="biz-card-head">' +
+              '<div>' +
+                (b.business_category ? '<span class="biz-card-cat">' + escapeHTMLPlan(b.business_category) + '</span>' : '') +
+                '<span class="biz-card-name" style="display:inline-block;margin-top:6px">' + escapeHTMLPlan(b.business_name || '—') + '</span>' +
+              '</div>' +
+              '<span class="biz-card-rank rank-' + rank + '">#' + rank + ' приоритет</span>' +
+            '</div>' +
+            (b.why_it_fits_district ? '<div class="biz-card-fit"><b>Нима учун мос:</b> ' + escapeHTMLPlan(b.why_it_fits_district) + '</div>' : '') +
+            '<div class="biz-metrics">' +
+              '<div class="biz-metric"><div class="biz-metric-lbl">Сармоя</div><div class="biz-metric-val">' + fmtMlnSum(sb.total_required) + '</div></div>' +
+              '<div class="biz-metric"><div class="biz-metric-lbl">Ойлик соф фойда</div><div class="biz-metric-val green">' + fmtMlnSum(mf.expected_net_profit_after_loan) + '</div></div>' +
+              '<div class="biz-metric"><div class="biz-metric-lbl">Қоплаш муддати</div><div class="biz-metric-val amber">' + (b.break_even_estimation_months != null ? b.break_even_estimation_months + ' ой' : '—') + '</div></div>' +
+              '<div class="biz-metric"><div class="biz-metric-lbl">ROI</div><div class="biz-metric-val green">' + (b.estimated_roi_percent != null ? b.estimated_roi_percent + '%' : '—') + '</div></div>' +
+            '</div>' +
+            '<div class="biz-budget">' +
+              '<div class="biz-budget-row"><span>Ускуна / жиҳоз:</span><b>' + fmtMlnSum(sb.equipment) + '</b></div>' +
+              '<div class="biz-budget-row"><span>Бошланғич захира:</span><b>' + fmtMlnSum(sb.initial_inventory) + '</b></div>' +
+              '<div class="biz-budget-row"><span>Жой / ремонт:</span><b>' + fmtMlnSum(sb.rent_or_location_setup) + '</b></div>' +
+              '<div class="biz-budget-row"><span>Айланма маблағ захираси:</span><b>' + fmtMlnSum(sb.working_capital_reserve) + '</b></div>' +
+              '<div class="biz-budget-row"><span>Кредит ҳажми:</span><b>' + fmtMlnSum(sb.loan_used) + '</b></div>' +
+            '</div>' +
+            (b.recommended_location ? '<div style="font-size:12.5px;color:var(--body);margin:8px 0"><b style="color:var(--primary)">📍 Тавсия этилган жой:</b> ' + escapeHTMLPlan(b.recommended_location) + '</div>' : '') +
+            '<div class="biz-risks">' +
+              '<div class="biz-risks-side risk"><h6>Хавфлар</h6><ul>' + listHTML(b.risks) + '</ul></div>' +
+              '<div class="biz-risks-side mit"><h6>Юмшатиш чоралари</h6><ul>' + listHTML(b.risk_mitigation) + '</ul></div>' +
+            '</div>' +
+            (b.growth_potential ? '<div style="margin-top:10px;font-size:12.5px;line-height:1.6;color:var(--body)"><b style="color:#059669">📈 Ўсиш салоҳияти:</b> ' + escapeHTMLPlan(b.growth_potential) + '</div>' : '') +
+            planHTML +
+          '</div>';
+      }).join('');
+
+      html.push(
+        '<section class="plan-section">' +
+          '<div class="plan-section-head head-green">' +
+            '<div class="plan-num">2</div>' +
+            '<div>' +
+              '<div class="plan-eyebrow">ТАВСИЯ ЭТИЛГАН БИЗНЕСЛАР</div>' +
+              '<div class="plan-title">Сизга мос ' + biz.length + ' та бизнес йўналиш</div>' +
+              '<div class="plan-sub">Туман маълумотлари асосида приоритет тартибида</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="plan-section-body">' +
+            '<div class="biz-grid">' + (bizCards || '<div class="plan-summary">Бизнес тавсиялари топилмади.</div>') + '</div>' +
+          '</div>' +
+        '</section>'
+      );
+
+      // ── Section 3: Loan repayment plan ───────────────────────
+      var lp = plan.loan_repayment_plan || {};
+      var rows = (Array.isArray(lp.schedule) ? lp.schedule : []).map(function (r) {
+        return '<tr>' +
+          '<td>' + escapeHTMLPlan(r.month != null ? r.month : '—') + '</td>' +
+          '<td>' + fmtMlnSum(r.opening_balance) + '</td>' +
+          '<td>' + fmtMlnSum(r.payment) + '</td>' +
+          '<td>' + fmtMlnSum(r.interest_payment) + '</td>' +
+          '<td>' + fmtMlnSum(r.principal_payment) + '</td>' +
+          '<td>' + fmtMlnSum(r.closing_balance) + '</td>' +
+        '</tr>';
+      }).join('');
+
+      html.push(
+        '<section class="plan-section">' +
+          '<div class="plan-section-head head-amber">' +
+            '<div class="plan-num">3</div>' +
+            '<div>' +
+              '<div class="plan-eyebrow">КРЕДИТ ТЎЛОВ РЕЖАСИ</div>' +
+              '<div class="plan-title">' + fmtMln(lp.loan_amount != null ? lp.loan_amount : loan.kredit_miqdori) + ' сўм / ' + (lp.loan_duration_months != null ? lp.loan_duration_months : loan.kredit_muddati) + ' ой</div>' +
+              '<div class="plan-sub">Йиллик ставка: ' + (lp.annual_interest_rate_percent != null ? lp.annual_interest_rate_percent : loan.kredit_foizi) + '% • ' + escapeHTMLPlan(lp.repayment_method || 'аннуитет') + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="plan-section-body">' +
+            '<div class="loan-summary">' +
+              '<div class="loan-cell"><div class="loan-cell-lbl">Кредит миқдори</div><div class="loan-cell-val">' + fmtNumPlan(lp.loan_amount != null ? lp.loan_amount : loan.kredit_miqdori) + '<span class="unit">млн</span></div></div>' +
+              '<div class="loan-cell accent"><div class="loan-cell-lbl">Ойлик тўлов</div><div class="loan-cell-val">' + fmtNumPlan(lp.estimated_monthly_payment) + '<span class="unit">млн</span></div></div>' +
+              '<div class="loan-cell"><div class="loan-cell-lbl">Жами қайтарилади</div><div class="loan-cell-val">' + fmtNumPlan(lp.total_repayment) + '<span class="unit">млн</span></div></div>' +
+              '<div class="loan-cell"><div class="loan-cell-lbl">Жами фоиз</div><div class="loan-cell-val">' + fmtNumPlan(lp.total_interest) + '<span class="unit">млн</span></div></div>' +
+            '</div>' +
+            (rows ?
+              '<div class="loan-table-wrap"><table class="loan-table">' +
+                '<thead><tr><th>Ой</th><th>Қолдиқ (бошида)</th><th>Тўлов</th><th>Фоиз</th><th>Асосий</th><th>Қолдиқ (охирида)</th></tr></thead>' +
+                '<tbody>' + rows + '</tbody>' +
+              '</table></div>'
+              : '<div class="plan-summary">Тўлов жадвали юкланмади.</div>'
+            ) +
+            (Array.isArray(lp.notes) && lp.notes.length ?
+              '<div class="plan-summary amber" style="margin-top:14px"><b>Эслатмалар:</b><ul style="margin:6px 0 0 18px">' + listHTML(lp.notes) + '</ul></div>'
+              : ''
+            ) +
+          '</div>' +
+        '</section>'
+      );
+
+      // ── Section 4: Profit analysis ───────────────────────────
+      var pa = plan.profit_analysis || {};
+      var cmpRows = (Array.isArray(pa.business_comparison) ? pa.business_comparison : []).map(function (c) {
+        return '<tr>' +
+          '<td><b>' + escapeHTMLPlan(c.business_name || '—') + '</b></td>' +
+          '<td class="num">' + fmtMlnSum(c.monthly_revenue) + '</td>' +
+          '<td class="num">' + fmtMlnSum(c.monthly_expenses) + '</td>' +
+          '<td class="num">' + fmtMlnSum(c.monthly_profit_before_loan) + '</td>' +
+          '<td class="num"><b style="color:#059669">' + fmtMlnSum(c.monthly_net_profit_after_loan) + '</b></td>' +
+          '<td class="num">' + (c.break_even_months != null ? c.break_even_months + ' ой' : '—') + '</td>' +
+          '<td><span class="' + riskPillClass(c.risk_level) + '">' + escapeHTMLPlan(c.risk_level || '—') + '</span></td>' +
+          '<td>' + escapeHTMLPlan(c.sustainability || '—') + '</td>' +
+        '</tr>';
+      }).join('');
+
+      html.push(
+        '<section class="plan-section">' +
+          '<div class="plan-section-head head-purple">' +
+            '<div class="plan-num">4</div>' +
+            '<div>' +
+              '<div class="plan-eyebrow">ФОЙДА ТАҲЛИЛИ</div>' +
+              '<div class="plan-title">Бизнеслар таққосланиши</div>' +
+              '<div class="plan-sub">Энг яхши вариантлар фойда, хавф ва қоплаш муддати бўйича</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="plan-section-body">' +
+            '<div class="best-row">' +
+              '<div class="best-pick profit"><div class="best-pick-lbl">💰 Энг катта фойда</div><div class="best-pick-val">' + escapeHTMLPlan(pa.best_business_by_profit || '—') + '</div></div>' +
+              '<div class="best-pick lowrisk"><div class="best-pick-lbl">🛡️ Энг паст хавф</div><div class="best-pick-val">' + escapeHTMLPlan(pa.best_business_by_low_risk || '—') + '</div></div>' +
+              '<div class="best-pick fast"><div class="best-pick-lbl">⏱️ Энг тез қопланиш</div><div class="best-pick-val">' + escapeHTMLPlan(pa.best_business_by_fast_payback || '—') + '</div></div>' +
+            '</div>' +
+            (cmpRows ?
+              '<div class="cmp-table-wrap"><table class="cmp-table">' +
+                '<thead><tr><th>Бизнес</th><th>Тушум</th><th>Харажат</th><th>Фойда (кредитсиз)</th><th>Соф фойда</th><th>Қоплаш</th><th>Хавф</th><th>Барқарорлик</th></tr></thead>' +
+                '<tbody>' + cmpRows + '</tbody>' +
+              '</table></div>'
+              : ''
+            ) +
+            (pa.financial_sustainability_analysis ? '<div class="plan-summary" style="margin-top:14px"><b>Молиявий барқарорлик:</b><br>' + escapeHTMLPlan(pa.financial_sustainability_analysis) + '</div>' : '') +
+            (pa.cashflow_analysis                 ? '<div class="plan-summary"><b>Cash-flow таҳлили:</b><br>' + escapeHTMLPlan(pa.cashflow_analysis) + '</div>' : '') +
+            (pa.repayment_capacity_conclusion     ? '<div class="plan-summary green"><b>Кредит қайтариш қобилияти:</b><br>' + escapeHTMLPlan(pa.repayment_capacity_conclusion) + '</div>' : '') +
+          '</div>' +
+        '</section>'
+      );
+
+      // ── Section 5: Customer roadmap ──────────────────────────
+      var road = Array.isArray(plan.customer_roadmap) ? plan.customer_roadmap : [];
+      var roadHTML = road.map(function (r) {
+        return '<div class="road-item">' +
+          '<div class="road-step">' + escapeHTMLPlan(r.step != null ? r.step : '·') + '</div>' +
+          '<div>' +
+            '<div class="road-phase">' + escapeHTMLPlan(r.phase || 'Босқич') + '</div>' +
+            (Array.isArray(r.actions) && r.actions.length ? '<ul class="road-actions">' + listHTML(r.actions) + '</ul>' : '') +
+            (r.expected_result ? '<div class="road-result">🎯 ' + escapeHTMLPlan(r.expected_result) + '</div>' : '') +
+            (r.deadline        ? '<div class="road-deadline">⏰ ' + escapeHTMLPlan(r.deadline) + '</div>' : '') +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      html.push(
+        '<section class="plan-section">' +
+          '<div class="plan-section-head head-cyan">' +
+            '<div class="plan-num">5</div>' +
+            '<div>' +
+              '<div class="plan-eyebrow">ҲАРАКАТ РЕЖАСИ</div>' +
+              '<div class="plan-title">' + road.length + ' босқичли йўл харитаси</div>' +
+              '<div class="plan-sub">Бугундан бошлаб қилиш керак бўлган аниқ қадамлар</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="plan-section-body">' +
+            '<div class="road-list">' + (roadHTML || '<div class="plan-summary">Йўл харитаси топилмади.</div>') + '</div>' +
+          '</div>' +
+        '</section>'
+      );
+
+      w.innerHTML = html.join('');
+    }
+
+    function toggleBizPlan(btn) {
+      var box = btn.closest('.biz-plan');
+      if (box) box.classList.toggle('open');
+    }
+
+    function resetBtn() {
+      var btn = document.querySelector('#s2 .btn-green');
+      if (btn) { btn.disabled = false; btn.textContent = 'AI таҳлилни бошлаш'; }
     }
     // ============================================================
     //  4 та категория-махсус промптни ясайдиган функция
