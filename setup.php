@@ -43,7 +43,6 @@ if (!$already && $_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/SQB Logo Main short 1.png">
   <style>
     :root {
       --navy:#1B3A4B; --navy-2:#102836; --teal:#003D64;
@@ -64,7 +63,6 @@ if (!$already && $_SERVER['REQUEST_METHOD'] === 'POST') {
       box-shadow:0 24px 60px rgba(16,40,54,.3);
     }
     .brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-    .brand img{height:38px}
     .brand-text{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
     h1{font-size:26px;font-weight:800;margin:0 0 8px;color:var(--navy);letter-spacing:-.01em}
     p.lead{font-size:14.5px;color:var(--muted);margin:0 0 24px;line-height:1.55}
@@ -98,7 +96,6 @@ if (!$already && $_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div class="card">
     <div class="brand">
-      <img src="img/SQB Logo Main short 1.png" alt="SQB Bank">
       <span class="brand-text">SQB Mahalla • Илк созлаш</span>
     </div>
 

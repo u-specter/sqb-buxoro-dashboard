@@ -13,7 +13,6 @@ header('Cache-Control: no-store, no-cache, must-revalidate, private');
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/SQB Logo Main short 1.png">
   <style>
     :root {
       --navy:#1B3A4B; --navy-2:#102836; --teal:#003D64;
@@ -43,7 +42,7 @@ header('Cache-Control: no-store, no-cache, must-revalidate, private');
       box-shadow:0 6px 24px rgba(16,40,54,.25);
       border-bottom:3px solid var(--accent);
     }
-    .topbar img{height:42px; filter:drop-shadow(0 4px 12px rgba(0,0,0,.25))}
+    .topbar-brand{font-size:20px; font-weight:800; letter-spacing:.02em}
     .topbar .title{
       font-size:14px; font-weight:700; letter-spacing:.14em;
       text-transform:uppercase; color:rgba(255,255,255,.85);
@@ -214,7 +213,7 @@ header('Cache-Control: no-store, no-cache, must-revalidate, private');
 <body>
 
   <header class="topbar">
-    <img src="img/SQB Logo Main short 1.png" alt="SQB Bank">
+    <span class="topbar-brand">SQB Bank</span>
     <span class="title">Маъмур панели</span>
     <div class="topbar-actions">
       <span class="user-pill">

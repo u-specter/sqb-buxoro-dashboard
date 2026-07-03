@@ -37,8 +37,7 @@ body{
   border-bottom:3px solid var(--accent);
   padding:.85rem 0;
 }
-.sqb-navbar .navbar-brand{color:#fff;display:flex;gap:14px;align-items:center}
-.brand-logo{height:46px;width:auto;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.25))}
+.sqb-navbar .navbar-brand{color:#fff;display:flex;gap:14px;align-items:center;font-weight:700;font-size:1.15rem}
 
 /* ---- Region Selector (cascading dropdown) ---- */
 .region-selector{position:relative}
@@ -1581,7 +1580,7 @@ body{
 
   /* Navbar */
   .sqb-navbar{padding:.5rem 0}
-  .brand-logo{height:36px}
+  .sqb-navbar .navbar-brand{font-size:1rem}
   .sqb-navbar .container-fluid{gap:8px;padding-left:10px;padding-right:10px}
   .rs-current{font-size:11px;padding:7px 12px;border-radius:10px;gap:6px}
   .rs-dropdown{min-width:260px}

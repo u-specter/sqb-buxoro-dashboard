@@ -59,8 +59,7 @@
 │       ├── i18n_indicators.json     — RU/EN таржималар кэши
 │       └── <district>.json × 22     — ҳар туман маълумотлари
 ├── img/
-│   ├── SQB Logo Main short 1.png    — логотип
-│   ├── <district>.jpg / <district>_opt.jpg — hero фон расмлари
+│   ├── <district>.jpg / <district>_opt.jpg / <district>.png — hero фон расмлари
 │   └── satellite-bg.jpg             — landing satellite фон
 ├── schemas/
 │   ├── district.schema.json         — district JSON учун JSON Schema (Draft-7)

@@ -247,6 +247,7 @@ const REGIONS = [
     districts: [
       {id:"mirzoulgbek", name:{uz:"Мирзо Улуғбек", ru:"Мирзо-Улугбек", en:"Mirzo Ulugbek"}, file:"mirzoulgbek.json", hasData:true},
       {id:"uchtepa",     name:{uz:"Учтепа",        ru:"Учтепа",       en:"Uchtepa"},      file:"uchtepa.json",      hasData:true},
+      {id:"sergeli",     name:{uz:"Сергели",       ru:"Сергели",      en:"Sergeli"},      file:"sergeli.json",      hasData:true},
     ]
   },
   {
@@ -1305,7 +1306,8 @@ var HERO_BG_MAP = {
   taxiatosh: "img/taxiatash_opt.jpg",
   sariosiyo: "img/sariosiyo_opt.jpg",
   termiz: "img/termiz_opt.jpg",
-  surkhandarya_vil: "img/surxondaryo_opt.jpg"
+  surkhandarya_vil: "img/surxondaryo_opt.jpg",
+  sergeli: "img/sergeli.png"
 };
 function updateHeroBg(districtId){
   var el = document.querySelector(".hero-bg");

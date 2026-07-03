@@ -17,7 +17,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/chatbot.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/SQB Logo Main short 1.png">
 </head>
 
 <body>
@@ -25,9 +24,7 @@
   <!-- TOP NAVBAR -->
   <nav class="navbar navbar-expand-lg sqb-navbar sticky-top">
     <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-3" href="#landing">
-        <img src="img/SQB Logo Main short 1.png" alt="SQB Bank" class="brand-logo">
-      </a>
+      <a class="navbar-brand d-flex align-items-center gap-3" href="#landing">SQB Mahalla</a>
 
       <button class="hamburger d-lg-none" id="sidebarToggle" aria-label="Menu"><i class="bi bi-list"></i></button>
 
