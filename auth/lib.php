@@ -16,6 +16,10 @@ const SQB_HOME_PAGE      = '/index.php';
 const SQB_MAX_ATTEMPTS   = 5;
 const SQB_LOCKOUT_WINDOW = 900; // 15 minutes
 
+// TEMPORARY: login requirement switched off site-wide without deleting any
+// auth logic below. Flip to `false` to re-enable mandatory login.
+const SQB_AUTH_DISABLED  = true;
+
 function sqb_load_env(): array {
     static $cache = null;
     if ($cache !== null) return $cache;
@@ -234,7 +238,11 @@ function sqb_logout_user(): void {
 
 function sqb_current_user(): ?array {
     sqb_start_session();
-    return $_SESSION['user'] ?? null;
+    if (isset($_SESSION['user'])) return $_SESSION['user'];
+    // Auth disabled: synthesize a guest identity so gates pass without a
+    // real session, while `role` still fails admin checks (see sqb_require_admin*).
+    if (SQB_AUTH_DISABLED) return ['username' => 'guest', 'role' => 'guest'];
+    return null;
 }
 
 function sqb_require_auth(): void {

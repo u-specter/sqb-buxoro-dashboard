@@ -24,7 +24,7 @@
   <!-- TOP NAVBAR -->
   <nav class="navbar navbar-expand-lg sqb-navbar sticky-top">
     <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-3" href="#landing">SQB Mahalla</a>
+      <a class="navbar-brand d-flex align-items-center gap-3" href="#landing">Mahalla AI</a>
 
       <button class="hamburger d-lg-none" id="sidebarToggle" aria-label="Menu"><i class="bi bi-list"></i></button>
 
@@ -72,6 +72,10 @@
       </a>
 <a class="side-item side-advisor" href="/auth/osnova-sso.php" target="_blank" rel="noopener">
         <i class="bi bi-mortarboard-fill"></i><span>SQB Osnova Edu</span>
+        <i class="bi bi-box-arrow-up-right ms-auto small"></i>
+      </a>
+      <a class="side-item side-advisor" href="https://mahalla-sqb.uz/mahalla-banker/" target="_blank" rel="noopener">
+        <i class="bi bi-person-badge-fill"></i><span>Маҳалла банкири</span>
         <i class="bi bi-box-arrow-up-right ms-auto small"></i>
       </a>
 

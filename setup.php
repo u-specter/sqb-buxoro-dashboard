@@ -96,7 +96,7 @@ if (!$already && $_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div class="card">
     <div class="brand">
-      <span class="brand-text">SQB Mahalla • Илк созлаш</span>
+      <span class="brand-text">Mahalla AI • Илк созлаш</span>
     </div>
 
     <?php if ($already): ?>

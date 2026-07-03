@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────
-# SQB Mahalla — Apache config
+# Mahalla AI — Apache config
 # ─────────────────────────────────────────────────────────────
 
 # Deny access to .env and other dotfiles via web
